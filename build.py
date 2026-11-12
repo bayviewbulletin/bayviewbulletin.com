@@ -308,19 +308,23 @@ q.addEventListener('input',go);const p=new URLSearchParams(location.search).get(
         v = next((b for b in dirs if b.get("lat") and (b["name"].split(" (")[0] in ev["where"] or b["address"].split(" ")[0] in ev["where"])), None)
         if ev.get("lat") or v:
             pts.append({"n": ev["title"], "s": ev["day"] + " · " + ev["when"] + " · " + ev["where"], "lat": ev.get("lat") or v["lat"], "lon": ev.get("lon") or v["lon"], "c": "ev", "u": ev["link"]})
+    for mk in d.get("milwaukee", []):
+        if mk.get("lat"):
+            pts.append({"n": mk["title"], "s": "Milwaukee · " + mk.get("tag", ""), "lat": mk["lat"], "lon": mk["lon"], "c": "mke", "u": mk["source_url"]})
     for st in [x for x in ALL_STORIES if x["issue_date"] == d["date"] and x.get("lat")]:
         pts.append({"n": st["title"], "s": st["section"], "lat": st["lat"], "lon": st["lon"], "c": "story", "u": st["url"]})
     leaflet = '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>'
-    mapbody = f"""<h1 class="pagehead">Bay View map</h1><p class="pagedek"><span style="color:var(--warm)">●</span> Events &nbsp; <span style="color:var(--lake)">●</span> Today's stories &nbsp; <span style="color:var(--muted)">●</span> Businesses we follow</p>
+    mapbody = f"""<h1 class="pagehead">Bay View map</h1><p class="pagedek"><span style="color:var(--warm)">●</span> Events &nbsp; <span style="color:var(--lake)">●</span> Today's Bay View stories &nbsp; <span style="color:#6B4FA0">●</span> Milwaukee stories &nbsp; <span style="color:var(--muted)">●</span> Businesses we follow</p>
 <div id="map" style="height:70vh;min-height:420px;border:1px solid var(--rule)"></div>
 <script>
 const P={json.dumps(pts, ensure_ascii=False)};
-const m=L.map('map').setView([42.996,-87.895],14);
+const m=L.map('map').setView([42.996,-87.895],14);const B=[];
 L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png',{{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}}).addTo(m);
-const C={{ev:'#C9541F',story:'#1F4E79',biz:'#7A7F86'}};
+const C={{ev:'#C9541F',story:'#1F4E79',biz:'#7A7F86',mke:'#6B4FA0'}};
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}})[c]);
 P.forEach(p=>L.circleMarker([p.lat,p.lon],{{radius:p.c=='biz'?6:9,color:'#fff',weight:2,fillColor:C[p.c],fillOpacity:.95}}).addTo(m)
  .bindPopup('<strong>'+esc(p.n)+'</strong><br>'+esc(p.s)+'<br><a href="'+esc(p.u)+'">Details →</a>'));
+const btn=L.control({{position:'topright'}});btn.onAdd=()=>{{const b=L.DomUtil.create('button');b.textContent='Show all of Milwaukee';b.style.cssText='font:600 14px sans-serif;padding:8px 12px;background:#fff;border:2px solid #121212;border-radius:4px;cursor:pointer';let z=0;b.onclick=e=>{{L.DomEvent.stop(e);z=!z;if(z){{m.fitBounds(L.latLngBounds(P.map(p=>[p.lat,p.lon])).pad(.1));b.textContent='Zoom to Bay View'}}else{{m.setView([42.996,-87.895],14);b.textContent='Show all of Milwaukee'}}}};return b}};btn.addTo(m);
 </script>"""
     (OUT / "map.html").write_text(shell("Map · The Bay View Bulletin", mapbody, d, "Map", None, "/map.html", leaflet))
     print("built", OUT, len(issues), "issue(s)")

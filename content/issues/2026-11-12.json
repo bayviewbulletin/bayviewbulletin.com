@@ -24,7 +24,9 @@
           "credit": "Bay View United Methodist Church via Milwaukee NNS",
           "credit_url": "https://milwaukeenns.org/2026/11/12/post-from-community-free-thanksgiving-feast-nov-29-last-free-meal/"
         },
-        "dek": "The church's weekly free meal, running since 1994, ends its current form with a Nov. 29 feast."
+        "dek": "The church's weekly free meal, running since 1994, ends its current form with a Nov. 29 feast.",
+        "lat": 42.99484,
+        "lon": -87.89392
       },
       {
         "title": "Mayor's deadline for budget vetoes is Tuesday, and Bay View's street-light fix is in the mix",
@@ -45,6 +47,21 @@
     "openings": [],
     "development": [],
     "streets": [
+      {
+        "title": "Leaf rake-out extended two weeks, to Nov. 29",
+        "dek": "Late-falling leaves bought everyone more time: rake or bag them through Sunday, Nov. 29.",
+        "body": "Milwaukee DPW pushed the leaf rake-out deadline from Nov. 15 to the end of Sunday, Nov. 29, because many trees are dropping late this year. Rake leaves loosely into the curb lane with a foot of space from the curb and away from storm drains, or use paper yard-waste bags. After Nov. 29 crews make one final pass across the city, which takes two to three weeks, and snow can slow it down. Brush pickup requests close Nov. 30.",
+        "tag": "Pickup",
+        "source_name": "CBS 58",
+        "source_url": "https://www.cbs58.com/news/milwaukee-extends-fall-leaf-collection-2-weeks",
+        "date": "Nov. 11",
+        "image": {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/2024_08_07_Humboldt_Park_2.jpg?width=800",
+          "alt": "Trees in Humboldt Park",
+          "credit": "Rorr404, CC0 / Wikimedia Commons",
+          "credit_url": "https://commons.wikimedia.org/wiki/File:2024_08_07_Humboldt_Park_2.jpg"
+        }
+      },
       {
         "title": "Winter parking rules start Dec. 1: check your block now",
         "body": "From Dec. 1 to March 1, there's no overnight parking on through highways and bus routes, and that includes Kinnickinnic Avenue. During a declared snow emergency, alternate-side parking is required citywide from 10 p.m. to 6 a.m. Fines escalate from $50 to $100 to $150, and repeat offenders can be towed. Sign up for the city's winter parking text alerts before the first storm.",
@@ -305,7 +322,9 @@
         "alt": "The Brewers' ballpark",
         "credit": "Towpilot, CC BY 3.0 / Wikimedia Commons",
         "credit_url": "https://commons.wikimedia.org/wiki/File:Miller_Park_in_2007.jpg"
-      }
+      },
+      "lat": 43.0287,
+      "lon": -87.97281
     },
     {
       "title": "We Energies rate hike approved, but smaller than requested",
@@ -331,7 +350,9 @@
         "alt": "Discovery World",
         "credit": "Michael Barera, CC BY-SA 4.0 / Wikimedia Commons",
         "credit_url": "https://commons.wikimedia.org/wiki/File:Milwaukee_June_2022_05_(Discovery_World).jpg"
-      }
+      },
+      "lat": 43.03691,
+      "lon": -87.89614
     },
     {
       "title": "MPS school closures: one community meeting left",
@@ -344,7 +365,9 @@
         "alt": "Bay View High School",
         "credit": "Rorr404, CC0 / Wikimedia Commons",
         "credit_url": "https://commons.wikimedia.org/wiki/File:2024_08_07_Bay_View_High_School.jpg"
-      }
+      },
+      "lat": 43.06658,
+      "lon": -87.92595
     },
     {
       "title": "Wisconsin Supreme Court to hear the Act 10 appeal",
@@ -384,7 +407,9 @@
         "alt": "Milwaukee City Hall",
         "credit": "Michael Barera, CC BY-SA 4.0 / Wikimedia Commons",
         "credit_url": "https://commons.wikimedia.org/wiki/File:Milwaukee_August_2022_072_(Milwaukee_City_Hall).jpg"
-      }
+      },
+      "lat": 43.04171,
+      "lon": -87.90975
     },
     {
       "title": "This weekend: Pentatonix, Steve Martin & Martin Short, and holiday kickoffs",
@@ -397,7 +422,9 @@
         "alt": "Marcus Performing Arts Center",
         "credit": "Michael Barera, CC BY-SA 4.0 / Wikimedia Commons",
         "credit_url": "https://commons.wikimedia.org/wiki/File:Milwaukee_August_2022_102_(Marcus_Center).jpg"
-      }
+      },
+      "lat": 43.04291,
+      "lon": -87.91119
     },
     {
       "title": "Marquette signs three for its 2027 class",
@@ -410,7 +437,9 @@
         "alt": "Fiserv Forum",
         "credit": "Michael Barera, CC BY-SA 4.0 / Wikimedia Commons",
         "credit_url": "https://commons.wikimedia.org/wiki/File:Milwaukee_July_2022_022_(Fiserv_Forum).jpg"
-      }
+      },
+      "lat": 43.04377,
+      "lon": -87.91594
     }
   ],
   "history": {
@@ -425,5 +454,24 @@
       "credit_url": "https://commons.wikimedia.org/wiki/File:The_rolling_mills_at_bay_view_milwaukee_1882.jpg"
     }
   },
-  "quiet_note": "No new items in the last 24 hours for these sections; they'll show up as soon as news does."
+  "quiet_note": "No new items in the last 24 hours for these sections; they'll show up as soon as news does.",
+  "utilities": {
+    "weather": {
+      "v": "41° · Mostly cloudy",
+      "s": "High 43 · N wind gusts to 35",
+      "href": "https://forecast.weather.gov/MapClick.php?lat=42.99&lon=-87.89"
+    },
+    "lake": {
+      "v": "Gale warning · 10–13 ft",
+      "s": "Until 5 p.m.; small craft advisory after",
+      "href": "https://forecast.weather.gov/MapClick.php?zoneid=LMZ645",
+      "class": "warm"
+    },
+    "pickup": {
+      "v": "Leaf rake-out extended",
+      "s": "Rake or bag through Nov. 29",
+      "href": "https://city.milwaukee.gov/sanitation/Yard-Food-Waste/FallLeafCollection",
+      "class": "warm"
+    }
+  }
 }
