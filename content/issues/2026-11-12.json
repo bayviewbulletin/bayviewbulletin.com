@@ -509,6 +509,15 @@
   },
   {
    "day": "Sun. Nov. 22",
+   "when": "1:00 pm",
+   "title": "Clementine’s bowling fundraiser for homeless vets",
+   "where": "Bay View Bowl, 2416 S. Kinnickinnic Ave.",
+   "link": "https://www.facebook.com/groups/bayviewtownhall/posts/29109564702019702/",
+   "kind": "Give",
+   "desc": "First annual bowling event hosted by Clementine’s; profits benefit the Milwaukee Homeless Veterans Initiative. A few lanes left; raffle prizes welcome."
+  },
+  {
+   "day": "Sun. Nov. 22",
    "when": "3:30 pm",
    "title": "Yoga Together! Kids Yoga (ages 2-6)",
    "where": "Healium Hot Yoga, 2534 S. Kinnickinnic Ave.",
@@ -659,5 +668,82 @@
    "href": "https://city.milwaukee.gov/sanitation/Yard-Food-Waste/FallLeafCollection",
    "class": "warm"
   }
- }
+ },
+ "buzz": [
+  {
+   "kicker": "Rumor mill",
+   "headline": "A new 'Hideout' opens Tuesday — but where exactly?",
+   "body": "Milwaukee Record's Tyler Maas tipped the group to The Hideout, a new bar and grill opening 'just across the border' with a grand opening Tuesday. One commenter immediately asked whether it's taking over the old Dobie's space. Nobody has confirmed the address yet, and we're watching.",
+   "who": "Tyler M.",
+   "where": "Bay View Town Hall (Facebook)",
+   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29126929110283261/",
+   "unconfirmed": true,
+   "tone": "hot"
+  },
+  {
+   "kicker": "Burger beef",
+   "headline": "Nite Owl's last call sparks a cheeseburger civil war",
+   "body": "The South Side drive-in is wrapping its 2026 season 'sometime this week,' per a Milwaukee Record post shared to the group, and that's all it took. One camp wants it shut down for good; another shrugged that a plain cheeseburger was perfectly fine. Get one before the spring reopening, or stay out of the comments.",
+   "who": "Tyler M.",
+   "where": "Bay View Town Hall (Facebook)",
+   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29094619263514246/",
+   "tone": "hot"
+  },
+  {
+   "kicker": "Spotted",
+   "headline": "Coyote seen strolling a cemetery",
+   "body": "A neighbor posted a coyote sighting in a local cemetery with a warning to watch small pets. Commenters pushed back that coyotes mostly want rabbits and rodents, and one noticed it was hanging out near her own family's plot.",
+   "who": "Hannah B.",
+   "where": "Bay View Town Hall (Facebook)",
+   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29110459351930237/"
+  },
+  {
+   "kicker": "Mystery solved",
+   "headline": "What WAS in Collector's Edge's windows?",
+   "body": "Bay View's comic shop at 2330 S. KK used to fill its windows with giant comic-cover posters, and a Milwaukee Record look-back shared to the group finally explained them. A former Collector's Edge employee chimed in with the backstory; the remaining question is why the faded ones stay up.",
+   "who": "Tyler M.",
+   "where": "Bay View Town Hall (Facebook)",
+   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29093906533585519/"
+  },
+  {
+   "kicker": "Overheard",
+   "headline": "'Has anyone actually tried The Bad Piggy?'",
+   "body": "A neighbor admitted driving past the Puerto Rican spot on Howell 'hundreds of times' without noticing it. For the record: the former food truck put down roots at 4068 S. Howell Ave., the old Campbell's Irish Pub, and the comments are filling up with plate recommendations.",
+   "who": "BrilliantRhino333",
+   "where": "Bay View Town Hall (Facebook)",
+   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29097403196569186/"
+  },
+  {
+   "kicker": "Rave review",
+   "headline": "Dog spa takes on the pup that flunked the test",
+   "body": "A Great Pyrenees owner gave Dog City Hotel & Spa a loud shout-out: after years of grooming the famously hard-to-groom breed, staff agreed to board him next week even though he 'failed their temperament testing miserably.'",
+   "who": "George B.",
+   "where": "Bay View Town Hall (Facebook)",
+   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29097475133228659/"
+  },
+  {
+   "kicker": "Strike!",
+   "headline": "Packer Chad rolls out a bowling fundraiser for vets",
+   "body": "Clementine's 'Packer Chad' is hosting a first annual bowling event at Bay View Bowl on Sun., Nov. 22, at 1 p.m., with profits going to the Milwaukee Homeless Veterans Initiative. A few lanes are still open and he's collecting raffle prizes.",
+   "who": "Packer Chad B.",
+   "where": "Bay View Town Hall (Facebook)",
+   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29109564702019702/"
+  },
+  {
+   "kicker": "Overheard",
+   "headline": "The hunt for a Festivus bar begins",
+   "body": "One neighbor swears a Bay View bar 'celebrated' Festivus last year and wants to know which one. So far the group's best answer points north to Brady Street. Airing of grievances: open.",
+   "who": "Stephanie J.",
+   "where": "Bay View Town Hall (Facebook)",
+   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29117440807898758/"
+  },
+  {
+   "kicker": "Yard mystery",
+   "headline": "Mushrooms pop up overnight against a garage",
+   "body": "An anonymous poster found a mushroom cluster that appeared overnight in turf against a garage wall and asked the group's amateur mycologists to ID it before any pets get curious. The guesses are, fittingly, all over the place.",
+   "who": "Anonymous",
+   "where": "Bay View Town Hall (Facebook)",
+   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29096460966663409/"
+  }
+ ]
 }

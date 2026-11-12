@@ -9,7 +9,7 @@ import sys
 OUT = ROOT / ("preview_v2" if "--preview" in sys.argv else "docs")
 TIPS = "https://docs.google.com/forms/d/e/1FAIpQLSfXNc2RsIhvMPCfcZ9CYb6QIx78RZSr2Ar3YzT5ik9xyPhi7Q/viewform"
 e = lambda s: html.escape(str(s or ""), quote=True)
-NAV = [("Today", "/"), ("Events", "/events.html"), ("Map", "/map.html"), ("Food & Drink", "/section/food.html"), ("City Hall", "/section/city.html"),
+NAV = [("Today", "/"), ("Events", "/events.html"), ("Buzz", "/buzz.html"), ("Map", "/map.html"), ("Food & Drink", "/section/food.html"), ("City Hall", "/section/city.html"),
        ("Safety", "/section/safety.html"), ("More", "/section/more.html"), ("Search", "/search.html")]
 SECTION_OF = {"top": "Bay View", "openings": "Food & Drink", "development": "City Hall", "streets": "Streets", "schools": "Schools",
               "parks": "Parks", "protests": "Protests", "safety": "Safety", "realestate": "Real estate", "help": "Ways to help",
@@ -76,6 +76,24 @@ nav.sections a{display:inline-block;padding:11px 0;font:600 15px var(--sans)}nav
 .util.alert .v{color:var(--warm)}.util .k::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--lake);margin-right:6px;vertical-align:1px}.util.warm .k::before{background:var(--warm)}
 @media(max-width:900px){.utils{grid-template-columns:repeat(3,1fr)}.util:nth-child(3n){border-right:0}.util:nth-child(-n+3){border-bottom:1px solid var(--rule)}}
 .school{border-top:1px solid var(--rule);padding:14px 0}.school h2{font:700 22px/1.2 var(--serif);margin:0 0 4px}.school ul{margin:8px 0;padding-left:18px;font:15px/1.6 var(--sans)}.school .src{font:13px var(--sans);color:var(--muted)}
+.buzz{margin:26px 0;background:#FFE14D;color:#111;border:3px solid #111;box-shadow:6px 6px 0 #111;padding:16px 18px 18px}
+.buzz header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:3px solid #111;padding-bottom:8px;margin-bottom:14px}
+.buzz header h2{font:900 italic 34px/1 var(--sans);text-transform:uppercase;letter-spacing:-.01em;margin:0}
+.buzz header h2 span{background:#D7261E;color:#fff;padding:0 8px;transform:skew(-6deg);display:inline-block}
+.buzz header p{margin:0;font:700 13px var(--sans);text-transform:uppercase;letter-spacing:.06em}
+.buzz header a{margin-left:auto;color:#111;font:800 14px var(--sans);text-decoration:underline}
+.bzgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.bz{position:relative;background:#fff;border:2px solid #111;padding:12px 14px 12px}
+.bz.hot{background:#FFF4F3}
+.bz .bk{display:inline-block;background:#111;color:#FFE14D;font:900 11px var(--sans);text-transform:uppercase;letter-spacing:.1em;padding:3px 7px;margin-bottom:6px}
+.bz.hot .bk{background:#D7261E;color:#fff}
+.bz h3{font:900 21px/1.12 var(--sans);margin:2px 0 6px;text-transform:none}
+.bz p{font:15px/1.45 var(--serif);margin:0 0 8px}
+.bz .via{display:block;font:700 12px/1.4 var(--sans);color:#555;text-decoration:none}.bz .via:hover{text-decoration:underline}
+.stamp{position:absolute;top:8px;right:-6px;transform:rotate(8deg);border:2px solid #D7261E;color:#D7261E;font:900 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:2px 6px;background:#fff}
+.buzz.page{margin-top:10px}.bzday{font:900 15px var(--sans);text-transform:uppercase;letter-spacing:.08em;margin:18px 0 10px}
+.bznote{font:13px/1.5 var(--sans);margin:18px 0 0;color:#333}.bznote a{color:#111}
+@media (prefers-color-scheme:dark){.buzz,.bz,.bz h3,.bz p{color:#111}.bz .via{color:#444}}
 @media(max-width:520px){.utils{display:flex;overflow-x:auto}.util{min-width:150px;border-bottom:0!important;border-right:1px solid var(--rule)!important}}
 .ticker{display:flex;gap:12px;align-items:center;font-size:15px;border-bottom:1px solid var(--rule);padding:0 0 12px;margin:-10px 0 22px;overflow:hidden;white-space:nowrap}.ticker b{flex:0 0 auto;font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--warm);padding:3px 7px;border-radius:2px;position:relative;z-index:1}.ticker .vp{flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent)}.ticker .track{display:inline-flex;animation:tick var(--dur,40s) linear infinite}.ticker:hover .track,.ticker:focus-within .track{animation-play-state:paused}.ticker .set{display:inline-flex}.ticker .set span{padding-right:14px}.ticker .set span::after{content:"\\00B7";margin-left:14px;color:var(--muted)}@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.ticker .vp{overflow-x:auto}.ticker .track{animation:none}.ticker .set+.set{display:none}}
 .front{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:28px;padding-bottom:24px;border-bottom:1px solid var(--ink)}
@@ -156,6 +174,7 @@ Every item links to the original reporting. Photos belong to their credited owne
 
 
 ALL_STORIES = []
+ALL_BUZZ = []  # tabloid items from every day, newest day last
 BRIEFS = []  # older headlines (launch catch-up) that link straight to the source
 
 
@@ -242,6 +261,19 @@ def schools_page(d):
             f'Schools can change dates, so check with yours.</p>' + "".join(rows))
 
 
+
+def buzz_card(b, big=False):
+    stamp = '<span class="stamp">Unconfirmed</span>' if b.get("unconfirmed") else ""
+    who = f'{e(b.get("who") or "A neighbor")} in {e(b.get("where") or "the group")}'
+    return (f'<article class="bz{" hot" if b.get("tone") == "hot" else ""}">{stamp}<span class="bk">{e(b["kicker"])}</span>'
+            f'<h3>{e(b["headline"])}</h3><p>{e(b["body"])}</p>'
+            f'<a class="via" href="{e(b["source_url"])}" rel="noopener">— {who} · see the post →</a></article>')
+
+
+BUZZ_NOTE = ("The Bay View Buzz rounds up what neighbors are posting about local businesses, events and oddities in public groups and on social media "
+             "(Bay View Town Hall on Facebook, Reddit, Instagram). It's chatter, not reporting: items marked Unconfirmed haven't been verified. "
+             "Want something corrected or removed? <a href=\"{TIPS}\">Tell us</a>.")
+
 def build_one(d, newest):
     day = dt.date.fromisoformat(d["date"])
 
@@ -253,6 +285,8 @@ def build_one(d, newest):
             it = dict(it, section=SECTION_OF.get(key, key), key=key, url=f"/story/{d['date']}-{slug(it['title'])}.html")
             stories.append(it)
             ALL_STORIES.append(dict(it, issue_date=d["date"], display_date=d["display_date"]))
+    buzz = [b for b in d.get("buzz", []) if not b.get("hold")]
+    ALL_BUZZ.append((d, buzz))
     for c in d.get("catching_up", []):
         if c.get("section"):
             BRIEFS.append(dict(c, label=SECTION_OF.get(c["section"], "Bay View")))
@@ -317,6 +351,8 @@ def build_one(d, newest):
             f'<section class="front"><a class="lead" href="{lead["url"]}">{lead_img}<span class="kicker">{e(lead["section"])}</span><h2>{e(lead["title"])}</h2><p>{e(dek(lead))}</p><div class="meta">{e(srcmeta(lead))}</div></a>'
             f'<div class="side">{side}</div></section>'
             f'<section class="tonight"><h2><span>Today in Bay View</span><a href="/events.html">All events →</a></h2><div class="chips">{chips}</div></section>'
+            + (f'<section class="buzz"><header><h2>The Bay View <span>Buzz</span></h2><p>What the neighborhood is posting about</p><a href="/buzz.html">All the buzz →</a></header>'
+               f'<div class="bzgrid">{"".join(buzz_card(b) for b in buzz[:4])}</div></section>' if buzz else "") +
             f'<div class="topics">{topics}</div>'
             f'{hist}')
     (OUT / "issues").mkdir(exist_ok=True)
@@ -407,6 +443,10 @@ def build():
 <p><strong>Where we cover:</strong> Bay View as neighbors know it, from the harbor and Jones Island south to Holt and Morgan avenues, and from I-43 east to Lake Michigan.</p>
 <p><strong>How we report:</strong> news from the last 24 hours plus what's coming up. Safety coverage sticks to notable incidents, and we never name private individuals. Protests and rallies are listed neutrally, for any cause. Photos come from the original source or free-licensed collections, always credited; if you own a photo and want it removed, tell us and it comes down.</p>
 <p><a class="btn" href="{TIPS}">Send a tip or a correction</a></p></div></article>"""
+    bz_html = "".join(f'<h2 class="bzday">{e(dd["display_date"])}</h2><div class="bzgrid">{"".join(buzz_card(b) for b in items)}</div>' for dd, items in reversed(ALL_BUZZ) if items)
+    (OUT / "buzz.html").write_text(shell("The Bay View Buzz · The Bay View Bulletin",
+        f'<section class="buzz page"><header><h2>The Bay View <span>Buzz</span></h2><p>What the neighborhood is posting about</p></header>{bz_html or "<p>Quiet out there. Check back tomorrow.</p>"}'
+        f'<p class="bznote">{BUZZ_NOTE.replace("{TIPS}", TIPS)}</p></section>', d, "Buzz"))
     (OUT / "schools.html").write_text(shell("School days off · The Bay View Bulletin", schools_page(d), d, ""))
     (OUT / "about.html").write_text(shell("About · The Bay View Bulletin", about, d, ""))
     # search index + page
