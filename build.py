@@ -111,7 +111,7 @@ footer a{color:var(--lake)}
 .ev{display:grid;grid-template-columns:72px 90px minmax(0,1fr) auto;gap:14px;padding:10px 0;border-bottom:1px solid var(--rule);align-items:center}
 .ev img{width:72px;height:54px;object-fit:cover;background:var(--soft)}.ev .t{font:700 15px var(--sans);color:var(--warm)}.ev .n{font:700 17px var(--serif)}.ev .w{font-size:14px;color:var(--muted)}.ev .d{font:15px/1.45 var(--serif);color:var(--ink);margin-top:3px;max-width:62ch}
 .pill{font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--rule);padding:3px 7px;border-radius:99px;color:var(--muted)}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}.filters span{border:1px solid var(--ink);padding:6px 12px;border-radius:99px;font:600 14px var(--sans)}.filters span.on{background:var(--ink);color:var(--paper)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}.filters button{border:1px solid var(--ink);padding:6px 12px;border-radius:99px;font:600 14px var(--sans);background:var(--paper);color:var(--ink);cursor:pointer}.filters button:hover{background:var(--soft)}.filters button.on{background:var(--ink);color:var(--paper)}.filters button:focus-visible{outline:2px solid var(--lake);outline-offset:2px}[hidden]{display:none!important}
 .list a{display:block;padding:16px 0;border-bottom:1px solid var(--rule)}.list h3{font:700 21px/1.25 var(--serif);margin:2px 0 4px}.list p{margin:0;color:var(--muted)}
 .pagehead{font:800 34px var(--serif);margin:24px 0 2px}.topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 36px;padding-top:6px}@media(max-width:820px){.topics{grid-template-columns:1fr}}.topic{padding:18px 0 6px}.topic>h2{font:800 20px var(--serif);margin:0 0 4px;padding-top:10px;border-top:4px solid var(--lake);display:flex;justify-content:space-between;align-items:baseline}.topic.w>h2{border-top-color:var(--warm)}.topic>h2 a{font:600 14px var(--sans);color:var(--lake)}.topic.w>h2 a{color:var(--warm)}.topic .row{padding:12px 0;border-bottom:1px solid var(--rule)}.topic .row:last-child{border-bottom:0}.pagedek{color:var(--muted);margin:0 0 10px}
 """
@@ -243,11 +243,22 @@ def build_one(d, newest):
     for ev in d["events"]:
         if ev["day"] != cur:
             cur = ev["day"]
-            cal.append(f'<div class="cal-day">{e(cur)}</div>')
-        cal.append(f'<div class="ev"><img src="{e(venue_img(ev))}" alt="" loading="lazy"><span class="t">{e(ev["when"])}</span><div><a href="{e(ev["link"])}" class="n">{e(ev["title"])}</a><div class="w">{e(ev["where"])}</div>{('<div class="d">' + e(ev["desc"]) + '</div>') if ev.get("desc") else ""}</div><span class="pill">{e(ev["kind"])}</span></div>')
+            cal.append(f'<div class="cal-day" data-day="{e(cur)}">{e(cur)}</div>')
+        cal.append(f'<div class="ev" data-day="{e(ev["day"])}" data-kind="{e(ev["kind"])}"><img src="{e(venue_img(ev))}" alt="" loading="lazy"><span class="t">{e(ev["when"])}</span><div><a href="{e(ev["link"])}" class="n">{e(ev["title"])}</a><div class="w">{e(ev["where"])}</div>{('<div class="d">' + e(ev["desc"]) + '</div>') if ev.get("desc") else ""}</div><span class="pill">{e(ev["kind"])}</span></div>')
     kinds = sorted({ev["kind"] for ev in d["events"]})
-    filt = '<div class="filters"><span class="on">All</span>' + "".join(f"<span>{e(k)}</span>" for k in kinds) + "</div>"
-    (OUT / "events.html").write_text(shell("Events · The Bay View Bulletin", f'<h1 class="pagehead">Events in Bay View</h1><p class="pagedek">Shows, family time, markets and meetings, today and ahead.</p>{filt}{"".join(cal)}', d, "Events"))
+    filt = ('<div class="filters" role="group" aria-label="Filter events by type"><button type="button" class="on" data-k="" aria-pressed="true">All</button>'
+            + "".join(f'<button type="button" data-k="{e(k)}" aria-pressed="false">{e(k)}</button>' for k in kinds) + "</div>")
+    filt_js = """<p class="pagedek" id="evnone" hidden>No events of that type right now.</p><script>
+(function(){var bs=[].slice.call(document.querySelectorAll('.filters button')),evs=[].slice.call(document.querySelectorAll('.ev[data-kind]')),days=[].slice.call(document.querySelectorAll('.cal-day'));
+function show(k){bs.forEach(function(b){var on=b.dataset.k===k;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)});
+var n=0;evs.forEach(function(x){var v=!k||x.dataset.kind===k;x.hidden=!v;if(v)n++});
+days.forEach(function(h){h.hidden=!evs.some(function(x){return !x.hidden&&x.dataset.day===h.dataset.day})});
+document.getElementById('evnone').hidden=n>0;
+try{history.replaceState(null,'',k?'#'+encodeURIComponent(k):location.pathname)}catch(e){}}
+bs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.k)})});
+function fromHash(){var h=decodeURIComponent(location.hash.slice(1));show(bs.some(function(b){return b.dataset.k===h})?h:'')}window.addEventListener('hashchange',fromHash);if(location.hash)fromHash();})();
+</script>"""
+    (OUT / "events.html").write_text(shell("Events · The Bay View Bulletin", f'<h1 class="pagehead">Events in Bay View</h1><p class="pagedek">Shows, family time, markets and meetings, today and ahead.</p>{filt}{"".join(cal)}{filt_js}', d, "Events"))
 
     # milwaukee
     lst = "".join(f'<a href="{e(m["source_url"])}"><span class="kicker">{e(m.get("tag"))}</span><h3>{e(m["title"])}</h3><p>{e(m.get("body"))}</p><div class="meta">{e(m["source_name"])}</div></a>' for m in mke)
