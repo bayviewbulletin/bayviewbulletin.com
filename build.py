@@ -93,6 +93,12 @@ nav.sections a{display:inline-block;padding:11px 0;font:600 15px var(--sans)}nav
 .stamp{position:absolute;top:8px;right:-6px;transform:rotate(8deg);border:2px solid #D7261E;color:#D7261E;font:900 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:2px 6px;background:#fff}
 .buzz.page{margin-top:10px}.bzday{font:900 15px var(--sans);text-transform:uppercase;letter-spacing:.08em;margin:18px 0 10px}
 .bznote{font:13px/1.5 var(--sans);margin:18px 0 0;color:#333}.bznote a{color:#111}
+.bztease{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:22px 0;padding:10px 14px;background:#FFE14D;color:#111;border:2px solid #111;box-shadow:4px 4px 0 #111;text-decoration:none}
+.bztease:hover .bzh{text-decoration:underline}
+.bzlogo{font:900 italic 18px/1 var(--sans);text-transform:uppercase}.bzlogo span{background:#D7261E;color:#fff;padding:0 5px;display:inline-block;transform:skew(-6deg)}
+.bzk{background:#111;color:#FFE14D;font:900 11px var(--sans);text-transform:uppercase;letter-spacing:.1em;padding:3px 7px}
+.bzh{font:900 18px/1.2 var(--sans);flex:1;min-width:200px}
+.bzgo{font:800 14px var(--sans);text-decoration:underline}
 @media (prefers-color-scheme:dark){.buzz,.bz,.bz h3,.bz p{color:#111}.bz .via{color:#444}}
 @media(max-width:520px){.utils{display:flex;overflow-x:auto}.util{min-width:150px;border-bottom:0!important;border-right:1px solid var(--rule)!important}}
 .ticker{display:flex;gap:12px;align-items:center;font-size:15px;border-bottom:1px solid var(--rule);padding:0 0 12px;margin:-10px 0 22px;overflow:hidden;white-space:nowrap}.ticker b{flex:0 0 auto;font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--warm);padding:3px 7px;border-radius:2px;position:relative;z-index:1}.ticker .vp{flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent)}.ticker .track{display:inline-flex;animation:tick var(--dur,40s) linear infinite}.ticker:hover .track,.ticker:focus-within .track{animation-play-state:paused}.ticker .set{display:inline-flex}.ticker .set span{padding-right:14px}.ticker .set span::after{content:"\\00B7";margin-left:14px;color:var(--muted)}@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.ticker .vp{overflow-x:auto}.ticker .track{animation:none}.ticker .set+.set{display:none}}
@@ -351,8 +357,8 @@ def build_one(d, newest):
             f'<section class="front"><a class="lead" href="{lead["url"]}">{lead_img}<span class="kicker">{e(lead["section"])}</span><h2>{e(lead["title"])}</h2><p>{e(dek(lead))}</p><div class="meta">{e(srcmeta(lead))}</div></a>'
             f'<div class="side">{side}</div></section>'
             f'<section class="tonight"><h2><span>Today in Bay View</span><a href="/events.html">All events →</a></h2><div class="chips">{chips}</div></section>'
-            + (f'<section class="buzz"><header><h2>The Bay View <span>Buzz</span></h2><p>What the neighborhood is posting about</p><a href="/buzz.html">All the buzz →</a></header>'
-               f'<div class="bzgrid">{"".join(buzz_card(b) for b in buzz[:4])}</div></section>' if buzz else "") +
+            + (f'<a class="bztease" href="/buzz.html"><span class="bzlogo">The Bay View <span>Buzz</span></span>'
+               f'<span class="bzk">{e(buzz[0]["kicker"])}</span><span class="bzh">{e(buzz[0]["headline"])}</span><span class="bzgo">Read the Buzz →</span></a>' if buzz else "") +
             f'<div class="topics">{topics}</div>'
             f'{hist}')
     (OUT / "issues").mkdir(exist_ok=True)
