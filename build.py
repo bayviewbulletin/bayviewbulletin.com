@@ -252,7 +252,7 @@ def build():
     (OUT / "CNAME").write_text("bayviewbulletin.com\n")
     (OUT / ".nojekyll").write_text("")
     for f in (ROOT / "static").iterdir():
-        shutil.copy(f, OUT / f.name)
+        (shutil.copytree if f.is_dir() else shutil.copy)(f, OUT / f.name)
     files = sorted((ROOT / "content/issues").glob("*.json"))
     issues = [json.loads(f.read_text()) for f in files]
     for i, d in enumerate(issues):
