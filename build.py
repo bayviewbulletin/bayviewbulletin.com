@@ -304,7 +304,8 @@ q.addEventListener('input',go);const p=new URLSearchParams(location.search).get(
 </script>"""
     (OUT / "search.html").write_text(shell("Search · The Bay View Bulletin", search, d, "Search", None, "/search.html"))
     # map
-    pts = [{"n": b["name"], "s": b["type"] + " · " + b["address"], "lat": b["lat"], "lon": b["lon"], "c": "biz", "u": "/directory.html"} for b in dirs if b.get("lat")]
+    # Map shows events and stories only; the directory is used just to place event venues.
+    pts = []
     for ev in d["events"]:
         v = next((b for b in dirs if b.get("lat") and (b["name"].split(" (")[0] in ev["where"] or b["address"].split(" ")[0] in ev["where"])), None)
         if ev.get("lat") or v:
@@ -315,7 +316,7 @@ q.addEventListener('input',go);const p=new URLSearchParams(location.search).get(
     for st in [x for x in ALL_STORIES if x["issue_date"] == d["date"] and x.get("lat")]:
         pts.append({"n": st["title"], "s": st["section"], "lat": st["lat"], "lon": st["lon"], "c": "story", "u": st["url"]})
     leaflet = '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>'
-    mapbody = f"""<h1 class="pagehead">Bay View map</h1><p class="pagedek"><span style="color:var(--warm)">●</span> Events &nbsp; <span style="color:var(--lake)">●</span> Today's Bay View stories &nbsp; <span style="color:#6B4FA0">●</span> Milwaukee stories &nbsp; <span style="color:var(--muted)">●</span> Businesses we follow</p>
+    mapbody = f"""<h1 class="pagehead">Bay View map</h1><p class="pagedek"><span style="color:var(--warm)">●</span> Events &nbsp; <span style="color:var(--lake)">●</span> Today's Bay View stories &nbsp; <span style="color:#6B4FA0">●</span> Milwaukee stories</p>
 <div id="map" style="height:70vh;min-height:420px;border:1px solid var(--rule)"></div>
 <script>
 const P={json.dumps(pts, ensure_ascii=False)};
