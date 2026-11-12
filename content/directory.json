@@ -1,12 +1,5 @@
 [
  {
-  "name": "1840 Brewing Company",
-  "type": "Brewery taproom",
-  "address": "342 E. Ward St.",
-  "lat": 43.00431,
-  "lon": -87.90612
- },
- {
   "name": "Acme Records",
   "type": "Records",
   "address": "2341 S. Kinnickinnic Ave.",
@@ -63,6 +56,13 @@
   "lon": -87.90447
  },
  {
+  "name": "Barnacle Bud's",
+  "type": "Riverside seafood bar",
+  "address": "1955 S. Hilbert St.",
+  "lat": 43.00769,
+  "lon": -87.90592
+ },
+ {
   "name": "Bay View Books & Music",
   "type": "Books & music",
   "address": "2653 S. Kinnickinnic Ave.",
@@ -75,6 +75,13 @@
   "address": "2416 S. Kinnickinnic Ave.",
   "lat": 43.0009,
   "lon": -87.90245
+ },
+ {
+  "name": "Bay View Chiropractic",
+  "type": "Chiropractor",
+  "address": "3116 S. Kinnickinnic Ave.",
+  "lat": 42.98777,
+  "lon": -87.88316
  },
  {
   "name": "Bay View Fitness 24/7",
@@ -175,6 +182,20 @@
   "lon": -87.90399
  },
  {
+  "name": "Cival",
+  "type": "Jewelry studio",
+  "address": "2159 S. Kinnickinnic Ave.",
+  "lat": 43.00521,
+  "lon": -87.90618
+ },
+ {
+  "name": "Classic Slice",
+  "type": "Pizza",
+  "address": "2797 S. Kinnickinnic Ave.",
+  "lat": 42.9941,
+  "lon": -87.89335
+ },
+ {
   "name": "Club Garibaldi",
   "type": "Bar & music venue",
   "address": "2501 S. Superior St.",
@@ -218,6 +239,13 @@
   "lon": -87.89168
  },
  {
+  "name": "Dunkin'",
+  "type": "Coffee & doughnuts",
+  "address": "3267 S. Chase Ave.",
+  "lat": 42.98515,
+  "lon": -87.90952
+ },
+ {
   "name": "Egg & Flour Pasta Bar",
   "type": "Italian restaurant",
   "address": "2273 S. Howell Ave.",
@@ -230,13 +258,6 @@
   "address": "2483 S. Kinnickinnic Ave.",
   "lat": 43.00021,
   "lon": -87.90206
- },
- {
-  "name": "Enlightened Brewing Company",
-  "type": "Brewery & event space",
-  "address": "2020 S. Allis St.",
-  "lat": 43.0073,
-  "lon": -87.904
  },
  {
   "name": "EsterEv",
@@ -252,6 +273,14 @@
   "lat": 43.00407,
   "lon": -87.90508,
   "instagram": "fiberfeverco"
+ },
+ {
+  "name": "Freya Salon",
+  "type": "Hair salon",
+  "address": "2318 S. Kinnickinnic Ave.",
+  "verify": true,
+  "lat": 43.00277,
+  "lon": -87.90403
  },
  {
   "name": "Goodkind",
@@ -380,6 +409,14 @@
   "lon": -87.9037
  },
  {
+  "name": "Mochinut & Roll Up",
+  "type": "Mochi doughnuts & spring rolls",
+  "address": "2144 S. Kinnickinnic Ave.",
+  "verify": true,
+  "lat": 43.00598,
+  "lon": -87.90662
+ },
+ {
   "name": "The Mothership",
   "type": "Cocktail bar",
   "address": "2301 S. Logan Ave.",
@@ -401,11 +438,25 @@
   "lon": -87.89692
  },
  {
+  "name": "Oakberry Açaí",
+  "type": "Açaí cafe",
+  "address": "2142 S. Kinnickinnic Ave.",
+  "lat": 43.006,
+  "lon": -87.90664
+ },
+ {
   "name": "Ormson Supply",
   "type": "Vintage & home goods",
   "address": "2866 S. Kinnickinnic Ave.",
   "lat": 42.99255,
   "lon": -87.88944
+ },
+ {
+  "name": "Ortiz Bros. Barber Shop",
+  "type": "Barbershop",
+  "address": "2646 S. Kinnickinnic Ave.",
+  "lat": 42.99684,
+  "lon": -87.89821
  },
  {
   "name": "Outpost Natural Foods",
@@ -420,6 +471,14 @@
   "address": "2989 S. Kinnickinnic Ave.",
   "lat": 42.99038,
   "lon": -87.8854
+ },
+ {
+  "name": "Palomino",
+  "type": "Bar & restaurant",
+  "address": "2491 S. Superior St.",
+  "verify": true,
+  "lat": 42.99929,
+  "lon": -87.88992
  },
  {
   "name": "Pietro's Pizza",
@@ -471,11 +530,25 @@
   "lon": -87.88511
  },
  {
+  "name": "Riley's Bar + Burger",
+  "type": "Bar & burgers",
+  "address": "100 E. Montana St.",
+  "lat": 42.9938,
+  "lon": -87.91083
+ },
+ {
   "name": "Room Service",
   "type": "Restaurant",
   "address": "2159 S. Kinnickinnic Ave.",
   "lat": 43.00523,
   "lon": -87.90635
+ },
+ {
+  "name": "RSVR Milwaukee",
+  "type": "VR arcade bar",
+  "address": "2210 S. Kinnickinnic Ave.",
+  "lat": 43.00433,
+  "lon": -87.90528
  },
  {
   "name": "Sardines Vintage Collective",
@@ -490,6 +563,14 @@
   "address": "2474 S. Kinnickinnic Ave.",
   "lat": 42.99983,
   "lon": -87.90157
+ },
+ {
+  "name": "The Shop on KK",
+  "type": "Barbershop",
+  "address": "2340 S. Kinnickinnic Ave.",
+  "verify": true,
+  "lat": 43.00235,
+  "lon": -87.90367
  },
  {
   "name": "Small Change",
@@ -514,6 +595,20 @@
   "lon": -87.90191
  },
  {
+  "name": "Solid State Tattoo",
+  "type": "Tattoo shop",
+  "address": "2660 S. Kinnickinnic Ave.",
+  "lat": 42.99659,
+  "lon": -87.89778
+ },
+ {
+  "name": "Stag Barbershop",
+  "type": "Barbershop",
+  "address": "3064 S. Delaware Ave.",
+  "lat": 42.98843,
+  "lon": -87.87782
+ },
+ {
   "name": "Sugar Maple",
   "type": "Beer bar",
   "address": "441 E. Lincoln Ave.",
@@ -526,6 +621,20 @@
   "address": "3145 S. Howell Ave.",
   "lat": 42.98726,
   "lon": -87.90492
+ },
+ {
+  "name": "Tempest Tattoos",
+  "type": "Tattoo shop",
+  "address": "2227 S. Kinnickinnic Ave.",
+  "lat": 43.00422,
+  "lon": -87.90538
+ },
+ {
+  "name": "Three Brothers",
+  "type": "Serbian restaurant",
+  "address": "2414 S. St. Clair St.",
+  "lat": 43.00048,
+  "lon": -87.89336
  },
  {
   "name": "Tip Top Atomic Shop",

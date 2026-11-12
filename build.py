@@ -13,7 +13,7 @@ NAV = [("Today", "/"), ("Events", "/events.html"), ("Map", "/map.html"), ("Food 
        ("Safety", "/section/safety.html"), ("Milwaukee", "/milwaukee.html"), ("More", "/section/more.html"), ("Search", "/search.html")]
 SECTION_OF = {"top": "Bay View", "openings": "Food & Drink", "development": "City Hall", "streets": "Streets", "schools": "Schools",
               "parks": "Parks", "protests": "Protests", "safety": "Safety", "realestate": "Real estate", "help": "Ways to help",
-              "fishfry": "Fish fry", "pets": "Pets", "sports": "Sports", "remembrances": "Remembrances"}
+              "fishfry": "Fish fry", "pets": "Pets", "sports": "Sports", "remembrances": "Remembrances", "spotlight": "Business spotlight"}
 
 
 def slug(s):
@@ -34,7 +34,7 @@ VENUES = [("Cactus Club", CM("Milwaukee January 2025 04 (Cactus Club).jpg")), ("
           ("Library", CM("Bay View Branch.jpg")), ("Garibaldi", CM("Milwaukee January 2025 16 (S. Kinnickinnic Avenue).jpg")),
           ("Kinnickinnic", CM("Milwaukee January 2025 16 (S. Kinnickinnic Avenue).jpg")), ("Methodist", CM("SouthShore Park 1.jpg")),
           ("", CM("Milwaukee January 2025 16 (S. Kinnickinnic Avenue).jpg"))]
-WARM = {"Food & Drink", "Ways to help", "Parks", "Fish fry", "Pets"}
+WARM = {"Business spotlight", "Food & Drink", "Ways to help", "Parks", "Fish fry", "Pets"}
 
 
 def venue_img(ev):
@@ -122,6 +122,16 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="
 SITE = "https://bayviewbulletin.com"
 
 
+def ext_links(html):
+    """External links open in a new tab; internal links stay in the same tab."""
+    def fix(m):
+        tag, url = m.group(0), m.group(1)
+        if url.startswith(SITE) or "target=" in tag:
+            return tag
+        return tag[:-1].replace(' rel="noopener"', '') + ' target="_blank" rel="noopener">'
+    return re.sub(r'<a\b[^>]*?href="(https?://[^"]+)"[^>]*>', fix, html)
+
+
 def shell(title, body, d, active="Today", og=None, path="/", head=""):
     og = og or {}
     ogt, ogd = og.get("title", title), og.get("desc", "Daily news for Milwaukee's Bay View neighborhood, every morning.")
@@ -133,14 +143,15 @@ def shell(title, body, d, active="Today", og=None, path="/", head=""):
             '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">'
             '<meta name="theme-color" content="#1F4E79">' + head)
     nav = "".join(f'<li><a href="{h}"{" class=on" if n == active else ""}>{n}</a></li>' for n, h in NAV)
-    return f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    return ext_links(f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)}</title>{meta}{FONTS}<link rel="stylesheet" href="/assets/v2.css"></head><body>
-<header class="plate wrap"><div class="dateline"><span>{e(d['display_date'])}</span><span>Bay View, Milwaukee</span><span>No. {d['number']}</span></div>
+<header class="plate wrap"><div class="dateline"><span>{e(d['display_date'])}</span><span>Bay View, Milwaukee</span></div>
 <div class="rule"></div><h1><a href="/">The Bay View Bulletin</a></h1><p class="tag">Bay View's morning paper</p></header>
 <nav class="sections" aria-label="Sections"><ul>{nav}</ul></nav>
 <div class="wrap">{body}</div>
 <footer><div class="wrap">Covering Bay View from the harbor and Jones Island to Holt and Morgan avenues, I-43 to the lake.<br>
-Every item links to the original reporting. Photos belong to their credited owners. <a href="{TIPS}">Send a tip</a> · <a href="/about.html">About</a> · <a href="/archive.html">Archive</a></div></footer></body></html>"""
+Every item links to the original reporting. Photos belong to their credited owners. <a href="{TIPS}">Send a tip</a> · <a href="/about.html">About</a> · <a href="/archive.html">Archive</a></div></footer>
+<script>document.addEventListener('click',function(ev){{var a=ev.target.closest&&ev.target.closest('a[href]');if(a&&a.host&&a.host!==location.host){{a.target='_blank';a.rel='noopener'}}}},true);</script></body></html>""")
 
 
 ALL_STORIES = []
@@ -272,8 +283,8 @@ def build():
         active = {"food": "Food & Drink", "city": "City Hall", "safety": "Safety", "more": "More"}[key]
         body = f'<h1 class="pagehead">{e(title)}</h1>' + (listing(items) if items else '<p class="pagedek">No recent items. Check back tomorrow morning.</p>')
         (OUT / "section" / f"{key}.html").write_text(shell(title + " · The Bay View Bulletin", body, d, active))
-    arch = "".join(f'<a href="/issues/{x["date"]}.html"><span class="kicker">No. {x["number"]}</span><h3>{e(x["display_date"])}</h3><p>{e(x["greeting"][:160])}…</p></a>' for x in reversed(issues))
-    (OUT / "archive.html").write_text(shell("Archive · The Bay View Bulletin", f'<h1 class="pagehead">Every issue</h1><div class="list">{arch}</div>', d, ""))
+    arch = "".join(f'<a href="/issues/{x["date"]}.html"><h3>{e(x["display_date"])}</h3><p>{e(x["greeting"][:160])}…</p></a>' for x in reversed(issues))
+    (OUT / "archive.html").write_text(shell("Archive · The Bay View Bulletin", f'<h1 class="pagehead">Archive</h1><p class="pagedek">Every day&rsquo;s front page, newest first.</p><div class="list">{arch}</div>', d, ""))
     dirs = json.loads((ROOT / "content/directory.json").read_text())
     def socials(b):
         links = []
@@ -285,7 +296,7 @@ def build():
     rows = "".join(f'<div class="ev" style="grid-template-columns:minmax(0,1fr) auto"><div><span class="n">{e(b["name"])}</span><div class="w">{e(b["address"])}{" (verifying)" if b.get("verify") else ""}{socials(b)}</div></div><span class="pill">{e(b["type"])}</span></div>' for b in sorted(dirs, key=lambda b: b["name"].lower()))
     (OUT / "directory.html").write_text(shell("Directory · The Bay View Bulletin", f'<h1 class="pagehead">Bay View business directory</h1><p class="pagedek">The shops, venues and institutions we watch. Missing one? <a href="{TIPS}" style="color:var(--lake)">Tell us</a>.</p>{rows}', d, ""))
     about = f"""<article class="story"><h1>Bay View's morning paper</h1><div class="body">
-<p>The Bay View Bulletin is a free daily guide to what's happening in Milwaukee's Bay View neighborhood, published every weekday morning. We gather it from local news outlets, the neighborhood's own businesses and organizations, public social media posts and city records, and every item links back to the people who did the reporting.</p>
+<p>The Bay View Bulletin is a free daily guide to what's happening in Milwaukee's Bay View neighborhood, updated every morning. We gather it from local news outlets, the neighborhood's own businesses and organizations, public social media posts and city records, and every item links back to the people who did the reporting.</p>
 <p><strong>Where we cover:</strong> Bay View as neighbors know it, from the harbor and Jones Island south to Holt and Morgan avenues, and from I-43 east to Lake Michigan.</p>
 <p><strong>How we report:</strong> news from the last 24 hours plus what's coming up. Safety coverage sticks to notable incidents, and we never name private individuals. Protests and rallies are listed neutrally, for any cause. Photos come from the original source or free-licensed collections, always credited; if you own a photo and want it removed, tell us and it comes down.</p>
 <p><a class="btn" href="{TIPS}">Send a tip or a correction</a></p></div></article>"""
