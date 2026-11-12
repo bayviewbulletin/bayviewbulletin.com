@@ -275,7 +275,14 @@ def build():
     arch = "".join(f'<a href="/issues/{x["date"]}.html"><span class="kicker">No. {x["number"]}</span><h3>{e(x["display_date"])}</h3><p>{e(x["greeting"][:160])}…</p></a>' for x in reversed(issues))
     (OUT / "archive.html").write_text(shell("Archive · The Bay View Bulletin", f'<h1 class="pagehead">Every issue</h1><div class="list">{arch}</div>', d, ""))
     dirs = json.loads((ROOT / "content/directory.json").read_text())
-    rows = "".join(f'<div class="ev" style="grid-template-columns:minmax(0,1fr) auto"><div><span class="n">{e(b["name"])}</span><div class="w">{e(b["address"])}{" (verifying)" if b.get("verify") else ""}</div></div><span class="pill">{e(b["type"])}</span></div>' for b in sorted(dirs, key=lambda b: b["name"].lower()))
+    def socials(b):
+        links = []
+        if b.get("instagram"): links.append(f'<a href="https://www.instagram.com/{e(b["instagram"])}/" rel="noopener">Instagram</a>')
+        if b.get("facebook"): links.append(f'<a href="https://www.facebook.com/{e(b["facebook"])}" rel="noopener">Facebook</a>')
+        if b.get("x"): links.append(f'<a href="https://x.com/{e(b["x"])}" rel="noopener">X</a>')
+        if b.get("website"): links.append(f'<a href="{e(b["website"])}" rel="noopener">Website</a>')
+        return (' · ' + ' · '.join(links)) if links else ''
+    rows = "".join(f'<div class="ev" style="grid-template-columns:minmax(0,1fr) auto"><div><span class="n">{e(b["name"])}</span><div class="w">{e(b["address"])}{" (verifying)" if b.get("verify") else ""}{socials(b)}</div></div><span class="pill">{e(b["type"])}</span></div>' for b in sorted(dirs, key=lambda b: b["name"].lower()))
     (OUT / "directory.html").write_text(shell("Directory · The Bay View Bulletin", f'<h1 class="pagehead">Bay View business directory</h1><p class="pagedek">The shops, venues and institutions we watch. Missing one? <a href="{TIPS}" style="color:var(--lake)">Tell us</a>.</p>{rows}', d, ""))
     about = f"""<article class="story"><h1>Bay View's morning paper</h1><div class="body">
 <p>The Bay View Bulletin is a free daily guide to what's happening in Milwaukee's Bay View neighborhood, published every weekday morning. We gather it from local news outlets, the neighborhood's own businesses and organizations, public social media posts and city records, and every item links back to the people who did the reporting.</p>

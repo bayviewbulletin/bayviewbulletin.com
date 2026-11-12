@@ -14,6 +14,13 @@
   "lon": -87.90385
  },
  {
+  "name": "Afterglow MKE",
+  "type": "Barre & Pilates studio",
+  "address": "2442 S. Kinnickinnic Ave.",
+  "lat": 43.00041,
+  "lon": -87.90205
+ },
+ {
   "name": "Alive and Fine",
   "type": "Vintage clothing",
   "address": "2652 S. Kinnickinnic Ave.",
@@ -112,6 +119,20 @@
   "lon": -87.88488
  },
  {
+  "name": "Brew-Jas Coffee House",
+  "type": "Coffee",
+  "address": "2721 S. Howell Ave.",
+  "lat": 42.99497,
+  "lon": -87.90435
+ },
+ {
+  "name": "Brickyard Gym",
+  "type": "Gym",
+  "address": "2651 S. Kinnickinnic Ave.",
+  "lat": 42.99672,
+  "lon": -87.89824
+ },
+ {
   "name": "The Bubbler & Vinchi's Pizza",
   "type": "Tavern & pizza",
   "address": "3158 S. Howell Ave.",
@@ -182,6 +203,14 @@
   "lon": -87.89764
  },
  {
+  "name": "Cream City CrossFit",
+  "type": "CrossFit gym (co-op)",
+  "address": "2715 S. Gladstone Pl.",
+  "instagram": "creamcitycrossfit",
+  "lat": 42.99495,
+  "lon": -87.91005
+ },
+ {
   "name": "Delaware House",
   "type": "Dance, yoga & wellness studio",
   "address": "2499 S. Delaware Ave.",
@@ -194,6 +223,13 @@
   "address": "2273 S. Howell Ave.",
   "lat": 43.00313,
   "lon": -87.90506
+ },
+ {
+  "name": "Ela Mari Boutique",
+  "type": "Women's boutique",
+  "address": "2483 S. Kinnickinnic Ave.",
+  "lat": 43.00021,
+  "lon": -87.90206
  },
  {
   "name": "Enlightened Brewing Company",
@@ -214,7 +250,8 @@
   "type": "Yarn shop",
   "address": "2224 S. Kinnickinnic Ave.",
   "lat": 43.00407,
-  "lon": -87.90508
+  "lon": -87.90508,
+  "instagram": "fiberfeverco"
  },
  {
   "name": "Goodkind",
@@ -231,11 +268,32 @@
   "lon": -87.88076
  },
  {
+  "name": "Guanajuato",
+  "type": "Mexican restaurant",
+  "address": "2317 S. Howell Ave.",
+  "lat": 43.00257,
+  "lon": -87.90482
+ },
+ {
   "name": "Happy Dough Lucky",
   "type": "Donuts, pizza & bar",
   "address": "2691 S. Kinnickinnic Ave.",
   "lat": 42.99605,
   "lon": -87.89717
+ },
+ {
+  "name": "Healium HIIT",
+  "type": "Fitness studio",
+  "address": "2865 S. Kinnickinnic Ave.",
+  "lat": 42.99242,
+  "lon": -87.88937
+ },
+ {
+  "name": "Healium Hot Yoga Bay View",
+  "type": "Yoga studio",
+  "address": "2534 S. Kinnickinnic Ave.",
+  "lat": 42.99898,
+  "lon": -87.90086
  },
  {
   "name": "Hi-Fi Cafe",
@@ -278,6 +336,20 @@
   "address": "2035 S. 1st St.",
   "lat": 43.00266,
   "lon": -87.91135
+ },
+ {
+  "name": "Jasher's Organic Tea House",
+  "type": "Tea house",
+  "address": "2690 S. Kinnickinnic Ave.",
+  "lat": 42.99617,
+  "lon": -87.89701
+ },
+ {
+  "name": "Kinn Guesthouse Bay View",
+  "type": "Boutique hotel",
+  "address": "2535 S. Kinnickinnic Ave.",
+  "lat": 42.99867,
+  "lon": -87.90078
  },
  {
   "name": "Lion's Tooth",
@@ -420,6 +492,21 @@
   "lon": -87.90157
  },
  {
+  "name": "Small Change",
+  "type": "Salon & coffee bar",
+  "address": "2625 S. Greeley St.",
+  "lat": 42.99652,
+  "lon": -87.90935
+ },
+ {
+  "name": "SmallPie",
+  "type": "Pie cafe",
+  "address": "2504 E. Oklahoma Ave.",
+  "instagram": "smallpiemke",
+  "lat": 42.98821,
+  "lon": -87.87808
+ },
+ {
   "name": "Snap Fitness Bay View",
   "type": "Gym",
   "address": "2450 S. Kinnickinnic Ave.",
@@ -441,6 +528,13 @@
   "lon": -87.90492
  },
  {
+  "name": "Tip Top Atomic Shop",
+  "type": "Vintage & rockabilly",
+  "address": "2343 S. Kinnickinnic Ave.",
+  "lat": 43.00201,
+  "lon": -87.90357
+ },
+ {
   "name": "Toppers Pizza",
   "type": "Pizza",
   "address": "2262 S. Kinnickinnic Ave.",
@@ -448,11 +542,26 @@
   "lon": -87.90453
  },
  {
+  "name": "Torzala Brewing Co.",
+  "type": "Brewery",
+  "address": "2018 S. 1st St.",
+  "lat": 43.00781,
+  "lon": -87.91114
+ },
+ {
   "name": "Twisted Path Distillery",
   "type": "Distillery & tasting room",
   "address": "2018 S. 1st St.",
   "lat": 43.00781,
   "lon": -87.91114
+ },
+ {
+  "name": "URSA",
+  "type": "Lifestyle boutique",
+  "address": "2534 S. Kinnickinnic Ave.",
+  "instagram": "shopursa",
+  "lat": 42.99898,
+  "lon": -87.90086
  },
  {
   "name": "Vanguard",
@@ -474,6 +583,13 @@
   "address": "2680 S. Kinnickinnic Ave.",
   "lat": 42.99629,
   "lon": -87.89724
+ },
+ {
+  "name": "Wheel & Sprocket and Joy Ride Cafe",
+  "type": "Bike shop & cafe",
+  "address": "187 E. Becher St.",
+  "lat": 43.00645,
+  "lon": -87.91044
  },
  {
   "name": "Wioletta's Polish Market",
