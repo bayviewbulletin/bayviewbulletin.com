@@ -45,7 +45,24 @@
    }
   ],
   "openings": [],
-  "development": [],
+  "development": [
+   {
+    "title": "We Energies rate hike approved, but smaller than requested",
+    "body": "State regulators approved a smaller two-year increase than the utility had sought, its sixth hike in six years. The Common Council then voted 15-0 to fund a study of a city takeover of the utility, which still needs the mayor's approval.",
+    "tag": "Government",
+    "source_name": "Wisconsin Watch via Milwaukee NNS",
+    "source_url": "https://milwaukeenns.org/2026/11/10/wisconsin-we-energies-customers-another-rate-hike-but-smaller-public-service-commission-regulators-utility/",
+    "image": {
+     "src": "https://i0.wp.com/milwaukeenns.org/wp-content/uploads/2026/11/asseDSC_4052-scaled-1.jpg",
+     "alt": "A We Energies building in Milwaukee",
+     "credit": "Jonathan Aguilar / Milwaukee NNS / CatchLight Local",
+     "credit_url": "https://milwaukeenns.org/2026/11/10/wisconsin-we-energies-customers-another-rate-hike-but-smaller-public-service-commission-regulators-utility/"
+    },
+    "citywide": true,
+    "date": "2026-11-10",
+    "dek": "Bills will go up again, by less than the utility asked; the Common Council wants to study a city takeover."
+   }
+  ],
   "streets": [
    {
     "title": "Leaf rake-out extended two weeks, to Nov. 29",
@@ -92,7 +109,8 @@
      "credit": "Michael Barera, CC BY-SA 4.0 / Wikimedia Commons",
      "credit_url": "https://commons.wikimedia.org/wiki/File:Milwaukee_June_2022_08_(Discovery_World).jpg"
     },
-    "dek": "Cassellius lays out district priorities this morning at Discovery World."
+    "dek": "Cassellius lays out district priorities this morning at Discovery World.",
+    "citywide": true
    },
    {
     "title": "Last community meeting before MPS drafts its school closures plan",
@@ -107,7 +125,8 @@
      "credit": "Rorr404, CC0 / Wikimedia Commons",
      "credit_url": "https://commons.wikimedia.org/wiki/File:2024_08_07_Bay_View_High_School.jpg"
     },
-    "dek": "Monday's 6 p.m. session at North Division is the last before a closures plan."
+    "dek": "Monday's 6 p.m. session at North Division is the last before a closures plan.",
+    "citywide": true
    }
   ],
   "parks": [],
@@ -157,7 +176,26 @@
    }
   ],
   "pets": [],
-  "sports": [],
+  "sports": [
+   {
+    "title": "The Miz is the NL Cy Young winner, unanimously",
+    "body": "The Brewers' Jacob Misiorowski won the National League Cy Young Award Wednesday night in a unanimous vote, capping his first full season in the majors. That season ended with Milwaukee's first World Series title.",
+    "tag": "Sports",
+    "source_name": "DrydenWire / AP",
+    "source_url": "https://drydenwire.com/news/morning-headlines-thursday-nov-12-2026",
+    "image": {
+     "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Miller_Park_in_2007.jpg?width=800",
+     "alt": "The Brewers' ballpark",
+     "credit": "Towpilot, CC BY 3.0 / Wikimedia Commons",
+     "credit_url": "https://commons.wikimedia.org/wiki/File:Miller_Park_in_2007.jpg"
+    },
+    "lat": 43.0287,
+    "lon": -87.97281,
+    "citywide": true,
+    "date": "2026-11-12",
+    "dek": "The Brewers' Jacob Misiorowski won the NL Cy Young in a unanimous vote."
+   }
+  ],
   "remembrances": [],
   "spotlight": [
    {
@@ -355,138 +393,7 @@
    "date": "Oct. 2"
   }
  ],
- "milwaukee": [
-  {
-   "title": "The Miz is the NL Cy Young winner, unanimously",
-   "body": "The Brewers' Jacob Misiorowski won the National League Cy Young Award Wednesday night in a unanimous vote, capping his first full season in the majors. That season ended with Milwaukee's first World Series title.",
-   "tag": "Sports",
-   "source_name": "DrydenWire / AP",
-   "source_url": "https://drydenwire.com/news/morning-headlines-thursday-nov-12-2026",
-   "image": {
-    "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Miller_Park_in_2007.jpg?width=800",
-    "alt": "The Brewers' ballpark",
-    "credit": "Towpilot, CC BY 3.0 / Wikimedia Commons",
-    "credit_url": "https://commons.wikimedia.org/wiki/File:Miller_Park_in_2007.jpg"
-   },
-   "lat": 43.0287,
-   "lon": -87.97281
-  },
-  {
-   "title": "We Energies rate hike approved, but smaller than requested",
-   "body": "State regulators approved a smaller two-year increase than the utility had sought, its sixth hike in six years. The Common Council then voted 15-0 to fund a study of a city takeover of the utility, which still needs the mayor's approval.",
-   "tag": "Government",
-   "source_name": "Wisconsin Watch via Milwaukee NNS",
-   "source_url": "https://milwaukeenns.org/2026/11/10/wisconsin-we-energies-customers-another-rate-hike-but-smaller-public-service-commission-regulators-utility/",
-   "image": {
-    "src": "https://i0.wp.com/milwaukeenns.org/wp-content/uploads/2026/11/asseDSC_4052-scaled-1.jpg",
-    "alt": "A We Energies building in Milwaukee",
-    "credit": "Jonathan Aguilar / Milwaukee NNS / CatchLight Local",
-    "credit_url": "https://milwaukeenns.org/2026/11/10/wisconsin-we-energies-customers-another-rate-hike-but-smaller-public-service-commission-regulators-utility/"
-   }
-  },
-  {
-   "title": "MPS State of Our Schools address at Discovery World",
-   "body": "Superintendent Cassellius is laying out the district's progress and priorities this morning to community, civic and business leaders.",
-   "tag": "Schools",
-   "source_name": "WISN 12",
-   "source_url": "https://www.wisn.com/article/milwaukee-public-schools-superintendent-address/74411155",
-   "image": {
-    "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Milwaukee_June_2022_05_(Discovery_World).jpg?width=800",
-    "alt": "Discovery World",
-    "credit": "Michael Barera, CC BY-SA 4.0 / Wikimedia Commons",
-    "credit_url": "https://commons.wikimedia.org/wiki/File:Milwaukee_June_2022_05_(Discovery_World).jpg"
-   },
-   "lat": 43.03691,
-   "lon": -87.89614
-  },
-  {
-   "title": "MPS school closures: one community meeting left",
-   "body": "A post-election push for more state funding could change the math. The final listening session is Monday, Nov. 16, at North Division High School.",
-   "tag": "Schools",
-   "source_name": "WUWM",
-   "source_url": "https://www.wuwm.com/which-schools-will-mps-close-new-hopes-for-funding-after-election-of-democratic-trifecta",
-   "image": {
-    "src": "https://commons.wikimedia.org/wiki/Special:FilePath/2024_08_07_Bay_View_High_School.jpg?width=800",
-    "alt": "Bay View High School",
-    "credit": "Rorr404, CC0 / Wikimedia Commons",
-    "credit_url": "https://commons.wikimedia.org/wiki/File:2024_08_07_Bay_View_High_School.jpg"
-   },
-   "lat": 43.06658,
-   "lon": -87.92595
-  },
-  {
-   "title": "Wisconsin Supreme Court to hear the Act 10 appeal",
-   "body": "The state's highest court will take up the challenge to the 2011 law limiting most public workers' collective bargaining. An appeals court upheld the law in July.",
-   "tag": "Government",
-   "source_name": "DrydenWire",
-   "source_url": "https://drydenwire.com/news/morning-headlines-thursday-nov-12-2026",
-   "image": {
-    "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Rotunda_-_Wisconsin_State_Capitol_-_DSC03106.JPG?width=800",
-    "alt": "Wisconsin State Capitol rotunda",
-    "credit": "Daderot, CC0 / Wikimedia Commons",
-    "credit_url": "https://commons.wikimedia.org/wiki/File:Rotunda_-_Wisconsin_State_Capitol_-_DSC03106.JPG"
-   }
-  },
-  {
-   "title": "Homicide charge in the death of a longtime MPS teacher",
-   "body": "Prosecutors charged a 22-year-old with first-degree intentional homicide in the Nov. 5 death of a special education teacher and Roosevelt football coach near 12th and Walnut.",
-   "tag": "Public safety",
-   "source_name": "TMJ4",
-   "source_url": "https://www.tmj4.com/news/local-news/county-reporting/milwaukee-county/22-year-old-charged-with-intentional-homicide-in-death-of-milwaukee-teacher"
-  },
-  {
-   "title": "Domestic violence high-risk caseload has more than doubled",
-   "body": "Milwaukee's Domestic Violence High Risk Team, run through Sojourner Family Peace Center, staffed 1,685 cases in 2025, up 113% from 2019. If you or someone you know needs help, Sojourner's 24-hour hotline is (414) 933-2722.",
-   "tag": "Public safety",
-   "source_name": "FOX6",
-   "source_url": "https://www.fox6now.com/news/milwaukee-domestic-violence-death-prevention"
-  },
-  {
-   "title": "Fire & Police Commission meets this morning",
-   "body": "The Board of Fire & Police Commissioners meets at 8:30 a.m. in City Hall, Room 301-A.",
-   "tag": "Government",
-   "source_name": "City of Milwaukee calendar",
-   "source_url": "https://city.milwaukee.gov/News-Events/calendar",
-   "image": {
-    "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Milwaukee_August_2022_072_(Milwaukee_City_Hall).jpg?width=800",
-    "alt": "Milwaukee City Hall",
-    "credit": "Michael Barera, CC BY-SA 4.0 / Wikimedia Commons",
-    "credit_url": "https://commons.wikimedia.org/wiki/File:Milwaukee_August_2022_072_(Milwaukee_City_Hall).jpg"
-   },
-   "lat": 43.04171,
-   "lon": -87.90975
-  },
-  {
-   "title": "This weekend: Pentatonix, Steve Martin & Martin Short, and holiday kickoffs",
-   "body": "Big shows downtown, an open house at the Milwaukee Intertribal Circle's new gathering space, and Washington Heights' old-fashioned holiday kickoff.",
-   "tag": "Culture",
-   "source_name": "WTMJ",
-   "source_url": "https://wtmj.com/shows/whats-on-tap/2026/11/12/pentatonix-holiday-events-things-to-do-milwaukee-11-12-26/",
-   "image": {
-    "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Milwaukee_August_2022_102_(Marcus_Center).jpg?width=800",
-    "alt": "Marcus Performing Arts Center",
-    "credit": "Michael Barera, CC BY-SA 4.0 / Wikimedia Commons",
-    "credit_url": "https://commons.wikimedia.org/wiki/File:Milwaukee_August_2022_102_(Marcus_Center).jpg"
-   },
-   "lat": 43.04291,
-   "lon": -87.91119
-  },
-  {
-   "title": "Marquette signs three for its 2027 class",
-   "body": "Shaka Smart talked through what he likes about the Golden Eagles' newest recruits.",
-   "tag": "Sports",
-   "source_name": "Milwaukee Journal Sentinel via Yahoo",
-   "source_url": "https://sports.yahoo.com/articles/heres-shaka-smart-said-marquettes-165747797.html",
-   "image": {
-    "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Milwaukee_July_2022_022_(Fiserv_Forum).jpg?width=800",
-    "alt": "Fiserv Forum",
-    "credit": "Michael Barera, CC BY-SA 4.0 / Wikimedia Commons",
-    "credit_url": "https://commons.wikimedia.org/wiki/File:Milwaukee_July_2022_022_(Fiserv_Forum).jpg"
-   },
-   "lat": 43.04377,
-   "lon": -87.91594
-  }
- ],
+ "milwaukee": [],
  "history": {
   "year": "1882",
   "text": "The North Chicago Rolling Mill (the iron works Bay View grew up around) as it looked in 1882. The village of Bay View had incorporated three years earlier with 2,592 people as Milwaukee's first suburb, and residents voted to join the city in 1887.",

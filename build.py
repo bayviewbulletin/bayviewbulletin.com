@@ -10,7 +10,7 @@ OUT = ROOT / ("preview_v2" if "--preview" in sys.argv else "docs")
 TIPS = "https://docs.google.com/forms/d/e/1FAIpQLSfXNc2RsIhvMPCfcZ9CYb6QIx78RZSr2Ar3YzT5ik9xyPhi7Q/viewform"
 e = lambda s: html.escape(str(s or ""), quote=True)
 NAV = [("Today", "/"), ("Events", "/events.html"), ("Map", "/map.html"), ("Food & Drink", "/section/food.html"), ("City Hall", "/section/city.html"),
-       ("Safety", "/section/safety.html"), ("Milwaukee", "/milwaukee.html"), ("More", "/section/more.html"), ("Search", "/search.html")]
+       ("Safety", "/section/safety.html"), ("More", "/section/more.html"), ("Search", "/search.html")]
 SECTION_OF = {"top": "Bay View", "openings": "Food & Drink", "development": "City Hall", "streets": "Streets", "schools": "Schools",
               "parks": "Parks", "protests": "Protests", "safety": "Safety", "realestate": "Real estate", "help": "Ways to help",
               "fishfry": "Fish fry", "pets": "Pets", "sports": "Sports", "remembrances": "Remembrances", "spotlight": "Business spotlight"}
@@ -157,6 +157,11 @@ Every item links to the original reporting. Photos belong to their credited owne
 ALL_STORIES = []
 
 
+def srcmeta(s):
+    """Source line under a headline; citywide stories that affect Bay View get a Citywide label."""
+    return ("Citywide · " if s.get("citywide") else "") + (s.get("source_name") or "")
+
+
 def build_one(d, newest):
     day = dt.date.fromisoformat(d["date"])
 
@@ -178,7 +183,7 @@ def build_one(d, newest):
         others = "".join(f'<a href="{o["url"]}"><span class="kicker">{e(o["section"])}</span><h3>{e(o["title"])}</h3><p>{e(dek(o))}</p></a>' for o in stories if o is not s)[:6000]
         img = (f'<figure><img src="{e(s["image"]["src"])}" alt="{e(s["image"]["alt"])}"><div class="cap">Photo: <a href="{e(s["image"]["credit_url"])}">{e(s["image"]["credit"])}</a></div></figure>') if s.get("image") else ""
         src = f'<a class="btn" href="{e(s["source_url"])}">Read the full story at {e(s["source_name"])} →</a>' if s.get("source_url") else ""
-        body = (f'<article class="story"><span class="kicker">{e(s["section"])} · {e(d["display_date"])}</span><h1>{e(s["title"])}</h1>{img}'
+        body = (f'<article class="story"><span class="kicker">{e(s["section"])}{" · Citywide" if s.get("citywide") else ""} · {e(d["display_date"])}</span><h1>{e(s["title"])}</h1>{img}'
                 f'<div class="body"><p>{e(s.get("body"))}</p></div>{src}<section class="more side"><h2>More from Bay View today</h2>{others}</section></article>')
         (OUT / s["url"].lstrip("/")).write_text(shell(s["title"] + " · The Bay View Bulletin", body, d, "", {"title": s["title"], "desc": dek(s), "image": (s.get("image") or {}).get("src"), "type": "article"}, s["url"]))
 
@@ -212,7 +217,7 @@ def build_one(d, newest):
 
     def row(s, kicker=True):
         img = f'<img src="{e(s["image"]["src"])}" alt="">' if s.get("image") else ""
-        return f'<a class="row{"" if img else " noimg"}" href="{s["url"]}">{img}<div>{('<span class="kicker">' + e(s["section"]) + '</span>') if kicker else ""}<h3>{e(s["title"])}</h3><p>{e(dek(s))}</p><div class="meta">{e(s["source_name"])}</div></div></a>'
+        return f'<a class="row{"" if img else " noimg"}" href="{s["url"]}">{img}<div>{('<span class="kicker">' + e(s["section"]) + '</span>') if kicker else ""}<h3>{e(s["title"])}</h3><p>{e(dek(s))}</p><div class="meta">{e(srcmeta(s))}</div></div></a>'
     groups = {}
     for s_ in rest:
         if s_ in side_items:
@@ -226,11 +231,10 @@ def build_one(d, newest):
     hist = (f'<section class="block"><h2>Bay View history</h2><div class="hist"><div><img src="{e(h["image"]["src"])}" alt="{e(h["image"]["alt"])}"><div class="cap">{e(h["image"]["credit"])}</div></div>'
             f'<div><div class="yr">{e(h["year"])}</div><p>{e(h["text"])}</p><a class="kicker" href="{e(h["source_url"])}">{e(h["source_name"])} →</a></div></div></section>') if h else ""
     home = (f'<div class="utils">{util_html}</div>{ticker}'
-            f'<section class="front"><a class="lead" href="{lead["url"]}">{lead_img}<span class="kicker">{e(lead["section"])}</span><h2>{e(lead["title"])}</h2><p>{e(dek(lead))}</p><div class="meta">{e(lead["source_name"])}</div></a>'
+            f'<section class="front"><a class="lead" href="{lead["url"]}">{lead_img}<span class="kicker">{e(lead["section"])}</span><h2>{e(lead["title"])}</h2><p>{e(dek(lead))}</p><div class="meta">{e(srcmeta(lead))}</div></a>'
             f'<div class="side">{side}</div></section>'
             f'<section class="tonight"><h2><span>Tonight in Bay View</span><a href="/events.html">All events →</a></h2><div class="chips">{chips}</div></section>'
             f'<div class="topics">{topics}</div>'
-            f'<a class="mke" href="/milwaukee.html"><div><div class="k">Milwaukee today · {len(mke)} stories</div><div class="hl">{e(mke[0]["title"]) if mke else ""}</div></div><span class="go">Read Milwaukee →</span></a>'
             f'{hist}')
     (OUT / "issues").mkdir(exist_ok=True)
     (OUT / "issues" / f'{d["date"]}.html').write_text(shell("The Bay View Bulletin · " + d["display_date"], home, d))
@@ -261,8 +265,8 @@ function fromHash(){var h=decodeURIComponent(location.hash.slice(1));show(bs.som
     (OUT / "events.html").write_text(shell("Events · The Bay View Bulletin", f'<h1 class="pagehead">Events in Bay View</h1><p class="pagedek">Shows, family time, markets and meetings, today and ahead.</p>{filt}{"".join(cal)}{filt_js}', d, "Events"))
 
     # milwaukee
-    lst = "".join(f'<a href="{e(m["source_url"])}"><span class="kicker">{e(m.get("tag"))}</span><h3>{e(m["title"])}</h3><p>{e(m.get("body"))}</p><div class="meta">{e(m["source_name"])}</div></a>' for m in mke)
-    (OUT / "milwaukee.html").write_text(shell("Milwaukee · The Bay View Bulletin", f'<h1 class="pagehead">Milwaukee today</h1><p class="pagedek">The citywide news that matters to Bay View: as many stories as the day calls for.</p><div class="list">{lst}</div>', d, "Milwaukee"))
+    # The Milwaukee section was retired Nov. 12, 2026 (citywide news that affects Bay View now runs in the topic blocks).
+    (OUT / "milwaukee.html").write_text('<!DOCTYPE html><meta charset="utf-8"><title>The Bay View Bulletin</title><link rel="canonical" href="/"><meta http-equiv="refresh" content="0; url=/"><a href="/">The Bay View Bulletin</a>')
 
 
 SECTION_PAGES = {"food": ("Food & Drink", {"Food & Drink", "Fish fry"}), "city": ("City Hall", {"City Hall", "Streets", "Bay View"}),
@@ -318,11 +322,10 @@ def build():
     (OUT / "about.html").write_text(shell("About · The Bay View Bulletin", about, d, ""))
     # search index + page
     idx = [{"t": s["title"], "d": dek(s), "u": s["url"], "k": s["section"], "dt": s["display_date"]} for s in recent]
-    idx += [{"t": m["title"], "d": m.get("body", "")[:160], "u": m["source_url"], "k": "Milwaukee", "dt": x["display_date"]} for x in issues for m in x.get("milwaukee", [])]
     idx += [{"t": b["name"], "d": b["type"] + " · " + b["address"], "u": "/directory.html", "k": "Directory", "dt": ""} for b in dirs]
     idx += [{"t": ev["title"], "d": ev["when"] + " · " + ev["where"], "u": "/events.html", "k": "Event", "dt": ev["day"]} for ev in d["events"]]
     (OUT / "search.json").write_text(json.dumps(idx, ensure_ascii=False))
-    search = f"""<h1 class="pagehead">Search</h1><p class="pagedek">Stories, events, Milwaukee news and Bay View businesses.</p>
+    search = f"""<h1 class="pagehead">Search</h1><p class="pagedek">Stories, events and Bay View businesses.</p>
 <input id="q" type="search" placeholder="Try: pizza, Cactus Club, parking, MPS" autofocus style="width:100%;font:400 20px var(--sans);padding:12px 14px;border:2px solid var(--ink);border-radius:4px;background:var(--paper);color:var(--ink)">
 <p id="n" class="pagedek" style="margin-top:10px"></p><div class="list" id="r"></div>
 <script>
@@ -343,13 +346,10 @@ q.addEventListener('input',go);const p=new URLSearchParams(location.search).get(
         v = next((b for b in dirs if b.get("lat") and (b["name"].split(" (")[0] in ev["where"] or b["address"].split(" ")[0] in ev["where"])), None)
         if ev.get("lat") or v:
             pts.append({"n": ev["title"], "s": ev["day"] + " · " + ev["when"] + " · " + ev["where"], "lat": ev.get("lat") or v["lat"], "lon": ev.get("lon") or v["lon"], "c": "ev", "u": ev["link"]})
-    for mk in d.get("milwaukee", []):
-        if mk.get("lat"):
-            pts.append({"n": mk["title"], "s": "Milwaukee · " + mk.get("tag", ""), "lat": mk["lat"], "lon": mk["lon"], "c": "mke", "u": mk["source_url"]})
     for st in [x for x in ALL_STORIES if x["issue_date"] == d["date"] and x.get("lat")]:
         pts.append({"n": st["title"], "s": st["section"], "lat": st["lat"], "lon": st["lon"], "c": "story", "u": st["url"]})
     leaflet = '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>'
-    mapbody = f"""<h1 class="pagehead">Bay View map</h1><p class="pagedek"><span style="color:var(--warm)">●</span> Events &nbsp; <span style="color:var(--lake)">●</span> Today's Bay View stories &nbsp; <span style="color:#6B4FA0">●</span> Milwaukee stories</p>
+    mapbody = f"""<h1 class="pagehead">Bay View map</h1><p class="pagedek"><span style="color:var(--warm)">●</span> Events &nbsp; <span style="color:var(--lake)">●</span> Today's Bay View stories</p>
 <div id="map" style="height:70vh;min-height:420px;border:1px solid var(--rule)"></div>
 <script>
 const P={json.dumps(pts, ensure_ascii=False)};
