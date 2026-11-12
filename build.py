@@ -70,11 +70,11 @@ nav.sections{border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)
 nav.sections ul{list-style:none;margin:0 auto;padding:0 20px;max-width:1140px;display:flex;gap:26px;justify-content:center}
 nav.sections a{display:inline-block;padding:11px 0;font:600 15px var(--sans)}nav.sections a.on{box-shadow:inset 0 -3px var(--lake)}
 @media(max-width:700px){nav.sections ul{justify-content:flex-start}}
-.utils{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-bottom:1px solid var(--rule);margin-bottom:22px}
+.utils{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-bottom:1px solid var(--rule);margin-bottom:22px}
 .util{padding:12px 14px;border-right:1px solid var(--rule);display:grid;gap:2px;align-content:start}.util:last-child{border-right:0}
 .util .k{font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.util .v{font:700 17px var(--serif)}.util .s{font-size:13px;color:var(--muted)}
 .util.alert .v{color:var(--warm)}.util .k::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--lake);margin-right:6px;vertical-align:1px}.util.warm .k::before{background:var(--warm)}
-@media(max-width:900px){.utils{grid-template-columns:repeat(4,1fr)}.util:nth-child(4n){border-right:0}.util:nth-child(-n+4){border-bottom:1px solid var(--rule)}}
+@media(max-width:900px){.utils{grid-template-columns:repeat(3,1fr)}.util:nth-child(3n){border-right:0}.util:nth-child(-n+3){border-bottom:1px solid var(--rule)}}
 .school{border-top:1px solid var(--rule);padding:14px 0}.school h2{font:700 22px/1.2 var(--serif);margin:0 0 4px}.school ul{margin:8px 0;padding-left:18px;font:15px/1.6 var(--sans)}.school .src{font:13px var(--sans);color:var(--muted)}
 @media(max-width:520px){.utils{display:flex;overflow-x:auto}.util{min-width:150px;border-bottom:0!important;border-right:1px solid var(--rule)!important}}
 .ticker{display:flex;gap:12px;align-items:center;font-size:15px;border-bottom:1px solid var(--rule);padding:0 0 12px;margin:-10px 0 22px;overflow:hidden;white-space:nowrap}.ticker b{flex:0 0 auto;font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--warm);padding:3px 7px;border-radius:2px;position:relative;z-index:1}.ticker .vp{flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent)}.ticker .track{display:inline-flex;animation:tick var(--dur,40s) linear infinite}.ticker:hover .track,.ticker:focus-within .track{animation-play-state:paused}.ticker .set{display:inline-flex}.ticker .set span{padding-right:14px}.ticker .set span::after{content:"\\00B7";margin-left:14px;color:var(--muted)}@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.ticker .vp{overflow-x:auto}.ticker .track{animation:none}.ticker .set+.set{display:none}}
@@ -280,7 +280,6 @@ def build_one(d, newest):
         return (label, x.get("v") or fallback_v, x.get("s") or fallback_s, x.get("class", ""), x.get("href") or href)
     utils = [
         ut("weather", "Weather", "Today's forecast →", "National Weather Service", "https://forecast.weather.gov/MapClick.php?lat=42.99&lon=-87.89"),
-        ut("lake", "Lake", "Marine forecast →", "Wind & waves off South Shore", "https://forecast.weather.gov/MapClick.php?zoneid=LMZ645"),
         ("Parking", f"Winter rules in {days_to_winter} days" if days_to_winter > 0 else "Winter rules in effect", "Dec 1 – Mar 1", "warm" if 0 < days_to_winter <= 7 else "", "https://city.milwaukee.gov/mpw/parking/meter"),
         ("Today", f"{len(today_events)} things to do" if today_events else "Quiet day", "See today's list", "warm", "/events.html"),
         ut("pickup", "Pickup & roads", "Your pickup day →", "City sanitation schedule", "https://city.milwaukee.gov/sanitation"),
