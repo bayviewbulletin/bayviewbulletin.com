@@ -70,11 +70,12 @@ nav.sections{border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)
 nav.sections ul{list-style:none;margin:0 auto;padding:0 20px;max-width:1140px;display:flex;gap:26px;justify-content:center}
 nav.sections a{display:inline-block;padding:11px 0;font:600 15px var(--sans)}nav.sections a.on{box-shadow:inset 0 -3px var(--lake)}
 @media(max-width:700px){nav.sections ul{justify-content:flex-start}}
-.utils{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-bottom:1px solid var(--rule);margin-bottom:22px}
+.utils{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-bottom:1px solid var(--rule);margin-bottom:22px}
 .util{padding:12px 14px;border-right:1px solid var(--rule);display:grid;gap:2px;align-content:start}.util:last-child{border-right:0}
 .util .k{font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.util .v{font:700 17px var(--serif)}.util .s{font-size:13px;color:var(--muted)}
 .util.alert .v{color:var(--warm)}.util .k::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--lake);margin-right:6px;vertical-align:1px}.util.warm .k::before{background:var(--warm)}
-@media(max-width:900px){.utils{grid-template-columns:repeat(3,1fr)}.util:nth-child(3n){border-right:0}.util:nth-child(-n+3){border-bottom:1px solid var(--rule)}}
+@media(max-width:900px){.utils{grid-template-columns:repeat(4,1fr)}.util:nth-child(4n){border-right:0}.util:nth-child(-n+4){border-bottom:1px solid var(--rule)}}
+.school{border-top:1px solid var(--rule);padding:14px 0}.school h2{font:700 22px/1.2 var(--serif);margin:0 0 4px}.school ul{margin:8px 0;padding-left:18px;font:15px/1.6 var(--sans)}.school .src{font:13px var(--sans);color:var(--muted)}
 @media(max-width:520px){.utils{display:flex;overflow-x:auto}.util{min-width:150px;border-bottom:0!important;border-right:1px solid var(--rule)!important}}
 .ticker{display:flex;gap:12px;align-items:center;font-size:15px;border-bottom:1px solid var(--rule);padding:0 0 12px;margin:-10px 0 22px;overflow:hidden;white-space:nowrap}.ticker b{flex:0 0 auto;font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--warm);padding:3px 7px;border-radius:2px;position:relative;z-index:1}.ticker .vp{flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent)}.ticker .track{display:inline-flex;animation:tick var(--dur,40s) linear infinite}.ticker:hover .track,.ticker:focus-within .track{animation-play-state:paused}.ticker .set{display:inline-flex}.ticker .set span{padding-right:14px}.ticker .set span::after{content:"\\00B7";margin-left:14px;color:var(--muted)}@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.ticker .vp{overflow-x:auto}.ticker .track{animation:none}.ticker .set+.set{display:none}}
 .front{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:28px;padding-bottom:24px;border-bottom:1px solid var(--ink)}
@@ -150,7 +151,7 @@ def shell(title, body, d, active="Today", og=None, path="/", head=""):
 <nav class="sections" aria-label="Sections"><ul>{nav}</ul></nav>
 <div class="wrap">{body}</div>
 <footer><div class="wrap">Covering Bay View from the harbor and Jones Island to Holt and Morgan avenues, I-43 to the lake.<br>
-Every item links to the original reporting. Photos belong to their credited owners. <a href="{TIPS}">Send a tip</a> · <a href="/about.html">About</a> · <a href="/archive.html">Archive</a></div></footer>
+Every item links to the original reporting. Photos belong to their credited owners. <a href="{TIPS}">Send a tip</a> · <a href="/about.html">About</a> · <a href="/schools.html">School days off</a> · <a href="/archive.html">Archive</a></div></footer>
 <script>document.addEventListener('click',function(ev){{var a=ev.target.closest&&ev.target.closest('a[href]');if(a&&a.host&&a.host!==location.host){{a.target='_blank';a.rel='noopener'}}}},true);</script></body></html>""")
 
 
@@ -161,6 +162,84 @@ BRIEFS = []  # older headlines (launch catch-up) that link straight to the sourc
 def srcmeta(s):
     """Source line under a headline; citywide stories that affect Bay View get a Citywide label."""
     return ("Citywide · " if s.get("citywide") else "") + (s.get("source_name") or "")
+
+
+SCHOOLS = json.loads((ROOT / "content/school_calendar.json").read_text())["schools"]
+
+
+def school_off(sch, day):
+    """Label if students at this school have no class on `day` (weekends excluded), else None."""
+    iso = day.isoformat()
+    for a, b, lab in sch["off"]:
+        if a <= iso <= b:
+            return lab
+    if sch.get("last_day") and iso > sch["last_day"]:
+        return "Summer break"
+    if sch.get("first_day") and iso < sch["first_day"]:
+        return "Summer break"
+    return None
+
+
+def next_off(sch, day):
+    for a, b, lab in sorted(sch["off"]):
+        if a > day.isoformat():
+            return dt.date.fromisoformat(a), dt.date.fromisoformat(b), lab
+    return None
+
+
+def short_date(d0):
+    return d0.strftime("%a. %b. ") + str(d0.day)
+
+
+def schools_tile(day):
+    mps = SCHOOLS[0]
+    if day.weekday() >= 5:
+        v = "No school (weekend)"
+    else:
+        lab = school_off(mps, day)
+        v = f"No school: {lab}" if lab else "MPS in session"
+    # other Bay View schools that differ from MPS today, else next MPS day off
+    diff = [x["short"] for x in SCHOOLS[1:] if day.weekday() < 5 and bool(school_off(x, day)) != bool(school_off(mps, day))]
+    nxt = day + dt.timedelta(days=1)
+    while nxt.weekday() >= 5:
+        nxt += dt.timedelta(days=1)
+    tom = [x["short"] for x in SCHOOLS if school_off(x, nxt) and school_off(x, nxt) != "Summer break" and not (school_off(x, day) and day.weekday() < 5)]
+    when = "Tomorrow" if (nxt - day).days == 1 else nxt.strftime("%A")
+    if diff and not school_off(mps, day):
+        s_ = "Off today: " + ", ".join(diff)
+    elif tom:
+        s_ = f"{when}, no school: " + ("all Bay View schools" if len(tom) == len(SCHOOLS) else ", ".join(tom))
+    elif day.weekday() < 5 and school_off(mps, day) and school_off(mps, day) != "Summer break":
+        back = day + dt.timedelta(days=1)
+        while back.weekday() >= 5 or school_off(mps, back):
+            back += dt.timedelta(days=1)
+        s_ = f"Classes resume {short_date(back)}"
+    else:
+        n = next_off(mps, day)
+        s_ = (f"Next day off: {short_date(n[0])}" + ("" if n[0] == n[1] else f"–{n[1].day}" if n[0].month == n[1].month else f" – {short_date(n[1])}")) if n else ""
+    return v, s_
+
+
+def schools_page(d):
+    day = dt.date.fromisoformat(d["date"])
+    rows = []
+    for x in SCHOOLS:
+        up = []
+        for a, b, lab in sorted(x["off"]):
+            if b < day.isoformat():
+                continue
+            A, B = dt.date.fromisoformat(a), dt.date.fromisoformat(b)
+            when = short_date(A) if A == B else f"{short_date(A)} – {short_date(B)}"
+            up.append(f"<li><b>{e(when)}</b> · {e(lab)}</li>")
+        today_lab = school_off(x, day) if day.weekday() < 5 else "Weekend"
+        status = f"No school today ({e(today_lab)})" if today_lab else "In session today"
+        addr = f' · {e(x["address"])}' if x.get("address") else ""
+        note = f'<p class="pagedek">{e(x["note"])}</p>' if x.get("note") else ""
+        last = f'<li><b>{e(short_date(dt.date.fromisoformat(x["last_day"])))}</b> · Last day of school</li>' if x.get("last_day") and x["last_day"] >= day.isoformat() else ""
+        rows.append(f'<section class="school"><h2>{e(x["name"])}</h2><p class="kicker">{status}{addr}</p>{note}<ul>{"".join(up)}{last}</ul>'
+                    f'<p class="src">Source: <a href="{e(x["source_url"])}" rel="noopener">{e(x["source_name"])}</a></p></section>')
+    return (f'<h1 class="pagehead">School days off</h1><p class="pagedek">When Bay View kids are out of school this year. Snow days and emergency closures are posted on the front page the morning they happen. '
+            f'Schools can change dates, so check with yours.</p>' + "".join(rows))
 
 
 def build_one(d, newest):
@@ -205,6 +284,7 @@ def build_one(d, newest):
         ("Parking", f"Winter rules in {days_to_winter} days" if days_to_winter > 0 else "Winter rules in effect", "Dec 1 – Mar 1", "warm" if 0 < days_to_winter <= 7 else "", "https://city.milwaukee.gov/mpw/parking/meter"),
         ("Today", f"{len(today_events)} things to do" if today_events else "Quiet day", "See today's list", "warm", "/events.html"),
         ut("pickup", "Pickup & roads", "Your pickup day →", "City sanitation schedule", "https://city.milwaukee.gov/sanitation"),
+        ut("schools", "Schools", *schools_tile(day), "/schools.html"),
         ("Sun over the lake", f"↑ {rise} · ↓ {sset}", "Bay View shoreline", "", ""),
     ]
     util_html = "".join((f'<a class="util {c}" href="{e(h)}">' if h else f'<div class="util {c}">') + f'<span class="k">{k}</span><span class="v">{e(v)}</span><span class="s">{e(s_)}</span>' + ("</a>" if h else "</div>") for k, v, s_, c, h in utils)
@@ -328,6 +408,7 @@ def build():
 <p><strong>Where we cover:</strong> Bay View as neighbors know it, from the harbor and Jones Island south to Holt and Morgan avenues, and from I-43 east to Lake Michigan.</p>
 <p><strong>How we report:</strong> news from the last 24 hours plus what's coming up. Safety coverage sticks to notable incidents, and we never name private individuals. Protests and rallies are listed neutrally, for any cause. Photos come from the original source or free-licensed collections, always credited; if you own a photo and want it removed, tell us and it comes down.</p>
 <p><a class="btn" href="{TIPS}">Send a tip or a correction</a></p></div></article>"""
+    (OUT / "schools.html").write_text(shell("School days off · The Bay View Bulletin", schools_page(d), d, ""))
     (OUT / "about.html").write_text(shell("About · The Bay View Bulletin", about, d, ""))
     # search index + page
     idx = [{"t": s["title"], "d": dek(s), "u": s["url"], "k": s["section"], "dt": s["display_date"]} for s in recent]

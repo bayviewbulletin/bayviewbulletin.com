@@ -1,0 +1,39 @@
+{
+ "_note": "Days students do not attend, 2026-27. Ranges are inclusive. Update each summer from each school's official calendar. Weather/emergency closures go in the day file (utilities.schools + a lead story), not here.",
+ "schools": [
+  {"key": "mps", "name": "Milwaukee Public Schools", "short": "MPS",
+   "note": "All MPS schools in Bay View (Bay View High, Bay View Montessori, Fernwood, Humboldt Park, Trowbridge and others). Year-round schools may differ.",
+   "source_name": "MPS 2026-27 Districtwide Calendar (rev. 12/10/2025)", "source_url": "https://mtea.org/wp-content/uploads/2026/06/2026-27-MPS-School-Calendar.pdf",
+   "first_day": "2026-09-01", "last_day": "2027-06-15",
+   "off": [
+    ["2026-09-07","2026-09-07","Labor Day"], ["2026-10-23","2026-10-23","Parent-teacher conferences"], ["2026-10-26","2026-10-26","October Break"],
+    ["2026-11-03","2026-11-03","Professional development day"], ["2026-11-24","2026-11-24","Professional development day"], ["2026-11-25","2026-11-27","Thanksgiving Break"],
+    ["2026-12-21","2027-01-01","Winter Break"], ["2027-01-18","2027-01-18","Martin Luther King Jr. Day"], ["2027-01-22","2027-01-22","Professional development day"],
+    ["2027-02-22","2027-02-22","February Break"], ["2027-03-25","2027-03-25","Parent-teacher conferences"], ["2027-03-26","2027-04-02","Spring Break"],
+    ["2027-04-30","2027-04-30","Professional development day"], ["2027-05-31","2027-05-31","Memorial Day"]]},
+  {"key": "staa", "name": "St. Thomas Aquinas Academy", "short": "St. Thomas Aquinas", "address": "341 E. Norwich St.",
+   "source_name": "STAA family calendar (Seton Catholic Schools)", "source_url": "https://www.setoncatholicschools.com/st-thomas-aquinas/current-families/calendar/",
+   "ics": "https://calendar.google.com/calendar/ical/c_tfdcpkmih12qjh05nc8vj06fa0%40group.calendar.google.com/public/basic.ics",
+   "off": [
+    ["2026-09-07","2026-09-07","Labor Day"], ["2026-10-02","2026-10-02","Teacher PD day"], ["2026-11-13","2026-11-13","No school"],
+    ["2026-11-23","2026-11-27","Thanksgiving Break"], ["2026-12-21","2027-01-01","Christmas Break"], ["2027-01-18","2027-01-18","Martin Luther King Jr. Day"],
+    ["2027-02-26","2027-02-26","Teacher PD day"], ["2027-03-05","2027-03-05","No school"], ["2027-03-26","2027-03-26","Good Friday"],
+    ["2027-03-29","2027-04-02","Easter Break"], ["2027-04-05","2027-04-05","No school"], ["2027-05-31","2027-05-31","Memorial Day"]]},
+  {"key": "stlucas", "name": "Saint Lucas Lutheran School", "short": "Saint Lucas", "address": "648 E. Dover St.",
+   "source_name": "Saint Lucas 2026-27 School Calendar (approved)", "source_url": "https://saintlucasbayview.org/wp-content/uploads/2026/06/2026-2027-School-Calendar-Approved.pdf",
+   "last_day": "2027-05-28",
+   "off": [
+    ["2026-09-04","2026-09-07","Labor Day Break"], ["2026-09-25","2026-09-25","Conferences / in-service"], ["2026-10-26","2026-10-30","Fall Break"],
+    ["2026-11-25","2026-11-27","Thanksgiving Break"], ["2026-12-21","2027-01-01","Christmas Break"], ["2027-01-18","2027-01-18","Martin Luther King Jr. Day"],
+    ["2027-03-01","2027-03-05","Spring Break"], ["2027-03-26","2027-04-02","Easter Break"]]},
+  {"key": "dma", "name": "Downtown Montessori Academy", "short": "Downtown Montessori", "address": "2507 S. Graham St.",
+   "note": "Childcare is open on most no-school days except 'center closed' days.",
+   "source_name": "DMA 2026-27 Academic Calendar (final)", "source_url": "https://downtownmontessori.com/wp-content/uploads/2026/11/2026-2027_academic_calendar-FINAL.pdf",
+   "last_day": "2027-06-04",
+   "off": [
+    ["2026-09-07","2026-09-07","Labor Day"], ["2026-10-16","2026-10-16","Conferences"], ["2026-10-19","2026-10-19","No school"], ["2026-10-30","2026-10-30","Staff PD day"],
+    ["2026-11-23","2026-11-27","Thanksgiving Break"], ["2026-12-21","2027-01-01","Winter Break"], ["2027-01-18","2027-01-18","Martin Luther King Jr. Day"],
+    ["2027-01-29","2027-01-29","Staff PD / record keeping"], ["2027-02-12","2027-02-12","Conferences"], ["2027-02-15","2027-02-15","No school"],
+    ["2027-03-26","2027-04-02","Spring Break"], ["2027-04-30","2027-04-30","No school"], ["2027-05-28","2027-05-28","Staff PD / record keeping"], ["2027-05-31","2027-05-31","Memorial Day"]]}
+ ]
+}
