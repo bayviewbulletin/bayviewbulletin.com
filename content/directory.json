@@ -150,13 +150,6 @@
   "lon": -87.8902
  },
  {
-  "name": "Cafe Corazon",
-  "type": "Mexican restaurant",
-  "address": "2394 S. Kinnickinnic Ave.",
-  "lat": 43.00126,
-  "lon": -87.90276
- },
- {
   "name": "Catrina's Cafe",
   "type": "Mexican",
   "address": "2352 S. Kinnickinnic Ave.",
@@ -170,13 +163,6 @@
   "address": "2306 S. Kinnickinnic Ave.",
   "lat": 43.00282,
   "lon": -87.90399
- },
- {
-  "name": "Chettinadu House",
-  "type": "Indian restaurant",
-  "address": "2258 S. Kinnickinnic Ave.",
-  "lat": 43.00354,
-  "lon": -87.9046
  },
  {
   "name": "Club Garibaldi",
@@ -238,13 +224,6 @@
   "type": "Yarn shop",
   "address": "Bay View",
   "verify": true
- },
- {
-  "name": "Gather Bakehouse",
-  "type": "Bakery & cafe",
-  "address": "1100 E. Oklahoma Ave.",
-  "lat": 42.98834,
-  "lon": -87.89551
  },
  {
   "name": "Goodkind",
