@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 OUT = ROOT / "docs"
 TAGLINE = "Bay View's morning paper"
-TIPS_URL = "https://forms.gle/REPLACE_WITH_GOOGLE_FORM"   # swap in once the Google Form exists
+TIPS_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfXNc2RsIhvMPCfcZ9CYb6QIx78RZSr2Ar3YzT5ik9xyPhi7Q/viewform"
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
          '<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">')
 
