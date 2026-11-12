@@ -76,8 +76,7 @@ nav.sections a{display:inline-block;padding:11px 0;font:600 15px var(--sans)}nav
 .util.alert .v{color:var(--warm)}.util .k::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--lake);margin-right:6px;vertical-align:1px}.util.warm .k::before{background:var(--warm)}
 @media(max-width:900px){.utils{grid-template-columns:repeat(3,1fr)}.util:nth-child(3n){border-right:0}.util:nth-child(-n+3){border-bottom:1px solid var(--rule)}}
 @media(max-width:520px){.utils{display:flex;overflow-x:auto}.util{min-width:150px;border-bottom:0!important;border-right:1px solid var(--rule)!important}}
-.ticker{display:flex;gap:10px;align-items:baseline;font-size:15px;border-bottom:1px solid var(--rule);padding:0 0 12px;margin:-10px 0 22px;overflow-x:auto;white-space:nowrap}
-.ticker b{font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--warm);padding:3px 7px;border-radius:2px}.ticker span+span::before{content:"\\00B7";margin-right:10px;color:var(--muted)}
+.ticker{display:flex;gap:12px;align-items:center;font-size:15px;border-bottom:1px solid var(--rule);padding:0 0 12px;margin:-10px 0 22px;overflow:hidden;white-space:nowrap}.ticker b{flex:0 0 auto;font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--warm);padding:3px 7px;border-radius:2px;position:relative;z-index:1}.ticker .vp{flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent)}.ticker .track{display:inline-flex;animation:tick var(--dur,40s) linear infinite}.ticker:hover .track,.ticker:focus-within .track{animation-play-state:paused}.ticker .set{display:inline-flex}.ticker .set span{padding-right:14px}.ticker .set span::after{content:"\\00B7";margin-left:14px;color:var(--muted)}@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.ticker .vp{overflow-x:auto}.ticker .track{animation:none}.ticker .set+.set{display:none}}
 .front{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:28px;padding-bottom:24px;border-bottom:1px solid var(--ink)}
 @media(max-width:820px){.front{grid-template-columns:1fr}}
 .lead figure{margin:0 0 12px}.lead img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--soft)}
@@ -189,7 +188,9 @@ def build_one(d, newest):
     util_html = "".join((f'<a class="util {c}" href="{e(h)}">' if h else f'<div class="util {c}">') + f'<span class="k">{k}</span><span class="v">{e(v)}</span><span class="s">{e(s_)}</span>' + ("</a>" if h else "</div>") for k, v, s_, c, h in utils)
     tick = [s for s in stories if s["key"] == "openings"] or []
     ticker_items = d.get("ticker") or [c["title"] for c in d.get("catching_up", []) if re.search(r"open|clos|coming|leav|lease", c["title"], re.I)][:6]
-    ticker = ('<div class="ticker"><b>Opened &amp; closed</b>' + "".join(f"<span>{e(t)}</span>" for t in ticker_items) + "</div>") if ticker_items else ""
+    _set = "".join(f"<span>{e(t)}</span>" for t in ticker_items)
+    _dur = max(25, sum(len(t) for t in ticker_items) // 5)
+    ticker = (f'<div class="ticker" aria-label="Recent openings and closings"><b>Opened &amp; closed</b><div class="vp"><div class="track" style="--dur:{_dur}s"><div class="set">{_set}</div><div class="set" aria-hidden="true">{_set}</div></div></div></div>') if ticker_items else ""
 
     tops = [s for s in rest if s["key"] == "top"]; side_items = (tops + [s for s in rest if s["key"] != "top"])[:max(3, len(tops))]
     side = "".join(f'<a href="{s["url"]}"><span class="kicker">{e(s["section"])}</span><h3>{e(s["title"])}</h3><p>{e(dek(s))}</p></a>' for s in side_items)
