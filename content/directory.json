@@ -158,7 +158,8 @@
   "type": "Music venue",
   "address": "2496 S. Wentworth Ave.",
   "lat": 42.99903,
-  "lon": -87.8902
+  "lon": -87.8902,
+  "instagram": "cactusclubmke"
  },
  {
   "name": "Calogero's | Wine & Cocktails",
@@ -200,7 +201,8 @@
   "type": "Bar & music venue",
   "address": "2501 S. Superior St.",
   "lat": 42.99896,
-  "lon": -87.88974
+  "lon": -87.88974,
+  "instagram": "clubgaribaldi"
  },
  {
   "name": "Colectivo Bay View",
@@ -307,7 +309,8 @@
   "type": "Donuts, pizza & bar",
   "address": "2691 S. Kinnickinnic Ave.",
   "lat": 42.99605,
-  "lon": -87.89717
+  "lon": -87.89717,
+  "instagram": "happydoughlucky"
  },
  {
   "name": "Healium HIIT",
@@ -510,7 +513,8 @@
   "type": "Historic tavern",
   "address": "2461 S. St. Clair St.",
   "lat": 42.99876,
-  "lon": -87.89304
+  "lon": -87.89304,
+  "instagram": "puddlershall"
  },
  {
   "name": "R Vintage N More",
@@ -680,7 +684,8 @@
   "type": "Coffee",
   "address": "2268 S. Kinnickinnic Ave.",
   "lat": 43.00338,
-  "lon": -87.90446
+  "lon": -87.90446,
+  "instagram": "vendettacoffeebar"
  },
  {
   "name": "Verdant CBD",

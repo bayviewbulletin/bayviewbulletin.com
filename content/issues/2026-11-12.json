@@ -169,10 +169,10 @@
     "source_url": "https://www.instagram.com/shopursa/",
     "date": "2026-11-12",
     "image": {
-     "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Milwaukee_January_2025_16_(S._Kinnickinnic_Avenue).jpg?width=800",
-     "alt": "South Kinnickinnic Avenue in Bay View",
-     "credit": "Michael Barera, CC BY-SA 4.0 (Wikimedia Commons)",
-     "credit_url": "https://commons.wikimedia.org/wiki/File:Milwaukee_January_2025_16_(S._Kinnickinnic_Avenue).jpg"
+     "src": "/photos/ursa-shop-refresh.jpg",
+     "alt": "Inside URSA: shelves of home goods, pillows, bags and plants in a sunny storefront",
+     "credit": "URSA (@shopursa) on Instagram",
+     "credit_url": "https://www.instagram.com/shopursa/p/De23S04KpH6/"
     },
     "lat": 42.99898,
     "lon": -87.90086
@@ -186,7 +186,8 @@
    "title": "Story Time with Play Group",
    "where": "Bay View Library, 2566 S. Kinnickinnic Ave.",
    "link": "https://outmke.com/this-month/",
-   "kind": "Family"
+   "kind": "Family",
+   "desc": "Stories, songs and open play time for babies, toddlers and their grown-ups. Free."
   },
   {
    "day": "Today, Thu. Nov. 12",
@@ -194,7 +195,18 @@
    "title": "Read, Play, Create!",
    "where": "Bay View Library",
    "link": "https://outmke.com/this-month/",
-   "kind": "Family"
+   "kind": "Family",
+   "desc": "After-school reading, games and hands-on crafts for kids at the library. Free."
+  },
+  {
+   "day": "Today, Thu. Nov. 12",
+   "when": "4:00 pm",
+   "title": "DJ Bee Zoo: Happy Hour Spin",
+   "where": "Cactus Club, 2496 S. Wentworth Ave. · All ages · Free",
+   "link": "https://www.instagram.com/cactusclubmke/p/DfpTUCPEVts/",
+   "kind": "Music",
+   "image": "/photos/ev-dj-bee-zoo-cactus.jpg",
+   "desc": "Free happy-hour DJ set of indie pop on vinyl. All ages."
   },
   {
    "day": "Today, Thu. Nov. 12",
@@ -202,7 +214,8 @@
    "title": "Dead Gowns + Sleeper's Bell",
    "where": "Cactus Club, 2496 S. Wentworth Ave. · All ages",
    "link": "https://www.cactusclubmilwaukee.com/",
-   "kind": "Music"
+   "kind": "Music",
+   "desc": "An all-ages live music night with two bands on the Cactus Club stage."
   },
   {
    "day": "Today, Thu. Nov. 12",
@@ -210,7 +223,8 @@
    "title": "Bay View Table Tennis Club",
    "where": "Puddler's Hall, 2461 S. St. Clair St.",
    "link": "https://outmke.com/this-month/",
-   "kind": "Social"
+   "kind": "Social",
+   "desc": "Weekly drop-in ping-pong night in the back room of the 1873 tavern; all skill levels welcome."
   },
   {
    "day": "Today, Thu. Nov. 12",
@@ -218,7 +232,8 @@
    "title": "Trivia-rcade",
    "where": "Happy Dough Lucky, 2691 S. Kinnickinnic Ave.",
    "link": "https://outmke.com/this-month/",
-   "kind": "Social"
+   "kind": "Social",
+   "desc": "Team trivia night at the mini-donut and arcade bar."
   },
   {
    "day": "Fri. Nov. 13",
@@ -226,15 +241,18 @@
    "title": "Allison Mahal EP release, with Leah Jean + Whitney Fenimore",
    "where": "Cactus Club · All ages",
    "link": "https://radiomilwaukee.org/concerts/2026-11-11/concerts-in-milwaukee-this-week",
-   "kind": "Music"
+   "kind": "Music",
+   "desc": "Release show for Allison Mahal's new EP, with sets from Leah Jean and Whitney Fenimore. All ages."
   },
   {
    "day": "Sat. Nov. 14",
    "when": "7:00 pm",
    "title": "God's Outlaw: benefit for the Wisconsin Homeless Veterans Initiative",
    "where": "Club Garibaldi, 2501 S. Superior St. · Doors at 6",
-   "link": "https://milwaukeerecord.com/music/milwaukee-record-recommended-events-november-9-15-2026/",
-   "kind": "Music"
+   "link": "https://www.instagram.com/clubgaribaldi/p/De9fp2qxHus/",
+   "kind": "Music",
+   "desc": "Benefit concert raising money for homeless veterans in Wisconsin, with support from The Outlaw and The Lady. 21+.",
+   "image": "/photos/ev-gods-outlaw-garibaldi.jpg"
   },
   {
    "day": "Sat. Nov. 14",
@@ -242,7 +260,8 @@
    "title": "93FEETOFSMOKE, with Fats'e, Polearm + Selwyn",
    "where": "Cactus Club",
    "link": "https://www.bandsintown.com/v/10004950-cactus-club",
-   "kind": "Music"
+   "kind": "Music",
+   "desc": "Late-night rap show headlined by 93FEETOFSMOKE, with three openers."
   },
   {
    "day": "Sun. Nov. 15",
@@ -250,7 +269,8 @@
    "title": "Milwaukee Record Halftime Show (free, during the Packers game)",
    "where": "Cactus Club · All ages",
    "link": "https://milwaukeerecord.com/music/milwaukee-record-recommended-events-november-9-15-2026/",
-   "kind": "Music"
+   "kind": "Music",
+   "desc": "A quick free live set during halftime of the Packers game, hosted by Milwaukee Record. All ages."
   },
   {
    "day": "Fri. Nov. 20",
@@ -258,7 +278,9 @@
    "title": "Meet + Stitch with Fiber Fever",
    "where": "Vendetta Coffee Bar, 2268 S. Kinnickinnic Ave.",
    "link": "https://www.instagram.com/p/DfPLt14SNv-/",
-   "kind": "Community"
+   "kind": "Community",
+   "desc": "Bring a knitting or crochet project and stitch with neighbors over coffee; hosted by Bay View's yarn shop.",
+   "image": "/photos/ev-meet-stitch-with-fiber-fever.jpg"
   },
   {
    "day": "Sat. Nov. 21",
@@ -266,15 +288,18 @@
    "title": "Death Café",
    "where": "Bay View Library",
    "link": "https://www.eventbrite.com/d/wi--milwaukee--bay-view/events/",
-   "kind": "Community"
+   "kind": "Community",
+   "desc": "A relaxed, no-agenda conversation about death and dying over coffee and treats. Not a grief group or a class."
   },
   {
    "day": "Sat. Nov. 28",
    "when": "10:00 am",
    "title": "Small Business Saturday at Fiber Fever",
-   "where": "Bay View",
+   "where": "Fiber Fever, 2224 S. Kinnickinnic Ave.",
    "link": "https://www.instagram.com/p/DfPLt14SNv-/",
-   "kind": "Shopping"
+   "kind": "Shopping",
+   "desc": "Shop small at the KK yarn shop on the Saturday after Thanksgiving.",
+   "image": "/photos/ev-small-business-saturday-at-fiber-fever.jpg"
   },
   {
    "day": "Thu. Dec. 3",
@@ -282,7 +307,8 @@
    "title": "Bay View Blood Drive (Versiti)",
    "where": "Bay View United Methodist, 2772 S. Kinnickinnic Ave.",
    "link": "https://www.facebook.com/BayViewNeighborhood",
-   "kind": "Give"
+   "kind": "Give",
+   "desc": "Community blood drive with Versiti; sign up ahead to give."
   }
  ],
  "catching_up": [
