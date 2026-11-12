@@ -581,43 +581,50 @@
    "title": "Ian's Pizza opened a slice counter at R1VER (2035 S. 1st St.)",
    "source_name": "Milwaukee Record",
    "source_url": "https://milwaukeerecord.com/food-drink/ians-pizzas-new-bay-view-location-is-now-open/",
-   "date": "Nov. 4"
+   "date": "Nov. 4",
+   "section": "openings"
   },
   {
    "title": "Spectrum News review: only two officers responded to the KK and Lincoln street takeover",
    "source_name": "Spectrum News 1",
    "source_url": "https://spectrumnews1.com/wi/milwaukee/news/2026/11/05/bay-view-street-takeover--milwaukee-police-staffing",
-   "date": "Nov. 5"
+   "date": "Nov. 5",
+   "section": "safety"
   },
   {
    "title": "A Bay View doughnut bar is adding wings and loaded fries",
    "source_name": "Urban Milwaukee",
    "source_url": "https://urbanmilwaukee.com/2026/10/19/unlikely-sweet-and-savory-combo-coming-to-bay-view/",
-   "date": "Oct. 19"
+   "date": "Oct. 19",
+   "section": "openings"
   },
   {
    "title": "New townhomes proposed on the Harbor District border",
    "source_name": "Urban Milwaukee",
    "source_url": "https://urbanmilwaukee.com/2026/10/14/new-townhomes-planned-for-bay-view/",
-   "date": "Oct. 14"
+   "date": "Oct. 14",
+   "section": "development"
   },
   {
    "title": "Former Bay View Library site plan grows to four stories",
    "source_name": "Urban Milwaukee",
    "source_url": "https://urbanmilwaukee.com/2026/10/02/former-bay-view-library-redevelopment-plan-revised-expanded/",
-   "date": "Oct. 2"
+   "date": "Oct. 2",
+   "section": "development"
   },
   {
    "title": "Honey Butter Cafe is coming to Bay View",
    "source_name": "Urban Milwaukee",
    "source_url": "https://urbanmilwaukee.com/2026/10/02/honey-butter-cafe-set-to-make-bay-view-debut/",
-   "date": "Oct. 2"
+   "date": "Oct. 2",
+   "section": "openings"
   },
   {
    "title": "Semolina lost its lease and will stay through January while it searches",
    "source_name": "Urban Milwaukee",
    "source_url": "https://urbanmilwaukee.com/2026/10/02/after-losing-lease-bay-views-semolina-looking-for-new-home/",
-   "date": "Oct. 2"
+   "date": "Oct. 2",
+   "section": "openings"
   }
  ],
  "milwaukee": [],

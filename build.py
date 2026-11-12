@@ -155,6 +155,7 @@ Every item links to the original reporting. Photos belong to their credited owne
 
 
 ALL_STORIES = []
+BRIEFS = []  # older headlines (launch catch-up) that link straight to the source
 
 
 def srcmeta(s):
@@ -173,6 +174,9 @@ def build_one(d, newest):
             it = dict(it, section=SECTION_OF.get(key, key), key=key, url=f"/story/{d['date']}-{slug(it['title'])}.html")
             stories.append(it)
             ALL_STORIES.append(dict(it, issue_date=d["date"], display_date=d["display_date"]))
+    for c in d.get("catching_up", []):
+        if c.get("section"):
+            BRIEFS.append(dict(c, label=SECTION_OF.get(c["section"], "Bay View")))
     # The daily business spotlight always gets its own block and is never the lead or a side headline.
     news = [s for s in stories if s["key"] != "spotlight"] or stories
     lead = next((s for s in news if s.get("image")), news[0])
@@ -300,7 +304,12 @@ def build():
     for key, (title, labs) in SECTION_PAGES.items():
         items = [s for s in recent if labs is None or s["section"] in labs]
         active = {"food": "Food & Drink", "city": "City Hall", "safety": "Safety", "more": "More"}[key]
-        body = f'<h1 class="pagehead">{e(title)}</h1>' + (listing(items) if items else '<p class="pagedek">No recent items. Check back tomorrow morning.</p>')
+        briefs = [b for b in BRIEFS if labs is None or b["label"] in labs]
+        empty = f'<p class="pagedek">No new {e(title.lower())} news in the last day. New stories land here every morning.</p>'
+        body = f'<h1 class="pagehead">{e(title)}</h1>' + (listing(items) if items else empty)
+        if briefs:
+            body += '<h2 class="kicker" style="margin:32px 0 6px;font-size:13px;color:var(--muted)">Earlier this fall</h2><div class="list">' + "".join(
+                f'<a href="{e(b["source_url"])}" rel="noopener"><span class="kicker">{e(b["label"])} · {e(b["date"])} · {e(b["source_name"])}</span><h3>{e(b["title"])}</h3></a>' for b in briefs) + "</div>"
         (OUT / "section" / f"{key}.html").write_text(shell(title + " · The Bay View Bulletin", body, d, active))
     arch = "".join(f'<a href="/issues/{x["date"]}.html"><h3>{e(x["display_date"])}</h3><p>{e(x["greeting"][:160])}…</p></a>' for x in reversed(issues))
     (OUT / "archive.html").write_text(shell("Archive · The Bay View Bulletin", f'<h1 class="pagehead">Archive</h1><p class="pagedek">Every day&rsquo;s front page, newest first.</p><div class="list">{arch}</div>', d, ""))
