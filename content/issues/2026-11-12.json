@@ -23,7 +23,8 @@
           "alt": "Flyer for the free Thanksgiving feast at Bay View United Methodist Church",
           "credit": "Bay View United Methodist Church via Milwaukee NNS",
           "credit_url": "https://milwaukeenns.org/2026/11/12/post-from-community-free-thanksgiving-feast-nov-29-last-free-meal/"
-        }
+        },
+        "dek": "The church's weekly free meal, running since 1994, ends its current form with a Nov. 29 feast."
       },
       {
         "title": "Mayor's deadline for budget vetoes is Tuesday, and Bay View's street-light fix is in the mix",
@@ -31,7 +32,14 @@
         "tag": "City Hall",
         "source_name": "Urban Milwaukee",
         "source_url": "https://urbanmilwaukee.com/pressrelease/council-adopts-budget-amendment-funding-we-energies-feasibility-study/",
-        "date": "Nov. 6, deadline Nov. 17"
+        "date": "Nov. 6, deadline Nov. 17",
+        "image": {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Milwaukee_June_2022_19_(Milwaukee_City_Hall).jpg?width=800",
+          "alt": "Milwaukee City Hall",
+          "credit": "Michael Barera, CC BY-SA 4.0 / Wikimedia Commons",
+          "credit_url": "https://commons.wikimedia.org/wiki/File:Milwaukee_June_2022_19_(Milwaukee_City_Hall).jpg"
+        },
+        "dek": "Johnson has until Tuesday to sign or veto a budget with more street-light repair crews."
       }
     ],
     "openings": [],
@@ -43,7 +51,14 @@
         "tag": "Parking",
         "source_name": "City of Milwaukee DPW",
         "source_url": "https://city.milwaukee.gov/mpw/parking/meter",
-        "date": "Evergreen"
+        "date": "Evergreen",
+        "image": {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Milwaukee_January_2025_16_(S._Kinnickinnic_Avenue).jpg?width=800",
+          "alt": "S. Kinnickinnic Avenue in winter",
+          "credit": "Michael Barera, CC BY-SA 4.0 / Wikimedia Commons",
+          "credit_url": "https://commons.wikimedia.org/wiki/File:Milwaukee_January_2025_16_(S._Kinnickinnic_Avenue).jpg"
+        },
+        "dek": "No overnight parking on bus routes like KK from Dec. 1, and snow emergencies mean alternate sides."
       }
     ],
     "schools": [
@@ -53,7 +68,14 @@
         "tag": "MPS",
         "source_name": "WISN 12",
         "source_url": "https://www.wisn.com/article/milwaukee-public-schools-superintendent-address/74411155",
-        "date": "Nov. 12"
+        "date": "Nov. 12",
+        "image": {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Milwaukee_June_2022_08_(Discovery_World).jpg?width=800",
+          "alt": "Discovery World on the lakefront",
+          "credit": "Michael Barera, CC BY-SA 4.0 / Wikimedia Commons",
+          "credit_url": "https://commons.wikimedia.org/wiki/File:Milwaukee_June_2022_08_(Discovery_World).jpg"
+        },
+        "dek": "Cassellius lays out district priorities this morning at Discovery World."
       },
       {
         "title": "Last community meeting before MPS drafts its school closures plan",
@@ -61,7 +83,14 @@
         "tag": "MPS",
         "source_name": "WUWM",
         "source_url": "https://www.wuwm.com/which-schools-will-mps-close-new-hopes-for-funding-after-election-of-democratic-trifecta",
-        "date": "Nov. 11"
+        "date": "Nov. 11",
+        "image": {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/2024_08_07_Bay_View_High_School.jpg?width=800",
+          "alt": "Bay View High School",
+          "credit": "Rorr404, CC0 / Wikimedia Commons",
+          "credit_url": "https://commons.wikimedia.org/wiki/File:2024_08_07_Bay_View_High_School.jpg"
+        },
+        "dek": "Monday's 6 p.m. session at North Division is the last before a closures plan."
       }
     ],
     "parks": [],
@@ -83,7 +112,14 @@
         "tag": "Market",
         "source_name": "Redfin",
         "source_url": "https://www.redfin.com/neighborhood/79758/WI/Milwaukee/Bay-View/new-listings",
-        "date": "Updated daily"
+        "date": "Updated daily",
+        "image": {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Beulah_Brinton_House.jpg?width=800",
+          "alt": "The historic Beulah Brinton House in Bay View",
+          "credit": "Sulfur, CC BY-SA 3.0 / Wikimedia Commons",
+          "credit_url": "https://commons.wikimedia.org/wiki/File:Beulah_Brinton_House.jpg"
+        },
+        "dek": "Median list price about $350,000; 17 homes sold in the past month."
       }
     ],
     "help": [
@@ -93,7 +129,14 @@
         "tag": "Give",
         "source_name": "BVNA on Facebook",
         "source_url": "https://www.facebook.com/BayViewNeighborhood",
-        "date": ""
+        "date": "",
+        "image": {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/SouthShore_Park_1.jpg?width=800",
+          "alt": "South Shore Park in Bay View",
+          "credit": "Akaila of the Willows, CC0 / Wikimedia Commons",
+          "credit_url": "https://commons.wikimedia.org/wiki/File:SouthShore_Park_1.jpg"
+        },
+        "dek": "Serve at Bread and Jam's last feast, give blood Dec. 3, or catch a veterans benefit show."
       }
     ],
     "pets": [],
@@ -101,40 +144,274 @@
     "remembrances": []
   },
   "events": [
-    {"day": "Today, Thu. Nov. 12", "when": "10:30 am", "title": "Story Time with Play Group", "where": "Bay View Library, 2566 S. Kinnickinnic Ave.", "link": "https://outmke.com/this-month/", "kind": "Family"},
-    {"day": "Today, Thu. Nov. 12", "when": "3:30 pm", "title": "Read, Play, Create!", "where": "Bay View Library", "link": "https://outmke.com/this-month/", "kind": "Family"},
-    {"day": "Today, Thu. Nov. 12", "when": "7:00 pm", "title": "Dead Gowns + Sleeper's Bell", "where": "Cactus Club, 2496 S. Wentworth Ave. · All ages", "link": "https://www.cactusclubmilwaukee.com/", "kind": "Music"},
-    {"day": "Today, Thu. Nov. 12", "when": "7:00 pm", "title": "Bay View Table Tennis Club", "where": "Puddler's Hall, 2461 S. St. Clair St.", "link": "https://outmke.com/this-month/", "kind": "Social"},
-    {"day": "Today, Thu. Nov. 12", "when": "7:30 pm", "title": "Trivia-rcade", "where": "Happy Dough Lucky, 2691 S. Kinnickinnic Ave.", "link": "https://outmke.com/this-month/", "kind": "Social"},
-    {"day": "Fri. Nov. 13", "when": "6:30 pm", "title": "Allison Mahal EP release, with Leah Jean + Whitney Fenimore", "where": "Cactus Club · All ages", "link": "https://radiomilwaukee.org/concerts/2026-11-11/concerts-in-milwaukee-this-week", "kind": "Music"},
-    {"day": "Sat. Nov. 14", "when": "7:00 pm", "title": "God's Outlaw: benefit for the Wisconsin Homeless Veterans Initiative", "where": "Club Garibaldi, 2501 S. Superior St. · Doors at 6", "link": "https://milwaukeerecord.com/music/milwaukee-record-recommended-events-november-9-15-2026/", "kind": "Music"},
-    {"day": "Sat. Nov. 14", "when": "10:00 pm", "title": "93FEETOFSMOKE, with Fats'e, Polearm + Selwyn", "where": "Cactus Club", "link": "https://www.bandsintown.com/v/10004950-cactus-club", "kind": "Music"},
-    {"day": "Sun. Nov. 15", "when": "Halftime", "title": "Milwaukee Record Halftime Show (free, during the Packers game)", "where": "Cactus Club · All ages", "link": "https://milwaukeerecord.com/music/milwaukee-record-recommended-events-november-9-15-2026/", "kind": "Music"},
-    {"day": "Fri. Nov. 20", "when": "5:00 pm", "title": "Meet + Stitch with Fiber Fever", "where": "Vendetta Coffee Bar, 2268 S. Kinnickinnic Ave.", "link": "https://www.instagram.com/p/DfPLt14SNv-/", "kind": "Community"},
-    {"day": "Sat. Nov. 21", "when": "1:00 pm", "title": "Death Café", "where": "Bay View Library", "link": "https://www.eventbrite.com/d/wi--milwaukee--bay-view/events/", "kind": "Community"},
-    {"day": "Sat. Nov. 28", "when": "10:00 am", "title": "Small Business Saturday at Fiber Fever", "where": "Bay View", "link": "https://www.instagram.com/p/DfPLt14SNv-/", "kind": "Shopping"},
-    {"day": "Thu. Dec. 3", "when": "2:00 pm", "title": "Bay View Blood Drive (Versiti)", "where": "Bay View United Methodist, 2772 S. Kinnickinnic Ave.", "link": "https://www.facebook.com/BayViewNeighborhood", "kind": "Give"}
+    {
+      "day": "Today, Thu. Nov. 12",
+      "when": "10:30 am",
+      "title": "Story Time with Play Group",
+      "where": "Bay View Library, 2566 S. Kinnickinnic Ave.",
+      "link": "https://outmke.com/this-month/",
+      "kind": "Family"
+    },
+    {
+      "day": "Today, Thu. Nov. 12",
+      "when": "3:30 pm",
+      "title": "Read, Play, Create!",
+      "where": "Bay View Library",
+      "link": "https://outmke.com/this-month/",
+      "kind": "Family"
+    },
+    {
+      "day": "Today, Thu. Nov. 12",
+      "when": "7:00 pm",
+      "title": "Dead Gowns + Sleeper's Bell",
+      "where": "Cactus Club, 2496 S. Wentworth Ave. · All ages",
+      "link": "https://www.cactusclubmilwaukee.com/",
+      "kind": "Music"
+    },
+    {
+      "day": "Today, Thu. Nov. 12",
+      "when": "7:00 pm",
+      "title": "Bay View Table Tennis Club",
+      "where": "Puddler's Hall, 2461 S. St. Clair St.",
+      "link": "https://outmke.com/this-month/",
+      "kind": "Social"
+    },
+    {
+      "day": "Today, Thu. Nov. 12",
+      "when": "7:30 pm",
+      "title": "Trivia-rcade",
+      "where": "Happy Dough Lucky, 2691 S. Kinnickinnic Ave.",
+      "link": "https://outmke.com/this-month/",
+      "kind": "Social"
+    },
+    {
+      "day": "Fri. Nov. 13",
+      "when": "6:30 pm",
+      "title": "Allison Mahal EP release, with Leah Jean + Whitney Fenimore",
+      "where": "Cactus Club · All ages",
+      "link": "https://radiomilwaukee.org/concerts/2026-11-11/concerts-in-milwaukee-this-week",
+      "kind": "Music"
+    },
+    {
+      "day": "Sat. Nov. 14",
+      "when": "7:00 pm",
+      "title": "God's Outlaw: benefit for the Wisconsin Homeless Veterans Initiative",
+      "where": "Club Garibaldi, 2501 S. Superior St. · Doors at 6",
+      "link": "https://milwaukeerecord.com/music/milwaukee-record-recommended-events-november-9-15-2026/",
+      "kind": "Music"
+    },
+    {
+      "day": "Sat. Nov. 14",
+      "when": "10:00 pm",
+      "title": "93FEETOFSMOKE, with Fats'e, Polearm + Selwyn",
+      "where": "Cactus Club",
+      "link": "https://www.bandsintown.com/v/10004950-cactus-club",
+      "kind": "Music"
+    },
+    {
+      "day": "Sun. Nov. 15",
+      "when": "Halftime",
+      "title": "Milwaukee Record Halftime Show (free, during the Packers game)",
+      "where": "Cactus Club · All ages",
+      "link": "https://milwaukeerecord.com/music/milwaukee-record-recommended-events-november-9-15-2026/",
+      "kind": "Music"
+    },
+    {
+      "day": "Fri. Nov. 20",
+      "when": "5:00 pm",
+      "title": "Meet + Stitch with Fiber Fever",
+      "where": "Vendetta Coffee Bar, 2268 S. Kinnickinnic Ave.",
+      "link": "https://www.instagram.com/p/DfPLt14SNv-/",
+      "kind": "Community"
+    },
+    {
+      "day": "Sat. Nov. 21",
+      "when": "1:00 pm",
+      "title": "Death Café",
+      "where": "Bay View Library",
+      "link": "https://www.eventbrite.com/d/wi--milwaukee--bay-view/events/",
+      "kind": "Community"
+    },
+    {
+      "day": "Sat. Nov. 28",
+      "when": "10:00 am",
+      "title": "Small Business Saturday at Fiber Fever",
+      "where": "Bay View",
+      "link": "https://www.instagram.com/p/DfPLt14SNv-/",
+      "kind": "Shopping"
+    },
+    {
+      "day": "Thu. Dec. 3",
+      "when": "2:00 pm",
+      "title": "Bay View Blood Drive (Versiti)",
+      "where": "Bay View United Methodist, 2772 S. Kinnickinnic Ave.",
+      "link": "https://www.facebook.com/BayViewNeighborhood",
+      "kind": "Give"
+    }
   ],
   "catching_up": [
-    {"title": "Ian's Pizza opened a slice counter at R1VER (2035 S. 1st St.)", "source_name": "Milwaukee Record", "source_url": "https://milwaukeerecord.com/food-drink/ians-pizzas-new-bay-view-location-is-now-open/", "date": "Nov. 4"},
-    {"title": "Spectrum News review: only two officers responded to the KK and Lincoln street takeover", "source_name": "Spectrum News 1", "source_url": "https://spectrumnews1.com/wi/milwaukee/news/2026/11/05/bay-view-street-takeover--milwaukee-police-staffing", "date": "Nov. 5"},
-    {"title": "A Bay View doughnut bar is adding wings and loaded fries", "source_name": "Urban Milwaukee", "source_url": "https://urbanmilwaukee.com/2026/10/19/unlikely-sweet-and-savory-combo-coming-to-bay-view/", "date": "Oct. 19"},
-    {"title": "New townhomes proposed on the Harbor District border", "source_name": "Urban Milwaukee", "source_url": "https://urbanmilwaukee.com/2026/10/14/new-townhomes-planned-for-bay-view/", "date": "Oct. 14"},
-    {"title": "Former Bay View Library site plan grows to four stories", "source_name": "Urban Milwaukee", "source_url": "https://urbanmilwaukee.com/2026/10/02/former-bay-view-library-redevelopment-plan-revised-expanded/", "date": "Oct. 2"},
-    {"title": "Honey Butter Cafe is coming to Bay View", "source_name": "Urban Milwaukee", "source_url": "https://urbanmilwaukee.com/2026/10/02/honey-butter-cafe-set-to-make-bay-view-debut/", "date": "Oct. 2"},
-    {"title": "Semolina lost its lease and will stay through January while it searches", "source_name": "Urban Milwaukee", "source_url": "https://urbanmilwaukee.com/2026/10/02/after-losing-lease-bay-views-semolina-looking-for-new-home/", "date": "Oct. 2"}
+    {
+      "title": "Ian's Pizza opened a slice counter at R1VER (2035 S. 1st St.)",
+      "source_name": "Milwaukee Record",
+      "source_url": "https://milwaukeerecord.com/food-drink/ians-pizzas-new-bay-view-location-is-now-open/",
+      "date": "Nov. 4"
+    },
+    {
+      "title": "Spectrum News review: only two officers responded to the KK and Lincoln street takeover",
+      "source_name": "Spectrum News 1",
+      "source_url": "https://spectrumnews1.com/wi/milwaukee/news/2026/11/05/bay-view-street-takeover--milwaukee-police-staffing",
+      "date": "Nov. 5"
+    },
+    {
+      "title": "A Bay View doughnut bar is adding wings and loaded fries",
+      "source_name": "Urban Milwaukee",
+      "source_url": "https://urbanmilwaukee.com/2026/10/19/unlikely-sweet-and-savory-combo-coming-to-bay-view/",
+      "date": "Oct. 19"
+    },
+    {
+      "title": "New townhomes proposed on the Harbor District border",
+      "source_name": "Urban Milwaukee",
+      "source_url": "https://urbanmilwaukee.com/2026/10/14/new-townhomes-planned-for-bay-view/",
+      "date": "Oct. 14"
+    },
+    {
+      "title": "Former Bay View Library site plan grows to four stories",
+      "source_name": "Urban Milwaukee",
+      "source_url": "https://urbanmilwaukee.com/2026/10/02/former-bay-view-library-redevelopment-plan-revised-expanded/",
+      "date": "Oct. 2"
+    },
+    {
+      "title": "Honey Butter Cafe is coming to Bay View",
+      "source_name": "Urban Milwaukee",
+      "source_url": "https://urbanmilwaukee.com/2026/10/02/honey-butter-cafe-set-to-make-bay-view-debut/",
+      "date": "Oct. 2"
+    },
+    {
+      "title": "Semolina lost its lease and will stay through January while it searches",
+      "source_name": "Urban Milwaukee",
+      "source_url": "https://urbanmilwaukee.com/2026/10/02/after-losing-lease-bay-views-semolina-looking-for-new-home/",
+      "date": "Oct. 2"
+    }
   ],
   "milwaukee": [
-    {"title": "The Miz is the NL Cy Young winner, unanimously", "body": "The Brewers' Jacob Misiorowski won the National League Cy Young Award Wednesday night in a unanimous vote, capping his first full season in the majors. That season ended with Milwaukee's first World Series title.", "tag": "Sports", "source_name": "DrydenWire / AP", "source_url": "https://drydenwire.com/news/morning-headlines-thursday-nov-12-2026"},
-    {"title": "We Energies rate hike approved, but smaller than requested", "body": "State regulators approved a smaller two-year increase than the utility had sought, its sixth hike in six years. The Common Council then voted 15-0 to fund a study of a city takeover of the utility, which still needs the mayor's approval.", "tag": "Government", "source_name": "Wisconsin Watch via Milwaukee NNS", "source_url": "https://milwaukeenns.org/2026/11/10/wisconsin-we-energies-customers-another-rate-hike-but-smaller-public-service-commission-regulators-utility/", "image": {"src": "https://i0.wp.com/milwaukeenns.org/wp-content/uploads/2026/11/asseDSC_4052-scaled-1.jpg", "alt": "A We Energies building in Milwaukee", "credit": "Jonathan Aguilar / Milwaukee NNS / CatchLight Local", "credit_url": "https://milwaukeenns.org/2026/11/10/wisconsin-we-energies-customers-another-rate-hike-but-smaller-public-service-commission-regulators-utility/"}},
-    {"title": "MPS State of Our Schools address at Discovery World", "body": "Superintendent Cassellius is laying out the district's progress and priorities this morning to community, civic and business leaders.", "tag": "Schools", "source_name": "WISN 12", "source_url": "https://www.wisn.com/article/milwaukee-public-schools-superintendent-address/74411155"},
-    {"title": "MPS school closures: one community meeting left", "body": "A post-election push for more state funding could change the math. The final listening session is Monday, Nov. 16, at North Division High School.", "tag": "Schools", "source_name": "WUWM", "source_url": "https://www.wuwm.com/which-schools-will-mps-close-new-hopes-for-funding-after-election-of-democratic-trifecta"},
-    {"title": "Wisconsin Supreme Court to hear the Act 10 appeal", "body": "The state's highest court will take up the challenge to the 2011 law limiting most public workers' collective bargaining. An appeals court upheld the law in July.", "tag": "Government", "source_name": "DrydenWire", "source_url": "https://drydenwire.com/news/morning-headlines-thursday-nov-12-2026"},
-    {"title": "Homicide charge in the death of a longtime MPS teacher", "body": "Prosecutors charged a 22-year-old with first-degree intentional homicide in the Nov. 5 death of a special education teacher and Roosevelt football coach near 12th and Walnut.", "tag": "Public safety", "source_name": "TMJ4", "source_url": "https://www.tmj4.com/news/local-news/county-reporting/milwaukee-county/22-year-old-charged-with-intentional-homicide-in-death-of-milwaukee-teacher"},
-    {"title": "Domestic violence high-risk caseload has more than doubled", "body": "Milwaukee's Domestic Violence High Risk Team, run through Sojourner Family Peace Center, staffed 1,685 cases in 2025, up 113% from 2019. If you or someone you know needs help, Sojourner's 24-hour hotline is (414) 933-2722.", "tag": "Public safety", "source_name": "FOX6", "source_url": "https://www.fox6now.com/news/milwaukee-domestic-violence-death-prevention"},
-    {"title": "Fire & Police Commission meets this morning", "body": "The Board of Fire & Police Commissioners meets at 8:30 a.m. in City Hall, Room 301-A.", "tag": "Government", "source_name": "City of Milwaukee calendar", "source_url": "https://city.milwaukee.gov/News-Events/calendar"},
-    {"title": "This weekend: Pentatonix, Steve Martin & Martin Short, and holiday kickoffs", "body": "Big shows downtown, an open house at the Milwaukee Intertribal Circle's new gathering space, and Washington Heights' old-fashioned holiday kickoff.", "tag": "Culture", "source_name": "WTMJ", "source_url": "https://wtmj.com/shows/whats-on-tap/2026/11/12/pentatonix-holiday-events-things-to-do-milwaukee-11-12-26/"},
-    {"title": "Marquette signs three for its 2027 class", "body": "Shaka Smart talked through what he likes about the Golden Eagles' newest recruits.", "tag": "Sports", "source_name": "Milwaukee Journal Sentinel via Yahoo", "source_url": "https://sports.yahoo.com/articles/heres-shaka-smart-said-marquettes-165747797.html"}
+    {
+      "title": "The Miz is the NL Cy Young winner, unanimously",
+      "body": "The Brewers' Jacob Misiorowski won the National League Cy Young Award Wednesday night in a unanimous vote, capping his first full season in the majors. That season ended with Milwaukee's first World Series title.",
+      "tag": "Sports",
+      "source_name": "DrydenWire / AP",
+      "source_url": "https://drydenwire.com/news/morning-headlines-thursday-nov-12-2026",
+      "image": {
+        "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Miller_Park_in_2007.jpg?width=800",
+        "alt": "The Brewers' ballpark",
+        "credit": "Towpilot, CC BY 3.0 / Wikimedia Commons",
+        "credit_url": "https://commons.wikimedia.org/wiki/File:Miller_Park_in_2007.jpg"
+      }
+    },
+    {
+      "title": "We Energies rate hike approved, but smaller than requested",
+      "body": "State regulators approved a smaller two-year increase than the utility had sought, its sixth hike in six years. The Common Council then voted 15-0 to fund a study of a city takeover of the utility, which still needs the mayor's approval.",
+      "tag": "Government",
+      "source_name": "Wisconsin Watch via Milwaukee NNS",
+      "source_url": "https://milwaukeenns.org/2026/11/10/wisconsin-we-energies-customers-another-rate-hike-but-smaller-public-service-commission-regulators-utility/",
+      "image": {
+        "src": "https://i0.wp.com/milwaukeenns.org/wp-content/uploads/2026/11/asseDSC_4052-scaled-1.jpg",
+        "alt": "A We Energies building in Milwaukee",
+        "credit": "Jonathan Aguilar / Milwaukee NNS / CatchLight Local",
+        "credit_url": "https://milwaukeenns.org/2026/11/10/wisconsin-we-energies-customers-another-rate-hike-but-smaller-public-service-commission-regulators-utility/"
+      }
+    },
+    {
+      "title": "MPS State of Our Schools address at Discovery World",
+      "body": "Superintendent Cassellius is laying out the district's progress and priorities this morning to community, civic and business leaders.",
+      "tag": "Schools",
+      "source_name": "WISN 12",
+      "source_url": "https://www.wisn.com/article/milwaukee-public-schools-superintendent-address/74411155",
+      "image": {
+        "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Milwaukee_June_2022_05_(Discovery_World).jpg?width=800",
+        "alt": "Discovery World",
+        "credit": "Michael Barera, CC BY-SA 4.0 / Wikimedia Commons",
+        "credit_url": "https://commons.wikimedia.org/wiki/File:Milwaukee_June_2022_05_(Discovery_World).jpg"
+      }
+    },
+    {
+      "title": "MPS school closures: one community meeting left",
+      "body": "A post-election push for more state funding could change the math. The final listening session is Monday, Nov. 16, at North Division High School.",
+      "tag": "Schools",
+      "source_name": "WUWM",
+      "source_url": "https://www.wuwm.com/which-schools-will-mps-close-new-hopes-for-funding-after-election-of-democratic-trifecta",
+      "image": {
+        "src": "https://commons.wikimedia.org/wiki/Special:FilePath/2024_08_07_Bay_View_High_School.jpg?width=800",
+        "alt": "Bay View High School",
+        "credit": "Rorr404, CC0 / Wikimedia Commons",
+        "credit_url": "https://commons.wikimedia.org/wiki/File:2024_08_07_Bay_View_High_School.jpg"
+      }
+    },
+    {
+      "title": "Wisconsin Supreme Court to hear the Act 10 appeal",
+      "body": "The state's highest court will take up the challenge to the 2011 law limiting most public workers' collective bargaining. An appeals court upheld the law in July.",
+      "tag": "Government",
+      "source_name": "DrydenWire",
+      "source_url": "https://drydenwire.com/news/morning-headlines-thursday-nov-12-2026",
+      "image": {
+        "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Rotunda_-_Wisconsin_State_Capitol_-_DSC03106.JPG?width=800",
+        "alt": "Wisconsin State Capitol rotunda",
+        "credit": "Daderot, CC0 / Wikimedia Commons",
+        "credit_url": "https://commons.wikimedia.org/wiki/File:Rotunda_-_Wisconsin_State_Capitol_-_DSC03106.JPG"
+      }
+    },
+    {
+      "title": "Homicide charge in the death of a longtime MPS teacher",
+      "body": "Prosecutors charged a 22-year-old with first-degree intentional homicide in the Nov. 5 death of a special education teacher and Roosevelt football coach near 12th and Walnut.",
+      "tag": "Public safety",
+      "source_name": "TMJ4",
+      "source_url": "https://www.tmj4.com/news/local-news/county-reporting/milwaukee-county/22-year-old-charged-with-intentional-homicide-in-death-of-milwaukee-teacher"
+    },
+    {
+      "title": "Domestic violence high-risk caseload has more than doubled",
+      "body": "Milwaukee's Domestic Violence High Risk Team, run through Sojourner Family Peace Center, staffed 1,685 cases in 2025, up 113% from 2019. If you or someone you know needs help, Sojourner's 24-hour hotline is (414) 933-2722.",
+      "tag": "Public safety",
+      "source_name": "FOX6",
+      "source_url": "https://www.fox6now.com/news/milwaukee-domestic-violence-death-prevention"
+    },
+    {
+      "title": "Fire & Police Commission meets this morning",
+      "body": "The Board of Fire & Police Commissioners meets at 8:30 a.m. in City Hall, Room 301-A.",
+      "tag": "Government",
+      "source_name": "City of Milwaukee calendar",
+      "source_url": "https://city.milwaukee.gov/News-Events/calendar",
+      "image": {
+        "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Milwaukee_August_2022_072_(Milwaukee_City_Hall).jpg?width=800",
+        "alt": "Milwaukee City Hall",
+        "credit": "Michael Barera, CC BY-SA 4.0 / Wikimedia Commons",
+        "credit_url": "https://commons.wikimedia.org/wiki/File:Milwaukee_August_2022_072_(Milwaukee_City_Hall).jpg"
+      }
+    },
+    {
+      "title": "This weekend: Pentatonix, Steve Martin & Martin Short, and holiday kickoffs",
+      "body": "Big shows downtown, an open house at the Milwaukee Intertribal Circle's new gathering space, and Washington Heights' old-fashioned holiday kickoff.",
+      "tag": "Culture",
+      "source_name": "WTMJ",
+      "source_url": "https://wtmj.com/shows/whats-on-tap/2026/11/12/pentatonix-holiday-events-things-to-do-milwaukee-11-12-26/",
+      "image": {
+        "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Milwaukee_August_2022_102_(Marcus_Center).jpg?width=800",
+        "alt": "Marcus Performing Arts Center",
+        "credit": "Michael Barera, CC BY-SA 4.0 / Wikimedia Commons",
+        "credit_url": "https://commons.wikimedia.org/wiki/File:Milwaukee_August_2022_102_(Marcus_Center).jpg"
+      }
+    },
+    {
+      "title": "Marquette signs three for its 2027 class",
+      "body": "Shaka Smart talked through what he likes about the Golden Eagles' newest recruits.",
+      "tag": "Sports",
+      "source_name": "Milwaukee Journal Sentinel via Yahoo",
+      "source_url": "https://sports.yahoo.com/articles/heres-shaka-smart-said-marquettes-165747797.html",
+      "image": {
+        "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Milwaukee_July_2022_022_(Fiserv_Forum).jpg?width=800",
+        "alt": "Fiserv Forum",
+        "credit": "Michael Barera, CC BY-SA 4.0 / Wikimedia Commons",
+        "credit_url": "https://commons.wikimedia.org/wiki/File:Milwaukee_July_2022_022_(Fiserv_Forum).jpg"
+      }
+    }
   ],
   "history": {
     "year": "1882",

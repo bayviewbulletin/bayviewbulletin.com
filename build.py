@@ -1,183 +1,276 @@
 #!/usr/bin/env python3
-"""Build The Bay View Bulletin static site.
-
-Input:  content/issues/YYYY-MM-DD.json, content/directory.json
-Output: docs/ (index.html = newest issue, issues/<date>.html, archive, about, directory, assets, CNAME)
-
-Items with "hold": true are never published; they are written to review/<date>.md for Ben.
-"""
-import html, json, shutil
+"""Bay View Bulletin v2 layout prototype: front page + story pages + events + Milwaukee.
+Reads the same content/issues/*.json; writes preview_v2/ (not published)."""
+import html, json, re, shutil, math, datetime as dt
 from pathlib import Path
 
 ROOT = Path(__file__).parent
-OUT = ROOT / "docs"
-TAGLINE = "Bay View's morning paper"
-TIPS_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfXNc2RsIhvMPCfcZ9CYb6QIx78RZSr2Ar3YzT5ik9xyPhi7Q/viewform"
-FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-         '<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">')
-
-SECTIONS = [  # key, heading, dek
-    ("top", "Top stories", ""),
-    ("openings", "Openings & closings", ""),
-    ("development", "Development & City Hall", ""),
-    ("streets", "Streets & parking", ""),
-    ("schools", "Schools & family", ""),
-    ("parks", "Parks & lakefront", ""),
-    ("protests", "Protests & rallies", "Neutral listings for any cause: what, when, where and who's organizing."),
-    ("safety", "Safety", "Notable, safety-relevant incidents only. We don't name private individuals."),
-    ("realestate", "Real estate", ""),
-    ("help", "Ways to help", ""),
-    ("fishfry", "Fish Fry Friday", ""),
-    ("pets", "Lost & found pets", ""),
-    ("sports", "Bay View High sports", ""),
-    ("remembrances", "Remembrances", ""),
-]
-
+import sys
+OUT = ROOT / ("preview_v2" if "--preview" in sys.argv else "docs")
+TIPS = "https://docs.google.com/forms/d/e/1FAIpQLSfXNc2RsIhvMPCfcZ9CYb6QIx78RZSr2Ar3YzT5ik9xyPhi7Q/viewform"
 e = lambda s: html.escape(str(s or ""), quote=True)
+NAV = [("Today", "/"), ("Events", "/events.html"), ("Food & Drink", "/section/food.html"), ("City Hall", "/section/city.html"),
+       ("Safety", "/section/safety.html"), ("Milwaukee", "/milwaukee.html"), ("More", "/section/more.html")]
+SECTION_OF = {"top": "Bay View", "openings": "Food & Drink", "development": "City Hall", "streets": "Streets", "schools": "Schools",
+              "parks": "Parks", "protests": "Protests", "safety": "Safety", "realestate": "Real estate", "help": "Ways to help",
+              "fishfry": "Fish fry", "pets": "Pets", "sports": "Sports", "remembrances": "Remembrances"}
 
 
-def page(title, body, desc="Daily news for Milwaukee's Bay View neighborhood.", hero=None, edition=""):
-    if hero:
-        mast = (f'<header class="masthead"><img class="hero" src="{e(hero["src"])}" alt="{e(hero["alt"])}">'
-                f'<div class="hero-credit">Photo: <a href="{e(hero["credit_url"])}">{e(hero["credit"])}</a></div>')
-    else:
-        mast = '<header class="masthead plain">'
-    mast += (f'<div class="masthead-inner"><div class="edition">{edition}</div>'
-             f'<h1 class="title"><a href="/">The Bay View Bulletin</a></h1><p class="tagline">{TAGLINE}</p></div></header>')
-    return f"""<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{e(title)}</title><meta name="description" content="{e(desc)}">
-<meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}">
-{FONTS}<link rel="stylesheet" href="/assets/style.css"></head><body>
-<div class="topbar"><div class="topbar-inner"><span>Bay View, Milwaukee · Weekdays by 6:30 a.m.</span>
-<nav aria-label="Site"><a href="/">Today</a><a href="/archive.html">Archive</a><a href="/directory.html">Directory</a><a href="/about.html">About</a><a href="{TIPS_URL}">Send a tip</a></nav></div></div>
-{mast}
-{body}
-<footer class="site"><p><strong>The Bay View Bulletin</strong> covers Bay View from the harbor and Jones Island south to Holt and Morgan avenues, and from I-43 east to the lake.</p>
-<p>Every item links to its original reporting. Summaries are ours; photos belong to the credited owners and link back to them. Spot a mistake or want a photo removed? <a href="{TIPS_URL}">Tell us</a>.</p></footer>
-</body></html>"""
+def slug(s):
+    return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")[:60]
 
 
-def figure(img):
-    if not img:
-        return ""
-    return (f'<figure><img src="{e(img["src"])}" alt="{e(img["alt"])}" loading="lazy">'
-            f'<figcaption>Photo: <a href="{e(img["credit_url"])}">{e(img["credit"])}</a></figcaption></figure>')
+def dek(it):
+    if it.get("dek"):
+        return it["dek"]
+    b = it.get("body", "")
+    abbr = r"(?<!\bSt)(?<!\bS)(?<!\bN)(?<!\bE)(?<!\bW)(?<!\bAve)(?<!\bDec)(?<!\bNov)(?<!\bJan)(?<!\bFeb)(?<!\bOct)(?<!\bSept)(?<!\bMr)(?<!\bMs)(?<!\bDr)(?<!\bAld)(?<!\bp\.m)(?<!\ba\.m)"
+    m = re.match(r"(.+?" + abbr + r"[.!?])(\s+[A-Z\"']|$)", b)
+    return (m.group(1) if m else b)[:200]
 
 
-def item(it):
-    src = ""
-    if it.get("source_url"):
-        src = f'<a href="{e(it["source_url"])}">{e(it["source_name"])}{" · " + e(it["date"]) if it.get("date") else ""}</a>'
-    elif it.get("source_name"):
-        src = f'<span>{e(it["source_name"])}</span>'
-    tag = f'<span class="tag">{e(it["tag"])}</span>' if it.get("tag") else ""
-    cls = "item has-img" if it.get("image") else "item"
-    return (f'<li class="{cls}"><div class="text"><h3>{e(it["title"])}</h3>'
-            f'{"<p>" + e(it["body"]) + "</p>" if it.get("body") else ""}<div class="meta">{tag}{src}</div></div>'
-            f'{figure(it.get("image"))}</li>')
+CM = lambda f: "https://commons.wikimedia.org/wiki/Special:FilePath/" + f.replace(" ", "_") + "?width=500"
+VENUES = [("Cactus Club", CM("Milwaukee January 2025 04 (Cactus Club).jpg")), ("Puddler", CM("2024 08 07 Puddler's Hall 1.jpg")),
+          ("Library", CM("Bay View Branch.jpg")), ("Garibaldi", CM("Milwaukee January 2025 16 (S. Kinnickinnic Avenue).jpg")),
+          ("Kinnickinnic", CM("Milwaukee January 2025 16 (S. Kinnickinnic Avenue).jpg")), ("Methodist", CM("SouthShore Park 1.jpg")),
+          ("", CM("Milwaukee January 2025 16 (S. Kinnickinnic Avenue).jpg"))]
+WARM = {"Food & Drink", "Ways to help", "Parks", "Fish fry", "Pets"}
 
 
-def issue_page(d, review_lines):
-    secs = d["sections"]
-    nav, parts, quiet = [], [], []
-    for key, head, dek in SECTIONS:
-        items = [i for i in secs.get(key, []) if not i.get("hold")]
-        review_lines += [f"- **{head}:** {i['title']} ({i.get('source_url','')})\n  - Why held: {i.get('hold_reason','')}" for i in secs.get(key, []) if i.get("hold")]
-        if not items:
-            if key != "fishfry":
-                quiet.append(head)
+def venue_img(ev):
+    if ev.get("image"):
+        return ev["image"]
+    for k, u in VENUES:
+        if k in ev["where"] or k in ev["title"]:
+            return u
+
+
+def sunrise_sunset(day, lat=42.99, lon=-87.89, tz=-6):
+    n = day.timetuple().tm_yday
+    g = 2 * math.pi / 365 * (n - 1)
+    decl = 0.006918 - 0.399912*math.cos(g) + 0.070257*math.sin(g) - 0.006758*math.cos(2*g) + 0.000907*math.sin(2*g) - 0.002697*math.cos(3*g) + 0.00148*math.sin(3*g)
+    eqt = 229.18*(0.000075 + 0.001868*math.cos(g) - 0.032077*math.sin(g) - 0.014615*math.cos(2*g) - 0.040849*math.sin(2*g))
+    ha = math.degrees(math.acos(math.cos(math.radians(90.833))/(math.cos(math.radians(lat))*math.cos(decl)) - math.tan(math.radians(lat))*math.tan(decl)))
+    fmt = lambda mins: (dt.datetime(2000, 1, 1) + dt.timedelta(minutes=mins + tz*60)).strftime("%-I:%M")
+    return fmt(720 - 4*(lon + ha) - eqt), fmt(720 - 4*(lon - ha) - eqt)
+
+
+CSS = """
+:root{--paper:#FFFFFF;--ink:#121212;--muted:#5C6066;--rule:#E3E1DC;--soft:#F6F4EF;--lake:#1F4E79;--lake-soft:#E8EFF6;--alert:#B5361B;--warm:#C9541F;--warm-soft:#FBEDE3;
+--serif:"Source Serif 4",Georgia,serif;--plate:"Playfair Display",Georgia,serif;--sans:"Source Sans 3","Helvetica Neue",Arial,sans-serif;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--paper:#111315;--ink:#ECEAE4;--muted:#A1A6AD;--rule:#2A2E33;--soft:#1A1D21;--lake:#8DBDE3;--lake-soft:#17232F;--alert:#F08C70;--warm:#F29A55;--warm-soft:#2B1E16;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.5 var(--sans)}
+a{color:inherit;text-decoration:none}a:hover h2,a:hover h3,a:hover .hl{text-decoration:underline;text-underline-offset:3px}
+a:focus-visible{outline:3px solid var(--lake);outline-offset:2px}img{display:block;max-width:100%}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.plate{text-align:center;padding:18px 0 10px}.dateline{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.plate .rule{border-top:3px double var(--ink);margin:10px 0 0}.plate h1{font:900 clamp(38px,6.4vw,68px)/1.05 var(--plate);margin:8px 0 2px;letter-spacing:-.01em}
+.plate .tag{font:italic 400 16px var(--serif);color:var(--muted);margin:0 0 10px}
+nav.sections{border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);overflow-x:auto;white-space:nowrap}
+nav.sections ul{list-style:none;margin:0 auto;padding:0 20px;max-width:1140px;display:flex;gap:26px;justify-content:center}
+nav.sections a{display:inline-block;padding:11px 0;font:600 15px var(--sans)}nav.sections a.on{box-shadow:inset 0 -3px var(--lake)}
+@media(max-width:700px){nav.sections ul{justify-content:flex-start}}
+.utils{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-bottom:1px solid var(--rule);margin-bottom:22px}
+.util{padding:12px 14px;border-right:1px solid var(--rule);display:grid;gap:2px;align-content:start}.util:last-child{border-right:0}
+.util .k{font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.util .v{font:700 17px var(--serif)}.util .s{font-size:13px;color:var(--muted)}
+.util.alert .v{color:var(--warm)}.util .k::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--lake);margin-right:6px;vertical-align:1px}.util.warm .k::before{background:var(--warm)}
+@media(max-width:900px){.utils{grid-template-columns:repeat(3,1fr)}.util:nth-child(3n){border-right:0}.util:nth-child(-n+3){border-bottom:1px solid var(--rule)}}
+@media(max-width:520px){.utils{display:flex;overflow-x:auto}.util{min-width:150px;border-bottom:0!important;border-right:1px solid var(--rule)!important}}
+.ticker{display:flex;gap:10px;align-items:baseline;font-size:15px;border-bottom:1px solid var(--rule);padding:0 0 12px;margin:-10px 0 22px;overflow-x:auto;white-space:nowrap}
+.ticker b{font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--warm);padding:3px 7px;border-radius:2px}.ticker span+span::before{content:"\\00B7";margin-right:10px;color:var(--muted)}
+.front{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:28px;padding-bottom:24px;border-bottom:1px solid var(--ink)}
+@media(max-width:820px){.front{grid-template-columns:1fr}}
+.lead figure{margin:0 0 12px}.lead img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--soft)}
+.kicker{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--lake)}.kicker.w{color:var(--warm)}
+.lead h2{font:700 clamp(28px,3.4vw,40px)/1.12 var(--serif);margin:4px 0 8px;text-wrap:balance}.lead p{margin:0;font-size:18px;color:var(--muted);max-width:60ch}
+.meta{font-size:13px;color:var(--muted);margin-top:6px}
+.side{display:grid;align-content:start}.side a{padding:12px 0;border-bottom:1px solid var(--rule);display:block}.side a:first-child{padding-top:0}
+.side h3{font:700 19px/1.25 var(--serif);margin:2px 0 4px;text-wrap:balance}.side p{margin:0;font-size:15px;color:var(--muted)}
+.tonight{margin:22px 0;padding:14px 16px;background:var(--warm-soft);border-top:4px solid var(--warm);border-radius:0 0 4px 4px}
+.tonight h2{font:700 13px var(--sans);letter-spacing:.08em;text-transform:uppercase;margin:0 0 10px;display:flex;justify-content:space-between}
+.tonight h2 a{color:var(--warm);font-weight:600;letter-spacing:0;text-transform:none;font-size:14px}
+.chips{display:flex;gap:10px;overflow-x:auto;padding-bottom:2px}.chip{flex:0 0 auto;background:var(--paper);border:1px solid var(--rule);border-radius:4px;width:200px;overflow:hidden}.chip img{width:100%;height:110px;object-fit:cover;background:var(--soft)}.chip .in{padding:8px 12px 10px;display:grid;gap:2px}
+.chip .t{font:700 13px var(--sans);color:var(--warm)}.chip .n{font:700 15px/1.25 var(--serif);display:block}.chip .w{font-size:13px;color:var(--muted)}
+.block{padding:22px 0;border-top:1px solid var(--ink)}.block>h2{font:800 22px var(--serif);margin:0 0 14px;display:flex;justify-content:space-between;align-items:baseline}
+.block>h2 a{font:600 14px var(--sans);color:var(--lake)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 28px}@media(max-width:820px){.grid{grid-template-columns:1fr}}
+.row{display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;align-items:start}.row.noimg{grid-template-columns:1fr}
+.row img{width:96px;height:96px;object-fit:cover;background:var(--soft)}.row h3{font:700 18px/1.25 var(--serif);margin:2px 0 4px;text-wrap:balance}.row p{margin:0;font-size:15px;color:var(--muted)}
+.mke{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px;border:1px solid var(--ink);border-left:6px solid var(--lake);margin:22px 0}
+.mke .k{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.mke .hl{font:700 20px var(--serif)}
+.mke .go{font:700 15px var(--sans);color:var(--lake);white-space:nowrap}
+.hist{display:grid;grid-template-columns:200px minmax(0,1fr);gap:18px;align-items:start}@media(max-width:600px){.hist{grid-template-columns:1fr}}
+.hist img{width:100%;aspect-ratio:4/3;object-fit:cover}.hist .yr{font:900 34px var(--plate);color:var(--lake)}
+.cap{font-size:12px;color:var(--muted);margin-top:4px}
+footer{border-top:3px double var(--ink);margin-top:30px;padding:18px 0 40px;font-size:14px;color:var(--muted);text-align:center}
+footer a{color:var(--lake)}
+.story{max-width:700px;margin:26px auto 0}.story h1{font:700 clamp(30px,4vw,42px)/1.12 var(--serif);margin:6px 0 12px;text-wrap:balance}
+.story .body{font:400 19px/1.6 var(--serif)}.story figure{margin:16px 0}.story img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.btn{display:inline-block;margin:18px 0;padding:12px 18px;background:var(--lake);color:var(--paper);font:700 16px var(--sans);border-radius:4px}
+.more h2{font:800 20px var(--serif);border-top:1px solid var(--ink);padding-top:16px;margin-top:30px}
+.cal-day{font:700 13px var(--sans);letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding:18px 0 6px}
+.ev{display:grid;grid-template-columns:72px 90px minmax(0,1fr) auto;gap:14px;padding:10px 0;border-bottom:1px solid var(--rule);align-items:center}
+.ev img{width:72px;height:54px;object-fit:cover;background:var(--soft)}.ev .t{font:700 15px var(--sans);color:var(--warm)}.ev .n{font:700 17px var(--serif)}.ev .w{font-size:14px;color:var(--muted)}
+.pill{font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--rule);padding:3px 7px;border-radius:99px;color:var(--muted)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}.filters span{border:1px solid var(--ink);padding:6px 12px;border-radius:99px;font:600 14px var(--sans)}.filters span.on{background:var(--ink);color:var(--paper)}
+.list a{display:block;padding:16px 0;border-bottom:1px solid var(--rule)}.list h3{font:700 21px/1.25 var(--serif);margin:2px 0 4px}.list p{margin:0;color:var(--muted)}
+.pagehead{font:800 34px var(--serif);margin:24px 0 2px}.topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 36px;padding-top:6px}@media(max-width:820px){.topics{grid-template-columns:1fr}}.topic{padding:18px 0 6px}.topic>h2{font:800 20px var(--serif);margin:0 0 4px;padding-top:10px;border-top:4px solid var(--lake);display:flex;justify-content:space-between;align-items:baseline}.topic.w>h2{border-top-color:var(--warm)}.topic>h2 a{font:600 14px var(--sans);color:var(--lake)}.topic.w>h2 a{color:var(--warm)}.topic .row{padding:12px 0;border-bottom:1px solid var(--rule)}.topic .row:last-child{border-bottom:0}.pagedek{color:var(--muted);margin:0 0 10px}
+"""
+FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+         '<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700;8..60,800&display=swap" rel="stylesheet">')
+
+
+def shell(title, body, d, active="Today"):
+    nav = "".join(f'<li><a href="{h}"{" class=on" if n == active else ""}>{n}</a></li>' for n, h in NAV)
+    return f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{e(title)}</title>{FONTS}<link rel="stylesheet" href="/assets/v2.css"></head><body>
+<header class="plate wrap"><div class="dateline"><span>{e(d['display_date'])}</span><span>Bay View, Milwaukee</span><span>No. {d['number']}</span></div>
+<div class="rule"></div><h1><a href="/">The Bay View Bulletin</a></h1><p class="tag">Bay View's morning paper</p></header>
+<nav class="sections" aria-label="Sections"><ul>{nav}</ul></nav>
+<div class="wrap">{body}</div>
+<footer><div class="wrap">Covering Bay View from the harbor and Jones Island to Holt and Morgan avenues, I-43 to the lake.<br>
+Every item links to the original reporting. Photos belong to their credited owners. <a href="{TIPS}">Send a tip</a> · <a href="/about.html">About</a> · <a href="/archive.html">Archive</a></div></footer></body></html>"""
+
+
+ALL_STORIES = []
+
+
+def build_one(d, newest):
+    day = dt.date.fromisoformat(d["date"])
+
+    stories = []
+    for key, items in d["sections"].items():
+        for it in items:
+            if it.get("hold") or it.get("tag") == "Listings":
+                continue
+            it = dict(it, section=SECTION_OF.get(key, key), key=key, url=f"/story/{d['date']}-{slug(it['title'])}.html")
+            stories.append(it)
+            ALL_STORIES.append(dict(it, issue_date=d["date"], display_date=d["display_date"]))
+    lead = next((s for s in stories if s.get("image")), stories[0])
+    rest = [s for s in stories if s is not lead]
+
+    # story pages
+    for s in stories:
+        others = "".join(f'<a href="{o["url"]}"><span class="kicker">{e(o["section"])}</span><h3>{e(o["title"])}</h3><p>{e(dek(o))}</p></a>' for o in stories if o is not s)[:6000]
+        img = (f'<figure><img src="{e(s["image"]["src"])}" alt="{e(s["image"]["alt"])}"><div class="cap">Photo: <a href="{e(s["image"]["credit_url"])}">{e(s["image"]["credit"])}</a></div></figure>') if s.get("image") else ""
+        src = f'<a class="btn" href="{e(s["source_url"])}">Read the full story at {e(s["source_name"])} →</a>' if s.get("source_url") else ""
+        body = (f'<article class="story"><span class="kicker">{e(s["section"])} · {e(d["display_date"])}</span><h1>{e(s["title"])}</h1>{img}'
+                f'<div class="body"><p>{e(s.get("body"))}</p></div>{src}<section class="more side"><h2>More from Bay View today</h2>{others}</section></article>')
+        (OUT / s["url"].lstrip("/")).write_text(shell(s["title"] + " · The Bay View Bulletin", body, d))
+
+    # utilities
+    rise, sset = sunrise_sunset(day)
+    today_events = [ev for ev in d["events"] if ev["day"].startswith("Today")]
+    days_to_winter = (dt.date(day.year, 12, 1) - day).days
+    U = d.get("utilities", {})
+    def ut(key, label, fallback_v, fallback_s, href=""):
+        x = U.get(key) or {}
+        return (label, x.get("v") or fallback_v, x.get("s") or fallback_s, x.get("class", ""), x.get("href") or href)
+    utils = [
+        ut("weather", "Weather", "Today's forecast →", "National Weather Service", "https://forecast.weather.gov/MapClick.php?lat=42.99&lon=-87.89"),
+        ut("lake", "Lake", "Marine forecast →", "Wind & waves off South Shore", "https://forecast.weather.gov/MapClick.php?zoneid=LMZ645"),
+        ("Parking", f"Winter rules in {days_to_winter} days" if days_to_winter > 0 else "Winter rules in effect", "Dec 1 – Mar 1", "warm" if 0 < days_to_winter <= 7 else "", "https://city.milwaukee.gov/mpw/parking/meter"),
+        ("Tonight", f"{len(today_events)} things to do" if today_events else "Quiet night", "See tonight's list", "warm", "/events.html"),
+        ut("pickup", "Pickup & roads", "Your pickup day →", "City sanitation schedule", "https://city.milwaukee.gov/sanitation"),
+        ("Sun over the lake", f"↑ {rise} · ↓ {sset}", "Bay View shoreline", "", ""),
+    ]
+    util_html = "".join((f'<a class="util {c}" href="{e(h)}">' if h else f'<div class="util {c}">') + f'<span class="k">{k}</span><span class="v">{e(v)}</span><span class="s">{e(s_)}</span>' + ("</a>" if h else "</div>") for k, v, s_, c, h in utils)
+    tick = [s for s in stories if s["key"] == "openings"] or []
+    ticker_items = d.get("ticker") or [c["title"] for c in d.get("catching_up", []) if re.search(r"open|clos|coming|leav|lease", c["title"], re.I)][:6]
+    ticker = ('<div class="ticker"><b>Opened &amp; closed</b>' + "".join(f"<span>{e(t)}</span>" for t in ticker_items) + "</div>") if ticker_items else ""
+
+    tops = [s for s in rest if s["key"] == "top"]; side_items = (tops + [s for s in rest if s["key"] != "top"])[:max(3, len(tops))]
+    side = "".join(f'<a href="{s["url"]}"><span class="kicker">{e(s["section"])}</span><h3>{e(s["title"])}</h3><p>{e(dek(s))}</p></a>' for s in side_items)
+    lead_img = f'<figure><img src="{e(lead["image"]["src"])}" alt="{e(lead["image"]["alt"])}"><div class="cap">Photo: {e(lead["image"]["credit"])}</div></figure>' if lead.get("image") else ""
+    chips = "".join(f'<a class="chip" href="/events.html"><img src="{e(venue_img(ev))}" alt="" loading="lazy"><span class="in"><span class="t">{e(ev["when"])}</span><span class="n">{e(ev["title"])}</span><span class="w">{e(ev["where"].split(",")[0].split(" · ")[0])}</span></span></a>' for ev in today_events)
+
+    def row(s, kicker=True):
+        img = f'<img src="{e(s["image"]["src"])}" alt="">' if s.get("image") else ""
+        return f'<a class="row{"" if img else " noimg"}" href="{s["url"]}">{img}<div>{('<span class="kicker">' + e(s["section"]) + '</span>') if kicker else ""}<h3>{e(s["title"])}</h3><p>{e(dek(s))}</p><div class="meta">{e(s["source_name"])}</div></div></a>'
+    groups = {}
+    for s_ in rest:
+        if s_ in side_items:
             continue
-        nav.append(f'<li><a href="#{key}">{e(head)} <span class="n">{len(items)}</span></a></li>')
-        parts.append(f'<section id="{key}"><h2>{e(head)}</h2>{"<p class=dek>" + e(dek) + "</p>" if dek else ""}'
-                     f'<ul class="items">{"".join(item(i) for i in items)}</ul></section>')
-        if key == "top":  # events + catch-up go right after the top stories
-            if d.get("events"):
-                rows, cur = [], None
-                for ev in d["events"]:
-                    if ev["day"] != cur:
-                        cur = ev["day"]
-                        rows.append(f'<tr class="day"><td colspan="2">{e(cur)}</td></tr>')
-                    rows.append(f'<tr><td class="when">{e(ev["when"])}</td><td class="what"><strong>{e(ev["title"])}</strong> · {e(ev["where"])} · <a href="{e(ev["link"])}">Details</a></td></tr>')
-                nav.append(f'<li><a href="#events">Events & music <span class="n">{len(d["events"])}</span></a></li>')
-                parts.append(f'<section id="events"><h2>Events & music</h2><p class="dek">Today and coming up in the neighborhood.</p>'
-                             f'<div class="cal-wrap"><table class="cal"><tbody>{"".join(rows)}</tbody></table></div></section>')
-            if d.get("catching_up"):
-                lis = "".join(f'<li>{e(c["title"])} · <a href="{e(c["source_url"])}">{e(c["source_name"])}, {e(c["date"])}</a></li>' for c in d["catching_up"])
-                nav.append('<li><a href="#catching-up">Catching up</a></li>')
-                parts.append(f'<section id="catching-up" class="catchup"><h2>Catching up</h2><p class="dek">First issue, so here\'s what you may have missed in recent weeks.</p><ul>{lis}</ul></section>')
-    if d.get("milwaukee"):
-        nav.append(f'<li><a href="#milwaukee">Milwaukee top {len(d["milwaukee"])} <span class="n">{len(d["milwaukee"])}</span></a></li>')
-        parts.append(f'<section id="milwaukee"><h2>Milwaukee top {len(d["milwaukee"])}</h2><p class="dek">The biggest stories from the rest of the city.</p>'
-                     f'<ol class="items mke">{"".join(item(i) for i in d["milwaukee"])}</ol></section>')
+        groups.setdefault(s_["section"], []).append(s_)
+    topics = "".join(f'<section class="topic{" w" if sec in WARM else ""}"><h2>{e(sec)}<a href="/section/{slug(sec)}.html">More →</a></h2>{"".join(row(x, False) for x in xs[:3])}</section>' for sec, xs in groups.items())
+    mke = d.get("milwaukee", [])
     h = d.get("history")
-    nav.append('<li><a href="#weather">Weather & history</a></li>')
-    hist = ""
-    if h:
-        hist = (f'<div class="card"><h3>Bay View history moment</h3><div class="big">{e(h["year"])}</div>{figure(h.get("image"))}'
-                f'<p>{e(h["text"])}</p><p><a href="{e(h["source_url"])}">{e(h["source_name"])}</a></p></div>')
-    weather = d.get("weather") or {"text": "Today's National Weather Service forecast for the Bay View shoreline, with lake winds and waves for walkers on the lakefront path.", "url": "https://forecast.weather.gov/MapClick.php?lat=42.99&lon=-87.89"}
-    parts.append(f'<section id="weather"><h2>Weather & history</h2><div class="two"><div class="card"><h3>Lakefront forecast</h3><p>{e(weather["text"])}</p>'
-                 f'<p><a class="btn" href="{e(weather["url"])}">See today\'s forecast</a></p></div>{hist}</div></section>')
-    if quiet:
-        parts.append(f'<p class="quiet"><strong>Quiet today:</strong> {e(", ".join(quiet))}. {e(d.get("quiet_note",""))}</p>')
-    nav.append(f'<li><a href="{TIPS_URL}">Send a tip</a></li>')
-    body = (f'<div class="wrap"><nav class="index" aria-label="Sections in this issue"><h2>In this issue</h2><ol>{"".join(nav)}</ol></nav>'
-            f'<main><p class="greeting">{e(d["greeting"])}</p>{"".join(parts)}</main></div>')
-    ed = f'<span class="badge">No. {d["number"]}</span><span>{e(d["display_date"])}</span>'
-    return page(f'The Bay View Bulletin · {d["display_date"]}', body, d["greeting"], d.get("lead_image"), ed)
+    hist = (f'<section class="block"><h2>Bay View history</h2><div class="hist"><div><img src="{e(h["image"]["src"])}" alt="{e(h["image"]["alt"])}"><div class="cap">{e(h["image"]["credit"])}</div></div>'
+            f'<div><div class="yr">{e(h["year"])}</div><p>{e(h["text"])}</p><a class="kicker" href="{e(h["source_url"])}">{e(h["source_name"])} →</a></div></div></section>') if h else ""
+    home = (f'<div class="utils">{util_html}</div>{ticker}'
+            f'<section class="front"><a class="lead" href="{lead["url"]}">{lead_img}<span class="kicker">{e(lead["section"])}</span><h2>{e(lead["title"])}</h2><p>{e(dek(lead))}</p><div class="meta">{e(lead["source_name"])}</div></a>'
+            f'<div class="side">{side}</div></section>'
+            f'<section class="tonight"><h2><span>Tonight in Bay View</span><a href="/events.html">All events →</a></h2><div class="chips">{chips}</div></section>'
+            f'<div class="topics">{topics}</div>'
+            f'<a class="mke" href="/milwaukee.html"><div><div class="k">Milwaukee today · {len(mke)} stories</div><div class="hl">{e(mke[0]["title"]) if mke else ""}</div></div><span class="go">Read Milwaukee →</span></a>'
+            f'{hist}')
+    (OUT / "issues").mkdir(exist_ok=True)
+    (OUT / "issues" / f'{d["date"]}.html').write_text(shell("The Bay View Bulletin · " + d["display_date"], home, d))
+    if not newest:
+        return
+    (OUT / "index.html").write_text(shell("The Bay View Bulletin", home, d))
+
+    # events
+    cal, cur = [], None
+    for ev in d["events"]:
+        if ev["day"] != cur:
+            cur = ev["day"]
+            cal.append(f'<div class="cal-day">{e(cur)}</div>')
+        cal.append(f'<div class="ev"><img src="{e(venue_img(ev))}" alt="" loading="lazy"><span class="t">{e(ev["when"])}</span><div><a href="{e(ev["link"])}" class="n">{e(ev["title"])}</a><div class="w">{e(ev["where"])}</div></div><span class="pill">{e(ev["kind"])}</span></div>')
+    kinds = sorted({ev["kind"] for ev in d["events"]})
+    filt = '<div class="filters"><span class="on">All</span>' + "".join(f"<span>{e(k)}</span>" for k in kinds) + "</div>"
+    (OUT / "events.html").write_text(shell("Events · The Bay View Bulletin", f'<h1 class="pagehead">Events in Bay View</h1><p class="pagedek">Shows, family time, markets and meetings, today and ahead.</p>{filt}{"".join(cal)}', d, "Events"))
+
+    # milwaukee
+    lst = "".join(f'<a href="{e(m["source_url"])}"><span class="kicker">{e(m.get("tag"))}</span><h3>{e(m["title"])}</h3><p>{e(m.get("body"))}</p><div class="meta">{e(m["source_name"])}</div></a>' for m in mke)
+    (OUT / "milwaukee.html").write_text(shell("Milwaukee · The Bay View Bulletin", f'<h1 class="pagehead">Milwaukee today</h1><p class="pagedek">The citywide news that matters to Bay View: as many stories as the day calls for.</p><div class="list">{lst}</div>', d, "Milwaukee"))
+
+
+SECTION_PAGES = {"food": ("Food & Drink", {"Food & Drink", "Fish fry"}), "city": ("City Hall", {"City Hall", "Streets", "Bay View"}),
+                 "safety": ("Safety", {"Safety", "Protests"}), "more": ("More from Bay View", None)}
 
 
 def build():
     if OUT.exists():
         shutil.rmtree(OUT)
-    (OUT / "issues").mkdir(parents=True)
-    shutil.copytree(ROOT / "assets", OUT / "assets")
+    (OUT / "story").mkdir(parents=True)
+    (OUT / "section").mkdir()
+    (OUT / "assets").mkdir()
+    (OUT / "assets/v2.css").write_text(CSS)
     (OUT / "CNAME").write_text("bayviewbulletin.com\n")
     (OUT / ".nojekyll").write_text("")
-    (ROOT / "review").mkdir(exist_ok=True)
+    files = sorted((ROOT / "content/issues").glob("*.json"))
+    issues = [json.loads(f.read_text()) for f in files]
+    for i, d in enumerate(issues):
+        build_one(d, i == len(issues) - 1)
+    d = issues[-1]
+    recent = [s for s in reversed(ALL_STORIES)][:400]
 
-    issues = sorted((ROOT / "content/issues").glob("*.json"), reverse=True)
-    archive = []
-    for i, f in enumerate(issues):
-        d = json.loads(f.read_text())
-        review = []
-        doc = issue_page(d, review)
-        (OUT / "issues" / f"{d['date']}.html").write_text(doc)
-        if i == 0:
-            (OUT / "index.html").write_text(doc)
-        if review:
-            (ROOT / "review" / f"{d['date']}.md").write_text(f"# Held for review: {d['display_date']}\n\n" + "\n".join(review) + "\n")
-        archive.append(f'<li><a href="/issues/{d["date"]}.html">{e(d["display_date"])}</a><span>No. {d["number"]}</span></li>')
-
-    (OUT / "archive.html").write_text(page("Archive · The Bay View Bulletin",
-        f'<div class="wrap single"><main><section><h2>Every issue</h2><ul class="archive">{"".join(archive)}</ul></section></main></div>'))
-
-    rows = "".join(f'<tr><td><strong>{e(b["name"])}</strong></td><td>{e(b["type"])}</td><td>{e(b["address"])}{" <em>(verifying)</em>" if b.get("verify") else ""}</td></tr>'
-                   for b in sorted(json.loads((ROOT / "content/directory.json").read_text()), key=lambda b: b["name"].lower()))
-    (OUT / "directory.html").write_text(page("Directory · The Bay View Bulletin",
-        f'<div class="wrap single"><main><section><h2>Bay View business directory</h2><p class="dek">The shops, venues and institutions we watch every week. Missing a business? <a href="{TIPS_URL}">Add it</a>.</p>'
-        f'<div class="cal-wrap"><table class="dir"><thead><tr><th>Business</th><th>Type</th><th>Address</th></tr></thead><tbody>{rows}</tbody></table></div></section></main></div>'))
-
-    about = f"""<div class="wrap single"><main class="prose">
-<h2>Bay View's morning paper</h2>
-<p>The Bay View Bulletin is a free daily digest of what's happening in Milwaukee's Bay View neighborhood. It's put together every weekday morning from local news outlets, the neighborhood's own businesses and organizations, public social media posts, and city records. Every item links back to the people who did the reporting.</p>
-<h2>What we cover</h2>
-<p>Openings and closings, development and City Hall, streets and parking, schools and family, parks and the lakefront, events and live music, protests and rallies, safety, real estate, ways to help, Friday fish fries, lost and found pets, Bay View High sports, remembrances of community figures, and the ten biggest Milwaukee stories of the day.</p>
-<h2>Where we cover</h2>
-<p>Bay View as most neighbors know it: from the harbor and Jones Island south to Holt and Morgan avenues, and from I-43 east to Lake Michigan, including Humboldt Park, South Shore Park and the stretch along Kinnickinnic Avenue.</p>
-<h2>How we report</h2>
-<ul><li>News from the last 24 hours, plus upcoming events.</li>
-<li>Safety coverage is limited to notable incidents, and we don't name private individuals.</li>
-<li>Protests and rallies are listed neutrally, for any cause.</li>
-<li>Photos come from the original source or free-licensed collections, always credited and linked. If you own a photo and want it removed, tell us and it comes down.</li>
-<li>Found an error? <a href="{TIPS_URL}">Let us know</a> and we'll correct it.</li></ul>
-<h2>Send a tip</h2>
-<p>Saw paper go up on a storefront window? Heard about a show? <a class="btn" href="{TIPS_URL}">Send a tip</a></p>
-</main></div>"""
-    (OUT / "about.html").write_text(page("About · The Bay View Bulletin", about))
-    print(f"Built {len(issues)} issue(s) into {OUT}")
+    def listing(items):
+        return '<div class="list">' + "".join(f'<a href="{s["url"]}"><span class="kicker">{e(s["section"])} · {e(s["display_date"])}</span><h3>{e(s["title"])}</h3><p>{e(dek(s))}</p></a>' for s in items) + "</div>"
+    labels = sorted({s["section"] for s in recent})
+    for lab in labels:
+        items = [s for s in recent if s["section"] == lab]
+        (OUT / "section" / f"{slug(lab)}.html").write_text(shell(lab + " · The Bay View Bulletin", f'<h1 class="pagehead">{e(lab)}</h1><p class="pagedek">Recent {e(lab.lower())} news from Bay View.</p>' + (listing(items) or "<p>Nothing yet.</p>"), d))
+    for key, (title, labs) in SECTION_PAGES.items():
+        items = [s for s in recent if labs is None or s["section"] in labs]
+        active = {"food": "Food & Drink", "city": "City Hall", "safety": "Safety", "more": "More"}[key]
+        body = f'<h1 class="pagehead">{e(title)}</h1>' + (listing(items) if items else '<p class="pagedek">No recent items. Check back tomorrow morning.</p>')
+        (OUT / "section" / f"{key}.html").write_text(shell(title + " · The Bay View Bulletin", body, d, active))
+    arch = "".join(f'<a href="/issues/{x["date"]}.html"><span class="kicker">No. {x["number"]}</span><h3>{e(x["display_date"])}</h3><p>{e(x["greeting"][:160])}…</p></a>' for x in reversed(issues))
+    (OUT / "archive.html").write_text(shell("Archive · The Bay View Bulletin", f'<h1 class="pagehead">Every issue</h1><div class="list">{arch}</div>', d, ""))
+    dirs = json.loads((ROOT / "content/directory.json").read_text())
+    rows = "".join(f'<div class="ev" style="grid-template-columns:minmax(0,1fr) auto"><div><span class="n">{e(b["name"])}</span><div class="w">{e(b["address"])}{" (verifying)" if b.get("verify") else ""}</div></div><span class="pill">{e(b["type"])}</span></div>' for b in sorted(dirs, key=lambda b: b["name"].lower()))
+    (OUT / "directory.html").write_text(shell("Directory · The Bay View Bulletin", f'<h1 class="pagehead">Bay View business directory</h1><p class="pagedek">The shops, venues and institutions we watch. Missing one? <a href="{TIPS}" style="color:var(--lake)">Tell us</a>.</p>{rows}', d, ""))
+    about = f"""<article class="story"><h1>Bay View's morning paper</h1><div class="body">
+<p>The Bay View Bulletin is a free daily guide to what's happening in Milwaukee's Bay View neighborhood, published every weekday morning. We gather it from local news outlets, the neighborhood's own businesses and organizations, public social media posts and city records, and every item links back to the people who did the reporting.</p>
+<p><strong>Where we cover:</strong> Bay View as neighbors know it, from the harbor and Jones Island south to Holt and Morgan avenues, and from I-43 east to Lake Michigan.</p>
+<p><strong>How we report:</strong> news from the last 24 hours plus what's coming up. Safety coverage sticks to notable incidents, and we never name private individuals. Protests and rallies are listed neutrally, for any cause. Photos come from the original source or free-licensed collections, always credited; if you own a photo and want it removed, tell us and it comes down.</p>
+<p><a class="btn" href="{TIPS}">Send a tip or a correction</a></p></div></article>"""
+    (OUT / "about.html").write_text(shell("About · The Bay View Bulletin", about, d, ""))
+    print("built", OUT, len(issues), "issue(s)")
 
 
 if __name__ == "__main__":
     build()
+
