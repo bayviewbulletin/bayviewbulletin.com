@@ -278,7 +278,6 @@
   "name": "Freya Salon",
   "type": "Hair salon",
   "address": "2318 S. Kinnickinnic Ave.",
-  "verify": true,
   "lat": 43.00277,
   "lon": -87.90403
  },
@@ -412,7 +411,6 @@
   "name": "Mochinut & Roll Up",
   "type": "Mochi doughnuts & spring rolls",
   "address": "2144 S. Kinnickinnic Ave.",
-  "verify": true,
   "lat": 43.00598,
   "lon": -87.90662
  },
@@ -476,7 +474,6 @@
   "name": "Palomino",
   "type": "Bar & restaurant",
   "address": "2491 S. Superior St.",
-  "verify": true,
   "lat": 42.99929,
   "lon": -87.88992
  },
@@ -568,7 +565,6 @@
   "name": "The Shop on KK",
   "type": "Barbershop",
   "address": "2340 S. Kinnickinnic Ave.",
-  "verify": true,
   "lat": 43.00235,
   "lon": -87.90367
  },

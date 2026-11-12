@@ -168,7 +168,9 @@ def build_one(d, newest):
             it = dict(it, section=SECTION_OF.get(key, key), key=key, url=f"/story/{d['date']}-{slug(it['title'])}.html")
             stories.append(it)
             ALL_STORIES.append(dict(it, issue_date=d["date"], display_date=d["display_date"]))
-    lead = next((s for s in stories if s.get("image")), stories[0])
+    # The daily business spotlight always gets its own block and is never the lead or a side headline.
+    news = [s for s in stories if s["key"] != "spotlight"] or stories
+    lead = next((s for s in news if s.get("image")), news[0])
     rest = [s for s in stories if s is not lead]
 
     # story pages
@@ -203,7 +205,7 @@ def build_one(d, newest):
     _dur = max(25, sum(len(t) for t in ticker_items) // 5)
     ticker = (f'<div class="ticker" aria-label="Recent openings and closings"><b>Opened &amp; closed</b><div class="vp"><div class="track" style="--dur:{_dur}s"><div class="set">{_set}</div><div class="set" aria-hidden="true">{_set}</div></div></div></div>') if ticker_items else ""
 
-    tops = [s for s in rest if s["key"] == "top"]; side_items = (tops + [s for s in rest if s["key"] != "top"])[:max(3, len(tops))]
+    tops = [s for s in rest if s["key"] == "top"]; side_items = (tops + [s for s in rest if s["key"] not in ("top", "spotlight")])[:max(3, len(tops))]
     side = "".join(f'<a href="{s["url"]}"><span class="kicker">{e(s["section"])}</span><h3>{e(s["title"])}</h3><p>{e(dek(s))}</p></a>' for s in side_items)
     lead_img = f'<figure><img src="{e(lead["image"]["src"])}" alt="{e(lead["image"]["alt"])}"><div class="cap">Photo: {e(lead["image"]["credit"])}</div></figure>' if lead.get("image") else ""
     chips = "".join(f'<a class="chip" href="/events.html"><img src="{e(venue_img(ev))}" alt="" loading="lazy"><span class="in"><span class="t">{e(ev["when"])}</span><span class="n">{e(ev["title"])}</span><span class="w">{e(ev["where"].split(",")[0].split(" · ")[0])}</span></span></a>' for ev in today_events)
@@ -216,6 +218,8 @@ def build_one(d, newest):
         if s_ in side_items:
             continue
         groups.setdefault(s_["section"], []).append(s_)
+    if "Business spotlight" in groups:  # spotlight block comes first among the topic blocks
+        groups = {"Business spotlight": groups.pop("Business spotlight"), **groups}
     topics = "".join(f'<section class="topic{" w" if sec in WARM else ""}"><h2>{e(sec)}<a href="/section/{slug(sec)}.html">More →</a></h2>{"".join(row(x, False) for x in xs[:3])}</section>' for sec, xs in groups.items())
     mke = d.get("milwaukee", [])
     h = d.get("history")
