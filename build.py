@@ -203,7 +203,7 @@ def build_one(d, newest):
         ut("weather", "Weather", "Today's forecast →", "National Weather Service", "https://forecast.weather.gov/MapClick.php?lat=42.99&lon=-87.89"),
         ut("lake", "Lake", "Marine forecast →", "Wind & waves off South Shore", "https://forecast.weather.gov/MapClick.php?zoneid=LMZ645"),
         ("Parking", f"Winter rules in {days_to_winter} days" if days_to_winter > 0 else "Winter rules in effect", "Dec 1 – Mar 1", "warm" if 0 < days_to_winter <= 7 else "", "https://city.milwaukee.gov/mpw/parking/meter"),
-        ("Tonight", f"{len(today_events)} things to do" if today_events else "Quiet night", "See tonight's list", "warm", "/events.html"),
+        ("Today", f"{len(today_events)} things to do" if today_events else "Quiet day", "See today's list", "warm", "/events.html"),
         ut("pickup", "Pickup & roads", "Your pickup day →", "City sanitation schedule", "https://city.milwaukee.gov/sanitation"),
         ("Sun over the lake", f"↑ {rise} · ↓ {sset}", "Bay View shoreline", "", ""),
     ]
@@ -237,7 +237,7 @@ def build_one(d, newest):
     home = (f'<div class="utils">{util_html}</div>{ticker}'
             f'<section class="front"><a class="lead" href="{lead["url"]}">{lead_img}<span class="kicker">{e(lead["section"])}</span><h2>{e(lead["title"])}</h2><p>{e(dek(lead))}</p><div class="meta">{e(srcmeta(lead))}</div></a>'
             f'<div class="side">{side}</div></section>'
-            f'<section class="tonight"><h2><span>Tonight in Bay View</span><a href="/events.html">All events →</a></h2><div class="chips">{chips}</div></section>'
+            f'<section class="tonight"><h2><span>Today in Bay View</span><a href="/events.html">All events →</a></h2><div class="chips">{chips}</div></section>'
             f'<div class="topics">{topics}</div>'
             f'{hist}')
     (OUT / "issues").mkdir(exist_ok=True)
