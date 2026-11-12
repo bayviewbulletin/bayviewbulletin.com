@@ -1,31 +1,201 @@
 [
-  {"name": "Cactus Club", "type": "Music venue", "address": "2496 S. Wentworth Ave."},
-  {"name": "Club Garibaldi", "type": "Bar & music venue", "address": "2501 S. Superior St."},
-  {"name": "Puddler's Hall", "type": "Historic tavern", "address": "2461 S. St. Clair St."},
-  {"name": "Avalon Atmospheric Theater", "type": "Cinema", "address": "S. Kinnickinnic Ave.", "verify": true},
-  {"name": "Room Service", "type": "Restaurant", "address": "2159 S. Kinnickinnic Ave."},
-  {"name": "Vanguard", "type": "Sausage bar", "address": "2659 S. Kinnickinnic Ave."},
-  {"name": "EsterEv", "type": "Restaurant", "address": "Kinnickinnic Ave.", "verify": true},
-  {"name": "Radish", "type": "Restaurant & shop", "address": "2986 S. Kinnickinnic Ave."},
-  {"name": "Catrina's Cafe", "type": "Mexican", "address": "2352 S. Kinnickinnic Ave."},
-  {"name": "Axolotl Cafe", "type": "Brunch", "address": "3001 S. Kinnickinnic Ave."},
-  {"name": "Happy Dough Lucky", "type": "Donuts, pizza & bar", "address": "2691 S. Kinnickinnic Ave."},
-  {"name": "Vendetta Coffee Bar", "type": "Coffee", "address": "2268 S. Kinnickinnic Ave."},
-  {"name": "Babe's Ice Cream", "type": "Ice cream (seasonal)", "address": "2264 S. Kinnickinnic Ave."},
-  {"name": "Hi-Fi Cafe", "type": "Cafe", "address": "2640 S. Kinnickinnic Ave."},
-  {"name": "Lion's Tooth", "type": "Bookstore & shop", "address": "2421 S. Kinnickinnic Ave."},
-  {"name": "Acme Records", "type": "Records", "address": "2341 S. Kinnickinnic Ave.", "verify": true},
-  {"name": "Bay View Books & Music", "type": "Books & music", "address": "2653 S. Kinnickinnic Ave.", "verify": true},
-  {"name": "Fiber Fever", "type": "Yarn shop", "address": "Bay View", "verify": true},
-  {"name": "The Mothership", "type": "Cocktail bar", "address": "2301 S. Logan Ave."},
-  {"name": "Ian's Pizza (R1VER)", "type": "Pizza by the slice", "address": "2035 S. 1st St."},
-  {"name": "Semolina", "type": "Restaurant", "address": "Bay View", "verify": true},
-  {"name": "Wioletta's Polish Market", "type": "Deli", "address": "Bay View", "verify": true},
-  {"name": "Supermoon Beer", "type": "Brewery (taproom closed)", "address": "3145 S. Howell Ave."},
-  {"name": "Outpost Natural Foods", "type": "Grocery", "address": "2826 S. Kinnickinnic Ave."},
-  {"name": "Bay View Piggly Wiggly", "type": "Grocery", "address": "Bay View", "verify": true},
-  {"name": "Bay View United Methodist Church", "type": "Church & community", "address": "2772 S. Kinnickinnic Ave."},
-  {"name": "Bay View Library", "type": "Library", "address": "2566 S. Kinnickinnic Ave."},
-  {"name": "Beulah Brinton House", "type": "Historic site", "address": "2590 S. Superior St."},
-  {"name": "Prasser-Kleczka Bay View Chapel", "type": "Funeral home", "address": "3275 S. Howell Ave."}
+ {
+  "name": "Cactus Club",
+  "type": "Music venue",
+  "address": "2496 S. Wentworth Ave.",
+  "lat": 42.99903,
+  "lon": -87.8902
+ },
+ {
+  "name": "Club Garibaldi",
+  "type": "Bar & music venue",
+  "address": "2501 S. Superior St.",
+  "lat": 42.99896,
+  "lon": -87.88974
+ },
+ {
+  "name": "Puddler's Hall",
+  "type": "Historic tavern",
+  "address": "2461 S. St. Clair St.",
+  "lat": 42.99876,
+  "lon": -87.89304
+ },
+ {
+  "name": "Avalon Atmospheric Theater",
+  "type": "Cinema",
+  "address": "S. Kinnickinnic Ave.",
+  "verify": true
+ },
+ {
+  "name": "Room Service",
+  "type": "Restaurant",
+  "address": "2159 S. Kinnickinnic Ave.",
+  "lat": 43.00523,
+  "lon": -87.90635
+ },
+ {
+  "name": "Vanguard",
+  "type": "Sausage bar",
+  "address": "2659 S. Kinnickinnic Ave.",
+  "lat": 42.99647,
+  "lon": -87.89807
+ },
+ {
+  "name": "EsterEv",
+  "type": "Restaurant",
+  "address": "Kinnickinnic Ave.",
+  "verify": true
+ },
+ {
+  "name": "Radish",
+  "type": "Restaurant & shop",
+  "address": "2986 S. Kinnickinnic Ave.",
+  "lat": 42.99063,
+  "lon": -87.88511
+ },
+ {
+  "name": "Catrina's Cafe",
+  "type": "Mexican",
+  "address": "2352 S. Kinnickinnic Ave.",
+  "lat": 43.00199,
+  "lon": -87.9032
+ },
+ {
+  "name": "Axolotl Cafe",
+  "type": "Brunch",
+  "address": "3001 S. Kinnickinnic Ave.",
+  "lat": 42.99013,
+  "lon": -87.88502
+ },
+ {
+  "name": "Happy Dough Lucky",
+  "type": "Donuts, pizza & bar",
+  "address": "2691 S. Kinnickinnic Ave.",
+  "lat": 42.99605,
+  "lon": -87.89717
+ },
+ {
+  "name": "Vendetta Coffee Bar",
+  "type": "Coffee",
+  "address": "2268 S. Kinnickinnic Ave.",
+  "lat": 43.00338,
+  "lon": -87.90446
+ },
+ {
+  "name": "Babe's Ice Cream",
+  "type": "Ice cream (seasonal)",
+  "address": "2264 S. Kinnickinnic Ave.",
+  "lat": 43.00342,
+  "lon": -87.90447
+ },
+ {
+  "name": "Hi-Fi Cafe",
+  "type": "Cafe",
+  "address": "2640 S. Kinnickinnic Ave.",
+  "lat": 42.99699,
+  "lon": -87.89844
+ },
+ {
+  "name": "Lion's Tooth",
+  "type": "Bookstore & shop",
+  "address": "2421 S. Kinnickinnic Ave.",
+  "lat": 43.00066,
+  "lon": -87.90255
+ },
+ {
+  "name": "Acme Records",
+  "type": "Records",
+  "address": "2341 S. Kinnickinnic Ave.",
+  "verify": true,
+  "lat": 43.00203,
+  "lon": -87.90385
+ },
+ {
+  "name": "Bay View Books & Music",
+  "type": "Books & music",
+  "address": "2653 S. Kinnickinnic Ave.",
+  "verify": true,
+  "lat": 42.99667,
+  "lon": -87.89822
+ },
+ {
+  "name": "Fiber Fever",
+  "type": "Yarn shop",
+  "address": "Bay View",
+  "verify": true
+ },
+ {
+  "name": "The Mothership",
+  "type": "Cocktail bar",
+  "address": "2301 S. Logan Ave.",
+  "lat": 43.00279,
+  "lon": -87.89689
+ },
+ {
+  "name": "Ian's Pizza (R1VER)",
+  "type": "Pizza by the slice",
+  "address": "2035 S. 1st St.",
+  "lat": 43.00266,
+  "lon": -87.91135
+ },
+ {
+  "name": "Semolina",
+  "type": "Restaurant",
+  "address": "Bay View",
+  "verify": true
+ },
+ {
+  "name": "Wioletta's Polish Market",
+  "type": "Deli",
+  "address": "Bay View",
+  "verify": true
+ },
+ {
+  "name": "Supermoon Beer",
+  "type": "Brewery (taproom closed)",
+  "address": "3145 S. Howell Ave.",
+  "lat": 42.98726,
+  "lon": -87.90492
+ },
+ {
+  "name": "Outpost Natural Foods",
+  "type": "Grocery",
+  "address": "2826 S. Kinnickinnic Ave.",
+  "lat": 42.99366,
+  "lon": -87.89212
+ },
+ {
+  "name": "Bay View Piggly Wiggly",
+  "type": "Grocery",
+  "address": "Bay View",
+  "verify": true
+ },
+ {
+  "name": "Bay View United Methodist Church",
+  "type": "Church & community",
+  "address": "2772 S. Kinnickinnic Ave.",
+  "lat": 42.99484,
+  "lon": -87.89392
+ },
+ {
+  "name": "Bay View Library",
+  "type": "Library",
+  "address": "2566 S. Kinnickinnic Ave.",
+  "lat": 42.99809,
+  "lon": -87.89985
+ },
+ {
+  "name": "Beulah Brinton House",
+  "type": "Historic site",
+  "address": "2590 S. Superior St.",
+  "lat": 42.99785,
+  "lon": -87.88773
+ },
+ {
+  "name": "Prasser-Kleczka Bay View Chapel",
+  "type": "Funeral home",
+  "address": "3275 S. Howell Ave.",
+  "lat": 42.98508,
+  "lon": -87.90591
+ }
 ]

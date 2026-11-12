@@ -9,8 +9,8 @@ import sys
 OUT = ROOT / ("preview_v2" if "--preview" in sys.argv else "docs")
 TIPS = "https://docs.google.com/forms/d/e/1FAIpQLSfXNc2RsIhvMPCfcZ9CYb6QIx78RZSr2Ar3YzT5ik9xyPhi7Q/viewform"
 e = lambda s: html.escape(str(s or ""), quote=True)
-NAV = [("Today", "/"), ("Events", "/events.html"), ("Food & Drink", "/section/food.html"), ("City Hall", "/section/city.html"),
-       ("Safety", "/section/safety.html"), ("Milwaukee", "/milwaukee.html"), ("More", "/section/more.html")]
+NAV = [("Today", "/"), ("Events", "/events.html"), ("Map", "/map.html"), ("Food & Drink", "/section/food.html"), ("City Hall", "/section/city.html"),
+       ("Safety", "/section/safety.html"), ("Milwaukee", "/milwaukee.html"), ("More", "/section/more.html"), ("Search", "/search.html")]
 SECTION_OF = {"top": "Bay View", "openings": "Food & Drink", "development": "City Hall", "streets": "Streets", "schools": "Schools",
               "parks": "Parks", "protests": "Protests", "safety": "Safety", "realestate": "Real estate", "help": "Ways to help",
               "fishfry": "Fish fry", "pets": "Pets", "sports": "Sports", "remembrances": "Remembrances"}
@@ -120,10 +120,22 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="
          '<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700;8..60,800&display=swap" rel="stylesheet">')
 
 
-def shell(title, body, d, active="Today"):
+SITE = "https://bayviewbulletin.com"
+
+
+def shell(title, body, d, active="Today", og=None, path="/", head=""):
+    og = og or {}
+    ogt, ogd = og.get("title", title), og.get("desc", "Daily news for Milwaukee's Bay View neighborhood, every morning.")
+    ogi = og.get("image") or SITE + "/og-default.png"
+    meta = (f'<meta name="description" content="{e(ogd)}"><link rel="canonical" href="{SITE}{e(path)}">'
+            f'<meta property="og:site_name" content="The Bay View Bulletin"><meta property="og:type" content="{og.get("type", "website")}">'
+            f'<meta property="og:title" content="{e(ogt)}"><meta property="og:description" content="{e(ogd)}"><meta property="og:image" content="{e(ogi)}">'
+            f'<meta property="og:url" content="{SITE}{e(path)}"><meta name="twitter:card" content="summary_large_image">'
+            '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">'
+            '<meta name="theme-color" content="#1F4E79">' + head)
     nav = "".join(f'<li><a href="{h}"{" class=on" if n == active else ""}>{n}</a></li>' for n, h in NAV)
     return f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{e(title)}</title>{FONTS}<link rel="stylesheet" href="/assets/v2.css"></head><body>
+<title>{e(title)}</title>{meta}{FONTS}<link rel="stylesheet" href="/assets/v2.css"></head><body>
 <header class="plate wrap"><div class="dateline"><span>{e(d['display_date'])}</span><span>Bay View, Milwaukee</span><span>No. {d['number']}</span></div>
 <div class="rule"></div><h1><a href="/">The Bay View Bulletin</a></h1><p class="tag">Bay View's morning paper</p></header>
 <nav class="sections" aria-label="Sections"><ul>{nav}</ul></nav>
@@ -156,7 +168,7 @@ def build_one(d, newest):
         src = f'<a class="btn" href="{e(s["source_url"])}">Read the full story at {e(s["source_name"])} →</a>' if s.get("source_url") else ""
         body = (f'<article class="story"><span class="kicker">{e(s["section"])} · {e(d["display_date"])}</span><h1>{e(s["title"])}</h1>{img}'
                 f'<div class="body"><p>{e(s.get("body"))}</p></div>{src}<section class="more side"><h2>More from Bay View today</h2>{others}</section></article>')
-        (OUT / s["url"].lstrip("/")).write_text(shell(s["title"] + " · The Bay View Bulletin", body, d))
+        (OUT / s["url"].lstrip("/")).write_text(shell(s["title"] + " · The Bay View Bulletin", body, d, "", {"title": s["title"], "desc": dek(s), "image": (s.get("image") or {}).get("src"), "type": "article"}, s["url"]))
 
     # utilities
     rise, sset = sunrise_sunset(day)
@@ -208,7 +220,7 @@ def build_one(d, newest):
     (OUT / "issues" / f'{d["date"]}.html').write_text(shell("The Bay View Bulletin · " + d["display_date"], home, d))
     if not newest:
         return
-    (OUT / "index.html").write_text(shell("The Bay View Bulletin", home, d))
+    (OUT / "index.html").write_text(shell("The Bay View Bulletin", home, d, "Today", {"title": "The Bay View Bulletin · " + d["display_date"], "desc": lead["title"]}, "/"))
 
     # events
     cal, cur = [], None
@@ -239,6 +251,8 @@ def build():
     (OUT / "assets/v2.css").write_text(CSS)
     (OUT / "CNAME").write_text("bayviewbulletin.com\n")
     (OUT / ".nojekyll").write_text("")
+    for f in (ROOT / "static").iterdir():
+        shutil.copy(f, OUT / f.name)
     files = sorted((ROOT / "content/issues").glob("*.json"))
     issues = [json.loads(f.read_text()) for f in files]
     for i, d in enumerate(issues):
@@ -268,6 +282,47 @@ def build():
 <p><strong>How we report:</strong> news from the last 24 hours plus what's coming up. Safety coverage sticks to notable incidents, and we never name private individuals. Protests and rallies are listed neutrally, for any cause. Photos come from the original source or free-licensed collections, always credited; if you own a photo and want it removed, tell us and it comes down.</p>
 <p><a class="btn" href="{TIPS}">Send a tip or a correction</a></p></div></article>"""
     (OUT / "about.html").write_text(shell("About · The Bay View Bulletin", about, d, ""))
+    # search index + page
+    idx = [{"t": s["title"], "d": dek(s), "u": s["url"], "k": s["section"], "dt": s["display_date"]} for s in recent]
+    idx += [{"t": m["title"], "d": m.get("body", "")[:160], "u": m["source_url"], "k": "Milwaukee", "dt": x["display_date"]} for x in issues for m in x.get("milwaukee", [])]
+    idx += [{"t": b["name"], "d": b["type"] + " · " + b["address"], "u": "/directory.html", "k": "Directory", "dt": ""} for b in dirs]
+    idx += [{"t": ev["title"], "d": ev["when"] + " · " + ev["where"], "u": "/events.html", "k": "Event", "dt": ev["day"]} for ev in d["events"]]
+    (OUT / "search.json").write_text(json.dumps(idx, ensure_ascii=False))
+    search = f"""<h1 class="pagehead">Search</h1><p class="pagedek">Stories, events, Milwaukee news and Bay View businesses.</p>
+<input id="q" type="search" placeholder="Try: pizza, Cactus Club, parking, MPS" autofocus style="width:100%;font:400 20px var(--sans);padding:12px 14px;border:2px solid var(--ink);border-radius:4px;background:var(--paper);color:var(--ink)">
+<p id="n" class="pagedek" style="margin-top:10px"></p><div class="list" id="r"></div>
+<script>
+let I=[];fetch('/search.json').then(r=>r.json()).then(j=>{{I=j;go()}});
+const q=document.getElementById('q'),r=document.getElementById('r'),n=document.getElementById('n');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}})[c]);
+function go(){{const w=q.value.toLowerCase().split(' ').filter(Boolean);
+ const hits=w.length?I.filter(x=>w.every(t=>(x.t+' '+x.d+' '+x.k).toLowerCase().includes(t))):[];
+ n.textContent=w.length?hits.length+' result'+(hits.length==1?'':'s'):'';
+ r.innerHTML=hits.slice(0,60).map(x=>'<a href="'+esc(x.u)+'"><span class="kicker">'+esc(x.k)+(x.dt?' · '+esc(x.dt):'')+'</span><h3>'+esc(x.t)+'</h3><p>'+esc(x.d)+'</p></a>').join('');}}
+q.addEventListener('input',go);const p=new URLSearchParams(location.search).get('q');if(p){{q.value=p}}
+</script>"""
+    (OUT / "search.html").write_text(shell("Search · The Bay View Bulletin", search, d, "Search", None, "/search.html"))
+    # map
+    pts = [{"n": b["name"], "s": b["type"] + " · " + b["address"], "lat": b["lat"], "lon": b["lon"], "c": "biz", "u": "/directory.html"} for b in dirs if b.get("lat")]
+    for ev in d["events"]:
+        v = next((b for b in dirs if b.get("lat") and (b["name"].split(" (")[0] in ev["where"] or b["address"].split(" ")[0] in ev["where"])), None)
+        if ev.get("lat") or v:
+            pts.append({"n": ev["title"], "s": ev["day"] + " · " + ev["when"] + " · " + ev["where"], "lat": ev.get("lat") or v["lat"], "lon": ev.get("lon") or v["lon"], "c": "ev", "u": ev["link"]})
+    for st in [x for x in ALL_STORIES if x["issue_date"] == d["date"] and x.get("lat")]:
+        pts.append({"n": st["title"], "s": st["section"], "lat": st["lat"], "lon": st["lon"], "c": "story", "u": st["url"]})
+    leaflet = '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>'
+    mapbody = f"""<h1 class="pagehead">Bay View map</h1><p class="pagedek"><span style="color:var(--warm)">●</span> Events &nbsp; <span style="color:var(--lake)">●</span> Today's stories &nbsp; <span style="color:var(--muted)">●</span> Businesses we follow</p>
+<div id="map" style="height:70vh;min-height:420px;border:1px solid var(--rule)"></div>
+<script>
+const P={json.dumps(pts, ensure_ascii=False)};
+const m=L.map('map').setView([42.996,-87.895],14);
+L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png',{{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}}).addTo(m);
+const C={{ev:'#C9541F',story:'#1F4E79',biz:'#7A7F86'}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}})[c]);
+P.forEach(p=>L.circleMarker([p.lat,p.lon],{{radius:p.c=='biz'?6:9,color:'#fff',weight:2,fillColor:C[p.c],fillOpacity:.95}}).addTo(m)
+ .bindPopup('<strong>'+esc(p.n)+'</strong><br>'+esc(p.s)+'<br><a href="'+esc(p.u)+'">Details →</a>'));
+</script>"""
+    (OUT / "map.html").write_text(shell("Map · The Bay View Bulletin", mapbody, d, "Map", None, "/map.html", leaflet))
     print("built", OUT, len(issues), "issue(s)")
 
 
