@@ -10,7 +10,6 @@
   "name": "Acme Records",
   "type": "Records",
   "address": "2341 S. Kinnickinnic Ave.",
-  "verify": true,
   "lat": 43.00203,
   "lon": -87.90385
  },
@@ -57,18 +56,9 @@
   "lon": -87.90447
  },
  {
-  "name": "Bay Street Pub",
-  "type": "Pub",
-  "address": "338 E. Bay St.",
-  "verify": true,
-  "lat": 43.00603,
-  "lon": -87.90548
- },
- {
   "name": "Bay View Books & Music",
   "type": "Books & music",
   "address": "2653 S. Kinnickinnic Ave.",
-  "verify": true,
   "lat": 42.99667,
   "lon": -87.89822
  },
@@ -96,8 +86,9 @@
  {
   "name": "Bay View Piggly Wiggly",
   "type": "Grocery",
-  "address": "Bay View",
-  "verify": true
+  "address": "123 W. Oklahoma Ave.",
+  "lat": 42.98641,
+  "lon": -87.91237
  },
  {
   "name": "Bay View United Methodist Church",
@@ -105,14 +96,6 @@
   "address": "2772 S. Kinnickinnic Ave.",
   "lat": 42.99484,
   "lon": -87.89392
- },
- {
-  "name": "Bayview Family Restaurant",
-  "type": "Diner",
-  "address": "2321 S. Kinnickinnic Ave.",
-  "verify": true,
-  "lat": 43.00245,
-  "lon": -87.90402
  },
  {
   "name": "Beulah Brinton House",
@@ -150,12 +133,18 @@
   "lon": -87.8902
  },
  {
+  "name": "Calogero's | Wine & Cocktails",
+  "type": "Wine & cocktail bar",
+  "address": "338 E. Bay St.",
+  "lat": 43.00603,
+  "lon": -87.90548
+ },
+ {
   "name": "Catrina's Cafe",
   "type": "Mexican",
   "address": "2352 S. Kinnickinnic Ave.",
   "lat": 43.00199,
-  "lon": -87.9032,
-  "verify": true
+  "lon": -87.9032
  },
  {
   "name": "Centraal Grand Cafe & Tappery",
@@ -216,14 +205,16 @@
  {
   "name": "EsterEv",
   "type": "Restaurant",
-  "address": "Kinnickinnic Ave.",
-  "verify": true
+  "address": "2165 S. Kinnickinnic Ave.",
+  "lat": 43.00511,
+  "lon": -87.9061
  },
  {
   "name": "Fiber Fever",
   "type": "Yarn shop",
-  "address": "Bay View",
-  "verify": true
+  "address": "2224 S. Kinnickinnic Ave.",
+  "lat": 43.00407,
+  "lon": -87.90508
  },
  {
   "name": "Goodkind",
@@ -260,6 +251,13 @@
   "address": "2322 S. Kinnickinnic Ave.",
   "lat": 43.00254,
   "lon": -87.90378
+ },
+ {
+  "name": "Himalayan Yak",
+  "type": "Himalayan restaurant",
+  "address": "2321 S. Kinnickinnic Ave.",
+  "lat": 43.00245,
+  "lon": -87.90402
  },
  {
   "name": "Honeypie",
@@ -330,13 +328,6 @@
   "address": "939 E. Conway St.",
   "lat": 43.00053,
   "lon": -87.89692
- },
- {
-  "name": "Odd Duck",
-  "type": "Restaurant",
-  "address": "2352 S. Kinnickinnic Ave.",
-  "lat": 43.00211,
-  "lon": -87.90347
  },
  {
   "name": "Ormson Supply",
@@ -418,16 +409,16 @@
  {
   "name": "Sardines Vintage Collective",
   "type": "Vintage",
-  "address": "2925 S. Kinnickinnic Ave.",
-  "verify": true,
-  "lat": 42.99168,
-  "lon": -87.8867
+  "address": "2925 S. Delaware Ave.",
+  "lat": 42.99077,
+  "lon": -87.88229
  },
  {
   "name": "Semolina",
   "type": "Restaurant",
-  "address": "Bay View",
-  "verify": true
+  "address": "2474 S. Kinnickinnic Ave.",
+  "lat": 42.99983,
+  "lon": -87.90157
  },
  {
   "name": "Snap Fitness Bay View",
@@ -482,14 +473,14 @@
   "name": "Verdant CBD",
   "type": "CBD shop",
   "address": "2680 S. Kinnickinnic Ave.",
-  "verify": true,
   "lat": 42.99629,
   "lon": -87.89724
  },
  {
   "name": "Wioletta's Polish Market",
   "type": "Deli",
-  "address": "Bay View",
-  "verify": true
+  "address": "3955 S. Howell Ave.",
+  "lat": 42.97253,
+  "lon": -87.90962
  }
 ]
