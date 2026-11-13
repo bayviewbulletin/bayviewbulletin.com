@@ -102,7 +102,7 @@ nav.sections a{display:inline-block;padding:11px 0;font:600 15px var(--sans)}nav
 .bzgo{font:800 14px var(--sans);text-decoration:underline}
 @media (prefers-color-scheme:dark){.buzz,.bz,.bz h3,.bz p{color:#111}.bz .via{color:#444}}
 @media(max-width:520px){.utils{display:flex;overflow-x:auto}.util{min-width:150px;border-bottom:0!important;border-right:1px solid var(--rule)!important}}
-.ticker{display:flex;gap:12px;align-items:center;font-size:15px;border-bottom:1px solid var(--rule);padding:0 0 12px;margin:-10px 0 22px;overflow:hidden;white-space:nowrap}.ticker b{flex:0 0 auto;font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--warm);padding:3px 7px;border-radius:2px;position:relative;z-index:1}.ticker .vp{flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent)}.ticker .track{display:inline-flex;animation:tick var(--dur,40s) linear infinite}.ticker:hover .track,.ticker:focus-within .track{animation-play-state:paused}.ticker .set{display:inline-flex}.ticker .set a{padding-right:14px;color:inherit;text-decoration:none;font-weight:600}.ticker .set a:hover{text-decoration:underline}.ticker .set a::after{content:"\\00B7";margin-left:14px;color:var(--muted);font-weight:400}@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.ticker .vp{overflow-x:auto}.ticker .track{animation:none}.ticker .set+.set{display:none}}
+.ticker{display:flex;gap:12px;align-items:center;font-size:15px;border-bottom:1px solid var(--rule);padding:10px 0;margin:0 0 18px;overflow:hidden;white-space:nowrap}.ticker b{flex:0 0 auto;font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--warm);padding:3px 7px;border-radius:2px;position:relative;z-index:1}.ticker .vp{flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent)}.ticker .track{display:inline-flex;animation:tick var(--dur,40s) linear infinite}.ticker:hover .track,.ticker:focus-within .track{animation-play-state:paused}.ticker .set{display:inline-flex}.ticker .set a{padding-right:14px;color:inherit;text-decoration:none;font-weight:600}.ticker .set a:hover{text-decoration:underline}.ticker .set a::after{content:"\\00B7";margin-left:14px;color:var(--muted);font-weight:400}@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.ticker .vp{overflow-x:auto}.ticker .track{animation:none}.ticker .set+.set{display:none}}
 .front{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:28px;padding-bottom:24px;border-bottom:1px solid var(--ink)}
 @media(max-width:820px){.front{grid-template-columns:1fr}}
 .feature{display:block;margin:6px 0 26px;padding-bottom:22px;border-bottom:1px solid var(--ink);max-width:860px}.feature h2{font:700 34px/1.12 var(--serif);margin:6px 0 8px}.feature p{font:18px/1.5 var(--serif);margin:0 0 8px}.feature .cap{font:12px var(--sans);color:var(--muted);margin:-6px 0 10px}
@@ -162,6 +162,29 @@ def ext_links(html):
     return re.sub(r'<a\b[^>]*?href="(https?://[^"]+)"[^>]*>', fix, html)
 
 
+
+TICKER = ""  # "Top news" strip shown under the menu on every page (built from the newest day)
+
+
+def make_ticker(d):
+    """Day's most important headlines in story order (top section first), spotlight excluded, each linking to its story."""
+    items = []
+    for key, sec in d["sections"].items():
+        if key == "spotlight":
+            continue
+        for it in sec:
+            if it.get("hold") or it.get("tag") == "Listings":
+                continue
+            items.append((it["title"], f"/story/{d['date']}-{slug(it['title'])}.html"))
+    items = items[:8]
+    if not items:
+        return ""
+    _set = "".join(f'<a href="{u}">{e(t)}</a>' for t, u in items)
+    _dur = max(30, sum(len(t) for t, _ in items) // 5)
+    return (f'<div class="wrap"><div class="ticker" aria-label="Today&rsquo;s top headlines"><b>Top news</b><div class="vp"><div class="track" style="--dur:{_dur}s">'
+            f'<div class="set">{_set}</div><div class="set" aria-hidden="true">{_set}</div></div></div></div></div>')
+
+
 def shell(title, body, d, active="Today", og=None, path="/", head=""):
     og = og or {}
     ogt, ogd = og.get("title", title), og.get("desc", "Daily news for Milwaukee's Bay View neighborhood, every morning.")
@@ -178,7 +201,7 @@ def shell(title, body, d, active="Today", og=None, path="/", head=""):
 <header class="plate wrap"><div class="dateline"><span>{e(d['display_date'])}</span><span>Bay View, Milwaukee</span></div>
 <div class="rule"></div><h1><a href="/">The Bay View Bulletin</a></h1><p class="tag">Bay View's morning paper</p></header>
 <nav class="sections" aria-label="Sections"><ul>{nav}</ul></nav>
-<div class="wrap">{body}</div>
+{TICKER}<div class="wrap">{body}</div>
 <footer><div class="wrap">Covering Bay View from the harbor and Jones Island to Holt and Morgan avenues, I-43 to the lake.<br>
 Every item links to the original reporting. Photos belong to their credited owners. <a href="{TIPS}">Send a tip</a> · <a href="/about.html">About</a> · <a href="/schools.html">School days off</a> · <a href="/archive.html">Archive</a></div></footer>
 <script>document.addEventListener('click',function(ev){{var a=ev.target.closest&&ev.target.closest('a[href]');if(a&&a.host&&a.host!==location.host){{a.target='_blank';a.rel='noopener'}}}},true);</script></body></html>""")
@@ -369,12 +392,6 @@ def build_one(d, newest):
     util_html = "".join((f'<a class="util {c}" href="{e(h)}">' if h else f'<div class="util {c}">') + f'<span class="k">{k}</span><span class="v">{e(v)}</span><span class="s">{e(s_)}</span>' + ("</a>" if h else "</div>") for k, v, s_, c, h in utils)
     tick = [s for s in stories if s["key"] == "openings"] or []
     # Headline ticker: the day's most important news, in story order (top section first), each linking to its story.
-    tick_src = [x for x in news if x is not lead] if len(news) > 3 else news
-    tick_src = ([lead] + tick_src)[:8]
-    ticker_items = [(x["title"], x["url"]) for x in tick_src]
-    _set = "".join(f'<a href="{x[1]}">{e(x[0])}</a>' for x in ticker_items)
-    _dur = max(30, sum(len(t[0]) for t in ticker_items) // 5)
-    ticker = (f'<div class="ticker" aria-label="Today&rsquo;s top headlines"><b>Top news</b><div class="vp"><div class="track" style="--dur:{_dur}s"><div class="set">{_set}</div><div class="set" aria-hidden="true">{_set}</div></div></div></div>') if ticker_items else ""
 
     tops = [s for s in rest if s["key"] == "top"]; side_items = (tops + [s for s in rest if s["key"] not in ("top", "spotlight")])[:max(3, len(tops))]
     side = "".join(f'<a href="{s["url"]}"><span class="kicker">{e(s["section"])}</span><h3>{e(s["title"])}</h3><p>{e(dek(s))}</p></a>' for s in side_items)
@@ -396,7 +413,7 @@ def build_one(d, newest):
     h = d.get("history")
     hist = (f'<section class="block"><h2>Bay View history</h2><div class="hist"><div><img src="{e(h["image"]["src"])}" alt="{e(h["image"]["alt"])}"><div class="cap">{e(h["image"]["credit"])}</div></div>'
             f'<div><div class="yr">{e(h["year"])}</div><p>{e(h["text"])}</p><a class="kicker" href="{e(h["source_url"])}">{e(h["source_name"])} →</a></div></div></section>') if h else ""
-    home = (f'<div class="utils">{util_html}</div>{ticker}'
+    home = (f'<div class="utils">{util_html}</div>'
             f'<section class="front"><a class="lead" href="{lead["url"]}">{lead_img}<span class="kicker">{e(lead["section"])}</span><h2>{e(lead["title"])}</h2><p>{e(dek(lead))}</p><div class="meta">{e(srcmeta(lead))}</div></a>'
             f'<div class="side">{side}</div></section>'
             f'<section class="tonight"><h2><span>Today in Bay View</span><a href="/events.html">All events →</a></h2><div class="chips">{chips}</div></section>'
@@ -454,6 +471,8 @@ def build():
         (shutil.copytree if f.is_dir() else shutil.copy)(f, OUT / f.name)
     files = sorted((ROOT / "content/issues").glob("*.json"))
     issues = [json.loads(f.read_text()) for f in files]
+    global TICKER
+    TICKER = make_ticker(issues[-1])
     for i, d in enumerate(issues):
         build_one(d, i == len(issues) - 1)
     d = issues[-1]
