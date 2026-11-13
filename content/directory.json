@@ -1,5 +1,15 @@
 [
  {
+  "name": "17th Ward",
+  "type": "Cocktail lounge",
+  "address": "2150 S. Kinnickinnic Ave.",
+  "instagram": "17thwardmke",
+  "website": "https://www.17thward.com/",
+  "note": "KinetiK building; opened Mar 2025",
+  "lat": 43.00591,
+  "lon": -87.90657
+ },
+ {
   "name": "Acme Records",
   "type": "Records",
   "address": "2341 S. Kinnickinnic Ave.",
@@ -26,14 +36,19 @@
   "lat": 43.00041,
   "lon": -87.90205,
   "instagram": "afterglow_mke",
-  "website": "https://www.afterglowmke.com"
+  "website": "https://www.afterglowmke.com",
+  "facebook": "profile.php?id=100087275989230"
  },
  {
-  "name": "Alive and Fine",
+  "name": "Amara Studios",
   "type": "Vintage clothing",
-  "address": "2652 S. Kinnickinnic Ave.",
-  "lat": 42.99674,
-  "lon": -87.89803
+  "address": "2625 S. Greeley St.",
+  "instagram": "amara.studios",
+  "website": "https://amara-studios.com",
+  "verify": true,
+  "note": "Hide House, Suite 100",
+  "lat": 42.99652,
+  "lon": -87.90935
  },
  {
   "name": "Anodyne Coffee Bay View",
@@ -52,7 +67,8 @@
   "address": "2501 S. Delaware Ave.",
   "lat": 42.99789,
   "lon": -87.89135,
-  "instagram": "atrandommke"
+  "instagram": "atrandommke",
+  "website": "https://www.atrandommke.com/"
  },
  {
   "name": "Avalon Atmospheric Theater",
@@ -69,7 +85,8 @@
   "address": "3001 S. Kinnickinnic Ave.",
   "lat": 42.99013,
   "lon": -87.88502,
-  "instagram": "axolotl_cafemke"
+  "instagram": "axolotl_cafemke",
+  "website": "https://www.axolotlcafemke.com/"
  },
  {
   "name": "Babe's Ice Cream",
@@ -107,7 +124,8 @@
   "type": "Books & music",
   "address": "2653 S. Kinnickinnic Ave.",
   "lat": 42.99667,
-  "lon": -87.89822
+  "lon": -87.89822,
+  "facebook": "p/Bay-View-Books-And-Music-100057120443950"
  },
  {
   "name": "Bay View Bowl",
@@ -124,7 +142,19 @@
   "type": "Chiropractor",
   "address": "3116 S. Kinnickinnic Ave.",
   "lat": 42.98777,
-  "lon": -87.88316
+  "lon": -87.88316,
+  "facebook": "BayViewChiro",
+  "instagram": "bay_view_chiro"
+ },
+ {
+  "name": "Bay View Community Center",
+  "type": "Community center",
+  "address": "1320 E. Oklahoma Ave.",
+  "instagram": "bayviewcentermke",
+  "facebook": "BayViewCommunityCenter",
+  "website": "https://bayviewcenter.org",
+  "lat": 42.98831,
+  "lon": -87.89282
  },
  {
   "name": "Bay View Fitness 24/7",
@@ -133,35 +163,66 @@
   "lat": 43.0055,
   "lon": -87.90641,
   "instagram": "bay_view_fitness",
-  "website": "http://www.bayviewfitness.com"
+  "website": "http://www.bayviewfitness.com",
+  "facebook": "BayViewFitness"
  },
  {
   "name": "Bay View Library",
   "type": "Library",
   "address": "2566 S. Kinnickinnic Ave.",
   "lat": 42.99809,
-  "lon": -87.89985
+  "lon": -87.89985,
+  "website": "https://www.mpl.org/hours_locations/bay_view.php",
+  "facebook": "MPL.BayView",
+  "instagram": "milwaukeepubliclibrary"
  },
  {
   "name": "Bay View Piggly Wiggly",
   "type": "Grocery",
   "address": "123 W. Oklahoma Ave.",
   "lat": 42.98641,
-  "lon": -87.91237
+  "lon": -87.91237,
+  "website": "https://www.shopthepig.com/",
+  "facebook": "p/Bay-View-Piggly-Wiggly-61580664045551"
+ },
+ {
+  "name": "Bay View Quick Mart",
+  "type": "Convenience store & cigars",
+  "address": "2690 S. Kinnickinnic Ave.",
+  "instagram": "bayviewquickmart",
+  "facebook": "p/Bay-View-Quick-Mart-100058435071563",
+  "website": "https://bayviewquickmart.com",
+  "lat": 42.99617,
+  "lon": -87.89701
  },
  {
   "name": "Bay View United Methodist Church",
   "type": "Church & community",
   "address": "2772 S. Kinnickinnic Ave.",
   "lat": 42.99484,
-  "lon": -87.89392
+  "lon": -87.89392,
+  "website": "https://bayviewumc.org",
+  "facebook": "BVUMC"
+ },
+ {
+  "name": "BC Modern",
+  "type": "Mid-century antiques",
+  "address": "3116 S. Chase Ave.",
+  "instagram": "bcmodernmke",
+  "facebook": "bcmodernmke",
+  "website": "https://www.bcmodernmke.com/",
+  "lat": 42.98781,
+  "lon": -87.90934
  },
  {
   "name": "Beulah Brinton House",
   "type": "Historic site",
   "address": "2590 S. Superior St.",
   "lat": 42.99785,
-  "lon": -87.88773
+  "lon": -87.88773,
+  "website": "https://bayviewhistoricalsociety.org/",
+  "instagram": "bayviewhistoricalsociety",
+  "facebook": "BayViewHistoricalSociety"
  },
  {
   "name": "Blackbird Bar",
@@ -171,7 +232,8 @@
   "lon": -87.88488,
   "instagram": "blackbird_bar",
   "website": "https://www.blackbirdbayview.com",
-  "events_page_hint": true
+  "events_page_hint": true,
+  "facebook": "blackbird.bar"
  },
  {
   "name": "Brew-Jas Coffee House",
@@ -186,14 +248,17 @@
   "type": "Gym",
   "address": "2651 S. Kinnickinnic Ave.",
   "lat": 42.99672,
-  "lon": -87.89824
+  "lon": -87.89824,
+  "website": "https://brickyard-gym.com",
+  "facebook": "p/Brickyard-Gym-100057527084418"
  },
  {
   "name": "The Bubbler & Vinchi's Pizza",
   "type": "Tavern & pizza",
   "address": "3158 S. Howell Ave.",
   "lat": 42.98723,
-  "lon": -87.90463
+  "lon": -87.90463,
+  "facebook": "p/The-Bubbler-100057702428161"
  },
  {
   "name": "Burnhearts",
@@ -201,7 +266,29 @@
   "address": "2599 S. Logan Ave.",
   "lat": 42.99725,
   "lon": -87.89703,
-  "instagram": "burnhearts"
+  "instagram": "burnhearts",
+  "website": "https://burnheartsbar.com",
+  "facebook": "burnheartsbar"
+ },
+ {
+  "name": "Busby's",
+  "type": "Tavern",
+  "address": "3475 S. Kinnickinnic Ave.",
+  "instagram": "busbysmke",
+  "facebook": "profile.php?id=61557049400817",
+  "website": "https://busbysmke.com",
+  "note": "Former Romans' Pub",
+  "lat": 42.98138,
+  "lon": -87.87992
+ },
+ {
+  "name": "Buttah and Biscuit",
+  "type": "Restaurant",
+  "address": "1320 E. Oklahoma Ave.",
+  "instagram": "buttahandbiscuit",
+  "website": "https://buttahandbiscuit.com",
+  "lat": 42.98831,
+  "lon": -87.89282
  },
  {
   "name": "Cactus Club",
@@ -215,20 +302,33 @@
   "events_page_hint": true
  },
  {
+  "name": "Cafe India Bar & Grill",
+  "type": "Indian restaurant",
+  "address": "2201 S. Kinnickinnic Ave.",
+  "facebook": "cafeindiabayview",
+  "website": "https://cafeindiamke.us",
+  "lat": 43.00445,
+  "lon": -87.90557
+ },
+ {
   "name": "Calogero's | Wine & Cocktails",
   "type": "Wine & cocktail bar",
   "address": "338 E. Bay St.",
   "lat": 43.00603,
   "lon": -87.90548,
   "website": "https://calogerosmke.com",
-  "facebook": "969138316277040"
+  "facebook": "969138316277040",
+  "instagram": "calogerosmke"
  },
  {
   "name": "Catrina's Cafe",
   "type": "Mexican",
   "address": "2352 S. Kinnickinnic Ave.",
   "lat": 43.00199,
-  "lon": -87.9032
+  "lon": -87.9032,
+  "website": "https://catrinacafemke.com",
+  "instagram": "catrinacafemke",
+  "facebook": "catrinacafemke"
  },
  {
   "name": "Centraal Grand Cafe & Tappery",
@@ -240,6 +340,16 @@
   "website": "https://cafecentraal.com",
   "facebook": "CafeCentraalMKE",
   "events_page_hint": true
+ },
+ {
+  "name": "Chippy's",
+  "type": "Kids' toy & gift shop",
+  "address": "2481 S. Kinnickinnic Ave.",
+  "instagram": "shopchippysmke",
+  "website": "https://www.shopchippys.com/",
+  "note": "Opened fall 2026, next to the Avalon",
+  "lat": 43.00022,
+  "lon": -87.90207
  },
  {
   "name": "Cival",
@@ -262,6 +372,16 @@
   "website": "https://classicslice.com"
  },
  {
+  "name": "Clementines",
+  "type": "Tavern",
+  "address": "3143 S. Clement Ave.",
+  "instagram": "clementinestavernmke",
+  "facebook": "102469212085198",
+  "website": "https://clementinestavernmke.com",
+  "lat": 42.98747,
+  "lon": -87.89442
+ },
+ {
   "name": "Club Garibaldi",
   "type": "Bar & music venue",
   "address": "2501 S. Superior St.",
@@ -276,7 +396,10 @@
   "type": "Coffee & bakery",
   "address": "2301 S. Kinnickinnic Ave.",
   "lat": 43.00283,
-  "lon": -87.90426
+  "lon": -87.90426,
+  "website": "https://colectivo.com/",
+  "instagram": "colectivocoffee",
+  "facebook": "ColectivoCoffee"
  },
  {
   "name": "Component Brewing Company",
@@ -305,7 +428,9 @@
   "address": "2715 S. Gladstone Pl.",
   "instagram": "creamcitycrossfit",
   "lat": 42.99495,
-  "lon": -87.91005
+  "lon": -87.91005,
+  "website": "https://www.creamcitycrossfit.com/",
+  "facebook": "Cream.City.CrossFit"
  },
  {
   "name": "Delaware House",
@@ -317,6 +442,15 @@
   "website": "https://delaware-house.com",
   "facebook": "delawarehouse1",
   "events_page_hint": true
+ },
+ {
+  "name": "Dom & Phil DeMarinis",
+  "type": "Italian restaurant & bar",
+  "address": "1211 E. Conway St.",
+  "website": "https://www.demarinispizza.com/",
+  "verify": true,
+  "lat": 43.00067,
+  "lon": -87.89336
  },
  {
   "name": "Dunkin'",
@@ -340,7 +474,8 @@
   "lat": 43.00021,
   "lon": -87.90206,
   "instagram": "elamariboutique",
-  "website": "https://www.elamariboutique.com"
+  "website": "https://www.elamariboutique.com",
+  "facebook": "profile.php?id=61567765134382"
  },
  {
   "name": "EsterEv",
@@ -349,7 +484,18 @@
   "lat": 43.00511,
   "lon": -87.9061,
   "instagram": "esterev.mke",
-  "website": "https://www.esterev.com"
+  "website": "https://www.esterev.com",
+  "facebook": "esterev.mke"
+ },
+ {
+  "name": "Eyes on the Lake",
+  "type": "Optometrist",
+  "address": "2134 S. Kinnickinnic Ave.",
+  "instagram": "eyesonthelakemke",
+  "facebook": "Eyes-on-the-Lake-110070668259492",
+  "website": "https://www.eyesonthelakemke.com/",
+  "lat": 43.00609,
+  "lon": -87.90671
  },
  {
   "name": "Fiber Fever",
@@ -357,7 +503,8 @@
   "address": "2224 S. Kinnickinnic Ave.",
   "lat": 43.00407,
   "lon": -87.90508,
-  "instagram": "fiberfeverco"
+  "instagram": "fiberfeverco",
+  "website": "https://fiberfeverco.com"
  },
  {
   "name": "Freya Salon",
@@ -366,7 +513,47 @@
   "lat": 43.00277,
   "lon": -87.90403,
   "instagram": "freyasalon",
-  "website": "https://www.freyasalon.com"
+  "website": "https://www.freyasalon.com",
+  "facebook": "freyasalonbayview"
+ },
+ {
+  "name": "G. Groppi Food Market",
+  "type": "Grocery, deli & bar",
+  "address": "1441 E. Russell Ave.",
+  "facebook": "GroppisMarket",
+  "website": "https://groppis.com",
+  "lat": 42.99835,
+  "lon": -87.89083
+ },
+ {
+  "name": "Get Dolled Up Bay View",
+  "type": "Hair salon",
+  "address": "2173 S. Kinnickinnic Ave.",
+  "facebook": "getdolledupmke2",
+  "website": "https://getdolledupmke.com",
+  "lat": 43.00498,
+  "lon": -87.906
+ },
+ {
+  "name": "Gingerz",
+  "type": "Sports pub",
+  "address": "3915 S. Howell Ave.",
+  "facebook": "GingerzSportzPub",
+  "website": "https://gingerzsportzpub.com",
+  "lat": 42.97336,
+  "lon": -87.90961
+ },
+ {
+  "name": "Golden Honey Pancakes & Cafe",
+  "type": "Breakfast cafe",
+  "address": "3955 S. Howell Ave.",
+  "instagram": "goldenhoney_pancakescafe",
+  "facebook": "profile.php?id=61570727969870",
+  "website": "https://www.goldenhoneycafe.com/",
+  "verify": true,
+  "note": "Took over Wioletta's restaurant side (2026); confirm address",
+  "lat": 42.97253,
+  "lon": -87.90962
  },
  {
   "name": "Goodkind",
@@ -374,7 +561,7 @@
   "address": "2457 S. Wentworth Ave.",
   "lat": 42.9996,
   "lon": -87.89164,
-  "instagram": "goodkindbayview",
+  "instagram": "goodkind_bayview",
   "website": "https://goodkindbayview.com",
   "facebook": "goodkindbayview"
  },
@@ -384,7 +571,17 @@
   "address": "3391 S. Kinnickinnic Ave.",
   "lat": 42.98297,
   "lon": -87.88076,
-  "instagram": "goodlandantiques"
+  "instagram": "goodlandantiques",
+  "facebook": "p/Good-Land-Antiques-LLC-100054433003552"
+ },
+ {
+  "name": "Gordo's Bubble Waffles",
+  "type": "Dessert shop",
+  "address": "2301 S. Howell Ave.",
+  "instagram": "gordosbubblewaffles",
+  "facebook": "gordosbubblewaffle",
+  "lat": 43.00285,
+  "lon": -87.90481
  },
  {
   "name": "Guanajuato",
@@ -392,7 +589,9 @@
   "address": "2317 S. Howell Ave.",
   "lat": 43.00257,
   "lon": -87.90482,
-  "instagram": "guanajuatomke"
+  "instagram": "gtomke",
+  "website": "https://guanajuatorestaurant.com",
+  "facebook": "GuanajuatoMexicanRestaurant"
  },
  {
   "name": "Happy Dough Lucky",
@@ -400,8 +599,7 @@
   "address": "2691 S. Kinnickinnic Ave.",
   "lat": 42.99605,
   "lon": -87.89717,
-  "instagram": "happydoughlucky",
-  "website": "https://muse.ai/s/happy-dough-lucky-website-cd6oxsfewxglk/Pk4cPJPE3gJ5q82dfwJEHYAFmVZfmBPzpjzBWAnhcPc"
+  "instagram": "happydoughlucky"
  },
  {
   "name": "Healium HIIT",
@@ -410,7 +608,8 @@
   "lat": 42.99242,
   "lon": -87.88937,
   "instagram": "healiumhiit",
-  "website": "https://healiumhotyoga.com"
+  "website": "https://healiumhotyoga.com",
+  "facebook": "healiumhiit"
  },
  {
   "name": "Healium Hot Yoga Bay View",
@@ -419,7 +618,8 @@
   "lat": 42.99898,
   "lon": -87.90086,
   "instagram": "healiumhotyoga",
-  "website": "https://www.healiumhotyoga.com"
+  "website": "https://www.healiumhotyoga.com",
+  "facebook": "healiumhotyoga"
  },
  {
   "name": "Heirloom MKE",
@@ -437,7 +637,8 @@
   "address": "2640 S. Kinnickinnic Ave.",
   "lat": 42.99699,
   "lon": -87.89844,
-  "instagram": "hificafemke"
+  "instagram": "hificafemke",
+  "facebook": "hificafe"
  },
  {
   "name": "The Highbury Pub",
@@ -463,7 +664,8 @@
   "lon": -87.90037,
   "instagram": "honeypiecafe",
   "website": "https://www.honeypiecafe.com",
-  "events_page_hint": true
+  "events_page_hint": true,
+  "facebook": "HoneypieCafe"
  },
  {
   "name": "Hue Asian Kitchen",
@@ -471,7 +673,8 @@
   "address": "2699 S. Kinnickinnic Ave.",
   "lat": 42.99589,
   "lon": -87.89704,
-  "website": "https://huerestaurants.com"
+  "website": "https://huebayview.com",
+  "facebook": "huemilwaukee"
  },
  {
   "name": "Ian's Pizza (R1VER)",
@@ -481,6 +684,17 @@
   "lon": -87.91135,
   "instagram": "ianspizzamke",
   "website": "https://ianspizza.com"
+ },
+ {
+  "name": "Jalisco's Cantina",
+  "type": "Mexican restaurant & bar",
+  "address": "2018 S. 1st St.",
+  "instagram": "jaliscos_cantina",
+  "facebook": "549220714949761",
+  "website": "https://jaliscoscantina.com",
+  "note": "Lincoln Warehouse",
+  "lat": 43.00781,
+  "lon": -87.91114
  },
  {
   "name": "Jasher's Organic Tea House",
@@ -520,7 +734,8 @@
   "lon": -87.90645,
   "instagram": "lostwhalemke",
   "website": "https://www.lostwhalemke.com",
-  "events_page_hint": true
+  "events_page_hint": true,
+  "facebook": "lostwhalemke"
  },
  {
   "name": "LuLu Cafe & Bar",
@@ -532,6 +747,15 @@
   "website": "https://www.lulubayview.com",
   "facebook": "LuLuCafeAndBar",
   "events_page_hint": true
+ },
+ {
+  "name": "Luv 2",
+  "type": "Vintage & art boutique",
+  "address": "2652 S. Kinnickinnic Ave.",
+  "facebook": "LuvUnlimitedMilwaukee",
+  "note": "Luv Unlimited reopened as Luv 2, Apr 2026, in the former Alive and Fine space",
+  "lat": 42.99674,
+  "lon": -87.89803
  },
  {
   "name": "Milwaukee Brewing Co. Taproom",
@@ -549,7 +773,8 @@
   "type": "Mochi doughnuts & spring rolls",
   "address": "2144 S. Kinnickinnic Ave.",
   "lat": 43.00598,
-  "lon": -87.90662
+  "lon": -87.90662,
+  "facebook": "p/Mochinut-Bayview-61567187823503"
  },
  {
   "name": "The Mothership",
@@ -558,7 +783,17 @@
   "lat": 43.00279,
   "lon": -87.89689,
   "instagram": "themothershipmke",
-  "website": "https://www.themothershipmke.com"
+  "website": "https://www.themothershipmke.com",
+  "facebook": "themothershipmke"
+ },
+ {
+  "name": "The Muse Gallery Guesthouse",
+  "type": "Bed & breakfast",
+  "address": "602 E. Lincoln Ave.",
+  "facebook": "p/The-Muse-Gallery-Guesthouse-100063645308785",
+  "verify": true,
+  "lat": 43.00298,
+  "lon": -87.90139
  },
  {
   "name": "New Barons Brewing Cooperative",
@@ -580,11 +815,40 @@
   "facebook": "TheNewportBayView"
  },
  {
+  "name": "No. 1 Chinese Restaurant",
+  "type": "Chinese restaurant",
+  "address": "2678 S. Kinnickinnic Ave.",
+  "facebook": "No1ChineseRestaurantBayView",
+  "verify": true,
+  "lat": 42.99632,
+  "lon": -87.89728
+ },
+ {
+  "name": "Nonfiction Natural Wines",
+  "type": "Wine shop & bar",
+  "address": "2563 S. Kinnickinnic Ave.",
+  "website": "https://www.nonfictionwine.com/",
+  "social_note": "find IG",
+  "lat": 42.99824,
+  "lon": -87.90042
+ },
+ {
   "name": "Oakberry Açaí",
   "type": "Açaí cafe",
   "address": "2142 S. Kinnickinnic Ave.",
   "lat": 43.006,
   "lon": -87.90664
+ },
+ {
+  "name": "Omen Alternative",
+  "type": "Alternative clothing & records",
+  "address": "2649 S. Kinnickinnic Ave.",
+  "instagram": "omenaltco",
+  "facebook": "OMENaltCo",
+  "website": "https://omenalt.com",
+  "note": "Opened May 2026 in the former Luv Unlimited space",
+  "lat": 42.99675,
+  "lon": -87.8983
  },
  {
   "name": "Ormson Supply",
@@ -593,14 +857,16 @@
   "lat": 42.99255,
   "lon": -87.88944,
   "instagram": "ormsonsupply",
-  "website": "https://ormsonsupply.com"
+  "website": "https://ormsonsupply.com",
+  "facebook": "ormson.supply"
  },
  {
   "name": "Ortiz Bros. Barber Shop",
   "type": "Barbershop",
   "address": "2646 S. Kinnickinnic Ave.",
   "lat": 42.99684,
-  "lon": -87.89821
+  "lon": -87.89821,
+  "facebook": "ortizbrosmke"
  },
  {
   "name": "Outpost Natural Foods",
@@ -614,11 +880,15 @@
   "events_page_hint": true
  },
  {
-  "name": "Palm Tavern",
-  "type": "Tavern",
-  "address": "2989 S. Kinnickinnic Ave.",
-  "lat": 42.99038,
-  "lon": -87.8854
+  "name": "Paloma Taco and Tequila",
+  "type": "Mexican restaurant",
+  "address": "2154 S. Kinnickinnic Ave.",
+  "instagram": "palomabayview",
+  "facebook": "palomatacotequila",
+  "website": "https://palomatacoandtequila.com",
+  "note": "KinetiK building",
+  "lat": 43.00587,
+  "lon": -87.90653
  },
  {
   "name": "Palomino",
@@ -627,14 +897,15 @@
   "lat": 42.99929,
   "lon": -87.88992,
   "instagram": "palominobar",
-  "website": "https://www.orderpalominobar.com"
+  "website": "https://www.palominobar.com/"
  },
  {
   "name": "Pietro's Pizza",
   "type": "Pizza",
-  "address": "2908 S. Kinnickinnic Ave.",
-  "lat": 42.99206,
-  "lon": -87.88672
+  "address": "2912 S. Kinnickinnic Ave.",
+  "facebook": "pietrospizzamilwaukee",
+  "lat": 42.99193,
+  "lon": -87.88677
  },
  {
   "name": "Planet Fitness Bay View",
@@ -656,7 +927,9 @@
   "type": "Funeral home",
   "address": "3275 S. Howell Ave.",
   "lat": 42.98508,
-  "lon": -87.90591
+  "lon": -87.90591,
+  "facebook": "pkfuneralhomes",
+  "website": "https://pkfuneralhomes.com"
  },
  {
   "name": "Puddler's Hall",
@@ -666,14 +939,16 @@
   "lon": -87.89304,
   "instagram": "puddlershall",
   "website": "https://puddlershall.com",
-  "events_page_hint": true
+  "events_page_hint": true,
+  "facebook": "puddlershall"
  },
  {
   "name": "R Vintage N More",
   "type": "Mid-century & antiques",
   "address": "2653 S. Kinnickinnic Ave.",
   "lat": 42.99669,
-  "lon": -87.89819
+  "lon": -87.89819,
+  "facebook": "rvintagenmore"
  },
  {
   "name": "Radish",
@@ -683,6 +958,16 @@
   "lon": -87.88511,
   "instagram": "radish_mke",
   "website": "https://www.radishmke.com"
+ },
+ {
+  "name": "Revel Bar",
+  "type": "Cocktail & hookah lounge",
+  "address": "2246 S. Kinnickinnic Ave.",
+  "instagram": "revelbarbayview",
+  "facebook": "revelbarbayview",
+  "website": "https://www.revelbayview.com/",
+  "lat": 43.00367,
+  "lon": -87.90475
  },
  {
   "name": "Riley's Bar + Burger",
@@ -707,7 +992,9 @@
   "address": "2210 S. Kinnickinnic Ave.",
   "lat": 43.00433,
   "lon": -87.90528,
-  "instagram": "rsvrmilwaukee"
+  "instagram": "rsvrmilwaukee",
+  "website": "https://www.rsvrmilwaukee.com/",
+  "facebook": "RSVRMilwaukee"
  },
  {
   "name": "Rush-Mor Records",
@@ -716,7 +1003,18 @@
   "lat": 42.996963,
   "lon": -87.898671,
   "instagram": "rushmorrecords",
-  "website": "https://www.rushmor.com/"
+  "website": "https://www.rushmor.com/",
+  "facebook": "profile.php?id=100057190731121"
+ },
+ {
+  "name": "Santino's Little Italy",
+  "type": "Italian & wood-fired pizza",
+  "address": "352 E. Stewart St.",
+  "instagram": "santinoslittleitaly",
+  "facebook": "1493484950947809",
+  "website": "https://santinoslittleitaly.com",
+  "lat": 43.00756,
+  "lon": -87.9057
  },
  {
   "name": "Sardines Vintage Collective",
@@ -724,7 +1022,8 @@
   "address": "2925 S. Delaware Ave.",
   "lat": 42.99077,
   "lon": -87.88229,
-  "instagram": "sardines_mke"
+  "instagram": "sardines_mke",
+  "website": "https://www.tohellandbackvintage.com/"
  },
  {
   "name": "Semolina",
@@ -734,7 +1033,27 @@
   "lon": -87.90157,
   "instagram": "semolinamke",
   "website": "https://semolinamke.com",
-  "events_page_hint": true
+  "events_page_hint": true,
+  "facebook": "SemolinaMKE"
+ },
+ {
+  "name": "Serpentine Salvage",
+  "type": "Vintage",
+  "address": "2625 S. Greeley St.",
+  "instagram": "serpentinesalvage",
+  "website": "https://serpentinesalvage.com",
+  "verify": true,
+  "note": "Hide House, Unit 235",
+  "lat": 42.99652,
+  "lon": -87.90935
+ },
+ {
+  "name": "Shape Up Shoppe",
+  "type": "Women's gym",
+  "address": "2697 S. Kinnickinnic Ave.",
+  "website": "https://www.shapeupshoppe.com/",
+  "lat": 42.996,
+  "lon": -87.89698
  },
  {
   "name": "The Shop on KK",
@@ -745,11 +1064,21 @@
   "instagram": "theshoponkk"
  },
  {
+  "name": "Siegel's Liquor",
+  "type": "Liquor store",
+  "address": "2632 S. Kinnickinnic Ave.",
+  "instagram": "siegelsliquor",
+  "lat": 42.99723,
+  "lon": -87.89893
+ },
+ {
   "name": "Small Change",
   "type": "Salon & coffee bar",
   "address": "2625 S. Greeley St.",
   "lat": 42.99652,
-  "lon": -87.90935
+  "lon": -87.90935,
+  "instagram": "smallchange.milwaukee",
+  "facebook": "smallchangemilwaukee"
  },
  {
   "name": "SmallPie",
@@ -766,7 +1095,9 @@
   "type": "Gym",
   "address": "2450 S. Kinnickinnic Ave.",
   "lat": 43.00025,
-  "lon": -87.90191
+  "lon": -87.90191,
+  "website": "https://www.snapfitness.com/us/gyms/bay-view-wi/",
+  "facebook": "snapfitnessbayview"
  },
  {
   "name": "Solid State Tattoo",
@@ -775,7 +1106,18 @@
   "lat": 42.99659,
   "lon": -87.89778,
   "instagram": "solidstatetattoo",
-  "website": "https://www.milwaukeetattoo.com"
+  "website": "https://www.milwaukeetattoo.com",
+  "facebook": "solid.state.tattoo"
+ },
+ {
+  "name": "Sprocket Cafe",
+  "type": "Cafe",
+  "address": "3385 S. Kinnickinnic Ave.",
+  "instagram": "sprocketcafe",
+  "facebook": "sprocketcafe",
+  "website": "http://sprocketcafe.weebly.com/",
+  "lat": 42.9831,
+  "lon": -87.88082
  },
  {
   "name": "Stag Barbershop",
@@ -784,6 +1126,35 @@
   "lat": 42.98843,
   "lon": -87.87782,
   "instagram": "stagbarbershop"
+ },
+ {
+  "name": "The Stone",
+  "type": "Tavern",
+  "address": "2422 S. Howell Ave.",
+  "verify": true,
+  "social_note": "no website or social found",
+  "lat": 43.00062,
+  "lon": -87.90471
+ },
+ {
+  "name": "Straight Shots",
+  "type": "Bar & grill",
+  "address": "1503 E. Oklahoma Ave.",
+  "verify": true,
+  "social_note": "no website or social found",
+  "lat": 42.98818,
+  "lon": -87.89056
+ },
+ {
+  "name": "Strange Scene",
+  "type": "Metaphysical & tarot shop",
+  "address": "2681 S. Kinnickinnic Ave.",
+  "instagram": "strange.scene.mke",
+  "facebook": "profile.php?id=61587514324017",
+  "website": "https://www.strangescenemke.com/",
+  "note": "Opened spring 2026",
+  "lat": 42.99623,
+  "lon": -87.89739
  },
  {
   "name": "Sugar Maple",
@@ -810,7 +1181,19 @@
   "type": "Tattoo shop",
   "address": "2227 S. Kinnickinnic Ave.",
   "lat": 43.00422,
-  "lon": -87.90538
+  "lon": -87.90538,
+  "instagram": "tempesttattoostudio",
+  "social_note": "IG handle found by search; confirm it is the 2227 S. KK shop"
+ },
+ {
+  "name": "Tenuta's Italian Restaurant",
+  "type": "Italian restaurant",
+  "address": "2995 S. Clement Ave.",
+  "instagram": "tenutasbayview",
+  "facebook": "tenutasitalianrestaurant",
+  "website": "https://tenutasitalian.com",
+  "lat": 42.98983,
+  "lon": -87.89436
  },
  {
   "name": "Three Brothers",
@@ -819,7 +1202,8 @@
   "lat": 43.00048,
   "lon": -87.89336,
   "instagram": "threebrothersmke",
-  "website": "https://www.threebrothersmke.com"
+  "website": "https://www.threebrothersmke.com",
+  "facebook": "Three-Brothers-Restaurant-166217240087484"
  },
  {
   "name": "Tip Top Atomic Shop",
@@ -830,11 +1214,24 @@
   "website": "https://tip-top-atomic.com"
  },
  {
+  "name": "Todd I Believe I Can Fry",
+  "type": "Fried chicken",
+  "address": "2159 S. Kinnickinnic Ave.",
+  "instagram": "toddibelieveicanfry",
+  "facebook": "p/Todd-I-Believe-I-Can-Fry-61553763495491",
+  "website": "https://www.toddibelieveicanfry.com/",
+  "note": "Unit A1, same complex as Room Service",
+  "lat": 43.00521,
+  "lon": -87.90618
+ },
+ {
   "name": "Toppers Pizza",
   "type": "Pizza",
   "address": "2262 S. Kinnickinnic Ave.",
   "lat": 43.00345,
-  "lon": -87.90453
+  "lon": -87.90453,
+  "website": "https://www.toppers.com/locations/bay-view",
+  "facebook": "ToppersPizzaBayviewWI"
  },
  {
   "name": "Torzala Brewing Co.",
@@ -848,13 +1245,23 @@
   "events_page_hint": true
  },
  {
+  "name": "Trailer Park Tavern",
+  "type": "Tavern",
+  "address": "2989 S. Kinnickinnic Ave.",
+  "instagram": "trailerparktavern",
+  "note": "Former Palm Tavern space (since 2019)",
+  "lat": 42.99038,
+  "lon": -87.8854
+ },
+ {
   "name": "Twisted Path Distillery",
   "type": "Distillery & tasting room",
   "address": "2018 S. 1st St.",
   "lat": 43.00781,
   "lon": -87.91114,
   "instagram": "twistedpathdistillery",
-  "website": "https://www.twistedpathdistillery.com"
+  "website": "https://www.twistedpathdistillery.com",
+  "facebook": "twistedpathmke"
  },
  {
   "name": "URSA",
@@ -892,7 +1299,28 @@
   "type": "CBD shop",
   "address": "2680 S. Kinnickinnic Ave.",
   "lat": 42.99629,
-  "lon": -87.89724
+  "lon": -87.89724,
+  "website": "https://shopverdant.com",
+  "instagram": "shopverdant"
+ },
+ {
+  "name": "Voyager",
+  "type": "Wine bar",
+  "address": "422 E. Lincoln Ave.",
+  "instagram": "voyager_mke",
+  "facebook": "voyagerMKE",
+  "website": "https://www.voyagermke.com/",
+  "lat": 43.00297,
+  "lon": -87.90377
+ },
+ {
+  "name": "Voyageur Book Shop",
+  "type": "Used & rare books",
+  "address": "2212 S. Kinnickinnic Ave.",
+  "facebook": "voyageurbookshop",
+  "website": "https://www.voyageurbookshop.com/",
+  "lat": 43.00429,
+  "lon": -87.90525
  },
  {
   "name": "Wheel & Sprocket and Joy Ride Cafe",
@@ -906,10 +1334,42 @@
   "events_page_hint": true
  },
  {
+  "name": "The White House Bay View",
+  "type": "Event venue",
+  "address": "2900 S. Kinnickinnic Ave.",
+  "facebook": "whitehousebayview",
+  "website": "https://whitehousebayview.com",
+  "note": "Sagemke restaurant planned in the same building",
+  "lat": 42.99211,
+  "lon": -87.88703
+ },
+ {
+  "name": "The Wiggle Room",
+  "type": "Vinyl listening bar",
+  "address": "2988 S. Kinnickinnic Ave.",
+  "instagram": "wiggleroommke",
+  "website": "https://wiggleroommke.com",
+  "note": "Former Lee's Luxury Lounge; Vanguard owners",
+  "lat": 42.99051,
+  "lon": -87.88517
+ },
+ {
+  "name": "Wild Workouts and Wellness",
+  "type": "Fitness studio",
+  "address": "3056 S. Delaware Ave.",
+  "instagram": "wildworkoutsandwellness",
+  "facebook": "wildworkoutsandwellness",
+  "website": "https://wildworkoutsandwellness.com",
+  "lat": 42.98848,
+  "lon": -87.87792
+ },
+ {
   "name": "Wioletta's Polish Market",
   "type": "Deli",
   "address": "3955 S. Howell Ave.",
   "lat": 42.97253,
-  "lon": -87.90962
+  "lon": -87.90962,
+  "website": "https://wiolettaspolishmarket.com",
+  "facebook": "WiolettasPolishMarket"
  }
 ]

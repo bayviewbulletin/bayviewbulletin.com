@@ -1,1 +1,218 @@
-{"2258 S Kinnickinnic Ave":[43.00354,-87.9046],"2675 S Kinnickinnic Ave":[42.99624,-87.89764],"2262 S Kinnickinnic Ave":[43.00345,-87.90453],"2908 S Kinnickinnic Ave":[42.99206,-87.88672],"2699 S Kinnickinnic Ave":[42.99589,-87.89704],"2321 S Kinnickinnic Ave":[43.00245,-87.90402],"2501 S Delaware Ave":[42.99789,-87.89135],"2306 S Kinnickinnic Ave":[43.00282,-87.90399],"2273 S Howell Ave":[43.00313,-87.90506],"2457 S Wentworth Ave":[42.9996,-87.89164],"2322 S Kinnickinnic Ave":[43.00254,-87.90378],"939 E Conway St":[43.00053,-87.89692],"2989 S Kinnickinnic Ave":[42.99038,-87.8854],"2499 S Delaware Ave":[42.99808,-87.89168],"2599 S Logan Ave":[42.99725,-87.89703]}
+{
+ "2258 S Kinnickinnic Ave": [
+  43.00354,
+  -87.9046
+ ],
+ "2675 S Kinnickinnic Ave": [
+  42.99624,
+  -87.89764
+ ],
+ "2262 S Kinnickinnic Ave": [
+  43.00345,
+  -87.90453
+ ],
+ "2908 S Kinnickinnic Ave": [
+  42.99206,
+  -87.88672
+ ],
+ "2699 S Kinnickinnic Ave": [
+  42.99589,
+  -87.89704
+ ],
+ "2321 S Kinnickinnic Ave": [
+  43.00245,
+  -87.90402
+ ],
+ "2501 S Delaware Ave": [
+  42.99789,
+  -87.89135
+ ],
+ "2306 S Kinnickinnic Ave": [
+  43.00282,
+  -87.90399
+ ],
+ "2273 S Howell Ave": [
+  43.00313,
+  -87.90506
+ ],
+ "2457 S Wentworth Ave": [
+  42.9996,
+  -87.89164
+ ],
+ "2322 S Kinnickinnic Ave": [
+  43.00254,
+  -87.90378
+ ],
+ "939 E Conway St": [
+  43.00053,
+  -87.89692
+ ],
+ "2989 S Kinnickinnic Ave": [
+  42.99038,
+  -87.8854
+ ],
+ "2499 S Delaware Ave": [
+  42.99808,
+  -87.89168
+ ],
+ "2599 S Logan Ave": [
+  42.99725,
+  -87.89703
+ ],
+ "2912 S Kinnickinnic Ave": [
+  42.99193,
+  -87.88677
+ ],
+ "2652 S Kinnickinnic Ave": [
+  42.99674,
+  -87.89803
+ ],
+ "2649 S Kinnickinnic Ave": [
+  42.99675,
+  -87.8983
+ ],
+ "2681 S Kinnickinnic Ave": [
+  42.99623,
+  -87.89739
+ ],
+ "2481 S Kinnickinnic Ave": [
+  43.00022,
+  -87.90207
+ ],
+ "2988 S Kinnickinnic Ave": [
+  42.99051,
+  -87.88517
+ ],
+ "3475 S Kinnickinnic Ave": [
+  42.98138,
+  -87.87992
+ ],
+ "2563 S Kinnickinnic Ave": [
+  42.99824,
+  -87.90042
+ ],
+ "352 E Stewart St": [
+  43.00756,
+  -87.9057
+ ],
+ "1211 E Conway St": [
+  43.00067,
+  -87.89336
+ ],
+ "2154 S Kinnickinnic Ave": [
+  43.00587,
+  -87.90653
+ ],
+ "1441 E Russell Ave": [
+  42.99835,
+  -87.89083
+ ],
+ "3385 S Kinnickinnic Ave": [
+  42.9831,
+  -87.88082
+ ],
+ "2150 S Kinnickinnic Ave": [
+  43.00591,
+  -87.90657
+ ],
+ "422 E Lincoln Ave": [
+  43.00297,
+  -87.90377
+ ],
+ "3143 S Clement Ave": [
+  42.98747,
+  -87.89442
+ ],
+ "2422 S Howell Ave": [
+  43.00062,
+  -87.90471
+ ],
+ "2246 S Kinnickinnic Ave": [
+  43.00367,
+  -87.90475
+ ],
+ "1503 E Oklahoma Ave": [
+  42.98818,
+  -87.89056
+ ],
+ "2018 S 1st St": [
+  43.00781,
+  -87.91114
+ ],
+ "2301 S Howell Ave": [
+  43.00285,
+  -87.90481
+ ],
+ "2995 S Clement Ave": [
+  42.98983,
+  -87.89436
+ ],
+ "1320 E Oklahoma Ave": [
+  42.98831,
+  -87.89282
+ ],
+ "2632 S Kinnickinnic Ave": [
+  42.99723,
+  -87.89893
+ ],
+ "3116 S Chase Ave": [
+  42.98781,
+  -87.90934
+ ],
+ "3056 S Delaware Ave": [
+  42.98848,
+  -87.87792
+ ],
+ "2159 S Kinnickinnic Ave": [
+  43.00521,
+  -87.90618
+ ],
+ "2134 S Kinnickinnic Ave": [
+  43.00609,
+  -87.90671
+ ],
+ "2212 S Kinnickinnic Ave": [
+  43.00429,
+  -87.90525
+ ],
+ "2697 S Kinnickinnic Ave": [
+  42.996,
+  -87.89698
+ ],
+ "2690 S Kinnickinnic Ave": [
+  42.99617,
+  -87.89701
+ ],
+ "2201 S Kinnickinnic Ave": [
+  43.00445,
+  -87.90557
+ ],
+ "2173 S Kinnickinnic Ave": [
+  43.00498,
+  -87.906
+ ],
+ "2678 S Kinnickinnic Ave": [
+  42.99632,
+  -87.89728
+ ],
+ "2900 S Kinnickinnic Ave": [
+  42.99211,
+  -87.88703
+ ],
+ "3915 S Howell Ave": [
+  42.97336,
+  -87.90961
+ ],
+ "3955 S Howell Ave": [
+  42.97253,
+  -87.90962
+ ],
+ "2625 S Greeley St": [
+  42.99652,
+  -87.90935
+ ],
+ "602 E Lincoln Ave": [
+  43.00298,
+  -87.90139
+ ]
+}
