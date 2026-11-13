@@ -9,7 +9,7 @@ import sys
 OUT = ROOT / ("preview_v2" if "--preview" in sys.argv else "docs")
 TIPS = "https://docs.google.com/forms/d/e/1FAIpQLSfXNc2RsIhvMPCfcZ9CYb6QIx78RZSr2Ar3YzT5ik9xyPhi7Q/viewform"
 e = lambda s: html.escape(str(s or ""), quote=True)
-NAV = [("Today", "/"), ("Events", "/events.html"), ("Buzz", "/buzz.html"), ("Map", "/map.html"), ("Food & Drink", "/section/food.html"), ("City Hall", "/section/city.html"),
+NAV = [("Today", "/"), ("Events", "/events.html"), ("Buzz", "/buzz.html"), ("Spotlight", "/spotlight.html"), ("Food & Drink", "/section/food.html"), ("City Hall", "/section/city.html"),
        ("Safety", "/section/safety.html"), ("More", "/section/more.html"), ("Search", "/search.html")]
 SECTION_OF = {"top": "Bay View", "openings": "Food & Drink", "development": "City Hall", "streets": "Streets", "schools": "Schools",
               "parks": "Parks", "protests": "Protests", "safety": "Safety", "realestate": "Real estate", "help": "Ways to help",
@@ -131,7 +131,10 @@ nav.sections a{display:inline-block;padding:11px 0;font:600 15px var(--sans)}nav
 footer{border-top:3px double var(--ink);margin-top:30px;padding:18px 0 40px;font-size:14px;color:var(--muted);text-align:center}
 footer a{color:var(--lake)}
 .story{max-width:700px;margin:26px auto 0}.story h1{font:700 clamp(30px,4vw,42px)/1.12 var(--serif);margin:6px 0 12px;text-wrap:balance}
-.story .body{font:400 19px/1.6 var(--serif)}.story figure{margin:16px 0}.story img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.story .body{font:400 19px/1.6 var(--serif)}.story .body p{margin:0 0 1em}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:22px 0}.gallery figure{margin:0}.gallery img{width:100%;aspect-ratio:1/1;object-fit:cover}.gallery figcaption{font:12px/1.4 var(--sans);color:var(--muted);margin-top:4px}.gallery figcaption a{color:var(--muted)}
+.morelinks{border-top:1px solid var(--rule);margin:22px 0;padding-top:12px}.morelinks h2{font:700 13px var(--sans);text-transform:uppercase;letter-spacing:.08em;margin:0 0 8px}.morelinks ul{margin:0;padding-left:18px;font:16px/1.7 var(--sans)}
+.spot-past{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}.spot-past a{color:inherit;text-decoration:none}.spot-past img{width:100%;aspect-ratio:4/3;object-fit:cover}.spot-past h3{font:700 18px/1.2 var(--serif);margin:6px 0 2px}.story figure{margin:16px 0}.story img{width:100%;aspect-ratio:16/9;object-fit:cover}
 .btn{display:inline-block;margin:18px 0;padding:12px 18px;background:var(--lake);color:var(--paper);font:700 16px var(--sans);border-radius:4px}
 .more h2{font:800 20px var(--serif);border-top:1px solid var(--ink);padding-top:16px;margin-top:30px}
 .cal-day{font:700 13px var(--sans);letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding:18px 0 6px}
@@ -294,6 +297,29 @@ def feature_html(url, img, kicker, title, dk, meta, internal=True):
     return (f'<a class="lead feature" href="{e(url)}"{rel}>{pic}<span class="kicker">{e(kicker)}</span><h2>{e(title)}</h2>'
             + (f'<p>{e(dk)}</p>' if dk else "") + f'<div class="meta">{e(meta)}{"" if internal else " · Read the story →"}</div></a>')
 
+
+def paras(text):
+    return "".join(f"<p>{e(p.strip())}</p>" for p in (text or "").split("\n\n") if p.strip())
+
+
+def gallery_html(s):
+    g = s.get("gallery") or []
+    if not g:
+        return ""
+    return ('<div class="gallery">' + "".join(
+        f'<figure><a href="{e(i["src"])}"><img src="{e(i["src"])}" alt="{e(i.get("alt", ""))}" loading="lazy"></a>'
+        f'<figcaption>{e(i.get("alt", ""))} · Photo: <a href="{e(i.get("credit_url") or "#")}" rel="noopener">{e(i.get("credit", ""))}</a></figcaption></figure>'
+        for i in g) + "</div>")
+
+
+def links_html(s):
+    ls = s.get("links") or []
+    if not ls:
+        return ""
+    name = s["title"].replace("Spotlight: ", "")
+    return (f'<section class="morelinks"><h2>More about {e(name)}</h2><ul>'
+            + "".join(f'<li><a href="{e(l["url"])}" rel="noopener">{e(l["label"])}</a></li>' for l in ls) + "</ul></section>")
+
 def build_one(d, newest):
     day = dt.date.fromisoformat(d["date"])
 
@@ -321,7 +347,7 @@ def build_one(d, newest):
         img = (f'<figure><img src="{e(s["image"]["src"])}" alt="{e(s["image"]["alt"])}"><div class="cap">Photo: <a href="{e(s["image"]["credit_url"])}">{e(s["image"]["credit"])}</a></div></figure>') if s.get("image") else ""
         src = f'<a class="btn" href="{e(s["source_url"])}">Read the full story at {e(s["source_name"])} →</a>' if s.get("source_url") else ""
         body = (f'<article class="story"><span class="kicker">{e(s["section"])}{" · Citywide" if s.get("citywide") else ""} · {e(d["display_date"])}</span><h1>{e(s["title"])}</h1>{img}'
-                f'<div class="body"><p>{e(s.get("body"))}</p></div>{src}<section class="more side"><h2>More from Bay View today</h2>{others}</section></article>')
+                f'<div class="body">{paras(s.get("body"))}</div>{gallery_html(s)}{links_html(s)}{src}<section class="more side"><h2>More from Bay View today</h2>{others}</section></article>')
         (OUT / s["url"].lstrip("/")).write_text(shell(s["title"] + " · The Bay View Bulletin", body, d, "", {"title": s["title"], "desc": dek(s), "image": (s.get("image") or {}).get("src"), "type": "article"}, s["url"]))
 
     # utilities
@@ -365,7 +391,7 @@ def build_one(d, newest):
         groups.setdefault(s_["section"], []).append(s_)
     if "Business spotlight" in groups:  # spotlight block comes first among the topic blocks
         groups = {"Business spotlight": groups.pop("Business spotlight"), **groups}
-    topics = "".join(f'<section class="topic{" w" if sec in WARM else ""}"><h2>{e(sec)}<a href="/section/{slug(sec)}.html">More →</a></h2>{"".join(row(x, False) for x in xs[:3])}</section>' for sec, xs in groups.items())
+    topics = "".join(f'<section class="topic{" w" if sec in WARM else ""}"><h2>{e(sec)}<a href="{"/spotlight.html" if sec == "Business spotlight" else "/section/" + slug(sec) + ".html"}">{"Read the spotlight →" if sec == "Business spotlight" else "More →"}</a></h2>{"".join(row(x, False) for x in xs[:3])}</section>' for sec, xs in groups.items())
     mke = d.get("milwaukee", [])
     h = d.get("history")
     hist = (f'<section class="block"><h2>Bay View history</h2><div class="hist"><div><img src="{e(h["image"]["src"])}" alt="{e(h["image"]["alt"])}"><div class="cap">{e(h["image"]["credit"])}</div></div>'
@@ -487,6 +513,22 @@ def build():
     (OUT / "buzz.html").write_text(shell("The Bay View Buzz · The Bay View Bulletin",
         f'<section class="buzz page"><header><h2>The Bay View <span>Buzz</span></h2><p>What the neighborhood is posting about</p></header>{bz_html or "<p>Quiet out there. Check back tomorrow.</p>"}'
         f'<p class="bznote">{BUZZ_NOTE.replace("{TIPS}", TIPS)}</p></section>', d, "Buzz"))
+    spots = [x for x in reversed(ALL_STORIES) if x["key"] == "spotlight"]
+    if spots:
+        cur, past = spots[0], spots[1:]
+        img = cur.get("image") or {}
+        sp = (f'<h1 class="pagehead">Business spotlight</h1><p class="pagedek">Every day we feature one independent, locally owned Bay View business.</p>'
+              f'<article class="story" style="margin-top:8px"><span class="kicker">{e(cur["display_date"])}</span><h1>{e(cur["title"].replace("Spotlight: ", ""))}</h1>'
+              f'<p class="dek" style="font:20px/1.45 var(--serif);color:var(--muted);margin:0 0 12px">{e(cur.get("dek", ""))}</p>'
+              + (f'<figure><img src="{e(img["src"])}" alt="{e(img.get("alt", ""))}"><div class="cap">Photo: <a href="{e(img.get("credit_url") or "#")}">{e(img.get("credit", ""))}</a></div></figure>' if img else "")
+              + f'<div class="body">{paras(cur.get("body"))}</div>{gallery_html(cur)}{links_html(cur)}</article>')
+        if past:
+            sp += '<h2 class="kicker" style="margin:36px 0 12px">Past spotlights</h2><div class="spot-past">' + "".join(
+                f'<a href="{x["url"]}">' + (f'<img src="{e(x["image"]["src"])}" alt="" loading="lazy">' if x.get("image") else "")
+                + f'<span class="kicker">{e(x["display_date"])}</span><h3>{e(x["title"].replace("Spotlight: ", ""))}</h3></a>' for x in past) + "</div>"
+    else:
+        sp = '<h1 class="pagehead">Business spotlight</h1><p class="pagedek">The first spotlight lands tomorrow morning.</p>'
+    (OUT / "spotlight.html").write_text(shell("Business spotlight · The Bay View Bulletin", sp, d, "Spotlight"))
     (OUT / "schools.html").write_text(shell("School days off · The Bay View Bulletin", schools_page(d), d, ""))
     (OUT / "about.html").write_text(shell("About · The Bay View Bulletin", about, d, ""))
     # search index + page
@@ -530,7 +572,8 @@ P.forEach(p=>L.circleMarker([p.lat,p.lon],{{radius:p.c=='biz'?6:9,color:'#fff',w
  .bindPopup('<strong>'+esc(p.n)+'</strong><br>'+esc(p.s)+'<br><a href="'+esc(p.u)+'">Details →</a>'));
 const btn=L.control({{position:'topright'}});btn.onAdd=()=>{{const b=L.DomUtil.create('button');b.textContent='Show all of Milwaukee';b.style.cssText='font:600 14px sans-serif;padding:8px 12px;background:#fff;border:2px solid #121212;border-radius:4px;cursor:pointer';let z=0;b.onclick=e=>{{L.DomEvent.stop(e);z=!z;if(z){{m.fitBounds(L.latLngBounds(P.map(p=>[p.lat,p.lon])).pad(.1));b.textContent='Zoom to Bay View'}}else{{m.setView([42.996,-87.895],14);b.textContent='Show all of Milwaukee'}}}};return b}};btn.addTo(m);
 </script>"""
-    (OUT / "map.html").write_text(shell("Map · The Bay View Bulletin", mapbody, d, "Map", None, "/map.html", leaflet))
+    # Ben, Nov. 12: the map is no longer a feature of the site; old links go to the front page.
+    (OUT / "map.html").write_text('<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=/"><link rel="canonical" href="/"><title>The Bay View Bulletin</title><a href="/">The Bay View Bulletin</a>')
     print("built", OUT, len(issues), "issue(s)")
 
 

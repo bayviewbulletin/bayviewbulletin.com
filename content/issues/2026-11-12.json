@@ -206,8 +206,8 @@
   "spotlight": [
    {
     "title": "Spotlight: URSA",
-    "dek": "The plant-filled lifestyle shop across from the library has been a KK fixture since 2017.",
-    "body": "URSA opened in the summer of 2017 in the historic King Building at 2534 S. Kinnickinnic Ave., right across the street from the Bay View Library. Owner Emily Kopplin hand-picks what fills the airy, high-ceilinged storefront: jewelry, apothecary and self-care goods, home décor, candles, prints, clothing and plenty of potted house plants, with many pieces from local makers. This week the shop has been posting its holiday décor, a fresh batch of ornaments and a new tote bag illustrated by a local artist, plus a closet sale of the staff's own clothes. URSA is open Monday to Friday 10 to 7, Saturday 10 to 6 and Sunday 10 to 5, and it also runs a short-stay rental, URSA Lodge.",
+    "dek": "The sunny lifestyle shop across from the library has been a KK fixture since 2017, and this Sunday it's emptying the staff's closets.",
+    "body": "Walk past the Bay View Library on KK and it's hard to miss URSA: floor-to-ceiling windows in the historic King Building at 2534 S. Kinnickinnic Ave., with plants, pottery and handwoven bags stacked on wooden shelves inside. The shop opened in the summer of 2017 and threw a grand-opening party that October, and it has been one of the anchors of KK's boutique strip ever since.\n\nURSA is run by Emily Sturdy (who opened it as Emily Kopplin) and her husband, John. Emily spent more than 15 years working in retail before going out on her own, and she hand-picks everything on the floor. The shop calls itself a lifestyle store, which in practice means a little of everything: jewelry, candles, incense and perfume, skin care, home décor, kitchen goods, greeting cards, prints, clothing and a healthy stock of potted houseplants. URSA has also made its own apothecary line, sold in the shop and at other stores around the Midwest, and many of its vendors are local artists and makers.\n\nThe Sturdys have a habit of helping neighbors, too. During the pandemic, URSA used Nonfiction Natural Wines' old storefront as a pickup spot for online orders, and in late 2023 the couple turned that space at 800 E. Potter Ave. into Timeshare, a rotating pop-up room for artists, vintage sellers and makers. The shop has even hosted the occasional concert.\n\nThis week URSA has been posting new arrivals, holiday décor and ornaments as the gift season ramps up. The big one for bargain hunters: an URSA Closet Sale this Sunday, Nov. 15, from 10 a.m. to 5 p.m., with pre-loved clothing, shoes and accessories from the staff's own closets.\n\nURSA, 2534 S. Kinnickinnic Ave. Open Monday to Friday 10 a.m. to 7 p.m., Saturday 10 to 6 and Sunday 10 to 5. Shop online at shopursa.com or follow @shopursa on Instagram.",
     "tag": "Shop",
     "source_name": "URSA on Instagram",
     "source_url": "https://www.instagram.com/shopursa/",
@@ -219,7 +219,59 @@
      "credit_url": "https://www.instagram.com/shopursa/p/De23S04KpH6/"
     },
     "lat": 42.99898,
-    "lon": -87.90086
+    "lon": -87.90086,
+    "gallery": [
+     {
+      "src": "/photos/ursa-holiday-2026.jpg",
+      "alt": "Holiday goods, candles and gift boxes on URSA's shelves",
+      "credit": "URSA (@shopursa) on Instagram",
+      "credit_url": "https://www.instagram.com/shopursa/"
+     },
+     {
+      "src": "/photos/ursa-new-arrivals.jpg",
+      "alt": "A plaid fringed scarf from URSA's new arrivals",
+      "credit": "URSA (@shopursa) on Instagram",
+      "credit_url": "https://www.instagram.com/p/DfpLclFICt5/"
+     },
+     {
+      "src": "/photos/ursa-closet-sale.jpg",
+      "alt": "Flyer for the URSA Closet Sale, Sunday 11/15, 10 a.m. to 5 p.m.",
+      "credit": "URSA (@shopursa) on Instagram",
+      "credit_url": "https://www.instagram.com/p/DfcZkl1qEUd/"
+     },
+     {
+      "src": "/photos/ursa-timeshare-mr.jpg",
+      "alt": "The empty Timeshare storefront at 800 E. Potter Ave.",
+      "credit": "Milwaukee Record",
+      "credit_url": "https://milwaukeerecord.com/arts/ursa-owners-open-new-artist-and-maker-space-in-bay-view/"
+     }
+    ],
+    "links": [
+     {
+      "label": "URSA website",
+      "url": "https://shopursa.com"
+     },
+     {
+      "label": "@shopursa on Instagram",
+      "url": "https://www.instagram.com/shopursa/"
+     },
+     {
+      "label": "Milwaukee Magazine: Bay View welcomes a new boutique (2017)",
+      "url": "https://www.milwaukeemag.com/bay-view-welcomes-new-boutique-ursa-grand-opening/"
+     },
+     {
+      "label": "UpNorthNews: Small business spotlight on URSA (2023)",
+      "url": "https://upnorthnewswi.com/2023/01/20/small-business-spotlight-ursa/"
+     },
+     {
+      "label": "Milwaukee Record: URSA owners open Timeshare (2023)",
+      "url": "https://milwaukeerecord.com/arts/ursa-owners-open-new-artist-and-maker-space-in-bay-view/"
+     },
+     {
+      "label": "OnMilwaukee: Unique boutique URSA",
+      "url": "https://onmilwaukee.com/seasonal/holidays/articles/unique-boutique-ursa.html"
+     }
+    ]
    }
   ]
  },
@@ -390,6 +442,16 @@
    "kind": "Community",
    "desc": "A one-hour mix of hot vinyasa yoga and mat Pilates with Sarah; participants get a Casera Cafe pastry voucher.",
    "image": "/photos/ev-yogalattes-healium.jpg"
+  },
+  {
+   "day": "Sun. Nov. 15",
+   "when": "10:00 am",
+   "title": "URSA Closet Sale",
+   "where": "URSA, 2534 S. Kinnickinnic Ave.",
+   "link": "https://www.instagram.com/p/DfcZkl1qEUd/",
+   "kind": "Shopping",
+   "desc": "Pre-loved clothing, shoes and accessories from the URSA staff’s own closets, 10 a.m. to 5 p.m.",
+   "image": "/photos/ursa-closet-sale.jpg"
   },
   {
    "day": "Sun. Nov. 15",
@@ -796,10 +858,10 @@
    "where": "Bay View Town Hall (Facebook)",
    "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29117440807898758/",
    "image": {
-    "src": "/photos/bz-festivus.jpg",
-    "alt": "An aluminum Festivus pole",
-    "credit": "Matthew Keefe / Wikimedia Commons, CC BY 2.0",
-    "credit_url": "https://commons.wikimedia.org/wiki/File:Festivus_Pole.jpg"
+    "src": "/photos/bz-festivus-nola.jpg",
+    "alt": "A Festivus pole next to a Christmas tree (stock photo)",
+    "credit": "Bart Everson / Wikimedia Commons, CC BY 2.0",
+    "credit_url": "https://commons.wikimedia.org/wiki/File:Festivus_Pole_in_New_Orleans.jpg"
    }
   },
   {
