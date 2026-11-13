@@ -197,7 +197,7 @@ def shell(title, body, d, active="Today", og=None, path="/", head=""):
             '<meta name="theme-color" content="#1F4E79">' + head)
     nav = "".join(f'<li><a href="{h}"{" class=on" if n == active else ""}>{n}</a></li>' for n, h in NAV)
     return ext_links(f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{e(title)}</title>{meta}{FONTS}<link rel="stylesheet" href="/assets/v2.css"></head><body>
+<title>{e(title)}</title>{meta}{FONTS}<link rel="stylesheet" href="/assets/v2.css"><script data-goatcounter="https://bayviewbulletin.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></head><body>
 <header class="plate wrap"><div class="dateline"><span>{e(d['display_date'])}</span><span>Bay View, Milwaukee</span></div>
 <div class="rule"></div><h1><a href="/">The Bay View Bulletin</a></h1><p class="tag">Bay View's morning paper</p></header>
 <nav class="sections" aria-label="Sections"><ul>{nav}</ul></nav>
