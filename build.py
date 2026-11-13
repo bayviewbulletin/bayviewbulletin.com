@@ -104,6 +104,7 @@ nav.sections a{display:inline-block;padding:11px 0;font:600 15px var(--sans)}nav
 .ticker{display:flex;gap:12px;align-items:center;font-size:15px;border-bottom:1px solid var(--rule);padding:0 0 12px;margin:-10px 0 22px;overflow:hidden;white-space:nowrap}.ticker b{flex:0 0 auto;font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--warm);padding:3px 7px;border-radius:2px;position:relative;z-index:1}.ticker .vp{flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent)}.ticker .track{display:inline-flex;animation:tick var(--dur,40s) linear infinite}.ticker:hover .track,.ticker:focus-within .track{animation-play-state:paused}.ticker .set{display:inline-flex}.ticker .set a{padding-right:14px;color:inherit;text-decoration:none;font-weight:600}.ticker .set a:hover{text-decoration:underline}.ticker .set a::after{content:"\\00B7";margin-left:14px;color:var(--muted);font-weight:400}@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.ticker .vp{overflow-x:auto}.ticker .track{animation:none}.ticker .set+.set{display:none}}
 .front{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:28px;padding-bottom:24px;border-bottom:1px solid var(--ink)}
 @media(max-width:820px){.front{grid-template-columns:1fr}}
+.feature{display:block;margin:6px 0 26px;padding-bottom:22px;border-bottom:1px solid var(--ink);max-width:860px}.feature h2{font:700 34px/1.12 var(--serif);margin:6px 0 8px}.feature p{font:18px/1.5 var(--serif);margin:0 0 8px}.feature .cap{font:12px var(--sans);color:var(--muted);margin:-6px 0 10px}
 .lead figure{margin:0 0 12px}.lead img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--soft)}
 .kicker{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--lake)}.kicker.w{color:var(--warm)}
 .lead h2{font:700 clamp(28px,3.4vw,40px)/1.12 var(--serif);margin:4px 0 8px;text-wrap:balance}.lead p{margin:0;font-size:18px;color:var(--muted);max-width:60ch}
@@ -280,6 +281,15 @@ BUZZ_NOTE = ("The Bay View Buzz rounds up what neighbors are posting about local
              "(Bay View Town Hall on Facebook, Reddit, Instagram). It's chatter, not reporting: items marked Unconfirmed haven't been verified. "
              "Want something corrected or removed? <a href=\"{TIPS}\">Tell us</a>.")
 
+
+def feature_html(url, img, kicker, title, dk, meta, internal=True):
+    """Big featured story at the top of a section page."""
+    rel = "" if internal else ' rel="noopener"'
+    pic = (f'<figure><img src="{e(img["src"])}" alt="{e(img.get("alt", ""))}"></figure>'
+           f'<div class="cap">Photo: {e(img.get("credit", ""))}</div>') if img else ""
+    return (f'<a class="lead feature" href="{e(url)}"{rel}>{pic}<span class="kicker">{e(kicker)}</span><h2>{e(title)}</h2>'
+            + (f'<p>{e(dk)}</p>' if dk else "") + f'<div class="meta">{e(meta)}{"" if internal else " · Read the story →"}</div></a>')
+
 def build_one(d, newest):
     day = dt.date.fromisoformat(d["date"])
 
@@ -397,7 +407,7 @@ function fromHash(){var h=decodeURIComponent(location.hash.slice(1));show(bs.som
     (OUT / "milwaukee.html").write_text('<!DOCTYPE html><meta charset="utf-8"><title>The Bay View Bulletin</title><link rel="canonical" href="/"><meta http-equiv="refresh" content="0; url=/"><a href="/">The Bay View Bulletin</a>')
 
 
-SECTION_PAGES = {"food": ("Food & Drink", {"Food & Drink", "Fish fry"}), "city": ("City Hall", {"City Hall", "Streets", "Bay View"}),
+SECTION_PAGES = {"food": ("Food & Drink", {"Food & Drink", "Fish fry"}), "city": ("City Hall", {"City Hall", "Streets"}),
                  "safety": ("Safety", {"Safety", "Protests"}), "more": ("More from Bay View", None)}
 
 
@@ -426,11 +436,28 @@ def build():
         items = [s for s in recent if s["section"] == lab]
         (OUT / "section" / f"{slug(lab)}.html").write_text(shell(lab + " · The Bay View Bulletin", f'<h1 class="pagehead">{e(lab)}</h1><p class="pagedek">Recent {e(lab.lower())} news from Bay View.</p>' + (listing(items) or "<p>Nothing yet.</p>"), d))
     for key, (title, labs) in SECTION_PAGES.items():
-        items = [s for s in recent if labs is None or s["section"] in labs]
+        onpage = lambda s: labs is None or s["section"] in labs or key in (s.get("also") or [])
+        items = [s for s in recent if onpage(s)]
         active = {"food": "Food & Drink", "city": "City Hall", "safety": "Safety", "more": "More"}[key]
         briefs = [b for b in BRIEFS if labs is None or b["label"] in labs]
         empty = f'<p class="pagedek">No new {e(title.lower())} news in the last day. New stories land here every morning.</p>'
-        body = f'<h1 class="pagehead">{e(title)}</h1>' + (listing(items) if items else empty)
+        # Featured: the most important story from the newest day (story order = importance), preferring one with a photo;
+        # if this section had no stories, the newest earlier headline.
+        feat = None
+        if labs is not None and items:
+            newest = max(s["issue_date"] for s in items)
+            day_items = [s for s in ALL_STORIES if s["issue_date"] == newest and onpage(s)]
+            feat = next((s for s in day_items if s.get("image")), day_items[0] if day_items else None)
+            if feat:
+                items = [s for s in items if s["url"] != feat["url"]]
+                body_feat = feature_html(feat["url"], feat.get("image"), f'{feat["section"]} · {feat["display_date"]}', feat["title"], dek(feat), srcmeta(feat), internal=True)
+        elif labs is not None and briefs:
+            feat = next((b for b in briefs if b.get("image")), briefs[0])
+            briefs = [b for b in briefs if b is not feat]
+            body_feat = feature_html(feat["source_url"], feat.get("image"), f'{feat["label"]} · {feat["date"]}', feat["title"], "", feat["source_name"], internal=False)
+        body = f'<h1 class="pagehead">{e(title)}</h1>' + (body_feat if feat else "") + (listing(items) if items else ("" if feat else empty))
+        if feat and not [s for s in recent if onpage(s)]:
+            body = body.replace(body_feat, f'<p class="pagedek">No new {e(title.lower())} news in the last day. Here&rsquo;s the latest:</p>' + body_feat)
         if briefs:
             body += '<h2 class="kicker" style="margin:32px 0 6px;font-size:13px;color:var(--muted)">Earlier this fall</h2><div class="list">' + "".join(
                 f'<a href="{e(b["source_url"])}" rel="noopener"><span class="kicker">{e(b["label"])} · {e(b["date"])} · {e(b["source_name"])}</span><h3>{e(b["title"])}</h3></a>' for b in briefs) + "</div>"

@@ -26,7 +26,10 @@
     },
     "dek": "The church's weekly free meal, running since 1994, ends its current form with a Nov. 29 feast.",
     "lat": 42.99484,
-    "lon": -87.89392
+    "lon": -87.89392,
+    "also": [
+     "food"
+    ]
    },
    {
     "title": "Mayor's deadline for budget vetoes is Tuesday, and Bay View's street-light fix is in the mix",
@@ -41,7 +44,10 @@
      "credit": "Michael Barera, CC BY-SA 4.0 / Wikimedia Commons",
      "credit_url": "https://commons.wikimedia.org/wiki/File:Milwaukee_June_2022_19_(Milwaukee_City_Hall).jpg"
     },
-    "dek": "Johnson has until Tuesday to sign or veto a budget with more street-light repair crews."
+    "dek": "Johnson has until Tuesday to sign or veto a budget with more street-light repair crews.",
+    "also": [
+     "city"
+    ]
    }
   ],
   "openings": [],
@@ -591,14 +597,26 @@
    "source_name": "Milwaukee Record",
    "source_url": "https://milwaukeerecord.com/food-drink/ians-pizzas-new-bay-view-location-is-now-open/",
    "date": "Nov. 4",
-   "section": "openings"
+   "section": "openings",
+   "image": {
+    "src": "/photos/brief-ians-pizza-r1ver.jpg",
+    "alt": "Ian's Pizza by the Slice mural at the new R1VER location",
+    "credit": "Milwaukee Record",
+    "credit_url": "https://milwaukeerecord.com/food-drink/ians-pizzas-new-bay-view-location-is-now-open/"
+   }
   },
   {
    "title": "Spectrum News review: only two officers responded to the KK and Lincoln street takeover",
    "source_name": "Spectrum News 1",
    "source_url": "https://spectrumnews1.com/wi/milwaukee/news/2026/11/05/bay-view-street-takeover--milwaukee-police-staffing",
    "date": "Nov. 5",
-   "section": "safety"
+   "section": "safety",
+   "image": {
+    "src": "/photos/brief-spectrum-street-takeover.jpg",
+    "alt": "Spectrum News reporter reviewing police staffing records",
+    "credit": "Spectrum News 1",
+    "credit_url": "https://spectrumnews1.com/wi/milwaukee/news/2026/11/05/bay-view-street-takeover--milwaukee-police-staffing"
+   }
   },
   {
    "title": "A Bay View doughnut bar is adding wings and loaded fries",
