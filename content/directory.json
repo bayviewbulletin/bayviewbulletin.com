@@ -45,10 +45,10 @@
   "address": "2625 S. Greeley St.",
   "instagram": "amara.studios",
   "website": "https://amara-studios.com",
-  "verify": true,
   "note": "Hide House, Suite 100",
   "lat": 42.99652,
-  "lon": -87.90935
+  "lon": -87.90935,
+  "facebook": "p/Amara-Studios-100092530181770"
  },
  {
   "name": "Anodyne Coffee Bay View",
@@ -447,10 +447,10 @@
   "name": "Dom & Phil DeMarinis",
   "type": "Italian restaurant & bar",
   "address": "1211 E. Conway St.",
-  "website": "https://www.demarinispizza.com/",
-  "verify": true,
+  "website": "https://domandphildemarinis.com",
   "lat": 43.00067,
-  "lon": -87.89336
+  "lon": -87.89336,
+  "facebook": "profile.php?id=100063623260526"
  },
  {
   "name": "Dunkin'",
@@ -550,8 +550,7 @@
   "instagram": "goldenhoney_pancakescafe",
   "facebook": "profile.php?id=61570727969870",
   "website": "https://www.goldenhoneycafe.com/",
-  "verify": true,
-  "note": "Took over Wioletta's restaurant side (2026); confirm address",
+  "note": "Second location of the Oak Creek cafe; took over Wioletta's restaurant side (2026). Its website and accounts cover both locations",
   "lat": 42.97253,
   "lon": -87.90962
  },
@@ -790,10 +789,11 @@
   "name": "The Muse Gallery Guesthouse",
   "type": "Bed & breakfast",
   "address": "602 E. Lincoln Ave.",
-  "facebook": "p/The-Muse-Gallery-Guesthouse-100063645308785",
-  "verify": true,
+  "facebook": "The-Muse-518963244857372",
   "lat": 43.00298,
-  "lon": -87.90139
+  "lon": -87.90139,
+  "website": "https://www.themuseguesthouse.com",
+  "instagram": "musebnb"
  },
  {
   "name": "New Barons Brewing Cooperative",
@@ -819,9 +819,9 @@
   "type": "Chinese restaurant",
   "address": "2678 S. Kinnickinnic Ave.",
   "facebook": "No1ChineseRestaurantBayView",
-  "verify": true,
   "lat": 42.99632,
-  "lon": -87.89728
+  "lon": -87.89728,
+  "note": "No website of its own; orders by phone (414-482-2218) and delivery apps"
  },
  {
   "name": "Nonfiction Natural Wines",
@@ -1042,10 +1042,10 @@
   "address": "2625 S. Greeley St.",
   "instagram": "serpentinesalvage",
   "website": "https://serpentinesalvage.com",
-  "verify": true,
   "note": "Hide House, Unit 235",
   "lat": 42.99652,
-  "lon": -87.90935
+  "lon": -87.90935,
+  "facebook": "serpentinesalvage"
  },
  {
   "name": "Shape Up Shoppe",
@@ -1131,8 +1131,7 @@
   "name": "The Stone",
   "type": "Tavern",
   "address": "2422 S. Howell Ave.",
-  "verify": true,
-  "social_note": "no website or social found",
+  "social_note": "Ben confirmed open and online (Nov. 13). Web search found no accounts; find them in Chrome with Facebook page search and Instagram search",
   "lat": 43.00062,
   "lon": -87.90471
  },
@@ -1140,8 +1139,7 @@
   "name": "Straight Shots",
   "type": "Bar & grill",
   "address": "1503 E. Oklahoma Ave.",
-  "verify": true,
-  "social_note": "no website or social found",
+  "social_note": "Ben confirmed open and online (Nov. 13). Web search found no accounts; find them in Chrome with Facebook page search and Instagram search",
   "lat": 42.98818,
   "lon": -87.89056
  },
@@ -1182,8 +1180,7 @@
   "address": "2227 S. Kinnickinnic Ave.",
   "lat": 43.00422,
   "lon": -87.90538,
-  "instagram": "tempesttattoostudio",
-  "social_note": "IG handle found by search; confirm it is the 2227 S. KK shop"
+  "instagram": "tempesttattoostudio"
  },
  {
   "name": "Tenuta's Italian Restaurant",
