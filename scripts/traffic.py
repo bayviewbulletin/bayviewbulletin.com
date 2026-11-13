@@ -3,7 +3,8 @@
 
 Usage: GOATCOUNTER_TOKEN=... python3 scripts/traffic.py [YYYY-MM-DD]
 The token is read-only (Read statistics). Never commit it to the repo.
-With no date, reports yesterday (Central time). On Mondays it also prints
+With no date, reports yesterday (Central time). Location is country and
+U.S. state only; GoatCounter does not record cities. On Mondays it also prints
 the past 7 days, day by day.
 """
 import datetime as dt
@@ -26,9 +27,17 @@ def get(path, **params):
         return json.load(r)
 
 
+def span(day):
+    """Midnight-to-midnight Central time for `day`, as UTC timestamps for the API."""
+    tz, utc = ZoneInfo("America/Chicago"), dt.timezone.utc
+    a = dt.datetime.combine(day, dt.time(0), tz).astimezone(utc)
+    b = (dt.datetime.combine(day + dt.timedelta(days=1), dt.time(0), tz) - dt.timedelta(seconds=1)).astimezone(utc)
+    f = "%Y-%m-%dT%H:%M:%SZ"
+    return {"start": a.strftime(f), "end": b.strftime(f)}
+
+
 def total(day):
-    d = day.isoformat()
-    return get("/stats/total", start=d, end=d).get("total", 0)
+    return get("/stats/total", **span(day)).get("total", 0)
 
 
 def main():
@@ -36,22 +45,31 @@ def main():
         sys.exit("GOATCOUNTER_TOKEN is not set")
     today = dt.datetime.now(ZoneInfo("America/Chicago")).date()
     day = dt.date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else today - dt.timedelta(days=1)
-    d = day.isoformat()
+    d = span(day)
 
     print(f"Traffic for {day:%a. %b. %-d, %Y}: {total(day)} visitors")
 
-    hits = get("/stats/hits", start=d, end=d, limit=5).get("hits", [])
+    hits = get("/stats/hits", **d, limit=5).get("hits", [])
     pages = [h for h in hits if not h.get("event")]
     if pages:
         print("Top pages:")
         for h in pages[:5]:
             print(f"  {h.get('count', 0):>4}  {h.get('title') or h.get('path')}  ({h.get('path')})")
 
-    refs = get("/stats/toprefs", start=d, end=d, limit=5).get("stats", [])
+    refs = get("/stats/toprefs", **d, limit=5).get("stats", [])
     if refs:
         print("Where they came from:")
         for r in refs[:5]:
             print(f"  {r.get('count', 0):>4}  {r.get('name') or '(direct / unknown)'}")
+
+    countries = get("/stats/locations", **d, limit=5).get("stats", [])
+    if countries:
+        print("Where they are:")
+        for c in countries[:5]:
+            print(f"  {c.get('count', 0):>4}  {c.get('name') or 'Unknown'}")
+            if c.get("id") == "US":
+                for r in get("/stats/locations/US", **d, limit=5).get("stats", [])[:5]:
+                    print(f"        {r.get('count', 0):>4}  {r.get('name') or 'Unknown state'}")
 
     if day.weekday() == 6:  # report for Sunday = Monday morning's run
         print("Past 7 days:")
