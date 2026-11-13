@@ -1,0 +1,763 @@
+{
+ "date": "2026-11-13",
+ "display_date": "Friday, November 13, 2026",
+ "number": 2,
+ "greeting": "Happy Friday, Bay View, and yes, it's Friday the 13th. Expect a gray, breezy morning with a chance of a shower before the sun takes over for a dry, mostly sunny weekend. Today we've got the MPS budget picture, a neighborhood fish fry roundup and a 70-year-old Serbian landmark in the spotlight.",
+ "lead_image": {
+  "src": "/photos/n-mps-state-of-schools.jpg",
+  "alt": "A Milwaukee Public Schools entrance sign on a school building",
+  "credit": "WPR",
+  "credit_url": "https://www.wpr.org/news/milwaukee-public-schools-progress-challenges-state-of-our-schools-address"
+ },
+ "sections": {
+  "top": [
+   {
+    "title": "MPS chief: a $58 million deficit and fewer students than expected",
+    "dek": "In her first State of Our Schools speech, Cassellius said the district's budget gap has grown as enrollment slipped.",
+    "body": "Milwaukee Public Schools Superintendent Brenda Cassellius used her first State of Our Schools address on Thursday at Discovery World to lay out a tough budget picture, under the theme \"stability first, excellence next.\"\n\nAccording to WPR, the district's deficit has grown to about $58 million, up from the $46 million gap the board tried to close with cuts in February. Enrollment came in at 58,088 students, about 2,200 below projections, which means less state aid.\n\nWISN reported that she offered no timeline for another referendum. She pointed to roughly 300 central-office jobs cut, a small gain in grade 3-8 reading scores on the Forward Exam (23.6% to 25.1%) and a drop in student gun deaths from 23 to 12. State report cards are due next week, and the board is nearing a vote on a long-range facilities plan that would close and merge several schools, which matters for every MPS family in Bay View.",
+    "tag": "Schools",
+    "source_name": "WPR",
+    "source_url": "https://www.wpr.org/news/milwaukee-public-schools-progress-challenges-state-of-our-schools-address",
+    "date": "Nov. 12",
+    "citywide": true,
+    "image": {
+     "src": "/photos/n-mps-state-of-schools.jpg",
+     "alt": "A Milwaukee Public Schools entrance sign on a school building",
+     "credit": "WPR",
+     "credit_url": "https://www.wpr.org/news/milwaukee-public-schools-progress-challenges-state-of-our-schools-address"
+    }
+   },
+   {
+    "title": "The gas station owner on Bay View's southern edge who knows customers by name",
+    "dek": "WUWM profiles Faisal Bhimani, whose two stations at Howard and Clement double as a neighborhood hub.",
+    "body": "WUWM spent time with Faisal Bhimani, who owns the BP and Citgo stations facing each other at Howard and Clement avenues, just south of Bay View on the St. Francis side.\n\nBhimani hands out free food and drinks, lets local groups hold fundraisers on his lot and has given free gas to seniors living on tight budgets. A lemonade-stand tradition he started has outlasted the kids who first ran it; they're in college now.\n\nHe told the station that neighbors kept him afloat during the Howard Avenue reconstruction by using the one entrance left open. On Bay View Town Hall, Bhimani thanked Bay View and St. Francis for the support.",
+    "tag": "Community",
+    "source_name": "WUWM",
+    "source_url": "https://www.wuwm.com/milwaukee-gas-station-transformed-place-of-convenience-into-community-hub",
+    "date": "Nov. 12",
+    "image": {
+     "src": "/photos/n-bhimani-gas-station.jpg",
+     "alt": "Faisal Bhimani behind the counter of his gas station",
+     "credit": "WUWM",
+     "credit_url": "https://www.wuwm.com/milwaukee-gas-station-transformed-place-of-convenience-into-community-hub"
+    }
+   },
+   {
+    "title": "Aerial Hippie brings circus-style fitness to the Hide House",
+    "dek": "WISN visited the Bay View studio where beginners learn to climb and spin on hanging fabric.",
+    "body": "WISN 12's In Your Neighborhood segment stopped by Aerial Hippie, an aerial fitness studio at 2625 S. Greeley St., near Greeley and Dover.\n\nClasses use hanging fabric slings and are inspired by circus silks. Instructor Beth Stavros told the station the classes are open to every skill level, and beginner sessions run on Saturday mornings and early afternoons.\n\nDetails and class sign-ups are on the studio's website, aerialhippiemke.com.",
+    "tag": "Business",
+    "source_name": "WISN 12",
+    "source_url": "https://www.wisn.com/article/in-your-neighborhood-bay-views-aerial-hippie-brings-circus-style-fitness-to-milwaukee/74405855",
+    "date": "Nov. 11",
+    "image": {
+     "src": "/photos/n-aerial-hippie.jpg",
+     "alt": "Students practicing on hanging fabric slings at Aerial Hippie",
+     "credit": "WISN 12",
+     "credit_url": "https://www.wisn.com/article/in-your-neighborhood-bay-views-aerial-hippie-brings-circus-style-fitness-to-milwaukee/74405855"
+    }
+   }
+  ],
+  "openings": [],
+  "development": [],
+  "streets": [],
+  "schools": [
+   {
+    "title": "MPS rebids the Lincoln Avenue School demolition a third time",
+    "dek": "After a bidder objected, the fire-damaged school's demolition will now go to the lowest qualified bid.",
+    "body": "Milwaukee Public Schools threw out the bids to tear down the fire-damaged Lincoln Avenue Elementary, 1817 W. Lincoln Ave., and will re-advertise the job as a sealed competitive bid that goes to the lowest responsive, responsible bidder.\n\nUrban Milwaukee reports the switch followed an objection from West Milwaukee-based The MRD Group, which bid about $928,000; the district had chosen an Illinois firm at about $4.8 million.\n\nThe school sits west of Bay View, but the episode is part of a broader look at MPS spending: FOX6 also raised questions this week about the district's finance office.",
+    "tag": "Schools",
+    "source_name": "Urban Milwaukee",
+    "source_url": "https://urbanmilwaukee.com/2026/11/12/third-times-the-charm-mps-rebidding-lincoln-avenue-demo-again-after-objection/",
+    "date": "Nov. 12",
+    "citywide": true,
+    "image": {
+     "src": "/photos/n-lincoln-ave-demo.jpg",
+     "alt": "Aerial view of the fire-damaged Lincoln Avenue School and surrounding blocks",
+     "credit": "Urban Milwaukee",
+     "credit_url": "https://urbanmilwaukee.com/2026/11/12/third-times-the-charm-mps-rebidding-lincoln-avenue-demo-again-after-objection/"
+    }
+   }
+  ],
+  "parks": [
+   {
+    "title": "Restored Vietnam Veterans Memorial rededicated on the lakefront",
+    "dek": "About 100 Vietnam veterans gathered in Veterans Park for the unveiling of a $1 million restoration.",
+    "body": "The Vietnam Veterans Memorial in Veterans Park, on the lakefront north of downtown, was rededicated on Veterans Day after a $1 million restoration.\n\nUrban Milwaukee reports that about 100 Vietnam veterans attended. Speakers included Maj. Gen. Brian Winski of the War Memorial Center, Gov.-elect David Crowley and Mayor Cavalier Johnson.",
+    "tag": "Lakefront",
+    "source_name": "Urban Milwaukee",
+    "source_url": "https://urbanmilwaukee.com/2026/11/12/milwaukee-rededicates-restored-vietnam-veterans-memorial/",
+    "date": "Nov. 12",
+    "citywide": true,
+    "image": {
+     "src": "/photos/n-vietnam-memorial.jpg",
+     "alt": "Veterans gathered in front of the restored Vietnam Veterans Memorial's three steel pillars",
+     "credit": "Lauren Hafeman / Urban Milwaukee",
+     "credit_url": "https://urbanmilwaukee.com/2026/11/12/milwaukee-rededicates-restored-vietnam-veterans-memorial/"
+    }
+   }
+  ],
+  "protests": [],
+  "safety": [],
+  "realestate": [],
+  "help": [],
+  "fishfry": [
+   {
+    "title": "Friday fish fry: where to find one in Bay View tonight",
+    "dek": "Beer-battered cod on Howell, Dutch-style haddock on KK, Vietnamese swai and a Conway Street classic.",
+    "body": "It's Friday in Wisconsin, so here's where Bay View fries fish. Heirloom MKE (2378 S. Howell Ave.) does Fish Fry Friday from 4 to 9 p.m.: two pieces of beer-battered cod with fries, coleslaw, tartar, buttered rye and lemon. Reservations are recommended.\n\nCentraal Grand Cafe & Tappery (2306 S. Kinnickinnic Ave.) serves a Fridays-only crispy haddock fry with coleslaw, tartar, friets and rye, starting at 11 a.m. Hue (2699 S. Kinnickinnic Ave.) puts a Vietnamese spin on it after 4 p.m., with beer-battered swai, garlic fried rice and Asian slaw.\n\nDom & Phil DeMarinis (1211 E. Conway St.) lists a $14 Friday beer-batter cod fry with fries, potato pancakes or pasta, plus salad and bread. Check each spot's hours before heading out, and tell us your favorite through the tip form.",
+    "tag": "Fish fry",
+    "source_name": "Heirloom MKE",
+    "source_url": "https://www.heirloommke.com/",
+    "date": "Nov. 13",
+    "image": {
+     "src": "/photos/ff-heirloom.jpg",
+     "alt": "The front entrance of Heirloom MKE on S. Howell Ave.",
+     "credit": "Urban Milwaukee",
+     "credit_url": "https://urbanmilwaukee.com/?p=1234232"
+    }
+   }
+  ],
+  "pets": [
+   {
+    "title": "Cat of the Week: Skeeter wants to go home with a sibling",
+    "dek": "A playful orange tabby, born in April, is up for adoption along with his littermates.",
+    "body": "Milwaukee Record and Urban Cat Coalition's Cat of the Week is Skeeter, an orange tabby born in April. He's neutered, vaccinated and house-trained, and gets along with kids and other cats.\n\nThe catch: he has to be adopted with at least one of his siblings, Zinnia, Mango or Frodo. Details and the adoption application are at the link.",
+    "tag": "Adopt",
+    "source_name": "Milwaukee Record",
+    "source_url": "https://milwaukeerecord.com/city-life/milwaukee-record-cat-of-the-week-skeeter/",
+    "date": "Nov. 13",
+    "citywide": true,
+    "image": {
+     "src": "/photos/n-cat-skeeter.jpg",
+     "alt": "Skeeter, an orange tabby cat, lounging on a leopard-print blanket",
+     "credit": "Milwaukee Record / Urban Cat Coalition",
+     "credit_url": "https://milwaukeerecord.com/city-life/milwaukee-record-cat-of-the-week-skeeter/"
+    }
+   }
+  ],
+  "sports": [],
+  "remembrances": [],
+  "spotlight": [
+   {
+    "title": "Spotlight: Three Brothers",
+    "dek": "Seventy years in an old Schlitz tavern: Bay View's Serbian landmark still makes burek the way Mama did.",
+    "body": "On a quiet residential corner of Bay View, Three Brothers has served Serbian home cooking at 2414 S. St. Clair St. since 1956, which makes 2026 its 70th year. The cream city brick building went up around the turn of the last century as a Schlitz tied house, and the brewery's belted globe still crowns its turret. Much of that era survives inside: the original bar, a Grand Tetons mural behind it, bentwood chairs and Formica-topped tables.\n\nFounder Milun Radicevic, a Serbian army veteran who survived imprisonment during World War II, came to Milwaukee in 1949 and ran a tavern on S. 2nd Street before buying this building. He named the restaurant for his three sons, who were still in Yugoslavia at the time, and his wife, Milunka, built the menu from her own recipes. Their son Branko later left a banking career in California to help when his father fell ill, and Branko's wife, Patricia, learned the recipes at her mother-in-law's side and took over the kitchen in 1982. Branko died in 2015. Patricia and her children carry it on today, and only family members have ever done the cooking.\n\nThe menu has barely changed in decades. The star is burek, flaky layers of paper-thin filo filled with beef, cheese, or spinach and cheese; it takes a while to bake, so regulars call ahead to order it. Other staples include sarma (stuffed cabbage), chicken paprikash, goulash with potato dumplings, chevapchichi sausages, raznjici pork skewers, roast lamb, duck and even goose, with house-made desserts like strudel, baklava and a seven-layer walnut torte. Given a day and a half's notice, the kitchen can adapt dishes for vegetarian, vegan or gluten-free diners.\n\nThe accolades go back a long way. The James Beard Foundation named Three Brothers an America's Classic in 2002, and the city designated the building a Milwaukee landmark in 1976. The restaurant has turned up in Gourmet, Bon Appétit and The New York Times, and in 2025 USA Today put it on its national Restaurants of the Year list.\n\nIf you go, plan ahead: reservations are recommended, and the restaurant takes cash or checks only (there's an ATM next door at DeMarinis). With holiday gatherings coming up, it's worth calling early if you have your heart set on burek or a roast.\n\nThree Brothers, 2414 S. St. Clair St. Open Wednesday to Friday 5 to 9 p.m. and Saturday and Sunday 4 to 9 p.m.; closed Monday and Tuesday. Call (414) 481-7530, visit threebrothersmke.com or follow @threebrothersmke on Instagram.",
+    "tag": "Food",
+    "source_name": "Three Brothers on Instagram",
+    "source_url": "https://www.instagram.com/threebrothersmke/",
+    "date": "2026-11-13",
+    "image": {
+     "src": "/photos/sp-three-brothers-1.jpg",
+     "alt": "Three Brothers' cream city brick building at dusk, its red-lit front window glowing beneath a turret topped by a Schlitz globe",
+     "credit": "Three Brothers Restaurant website",
+     "credit_url": "https://www.threebrothersmke.com/our-history"
+    },
+    "lat": 43.00048,
+    "lon": -87.89336,
+    "gallery": [
+     {
+      "src": "/photos/sp-three-brothers-2.jpg",
+      "alt": "The Three Brothers dining room, with bentwood chairs, small tables, tall windows and the long vintage bar",
+      "credit": "Three Brothers Restaurant website",
+      "credit_url": "https://www.threebrothersmke.com/our-history"
+     },
+     {
+      "src": "/photos/sp-three-brothers-3.jpg",
+      "alt": "A round, golden burek of layered filo pastry on a floral china plate",
+      "credit": "Three Brothers Restaurant website",
+      "credit_url": "https://www.threebrothersmke.com/menu"
+     },
+     {
+      "src": "/photos/sp-three-brothers-4.jpg",
+      "alt": "Sarma, cabbage rolls stuffed with beef and rice, in tomato broth with potato dumplings",
+      "credit": "Three Brothers Restaurant website",
+      "credit_url": "https://www.threebrothersmke.com/menu"
+     },
+     {
+      "src": "/photos/sp-three-brothers-5.jpg",
+      "alt": "The belted Schlitz globe atop the restaurant's turret against a blue sky",
+      "credit": "Three Brothers Restaurant website",
+      "credit_url": "https://www.threebrothersmke.com/gallery2"
+     },
+     {
+      "src": "/photos/sp-three-brothers-6.jpg",
+      "alt": "Serbian salad of tomato, onion and green pepper under a mound of shredded Serbian cheese",
+      "credit": "Three Brothers Restaurant website",
+      "credit_url": "https://www.threebrothersmke.com/menu"
+     }
+    ],
+    "links": [
+     {
+      "label": "Three Brothers website",
+      "url": "https://www.threebrothersmke.com"
+     },
+     {
+      "label": "Instagram: @threebrothersmke",
+      "url": "https://www.instagram.com/threebrothersmke/"
+     },
+     {
+      "label": "Milwaukee Magazine: Three Brothers Carries On a Family Legacy (2026)",
+      "url": "https://www.milwaukeemag.com/three-brothers-carries-on-a-family-legacy/"
+     },
+     {
+      "label": "Journal Sentinel (via Yahoo): Beloved Milwaukee Serbian restaurant named one of best in U.S. (2025)",
+      "url": "https://www.yahoo.com/entertainment/beloved-milwaukee-serbian-restaurant-named-100253927.html"
+     },
+     {
+      "label": "Shepherd Express: Three Brothers is a Culinary Classic (2023)",
+      "url": "https://shepherdexpress.com/food/lets-eat/three-brothers-is-a-culinary-classic/"
+     },
+     {
+      "label": "OnMilwaukee: Urban spelunking: Three Brothers (2019)",
+      "url": "https://onmilwaukee.com/articles/three-brothers-spelunking"
+     },
+     {
+      "label": "Wikipedia: Three Brothers Serbian Restaurant",
+      "url": "https://en.wikipedia.org/wiki/Three_Brothers_Serbian_Restaurant"
+     }
+    ]
+   }
+  ]
+ },
+ "events": [
+  {
+   "day": "Today, Fri. Nov. 13",
+   "when": "6:00 pm",
+   "title": "Deep Rest: Yoga Nidra (the Chakras)",
+   "where": "Healium Restore, 435 E. Lincoln Ave.",
+   "link": "https://www.healiumhotyoga.com/happenings/yoganidranovember26",
+   "kind": "Community",
+   "desc": "An hour of guided yoga nidra, a lying-down deep-relaxation practice, led by Becky. Included in Healium packages and memberships.",
+   "image": "/photos/ev-yoga-nidra-healium.jpg",
+   "lat": 43.00286,
+   "lon": -87.90341
+  },
+  {
+   "day": "Today, Fri. Nov. 13",
+   "when": "6:00 pm",
+   "title": "MILKSHAKE: artist mixer",
+   "where": "Lion's Tooth, 2421 S. Kinnickinnic Ave.",
+   "link": "https://www.lionstoothmke.com/events.html",
+   "kind": "Social",
+   "desc": "A low-key after-hours meetup for Milwaukee artists to draw, chat and connect, hosted with MILK. Free and open to the public.",
+   "image": "/photos/ev-lionstooth-milkshake.jpg"
+  },
+  {
+   "day": "Today, Fri. Nov. 13",
+   "when": "6:30 pm",
+   "title": "Allison Mahal EP release, with Leah Jean + Whitney Fenimore",
+   "where": "Cactus Club · All ages",
+   "link": "https://www.cactusclubmilwaukee.com/events/allison-mahal-ep-release-show-leah-jean-whitney-fenimore/",
+   "kind": "Music",
+   "desc": "Release show for Allison Mahal's new EP, with sets from Leah Jean and Whitney Fenimore. All ages."
+  },
+  {
+   "day": "Today, Fri. Nov. 13",
+   "when": "10:00 pm",
+   "title": "Good Vibes Only: AK Stackz, SGOD Burna, NileXNile + more",
+   "where": "Cactus Club, 2496 S. Wentworth Ave. · 18+",
+   "link": "https://www.cactusclubmilwaukee.com/events/good-vibes-only-ak-stackz-sgod-burna-nilexnile-rasberry-daniels-rob-k-ray-real-lee-yo-shorti-chise/",
+   "kind": "Music",
+   "desc": "A late-night showcase of Milwaukee performers, hosted by Serenae with DJ Space Crime. 18+, $15.",
+   "image": "/photos/ev-cactus-good-vibes.jpg"
+  },
+  {
+   "day": "Sat. Nov. 14",
+   "when": "10:00 am",
+   "title": "Handmade Holiday",
+   "where": "Lincoln Warehouse, 2018 S. 1st St.",
+   "link": "https://www.componentbrewing.com/event-details-registration/handmade-holiday",
+   "kind": "Shopping",
+   "desc": "A handmade holiday market, 10 am-4 pm at the Lincoln Warehouse, home of Component and Torzala breweries; it kicks off Torzala’s toy drive for Children’s.",
+   "image": "/photos/ev-handmade-holiday-component.jpg",
+   "lat": 43.00781,
+   "lon": -87.91114
+  },
+  {
+   "day": "Sat. Nov. 14",
+   "when": "11:00 am",
+   "title": "Buy a Slice pie fundraiser",
+   "where": "Outpost Natural Foods, 2826 S. Kinnickinnic Ave.",
+   "link": "https://www.instagram.com/p/DfnSgp7nV39/",
+   "kind": "Give",
+   "desc": "A slice of Outpost-made pie for a suggested $5 donation, 11 am-2 pm at all Outpost stores; proceeds go to Buy A Bag.",
+   "image": "/photos/ev-outpost-buy-a-slice.jpg"
+  },
+  {
+   "day": "Sat. Nov. 14",
+   "when": "1:00 pm",
+   "title": "Open Decks: Digital Edition",
+   "where": "Cactus Club, 2496 S. Wentworth Ave. · All ages",
+   "link": "https://www.cactusclubmilwaukee.com/events/open-decks-series-vinyl-edition-12-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-3-2-2-2-2-2-2-2-2/",
+   "kind": "Music",
+   "desc": "Bring a USB stick and try DJing on the club’s gear, or just listen; all levels welcome, 1-5 pm. Free, all ages.",
+   "image": "/photos/ev-cactus-open-decks.jpg"
+  },
+  {
+   "day": "Sat. Nov. 14",
+   "when": "4:00 pm",
+   "title": "Book release party: Peter Dahl, Lives We Might Have Lived",
+   "where": "Lion's Tooth, 2421 S. Kinnickinnic Ave.",
+   "link": "https://www.lionstoothmke.com/events.html",
+   "kind": "Community",
+   "desc": "Bay View author Peter Dahl celebrates his new book with a reading and signing at the bookstore.",
+   "image": "/photos/ev-lionstooth-peter-dahl.jpg"
+  },
+  {
+   "day": "Sat. Nov. 14",
+   "when": "6:30 pm",
+   "title": "Arise and Fall of a Dilapidated Home, Frontega, Yolk + Mala Mala",
+   "where": "Cactus Club, 2496 S. Wentworth Ave. · All ages",
+   "link": "https://www.cactusclubmilwaukee.com/events/arise-and-fall-of-a-dilapidated-home-frontega-yolk-mala-mala/",
+   "kind": "Music",
+   "desc": "A four-band bill presented by Pierhead 1886; doors 6:30, show 7. All ages, $10 advance.",
+   "image": "/photos/ev-cactus-arise-and-fall.jpg"
+  },
+  {
+   "day": "Sat. Nov. 14",
+   "when": "7:00 pm",
+   "title": "God's Outlaw: benefit for the Wisconsin Homeless Veterans Initiative",
+   "where": "Club Garibaldi, 2501 S. Superior St. · Doors at 6",
+   "link": "https://www.instagram.com/clubgaribaldi/p/De9fp2qxHus/",
+   "kind": "Music",
+   "desc": "Benefit concert raising money for homeless veterans in Wisconsin, with support from The Outlaw and The Lady. 21+.",
+   "image": "/photos/ev-gods-outlaw-garibaldi.jpg"
+  },
+  {
+   "day": "Sat. Nov. 14",
+   "when": "7:00 pm",
+   "title": "Ira, Aergo, In Shining Armour + Human Ant Farm",
+   "where": "Sugar Maple, 441 E. Lincoln Ave.",
+   "link": "https://www.instagram.com/p/Dfco0FFGwbi/",
+   "kind": "Music",
+   "desc": "A four-act live music night; doors 6:30, music at 7. $10.",
+   "image": "/photos/ev-sugar-maple-show.jpg"
+  },
+  {
+   "day": "Sat. Nov. 14",
+   "when": "10:00 pm",
+   "title": "93FEETOFSMOKE, with Fats'e, Polearm + Selwyn",
+   "where": "Cactus Club",
+   "link": "https://www.cactusclubmilwaukee.com/events/93feetofsmoke-fatse-polearm/",
+   "kind": "Music",
+   "desc": "Late-night rap show headlined by 93FEETOFSMOKE, with three openers."
+  },
+  {
+   "day": "Sun. Nov. 15",
+   "when": "7:30 am",
+   "title": "HOT Yoga-lattes Pop-Up",
+   "where": "Healium Hot Yoga, 2534 S. Kinnickinnic Ave.",
+   "link": "https://www.healiumhotyoga.com/happenings/yogalattesmidnov26",
+   "kind": "Community",
+   "desc": "A one-hour mix of hot vinyasa yoga and mat Pilates with Sarah; participants get a Casera Cafe pastry voucher.",
+   "image": "/photos/ev-yogalattes-healium.jpg"
+  },
+  {
+   "day": "Sun. Nov. 15",
+   "when": "10:00 am",
+   "title": "URSA Closet Sale",
+   "where": "URSA, 2534 S. Kinnickinnic Ave.",
+   "link": "https://www.instagram.com/p/DfcZkl1qEUd/",
+   "kind": "Shopping",
+   "desc": "Pre-loved clothing, shoes and accessories from the URSA staff’s own closets, 10 a.m. to 5 p.m.",
+   "image": "/photos/ursa-closet-sale.jpg"
+  },
+  {
+   "day": "Sun. Nov. 15",
+   "when": "11:30 am",
+   "title": "Milwaukee Record Halftime Show: Mostly + DJ MOMBOMB",
+   "where": "Cactus Club · All ages",
+   "link": "https://www.cactusclubmilwaukee.com/events/milwaukee-record-halftime-show-lack-of-reason-2-2-2-2-2-2-2/",
+   "kind": "Music",
+   "desc": "Free Packers watch party with a live halftime set from Mostly and DJ MOMBOMB, hosted by Milwaukee Record. All ages.",
+   "image": "/photos/ev-cactus-halftime.jpg"
+  },
+  {
+   "day": "Sun. Nov. 15",
+   "when": "4:00 pm",
+   "title": "Frogwater",
+   "where": "Sugar Maple, 441 E. Lincoln Ave.",
+   "link": "https://mysugarmaple.com/event/frogwater/",
+   "kind": "Music",
+   "desc": "Sugar Maple's third-Sunday afternoon show, featuring Frogwater. Free and open to all ages, per the venue's flyer.",
+   "image": "/photos/ev-sugarmaple-frogwater.jpg"
+  },
+  {
+   "day": "Sun. Nov. 15",
+   "when": "5:00 pm",
+   "title": "EBT & Fine China",
+   "where": "Heirloom MKE, 2378 S. Howell Ave.",
+   "link": "https://www.instagram.com/p/DfiXp3LOJtQ/",
+   "kind": "Food",
+   "desc": "A one-night tasting dinner with guest chef Q. Ibraheem; $140, with part of each ticket going to Resources & Beyond.",
+   "image": "/photos/ev-heirloom-ebt-fine-china.jpg"
+  },
+  {
+   "day": "Sun. Nov. 15",
+   "when": "7:00 pm",
+   "title": "LUCY (Cooper B. Handy), Gods Wisdom + Creature Weather",
+   "where": "Cactus Club, 2496 S. Wentworth Ave. · All ages",
+   "link": "https://www.cactusclubmilwaukee.com/events/lucy-cooper-b-handy/",
+   "kind": "Music",
+   "desc": "LUCY brings the 2026 U.S. tour to Bay View with two openers. All ages, $20 advance.",
+   "image": "/photos/ev-cactus-lucy.jpg"
+  },
+  {
+   "day": "Mon. Nov. 16",
+   "when": "7:00 pm",
+   "title": "Porcelain, Zastava + Depression Naps",
+   "where": "Cactus Club, 2496 S. Wentworth Ave. · All ages",
+   "link": "https://www.cactusclubmilwaukee.com/events/porcelain-zastava/",
+   "kind": "Music",
+   "desc": "Porcelain’s Minor Victories Tour stops at Cactus Club with Zastava and Depression Naps. All ages, $15 advance.",
+   "image": "/photos/ev-cactus-porcelain.jpg"
+  },
+  {
+   "day": "Tue. Nov. 17",
+   "when": "7:00 pm",
+   "title": "The Montvales, Creekbed Carter + Moldy Tates",
+   "where": "Cactus Club, 2496 S. Wentworth Ave. · All ages",
+   "link": "https://www.cactusclubmilwaukee.com/events/the-montvales-creekbed-carter/",
+   "kind": "Music",
+   "desc": "A three-act live music night on the Cactus Club stage. All ages, $20 advance.",
+   "image": "/photos/ev-cactus-montvales.jpg"
+  },
+  {
+   "day": "Wed. Nov. 18",
+   "when": "4:00 pm",
+   "title": "tightknit: Cactus Fibers Club",
+   "where": "Cactus Club, 2496 S. Wentworth Ave. · All ages",
+   "link": "https://www.cactusclubmilwaukee.com/events/tightknit-cactus-fibers-club-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2/",
+   "kind": "Social",
+   "desc": "A drop-in fiber-arts circle, 4-7 pm; bring your own project, any medium and any skill level. Free.",
+   "image": "/photos/ev-cactus-tightknit.jpg"
+  },
+  {
+   "day": "Wed. Nov. 18",
+   "when": "5:00 pm",
+   "title": "DJ TV Dinner: Happy Hour DJ Set",
+   "where": "Cactus Club, 2496 S. Wentworth Ave. · All ages",
+   "link": "https://www.cactusclubmilwaukee.com/events/dj-tv-dinner-happy-hour-dj-set/",
+   "kind": "Music",
+   "desc": "A happy-hour DJ set from 5 to 7 pm at Cactus Club. All ages.",
+   "image": "/photos/ev-cactus-dj-tv-dinner.jpg"
+  },
+  {
+   "day": "Wed. Nov. 18",
+   "when": "6:00 pm",
+   "title": "Trivia at Component Brewing",
+   "where": "Component Brewing, 2018 S. 1st St.",
+   "link": "https://www.instagram.com/p/DfipsyaNGXH/",
+   "kind": "Social",
+   "desc": "Weekly Wednesday trivia with $1 off drafts while you play; this month’s theme is the Brewers."
+  },
+  {
+   "day": "Thu. Nov. 19",
+   "when": "7:00 pm",
+   "title": "Dogs Shady Lane",
+   "where": "Sugar Maple, 441 E. Lincoln Ave.",
+   "link": "https://mysugarmaple.com/event/dogs-shady-lane/",
+   "kind": "Music",
+   "desc": "A Thursday night show at Sugar Maple; see the venue's event page for the full lineup.",
+   "image": "/photos/ev-sugarmaple-dogs-shady-lane.jpg"
+  },
+  {
+   "day": "Thu. Nov. 19",
+   "when": "7:00 pm",
+   "title": "Bay View Table Tennis Club",
+   "where": "Puddler's Hall, 2461 S. St. Clair St.",
+   "link": "https://puddlershall.com/calendar/",
+   "kind": "Social",
+   "desc": "The weekly table tennis meetup in the historic tavern's back room."
+  },
+  {
+   "day": "Fri. Nov. 20",
+   "when": "5:00 pm",
+   "title": "Meet + Stitch with Fiber Fever",
+   "where": "Vendetta Coffee Bar, 2268 S. Kinnickinnic Ave.",
+   "link": "https://www.instagram.com/p/DfPLt14SNv-/",
+   "kind": "Community",
+   "desc": "Bring a knitting or crochet project and stitch with neighbors over coffee; hosted by Bay View's yarn shop.",
+   "image": "/photos/ev-meet-stitch-with-fiber-fever.jpg"
+  },
+  {
+   "day": "Fri. Nov. 20",
+   "when": "6:00 pm",
+   "title": "Candle Light Slow Flow",
+   "where": "Healium Restore, 435 E. Lincoln Ave.",
+   "link": "https://www.healiumhotyoga.com/happenings/candleslowflownov26",
+   "kind": "Community",
+   "desc": "A slow, candlelit yoga flow with Kelsey for winding down; all levels welcome. Single-class pricing available.",
+   "image": "/photos/ev-candle-slow-flow-healium.jpg",
+   "lat": 43.00286,
+   "lon": -87.90341
+  },
+  {
+   "day": "Sat. Nov. 21",
+   "when": "11:00 am",
+   "title": "The Frozen Chair Market",
+   "where": "3044 S. Delaware Ave.",
+   "link": "https://www.componentbrewing.com/event-details-registration/frozen-chair-market",
+   "kind": "Shopping",
+   "desc": "A small-business block party and market, 11 am to 6 pm, presented by MKE Outdoor Indoor Exchange with Component Brewing.",
+   "image": "/photos/ev-frozen-chair-market.jpg",
+   "lat": 42.98856,
+   "lon": -87.87806
+  },
+  {
+   "day": "Sat. Nov. 21",
+   "when": "1:00 pm",
+   "title": "Death Café",
+   "where": "Bay View Library",
+   "link": "https://www.eventbrite.com/d/wi--milwaukee--bay-view/events/",
+   "kind": "Community",
+   "desc": "A relaxed, no-agenda conversation about death and dying over coffee and treats. Not a grief group or a class."
+  },
+  {
+   "day": "Sun. Nov. 22",
+   "when": "12:00 pm",
+   "title": "DIY Beaded Necklace Workshop",
+   "where": "Cactus Club, 2496 S. Wentworth Ave. · All ages",
+   "link": "https://www.instagram.com/p/DflDnXDEaf-/",
+   "kind": "Family",
+   "desc": "A drop-in workshop, noon to 2 pm, making your own necklace from instructor Ellie Braun’s bead collection. All ages, $15-25.",
+   "image": "/photos/ev-cactus-beaded-necklace.jpg"
+  },
+  {
+   "day": "Sun. Nov. 22",
+   "when": "1:00 pm",
+   "title": "Clementine’s bowling fundraiser for homeless vets",
+   "where": "Bay View Bowl, 2416 S. Kinnickinnic Ave.",
+   "link": "https://www.facebook.com/groups/bayviewtownhall/posts/29109564702019702/",
+   "kind": "Give",
+   "desc": "First annual bowling event hosted by Clementine’s; profits benefit the Milwaukee Homeless Veterans Initiative. A few lanes left; raffle prizes welcome."
+  },
+  {
+   "day": "Sun. Nov. 22",
+   "when": "3:30 pm",
+   "title": "Yoga Together! Kids Yoga (ages 2-6)",
+   "where": "Healium Hot Yoga, 2534 S. Kinnickinnic Ave.",
+   "link": "https://www.healiumhotyoga.com/happenings/yogatogetherfall26",
+   "kind": "Family",
+   "desc": "Poses, games and mindfulness for kids 2 to 6 with a grown-up, led by Cultivate Yoga MKE. $20 per pair; sign up ahead.",
+   "image": "/photos/ev-kids-yoga-healium.jpg"
+  },
+  {
+   "day": "Sun. Nov. 22",
+   "when": "4:00 pm",
+   "title": "HORNZZ",
+   "where": "Sugar Maple, 441 E. Lincoln Ave.",
+   "link": "https://mysugarmaple.com/event/hornzz/",
+   "kind": "Music",
+   "desc": "A Sunday-afternoon show at Sugar Maple, 4 to 6 p.m. No cover.",
+   "image": "/photos/ev-sugarmaple-hornzz.jpg"
+  },
+  {
+   "day": "Wed. Nov. 25",
+   "when": "7:00 pm",
+   "title": "Milwaukee Guitar Club",
+   "where": "Puddler's Hall, 2461 S. St. Clair St.",
+   "link": "https://puddlershall.com/calendar/",
+   "kind": "Music",
+   "desc": "A guitar players' meetup at Puddler's Hall, 7 to 8:30 p.m."
+  },
+  {
+   "day": "Thu. Nov. 26",
+   "when": "6:00 am",
+   "title": "HOT HOT TROT (Thanksgiving 5K)",
+   "where": "Healium HIIT, 2865 S. Kinnickinnic Ave.",
+   "link": "https://www.healiumhotyoga.com/happenings/hothottrot26",
+   "kind": "Community",
+   "desc": "A free, non-competitive Thanksgiving-morning 5K through Bay View; meet at 6, run at 6:15. Runners and walkers welcome.",
+   "image": "/photos/ev-hot-hot-trot-healium.jpg"
+  },
+  {
+   "day": "Fri. Nov. 27",
+   "when": "All day",
+   "title": "Elf pop-up returns at Lost Whale",
+   "where": "Lost Whale, 2151 S. Kinnickinnic Ave.",
+   "link": "https://www.instagram.com/p/DfVkeiWsC6Q/",
+   "kind": "Social",
+   "desc": "The bar’s holiday Elf-themed pop-up is back, running Nov. 27 through Dec. 31.",
+   "image": "/photos/ev-lostwhale-elf.jpg"
+  },
+  {
+   "day": "Fri. Nov. 27",
+   "when": "9:30 am",
+   "title": "Black Friday beer releases at Torzala",
+   "where": "Torzala Brewing, Lincoln Warehouse, 2018 S. 1st St.",
+   "link": "https://www.instagram.com/p/DfpeUiMFNUz/",
+   "kind": "Food",
+   "desc": "Torzala releases special holiday brews on Black Friday, while supplies last, in its second-floor taproom open 9:30 a.m. to 10 p.m.",
+   "image": "/photos/ev-torzala-black-friday.jpg"
+  },
+  {
+   "day": "Fri. Nov. 27",
+   "when": "7:00 pm",
+   "title": "Exhumed, Jarhead Fertilizer, Savage Master + Molder",
+   "where": "Club Garibaldi, 2501 S. Superior St. · 21+",
+   "link": "https://www.instagram.com/p/Dfm-tzGBt3A/",
+   "kind": "Music",
+   "desc": "A metal bill billed as one of the final RK Metal Promotions shows. 21+, $25 advance, doors 7.",
+   "image": "/photos/ev-garibaldi-exhumed.jpg"
+  },
+  {
+   "day": "Sat. Nov. 28",
+   "when": "10:00 am",
+   "title": "Small Business Saturday at Fiber Fever",
+   "where": "Fiber Fever, 2224 S. Kinnickinnic Ave.",
+   "link": "https://www.instagram.com/p/DfPLt14SNv-/",
+   "kind": "Shopping",
+   "desc": "Shop small at the KK yarn shop on the Saturday after Thanksgiving.",
+   "image": "/photos/ev-small-business-saturday-at-fiber-fever.jpg"
+  },
+  {
+   "day": "Sat. Nov. 28",
+   "when": "8:00 pm",
+   "title": "Wire & Nail, with Cory Waller and the Wicked Things",
+   "where": "Club Garibaldi, 2501 S. Superior St.",
+   "link": "https://www.instagram.com/p/Dfh6DauB1BG/",
+   "kind": "Music",
+   "desc": "A night of honky-tonk and rock ’n’ roll; doors 7, show 8. $15.",
+   "image": "/photos/ev-garibaldi-wire-nail.jpg"
+  },
+  {
+   "day": "Thu. Dec. 3",
+   "when": "2:00 pm",
+   "title": "Bay View Blood Drive (Versiti)",
+   "where": "Bay View United Methodist, 2772 S. Kinnickinnic Ave.",
+   "link": "https://www.facebook.com/BayViewNeighborhood",
+   "kind": "Give",
+   "desc": "Community blood drive with Versiti; sign up ahead to give."
+  }
+ ],
+ "milwaukee": [],
+ "history": {
+  "year": "1887",
+  "text": "Bay View governed itself as a village for eight years before its roughly 4,000 residents voted in 1887 to join Milwaukee, becoming the city's 17th Ward. The trade gave up independence for city services residents wanted, such as sewers, sidewalks and street lights. The Beulah Brinton House, pictured, was an early gathering place for the village and is now home to the Bay View Historical Society.",
+  "source_name": "Wikipedia: Bay View, Milwaukee",
+  "source_url": "https://en.wikipedia.org/wiki/Bay_View,_Milwaukee",
+  "image": {
+   "src": "/photos/n-history-brinton-house.jpg",
+   "alt": "The Beulah Brinton House on S. Superior St.",
+   "credit": "Sulfur at English Wikipedia, CC BY-SA 3.0",
+   "credit_url": "https://commons.wikimedia.org/wiki/File:Beulah_Brinton_House.jpg"
+  }
+ },
+ "quiet_note": "No new items in the last 24 hours for these sections; they'll show up as soon as news does.",
+ "utilities": {
+  "weather": {
+   "v": "33° · Mostly cloudy",
+   "s": "High 43 · 30% chance of a.m. showers · N gusts to 25",
+   "href": "https://forecast.weather.gov/MapClick.php?lat=42.99&lon=-87.89"
+  },
+  "pickup": {
+   "v": "Leaf rake-out extended",
+   "s": "Rake or bag through Nov. 29",
+   "href": "https://city.milwaukee.gov/sanitation/Yard-Food-Waste/FallLeafCollection",
+   "class": "warm"
+  }
+ },
+ "buzz": [
+  {
+   "kicker": "Sticker shock",
+   "headline": "Did your city bill just jump? Neighbors say theirs did",
+   "body": "A post asking whether anyone else's city water bill shot up drew more than 100 comments, with several neighbors saying theirs ran about $50 higher than usual. Some pointed to the once-a-year snow and ice charge, though at least one said the jump showed up even without it. We didn't find a new rate hike announced this fall; the city's posted 2026 charges list the snow and ice fee at $1.19 per foot of street frontage, billed once a year, plus a quarterly solid waste charge of $67.95.",
+   "who": "Brad T.",
+   "where": "Bay View Town Hall (Facebook)",
+   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29128215220154650/",
+   "tone": "hot",
+   "image": {
+    "src": "/photos/bz-water-meter.jpg",
+    "alt": "A residential water meter (stock photo)",
+    "credit": "Shixart1985 / Wikimedia Commons, CC BY 2.0",
+    "credit_url": "https://commons.wikimedia.org/wiki/File:Broken_water_meter_shows_measurement_in_residential_area.jpg"
+   }
+  },
+  {
+   "kicker": "Buried treasure",
+   "headline": "Metal detector turns up old silver in a Bay View yard",
+   "body": "A neighbor shared a haul from a metal-detecting session at a Bay View house, and the group was charmed. Commenters swooned over the clink of old silver quarters, and one recognized an old toy cap dart from childhood.",
+   "who": "Bruce R.",
+   "where": "Bay View Town Hall (Facebook)",
+   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29130058943303611/",
+   "image": {
+    "src": "/photos/bz-metal-detector.jpg",
+    "alt": "A metal detector sweeping over sand (stock photo)",
+    "credit": "Kyösti Viinamäki / Wikimedia Commons, CC BY-SA 4.0",
+    "credit_url": "https://commons.wikimedia.org/wiki/File:Metal_detector_on_the_beach.jpg"
+   }
+  },
+  {
+   "kicker": "Last call",
+   "headline": "Ian's 'Eternal Hamnation' slice has days left",
+   "body": "Ian's Pizza says its Eternal Hamnation special slice ends Nov. 16, and its post gives fans a choice: \"Repent or grab a slice.\" The new Ian's at the R1VER building (2035 S. 1st St.) is part of the chain's Harbor District arrival this fall.",
+   "who": "@ianspizzamke",
+   "where": "Instagram",
+   "source_url": "https://www.instagram.com/p/DfkZIi0HPNg/",
+   "image": {
+    "src": "/photos/bz-ians-hamnation.jpg",
+    "alt": "An Ian's Pizza staffer in an 'Eternal Hamnation' apron holding up two slices",
+    "credit": "Ian's Pizza (@ianspizzamke) on Instagram",
+    "credit_url": "https://www.instagram.com/p/DfkZIi0HPNg/"
+   }
+  },
+  {
+   "kicker": "Spotted",
+   "headline": "A 600-foot freighter is waiting off the harbor",
+   "body": "A Reddit photo of the cargo ship Verila, anchored off Milwaukee's harbor at sunrise, had people asking why. The poster's take: ships sometimes wait offshore rather than pay to tie up at the dock. If you've seen a big ship sitting still off South Shore, that's likely the one.",
+   "who": "u/hoanalone",
+   "where": "r/milwaukee",
+   "source_url": "https://www.reddit.com/r/milwaukee/comments/1xuc562/verila_out_there_chillin_aaron_johnson/",
+   "image": {
+    "src": "/photos/bz-breakwater-light.jpg",
+    "alt": "The Milwaukee Breakwater Light on a calm Lake Michigan (stock photo)",
+    "credit": "Michael Barera / Wikimedia Commons, CC BY-SA 4.0",
+    "credit_url": "https://commons.wikimedia.org/wiki/File:Milwaukee_June_2022_15_(Milwaukee_Breakwater_Light).jpg"
+   }
+  },
+  {
+   "kicker": "Fancy that",
+   "headline": "Heirloom's 'EBT & Fine China' dinner is Sunday",
+   "body": "Heirloom MKE on Howell says tickets are still available for EBT & Fine China, a one-night tasting dinner with guest chef Q. Ibraheem built around ingredients associated with getting by, served with fine-dining care. Urban Milwaukee lists it for Sunday, Nov. 15, 5 to 8 p.m., at $140 a person, with $5 from each ticket going to the food-insecurity nonprofit Resources & Beyond.",
+   "who": "@heirloom.mke",
+   "where": "Instagram",
+   "source_url": "https://www.instagram.com/p/DfiXp3LOJtQ/",
+   "image": {
+    "src": "/photos/ev-heirloom-ebt-fine-china.jpg",
+    "alt": "Flyer for EBT & Fine China at Heirloom MKE, Sunday 11.15.26, over a table of vintage china",
+    "credit": "Heirloom MKE (@heirloom.mke) on Instagram",
+    "credit_url": "https://www.instagram.com/p/DfiXp3LOJtQ/"
+   }
+  },
+  {
+   "kicker": "Help wanted",
+   "headline": "Wanted: one Santa, for a Bay View Christmas display",
+   "body": "A neighbor is looking for a Santa to appear with their Christmas display this season. The first reply nominated a candidate within minutes, so the North Pole talent pool appears healthy.",
+   "who": "Nathan M.",
+   "where": "Bay View Town Hall (Facebook)",
+   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29117069534602552/",
+   "image": {
+    "src": "/photos/bz-santa-figure.jpg",
+    "alt": "A small Santa Claus figurine against colorful holiday lights (stock photo)",
+    "credit": "Caleb Woods / Wikimedia Commons, CC0",
+    "credit_url": "https://commons.wikimedia.org/wiki/File:A_figure_of_Christmas_(Unsplash).jpg"
+   }
+  },
+  {
+   "kicker": "Shout-out",
+   "headline": "Gas station owner thanks Bay View after radio profile",
+   "body": "Faisal Bhimani, whose stations at Howard and Clement were profiled by WUWM this week, thanked Bay View and St. Francis in the group, saying the neighbors' support is what drives him and his volunteers.",
+   "who": "Faisal B.",
+   "where": "Bay View Town Hall (Facebook)",
+   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29126156943693811/",
+   "image": {
+    "src": "/photos/n-bhimani-gas-station.jpg",
+    "alt": "Faisal Bhimani inside his gas station",
+    "credit": "WUWM",
+    "credit_url": "https://www.wuwm.com/milwaukee-gas-station-transformed-place-of-convenience-into-community-hub"
+   }
+  }
+ ]
+}

@@ -11,6 +11,15 @@
   "events_page_hint": true
  },
  {
+  "name": "Aerial Hippie",
+  "type": "Aerial fitness studio",
+  "address": "2625 S. Greeley St.",
+  "lat": 42.99652,
+  "lon": -87.909347,
+  "instagram": "aerialhippiemke",
+  "website": "https://www.aerialhippiemke.com/"
+ },
+ {
   "name": "Afterglow MKE",
   "type": "Barre & Pilates studio",
   "address": "2442 S. Kinnickinnic Ave.",
@@ -59,7 +68,8 @@
   "type": "Brunch",
   "address": "3001 S. Kinnickinnic Ave.",
   "lat": 42.99013,
-  "lon": -87.88502
+  "lon": -87.88502,
+  "instagram": "axolotl_cafemke"
  },
  {
   "name": "Babe's Ice Cream",
@@ -81,6 +91,16 @@
   "website": "https://www.barnaclebuds.com",
   "facebook": "BarnacleBuds",
   "events_page_hint": true
+ },
+ {
+  "name": "Bay Street Tattoo and Piercing Co.",
+  "type": "Tattoo & piercing",
+  "address": "322 E. Bay St.",
+  "lat": 43.006102,
+  "lon": -87.905888,
+  "facebook": "BayStreetTattoo",
+  "website": "http://www.baystreettattoo.com/",
+  "verify": true
  },
  {
   "name": "Bay View Books & Music",
@@ -158,7 +178,8 @@
   "type": "Coffee",
   "address": "2721 S. Howell Ave.",
   "lat": 42.99497,
-  "lon": -87.90435
+  "lon": -87.90435,
+  "facebook": "brewjascoffeemke"
  },
  {
   "name": "Brickyard Gym",
@@ -401,6 +422,16 @@
   "website": "https://www.healiumhotyoga.com"
  },
  {
+  "name": "Heirloom MKE",
+  "type": "Restaurant",
+  "address": "2378 S. Howell Ave.",
+  "lat": 43.001498,
+  "lon": -87.904694,
+  "instagram": "heirloom.mke",
+  "facebook": "heirloommke",
+  "website": "https://www.heirloommke.com"
+ },
+ {
   "name": "Hi-Fi Cafe",
   "type": "Cafe",
   "address": "2640 S. Kinnickinnic Ave.",
@@ -421,7 +452,8 @@
   "type": "Himalayan restaurant",
   "address": "2321 S. Kinnickinnic Ave.",
   "lat": 43.00245,
-  "lon": -87.90402
+  "lon": -87.90402,
+  "website": "https://ourhimalayanyak.com"
  },
  {
   "name": "Honeypie",
@@ -544,7 +576,8 @@
   "type": "Tavern",
   "address": "939 E. Conway St.",
   "lat": 43.00053,
-  "lon": -87.89692
+  "lon": -87.89692,
+  "facebook": "TheNewportBayView"
  },
  {
   "name": "Oakberry Açaí",
@@ -664,7 +697,9 @@
   "type": "Restaurant",
   "address": "2159 S. Kinnickinnic Ave.",
   "lat": 43.00523,
-  "lon": -87.90635
+  "lon": -87.90635,
+  "website": "https://www.roomservicebayview.com/",
+  "instagram": "roomservice.bayview"
  },
  {
   "name": "RSVR Milwaukee",
@@ -675,11 +710,21 @@
   "instagram": "rsvrmilwaukee"
  },
  {
+  "name": "Rush-Mor Records",
+  "type": "Record store",
+  "address": "2635 S. Kinnickinnic Ave.",
+  "lat": 42.996963,
+  "lon": -87.898671,
+  "instagram": "rushmorrecords",
+  "website": "https://www.rushmor.com/"
+ },
+ {
   "name": "Sardines Vintage Collective",
   "type": "Vintage",
   "address": "2925 S. Delaware Ave.",
   "lat": 42.99077,
-  "lon": -87.88229
+  "lon": -87.88229,
+  "instagram": "sardines_mke"
  },
  {
   "name": "Semolina",
