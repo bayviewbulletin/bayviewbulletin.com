@@ -85,12 +85,13 @@ nav.sections a{display:inline-block;padding:11px 0;font:600 15px var(--sans)}nav
 .bzgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
 .bz{position:relative;background:#fff;border:2px solid #111;padding:12px 14px 12px}
 .bz.hot{background:#FFF4F3}
+.bzimg{margin:-12px -14px 10px}.bzimg img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-bottom:2px solid #111;filter:contrast(1.08) saturate(1.15)}.bzimg figcaption{font:11px var(--sans);color:#666;padding:3px 14px 0}.bzimg figcaption a{color:#666}
 .bz .bk{display:inline-block;background:#111;color:#FFE14D;font:900 11px var(--sans);text-transform:uppercase;letter-spacing:.1em;padding:3px 7px;margin-bottom:6px}
 .bz.hot .bk{background:#D7261E;color:#fff}
 .bz h3{font:900 21px/1.12 var(--sans);margin:2px 0 6px;text-transform:none}
 .bz p{font:15px/1.45 var(--serif);margin:0 0 8px}
 .bz .via{display:block;font:700 12px/1.4 var(--sans);color:#555;text-decoration:none}.bz .via:hover{text-decoration:underline}
-.stamp{position:absolute;top:8px;right:-6px;transform:rotate(8deg);border:2px solid #D7261E;color:#D7261E;font:900 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:2px 6px;background:#fff}
+.stamp{position:absolute;z-index:2;top:8px;right:-6px;transform:rotate(8deg);border:2px solid #D7261E;color:#D7261E;font:900 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:2px 6px;background:#fff}
 .buzz.page{margin-top:10px}.bzday{font:900 15px var(--sans);text-transform:uppercase;letter-spacing:.08em;margin:18px 0 10px}
 .bznote{font:13px/1.5 var(--sans);margin:18px 0 0;color:#333}.bznote a{color:#111}
 .bztease{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:22px 0;padding:10px 14px;background:#FFE14D;color:#111;border:2px solid #111;box-shadow:4px 4px 0 #111;text-decoration:none}
@@ -272,7 +273,10 @@ def schools_page(d):
 def buzz_card(b, big=False):
     stamp = '<span class="stamp">Unconfirmed</span>' if b.get("unconfirmed") else ""
     who = f'{e(b.get("who") or "A neighbor")} in {e(b.get("where") or "the group")}'
-    return (f'<article class="bz{" hot" if b.get("tone") == "hot" else ""}">{stamp}<span class="bk">{e(b["kicker"])}</span>'
+    im = b.get("image")
+    pic = (f'<figure class="bzimg"><img src="{e(im["src"])}" alt="{e(im.get("alt", ""))}" loading="lazy">'
+           f'<figcaption>Photo: <a href="{e(im.get("credit_url") or "#")}" rel="noopener">{e(im.get("credit", ""))}</a></figcaption></figure>') if im else ""
+    return (f'<article class="bz{" hot" if b.get("tone") == "hot" else ""}">{stamp}{pic}<span class="bk">{e(b["kicker"])}</span>'
             f'<h3>{e(b["headline"])}</h3><p>{e(b["body"])}</p>'
             f'<a class="via" href="{e(b["source_url"])}" rel="noopener">— {who} · see the post →</a></article>')
 

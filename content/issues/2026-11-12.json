@@ -689,14 +689,19 @@
  },
  "buzz": [
   {
-   "kicker": "Rumor mill",
-   "headline": "A new 'Hideout' opens Tuesday — but where exactly?",
-   "body": "Milwaukee Record's Tyler Maas tipped the group to The Hideout, a new bar and grill opening 'just across the border' with a grand opening Tuesday. One commenter immediately asked whether it's taking over the old Dobie's space. Nobody has confirmed the address yet, and we're watching.",
+   "kicker": "Rumor confirmed",
+   "headline": "It IS the old Dobie's: The Hideout opens Tuesday",
+   "body": "Milwaukee Record's Tyler Maas tipped the group to The Hideout, a speakeasy-themed bar and grill opening 'just across the border,' and a commenter guessed the old Dobie's. Guess confirmed: it's at 4136 S. Kinnickinnic Ave. in St. Francis, the longtime Dobie's Steak House spot, opening at noon Tuesday, Nov. 17.",
    "who": "Tyler M.",
    "where": "Bay View Town Hall (Facebook)",
    "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29126929110283261/",
-   "unconfirmed": true,
-   "tone": "hot"
+   "tone": "hot",
+   "image": {
+    "src": "/photos/bz-hideout-st-francis.jpg",
+    "alt": "The Hideout Bar and Grill sign at the former Dobie's",
+    "credit": "Milwaukee Record",
+    "credit_url": "https://milwaukeerecord.com/food-drink/the-hideout-bar-and-grill-to-open-in-st-francis-on-november-17/"
+   }
   },
   {
    "kicker": "Burger beef",
@@ -705,7 +710,13 @@
    "who": "Tyler M.",
    "where": "Bay View Town Hall (Facebook)",
    "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29094619263514246/",
-   "tone": "hot"
+   "tone": "hot",
+   "image": {
+    "src": "/photos/bz-nite-owl-2026.jpg",
+    "alt": "Nite Owl Drive-In on Layton Avenue",
+    "credit": "Milwaukee Record",
+    "credit_url": "https://milwaukeerecord.com/food-drink/nite-owl-to-end-2026-season-sometime-this-week/"
+   }
   },
   {
    "kicker": "Spotted",
@@ -713,7 +724,13 @@
    "body": "A neighbor posted a coyote sighting in a local cemetery with a warning to watch small pets. Commenters pushed back that coyotes mostly want rabbits and rodents, and one noticed it was hanging out near her own family's plot.",
    "who": "Hannah B.",
    "where": "Bay View Town Hall (Facebook)",
-   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29110459351930237/"
+   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29110459351930237/",
+   "image": {
+    "src": "/photos/bz-coyote.jpg",
+    "alt": "A coyote in a cemetery (stock photo, not the Bay View sighting)",
+    "credit": "Steven Pavlov / Wikimedia Commons, CC BY-SA 4.0",
+    "credit_url": "https://commons.wikimedia.org/wiki/File:2024-11-05_Coyote_at_Mount_Pleasant_Cemetery_(Seattle)_082424.jpg"
+   }
   },
   {
    "kicker": "Mystery solved",
@@ -721,7 +738,13 @@
    "body": "Bay View's comic shop at 2330 S. KK used to fill its windows with giant comic-cover posters, and a Milwaukee Record look-back shared to the group finally explained them. A former Collector's Edge employee chimed in with the backstory; the remaining question is why the faded ones stay up.",
    "who": "Tyler M.",
    "where": "Bay View Town Hall (Facebook)",
-   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29093906533585519/"
+   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29093906533585519/",
+   "image": {
+    "src": "/photos/bz-collectors-edge-windows.jpg",
+    "alt": "Collector's Edge storefront at 2330 S. KK",
+    "credit": "Milwaukee Record",
+    "credit_url": "https://milwaukeerecord.com/arts/travel-back-in-time-and-see-what-was-in-the-windows-of-collectors-edge-in-bay-view/"
+   }
   },
   {
    "kicker": "Overheard",
@@ -729,15 +752,27 @@
    "body": "A neighbor admitted driving past the Puerto Rican spot on Howell 'hundreds of times' without noticing it. For the record: the former food truck put down roots at 4068 S. Howell Ave., the old Campbell's Irish Pub, and the comments are filling up with plate recommendations.",
    "who": "BrilliantRhino333",
    "where": "Bay View Town Hall (Facebook)",
-   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29097403196569186/"
+   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29097403196569186/",
+   "image": {
+    "src": "/photos/bz-bad-piggy.jpg",
+    "alt": "A Puerto Rican meal from The Bad Piggy",
+    "credit": "Roberto Silva Lopez via Urban Milwaukee",
+    "credit_url": "https://urbanmilwaukee.com/?p=932175"
+   }
   },
   {
    "kicker": "Rave review",
    "headline": "Dog spa takes on the pup that flunked the test",
-   "body": "A Great Pyrenees owner gave Dog City Hotel & Spa a loud shout-out: after years of grooming the famously hard-to-groom breed, staff agreed to board him next week even though he 'failed their temperament testing miserably.'",
+   "body": "A Great Pyrenees owner gave Dog City Hotel & Spa (1775 E. Bolivar Ave., just over the line in St. Francis) a loud shout-out: after years of grooming the famously hard-to-groom breed, staff agreed to board him next week even though he 'failed their temperament testing miserably.'",
    "who": "George B.",
    "where": "Bay View Town Hall (Facebook)",
-   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29097475133228659/"
+   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29097475133228659/",
+   "image": {
+    "src": "/photos/bz-great-pyrenees.jpg",
+    "alt": "A Great Pyrenees (stock photo)",
+    "credit": "HeartSpoon / Wikimedia Commons, CC BY-SA 4.0",
+    "credit_url": "https://commons.wikimedia.org/wiki/File:Great_Pyrenees_Mountain_Dog_2.png"
+   }
   },
   {
    "kicker": "Strike!",
@@ -745,7 +780,13 @@
    "body": "Clementine's 'Packer Chad' is hosting a first annual bowling event at Bay View Bowl on Sun., Nov. 22, at 1 p.m., with profits going to the Milwaukee Homeless Veterans Initiative. A few lanes are still open and he's collecting raffle prizes.",
    "who": "Packer Chad B.",
    "where": "Bay View Town Hall (Facebook)",
-   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29109564702019702/"
+   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29109564702019702/",
+   "image": {
+    "src": "/photos/bz-bowling-pins.jpg",
+    "alt": "Bowling pins (stock photo)",
+    "credit": "Wikimedia Commons, CC BY-SA 4.0",
+    "credit_url": "https://commons.wikimedia.org/wiki/File:Bowling_Pins_(side_view).jpg"
+   }
   },
   {
    "kicker": "Overheard",
@@ -753,7 +794,13 @@
    "body": "One neighbor swears a Bay View bar 'celebrated' Festivus last year and wants to know which one. So far the group's best answer points north to Brady Street. Airing of grievances: open.",
    "who": "Stephanie J.",
    "where": "Bay View Town Hall (Facebook)",
-   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29117440807898758/"
+   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29117440807898758/",
+   "image": {
+    "src": "/photos/bz-festivus.jpg",
+    "alt": "An aluminum Festivus pole",
+    "credit": "Matthew Keefe / Wikimedia Commons, CC BY 2.0",
+    "credit_url": "https://commons.wikimedia.org/wiki/File:Festivus_Pole.jpg"
+   }
   },
   {
    "kicker": "Yard mystery",
@@ -761,7 +808,13 @@
    "body": "An anonymous poster found a mushroom cluster that appeared overnight in turf against a garage wall and asked the group's amateur mycologists to ID it before any pets get curious. The guesses are, fittingly, all over the place.",
    "who": "Anonymous",
    "where": "Bay View Town Hall (Facebook)",
-   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29096460966663409/"
+   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29096460966663409/",
+   "image": {
+    "src": "/photos/bz-mushrooms.jpg",
+    "alt": "Mushrooms in a lawn (stock photo)",
+    "credit": "The Other 95% / Wikimedia Commons, CC0",
+    "credit_url": "https://commons.wikimedia.org/wiki/File:Basidiomycota_Fungi_Sauganash_Chicago_Illinois_Aug-Sept_20211_15.jpg"
+   }
   }
  ]
 }
