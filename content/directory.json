@@ -688,6 +688,16 @@
   "social_note": "No website or social accounts found (checked Nov. 13)"
  },
  {
+  "name": "Colectivo Bay View",
+  "type": "Coffee & bakery",
+  "address": "2301 S. Kinnickinnic Ave.",
+  "lat": 43.00283,
+  "lon": -87.90426,
+  "website": "https://colectivo.com/",
+  "instagram": "colectivocoffee",
+  "facebook": "ColectivoCoffee"
+ },
+ {
   "name": "Collector's Edge Comics",
   "type": "Comic shop",
   "address": "2330 S. Kinnickinnic Ave.",
@@ -878,6 +888,17 @@
   "lat": 42.98833,
   "lon": -87.89422,
   "website": "http://www.embarkpetspa.com/",
+  "verify": true
+ },
+ {
+  "name": "Erth Dispensary",
+  "type": "Hemp & CBD dispensary",
+  "address": "1200 E. Oklahoma Ave.",
+  "lat": 42.98845,
+  "lon": -87.89413,
+  "website": "https://www.visiterth.com",
+  "instagram": "erth_cbd",
+  "facebook": "ERTHDISPENSARY",
   "verify": true
  },
  {
@@ -1247,6 +1268,17 @@
   "facebook": "hungrysumosushibar"
  },
  {
+  "name": "Ian's Pizza (R1VER)",
+  "type": "Pizza by the slice",
+  "address": "2055 S. 1st St.",
+  "lat": 43.00266,
+  "lon": -87.91135,
+  "instagram": "ianspizzamke",
+  "website": "https://ianspizza.com",
+  "verify": true,
+  "note": "Location planned at River One (Urban Milwaukee, July 2026); confirm it has opened"
+ },
+ {
   "name": "Iglesia Hispana Adventista",
   "type": "Church",
   "address": "2392 S. Woodward St.",
@@ -1414,6 +1446,15 @@
   "social_note": "No website or social accounts found (checked Nov. 13)"
  },
  {
+  "name": "Landmark Credit Union",
+  "type": "Credit union",
+  "address": "2797 S. Kinnickinnic Ave.",
+  "lat": 42.99404,
+  "lon": -87.89336,
+  "website": "https://landmarkcu.com/atm-branch-locations/bay-view/",
+  "verify": true
+ },
+ {
   "name": "Landmark Family Restaurant",
   "type": "Family restaurant",
   "address": "3451 S. Kinnickinnic Ave.",
@@ -1500,6 +1541,15 @@
   "note": "Luv Unlimited reopened as Luv 2, Apr 2026, in the former Alive and Fine space",
   "lat": 42.99674,
   "lon": -87.89803
+ },
+ {
+  "name": "Mac's PetDepot Barkery",
+  "type": "Pet store",
+  "address": "2197 S. Kinnickinnic Ave.",
+  "lat": 43.00458,
+  "lon": -87.90576,
+  "website": "https://macspetdepotbarkery.com/",
+  "note": "Wisconsin pet store chain"
  },
  {
   "name": "Maedke Chiropractic",
@@ -2501,6 +2551,14 @@
   "facebook": "shopursa"
  },
  {
+  "name": "UW Credit Union",
+  "type": "Credit union",
+  "address": "115 W. Oklahoma Ave.",
+  "lat": 42.98751,
+  "lon": -87.90987,
+  "verify": true
+ },
+ {
   "name": "Vanguard",
   "type": "Sausage bar",
   "address": "2659 S. Kinnickinnic Ave.",
@@ -2593,6 +2651,17 @@
   "lon": -87.91114,
   "website": "https://wanderand.co",
   "verify": true
+ },
+ {
+  "name": "Wheel & Sprocket and Joy Ride Cafe",
+  "type": "Bike shop & cafe",
+  "address": "187 E. Becher St.",
+  "lat": 43.00645,
+  "lon": -87.91044,
+  "instagram": "wheelandsprocket",
+  "website": "https://www.wheelandsprocket.com",
+  "facebook": "WheelandSprocket",
+  "events_page_hint": true
  },
  {
   "name": "While You Were Out Pet Services",
