@@ -7,7 +7,18 @@
   "website": "https://www.17thward.com/",
   "note": "KinetiK building; opened Mar 2025",
   "lat": 43.00591,
-  "lon": -87.90657
+  "lon": -87.90657,
+  "facebook": "p/17th-Ward-61572572174879"
+ },
+ {
+  "name": "A Space for Change Movement Studio",
+  "type": "Movement studio",
+  "address": "3073 S. Chase Ave.",
+  "lat": 42.98821,
+  "lon": -87.90944,
+  "website": "https://aspaceforchange.wordpress.com",
+  "facebook": "Aspaceforchange",
+  "verify": true
  },
  {
   "name": "Acme Records",
@@ -19,6 +30,16 @@
   "website": "https://acmerecordsmke.com",
   "facebook": "AcmeRecordsMusicEmporium",
   "events_page_hint": true
+ },
+ {
+  "name": "Adult Day Services of Wisconsin",
+  "type": "Adult day care",
+  "address": "206 E. Lincoln Ave.",
+  "lat": 43.00305,
+  "lon": -87.90772,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
  },
  {
   "name": "Aerial Hippie",
@@ -62,13 +83,41 @@
   "events_page_hint": true
  },
  {
+  "name": "The Art School",
+  "type": "Art school",
+  "address": "2654 S. Kinnickinnic Ave.",
+  "lat": 42.9967,
+  "lon": -87.89796,
+  "website": "https://www.theartschoolmilwaukee.org",
+  "facebook": "theartschoolmilwaukee"
+ },
+ {
+  "name": "Artery Ink",
+  "type": "Clothing",
+  "address": "2625 S. Greeley St.",
+  "lat": 42.99652,
+  "lon": -87.90935,
+  "website": "https://www.arteryink.com/",
+  "instagram": "arteryink",
+  "facebook": "arteryink"
+ },
+ {
   "name": "At Random",
   "type": "Cocktail lounge",
   "address": "2501 S. Delaware Ave.",
   "lat": 42.99789,
   "lon": -87.89135,
   "instagram": "atrandommke",
-  "website": "https://www.atrandommke.com/"
+  "website": "https://www.atrandommke.com/",
+  "facebook": "atrandommke"
+ },
+ {
+  "name": "Atlas Preparatory Academy",
+  "type": "School",
+  "address": "1051 E. Russell Ave.",
+  "lat": 42.99557,
+  "lon": -87.89651,
+  "website": "https://www.atlasprep.net/"
  },
  {
   "name": "Avalon Atmospheric Theater",
@@ -77,7 +126,8 @@
   "lat": 43.00027,
   "lon": -87.90212,
   "instagram": "avalontheater",
-  "website": "https://www.ntg-wi.com/avalon"
+  "website": "https://www.ntg-wi.com/avalon",
+  "facebook": "AvalonMKE"
  },
  {
   "name": "Axolotl Cafe",
@@ -86,7 +136,8 @@
   "lat": 42.99013,
   "lon": -87.88502,
   "instagram": "axolotl_cafemke",
-  "website": "https://www.axolotlcafemke.com/"
+  "website": "https://www.axolotlcafemke.com/",
+  "facebook": "p/Axolotl-Café-61583060507681"
  },
  {
   "name": "Babe's Ice Cream",
@@ -97,6 +148,25 @@
   "instagram": "babesicecream",
   "website": "https://babesicecream.com",
   "facebook": "babesicecreamshop"
+ },
+ {
+  "name": "Badger Tire & Auto",
+  "type": "Tires & auto repair",
+  "address": "1130 E. Oklahoma Ave.",
+  "lat": 42.98864,
+  "lon": -87.89476,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "The Barker Shop",
+  "type": "Pet grooming",
+  "address": "3157 S. Howell Ave.",
+  "lat": 42.9873,
+  "lon": -87.90477,
+  "website": "https://barkershop.weebly.com/",
+  "verify": true
  },
  {
   "name": "Barnacle Bud's",
@@ -158,6 +228,15 @@
   "lon": -87.89282
  },
  {
+  "name": "Bay View Dental Care",
+  "type": "Dentist",
+  "address": "3380 S. Kinnickinnic Ave.",
+  "lat": 42.98322,
+  "lon": -87.88048,
+  "website": "https://www.bayviewdentalcare.com",
+  "facebook": "bayviewdentalcare"
+ },
+ {
   "name": "Bay View Fitness 24/7",
   "type": "Gym",
   "address": "2121 S. Kinnickinnic Ave.",
@@ -166,6 +245,24 @@
   "instagram": "bay_view_fitness",
   "website": "http://www.bayviewfitness.com",
   "facebook": "BayViewFitness"
+ },
+ {
+  "name": "Bay View High School",
+  "type": "School",
+  "address": "2751 S. Lenox St.",
+  "lat": 42.99481,
+  "lon": -87.89904,
+  "website": "https://mps.school/bayview/"
+ },
+ {
+  "name": "Bay View Laundromat",
+  "type": "Laundromat",
+  "address": "2510 S. Kinnickinnic Ave.",
+  "lat": 42.99925,
+  "lon": -87.90108,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
  },
  {
   "name": "Bay View Library",
@@ -178,13 +275,22 @@
   "instagram": "milwaukeepubliclibrary"
  },
  {
-  "name": "Bay View Piggly Wiggly",
-  "type": "Grocery",
-  "address": "123 W. Oklahoma Ave.",
-  "lat": 42.98641,
-  "lon": -87.91237,
-  "website": "https://www.shopthepig.com/",
-  "facebook": "p/Bay-View-Piggly-Wiggly-61580664045551"
+  "name": "Bay View Montessori School",
+  "type": "School",
+  "address": "619 E. Dover St.",
+  "lat": 42.99682,
+  "lon": -87.90068,
+  "website": "https://www5.milwaukee.k12.wi.us/school/howard/"
+ },
+ {
+  "name": "Bay View Printing Co.",
+  "type": "Print shop",
+  "address": "2702 S. Howell Ave.",
+  "lat": 42.99553,
+  "lon": -87.90403,
+  "website": "https://bayviewprintingco.com/",
+  "instagram": "bayviewprintingco",
+  "facebook": "bayviewprintco"
  },
  {
   "name": "Bay View Quick Mart",
@@ -195,6 +301,24 @@
   "website": "https://bayviewquickmart.com",
   "lat": 42.99617,
   "lon": -87.89701
+ },
+ {
+  "name": "Bay View Service",
+  "type": "Auto repair",
+  "address": "2642 S. Howell Ave.",
+  "lat": 42.99592,
+  "lon": -87.90465,
+  "website": "https://www.bayviewservice.net/",
+  "facebook": "bayviewservice"
+ },
+ {
+  "name": "Bay View Supermarket",
+  "type": "Grocery",
+  "address": "2277 S. Howell Ave.",
+  "lat": 43.00304,
+  "lon": -87.90507,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
  },
  {
   "name": "Bay View United Methodist Church",
@@ -216,6 +340,35 @@
   "lon": -87.90934
  },
  {
+  "name": "Bert's Beer & Liquor",
+  "type": "Liquor store",
+  "address": "2523 E. Oklahoma Ave.",
+  "lat": 42.98785,
+  "lon": -87.87747,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Beth Eaton Pottery",
+  "type": "Pottery studio",
+  "address": "815 E. Potter Ave.",
+  "lat": 42.99688,
+  "lon": -87.89894,
+  "website": "http://www.betheatonpottery.com/",
+  "instagram": "betheatonpottery",
+  "facebook": "betheatonpottery",
+  "verify": true
+ },
+ {
+  "name": "Beulah Brinton Community Center",
+  "type": "Community center",
+  "address": "2555 S. Bay St.",
+  "lat": 42.99884,
+  "lon": -87.89425,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
   "name": "Beulah Brinton House",
   "type": "Historic site",
   "address": "2590 S. Superior St.",
@@ -224,6 +377,17 @@
   "website": "https://bayviewhistoricalsociety.org/",
   "instagram": "bayviewhistoricalsociety",
   "facebook": "BayViewHistoricalSociety"
+ },
+ {
+  "name": "Bike & Body",
+  "type": "Bike fitting & physical therapy",
+  "address": "2995 S. Delaware Ave.",
+  "lat": 42.98924,
+  "lon": -87.87968,
+  "website": "https://www.bikeandbodymke.com/",
+  "instagram": "bikeandbodymke",
+  "facebook": "bikeandbodymke",
+  "verify": true
  },
  {
   "name": "Blackbird Bar",
@@ -235,6 +399,44 @@
   "website": "https://www.blackbirdbayview.com",
   "events_page_hint": true,
   "facebook": "blackbird.bar"
+ },
+ {
+  "name": "Bleeding Heart Holistic Healing",
+  "type": "Holistic healing",
+  "address": "2625 S. Greeley St.",
+  "lat": 42.9962,
+  "lon": -87.90981,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Bona Drag",
+  "type": "Clothing",
+  "address": "2433 S. Kinnickinnic Ave.",
+  "lat": 43.00053,
+  "lon": -87.90233,
+  "website": "https://bonadrag.com/"
+ },
+ {
+  "name": "Bravo Vape and Tobacco",
+  "type": "Vape & tobacco shop",
+  "address": "2305 S. Howell Ave.",
+  "lat": 43.00273,
+  "lon": -87.90509,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Breathe Massage Therapy & Wellness",
+  "type": "Massage therapy",
+  "address": "2625 S. Greeley St.",
+  "lat": 42.99652,
+  "lon": -87.90935,
+  "website": "https://breathemassagetherapyandwellness.amtamembers.com",
+  "instagram": "breathe.bmtw",
+  "facebook": "breathemassagetherapyandwellness",
+  "verify": true
  },
  {
   "name": "Brew-Jas Coffee House",
@@ -252,6 +454,14 @@
   "lon": -87.89824,
   "website": "https://brickyard-gym.com",
   "facebook": "p/Brickyard-Gym-100057527084418"
+ },
+ {
+  "name": "Bridgewater Modern Grill",
+  "type": "Restaurant & bar",
+  "address": "2011 S. 1st St.",
+  "lat": 43.00733,
+  "lon": -87.91244,
+  "website": "https://bridgewatermke.com/"
  },
  {
   "name": "The Bubbler & Vinchi's Pizza",
@@ -289,7 +499,17 @@
   "instagram": "buttahandbiscuit",
   "website": "https://buttahandbiscuit.com",
   "lat": 42.98831,
-  "lon": -87.89282
+  "lon": -87.89282,
+  "facebook": "p/Buttah-and-Biscuit-61559584978832"
+ },
+ {
+  "name": "Cache Cider",
+  "type": "Cidery",
+  "address": "2612 S. Greeley St.",
+  "lat": 42.99654,
+  "lon": -87.909,
+  "website": "https://cachecider.com/",
+  "verify": true
  },
  {
   "name": "Cactus Club",
@@ -322,6 +542,35 @@
   "instagram": "calogerosmke"
  },
  {
+  "name": "The Canteen",
+  "type": "Juice & smoothie bar",
+  "address": "3040 S. Delaware Ave.",
+  "lat": 42.9887,
+  "lon": -87.87811,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Car-Ferz Auto Repair",
+  "type": "Auto repair",
+  "address": "214 E. Lincoln Ave.",
+  "lat": 43.00304,
+  "lon": -87.90745,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Casera Cafe & Bakery",
+  "type": "Cafe & bakery",
+  "address": "2067 S. 1st St.",
+  "lat": 43.00733,
+  "lon": -87.91244,
+  "instagram": "caseracafebakery_mke",
+  "facebook": "CaseraMKE"
+ },
+ {
   "name": "Catrina's Cafe",
   "type": "Mexican",
   "address": "2352 S. Kinnickinnic Ave.",
@@ -343,6 +592,33 @@
   "events_page_hint": true
  },
  {
+  "name": "Chadwick & Crouse",
+  "type": "Law office",
+  "address": "3056 S. Delaware Ave.",
+  "lat": 42.98848,
+  "lon": -87.87792,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Chase Cell Phone & Tobacco",
+  "type": "Phone & tobacco shop",
+  "address": "108 E. Dakota St.",
+  "lat": 42.99277,
+  "lon": -87.90982,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "China King",
+  "type": "Chinese restaurant",
+  "address": "2982 S. Chase Ave.",
+  "lat": 42.99052,
+  "lon": -87.9084,
+  "website": "http://www.chinakingdelivery.com"
+ },
+ {
   "name": "Chippy's",
   "type": "Kids' toy & gift shop",
   "address": "2481 S. Kinnickinnic Ave.",
@@ -351,6 +627,15 @@
   "note": "Opened fall 2026, next to the Avalon",
   "lat": 43.00022,
   "lon": -87.90207
+ },
+ {
+  "name": "Christ Church UCC",
+  "type": "Church",
+  "address": "915 E. Oklahoma Ave.",
+  "lat": 42.988,
+  "lon": -87.89782,
+  "website": "https://www.uccmke.org/",
+  "facebook": "christchurchbayview"
  },
  {
   "name": "Cival",
@@ -393,14 +678,53 @@
   "facebook": "Club-Garibaldis-344845918293"
  },
  {
-  "name": "Colectivo Bay View",
-  "type": "Coffee & bakery",
-  "address": "2301 S. Kinnickinnic Ave.",
-  "lat": 43.00283,
-  "lon": -87.90426,
-  "website": "https://colectivo.com/",
-  "instagram": "colectivocoffee",
-  "facebook": "ColectivoCoffee"
+  "name": "Coin Laundry",
+  "type": "Laundromat",
+  "address": "3310 S. Howell Ave.",
+  "lat": 42.98428,
+  "lon": -87.90564,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Collector's Edge Comics",
+  "type": "Comic shop",
+  "address": "2330 S. Kinnickinnic Ave.",
+  "lat": 43.00237,
+  "lon": -87.90361,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Commonplace",
+  "type": "Home goods shop",
+  "address": "3074 S. Delaware Ave.",
+  "lat": 42.98833,
+  "lon": -87.8774,
+  "website": "https://commonplaceshop.com/",
+  "verify": true
+ },
+ {
+  "name": "Community Bark Bay View",
+  "type": "Dog daycare & grooming",
+  "address": "2440 S. Kinnickinnic Ave.",
+  "lat": 43.00065,
+  "lon": -87.90225,
+  "website": "https://communitybark.net/",
+  "instagram": "communitybarkbayview",
+  "facebook": "communitybarkbv"
+ },
+ {
+  "name": "Community Veterinary Clinic",
+  "type": "Veterinarian",
+  "address": "3010 S. Chase Ave.",
+  "lat": 42.98977,
+  "lon": -87.90923,
+  "website": "http://www.mycommunityvet.com",
+  "instagram": "community_vetclinic",
+  "facebook": "profile.php?id=100063572173470"
  },
  {
   "name": "Component Brewing Company",
@@ -412,6 +736,16 @@
   "website": "https://www.componentbrewing.com",
   "facebook": "ComponentBrewing",
   "events_page_hint": true
+ },
+ {
+  "name": "Country Maid",
+  "type": "Food distributor",
+  "address": "1919 S. Kinnickinnic Ave.",
+  "lat": 43.00932,
+  "lon": -87.90983,
+  "website": "https://www.countrymaid.com",
+  "facebook": "CountryMaidMKE",
+  "note": "Food manufacturer"
  },
  {
   "name": "Crafty Cow",
@@ -434,6 +768,34 @@
   "facebook": "Cream.City.CrossFit"
  },
  {
+  "name": "The Cream City Real Estate Co.",
+  "type": "Real estate",
+  "address": "3474 S. Pennsylvania Ave.",
+  "lat": 42.98142,
+  "lon": -87.87954,
+  "website": "https://creamcityrealestate.com/",
+  "facebook": "creamcityre",
+  "verify": true
+ },
+ {
+  "name": "DC's Mad House",
+  "type": "Tavern",
+  "address": "3423 S. Clement Ave.",
+  "lat": 42.98176,
+  "lon": -87.89474,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Deep Roots Massage",
+  "type": "Massage & spa",
+  "address": "2241 S. Kinnickinnic Ave.",
+  "lat": 43.00409,
+  "lon": -87.90528,
+  "website": "https://www.deeprootsmassage.com/",
+  "facebook": "DeepRootsLLC"
+ },
+ {
   "name": "Delaware House",
   "type": "Dance, yoga & wellness studio",
   "address": "2499 S. Delaware Ave.",
@@ -445,6 +807,24 @@
   "events_page_hint": true
  },
  {
+  "name": "DeLong Co. grain terminal",
+  "type": "Grain terminal",
+  "address": "1711 S. Carferry Dr.",
+  "lat": 43.01222,
+  "lon": -87.89817,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "doh'p",
+  "type": "Wood-fired pizza",
+  "address": "2509 E. Oklahoma Ave.",
+  "lat": 42.98785,
+  "lon": -87.8778,
+  "facebook": "p/Hot-Box-Pizza-MKE-100072152481007"
+ },
+ {
   "name": "Dom & Phil DeMarinis",
   "type": "Italian restaurant & bar",
   "address": "1211 E. Conway St.",
@@ -454,11 +834,24 @@
   "facebook": "profile.php?id=100063623260526"
  },
  {
-  "name": "Dunkin'",
-  "type": "Coffee & doughnuts",
-  "address": "3267 S. Chase Ave.",
-  "lat": 42.98515,
-  "lon": -87.90952
+  "name": "Downtown Montessori Academy",
+  "type": "School",
+  "address": "2507 S. Graham St.",
+  "lat": 42.9985,
+  "lon": -87.90392,
+  "website": "https://downtownmontessori.com/",
+  "instagram": "downtownmontessori",
+  "facebook": "downtownmontessoriacademy"
+ },
+ {
+  "name": "Dynamic Color Solutions",
+  "type": "Plastics colorant maker",
+  "address": "2024 S. Lenox St.",
+  "lat": 43.00701,
+  "lon": -87.89765,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
  },
  {
   "name": "Egg & Flour Pasta Bar",
@@ -479,6 +872,15 @@
   "facebook": "profile.php?id=61567765134382"
  },
  {
+  "name": "Embark Pet Spa",
+  "type": "Pet grooming",
+  "address": "1208 E. Oklahoma Ave.",
+  "lat": 42.98833,
+  "lon": -87.89422,
+  "website": "http://www.embarkpetspa.com/",
+  "verify": true
+ },
+ {
   "name": "EsterEv",
   "type": "Restaurant",
   "address": "2165 S. Kinnickinnic Ave.",
@@ -487,6 +889,14 @@
   "instagram": "esterev.mke",
   "website": "https://www.esterev.com",
   "facebook": "esterev.mke"
+ },
+ {
+  "name": "Ex Fabula",
+  "type": "Nonprofit",
+  "address": "206 E. Smith St.",
+  "lat": 43.00113,
+  "lon": -87.90792,
+  "website": "https://www.exfabula.org"
  },
  {
   "name": "Eyes on the Lake",
@@ -499,6 +909,14 @@
   "lon": -87.90671
  },
  {
+  "name": "Fernwood Montessori School",
+  "type": "School",
+  "address": "3239 S. Pennsylvania Ave.",
+  "lat": 42.98575,
+  "lon": -87.88097,
+  "website": "https://mps.milwaukee.k12.wi.us/Schools/Fernwood-Montessori-School.htm"
+ },
+ {
   "name": "Fiber Fever",
   "type": "Yarn shop",
   "address": "2224 S. Kinnickinnic Ave.",
@@ -506,6 +924,34 @@
   "lon": -87.90508,
   "instagram": "fiberfeverco",
   "website": "https://fiberfeverco.com"
+ },
+ {
+  "name": "Finishing & Plating Co.",
+  "type": "Metal finishing",
+  "address": "305 E. Lincoln Ave.",
+  "lat": 43.00277,
+  "lon": -87.90666,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Francisco's",
+  "type": "Pizza & tavern",
+  "address": "2109 E. Oklahoma Ave.",
+  "lat": 42.98795,
+  "lon": -87.88296,
+  "facebook": "p/Franciscos-Pizza-A-Bay-View-Original-Since-1964-61550569944820"
+ },
+ {
+  "name": "Frank's Modern Barber Shop",
+  "type": "Barbershop",
+  "address": "3459 S. Kinnickinnic Ave.",
+  "lat": 42.98153,
+  "lon": -87.88015,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
  },
  {
   "name": "Freya Salon",
@@ -518,6 +964,25 @@
   "facebook": "freyasalonbayview"
  },
  {
+  "name": "Front Room Studios",
+  "type": "Photography studio",
+  "address": "2637 S. Kinnickinnic Ave.",
+  "lat": 42.99693,
+  "lon": -87.89862,
+  "website": "https://frphoto.com/",
+  "instagram": "front_room_studios",
+  "facebook": "frontroomphotography"
+ },
+ {
+  "name": "Futen Dojo",
+  "type": "Martial arts",
+  "address": "2234 S. Kinnickinnic Ave.",
+  "lat": 43.00389,
+  "lon": -87.90493,
+  "website": "https://www.futendojo.com",
+  "facebook": "futen.dojo"
+ },
+ {
   "name": "G. Groppi Food Market",
   "type": "Grocery, deli & bar",
   "address": "1441 E. Russell Ave.",
@@ -525,6 +990,25 @@
   "website": "https://groppis.com",
   "lat": 42.99835,
   "lon": -87.89083
+ },
+ {
+  "name": "Gamma Piercing",
+  "type": "Piercing studio",
+  "address": "2260 S. Kinnickinnic Ave.",
+  "lat": 43.00351,
+  "lon": -87.90453,
+  "website": "https://gammapiercing.com/",
+  "instagram": "gammapiercing",
+  "facebook": "gammapiercing",
+  "verify": true
+ },
+ {
+  "name": "Gasparri & Joyce",
+  "type": "Law office",
+  "address": "1106 E. Oklahoma Ave.",
+  "lat": 42.98834,
+  "lon": -87.89545,
+  "website": "https://www.gasparriandjoycesc.com"
  },
  {
   "name": "Get Dolled Up Bay View",
@@ -542,7 +1026,27 @@
   "facebook": "GingerzSportzPub",
   "website": "https://gingerzsportzpub.com",
   "lat": 42.97336,
-  "lon": -87.90961
+  "lon": -87.90961,
+  "instagram": "gingerzmke"
+ },
+ {
+  "name": "The Glam Room",
+  "type": "Hair salon",
+  "address": "3205 S. Howell Ave.",
+  "lat": 42.98634,
+  "lon": -87.90523,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Gold Rush Chicken",
+  "type": "Fried chicken",
+  "address": "3500 S. Howell Ave.",
+  "lat": 42.98089,
+  "lon": -87.90742,
+  "website": "https://www.goldrushchicken.org/",
+  "facebook": "Gold-Rush-Chicken-107606487613909"
  },
  {
   "name": "Golden Honey Pancakes & Cafe",
@@ -584,6 +1088,15 @@
   "lon": -87.90481
  },
  {
+  "name": "Grace Presbyterian Church",
+  "type": "Church",
+  "address": "2931 S. Kinnickinnic Ave.",
+  "lat": 42.99159,
+  "lon": -87.8866,
+  "website": "https://www.gpc-bayview.org",
+  "verify": true
+ },
+ {
   "name": "Guanajuato",
   "type": "Mexican restaurant",
   "address": "2317 S. Howell Ave.",
@@ -592,6 +1105,25 @@
   "instagram": "gtomke",
   "website": "https://guanajuatorestaurant.com",
   "facebook": "GuanajuatoMexicanRestaurant"
+ },
+ {
+  "name": "The Gyros Stand",
+  "type": "Gyros",
+  "address": "1110 E. Oklahoma Ave.",
+  "lat": 42.98857,
+  "lon": -87.89513,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Hair Experience",
+  "type": "Hair salon",
+  "address": "2215 S. Kinnickinnic Ave.",
+  "lat": 43.00433,
+  "lon": -87.90547,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
  },
  {
   "name": "Happy Dough Lucky",
@@ -649,6 +1181,15 @@
   "website": "https://thehighbury.com"
  },
  {
+  "name": "Higher Appeal Counseling & Coaching",
+  "type": "Counseling",
+  "address": "2625 S. Greeley St.",
+  "lat": 42.99652,
+  "lon": -87.90935,
+  "website": "https://www.higherappeal.com/",
+  "verify": true
+ },
+ {
   "name": "Himalayan Yak",
   "type": "Himalayan restaurant",
   "address": "2321 S. Kinnickinnic Ave.",
@@ -668,6 +1209,16 @@
   "facebook": "HoneypieCafe"
  },
  {
+  "name": "The House",
+  "type": "Tavern",
+  "address": "1100 E. Potter Ave.",
+  "lat": 42.99802,
+  "lon": -87.89529,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
   "name": "Hue Asian Kitchen",
   "type": "Vietnamese restaurant",
   "address": "2699 S. Kinnickinnic Ave.",
@@ -677,13 +1228,72 @@
   "facebook": "huemilwaukee"
  },
  {
-  "name": "Ian's Pizza (R1VER)",
-  "type": "Pizza by the slice",
-  "address": "2035 S. 1st St.",
-  "lat": 43.00266,
-  "lon": -87.91135,
-  "instagram": "ianspizzamke",
-  "website": "https://ianspizza.com"
+  "name": "Humboldt Park K-8 School",
+  "type": "School",
+  "address": "3230 S. Adams Ave.",
+  "lat": 42.98566,
+  "lon": -87.90234,
+  "website": "https://k12.mps.school/humboldtpark/"
+ },
+ {
+  "name": "Hungry Sumo",
+  "type": "Sushi restaurant",
+  "address": "2663 S. Kinnickinnic Ave.",
+  "lat": 42.99635,
+  "lon": -87.89805,
+  "website": "https://www.hungrysumosushibar.com/",
+  "instagram": "hungrysumosushibar",
+  "facebook": "hungrysumosushibar"
+ },
+ {
+  "name": "Iglesia Hispana Adventista",
+  "type": "Church",
+  "address": "2392 S. Woodward St.",
+  "lat": 43.00083,
+  "lon": -87.90051,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Immaculate Conception Church",
+  "type": "Church",
+  "address": "2720 S. Kinnickinnic Ave.",
+  "lat": 42.9958,
+  "lon": -87.89595,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "The Inkspot Tattoo Studio",
+  "type": "Tattoo shop",
+  "address": "2505 S. Howell Ave.",
+  "lat": 42.99911,
+  "lon": -87.9049,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Integrative Wellness Yoga & Thai Bodywork",
+  "type": "Yoga & Thai bodywork",
+  "address": "3201 S. Howell Ave.",
+  "lat": 42.98642,
+  "lon": -87.9052,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Iron Fist Tattoo",
+  "type": "Tattoo shop",
+  "address": "2657 S. Howell Ave.",
+  "lat": 42.99553,
+  "lon": -87.90472,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
  },
  {
   "name": "Jalisco's Cantina",
@@ -705,6 +1315,44 @@
   "instagram": "jashersorganicteahouse"
  },
  {
+  "name": "JB Nails & Spa",
+  "type": "Nail salon",
+  "address": "2138 S. Kinnickinnic Ave.",
+  "lat": 43.00583,
+  "lon": -87.90636,
+  "website": "https://jbnailsspa.com/",
+  "instagram": "jbnailsmilwaukee",
+  "facebook": "JbnailsMilwaukee"
+ },
+ {
+  "name": "Jones Island Water Reclamation Facility (MMSD)",
+  "type": "Water reclamation plant",
+  "address": "700 E. Jones St.",
+  "lat": 43.02172,
+  "lon": -87.89988,
+  "note": "MMSD plant; makes Milorganite",
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Karma Cafe & Smoothie Bar",
+  "type": "Cafe & smoothie bar",
+  "address": "2434 S. Kinnickinnic Ave.",
+  "lat": 43.00032,
+  "lon": -87.90163,
+  "website": "https://karmacafemke.square.site/"
+ },
+ {
+  "name": "Kelly's Tap",
+  "type": "Tavern",
+  "address": "3118 S. Chase Ave.",
+  "lat": 42.98773,
+  "lon": -87.909,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
   "name": "Kinn Guesthouse Bay View",
   "type": "Boutique hotel",
   "address": "2535 S. Kinnickinnic Ave.",
@@ -714,6 +1362,83 @@
   "website": "https://www.kinnguesthouse.com/bayview",
   "facebook": "kinnmke",
   "events_page_hint": true
+ },
+ {
+  "name": "Klement's Sausage",
+  "type": "Sausage maker",
+  "address": "2650 S. Chase Ave.",
+  "lat": 42.99727,
+  "lon": -87.91047,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Knepper Brothers",
+  "type": "Auto repair",
+  "address": "2892 S. Kinnickinnic Ave.",
+  "lat": 42.99236,
+  "lon": -87.88834,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "La Salsa",
+  "type": "Mexican restaurant",
+  "address": "119 E. Oklahoma Ave.",
+  "lat": 42.98812,
+  "lon": -87.90877,
+  "website": "https://lasalsamenu.com/",
+  "instagram": "lasalsamke",
+  "facebook": "lasalsamke"
+ },
+ {
+  "name": "Lake Express ferry terminal",
+  "type": "Car ferry",
+  "address": "2330 S. Lincoln Memorial Dr.",
+  "lat": 43.00417,
+  "lon": -87.88866,
+  "website": "https://www.lake-express.com/",
+  "instagram": "lakeexpressferry",
+  "facebook": "Lake.Express.High.Speed.Ferry"
+ },
+ {
+  "name": "Lakeview Vapor",
+  "type": "Vape shop",
+  "address": "1601 E. Oklahoma Ave.",
+  "lat": 42.98748,
+  "lon": -87.88879,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Landmark Family Restaurant",
+  "type": "Family restaurant",
+  "address": "3451 S. Kinnickinnic Ave.",
+  "lat": 42.98169,
+  "lon": -87.88037,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Las 7 Estrellas",
+  "type": "Mexican restaurant",
+  "address": "112 E. Dakota St.",
+  "lat": 42.99277,
+  "lon": -87.90982,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Linear Salon",
+  "type": "Hair salon",
+  "address": "2326 S. Kinnickinnic Ave.",
+  "lat": 43.00249,
+  "lon": -87.90369,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
  },
  {
   "name": "Lion's Tooth",
@@ -749,6 +1474,24 @@
   "events_page_hint": true
  },
  {
+  "name": "Lutheran Chapel of the Cross",
+  "type": "Church",
+  "address": "3353 S. Whitnall Ave.",
+  "lat": 42.98319,
+  "lon": -87.90555,
+  "website": "https://lutheranchapelofthecross.org/"
+ },
+ {
+  "name": "Lutheran Church of the Great Spirit",
+  "type": "Church",
+  "address": "3127 S. Howell Ave.",
+  "lat": 42.98768,
+  "lon": -87.90489,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
   "name": "Luv 2",
   "type": "Vintage & art boutique",
   "address": "2652 S. Kinnickinnic Ave.",
@@ -756,6 +1499,54 @@
   "note": "Luv Unlimited reopened as Luv 2, Apr 2026, in the former Alive and Fine space",
   "lat": 42.99674,
   "lon": -87.89803
+ },
+ {
+  "name": "Maedke Chiropractic",
+  "type": "Chiropractor",
+  "address": "3064 S. Kinnickinnic Ave.",
+  "lat": 42.98901,
+  "lon": -87.88381,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "MAP Realty Group",
+  "type": "Real estate",
+  "address": "2473 S. Howell Ave.",
+  "lat": 42.99971,
+  "lon": -87.90489,
+  "website": "https://www.maprealtygroup.com",
+  "facebook": "maprealtymke"
+ },
+ {
+  "name": "McLaughlin & Hayes Hat Co.",
+  "type": "Hat shop",
+  "address": "2250 S. Kinnickinnic Ave.",
+  "lat": 43.00365,
+  "lon": -87.90466,
+  "website": "https://www.mhhats.com/",
+  "instagram": "mclaughlinandhayeshatco",
+  "facebook": "brassroosterhatco"
+ },
+ {
+  "name": "Melt Chocolates",
+  "type": "Chocolatier",
+  "address": "2018 S. 1st St.",
+  "lat": 43.00725,
+  "lon": -87.91069,
+  "website": "https://meltchocolates.us/",
+  "instagram": "meltchocolatesltd",
+  "facebook": "meltchocolatesltd"
+ },
+ {
+  "name": "Milwaukee Aikido Club",
+  "type": "Aikido",
+  "address": "2235 S. Kinnickinnic Ave.",
+  "lat": 43.00415,
+  "lon": -87.90532,
+  "website": "http://www.milwaukeeaikido.org",
+  "verify": true
  },
  {
   "name": "Milwaukee Brewing Co. Taproom",
@@ -769,12 +1560,79 @@
   "events_page_hint": true
  },
  {
-  "name": "Mochinut & Roll Up",
-  "type": "Mochi doughnuts & spring rolls",
-  "address": "2144 S. Kinnickinnic Ave.",
-  "lat": 43.00598,
-  "lon": -87.90662,
-  "facebook": "p/Mochinut-Bayview-61567187823503"
+  "name": "Milwaukee Community Acupuncture",
+  "type": "Acupuncture",
+  "address": "435 E. Lincoln Ave.",
+  "lat": 43.00286,
+  "lon": -87.90341,
+  "website": "https://milwaukeecommunityacupuncture.org/",
+  "instagram": "milwaukeecommunityacupuncture",
+  "facebook": "milwaukeecommunityacupuncture",
+  "verify": true
+ },
+ {
+  "name": "Milwaukee Forge",
+  "type": "Forge",
+  "address": "1532 E. Oklahoma Ave.",
+  "lat": 42.98884,
+  "lon": -87.88962,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Milwaukee Makerspace",
+  "type": "Makerspace",
+  "address": "2555 S. Lenox St.",
+  "lat": 42.998,
+  "lon": -87.89847,
+  "website": "https://milwaukeemakerspace.org/"
+ },
+ {
+  "name": "Milwaukee Parkside School for the Arts",
+  "type": "School",
+  "address": "2969 S. Howell Ave.",
+  "lat": 42.99082,
+  "lon": -87.90512,
+  "website": "https://k12.mps.school/parkside/"
+ },
+ {
+  "name": "Minnesota Leeches",
+  "type": "Bait shop",
+  "address": "3157 S. Howell Ave.",
+  "lat": 42.98701,
+  "lon": -87.90503,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "MKE Mindbody Wellness",
+  "type": "Wellness clinic",
+  "address": "3174 S. Howell Ave.",
+  "lat": 42.98696,
+  "lon": -87.90474,
+  "website": "https://www.mkewellness.com",
+  "instagram": "mkemindbodywellness",
+  "facebook": "mkemindbodywellness"
+ },
+ {
+  "name": "MKE Outdoor Indoor Exchange",
+  "type": "Outdoor gear resale",
+  "address": "3044 S. Delaware Ave.",
+  "lat": 42.98867,
+  "lon": -87.87806,
+  "website": "https://www.mkeoutdoorindoor.com/"
+ },
+ {
+  "name": "MKE Urban Stables",
+  "type": "Nonprofit stables",
+  "address": "143 E. Lincoln Ave.",
+  "lat": 43.00281,
+  "lon": -87.91046,
+  "website": "https://mkeurbanstables.org",
+  "instagram": "mkeurbanstables",
+  "facebook": "mkeurbanstables"
  },
  {
   "name": "The Mothership",
@@ -797,6 +1655,25 @@
   "instagram": "musebnb"
  },
  {
+  "name": "MusicMann Studios",
+  "type": "Recording studio",
+  "address": "3073 S. Chase Ave.",
+  "lat": 42.98821,
+  "lon": -87.90944,
+  "website": "http://musicmannstudios.com/",
+  "verify": true
+ },
+ {
+  "name": "Neutral Ground Academy",
+  "type": "Martial arts",
+  "address": "1200 E. Oklahoma Ave.",
+  "lat": 42.98833,
+  "lon": -87.89429,
+  "website": "https://www.ngmke.com",
+  "instagram": "neutral_ground_milwaukee",
+  "facebook": "NeutralGroundBayview"
+ },
+ {
   "name": "New Barons Brewing Cooperative",
   "type": "Brewery",
   "address": "2018 S. 1st St.",
@@ -816,6 +1693,16 @@
   "facebook": "TheNewportBayView"
  },
  {
+  "name": "Nicole J. Martin, DDS",
+  "type": "Dentist",
+  "address": "2855 S. Wentworth Ave.",
+  "lat": 42.99258,
+  "lon": -87.88359,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
   "name": "No. 1 Chinese Restaurant",
   "type": "Chinese restaurant",
   "address": "2678 S. Kinnickinnic Ave.",
@@ -832,13 +1719,6 @@
   "social_note": "find IG",
   "lat": 42.99824,
   "lon": -87.90042
- },
- {
-  "name": "Oakberry Açaí",
-  "type": "Açaí cafe",
-  "address": "2142 S. Kinnickinnic Ave.",
-  "lat": 43.006,
-  "lon": -87.90664
  },
  {
   "name": "Omen Alternative",
@@ -901,6 +1781,25 @@
   "website": "https://www.palominobar.com/"
  },
  {
+  "name": "Patti's Power Plant",
+  "type": "Tavern",
+  "address": "2800 S. Kinnickinnic Ave.",
+  "lat": 42.99425,
+  "lon": -87.893,
+  "facebook": "frankspowerplant"
+ },
+ {
+  "name": "Pete's Pops",
+  "type": "Ice pops",
+  "address": "916 E. Russell Ave.",
+  "lat": 42.99588,
+  "lon": -87.8972,
+  "website": "https://petespops.net/",
+  "instagram": "petespops",
+  "facebook": "petespopsmke",
+  "note": "Ice pop shop (seasonal)"
+ },
+ {
   "name": "Pietro's Pizza",
   "type": "Pizza",
   "address": "2912 S. Kinnickinnic Ave.",
@@ -909,11 +1808,22 @@
   "lon": -87.88677
  },
  {
-  "name": "Planet Fitness Bay View",
-  "type": "Gym",
-  "address": "121 W. Oklahoma Ave.",
-  "lat": 42.98656,
-  "lon": -87.9121
+  "name": "Pink Agave",
+  "type": "Mexican restaurant & bar",
+  "address": "2242 S. Kinnickinnic Ave.",
+  "lat": 43.00379,
+  "lon": -87.90467,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Pipe Dreams",
+  "type": "Smoke shop",
+  "address": "2644 S. Kinnickinnic Ave.",
+  "lat": 42.99698,
+  "lon": -87.8983,
+  "website": "http://www.pipedreamsshop.com"
  },
  {
   "name": "Plume",
@@ -922,6 +1832,15 @@
   "lat": 42.99016,
   "lon": -87.88499,
   "instagram": "plume_vtg"
+ },
+ {
+  "name": "Port Milwaukee",
+  "type": "Port authority",
+  "address": "2323 S. Lincoln Memorial Dr.",
+  "lat": 43.00285,
+  "lon": -87.89111,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
  },
  {
   "name": "Prasser-Kleczka Bay View Chapel",
@@ -933,6 +1852,14 @@
   "website": "https://pkfuneralhomes.com"
  },
  {
+  "name": "Procomp Auto Body",
+  "type": "Auto body",
+  "address": "3045 S. Kinnickinnic Ave.",
+  "lat": 42.98944,
+  "lon": -87.8842,
+  "website": "http://www.procompautobody.com"
+ },
+ {
   "name": "Puddler's Hall",
   "type": "Historic tavern",
   "address": "2461 S. St. Clair St.",
@@ -942,6 +1869,24 @@
   "website": "https://puddlershall.com",
   "events_page_hint": true,
   "facebook": "puddlershall"
+ },
+ {
+  "name": "Quick Pick Food Mart",
+  "type": "Convenience store",
+  "address": "2401 S. Howell Ave.",
+  "lat": 43.00089,
+  "lon": -87.90521,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Quigley Tax Services",
+  "type": "Tax preparation",
+  "address": "2993 S. Kinnickinnic Ave.",
+  "lat": 42.99036,
+  "lon": -87.88521,
+  "website": "https://www.quigleytaxserv.com/",
+  "verify": true
  },
  {
   "name": "R Vintage N More",
@@ -961,6 +1906,27 @@
   "website": "https://www.radishmke.com"
  },
  {
+  "name": "reThought Real Estate",
+  "type": "Real estate",
+  "address": "2625 S. Greeley St.",
+  "lat": 42.99652,
+  "lon": -87.90935,
+  "website": "https://rethought-realestate.com",
+  "instagram": "rethoughtrealestate",
+  "facebook": "rethoughtrealestate",
+  "verify": true
+ },
+ {
+  "name": "Rev Pop",
+  "type": "Design studio",
+  "address": "2559 S. Howell Ave.",
+  "lat": 42.99773,
+  "lon": -87.90493,
+  "website": "https://revpop.com",
+  "instagram": "revpop",
+  "facebook": "revpop"
+ },
+ {
   "name": "Revel Bar",
   "type": "Cocktail & hookah lounge",
   "address": "2246 S. Kinnickinnic Ave.",
@@ -971,12 +1937,29 @@
   "lon": -87.90475
  },
  {
+  "name": "Riley Dual Language Montessori School",
+  "type": "School",
+  "address": "2424 S. 4th St.",
+  "lat": 43.00131,
+  "lon": -87.91503,
+  "website": "https://www5.milwaukee.k12.wi.us/school/riley/"
+ },
+ {
   "name": "Riley's Bar + Burger",
   "type": "Bar & burgers",
   "address": "100 E. Montana St.",
   "lat": 42.9938,
   "lon": -87.91083,
   "instagram": "rileysbarandburger"
+ },
+ {
+  "name": "Rishi Tea & Botanicals",
+  "type": "Tea company",
+  "address": "427 E. Stewart St.",
+  "lat": 43.00742,
+  "lon": -87.90371,
+  "website": "https://www.rishi-tea.com/",
+  "note": "Tea company headquarters"
  },
  {
   "name": "Room Service",
@@ -986,6 +1969,25 @@
   "lon": -87.90635,
   "website": "https://www.roomservicebayview.com/",
   "instagram": "roomservice.bayview"
+ },
+ {
+  "name": "roxartmke studio",
+  "type": "Art studio",
+  "address": "2248 S. Kinnickinnic Ave.",
+  "lat": 43.00368,
+  "lon": -87.90469,
+  "website": "https://www.roxartmke.com/",
+  "instagram": "roxanemayeur",
+  "facebook": "Roxartmke-622484198169891"
+ },
+ {
+  "name": "Royal Auto Body & Sales",
+  "type": "Auto body & sales",
+  "address": "2775 S. Chase Ave.",
+  "lat": 42.99455,
+  "lon": -87.91139,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
  },
  {
   "name": "RSVR Milwaukee",
@@ -1008,6 +2010,25 @@
   "facebook": "profile.php?id=100057190731121"
  },
  {
+  "name": "Saint Lucas Lutheran School",
+  "type": "School",
+  "address": "648 E. Dover St.",
+  "lat": 42.99769,
+  "lon": -87.90113,
+  "website": "https://saintlucasbayview.org/",
+  "facebook": "SaintLucasLutheranSchool"
+ },
+ {
+  "name": "Salon Thor",
+  "type": "Hair salon",
+  "address": "3128 S. Kinnickinnic Ave.",
+  "lat": 42.98755,
+  "lon": -87.88292,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
   "name": "Santino's Little Italy",
   "type": "Italian & wood-fired pizza",
   "address": "352 E. Stewart St.",
@@ -1024,7 +2045,8 @@
   "lat": 42.99077,
   "lon": -87.88229,
   "instagram": "sardines_mke",
-  "website": "https://www.tohellandbackvintage.com/"
+  "website": "https://www.tohellandbackvintage.com/",
+  "social_note": "Website redirects to To Hell & Back Vintage; confirm"
  },
  {
   "name": "Semolina",
@@ -1065,12 +2087,30 @@
   "instagram": "theshoponkk"
  },
  {
+  "name": "Sid's Auto Repair",
+  "type": "Auto repair",
+  "address": "3166 S. Kinnickinnic Ave.",
+  "lat": 42.98685,
+  "lon": -87.88237,
+  "website": "https://sidsautorepair.com/"
+ },
+ {
   "name": "Siegel's Liquor",
   "type": "Liquor store",
   "address": "2632 S. Kinnickinnic Ave.",
   "instagram": "siegelsliquor",
   "lat": 42.99723,
   "lon": -87.89893
+ },
+ {
+  "name": "SkalpX Milwaukee",
+  "type": "Hair salon",
+  "address": "2018 S. 1st St.",
+  "lat": 43.00781,
+  "lon": -87.91114,
+  "website": "https://smpmilwaukee.com",
+  "instagram": "skalpx_mke",
+  "facebook": "skalpxmke"
  },
  {
   "name": "Small Change",
@@ -1092,15 +2132,6 @@
   "events_page_hint": true
  },
  {
-  "name": "Snap Fitness Bay View",
-  "type": "Gym",
-  "address": "2450 S. Kinnickinnic Ave.",
-  "lat": 43.00025,
-  "lon": -87.90191,
-  "website": "https://www.snapfitness.com/us/gyms/bay-view-wi/",
-  "facebook": "snapfitnessbayview"
- },
- {
   "name": "Solid State Tattoo",
   "type": "Tattoo shop",
   "address": "2660 S. Kinnickinnic Ave.",
@@ -1109,6 +2140,71 @@
   "instagram": "solidstatetattoo",
   "website": "https://www.milwaukeetattoo.com",
   "facebook": "solid.state.tattoo"
+ },
+ {
+  "name": "Sorella",
+  "type": "Italian restaurant",
+  "address": "2535 S. Kinnickinnic Ave.",
+  "lat": 42.99863,
+  "lon": -87.90112,
+  "website": "https://www.sorellamke.com/",
+  "instagram": "sorella_mke",
+  "note": "Restaurant inside Kinn Guesthouse"
+ },
+ {
+  "name": "The Soup Market",
+  "type": "Soup restaurant",
+  "address": "2211 S. Kinnickinnic Ave.",
+  "lat": 43.00419,
+  "lon": -87.90564,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "South Shore Farmers Market",
+  "type": "Farmers market (seasonal)",
+  "address": "2900 S. Shore Dr.",
+  "lat": 42.99381,
+  "lon": -87.88121,
+  "website": "https://southshorefarmersmarket.com/",
+  "note": "Saturdays in summer at South Shore Park"
+ },
+ {
+  "name": "South Shore Gallery & Framing",
+  "type": "Gallery & framing",
+  "address": "2627 S. Kinnickinnic Ave.",
+  "lat": 42.99737,
+  "lon": -87.89945,
+  "website": "https://southshoregalleryandframing.com/Contact-Page"
+ },
+ {
+  "name": "South Shore Terrace",
+  "type": "Beer garden (seasonal)",
+  "address": "2900 S. Shore Dr.",
+  "lat": 42.99382,
+  "lon": -87.88122,
+  "note": "Seasonal county beer garden",
+  "facebook": "SouthShoreTerrace",
+  "website": "https://www.southshoreterrace.com/"
+ },
+ {
+  "name": "South Shore Yacht Club",
+  "type": "Yacht club",
+  "address": "2300 E. Nock St.",
+  "lat": 42.99738,
+  "lon": -87.88265,
+  "website": "https://www.ssyc.org/",
+  "instagram": "southshoreyachtclub",
+  "facebook": "ssycmke"
+ },
+ {
+  "name": "SP Mart",
+  "type": "Convenience store",
+  "address": "227 W. Holt Ave.",
+  "lat": 42.98232,
+  "lon": -87.9138,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
  },
  {
   "name": "Sprocket Cafe",
@@ -1121,6 +2217,42 @@
   "lon": -87.88082
  },
  {
+  "name": "St. Augustine of Hippo Parish",
+  "type": "Church",
+  "address": "2530 S. Howell Ave.",
+  "lat": 42.9984,
+  "lon": -87.90443,
+  "website": "https://www.staugies.org/",
+  "facebook": "StAugiesBayView"
+ },
+ {
+  "name": "St. Francis Animal Hospital",
+  "type": "Veterinarian",
+  "address": "3060 S. Howell Ave.",
+  "lat": 42.9895,
+  "lon": -87.9043,
+  "website": "https://www.stfrancisvetmilwaukee.com/",
+  "verify": true
+ },
+ {
+  "name": "St. Lucas Lutheran Church",
+  "type": "Church",
+  "address": "2605 S. Kinnickinnic Ave.",
+  "lat": 42.99744,
+  "lon": -87.90008,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "St. Luke's Episcopal Church",
+  "type": "Church",
+  "address": "3200 S. Herman St.",
+  "lat": 42.98619,
+  "lon": -87.89506,
+  "website": "https://www.stlukeschurch.com/",
+  "facebook": "StLukesChurchBayView"
+ },
+ {
   "name": "Stag Barbershop",
   "type": "Barbershop",
   "address": "3064 S. Delaware Ave.",
@@ -1129,12 +2261,22 @@
   "instagram": "stagbarbershop"
  },
  {
+  "name": "Still Shakers",
+  "type": "Tavern",
+  "address": "1051 E. Potter Ave.",
+  "lat": 42.99735,
+  "lon": -87.8953,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
   "name": "The Stone",
   "type": "Tavern",
   "address": "2422 S. Howell Ave.",
   "social_note": "Ben confirmed open and online (Nov. 13). Web search found no accounts; find them in Chrome with Facebook page search and Instagram search",
   "lat": 43.00062,
-  "lon": -87.90471
+  "lon": -87.90471,
+  "links_checked": 1
  },
  {
   "name": "Straight Shots",
@@ -1142,7 +2284,8 @@
   "address": "1503 E. Oklahoma Ave.",
   "social_note": "Ben confirmed open and online (Nov. 13). Web search found no accounts; find them in Chrome with Facebook page search and Instagram search",
   "lat": 42.98818,
-  "lon": -87.89056
+  "lon": -87.89056,
+  "links_checked": 1
  },
  {
   "name": "Strange Scene",
@@ -1174,6 +2317,55 @@
   "lon": -87.90492,
   "instagram": "supermoonbeerco",
   "website": "https://www.supermoonbeer.com"
+ },
+ {
+  "name": "Sushi Yuki",
+  "type": "Sushi restaurant",
+  "address": "2349 S. Kinnickinnic Ave.",
+  "lat": 43.00186,
+  "lon": -87.90376,
+  "facebook": "sushiyukibay",
+  "website": "https://sushiyukibayview.com"
+ },
+ {
+  "name": "Swan Song",
+  "type": "Restaurant & bar",
+  "address": "3216 S. Howell Ave.",
+  "lat": 42.98606,
+  "lon": -87.90473,
+  "website": "https://www.swansongmke.com/",
+  "instagram": "swansongmke",
+  "facebook": "swansongmke"
+ },
+ {
+  "name": "T.H. Stemper Co.",
+  "type": "Religious goods",
+  "address": "1125 E. Potter Ave.",
+  "lat": 42.99784,
+  "lon": -87.89489,
+  "website": "https://www.stempers.com/",
+  "facebook": "thstemper"
+ },
+ {
+  "name": "Tasha Rae Jewelry",
+  "type": "Jewelry",
+  "address": "3074 S. Delaware Ave.",
+  "lat": 42.98835,
+  "lon": -87.87744,
+  "website": "https://www.tasharae.com",
+  "instagram": "tasharaejewelry",
+  "facebook": "TashaRaeJewelry",
+  "verify": true
+ },
+ {
+  "name": "Tease Salon",
+  "type": "Hair salon",
+  "address": "2222 S. Kinnickinnic Ave.",
+  "lat": 43.00416,
+  "lon": -87.90499,
+  "website": "https://www.teaseyourself.com/",
+  "instagram": "tease_salon_mke",
+  "facebook": "teasesalonmke"
  },
  {
   "name": "Tempest Tattoos",
@@ -1209,7 +2401,17 @@
   "address": "2343 S. Kinnickinnic Ave.",
   "lat": 43.00201,
   "lon": -87.90357,
-  "website": "https://tip-top-atomic.com"
+  "social_note": "Old website now belongs to someone else; find current site/accounts",
+  "links_checked": 1
+ },
+ {
+  "name": "Tippecanoe Herbs",
+  "type": "Herb & spice shop",
+  "address": "2235 S. Kinnickinnic Ave.",
+  "lat": 43.00372,
+  "lon": -87.90526,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
  },
  {
   "name": "Todd I Believe I Can Fry",
@@ -1223,13 +2425,22 @@
   "lon": -87.90618
  },
  {
-  "name": "Toppers Pizza",
-  "type": "Pizza",
-  "address": "2262 S. Kinnickinnic Ave.",
-  "lat": 43.00345,
-  "lon": -87.90453,
-  "website": "https://www.toppers.com/locations/bay-view",
-  "facebook": "ToppersPizzaBayviewWI"
+  "name": "Toni's Moody Blues",
+  "type": "Tavern",
+  "address": "2813 S. Howell Ave.",
+  "lat": 42.99343,
+  "lon": -87.90466,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Top Shelf Guitar Shop",
+  "type": "Guitar shop",
+  "address": "2358 S. Kinnickinnic Ave.",
+  "lat": 43.00191,
+  "lon": -87.9031,
+  "website": "https://topshelfguitarshop.com/",
+  "facebook": "TopShelfGuitars"
  },
  {
   "name": "Torzala Brewing Co.",
@@ -1252,6 +2463,14 @@
   "lon": -87.8854
  },
  {
+  "name": "Trowbridge Street School",
+  "type": "School",
+  "address": "1943 E. Trowbridge St.",
+  "lat": 42.99177,
+  "lon": -87.88498,
+  "website": "https://www5.milwaukee.k12.wi.us/school/trowbridge/"
+ },
+ {
   "name": "Twisted Path Distillery",
   "type": "Distillery & tasting room",
   "address": "2018 S. 1st St.",
@@ -1260,6 +2479,16 @@
   "instagram": "twistedpathdistillery",
   "website": "https://www.twistedpathdistillery.com",
   "facebook": "twistedpathmke"
+ },
+ {
+  "name": "Unity Lutheran Church & Food Pantry",
+  "type": "Church",
+  "address": "1025 E. Oklahoma Ave.",
+  "lat": 42.98801,
+  "lon": -87.89616,
+  "website": "https://www.unitymilwaukee.org/",
+  "facebook": "unitymilwaukee",
+  "note": "Food pantry on site"
  },
  {
   "name": "URSA",
@@ -1293,13 +2522,49 @@
   "events_page_hint": true
  },
  {
+  "name": "Ventura's Taco",
+  "type": "Taqueria",
+  "address": "2899 S. Kinnickinnic Ave.",
+  "lat": 42.99191,
+  "lon": -87.8875,
+  "facebook": "p/Venturas-taco-100057871530939",
+  "website": "https://www.venturastacomke.com"
+ },
+ {
   "name": "Verdant CBD",
   "type": "CBD shop",
   "address": "2680 S. Kinnickinnic Ave.",
   "lat": 42.99629,
   "lon": -87.89724,
-  "website": "https://shopverdant.com",
   "instagram": "shopverdant"
+ },
+ {
+  "name": "Vermillion Counseling",
+  "type": "Counseling",
+  "address": "2230 S. Kinnickinnic Ave.",
+  "lat": 43.00396,
+  "lon": -87.90499,
+  "website": "https://www.vermillioncounselingllc.com",
+  "verify": true
+ },
+ {
+  "name": "The Vine Humboldt",
+  "type": "Beer & wine garden (seasonal)",
+  "address": "3000 S. Howell Ave.",
+  "lat": 42.99092,
+  "lon": -87.90132,
+  "note": "Seasonal, at the Humboldt Park pavilion",
+  "website": "https://www.thevinehumboldt.com/"
+ },
+ {
+  "name": "Vineyard Milwaukee Church",
+  "type": "Church",
+  "address": "3244 S. Griffin Ave.",
+  "lat": 42.98569,
+  "lon": -87.90399,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
  },
  {
   "name": "Voyager",
@@ -1321,15 +2586,21 @@
   "lon": -87.90525
  },
  {
-  "name": "Wheel & Sprocket and Joy Ride Cafe",
-  "type": "Bike shop & cafe",
-  "address": "187 E. Becher St.",
-  "lat": 43.00645,
-  "lon": -87.91044,
-  "instagram": "wheelandsprocket",
-  "website": "https://www.wheelandsprocket.com",
-  "facebook": "WheelandSprocket",
-  "events_page_hint": true
+  "name": "Wander & Co.",
+  "type": "Clothing",
+  "address": "2018 S. 1st St.",
+  "lat": 43.00781,
+  "lon": -87.91114,
+  "website": "https://wanderand.co",
+  "verify": true
+ },
+ {
+  "name": "While You Were Out Pet Services",
+  "type": "Pet sitting",
+  "address": "432 E. Bay St.",
+  "lat": 43.00611,
+  "lon": -87.90307,
+  "website": "https://www.whileyouwereoutpets.com/"
  },
  {
   "name": "The White House Bay View",
@@ -1369,5 +2640,43 @@
   "lon": -87.90962,
   "website": "https://wiolettaspolishmarket.com",
   "facebook": "WiolettasPolishMarket"
+ },
+ {
+  "name": "Wisconsin Bike Fed",
+  "type": "Nonprofit",
+  "address": "187 E. Becher St.",
+  "lat": 43.00619,
+  "lon": -87.90828,
+  "website": "https://wisconsinbikefed.org/",
+  "instagram": "bikefed",
+  "facebook": "bike.fed.wi"
+ },
+ {
+  "name": "Wisconsin Medieval Combat Center",
+  "type": "Historical combat school",
+  "address": "230 E. Lincoln Ave.",
+  "lat": 43.00304,
+  "lon": -87.90705,
+  "website": "https://linktr.ee/wismcc",
+  "instagram": "wismcc",
+  "facebook": "WisMCC"
+ },
+ {
+  "name": "Woodburn Law Office",
+  "type": "Law office",
+  "address": "2616 S. Kinnickinnic Ave.",
+  "lat": 42.99735,
+  "lon": -87.89914,
+  "website": "https://www.woodburnlawoffice.com/"
+ },
+ {
+  "name": "Wrought Washer Mfg.",
+  "type": "Manufacturer",
+  "address": "2100 S. Bay St.",
+  "lat": 43.0053,
+  "lon": -87.89677,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "No website or social accounts found (checked Nov. 13)"
  }
 ]
