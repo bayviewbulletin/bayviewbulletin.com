@@ -89,7 +89,8 @@
   "lat": 42.9967,
   "lon": -87.89796,
   "website": "https://www.theartschoolmilwaukee.org",
-  "facebook": "theartschoolmilwaukee"
+  "facebook": "theartschoolmilwaukee",
+  "links_checked": 1
  },
  {
   "name": "Artery Ink",
@@ -234,7 +235,8 @@
   "lat": 42.98322,
   "lon": -87.88048,
   "website": "https://www.bayviewdentalcare.com",
-  "facebook": "bayviewdentalcare"
+  "facebook": "bayviewdentalcare",
+  "links_checked": 1
  },
  {
   "name": "Bay View Fitness 24/7",
@@ -309,7 +311,8 @@
   "lat": 42.99592,
   "lon": -87.90465,
   "website": "https://www.bayviewservice.net/",
-  "facebook": "bayviewservice"
+  "facebook": "bayviewservice",
+  "links_checked": 1
  },
  {
   "name": "Bay View Supermarket",
@@ -356,8 +359,7 @@
   "lon": -87.89894,
   "website": "http://www.betheatonpottery.com/",
   "instagram": "betheatonpottery",
-  "facebook": "betheatonpottery",
-  "verify": true
+  "facebook": "betheatonpottery"
  },
  {
   "name": "Beulah Brinton Community Center",
@@ -386,8 +388,7 @@
   "lon": -87.87968,
   "website": "https://www.bikeandbodymke.com/",
   "instagram": "bikeandbodymke",
-  "facebook": "bikeandbodymke",
-  "verify": true
+  "facebook": "bikeandbodymke"
  },
  {
   "name": "Blackbird Bar",
@@ -1275,7 +1276,6 @@
   "lon": -87.91135,
   "instagram": "ianspizzamke",
   "website": "https://ianspizza.com",
-  "verify": true,
   "note": "Location planned at River One (Urban Milwaukee, July 2026); confirm it has opened"
  },
  {
@@ -1618,8 +1618,7 @@
   "lon": -87.90341,
   "website": "https://milwaukeecommunityacupuncture.org/",
   "instagram": "milwaukeecommunityacupuncture",
-  "facebook": "milwaukeecommunityacupuncture",
-  "verify": true
+  "facebook": "milwaukeecommunityacupuncture"
  },
  {
   "name": "Milwaukee Forge",
@@ -1963,8 +1962,7 @@
   "lon": -87.90935,
   "website": "https://rethought-realestate.com",
   "instagram": "rethoughtrealestate",
-  "facebook": "rethoughtrealestate",
-  "verify": true
+  "facebook": "rethoughtrealestate"
  },
  {
   "name": "Rev Pop",

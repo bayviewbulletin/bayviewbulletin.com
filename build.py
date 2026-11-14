@@ -203,7 +203,7 @@ def shell(title, body, d, active="Today", og=None, path="/", head=""):
 <nav class="sections" aria-label="Sections"><ul>{nav}</ul></nav>
 {TICKER}<div class="wrap">{body}</div>
 <footer><div class="wrap">Covering Bay View from the harbor and Jones Island to Holt and Morgan avenues, I-43 to the lake.<br>
-Every item links to the original reporting. Photos belong to their credited owners. <a href="{TIPS}">Send a tip</a> · <a href="/about.html">About</a> · <a href="/schools.html">School days off</a> · <a href="/archive.html">Archive</a></div></footer>
+Every item links to the original reporting. Photos belong to their credited owners. <a href="{TIPS}">Send a tip</a> · <a href="/about.html">About</a> · <a href="/schools.html">School days off</a> · <a href="/history.html">History</a> · <a href="/archive.html">Archive</a></div></footer>
 <script>document.addEventListener('click',function(ev){{var a=ev.target.closest&&ev.target.closest('a[href]');if(a&&a.host&&a.host!==location.host){{a.target='_blank';a.rel='noopener'}}}},true);</script></body></html>""")
 
 
@@ -343,6 +343,36 @@ def links_html(s):
     return (f'<section class="morelinks"><h2>More about {e(name)}</h2><ul>'
             + "".join(f'<li><a href="{e(l["url"])}" rel="noopener">{e(l["label"])}</a></li>' for l in ls) + "</ul></section>")
 
+ALL_HISTORY = []  # one Bay View history item per day (Ben, Nov. 13)
+
+
+def history_title(h):
+    if h.get("title"):
+        return h["title"]
+    t = h.get("text", "").split(". ")[0]
+    return (t[:90] + "…") if len(t) > 90 else t
+
+
+def history_page(d):
+    """Write the day's history item to its own story page; return its URL."""
+    h = d["history"]
+    title = history_title(h)
+    url = f"/history/{d['date']}-{slug(title)}.html"
+    img = h.get("image") or {}
+    fig = (f'<figure><img src="{e(img["src"])}" alt="{e(img.get("alt", ""))}"><div class="cap">Photo: <a href="{e(img.get("credit_url") or h.get("source_url") or "#")}">{e(img.get("credit", ""))}</a></div></figure>') if img else ""
+    when = {"on this day": "On this day", "this week": "This week in history", "this month": "This month in history"}.get(h.get("match"), "Bay View history")
+    now = h.get("now")
+    nowh = f'<p class="pagedek" style="margin:14px 0"><strong>Now:</strong> <a href="{e(now["url"])}" style="color:var(--lake)">{e(now["name"])}</a></p>' if now else ""
+    src = f'<a class="btn" href="{e(h["source_url"])}">Source: {e(h["source_name"])} →</a>' if h.get("source_url") else ""
+    body = (f'<article class="story"><span class="kicker">Bay View history · {e(when)} · {e(h.get("year"))}</span><h1>{e(title)}</h1>{fig}'
+            f'<div class="body">{paras(h.get("body") or h.get("text"))}</div>{nowh}{gallery_html(h)}{links_html(dict(h, title=title))}{src}'
+            f'<p class="pagedek" style="margin-top:22px"><a href="/history.html" style="color:var(--lake)">More Bay View history →</a></p></article>')
+    (OUT / "history").mkdir(exist_ok=True)
+    (OUT / url.lstrip("/")).write_text(shell(title + " · Bay View history · The Bay View Bulletin", body, d, "", {"title": title, "desc": h.get("text", "")[:200], "image": img.get("src"), "type": "article"}, url))
+    ALL_HISTORY.append(dict(h, title=title, url=url, issue_date=d["date"], display_date=d["display_date"]))
+    return url
+
+
 def build_one(d, newest):
     day = dt.date.fromisoformat(d["date"])
 
@@ -411,8 +441,10 @@ def build_one(d, newest):
     topics = "".join(f'<section class="topic{" w" if sec in WARM else ""}"><h2>{e(sec)}<a href="{"/spotlight.html" if sec == "Business spotlight" else "/section/" + slug(sec) + ".html"}">{"Read the spotlight →" if sec == "Business spotlight" else "More →"}</a></h2>{"".join(row(x, False) for x in xs[:3])}</section>' for sec, xs in groups.items())
     mke = d.get("milwaukee", [])
     h = d.get("history")
-    hist = (f'<section class="block"><h2>Bay View history</h2><div class="hist"><div><img src="{e(h["image"]["src"])}" alt="{e(h["image"]["alt"])}"><div class="cap">{e(h["image"]["credit"])}</div></div>'
-            f'<div><div class="yr">{e(h["year"])}</div><p>{e(h["text"])}</p><a class="kicker" href="{e(h["source_url"])}">{e(h["source_name"])} →</a></div></div></section>') if h else ""
+    hurl = history_page(d) if h else ""
+    hist = (f'<section class="block"><h2>Bay View history<a href="/history.html" style="float:right;font:600 14px var(--sans);color:var(--lake)">All history →</a></h2><div class="hist"><div><a href="{hurl}"><img src="{e(h["image"]["src"])}" alt="{e(h["image"]["alt"])}"></a><div class="cap">{e(h["image"]["credit"])}</div></div>'
+            f'<div><div class="yr">{e(h["year"])}</div>' + (f'<h3 style="font:700 21px/1.25 var(--serif);margin:2px 0 6px"><a href="{hurl}" style="color:inherit">{e(h["title"])}</a></h3>' if h.get("title") else "")
+            + f'<p>{e(h["text"])}</p><a class="kicker" href="{hurl}">Read the story →</a></div></div></section>') if h else ""
     home = (f'<div class="utils">{util_html}</div>'
             f'<section class="front"><a class="lead" href="{lead["url"]}">{lead_img}<span class="kicker">{e(lead["section"])}</span><h2>{e(lead["title"])}</h2><p>{e(dek(lead))}</p><div class="meta">{e(srcmeta(lead))}</div></a>'
             f'<div class="side">{side}</div></section>'
@@ -504,7 +536,7 @@ def build():
             feat = next((b for b in briefs if b.get("image")), briefs[0])
             briefs = [b for b in briefs if b is not feat]
             body_feat = feature_html(feat["source_url"], feat.get("image"), f'{feat["label"]} · {feat["date"]}', feat["title"], "", feat["source_name"], internal=False)
-        body = f'<h1 class="pagehead">{e(title)}</h1>' + (body_feat if feat else "") + (listing(items) if items else ("" if feat else empty))
+        body = f'<h1 class="pagehead">{e(title)}</h1>' + ('<p class="pagedek"><a href="/history.html" style="color:var(--lake);font-weight:600">Bay View history →</a> · <a href="/schools.html" style="color:var(--lake);font-weight:600">School days off →</a> · <a href="/directory.html" style="color:var(--lake);font-weight:600">Business directory →</a></p>' if key == "more" else "") + (body_feat if feat else "") + (listing(items) if items else ("" if feat else empty))
         if feat and not [s for s in recent if onpage(s)]:
             body = body.replace(body_feat, f'<p class="pagedek">No new {e(title.lower())} news in the last day. Here&rsquo;s the latest:</p>' + body_feat)
         if briefs:
@@ -548,10 +580,15 @@ def build():
     else:
         sp = '<h1 class="pagehead">Business spotlight</h1><p class="pagedek">The first spotlight lands tomorrow morning.</p>'
     (OUT / "spotlight.html").write_text(shell("Business spotlight · The Bay View Bulletin", sp, d, "Spotlight"))
+    hist_items = "".join(f'<a href="{x["url"]}">' + (f'<img src="{e(x["image"]["src"])}" alt="" loading="lazy" style="float:right;width:120px;height:90px;object-fit:cover;margin:0 0 8px 14px">' if x.get("image") else "")
+                         + f'<span class="kicker">{e(x.get("year"))} · Posted {e(x["display_date"])}</span><h3>{e(x["title"])}</h3><p>{e(x.get("text", ""))}</p><div style="clear:both"></div></a>' for x in reversed(ALL_HISTORY))
+    (OUT / "history.html").write_text(shell("Bay View history · The Bay View Bulletin",
+        f'<h1 class="pagehead">Bay View history</h1><p class="pagedek">One story from Bay View&rsquo;s past every day: the shops, taverns, factories, people and places that made the neighborhood. Newest first.</p><div class="list">{hist_items or "<p>The first history story lands tomorrow morning.</p>"}</div>', d, "More", None, "/history.html"))
     (OUT / "schools.html").write_text(shell("School days off · The Bay View Bulletin", schools_page(d), d, ""))
     (OUT / "about.html").write_text(shell("About · The Bay View Bulletin", about, d, ""))
     # search index + page
     idx = [{"t": s["title"], "d": dek(s), "u": s["url"], "k": s["section"], "dt": s["display_date"]} for s in recent]
+    idx += [{"t": x["title"], "d": x.get("text", ""), "u": x["url"], "k": "History", "dt": str(x.get("year", ""))} for x in reversed(ALL_HISTORY)]
     idx += [{"t": b["name"], "d": b["type"] + " · " + b["address"], "u": "/directory.html", "k": "Directory", "dt": ""} for b in dirs]
     idx += [{"t": ev["title"], "d": ev["when"] + " · " + ev["where"], "u": "/events.html", "k": "Event", "dt": ev["day"]} for ev in d["events"]]
     (OUT / "search.json").write_text(json.dumps(idx, ensure_ascii=False))
