@@ -9,10 +9,13 @@ a:focus-visible{outline:3px solid var(--lake);outline-offset:2px}img{display:blo
 .plate{text-align:center;padding:18px 0 10px}.dateline{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
 .plate .rule{border-top:3px double var(--ink);margin:10px 0 0}.plate h1{font:900 clamp(38px,6.4vw,68px)/1.05 var(--plate);margin:8px 0 2px;letter-spacing:-.01em}
 .plate .tag{font:italic 400 16px var(--serif);color:var(--muted);margin:0 0 10px}
-nav.sections{border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);overflow-x:auto;white-space:nowrap}
-nav.sections ul{list-style:none;margin:0 auto;padding:0 20px;max-width:1140px;display:flex;gap:26px;justify-content:center}
-nav.sections a{display:inline-block;padding:11px 0;font:600 15px var(--sans)}nav.sections a.on{box-shadow:inset 0 -3px var(--lake)}
-@media(max-width:700px){nav.sections ul{justify-content:flex-start}}
+nav.sections{border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);white-space:nowrap}nav.sections ul{overflow-x:auto;scrollbar-width:none}nav.sections ul::-webkit-scrollbar{display:none}
+nav.sections ul{list-style:none;margin:0 auto;padding:0 20px;max-width:1140px;display:flex;gap:26px;justify-content:center;align-items:stretch}
+nav.sections a{display:inline-flex;align-items:center;height:100%;padding:11px 0;font:600 15px var(--sans)}nav.sections a.on{box-shadow:inset 0 -3px var(--lake)}
+nav.sections li.find{border-left:1px solid var(--rule);padding-left:22px;margin-left:-4px}nav.sections li.find a{color:var(--muted)}nav.sections li.find a:hover,nav.sections li.find a.on{color:var(--ink)}
+@media(max-width:700px){nav.sections ul{justify-content:flex-start;gap:22px;padding-right:20px}
+nav.sections ul{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 48px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 48px),transparent)}
+nav.sections ul.end{-webkit-mask-image:none;mask-image:none}}
 .utils{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-bottom:1px solid var(--rule);margin-bottom:22px}
 .util{padding:12px 14px;border-right:1px solid var(--rule);display:grid;gap:2px;align-content:start}.util:last-child{border-right:0}
 .util .k{font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.util .v{font:700 17px var(--serif)}.util .s{font-size:13px;color:var(--muted)}

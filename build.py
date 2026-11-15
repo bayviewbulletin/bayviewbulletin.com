@@ -9,8 +9,9 @@ import sys
 OUT = ROOT / ("preview_v2" if "--preview" in sys.argv else "docs")
 TIPS = "https://docs.google.com/forms/d/e/1FAIpQLSfXNc2RsIhvMPCfcZ9CYb6QIx78RZSr2Ar3YzT5ik9xyPhi7Q/viewform"
 e = lambda s: html.escape(str(s or ""), quote=True)
-NAV = [("Today", "/"), ("Events", "/events.html"), ("Buzz", "/buzz.html"), ("Spotlight", "/spotlight.html"), ("Food & Drink", "/section/food.html"), ("City Hall", "/section/city.html"),
-       ("Safety", "/section/safety.html"), ("More", "/section/more.html"), ("Search", "/search.html")]
+NAV = [("Home", "/"), ("Events", "/events.html"), ("Buzz", "/buzz.html"), ("Spotlight", "/spotlight.html"), ("Food & Drink", "/section/food.html"), ("City Hall", "/section/city.html"),
+       ("Safety", "/section/safety.html"), ("History", "/history.html"), ("More", "/section/more.html")]
+SEARCH_ICON = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>'
 SECTION_OF = {"top": "Bay View", "openings": "Food & Drink", "development": "City Hall", "streets": "Streets", "schools": "Schools",
               "parks": "Parks", "protests": "Protests", "safety": "Safety", "realestate": "Real estate", "help": "Ways to help",
               "fishfry": "Fish fry", "pets": "Pets", "sports": "Sports", "remembrances": "Remembrances", "spotlight": "Business spotlight"}
@@ -66,10 +67,13 @@ a:focus-visible{outline:3px solid var(--lake);outline-offset:2px}img{display:blo
 .plate{text-align:center;padding:18px 0 10px}.dateline{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
 .plate .rule{border-top:3px double var(--ink);margin:10px 0 0}.plate h1{font:900 clamp(38px,6.4vw,68px)/1.05 var(--plate);margin:8px 0 2px;letter-spacing:-.01em}
 .plate .tag{font:italic 400 16px var(--serif);color:var(--muted);margin:0 0 10px}
-nav.sections{border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);overflow-x:auto;white-space:nowrap}
-nav.sections ul{list-style:none;margin:0 auto;padding:0 20px;max-width:1140px;display:flex;gap:26px;justify-content:center}
-nav.sections a{display:inline-block;padding:11px 0;font:600 15px var(--sans)}nav.sections a.on{box-shadow:inset 0 -3px var(--lake)}
-@media(max-width:700px){nav.sections ul{justify-content:flex-start}}
+nav.sections{border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);white-space:nowrap}nav.sections ul{overflow-x:auto;scrollbar-width:none}nav.sections ul::-webkit-scrollbar{display:none}
+nav.sections ul{list-style:none;margin:0 auto;padding:0 20px;max-width:1140px;display:flex;gap:26px;justify-content:center;align-items:stretch}
+nav.sections a{display:inline-flex;align-items:center;height:100%;padding:11px 0;font:600 15px var(--sans)}nav.sections a.on{box-shadow:inset 0 -3px var(--lake)}
+nav.sections li.find{border-left:1px solid var(--rule);padding-left:22px;margin-left:-4px}nav.sections li.find a{color:var(--muted)}nav.sections li.find a:hover,nav.sections li.find a.on{color:var(--ink)}
+@media(max-width:700px){nav.sections ul{justify-content:flex-start;gap:22px;padding-right:20px}
+nav.sections ul{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 48px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 48px),transparent)}
+nav.sections ul.end{-webkit-mask-image:none;mask-image:none}}
 .utils{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-bottom:1px solid var(--rule);margin-bottom:22px}
 .util{padding:12px 14px;border-right:1px solid var(--rule);display:grid;gap:2px;align-content:start}.util:last-child{border-right:0}
 .util .k{font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.util .v{font:700 17px var(--serif)}.util .s{font-size:13px;color:var(--muted)}
@@ -185,7 +189,7 @@ def make_ticker(d):
             f'<div class="set">{_set}</div><div class="set" aria-hidden="true">{_set}</div></div></div></div></div>')
 
 
-def shell(title, body, d, active="Today", og=None, path="/", head=""):
+def shell(title, body, d, active="Home", og=None, path="/", head=""):
     og = og or {}
     ogt, ogd = og.get("title", title), og.get("desc", "Daily news for Milwaukee's Bay View neighborhood, every morning.")
     ogi = og.get("image") or SITE + "/og-default.png"
@@ -196,6 +200,7 @@ def shell(title, body, d, active="Today", og=None, path="/", head=""):
             '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">'
             '<meta name="theme-color" content="#1F4E79">' + head)
     nav = "".join(f'<li><a href="{h}"{" class=on" if n == active else ""}>{n}</a></li>' for n, h in NAV)
+    nav += f'<li class="find"><a href="/search.html" aria-label="Search" title="Search"{" class=on" if active == "Search" else ""}>{SEARCH_ICON}</a></li>'
     return ext_links(f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)}</title>{meta}{FONTS}<link rel="stylesheet" href="/assets/v2.css"><script data-goatcounter="https://bayviewbulletin.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></head><body>
 <header class="plate wrap"><div class="dateline"><span>{e(d['display_date'])}</span><span>Bay View, Milwaukee</span></div>
@@ -204,7 +209,7 @@ def shell(title, body, d, active="Today", og=None, path="/", head=""):
 {TICKER}<div class="wrap">{body}</div>
 <footer><div class="wrap">Covering Bay View from the harbor and Jones Island to Holt and Morgan avenues, I-43 to the lake.<br>
 Every item links to the original reporting. Photos belong to their credited owners. <a href="{TIPS}">Send a tip</a> · <a href="/about.html">About</a> · <a href="/schools.html">School days off</a> · <a href="/history.html">History</a> · <a href="/archive.html">Archive</a></div></footer>
-<script>document.addEventListener('click',function(ev){{var a=ev.target.closest&&ev.target.closest('a[href]');if(a&&a.host&&a.host!==location.host){{a.target='_blank';a.rel='noopener'}}}},true);</script></body></html>""")
+<script>(function(){{var n=document.querySelector('nav.sections ul');if(!n)return;function f(){{n.classList.toggle('end',n.scrollLeft+n.clientWidth>=n.scrollWidth-4)}}n.addEventListener('scroll',f,{{passive:true}});f();var o=n.querySelector('a.on');if(o&&o.offsetLeft+o.offsetWidth>n.clientWidth)n.scrollLeft=o.offsetLeft-20}})();</script><script>document.addEventListener('click',function(ev){{var a=ev.target.closest&&ev.target.closest('a[href]');if(a&&a.host&&a.host!==location.host){{a.target='_blank';a.rel='noopener'}}}},true);</script></body></html>""")
 
 
 ALL_STORIES = []
@@ -457,7 +462,7 @@ def build_one(d, newest):
     (OUT / "issues" / f'{d["date"]}.html').write_text(shell("The Bay View Bulletin · " + d["display_date"], home, d))
     if not newest:
         return
-    (OUT / "index.html").write_text(shell("The Bay View Bulletin", home, d, "Today", {"title": "The Bay View Bulletin · " + d["display_date"], "desc": lead["title"]}, "/"))
+    (OUT / "index.html").write_text(shell("The Bay View Bulletin", home, d, "Home", {"title": "The Bay View Bulletin · " + d["display_date"], "desc": lead["title"]}, "/"))
 
     # events
     cal, cur = [], None
@@ -583,7 +588,7 @@ def build():
     hist_items = "".join(f'<a href="{x["url"]}">' + (f'<img src="{e(x["image"]["src"])}" alt="" loading="lazy" style="float:right;width:120px;height:90px;object-fit:cover;margin:0 0 8px 14px">' if x.get("image") else "")
                          + f'<span class="kicker">{e(x.get("year"))} · Posted {e(x["display_date"])}</span><h3>{e(x["title"])}</h3><p>{e(x.get("text", ""))}</p><div style="clear:both"></div></a>' for x in reversed(ALL_HISTORY))
     (OUT / "history.html").write_text(shell("Bay View history · The Bay View Bulletin",
-        f'<h1 class="pagehead">Bay View history</h1><p class="pagedek">One story from Bay View&rsquo;s past every day: the shops, taverns, factories, people and places that made the neighborhood. Newest first.</p><div class="list">{hist_items or "<p>The first history story lands tomorrow morning.</p>"}</div>', d, "More", None, "/history.html"))
+        f'<h1 class="pagehead">Bay View history</h1><p class="pagedek">One story from Bay View&rsquo;s past every day: the shops, taverns, factories, people and places that made the neighborhood. Newest first.</p><div class="list">{hist_items or "<p>The first history story lands tomorrow morning.</p>"}</div>', d, "History", None, "/history.html"))
     (OUT / "schools.html").write_text(shell("School days off · The Bay View Bulletin", schools_page(d), d, ""))
     (OUT / "about.html").write_text(shell("About · The Bay View Bulletin", about, d, ""))
     # search index + page
