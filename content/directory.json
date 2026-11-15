@@ -352,15 +352,6 @@
   "social_note": "No website or social accounts found (checked Nov. 13)"
  },
  {
-  "name": "Cozy Collective",
-  "type": "Gift shop & maker collective",
-  "address": "815 E. Potter Ave.",
-  "lat": 42.99688,
-  "lon": -87.89894,
-  "instagram": "cozy_collective_mke",
-  "note": "Formerly Beth Eaton Pottery (renamed; Ben, Nov. 14). Wed.-Sun. 12-6; makers include @betheatonpottery"
- },
- {
   "name": "Beulah Brinton Community Center",
   "type": "Community center",
   "address": "2555 S. Bay St.",
@@ -378,6 +369,15 @@
   "website": "https://bayviewhistoricalsociety.org/",
   "instagram": "bayviewhistoricalsociety",
   "facebook": "BayViewHistoricalSociety"
+ },
+ {
+  "name": "Beyond Beauty Head Spa & Salon",
+  "type": "Hair salon & head spa",
+  "address": "2385 S. Kinnickinnic Ave.",
+  "lat": 43.00132,
+  "lon": -87.90299,
+  "verify": true,
+  "note": "From the sources doc candidate list; booking listing found, storefront not yet confirmed (Nov. 15)"
  },
  {
   "name": "Bike & Body",
@@ -509,7 +509,8 @@
   "lat": 42.99654,
   "lon": -87.909,
   "website": "https://cachecider.com/",
-  "verify": true
+  "instagram": "cachecider",
+  "facebook": "CacheCider"
  },
  {
   "name": "Cactus Club",
@@ -649,6 +650,15 @@
   "events_page_hint": true
  },
  {
+  "name": "Clarence Street Cabinet",
+  "type": "Community free pantry",
+  "address": "326 E. Clarence St.",
+  "lat": 42.99932,
+  "lon": -87.90617,
+  "facebook": "profile.php?id=61592574393017",
+  "note": "Neighbor-run free food cabinet; added Nov. 15"
+ },
+ {
   "name": "Classic Slice",
   "type": "Pizza",
   "address": "2797 S. Kinnickinnic Ave.",
@@ -698,14 +708,23 @@
   "facebook": "ColectivoCoffee"
  },
  {
+  "name": "Collected Goods",
+  "type": "Vintage",
+  "address": "2654 S. Kinnickinnic Ave.",
+  "lat": 42.9967,
+  "lon": -87.89796,
+  "verify": true,
+  "note": "Listings show it at 2654 S. KK (shared with a salon per Milwaukee Magazine 2018); MapQuest shows Closed; needs confirmation (Nov. 15)"
+ },
+ {
   "name": "Collector's Edge Comics",
   "type": "Comic shop",
   "address": "2330 S. Kinnickinnic Ave.",
   "lat": 43.00237,
   "lon": -87.90361,
-  "verify": true,
   "links_checked": 1,
-  "social_note": "No website or social accounts found (checked Nov. 13)"
+  "social_note": "No website or social accounts found (checked Nov. 13)",
+  "website": "https://collectorsedgecomics.com/"
  },
  {
   "name": "Commonplace",
@@ -713,8 +732,8 @@
   "address": "3074 S. Delaware Ave.",
   "lat": 42.98833,
   "lon": -87.8774,
-  "website": "https://commonplaceshop.com/",
-  "verify": true
+  "verify": true,
+  "note": "Website now points to an unrelated spam site (Nov. 15); shares 3074 S. Delaware with Tasha Rae Jewelry."
  },
  {
   "name": "Community Bark Bay View",
@@ -756,6 +775,15 @@
   "website": "https://www.countrymaid.com",
   "facebook": "CountryMaidMKE",
   "note": "Food manufacturer"
+ },
+ {
+  "name": "Cozy Collective",
+  "type": "Gift shop & maker collective",
+  "address": "815 E. Potter Ave.",
+  "lat": 42.99688,
+  "lon": -87.89894,
+  "instagram": "cozy_collective_mke",
+  "note": "Formerly Beth Eaton Pottery (renamed; Ben, Nov. 14). Wed.-Sun. 12-6; makers include @betheatonpottery"
  },
  {
   "name": "Crafty Cow",
@@ -1020,8 +1048,7 @@
   "lon": -87.90453,
   "website": "https://gammapiercing.com/",
   "instagram": "gammapiercing",
-  "facebook": "gammapiercing",
-  "verify": true
+  "facebook": "gammapiercing"
  },
  {
   "name": "Gasparri & Joyce",
@@ -1459,7 +1486,7 @@
   "address": "3451 S. Kinnickinnic Ave.",
   "lat": 42.98169,
   "lon": -87.88037,
-  "links_checked": 1,
+  "links_checked": 2,
   "social_note": "No website or social accounts found (checked Nov. 13)"
  },
  {
