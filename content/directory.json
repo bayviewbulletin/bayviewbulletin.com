@@ -1273,7 +1273,6 @@
   "address": "1100 E. Potter Ave.",
   "lat": 42.99802,
   "lon": -87.89529,
-  "verify": true,
   "links_checked": 1,
   "social_note": "No website or social accounts found (checked Nov. 13)"
  },
@@ -1378,12 +1377,11 @@
  {
   "name": "Jasher's Organic Tea House",
   "type": "Tea house",
-  "address": "2690 S. Kinnickinnic Ave.",
-  "lat": 42.99617,
-  "lon": -87.89701,
+  "address": "2680 S. Kinnickinnic Ave.",
+  "lat": 42.99629,
+  "lon": -87.89724,
   "instagram": "jashersorganicteahouse",
-  "verify": true,
-  "note": "City food & entertainment licenses (Oct-Nov 2026) list 2680 S. KK (Verdant CBD's address); possible move"
+  "note": "Shares the 2680 S. KK entrance with Verdant CBD (Ben, Nov. 16)"
  },
  {
   "name": "JB Nails & Spa",
@@ -1489,7 +1487,7 @@
   "lat": 42.99404,
   "lon": -87.89336,
   "website": "https://landmarkcu.com/atm-branch-locations/bay-view/",
-  "verify": true
+  "note": "Same building as Classic Slice (Ben, Nov. 16)"
  },
  {
   "name": "Landmark Family Restaurant",
@@ -2578,15 +2576,6 @@
   "facebook": "twistedpathmke"
  },
  {
-  "name": "Un Cafecito",
-  "type": "Cafe",
-  "address": "2899 S. Kinnickinnic Ave.",
-  "lat": 42.99206,
-  "lon": -87.88723,
-  "verify": true,
-  "note": "City food license June 2026; same address as Ventura's Taco"
- },
- {
   "name": "Unity Lutheran Church & Food Pantry",
   "type": "Church",
   "address": "1025 E. Oklahoma Ave.",
@@ -2642,8 +2631,7 @@
   "lat": 42.99191,
   "lon": -87.8875,
   "facebook": "p/Venturas-taco-100057871530939",
-  "website": "https://www.venturastacomke.com",
-  "verify": true
+  "website": "https://www.venturastacomke.com"
  },
  {
   "name": "Verdant CBD",
@@ -2652,7 +2640,7 @@
   "lat": 42.99629,
   "lon": -87.89724,
   "instagram": "shopverdant",
-  "verify": true
+  "note": "Shares the 2680 S. KK entrance with Jasher's Organic Tea House (Ben, Nov. 16)"
  },
  {
   "name": "Vermillion Counseling",
