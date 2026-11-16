@@ -2,7 +2,7 @@
  "date": "2026-11-16",
  "display_date": "Monday, November 16, 2026",
  "number": 5,
- "greeting": "Good morning, Bay View, and happy Monday. It's a frosty 30 degrees out there, but the sun takes over today with a high near 51, and the week keeps warming toward 60 by Thursday. Leaf pickup got a reprieve through Nov. 29, Rush-Mor Records is in the spotlight, and our history corner climbs St. Augustine's steeple.",
+ "greeting": "Good morning, Bay View, and happy Monday. It's a frosty 30 degrees out there, but the sun takes over today with a high near 51, and the week keeps warming toward 60 by Thursday. Rush-Mor Records is in the spotlight, Omen is plotting a Nutcracker nightmare, and our history corner climbs St. Augustine's steeple.",
  "lead_image": {
   "src": "/photos/n-bay-view-shooting-burrell-smith.jpg",
   "alt": "Milwaukee police squad cars parked on a residential street at night",
@@ -28,25 +28,6 @@
     "also": [
      "safety"
     ]
-   },
-   {
-    "title": "Milwaukee's leaf pickup now runs through Nov. 29",
-    "dek": "DPW pushed back Sunday's deadline so late-dropping trees can still be raked to the street or bagged.",
-    "body": "The city's Department of Public Works has extended fall leaf collection through Sunday, Nov. 29. The original deadline was this past Sunday, but many trees, including plenty in Bay View, are still dropping leaves.\n\nRake leaves into the street with roughly a foot of space between the pile and the curb so water can still reach the drains, or set them at the curb in paper yard bags. A live map on the city's website shows where crews are working.\n\nNeighbors told FOX6 they remember last year, when an early snow buried leaf piles and contributed to street flooding, so it's worth getting leaves out sooner rather than later.",
-    "tag": "Streets",
-    "source_name": "FOX6 News",
-    "source_url": "https://www.fox6now.com/news/milwaukee-leaf-collection-deadline-extended-through-nov-29",
-    "date": "2026-11-15",
-    "image": {
-     "src": "/photos/n-leaf-collection-extended-nov29.jpg",
-     "alt": "A large pile of raked leaves and a paper yard-waste bag at the edge of a residential street",
-     "credit": "FOX6 News",
-     "credit_url": "https://www.fox6now.com/news/milwaukee-leaf-collection-deadline-extended-through-nov-29"
-    },
-    "citywide": true,
-    "also": [
-     "city"
-    ]
    }
   ],
   "openings": [
@@ -68,24 +49,7 @@
   ],
   "development": [],
   "streets": [],
-  "schools": [
-   {
-    "title": "MPS Great Schools committee holds its last scheduled meeting tonight",
-    "dek": "The panel is drafting school-closure criteria and building recommendations. It meets 6-8 p.m. at North Division.",
-    "body": "The Milwaukee Public Schools Great Schools Advisory Committee meets tonight, Monday, Nov. 16, from 6 to 8 p.m. at North Division High School, 1011 W. Center St. It is the last meeting on the committee's current schedule, and the public can attend.\n\nMPS formed the committee to come up with criteria for closing schools, recommend specific schools to close and suggest where the district should build. Final decisions stay with the superintendent and the school board.\n\nThose recommendations could reach any MPS building, including the ones Bay View families use, so tonight is a chance to see where the work stands. Visitors can also tour recent improvements at North Division.",
-    "tag": "Schools",
-    "source_name": "Milwaukee Neighborhood News Service",
-    "source_url": "https://milwaukeenns.org/2026/11/15/5-things-to-know-and-do-the-week-of-nov-16/",
-    "date": "2026-11-15",
-    "image": {
-     "src": "/photos/n-great-schools-final-meeting.jpg",
-     "alt": "Audience members watching a presentation at an MPS Great Schools Advisory Committee meeting",
-     "credit": "Jonathan Aguilar / Milwaukee Neighborhood News Service / CatchLight Local",
-     "credit_url": "https://milwaukeenns.org/2026/11/15/5-things-to-know-and-do-the-week-of-nov-16/"
-    },
-    "citywide": true
-   }
-  ],
+  "schools": [],
   "parks": [],
   "protests": [],
   "safety": [],
@@ -185,21 +149,6 @@
   ]
  },
  "buzz": [
-  {
-   "kicker": "Drama on Logan",
-   "headline": "Ticket blitz: every car on one Logan Ave. block got a citation",
-   "body": "A neighbor posted Saturday morning that their son walked out to find a parking ticket on every single car on their stretch of Logan Avenue, with no clue why. The post drew more than 120 comments, with neighbors trading theories and asking whether some sign or rule had changed overnight. The city hasn't said what prompted it; if you got one, the ticket itself lists the violation and how to contest it.",
-   "who": "Dave R.",
-   "where": "Bay View Town Hall (Facebook)",
-   "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29135590459417126/",
-   "tone": "hot",
-   "image": {
-    "src": "/photos/bz-parking-ticket-stock.jpg",
-    "alt": "A yellow parking ticket tucked under a windshield wiper (stock photo)",
-    "credit": "ThorRune, public domain, via Wikimedia Commons",
-    "credit_url": "https://commons.wikimedia.org/wiki/File:Parking_ticket.JPG"
-   }
-  },
   {
    "kicker": "Spotted",
    "headline": "Omen promises a 'Nutcracker Nightmare' for Small Business Saturday",
@@ -500,15 +449,6 @@
    "link": "https://www.instagram.com/p/Dfqdm95tCUO/",
    "kind": "Food",
    "desc": "The Lincoln Warehouse distillery kicks off its seasonal chai nog, by the glass in the tasting room or by the bottle."
-  },
-  {
-   "day": "Fri. Nov. 20",
-   "when": "Afternoon",
-   "title": "Chai nog season opens at Twisted Path",
-   "where": "Twisted Path Distillery, Lincoln Warehouse, 2018 S. 1st St.",
-   "link": "https://www.instagram.com/p/Dfqdm95tCUO/",
-   "kind": "Food",
-   "desc": "The distillery starts pouring its seasonal chai nog in the tasting room and sells limited 750 ml bottles for Thanksgiving; 21+."
   },
   {
    "day": "Fri. Nov. 20",
