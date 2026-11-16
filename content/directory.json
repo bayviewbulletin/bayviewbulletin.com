@@ -151,6 +151,15 @@
   "facebook": "babesicecreamshop"
  },
  {
+  "name": "The Backyard",
+  "type": "Tavern",
+  "address": "2155 S. Kinnickinnic Ave.",
+  "lat": 43.00539,
+  "lon": -87.90633,
+  "links_checked": 1,
+  "social_note": "Website thebackyardmke.com blocked (403); Facebook theBACKYARDpubMKE listed by Urban Milwaukee, not confirmed (checked Nov. 16)"
+ },
+ {
   "name": "Badger Tire & Auto",
   "type": "Tires & auto repair",
   "address": "1130 E. Oklahoma Ave.",
@@ -461,7 +470,9 @@
   "address": "2011 S. 1st St.",
   "lat": 43.00733,
   "lon": -87.91244,
-  "website": "https://bridgewatermke.com/"
+  "website": "https://bridgewatermke.com/",
+  "instagram": "bridgewatermke",
+  "facebook": "thebridgewatermoderngrill"
  },
  {
   "name": "The Bubbler & Vinchi's Pizza",
@@ -926,8 +937,7 @@
   "lon": -87.89413,
   "website": "https://www.visiterth.com",
   "instagram": "erth_cbd",
-  "facebook": "ERTHDISPENSARY",
-  "verify": true
+  "facebook": "ERTHDISPENSARY"
  },
  {
   "name": "EsterEv",
@@ -1371,7 +1381,9 @@
   "address": "2690 S. Kinnickinnic Ave.",
   "lat": 42.99617,
   "lon": -87.89701,
-  "instagram": "jashersorganicteahouse"
+  "instagram": "jashersorganicteahouse",
+  "verify": true,
+  "note": "City food & entertainment licenses (Oct-Nov 2026) list 2680 S. KK (Verdant CBD's address); possible move"
  },
  {
   "name": "JB Nails & Spa",
@@ -1407,7 +1419,6 @@
   "address": "3118 S. Chase Ave.",
   "lat": 42.98773,
   "lon": -87.909,
-  "verify": true,
   "links_checked": 1,
   "social_note": "No website or social accounts found (checked Nov. 13)"
  },
@@ -1575,7 +1586,9 @@
   "lat": 43.00458,
   "lon": -87.90576,
   "website": "https://macspetdepotbarkery.com/",
-  "note": "Wisconsin pet store chain"
+  "note": "Wisconsin pet store chain",
+  "instagram": "macspetdepotbarkery",
+  "facebook": "macspetdepotbarkery"
  },
  {
   "name": "Maedke Chiropractic",
@@ -1615,15 +1628,6 @@
   "website": "https://meltchocolates.us/",
   "instagram": "meltchocolatesltd",
   "facebook": "meltchocolatesltd"
- },
- {
-  "name": "Milwaukee Aikido Club",
-  "type": "Aikido",
-  "address": "2235 S. Kinnickinnic Ave.",
-  "lat": 43.00415,
-  "lon": -87.90532,
-  "website": "http://www.milwaukeeaikido.org",
-  "verify": true
  },
  {
   "name": "Milwaukee Brewing Co. Taproom",
@@ -2036,6 +2040,15 @@
   "note": "Tea company headquarters"
  },
  {
+  "name": "Rollup MKE",
+  "type": "Vietnamese spring rolls & noodle bowls",
+  "address": "2144 S. Kinnickinnic Ave.",
+  "lat": 43.00598,
+  "lon": -87.90662,
+  "instagram": "rollup_mke",
+  "note": "Opened Jan 2025; shares space with Mochinut"
+ },
+ {
   "name": "Room Service",
   "type": "Restaurant",
   "address": "2159 S. Kinnickinnic Ave.",
@@ -2302,11 +2315,11 @@
  {
   "name": "St. Francis Animal Hospital",
   "type": "Veterinarian",
-  "address": "3060 S. Howell Ave.",
-  "lat": 42.9895,
-  "lon": -87.9043,
+  "address": "3860 S. Howell Ave.",
+  "lat": 42.97446,
+  "lon": -87.90945,
   "website": "https://www.stfrancisvetmilwaukee.com/",
-  "verify": true
+  "facebook": "168236139860169"
  },
  {
   "name": "St. Lucas Lutheran Church",
@@ -2399,7 +2412,8 @@
   "lat": 43.00186,
   "lon": -87.90376,
   "facebook": "sushiyukibay",
-  "website": "https://sushiyukibayview.com"
+  "website": "https://sushiyukibayview.com",
+  "instagram": "sushiyukibay"
  },
  {
   "name": "Swan Song",
@@ -2537,6 +2551,15 @@
   "lon": -87.8854
  },
  {
+  "name": "Tri City National Bank (Bay View)",
+  "type": "Bank",
+  "address": "250 W. Holt Ave.",
+  "lat": 42.98247,
+  "lon": -87.91302,
+  "website": "https://tcnb.com/bay-view-holt-ave-inside-pick-n-save.html",
+  "note": "Inside Pick 'n Save"
+ },
+ {
   "name": "Trowbridge Street School",
   "type": "School",
   "address": "1943 E. Trowbridge St.",
@@ -2553,6 +2576,15 @@
   "instagram": "twistedpathdistillery",
   "website": "https://www.twistedpathdistillery.com",
   "facebook": "twistedpathmke"
+ },
+ {
+  "name": "Un Cafecito",
+  "type": "Cafe",
+  "address": "2899 S. Kinnickinnic Ave.",
+  "lat": 42.99206,
+  "lon": -87.88723,
+  "verify": true,
+  "note": "City food license June 2026; same address as Ventura's Taco"
  },
  {
   "name": "Unity Lutheran Church & Food Pantry",
@@ -2610,7 +2642,8 @@
   "lat": 42.99191,
   "lon": -87.8875,
   "facebook": "p/Venturas-taco-100057871530939",
-  "website": "https://www.venturastacomke.com"
+  "website": "https://www.venturastacomke.com",
+  "verify": true
  },
  {
   "name": "Verdant CBD",
@@ -2618,7 +2651,8 @@
   "address": "2680 S. Kinnickinnic Ave.",
   "lat": 42.99629,
   "lon": -87.89724,
-  "instagram": "shopverdant"
+  "instagram": "shopverdant",
+  "verify": true
  },
  {
   "name": "Vermillion Counseling",
