@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#1F4E79"/><circle cx="46" cy="44" r="11" fill="#C9541F"/><rect x="0" y="44" width="64" height="20" fill="#1F4E79"/><path d="M6 47 Q 16 43 26 47 T 46 47 T 66 47" stroke="#FFFFFF" stroke-width="2.5" fill="none" opacity=".85"/><path d="M6 53 Q 16 49 26 53 T 46 53 T 66 53" stroke="#FFFFFF" stroke-width="2" fill="none" opacity=".5"/><text x="8" y="40" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="34" fill="#FFFFFF">BV</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<defs><clipPath id="r"><rect width="64" height="64" rx="13"/></clipPath></defs><g clip-path="url(#r)"><rect width="64" height="64" fill="#1F4E79"/>
+<circle cx="32" cy="41" r="13" fill="#C9541F"/>
+<rect x="0" y="41" width="64" height="23" fill="#1F4E79"/>
+<g fill="none" stroke="#FFFFFF" stroke-linecap="round">
+<path d="M9 36 Q32 12 55 36" stroke-width="3.2"/>
+<path d="M6 36 H58" stroke-width="3"/>
+<path d="M17 36 V29.6 M24.5 36 V25.8 M32 36 V24.5 M39.5 36 V25.8 M47 36 V29.6" stroke-width="1.6"/>
+<path d="M14 36 V41 M50 36 V41" stroke-width="2.4"/>
+<path d="M8 47 q4 -2.4 8 0 t8 0 t8 0 t8 0 t8 0 t8 0" stroke-width="2.2" opacity=".85"/>
+<path d="M12 54 q4 -2.4 8 0 t8 0 t8 0 t8 0 t8 0" stroke-width="1.8" opacity=".5"/>
+</g>
+</g></svg>

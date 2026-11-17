@@ -145,9 +145,9 @@ def sunrise_sunset(day, lat=42.99, lon=-87.89, tz=-6):
 
 
 CSS = """
-:root{--paper:#FFFFFF;--ink:#121212;--muted:#5C6066;--rule:#E3E1DC;--soft:#F6F4EF;--lake:#1F4E79;--lake-soft:#E8EFF6;--alert:#B5361B;--warm:#C9541F;--warm-soft:#FBEDE3;
+:root{--paper:#FFFFFF;--ink:#121212;--muted:#5C6066;--rule:#E3E1DC;--soft:#F6F4EF;--lake:#1F4E79;--lake-soft:#E8EFF6;--warm:#C9541F;--warm-soft:#FBEDE3;--buzz:#FFE14D;--buzz-ink:#111111;--buzz-muted:#4A4A4A;--hot:#D7261E;--on-color:#FFFFFF;
 --serif:"Source Serif 4",Georgia,serif;--plate:"Playfair Display",Georgia,serif;--sans:"Source Sans 3","Helvetica Neue",Arial,sans-serif;color-scheme:light}
-@media (prefers-color-scheme:dark){:root{--paper:#111315;--ink:#ECEAE4;--muted:#A1A6AD;--rule:#2A2E33;--soft:#1A1D21;--lake:#8DBDE3;--lake-soft:#17232F;--alert:#F08C70;--warm:#F29A55;--warm-soft:#2B1E16;color-scheme:dark}}
+@media (prefers-color-scheme:dark){:root{--paper:#111315;--ink:#ECEAE4;--muted:#A1A6AD;--rule:#2A2E33;--soft:#1A1D21;--lake:#8DBDE3;--lake-soft:#17232F;--warm:#F29A55;--warm-soft:#2B1E16;color-scheme:dark}}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.5 var(--sans)}
 a{color:inherit;text-decoration:none}a:hover h2,a:hover h3,a:hover .hl{text-decoration:underline;text-underline-offset:3px}
 a:focus-visible{outline:3px solid var(--lake);outline-offset:2px}img{display:block;max-width:100%}
@@ -168,33 +168,33 @@ nav.sections ul.end{-webkit-mask-image:none;mask-image:none}}
 .util.alert .v{color:var(--warm)}.util .k::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--lake);margin-right:6px;vertical-align:1px}.util.warm .k::before{background:var(--warm)}
 @media(max-width:900px){.utils{grid-template-columns:repeat(3,1fr)}.util:nth-child(3n){border-right:0}.util:nth-child(-n+3){border-bottom:1px solid var(--rule)}}
 .school{border-top:1px solid var(--rule);padding:14px 0}.school h2{font:700 22px/1.2 var(--serif);margin:0 0 4px}.school ul{margin:8px 0;padding-left:18px;font:15px/1.6 var(--sans)}.school .src{font:13px var(--sans);color:var(--muted)}
-.buzz{margin:26px 0;background:#FFE14D;color:#111;border:3px solid #111;box-shadow:6px 6px 0 #111;padding:16px 18px 18px}
-.buzz header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:3px solid #111;padding-bottom:8px;margin-bottom:14px}
+.buzz{margin:26px 0;background:var(--buzz);color:var(--buzz-ink);border:3px solid var(--buzz-ink);box-shadow:6px 6px 0 var(--buzz-ink);padding:16px 18px 18px}
+.buzz header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:3px solid var(--buzz-ink);padding-bottom:8px;margin-bottom:14px}
 .buzz header h2{font:900 italic 34px/1 var(--sans);text-transform:uppercase;letter-spacing:-.01em;margin:0}
-.buzz header h2 span{background:#D7261E;color:#fff;padding:0 8px;transform:skew(-6deg);display:inline-block}
+.buzz header h2 span{background:var(--hot);color:var(--on-color);padding:0 8px;transform:skew(-6deg);display:inline-block}
 .buzz header p{margin:0;font:700 13px var(--sans);text-transform:uppercase;letter-spacing:.06em}
-.buzz header a{margin-left:auto;color:#111;font:800 14px var(--sans);text-decoration:underline}
+.buzz header a{margin-left:auto;color:var(--buzz-ink);font:800 14px var(--sans);text-decoration:underline}
 .bzgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
-.bz{position:relative;background:#fff;border:2px solid #111;padding:12px 14px 12px}
+.bz{position:relative;background:var(--on-color);border:2px solid var(--buzz-ink);padding:12px 14px 12px}
 .bz.hot{background:#FFF4F3}
-.bzimg{margin:-12px -14px 10px}.bzimg img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-bottom:2px solid #111;filter:contrast(1.08) saturate(1.15)}.bzimg figcaption{font:11px var(--sans);color:#666;padding:3px 14px 0}.bzimg figcaption a{color:#666}
-.bz .bk{display:inline-block;background:#111;color:#FFE14D;font:900 11px var(--sans);text-transform:uppercase;letter-spacing:.1em;padding:3px 7px;margin-bottom:6px}
-.bz.hot .bk{background:#D7261E;color:#fff}
+.bzimg{margin:-12px -14px 10px}.bzimg img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-bottom:2px solid var(--buzz-ink);filter:contrast(1.08) saturate(1.15)}.bzimg figcaption{font:11px var(--sans);color:var(--buzz-muted);padding:3px 14px 0}.bzimg figcaption a{color:var(--buzz-muted)}
+.bz .bk{display:inline-block;background:var(--buzz-ink);color:var(--buzz);font:900 11px var(--sans);text-transform:uppercase;letter-spacing:.1em;padding:3px 7px;margin-bottom:6px}
+.bz.hot .bk{background:var(--hot);color:var(--on-color)}
 .bz h3{font:900 21px/1.12 var(--sans);margin:2px 0 6px;text-transform:none}
 .bz p{font:15px/1.45 var(--serif);margin:0 0 8px}
-.bz .via{display:block;font:700 12px/1.4 var(--sans);color:#555;text-decoration:none}.bz .via:hover{text-decoration:underline}
-.stamp{position:absolute;z-index:2;top:8px;right:-6px;transform:rotate(8deg);border:2px solid #D7261E;color:#D7261E;font:900 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:2px 6px;background:#fff}
+.bz .via{display:block;font:700 12px/1.4 var(--sans);color:var(--buzz-muted);text-decoration:none}.bz .via:hover{text-decoration:underline}
+.stamp{position:absolute;z-index:2;top:8px;right:-6px;transform:rotate(8deg);border:2px solid var(--hot);color:var(--hot);font:900 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:2px 6px;background:var(--on-color)}
 .buzz.page{margin-top:10px}.bzday{font:900 15px var(--sans);text-transform:uppercase;letter-spacing:.08em;margin:18px 0 10px}
-.bznote{font:13px/1.5 var(--sans);margin:18px 0 0;color:#333}.bznote a{color:#111}
-.bztease{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:22px 0;padding:10px 14px;background:#FFE14D;color:#111;border:2px solid #111;box-shadow:4px 4px 0 #111;text-decoration:none}
+.bznote{font:13px/1.5 var(--sans);margin:18px 0 0;color:var(--buzz-muted)}.bznote a{color:var(--buzz-ink)}
+.bztease{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:22px 0;padding:10px 14px;background:var(--buzz);color:var(--buzz-ink);border:2px solid var(--buzz-ink);box-shadow:4px 4px 0 var(--buzz-ink);text-decoration:none}
 .bztease:hover .bzh{text-decoration:underline}
-.bzlogo{font:900 italic 18px/1 var(--sans);text-transform:uppercase}.bzlogo span{background:#D7261E;color:#fff;padding:0 5px;display:inline-block;transform:skew(-6deg)}
-.bzk{background:#111;color:#FFE14D;font:900 11px var(--sans);text-transform:uppercase;letter-spacing:.1em;padding:3px 7px}
+.bzlogo{font:900 italic 18px/1 var(--sans);text-transform:uppercase}.bzlogo span{background:var(--hot);color:var(--on-color);padding:0 5px;display:inline-block;transform:skew(-6deg)}
+.bzk{background:var(--buzz-ink);color:var(--buzz);font:900 11px var(--sans);text-transform:uppercase;letter-spacing:.1em;padding:3px 7px}
 .bzh{font:900 18px/1.2 var(--sans);flex:1;min-width:200px}
 .bzgo{font:800 14px var(--sans);text-decoration:underline}
-@media (prefers-color-scheme:dark){.buzz,.bz,.bz h3,.bz p{color:#111}.bz .via{color:#444}}
+@media (prefers-color-scheme:dark){.buzz,.bz,.bz h3,.bz p{color:var(--buzz-ink)}.bz .via{color:var(--buzz-muted)}}
 @media(max-width:520px){.utils{grid-template-columns:repeat(2,minmax(0,1fr))}.util{border-right:0!important;border-bottom:1px solid var(--rule)!important;padding:10px 10px 10px 0}.util:nth-child(odd){border-right:1px solid var(--rule)!important;padding-right:10px}.util:nth-child(even){padding-left:12px}.util:nth-last-child(-n+2){border-bottom:0!important}.util .v{font-size:17px}}
-.ticker{display:flex;gap:12px;align-items:center;font-size:15px;border-bottom:1px solid var(--rule);padding:10px 0;margin:0 0 18px;overflow:hidden;white-space:nowrap}.ticker b{flex:0 0 auto;font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--warm);padding:3px 7px;border-radius:2px;position:relative;z-index:1}.ticker .vp{flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent)}.ticker .track{display:inline-flex;animation:tick var(--dur,40s) linear infinite}.ticker:hover .track,.ticker:focus-within .track{animation-play-state:paused}.ticker .set{display:inline-flex}.ticker .set a{padding-right:14px;color:inherit;text-decoration:none;font-weight:600}.ticker .set a:hover{text-decoration:underline}.ticker .set a::after{content:"\\00B7";margin-left:14px;color:var(--muted);font-weight:400}@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.ticker .vp{overflow-x:auto}.ticker .track{animation:none}.ticker .set+.set{display:none}}
+.ticker{display:flex;gap:12px;align-items:center;font-size:15px;border-bottom:1px solid var(--rule);padding:10px 0;margin:0 0 18px;overflow:hidden;white-space:nowrap}.ticker b{flex:0 0 auto;font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--on-color);background:var(--warm);padding:3px 7px;border-radius:2px;position:relative;z-index:1}.ticker .vp{flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent)}.ticker .track{display:inline-flex;animation:tick var(--dur,40s) linear infinite}.ticker:hover .track,.ticker:focus-within .track{animation-play-state:paused}.ticker .set{display:inline-flex}.ticker .set a{padding-right:14px;color:inherit;text-decoration:none;font-weight:600}.ticker .set a:hover{text-decoration:underline}.ticker .set a::after{content:"\\00B7";margin-left:14px;color:var(--muted);font-weight:400}@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.ticker .vp{overflow-x:auto}.ticker .track{animation:none}.ticker .set+.set{display:none}}
 .front{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:28px;padding-bottom:24px;border-bottom:1px solid var(--ink)}
 @media(max-width:820px){.front{grid-template-columns:1fr}}
 .feature{display:block;margin:6px 0 26px;padding-bottom:22px;border-bottom:1px solid var(--ink);max-width:860px}.feature h2{font:700 34px/1.12 var(--serif);margin:6px 0 8px}.feature p{font:18px/1.5 var(--serif);margin:0 0 8px}.feature .cap{font:12px var(--sans);color:var(--muted);margin:-6px 0 10px}
@@ -235,7 +235,8 @@ footer a{color:var(--lake)}
 .pill{font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--rule);padding:3px 7px;border-radius:99px;color:var(--muted)}
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}.filters button{border:1px solid var(--ink);padding:6px 12px;border-radius:99px;font:600 14px var(--sans);background:var(--paper);color:var(--ink);cursor:pointer}.filters button:hover{background:var(--soft)}.filters button.on{background:var(--ink);color:var(--paper)}.filters button:focus-visible{outline:2px solid var(--lake);outline-offset:2px}[hidden]{display:none!important}
 .list a{display:block;padding:16px 0;border-bottom:1px solid var(--rule)}.list h3{font:700 21px/1.25 var(--serif);margin:2px 0 4px}.list p{margin:0;color:var(--muted)}
-.pagehead{font:800 34px var(--serif);margin:24px 0 2px}.topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 36px;padding-top:6px}@media(max-width:820px){.topics{grid-template-columns:1fr}}.topic{padding:18px 0 6px}.topic>h2{font:800 20px var(--serif);margin:0 0 4px;padding-top:10px;border-top:4px solid var(--lake);display:flex;justify-content:space-between;align-items:baseline}.topic.w>h2{border-top-color:var(--warm)}.topic>h2 a{font:600 14px var(--sans);color:var(--lake)}.topic.w>h2 a{color:var(--warm)}.topic .row{padding:12px 0;border-bottom:1px solid var(--rule)}.topic .row:last-child{border-bottom:0}.pagedek{color:var(--muted);margin:0 0 10px}@media(max-width:600px){.ev{grid-template-columns:64px minmax(0,1fr);gap:2px 12px;align-items:start}.ev img{grid-row:1/span 2;width:64px;height:48px}.ev .t{grid-column:2;font-size:14px}.ev>div{grid-column:2}.ev .pill{display:none}.ev[style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr) auto!important}.ev[style*="grid-template-columns"]>div{grid-column:1}.ev[style*="grid-template-columns"] .pill{display:inline-block}}.filters.when{margin-bottom:0}.filters.kinds{margin-top:8px}.filters .free{border-color:var(--warm)!important}.filters button.on.free{background:var(--warm)!important;color:#fff!important;border-color:var(--warm)!important}@media(max-width:520px){.filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.filters::-webkit-scrollbar{display:none}.filters button{flex:0 0 auto}}.corr{font:15px/1.5 var(--sans);background:var(--soft);border-left:4px solid var(--warm);padding:10px 14px;margin:18px 0}.story .body h2{font:800 20px var(--serif);margin:26px 0 6px}
+.pagehead{font:800 34px var(--serif);margin:24px 0 2px}.topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 36px;padding-top:6px}@media(max-width:820px){.topics{grid-template-columns:1fr}}.topic{padding:18px 0 6px}.topic>h2{font:800 20px var(--serif);margin:0 0 4px;padding-top:10px;border-top:4px solid var(--lake);display:flex;justify-content:space-between;align-items:baseline}.topic.w>h2{border-top-color:var(--warm)}.topic>h2 a{font:600 14px var(--sans);color:var(--lake)}.topic.w>h2 a{color:var(--warm)}.topic .row{padding:12px 0;border-bottom:1px solid var(--rule)}.topic .row:last-child{border-bottom:0}.pagedek{color:var(--muted);margin:0 0 10px}@media(max-width:600px){.ev{grid-template-columns:64px minmax(0,1fr);gap:2px 12px;align-items:start}.ev img{grid-row:1/span 2;width:64px;height:48px}.ev .t{grid-column:2;font-size:14px}.ev>div{grid-column:2}.ev .pill{display:none}.ev[style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr) auto!important}.ev[style*="grid-template-columns"]>div{grid-column:1}.ev[style*="grid-template-columns"] .pill{display:inline-block}}.filters.when{margin-bottom:0}.filters.kinds{margin-top:8px}.filters .free{border-color:var(--warm)!important}.filters button.on.free{background:var(--warm)!important;color:var(--on-color)!important;border-color:var(--warm)!important}@media(max-width:520px){.filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.filters::-webkit-scrollbar{display:none}.filters button{flex:0 0 auto}}.corr{font:15px/1.5 var(--sans);background:var(--soft);border-left:4px solid var(--warm);padding:10px 14px;margin:18px 0}.story .body h2{font:800 20px var(--serif);margin:26px 0 6px}
+.dateline .mk{width:26px;height:26px;display:block}.foot-brand{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:8px;font:700 15px var(--sans);color:var(--ink)}.foot-brand img{width:28px;height:28px}.foot-brand em{font:italic 400 15px var(--serif);color:var(--muted)}
 """
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
          '<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700;8..60,800&display=swap" rel="stylesheet">')
@@ -278,23 +279,23 @@ def make_ticker(d):
 
 def shell(title, body, d, active="Home", og=None, path="/", head=""):
     og = og or {}
-    ogt, ogd = og.get("title", title), og.get("desc", "Daily news for Milwaukee's Bay View neighborhood, every morning.")
+    ogt, ogd = og.get("title", title), og.get("desc", "Bay View's morning paper: news, events and neighborhood talk for Milwaukee's Bay View, every morning by 6:30.")
     ogi = og.get("image") or SITE + "/og-default.png"
     meta = (f'<meta name="description" content="{e(ogd)}"><link rel="canonical" href="{SITE}{e(path)}">'
             f'<meta property="og:site_name" content="The Bay View Bulletin"><meta property="og:type" content="{og.get("type", "website")}">'
             f'<meta property="og:title" content="{e(ogt)}"><meta property="og:description" content="{e(ogd)}"><meta property="og:image" content="{e(ogi)}">'
             f'<meta property="og:url" content="{SITE}{e(path)}"><meta name="twitter:card" content="summary_large_image">'
-            '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">'
+            '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">'
             '<meta name="theme-color" content="#1F4E79"><link rel="alternate" type="application/rss+xml" title="The Bay View Bulletin" href="/feed.xml">' + head)
     nav = "".join(f'<li><a href="{h}"{" class=on" if n == active else ""}>{n}</a></li>' for n, h in NAV)
     nav += f'<li class="find"><a href="/search.html" aria-label="Search" title="Search"{" class=on" if active == "Search" else ""}>{SEARCH_ICON}</a></li>'
     return ext_links(f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)}</title>{meta}{FONTS}<link rel="stylesheet" href="/assets/v2.css"><script data-goatcounter="https://bayviewbulletin.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></head><body>
-<header class="plate wrap"><div class="dateline"><span>{e(d['display_date'])}</span><span>Bay View, Milwaukee</span></div>
+<header class="plate wrap"><div class="dateline"><span>{e(d['display_date'])}</span><a href="/" aria-label="The Bay View Bulletin home"><img class="mk" src="/mark.svg" alt="" width="26" height="26"></a><span>Bay View, Milwaukee</span></div>
 <div class="rule"></div><h1><a href="/">The Bay View Bulletin</a></h1><p class="tag">Bay View's morning paper</p></header>
 <nav class="sections" aria-label="Sections"><ul>{nav}</ul></nav>
 {TICKER}<div class="wrap">{body}</div>
-<footer><div class="wrap">Covering Bay View from the harbor and Jones Island to Holt and Morgan avenues, I-43 to the lake.<br>
+<footer><div class="wrap"><div class="foot-brand"><img src="/mark.svg" alt="" width="28" height="28"><span>The Bay View Bulletin</span><em>Bay View's morning paper</em></div>News, events and neighborhood talk, every morning by 6:30. No ads, no paywall.<br>Covering Bay View from the harbor and Jones Island to Holt and Morgan avenues, I-43 to the lake.<br>
 Every item links to the original reporting. Photos belong to their credited owners. <a href="{TIPS}">Send a tip</a> · <a href="/about.html">About</a> · <a href="/corrections.html">Corrections</a> · <a href="/schools.html">School days off</a> · <a href="/history.html">History</a> · <a href="/archive.html">Archive</a></div></footer>
 <script>(function(){{var n=document.querySelector('nav.sections ul');if(!n)return;function f(){{n.classList.toggle('end',n.scrollLeft+n.clientWidth>=n.scrollWidth-4)}}n.addEventListener('scroll',f,{{passive:true}});f();var o=n.querySelector('a.on');if(o&&o.offsetLeft+o.offsetWidth>n.clientWidth)n.scrollLeft=o.offsetLeft-20}})();</script><script>document.addEventListener('click',function(ev){{var a=ev.target.closest&&ev.target.closest('a[href]');if(a&&a.host&&a.host!==location.host){{a.target='_blank';a.rel='noopener'}}}},true);</script></body></html>""")
 
@@ -549,7 +550,7 @@ def build_one(d, newest):
     (OUT / "issues" / f'{d["date"]}.html').write_text(shell("The Bay View Bulletin · " + d["display_date"], home, d))
     if not newest:
         return
-    (OUT / "index.html").write_text(shell("The Bay View Bulletin", home, d, "Home", {"title": "The Bay View Bulletin · " + d["display_date"], "desc": lead["title"]}, "/"))
+    (OUT / "index.html").write_text(shell("The Bay View Bulletin · Bay View's morning paper", home, d, "Home", {"title": "The Bay View Bulletin · " + d["display_date"], "desc": lead["title"]}, "/"))
 
     # events
     cal, cur = [], None
@@ -666,7 +667,7 @@ def build():
     about = f"""<article class="story"><h1>Bay View's morning paper</h1><div class="body">
 <p>The Bay View Bulletin is a free daily guide to what's happening in Milwaukee's Bay View neighborhood, updated every morning by 6:30. It's a neighborhood project, not a company: no ads, no paywall and no paid placements.</p>
 <h2>Who's behind it</h2>
-<p>The Bulletin is run by Bay View resident Ben Wilson, who serves as its editor. He sets what we cover and how, decides anything sensitive, and answers for every mistake.</p>
+<p>The Bulletin is an independent project run by a Bay View resident who serves as its editor: setting what we cover and how, deciding anything sensitive, and answering for every mistake. The easiest way to reach the editor is the tip form below.</p>
 <h2>How it's made</h2>
 <p>We don't have reporters at meetings or crime scenes. Each morning's edition is put together with the help of AI tools, which follow the editor's written rules. They read local news outlets, city and school sources, elected officials' announcements, public records, and the public social media posts of Bay View businesses and neighbors. Then they summarize what's new in our own words, link every item to its original source and credit every photo. Anything sensitive, uncertain or that could hurt someone is held back for the editor to review before it runs. If something here matters to you, follow the link and read the original reporting, and please support the outlets that do that work.</p>
 <h2>Where we cover</h2>
@@ -724,11 +725,34 @@ q.addEventListener('input',go);const p=new URLSearchParams(location.search).get(
     (OUT / "search.html").write_text(shell("Search · The Bay View Bulletin", search, d, "Search", None, "/search.html"))
     # Ben, Nov. 12: the map is no longer a feature of the site; old links go to the front page.
     (OUT / "map.html").write_text('<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=/"><link rel="canonical" href="/"><title>The Bay View Bulletin</title><a href="/">The Bay View Bulletin</a>')
+    # Nov. 17: every page gets its own canonical URL and og:url, and section pages get their own link-preview image.
+    og_for = {"/events.html": "events", "/buzz.html": "buzz", "/spotlight.html": "spotlight", "/history.html": "history", "/section/food.html": "food",
+              "/section/food-drink.html": "food", "/section/fish-fry.html": "food", "/section/city.html": "city", "/section/city-hall.html": "city",
+              "/section/streets.html": "city", "/section/safety.html": "safety", "/schools.html": "schools", "/section/schools.html": "schools",
+              "/directory.html": "directory", "/section/business-spotlight.html": "spotlight"}
+    for f in OUT.rglob("*.html"):
+        rel = "/" + str(f.relative_to(OUT))
+        if rel.endswith("/index.html"):
+            rel = rel[:-len("index.html")]
+        h = f.read_text()
+        if 'rel="canonical"' not in h or "http-equiv=\"refresh\"" in h:
+            continue
+        if rel == "/404.html":
+            h = re.sub(r'<link rel="canonical" href="[^"]*">', '<meta name="robots" content="noindex">', h, count=1)
+        else:
+            h = re.sub(r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{SITE}{rel}">', h, count=1)
+            h = re.sub(r'<meta property="og:url" content="[^"]*">', f'<meta property="og:url" content="{SITE}{rel}">', h, count=1)
+        if rel in og_for:
+            h = h.replace(f'<meta property="og:image" content="{SITE}/og-default.png">', f'<meta property="og:image" content="{SITE}/og/{og_for[rel]}.png">', 1)
+        f.write_text(h)
+    (OUT / "site.webmanifest").write_text(json.dumps({"name": "The Bay View Bulletin", "short_name": "Bulletin", "description": "Bay View's morning paper",
+        "start_url": "/", "display": "browser", "background_color": "#FFFFFF", "theme_color": "#1F4E79",
+        "icons": [{"src": "/mark-192.png", "sizes": "192x192", "type": "image/png"}, {"src": "/mark-512.png", "sizes": "512x512", "type": "image/png"}]}, indent=1))
     # site basics (Nov. 17): 404 page, RSS feed, sitemap, robots.txt
     nf = (f'<h1 class="pagehead">Page not found</h1><p class="pagedek">That page isn&rsquo;t here. It may have moved, or the link may be mistyped.</p>'
           '<form action="/search.html" style="margin:18px 0"><input name="q" type="search" placeholder="Search the Bulletin" style="width:100%;max-width:520px;font:400 18px var(--sans);padding:10px 12px;border:2px solid var(--ink);border-radius:4px;background:var(--paper);color:var(--ink)"></form>'
           '<p><a class="btn" href="/">Today&rsquo;s front page</a></p><p class="pagedek" style="margin-top:14px"><a href="/events.html" style="color:var(--lake)">Events</a> · <a href="/buzz.html" style="color:var(--lake)">Buzz</a> · <a href="/spotlight.html" style="color:var(--lake)">Spotlight</a> · <a href="/archive.html" style="color:var(--lake)">Archive</a></p>')
-    (OUT / "404.html").write_text(shell("Page not found · The Bay View Bulletin", nf, d, ""))
+    (OUT / "404.html").write_text(re.sub(r'<link rel="canonical" href="[^"]*">', '<meta name="robots" content="noindex">', shell("Page not found · The Bay View Bulletin", nf, d, ""), count=1))
     from email.utils import format_datetime
     def rfc(dstr):
         return format_datetime(dt.datetime.fromisoformat(dstr + "T06:00:00" + ctoff(dstr)))
