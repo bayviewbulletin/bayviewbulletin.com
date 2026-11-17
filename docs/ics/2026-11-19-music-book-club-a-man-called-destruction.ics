@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-11-19-music-book-club-a-man-called-destruction@bayviewbulletin.com
-DTSTAMP:20261117T173732Z
+DTSTAMP:20261117T180446Z
 DTSTART;TZID=America/Chicago:20261119T180000
 DTEND;TZID=America/Chicago:20261119T200000
 SUMMARY:Music Book Club: A Man Called Destruction

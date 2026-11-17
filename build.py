@@ -208,11 +208,11 @@ nav.sections li.find{border-left:1px solid var(--rule);padding-left:22px;margin-
 @media(max-width:700px){nav.sections ul{justify-content:flex-start;gap:22px;padding-right:20px}
 nav.sections ul{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 48px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 48px),transparent)}
 nav.sections ul.end{-webkit-mask-image:none;mask-image:none}}
-.utils{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-bottom:1px solid var(--rule);margin-bottom:22px}
+.utils{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--rule);margin-bottom:22px}
 .util{padding:12px 14px;border-right:1px solid var(--rule);display:grid;gap:2px;align-content:start}.util:last-child{border-right:0}
 .util .k{font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.util .v{font:700 17px var(--serif)}.util .s{font-size:13px;color:var(--muted)}
 .util.alert .v{color:var(--warm)}.util .k::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--lake);margin-right:6px;vertical-align:1px}.util.warm .k::before{background:var(--warm)}
-@media(max-width:900px){.utils{grid-template-columns:repeat(3,1fr)}.util:nth-child(3n){border-right:0}.util:nth-child(-n+3){border-bottom:1px solid var(--rule)}}
+@media(max-width:900px){.utils{grid-template-columns:repeat(2,minmax(0,1fr))}.util:nth-child(2n){border-right:0}.util:nth-child(-n+2){border-bottom:1px solid var(--rule)}}
 .school{border-top:1px solid var(--rule);padding:14px 0}.school h2{font:700 22px/1.2 var(--serif);margin:0 0 4px}.school ul{margin:8px 0;padding-left:18px;font:15px/1.6 var(--sans)}.school .src{font:13px var(--sans);color:var(--muted)}
 .buzz{margin:26px 0;background:var(--buzz);color:var(--buzz-ink);border:3px solid var(--buzz-ink);box-shadow:6px 6px 0 var(--buzz-ink);padding:16px 18px 18px}
 .buzz header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:3px solid var(--buzz-ink);padding-bottom:8px;margin-bottom:14px}
@@ -555,11 +555,12 @@ def build_one(d, newest):
     def ut(key, label, fallback_v, fallback_s, href=""):
         x = U.get(key) or {}
         return (label, x.get("v") or fallback_v, x.get("s") or fallback_s, x.get("class", ""), x.get("href") or href)
+    # Nov. 17 (Ben): four tiles. "Today" was dropped (events are already on the page) and Parking folded into the street tile.
+    winter = (f"Winter parking rules in {days_to_winter} days" if days_to_winter > 0 else "Winter parking rules in effect", "Dec. 1 to March 1")
+    st = U.get("pickup") or {}
     utils = [
         ut("weather", "Weather", "Today's forecast →", "National Weather Service", "https://forecast.weather.gov/MapClick.php?lat=42.99&lon=-87.89"),
-        ("Parking", f"Winter rules in {days_to_winter} days" if days_to_winter > 0 else "Winter rules in effect", "Dec 1 – Mar 1", "warm" if 0 < days_to_winter <= 7 else "", "https://city.milwaukee.gov/mpw/parking/meter"),
-        ("Today", f"{len(today_events)} things to do" if today_events else "Quiet day", "See today's list", "warm", "/events.html"),
-        ut("pickup", "Pickup & roads", "Your pickup day →", "City sanitation schedule", "https://city.milwaukee.gov/sanitation"),
+        ("Streets & parking", st.get("v") or winter[0], st.get("s") or winter[1], st.get("class", "warm" if 0 < days_to_winter <= 7 else ""), st.get("href") or "https://city.milwaukee.gov/mpw/parking/meter"),
         ut("schools", "Schools", *schools_tile(day), "/schools.html"),
         ("Sun over the lake", f"↑ {rise} · ↓ {sset}", "Bay View shoreline", "", ""),
     ]
