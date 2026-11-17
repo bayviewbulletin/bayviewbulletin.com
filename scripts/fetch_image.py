@@ -9,7 +9,7 @@ Usage:
   - a web page (business website, article) -> uses its og:image / twitter:image
   - a direct image URL (.jpg/.png/.webp, Shopify/Squarespace/WordPress CDN, etc.)
 
-Writes static/photos/<slug>.jpg (max 1600 px wide, JPEG q=82) and prints the site path
+Writes static/photos/<slug>.jpg (max 1400 px wide, progressive JPEG q=80) and prints the site path
 (/photos/<slug>.jpg) to use as image.src. Facebook pages need a login, so they can't be
 fetched here; use the business's website or Instagram instead.
 """
@@ -61,11 +61,11 @@ def main():
     img = img.convert("RGB")
     if img.width < 400:
         raise SystemExit(f"Image too small ({img.width}px wide); pick another photo")
-    if img.width > 1600:
-        img = img.resize((1600, round(img.height * 1600 / img.width)), Image.LANCZOS)
+    if img.width > 1400:
+        img = img.resize((1400, round(img.height * 1400 / img.width)), Image.LANCZOS)
     out = ROOT / "static" / "photos" / f"{slug}.jpg"
     out.parent.mkdir(parents=True, exist_ok=True)
-    img.save(out, "JPEG", quality=82, optimize=True)
+    img.save(out, "JPEG", quality=80, optimize=True, progressive=True)
     print(f"/photos/{slug}.jpg  ({img.width}x{img.height}, from {src})")
 
 

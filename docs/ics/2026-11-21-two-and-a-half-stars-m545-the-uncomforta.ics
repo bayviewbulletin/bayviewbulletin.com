@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-11-21-two-and-a-half-stars-m545-the-uncomforta@bayviewbulletin.com
-DTSTAMP:20261117T173329Z
+DTSTAMP:20261117T173659Z
 DTSTART;TZID=America/Chicago:20261121T190000
 DTEND;TZID=America/Chicago:20261121T210000
 SUMMARY:Two and a Half Stars\, M545\, The Uncomfortable Moments + Thick Needles

@@ -913,6 +913,32 @@ q.addEventListener('input',go);const p=new URLSearchParams(location.search).get(
     (OUT / "site.webmanifest").write_text(json.dumps({"name": "The Bay View Bulletin", "short_name": "Bulletin", "description": "Bay View's morning paper",
         "start_url": "/", "display": "browser", "background_color": "#FFFFFF", "theme_color": "#1F4E79",
         "icons": [{"src": "/mark-192.png", "sizes": "192x192", "type": "image/png"}, {"src": "/mark-512.png", "sizes": "512x512", "type": "image/png"}]}, indent=1))
+    # Nov. 17: phone-sized copies of every photo (640 px) and srcset on <img> tags, so phones download far less.
+    sm = OUT / "photos" / "sm"
+    sm.mkdir(exist_ok=True)
+    from PIL import Image as _Img
+    have_sm = {}
+    for f in (OUT / "photos").glob("*.jpg"):
+        try:
+            im = _Img.open(f)
+            if im.width <= 700:
+                continue
+            w0 = im.width
+            im = im.convert("RGB").resize((640, round(im.height * 640 / im.width)), _Img.LANCZOS)
+            im.save(sm / f.name, "JPEG", quality=74, optimize=True, progressive=True)
+            have_sm[f.name] = w0
+        except Exception:
+            pass
+    def _srcset(m):
+        tag, name = m.group(0), m.group(1)
+        if name not in have_sm or "srcset=" in tag:
+            return tag
+        return tag[:-1] + f' srcset="/photos/sm/{name} 640w, /photos/{name} {have_sm[name]}w" sizes="(max-width: 700px) 100vw, 700px">'
+    for f in OUT.rglob("*.html"):
+        h = f.read_text()
+        h2 = re.sub(r'<img\b[^>]*?src="/photos/([^"/]+\.jpg)"[^>]*>', _srcset, h)
+        if h2 != h:
+            f.write_text(h2)
     # site basics (Nov. 17): 404 page, RSS feed, sitemap, robots.txt
     nf = (f'<h1 class="pagehead">Page not found</h1><p class="pagedek">That page isn&rsquo;t here. It may have moved, or the link may be mistyped.</p>'
           '<form action="/search.html" style="margin:18px 0"><input name="q" type="search" placeholder="Search the Bulletin" style="width:100%;max-width:520px;font:400 18px var(--sans);padding:10px 12px;border:2px solid var(--ink);border-radius:4px;background:var(--paper);color:var(--ink)"></form>'

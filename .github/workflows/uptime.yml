@@ -1,0 +1,25 @@
+name: Uptime and freshness
+on:
+  schedule:
+    - cron: "17 * * * *"   # every hour at :17
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Site is up, HTTPS is valid, and today's edition is published
+        run: |
+          set -e
+          code=$(curl -s -o page.html -w '%{http_code}' --max-time 30 https://bayviewbulletin.com/)
+          echo "HTTP $code"
+          test "$code" = "200" || { echo "::error::bayviewbulletin.com returned HTTP $code"; exit 1; }
+          end=$(echo | openssl s_client -servername bayviewbulletin.com -connect bayviewbulletin.com:443 2>/dev/null | openssl x509 -noout -enddate | cut -d= -f2)
+          days=$(( ( $(date -d "$end" +%s) - $(date +%s) ) / 86400 ))
+          echo "Certificate expires $end ($days days)"
+          test "$days" -ge 14 || { echo "::error::HTTPS certificate expires in $days days"; exit 1; }
+          hour=$(TZ=America/Chicago date +%-H)
+          today=$(TZ=America/Chicago date '+%A, %B %-d, %Y' | tr '[:lower:]' '[:upper:]')
+          if [ "$hour" -ge 7 ]; then
+            grep -qi "$today" page.html || { echo "::error::Today's edition ($today) isn't on the homepage yet"; exit 1; }
+          fi
+          echo "OK"
