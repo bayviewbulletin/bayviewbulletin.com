@@ -36,21 +36,25 @@ def dek(it):
 WARM = {"Business spotlight", "Food & Drink", "Ways to help", "Parks", "Fish fry", "Pets"}
 
 
+CM = lambda f: "https://commons.wikimedia.org/wiki/Special:FilePath/" + f.replace(" ", "_") + "?width=500"
+VENUES = [("Cactus Club", CM("Milwaukee January 2025 04 (Cactus Club).jpg")), ("Puddler", CM("2024 08 07 Puddler's Hall 1.jpg")),
+          ("Library", CM("Bay View Branch.jpg")), ("Garibaldi", CM("Milwaukee January 2025 16 (S. Kinnickinnic Avenue).jpg")),
+          ("Kinnickinnic", CM("Milwaukee January 2025 16 (S. Kinnickinnic Avenue).jpg")), ("Methodist", CM("SouthShore Park 1.jpg")),
+          ("", CM("Milwaukee January 2025 16 (S. Kinnickinnic Avenue).jpg"))]
+
+
 def venue_img(ev):
-    """The event's own flyer/photo, or None (the page then shows a dated tile in the event type's color)."""
-    return ev.get("image") or None
-
-
-KIND_TONE = {"Music": "k1", "Social": "k2", "Food": "k3", "Shopping": "k3", "Family": "k4", "Community": "k5", "Give": "k4", "Civic": "k5"}
+    """The event's own flyer/photo, else a photo of its venue (Ben, Nov. 17: always show a photo, never a text tile)."""
+    if ev.get("image"):
+        return ev["image"]
+    for k, u in VENUES:
+        if k in ev["where"] or k in ev["title"]:
+            return u
 
 
 def ev_thumb(ev, today, cls=""):
-    src = venue_img(ev)
-    if src:
-        return f'<img src="{e(src)}" alt="" loading="lazy"{(" class=" + chr(34) + cls + chr(34)) if cls else ""}>'
-    dd = ev_date(ev, today)
-    return (f'<span class="evtile {KIND_TONE.get(ev.get("kind"), "k5")}{(" " + cls) if cls else ""}" aria-hidden="true">'
-            f'<b>{dd.strftime("%a").upper()}</b><i>{dd.day}</i><small>{e(ev.get("kind", ""))}</small></span>')
+    return f'<img src="{e(venue_img(ev))}" alt="" loading="lazy"{(" class=" + chr(34) + cls + chr(34)) if cls else ""}>'
+
 
 
 MONTHS = {m: i for i, m in enumerate(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], 1)}
@@ -577,7 +581,9 @@ def build_one(d, newest):
         brief_items.append({"text": "Top story: " + lead["title"] + ".", "url": lead["url"]})
         eve = [ev for ev in today_events if re.search(r"\b([5-9]|1[01])(:\d\d)?\s*(pm|p\.m\.)", ev["when"], re.I)] or today_events
         if eve:
-            brief_items.append({"text": f'Tonight: {eve[0]["title"]} at {eve[0]["where"].split(",")[0]}' + (f', plus {len(today_events) - 1} more things to do today.' if len(today_events) > 1 else "."), "url": "/events.html#today"})
+            _n = len(today_events)
+            brief_items.append({"text": (f'Today: {_n} things to do, including {eve[0]["title"]} at {eve[0]["where"].split(",")[0]} ({eve[0]["when"]}).' if _n > 1
+                                         else f'Today: {eve[0]["title"]} at {eve[0]["where"].split(",")[0]} ({eve[0]["when"]}).'), "url": "/events.html#today"})
         if buzz:
             brief_items.append({"text": "Buzz: " + buzz[0]["headline"] + ".", "url": "/buzz.html"})
         sp_ = next((x for x in stories if x["key"] == "spotlight"), None)

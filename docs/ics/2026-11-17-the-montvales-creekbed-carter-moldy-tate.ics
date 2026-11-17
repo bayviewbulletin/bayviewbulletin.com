@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-11-17-the-montvales-creekbed-carter-moldy-tate@bayviewbulletin.com
-DTSTAMP:20261117T172935Z
+DTSTAMP:20261117T173329Z
 DTSTART;TZID=America/Chicago:20261117T190000
 DTEND;TZID=America/Chicago:20261117T210000
 SUMMARY:The Montvales\, Creekbed Carter + Moldy Tates

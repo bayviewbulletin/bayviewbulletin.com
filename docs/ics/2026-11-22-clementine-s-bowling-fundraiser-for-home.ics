@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-11-22-clementine-s-bowling-fundraiser-for-home@bayviewbulletin.com
-DTSTAMP:20261117T172935Z
+DTSTAMP:20261117T173329Z
 DTSTART;TZID=America/Chicago:20261122T130000
 DTEND;TZID=America/Chicago:20261122T150000
 SUMMARY:Clementine’s bowling fundraiser for homeless vets
