@@ -17,3 +17,5 @@ Run `python3 build.py` after adding an issue, then commit and push.
 Story fields (optional): `correction` (text shown as a Correction note on the story and listed on /corrections.html), `correction_type: "update"` to label it Update instead, `updated` (YYYY-MM-DD, used as dateModified).
 
 Site basics written by build.py (Nov. 17): 404.html, feed.xml (RSS), sitemap.xml, robots.txt, NewsArticle structured data on story pages, Event structured data on events.html.
+
+Day fields (optional, Nov. 17): `briefing` = 3-5 items [{text, url}] for the homepage "Bay View in 60 seconds" box (if omitted, build.py writes one from the weather, lead story, tonight's event, top Buzz item and spotlight). The homepage also shows "This weekend" events automatically, "Earlier this week" stories on thin days (fewer than 6 news stories), and a smaller photo when the lead story is a Safety story.

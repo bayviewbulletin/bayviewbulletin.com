@@ -204,6 +204,9 @@ nav.sections ul.end{-webkit-mask-image:none;mask-image:none}}
 .meta{font-size:13px;color:var(--muted);margin-top:6px}
 .side{display:grid;align-content:start}.side a{padding:12px 0;border-bottom:1px solid var(--rule);display:block}.side a:first-child{padding-top:0}
 .side h3{font:700 19px/1.25 var(--serif);margin:2px 0 4px;text-wrap:balance}.side p{margin:0;font-size:15px;color:var(--muted)}
+.brief{margin:0 0 22px;padding:12px 16px 10px;border-left:4px solid var(--lake);background:var(--lake-soft)}.brief h2{font:700 13px var(--sans);letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px;color:var(--lake)}.brief ul{margin:0;padding-left:18px}.brief li{font:16px/1.45 var(--serif);margin:3px 0}.brief li a{color:inherit;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:2px}.brief li a:hover{text-decoration-color:var(--lake)}
+.lead.textlead figure{float:right;width:40%;margin:6px 0 10px 18px}.lead.textlead img{aspect-ratio:4/3}.lead.textlead::after{content:"";display:block;clear:both}@media(max-width:520px){.lead.textlead figure{width:42%;margin-left:12px}.lead.textlead h2{font-size:26px}}
+.tonight.weekend{border-top-color:var(--lake);background:var(--lake-soft)}.tonight.weekend h2 a{color:var(--lake)}.chip .d{display:block;font:700 12px var(--sans);color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
 .tonight{margin:22px 0;padding:14px 16px;background:var(--warm-soft);border-top:4px solid var(--warm);border-radius:0 0 4px 4px}
 .tonight h2{font:700 13px var(--sans);letter-spacing:.08em;text-transform:uppercase;margin:0 0 10px;display:flex;justify-content:space-between}
 .tonight h2 a{color:var(--warm);font-weight:600;letter-spacing:0;text-transform:none;font-size:14px}
@@ -236,7 +239,7 @@ footer a{color:var(--lake)}
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}.filters button{border:1px solid var(--ink);padding:6px 12px;border-radius:99px;font:600 14px var(--sans);background:var(--paper);color:var(--ink);cursor:pointer}.filters button:hover{background:var(--soft)}.filters button.on{background:var(--ink);color:var(--paper)}.filters button:focus-visible{outline:2px solid var(--lake);outline-offset:2px}[hidden]{display:none!important}
 .list a{display:block;padding:16px 0;border-bottom:1px solid var(--rule)}.list h3{font:700 21px/1.25 var(--serif);margin:2px 0 4px}.list p{margin:0;color:var(--muted)}
 .pagehead{font:800 34px var(--serif);margin:24px 0 2px}.topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 36px;padding-top:6px}@media(max-width:820px){.topics{grid-template-columns:1fr}}.topic{padding:18px 0 6px}.topic>h2{font:800 20px var(--serif);margin:0 0 4px;padding-top:10px;border-top:4px solid var(--lake);display:flex;justify-content:space-between;align-items:baseline}.topic.w>h2{border-top-color:var(--warm)}.topic>h2 a{font:600 14px var(--sans);color:var(--lake)}.topic.w>h2 a{color:var(--warm)}.topic .row{padding:12px 0;border-bottom:1px solid var(--rule)}.topic .row:last-child{border-bottom:0}.pagedek{color:var(--muted);margin:0 0 10px}@media(max-width:600px){.ev{grid-template-columns:64px minmax(0,1fr);gap:2px 12px;align-items:start}.ev img{grid-row:1/span 2;width:64px;height:48px}.ev .t{grid-column:2;font-size:14px}.ev>div{grid-column:2}.ev .pill{display:none}.ev[style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr) auto!important}.ev[style*="grid-template-columns"]>div{grid-column:1}.ev[style*="grid-template-columns"] .pill{display:inline-block}}.filters.when{margin-bottom:0}.filters.kinds{margin-top:8px}.filters .free{border-color:var(--warm)!important}.filters button.on.free{background:var(--warm)!important;color:var(--on-color)!important;border-color:var(--warm)!important}@media(max-width:520px){.filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.filters::-webkit-scrollbar{display:none}.filters button{flex:0 0 auto}}.corr{font:15px/1.5 var(--sans);background:var(--soft);border-left:4px solid var(--warm);padding:10px 14px;margin:18px 0}.story .body h2{font:800 20px var(--serif);margin:26px 0 6px}
-.dateline .mk{width:26px;height:26px;display:block}.foot-brand{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:8px;font:700 15px var(--sans);color:var(--ink)}.foot-brand img{width:28px;height:28px}.foot-brand em{font:italic 400 15px var(--serif);color:var(--muted)}
+.dateline .mk{width:26px;height:26px;display:block}.foot-brand{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 10px;margin-bottom:8px;font:700 15px var(--sans);color:var(--ink)}.foot-brand img{width:28px;height:28px}.foot-brand em{font:italic 400 15px var(--serif);color:var(--muted)}
 """
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
          '<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700;8..60,800&display=swap" rel="stylesheet">')
@@ -519,6 +522,45 @@ def build_one(d, newest):
     tops = [s for s in rest if s["key"] == "top"]; side_items = (tops + [s for s in rest if s["key"] not in ("top", "spotlight")])[:max(3, len(tops))]
     side = "".join(f'<a href="{s["url"]}"><span class="kicker">{e(s["section"])}</span><h3>{e(s["title"])}</h3><p>{e(dek(s))}</p></a>' for s in side_items)
     lead_img = f'<figure><img src="{e(lead["image"]["src"])}" alt="{e(lead["image"]["alt"])}"><div class="cap">Photo: {e(lead["image"]["credit"])}</div></figure>' if lead.get("image") else ""
+    # Nov. 17: a crime or safety lead gets a smaller photo, so the front page doesn't open on a grim full-width image.
+    lead_cls = "lead textlead" if (lead["key"] == "safety" or "safety" in (lead.get("also") or []) or lead.get("tag") == "Safety") else "lead"
+    # "Bay View in 60 seconds": the day's "briefing" bullets, or an automatic version.
+    brief_items = d.get("briefing") or []
+    if not brief_items:
+        w = (U.get("weather") or {})
+        if w.get("v"):
+            brief_items.append({"text": f'Weather: {w["v"]}' + (f', {w["s"]}' if w.get("s") else "") + "."})
+        brief_items.append({"text": "Top story: " + lead["title"] + ".", "url": lead["url"]})
+        eve = [ev for ev in today_events if re.search(r"\b([5-9]|1[01])(:\d\d)?\s*(pm|p\.m\.)", ev["when"], re.I)] or today_events
+        if eve:
+            brief_items.append({"text": f'Tonight: {eve[0]["title"]} at {eve[0]["where"].split(",")[0]}' + (f', plus {len(today_events) - 1} more things to do today.' if len(today_events) > 1 else "."), "url": "/events.html#today"})
+        if buzz:
+            brief_items.append({"text": "Buzz: " + buzz[0]["headline"] + ".", "url": "/buzz.html"})
+        sp_ = next((x for x in stories if x["key"] == "spotlight"), None)
+        if sp_:
+            brief_items.append({"text": "Spotlight: " + sp_["title"].replace("Spotlight: ", "") + ". " + dek(sp_).rstrip(".") + ".", "url": "/spotlight.html"})
+    brief_html = ('<section class="brief" aria-label="Bay View in 60 seconds"><h2>Bay View in 60 seconds</h2><ul>'
+                  + "".join(f'<li>{("<a href=" + chr(34) + e(b["url"]) + chr(34) + ">" + e(b["text"]) + "</a>") if b.get("url") else e(b["text"])}</li>' for b in brief_items[:5]) + "</ul></section>") if brief_items else ""
+    # This weekend: up to 6 weekend events (not today's), mixing types, photos first.
+    wk = [ev for ev in d["events"] if "weekend" in ev_when_tags(ev_date(ev, day), day) and not ev["day"].startswith("Today")]
+    pick, seen = [], set()
+    for ev in sorted(wk, key=lambda x: (not x.get("image"),)):
+        if ev["kind"] not in seen:
+            pick.append(ev); seen.add(ev["kind"])
+    for ev in wk:
+        if len(pick) >= 6: break
+        if ev not in pick: pick.append(ev)
+    pick = sorted(pick[:6], key=lambda x: d["events"].index(x))
+    wk_label = "This weekend in Bay View" if day.weekday() >= 4 else "Coming up this weekend"
+    wk_chips = "".join(f'<a class="chip" href="/events.html#weekend"><img src="{e(venue_img(ev))}" alt="" loading="lazy"><span class="in"><span class="d">{e(ev["day"].replace("Today, ", ""))}</span><span class="t">{e(ev["when"])}</span><span class="n">{e(ev["title"])}</span><span class="w">{e(ev["where"].split(",")[0].split(" · ")[0])}</span></span></a>' for ev in pick)
+    weekend_html = f'<section class="tonight weekend"><h2><span>{wk_label}</span><a href="/events.html#weekend">All weekend events →</a></h2><div class="chips">{wk_chips}</div></section>' if pick else ""
+    # Earlier this week: on thin days (fewer than 6 news stories), recent stories from the previous 3 days.
+    earlier_html = ""
+    if len(news) < 6:
+        prev = [x for x in reversed(ALL_STORIES) if x["issue_date"] < d["date"] and x["issue_date"] >= (day - dt.timedelta(days=3)).isoformat() and x["key"] != "spotlight"]
+        if prev:
+            earlier_html = ('<section class="topic"><h2>Earlier this week<a href="/archive.html">Archive →</a></h2>'
+                            + "".join(f'<a class="row noimg" href="{x["url"]}"><div><span class="kicker">{e(x["section"])} · {e(x["display_date"].split(",")[0])}</span><h3>{e(x["title"])}</h3><p>{e(dek(x))}</p></div></a>' for x in prev[:4]) + "</section>")
     chips = "".join(f'<a class="chip" href="/events.html"><img src="{e(venue_img(ev))}" alt="" loading="lazy"><span class="in"><span class="t">{e(ev["when"])}</span><span class="n">{e(ev["title"])}</span><span class="w">{e(ev["where"].split(",")[0].split(" · ")[0])}</span></span></a>' for ev in today_events)
 
     def row(s, kicker=True):
@@ -538,13 +580,13 @@ def build_one(d, newest):
     hist = (f'<section class="block"><h2>Bay View history<a href="/history.html" style="float:right;font:600 14px var(--sans);color:var(--lake)">All history →</a></h2><div class="hist"><div><a href="{hurl}"><img src="{e(h["image"]["src"])}" alt="{e(h["image"]["alt"])}"></a><div class="cap">{e(h["image"]["credit"])}</div></div>'
             f'<div><div class="yr">{e(h["year"])}</div>' + (f'<h3 style="font:700 21px/1.25 var(--serif);margin:2px 0 6px"><a href="{hurl}" style="color:inherit">{e(h["title"])}</a></h3>' if h.get("title") else "")
             + f'<p>{e(h["text"])}</p><a class="kicker" href="{hurl}">Read the story →</a></div></div></section>') if h else ""
-    home = (f'<div class="utils">{util_html}</div>'
-            f'<section class="front"><a class="lead" href="{lead["url"]}">{lead_img}<span class="kicker">{e(lead["section"])}</span><h2>{e(lead["title"])}</h2><p>{e(dek(lead))}</p><div class="meta">{e(srcmeta(lead))}</div></a>'
+    home = (f'<div class="utils">{util_html}</div>{brief_html}'
+            f'<section class="front"><a class="{lead_cls}" href="{lead["url"]}">{lead_img}<span class="kicker">{e(lead["section"])}</span><h2>{e(lead["title"])}</h2><p>{e(dek(lead))}</p><div class="meta">{e(srcmeta(lead))}</div></a>'
             f'<div class="side">{side}</div></section>'
             f'<section class="tonight"><h2><span>Today in Bay View</span><a href="/events.html">All events →</a></h2><div class="chips">{chips}</div></section>'
             + (f'<a class="bztease" href="/buzz.html"><span class="bzlogo">The Bay View <span>Buzz</span></span>'
                f'<span class="bzk">{e(buzz[0]["kicker"])}</span><span class="bzh">{e(buzz[0]["headline"])}</span><span class="bzgo">Read the Buzz →</span></a>' if buzz else "") +
-            f'<div class="topics">{topics}</div>'
+            f'{weekend_html}<div class="topics">{topics}{earlier_html}</div>'
             f'{hist}')
     (OUT / "issues").mkdir(exist_ok=True)
     (OUT / "issues" / f'{d["date"]}.html').write_text(shell("The Bay View Bulletin · " + d["display_date"], home, d))
