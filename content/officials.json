@@ -1,5 +1,5 @@
 {
- "_about": "Elected officials who represent Bay View (Ben, Nov. 17, 2026). The daily run checks their websites, news pages and social accounts for Bay View news. 'covers' comes from the city's election_geography map service, checked against every directory address on Nov. 17, 2026. 'confirmed' accounts were checked on the account itself (Facebook page intro or Instagram bio names the office); 'unconfirmed' ones match by name only. Ben's Facebook account follows every official's Facebook page listed here (Ben approved Nov. 17, 2026; Ortiz-Velez and Rodriguez skipped because they leave office in January), so their posts appear in the Feeds > Pages view.",
+ "_about": "Elected officials who represent Bay View (Ben, Nov. 17, 2026). The daily run checks their websites, news pages and social accounts for Bay View news. 'covers' comes from the city's election_geography map service, checked against every directory address on Nov. 17, 2026. 'confirmed' accounts were checked on the account itself (Facebook page intro or Instagram bio names the office); 'unconfirmed' ones match by name only. Ben's Facebook account follows every official's Facebook page listed here (Ben approved Nov. 17, 2026; Ortiz-Velez and Rodriguez skipped because they leave office in January), so their posts appear in the Feeds > Pages view. X handles were checked on X on Nov. 17, 2026 (profile bio names the office) and added to Ben's private X list; see content/x_sources.json.",
  "officials": [
   {
    "name": "Marina Dimitrijevic",
@@ -15,7 +15,7 @@
    "x": null,
    "campaign": {
     "facebook": "marinaformke",
-    "x_unconfirmed": "MarinaForMKE"
+    "x": "MarinaForMKE"
    },
    "notes": "Instagram @marinaformke is her campaign account but posts as the alderwoman. Her e-news mentions @AlderMarina14 without naming the platform; not found on Instagram."
   },
@@ -76,12 +76,12 @@
    "news_url": "https://legis.wisconsin.gov/assembly/20/sinicki/",
    "facebook": "RepChristineSinicki",
    "instagram": "repchris",
-   "x_unconfirmed": "RepChrisSinicki",
    "bluesky_unconfirmed": "repchris20.bsky.social",
    "campaign": {
     "facebook": "VoteSinicki"
    },
-   "notes": "Re-elected Nov. 3, 2026. Her Facebook page says she represents Milwaukee's south shore, St. Francis and Cudahy."
+   "notes": "Re-elected Nov. 3, 2026. Her Facebook page says she represents Milwaukee's south shore, St. Francis and Cudahy.",
+   "x": "RepChrisSinicki"
   },
   {
    "name": "Chris Larson",
@@ -93,12 +93,12 @@
    "news_url": "https://legis.wisconsin.gov/senate/07/larson/press-releases/press-releases/",
    "facebook": "SenatorChrisLarson",
    "instagram": "senchrislarson",
-   "x_unconfirmed": "SenChrisLarson",
    "bluesky_unconfirmed": "senchrislarson.bsky.social",
    "campaign": {
     "facebook": "VoteChrisLarson"
    },
-   "notes": "Re-elected Nov. 3, 2026."
+   "notes": "Re-elected Nov. 3, 2026.",
+   "x": "SenChrisLarson"
   },
   {
    "name": "Gwen Moore",
@@ -110,9 +110,9 @@
    "news_url": "https://moore.house.gov/news/",
    "facebook": "GwenSMoore",
    "instagram": "repgwenmoore",
-   "x_unconfirmed": "RepGwenMoore",
    "bluesky_unconfirmed": "repgwenmoore.bsky.social",
-   "notes": "Re-elected Nov. 3, 2026. Mostly federal news; run only items that directly affect Bay View."
+   "notes": "Re-elected Nov. 3, 2026. Mostly federal news; run only items that directly affect Bay View.",
+   "x": "RepGwenMoore"
   },
   {
    "name": "Cavalier Johnson",
@@ -137,8 +137,8 @@
    "news_url": "https://county.milwaukee.gov/EN/County-Executive/News",
    "facebook": "MKECountyExecDavidCrowley",
    "instagram": null,
-   "x_unconfirmed": "DavidCrowleyWI",
-   "notes": "Elected governor Nov. 3, 2026 (inauguration Jan. 4, 2027). When he resigns, Board Chair Marcelia Nicholson-Bovell becomes acting county executive and appoints an interim; special election in spring 2027. Update this entry then."
+   "notes": "Elected governor Nov. 3, 2026 (inauguration Jan. 4, 2027). When he resigns, Board Chair Marcelia Nicholson-Bovell becomes acting county executive and appoints an interim; special election in spring 2027. Update this entry then.",
+   "x": "DavidCrowleyWI"
   },
   {
    "name": "Steven Shea",
@@ -210,7 +210,13 @@
    "facebook": "spiker4mke",
    "instagram": null,
    "x_unconfirmed": "AldermanSpiker",
-   "notes": "Instagram @spikermke is private."
+   "notes": "Instagram @spikermke is private.",
+   "x_note": "@AldermanSpiker last posted April 2022; not on the X list"
   }
- ]
+ ],
+ "x_list": {
+  "name": "Bay View Bulletin (private X list on Ben's account)",
+  "url": "https://x.com/i/lists/2122728460606919024",
+  "see": "content/x_sources.json"
+ }
 }

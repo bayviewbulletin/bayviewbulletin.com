@@ -1,0 +1,131 @@
+{
+ "_about": "X (Twitter) sources for the daily run (Ben, Nov. 17, 2026). Ben is logged in to X in his Chrome. The private list lives on Ben's account (@benjaminwwilson); members aren't notified and Ben's follows are unchanged. X's website no longer offers 'save search', so the daily searches are kept here as links.",
+ "list": {
+  "name": "Bay View Bulletin",
+  "id": "2122728460606919024",
+  "url": "https://x.com/i/lists/2122728460606919024",
+  "private": true,
+  "members_count": 41
+ },
+ "members": {
+  "officials": [
+   "MarinaForMKE",
+   "RyanClancyWI",
+   "RepChrisSinicki",
+   "SenChrisLarson",
+   "RepGwenMoore",
+   "MayorMKE",
+   "DavidCrowleyWI",
+   "RepJessie"
+  ],
+  "agencies": [
+   "MilwaukeePolice",
+   "MilwaukeeDPW",
+   "MilwaukeeMPS",
+   "CountyParks",
+   "PortMilwaukee",
+   "NWSMilwaukee",
+   "MKEHealth",
+   "CityofMilwaukee",
+   "RideMCTS",
+   "WisDOTsoutheast",
+   "WaterWorksMKE",
+   "MilwaukeePubLib",
+   "MilwaukeeCounty"
+  ],
+  "news": [
+   "UrbanMilwaukee",
+   "OnMilwaukee",
+   "MilwaukeeRecord",
+   "fox6now",
+   "TMJ4",
+   "WISN12",
+   "CBS58",
+   "WUWMradio",
+   "ShepherdExpress",
+   "BizTimes",
+   "journalsentinel",
+   "MilwaukeeMag",
+   "620wtmj",
+   "SpectrumNews1WI",
+   "milwaukeenns"
+  ],
+  "reporters": [
+   "compujeramey",
+   "AlisonDirr",
+   "CorriHess",
+   "BobbyTmke"
+  ],
+  "businesses": [
+   "componentbeer"
+  ]
+ },
+ "daily_searches": [
+  {
+   "label": "List posts mentioning Bay View (main daily read, last 48 h)",
+   "url": "https://x.com/search?q=list%3A2122728460606919024%20%28%22bay%20view%22%20OR%20bayview%20OR%20kinnickinnic%20OR%20%22KK%20ave%22%20OR%20%22humboldt%20park%22%20OR%20%22south%20shore%22%20OR%20hoan%20OR%20%22jones%20island%22%20OR%20%22district%2014%22%20OR%20%22lincoln%20ave%22%20OR%20%22howell%20ave%22%29&src=typed_query&f=live"
+  },
+  {
+   "label": "Everything from officials, agencies and Bay View businesses on the list (low-volume accounts; judge Bay View relevance)",
+   "url": "https://x.com/search?q=from%3AMarinaForMKE%20OR%20from%3ARyanClancyWI%20OR%20from%3ARepChrisSinicki%20OR%20from%3ASenChrisLarson%20OR%20from%3ARepGwenMoore%20OR%20from%3AMayorMKE%20OR%20from%3ADavidCrowleyWI%20OR%20from%3ARepJessie%20OR%20from%3AMilwaukeePolice%20OR%20from%3AMilwaukeeDPW%20OR%20from%3AMilwaukeeMPS%20OR%20from%3ACountyParks%20OR%20from%3APortMilwaukee%20OR%20from%3ANWSMilwaukee%20OR%20from%3AMKEHealth%20OR%20from%3ACityofMilwaukee%20OR%20from%3ARideMCTS%20OR%20from%3AWisDOTsoutheast%20OR%20from%3AWaterWorksMKE%20OR%20from%3AMilwaukeePubLib%20OR%20from%3AMilwaukeeCounty%20OR%20from%3Acomponentbeer&src=typed_query&f=live"
+  },
+  {
+   "label": "Anyone: \"bay view\" milwaukee (Buzz)",
+   "url": "https://x.com/search?q=%22bay%20view%22%20milwaukee&src=typed_query&f=live"
+  },
+  {
+   "label": "Anyone: bayview / #bayviewmke",
+   "url": "https://x.com/search?q=%28bayview%20OR%20%23bayviewmke%20OR%20%22bay%20view%20mke%22%29%20-toronto%20-tampa%20-sf&src=typed_query&f=live"
+  },
+  {
+   "label": "Anyone: Humboldt Park / South Shore Milwaukee",
+   "url": "https://x.com/search?q=%28%22humboldt%20park%22%20OR%20%22south%20shore%20park%22%20OR%20%22south%20shore%20beach%22%29%20milwaukee&src=typed_query&f=live"
+  },
+  {
+   "label": "Anyone: KK Ave / Kinnickinnic",
+   "url": "https://x.com/search?q=%28kinnickinnic%20OR%20%22KK%20ave%22%20OR%20%22KK%20avenue%22%29%20milwaukee&src=typed_query&f=live"
+  },
+  {
+   "label": "Anyone: Hoan Bridge / I-794",
+   "url": "https://x.com/search?q=%28%22hoan%20bridge%22%20OR%20hoan%20OR%20%22I-794%22%29&src=typed_query&f=live"
+  }
+ ],
+ "checked_not_added": {
+  "inactive_or_wrong": {
+   "AldermanSpiker": "last post Apr 2022",
+   "MilwaukeeDNS": "last post Aug 2021",
+   "MMSD": "last post Oct 2019",
+   "WPR": "last post Apr 2023",
+   "RadioMilwaukee": "last post Feb 2025",
+   "WisconsinWatch": "last post Jul 2025",
+   "MilwaukeeWater": "not the utility (personal account)",
+   "EckbladJack": "Sup. Eckblad's old candidate account, no posts",
+   "cactusclubmke": "last post Oct 2023",
+   "AvalonMKE": "last post Jul 2023",
+   "HoneypieCafe": "2022",
+   "WheelSprocket": "2021",
+   "bayviewbowl": "2017",
+   "BayViewBash": "2014"
+  },
+  "not_found_on_x": [
+   "MPS_Milwaukee (the daily prompt's old handle; MPS is @MilwaukeeMPS)",
+   "Sup. Eckblad (official)",
+   "MPS Dir. Megan O'Halloran",
+   "Sup. Steven Shea",
+   "Sen. Tim Carpenter",
+   "Ismael Luna",
+   "Dan Bukiewicz",
+   "Milwaukee Fire Dept.",
+   "Common Council",
+   "BVNA",
+   "Bay View Compass",
+   "Outpost",
+   "Twisted Path",
+   "Puddler's Hall",
+   "Sugar Maple",
+   "Anodyne",
+   "Bike Fed"
+  ]
+ },
+ "how_to_read": "Open each daily_searches URL in Ben's Chrome (x.com). Collect posts from the last 48 hours: for each 'article', time[datetime], the status link (the <a> around <time>, path only), and [data-testid=tweetText]. Scroll a few screens. Write results into a <pre> and read with get_page_text; strip URLs from output (the Chrome tool blocks query strings)."
+}
