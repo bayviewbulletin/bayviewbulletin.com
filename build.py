@@ -7,6 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 import sys
 OUT = ROOT / ("preview_v2" if "--preview" in sys.argv else "docs")
+SITE = "https://bayviewbulletin.com"
 TIPS = "https://docs.google.com/forms/d/e/1FAIpQLSfXNc2RsIhvMPCfcZ9CYb6QIx78RZSr2Ar3YzT5ik9xyPhi7Q/viewform"
 e = lambda s: html.escape(str(s or ""), quote=True)
 NAV = [("Home", "/"), ("Events", "/events.html"), ("Buzz", "/buzz.html"), ("Spotlight", "/spotlight.html"), ("Food & Drink", "/section/food.html"), ("City Hall", "/section/city.html"),
@@ -44,6 +45,93 @@ def venue_img(ev):
     for k, u in VENUES:
         if k in ev["where"] or k in ev["title"]:
             return u
+
+
+MONTHS = {m: i for i, m in enumerate(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], 1)}
+
+
+def ev_date(ev, today):
+    """Calendar date of an event from its day label ("Today, Tue. Nov. 17" / "Sat. Nov. 21"), relative to the issue date."""
+    m = re.search(r"([A-Z][a-z]{2})[a-z]*\.? (\d{1,2})\b", ev["day"].split(",")[-1])
+    if not m or m.group(1) not in MONTHS:
+        return today
+    y = today.year + (1 if MONTHS[m.group(1)] < today.month - 6 else 0)
+    try:
+        return dt.date(y, MONTHS[m.group(1)], int(m.group(2)))
+    except ValueError:
+        return today
+
+
+def ev_when_tags(dd, today):
+    """Date buckets for the Events page tabs: today, tomorrow, weekend (the coming Fri-Sun, or the current one), week (next 7 days)."""
+    tags = []
+    if dd == today: tags.append("today")
+    if dd == today + dt.timedelta(days=1): tags.append("tomorrow")
+    wd = today.weekday()  # Mon=0
+    fri = today + dt.timedelta(days=(4 - wd) % 7) if wd <= 4 else today - dt.timedelta(days=wd - 4)
+    if fri <= dd <= fri + dt.timedelta(days=2) and dd >= today: tags.append("weekend")
+    if today <= dd <= today + dt.timedelta(days=6): tags.append("week")
+    return " ".join(tags)
+
+
+def ev_free(ev):
+    return bool(re.search(r"\bfree\b", (ev.get("desc", "") + " " + ev.get("title", "")), re.I)) and not re.search(r"free (?:with|for members|pickle|shots?)\b", ev.get("desc", ""), re.I)
+
+
+def ctoff(dstr):
+    """UTC offset for Milwaukee on that date ("-06:00" in winter, "-05:00" in summer)."""
+    import zoneinfo
+    o = dt.datetime.fromisoformat(dstr[:10] + "T12:00").replace(tzinfo=zoneinfo.ZoneInfo("America/Chicago")).strftime("%z")
+    return o[:3] + ":" + o[3:]
+
+
+def ld(obj):
+    return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False).replace("</", "<\\/") + "</script>"
+
+
+def abs_url(u):
+    return u if not u or u.startswith("http") else SITE + u
+
+
+PUBLISHER = {"@type": "NewsMediaOrganization", "name": "The Bay View Bulletin", "url": SITE + "/", "logo": {"@type": "ImageObject", "url": SITE + "/apple-touch-icon.png"}}
+
+
+def story_ld(s, d):
+    obj = {"@context": "https://schema.org", "@type": "NewsArticle", "headline": s["title"][:110], "description": dek(s),
+           "datePublished": d["date"] + "T06:00:00" + ctoff(d["date"]), "dateModified": (s.get("updated") or d["date"]) + "T06:00:00" + ctoff(s.get("updated") or d["date"]),
+           "mainEntityOfPage": SITE + s["url"], "author": PUBLISHER, "publisher": PUBLISHER, "articleSection": s["section"],
+           "contentLocation": {"@type": "Place", "name": "Bay View, Milwaukee, Wisconsin"}}
+    if s.get("image"):
+        obj["image"] = [abs_url(s["image"]["src"])]
+    if s.get("source_url"):
+        obj["isBasedOn"] = s["source_url"]
+    return ld(obj)
+
+
+def ev_start(ev, dd):
+    m = re.match(r"\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm|a\.m\.|p\.m\.)?", ev.get("when", ""), re.I)
+    ap = re.search(r"(am|pm|a\.m\.|p\.m\.)", ev.get("when", ""), re.I)
+    if not m or not ap:
+        return dd.isoformat()
+    h = int(m.group(1)) % 12 + (12 if ap.group(1).lower().startswith("p") else 0)
+    return f"{dd.isoformat()}T{h:02d}:{int(m.group(2) or 0):02d}:00" + ctoff(dd.isoformat())
+
+
+def events_ld(events, today):
+    out = []
+    for ev in events:
+        dd = ev_date(ev, today)
+        where = ev["where"].split(" · ")[0]
+        name, _, addr = where.partition(", ")
+        x = {"@type": "Event", "name": ev["title"], "startDate": ev_start(ev, dd), "eventStatus": "https://schema.org/EventScheduled",
+             "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+             "location": {"@type": "Place", "name": name, "address": {"@type": "PostalAddress", "streetAddress": addr or name, "addressLocality": "Milwaukee", "addressRegion": "WI", "addressCountry": "US"}},
+             "url": ev.get("link") or SITE + "/events.html"}
+        if ev.get("desc"): x["description"] = ev["desc"]
+        if ev.get("image"): x["image"] = [abs_url(ev["image"])]
+        if ev_free(ev): x["isAccessibleForFree"] = True
+        out.append(x)
+    return ld({"@context": "https://schema.org", "@graph": out})
 
 
 def sunrise_sunset(day, lat=42.99, lon=-87.89, tz=-6):
@@ -105,7 +193,7 @@ nav.sections ul.end{-webkit-mask-image:none;mask-image:none}}
 .bzh{font:900 18px/1.2 var(--sans);flex:1;min-width:200px}
 .bzgo{font:800 14px var(--sans);text-decoration:underline}
 @media (prefers-color-scheme:dark){.buzz,.bz,.bz h3,.bz p{color:#111}.bz .via{color:#444}}
-@media(max-width:520px){.utils{display:flex;overflow-x:auto}.util{min-width:150px;border-bottom:0!important;border-right:1px solid var(--rule)!important}}
+@media(max-width:520px){.utils{grid-template-columns:repeat(2,minmax(0,1fr))}.util{border-right:0!important;border-bottom:1px solid var(--rule)!important;padding:10px 10px 10px 0}.util:nth-child(odd){border-right:1px solid var(--rule)!important;padding-right:10px}.util:nth-child(even){padding-left:12px}.util:nth-last-child(-n+2){border-bottom:0!important}.util .v{font-size:17px}}
 .ticker{display:flex;gap:12px;align-items:center;font-size:15px;border-bottom:1px solid var(--rule);padding:10px 0;margin:0 0 18px;overflow:hidden;white-space:nowrap}.ticker b{flex:0 0 auto;font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--warm);padding:3px 7px;border-radius:2px;position:relative;z-index:1}.ticker .vp{flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent)}.ticker .track{display:inline-flex;animation:tick var(--dur,40s) linear infinite}.ticker:hover .track,.ticker:focus-within .track{animation-play-state:paused}.ticker .set{display:inline-flex}.ticker .set a{padding-right:14px;color:inherit;text-decoration:none;font-weight:600}.ticker .set a:hover{text-decoration:underline}.ticker .set a::after{content:"\\00B7";margin-left:14px;color:var(--muted);font-weight:400}@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.ticker .vp{overflow-x:auto}.ticker .track{animation:none}.ticker .set+.set{display:none}}
 .front{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:28px;padding-bottom:24px;border-bottom:1px solid var(--ink)}
 @media(max-width:820px){.front{grid-template-columns:1fr}}
@@ -147,13 +235,12 @@ footer a{color:var(--lake)}
 .pill{font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--rule);padding:3px 7px;border-radius:99px;color:var(--muted)}
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}.filters button{border:1px solid var(--ink);padding:6px 12px;border-radius:99px;font:600 14px var(--sans);background:var(--paper);color:var(--ink);cursor:pointer}.filters button:hover{background:var(--soft)}.filters button.on{background:var(--ink);color:var(--paper)}.filters button:focus-visible{outline:2px solid var(--lake);outline-offset:2px}[hidden]{display:none!important}
 .list a{display:block;padding:16px 0;border-bottom:1px solid var(--rule)}.list h3{font:700 21px/1.25 var(--serif);margin:2px 0 4px}.list p{margin:0;color:var(--muted)}
-.pagehead{font:800 34px var(--serif);margin:24px 0 2px}.topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 36px;padding-top:6px}@media(max-width:820px){.topics{grid-template-columns:1fr}}.topic{padding:18px 0 6px}.topic>h2{font:800 20px var(--serif);margin:0 0 4px;padding-top:10px;border-top:4px solid var(--lake);display:flex;justify-content:space-between;align-items:baseline}.topic.w>h2{border-top-color:var(--warm)}.topic>h2 a{font:600 14px var(--sans);color:var(--lake)}.topic.w>h2 a{color:var(--warm)}.topic .row{padding:12px 0;border-bottom:1px solid var(--rule)}.topic .row:last-child{border-bottom:0}.pagedek{color:var(--muted);margin:0 0 10px}
+.pagehead{font:800 34px var(--serif);margin:24px 0 2px}.topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 36px;padding-top:6px}@media(max-width:820px){.topics{grid-template-columns:1fr}}.topic{padding:18px 0 6px}.topic>h2{font:800 20px var(--serif);margin:0 0 4px;padding-top:10px;border-top:4px solid var(--lake);display:flex;justify-content:space-between;align-items:baseline}.topic.w>h2{border-top-color:var(--warm)}.topic>h2 a{font:600 14px var(--sans);color:var(--lake)}.topic.w>h2 a{color:var(--warm)}.topic .row{padding:12px 0;border-bottom:1px solid var(--rule)}.topic .row:last-child{border-bottom:0}.pagedek{color:var(--muted);margin:0 0 10px}@media(max-width:600px){.ev{grid-template-columns:64px minmax(0,1fr);gap:2px 12px;align-items:start}.ev img{grid-row:1/span 2;width:64px;height:48px}.ev .t{grid-column:2;font-size:14px}.ev>div{grid-column:2}.ev .pill{display:none}.ev[style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr) auto!important}.ev[style*="grid-template-columns"]>div{grid-column:1}.ev[style*="grid-template-columns"] .pill{display:inline-block}}.filters.when{margin-bottom:0}.filters.kinds{margin-top:8px}.filters .free{border-color:var(--warm)!important}.filters button.on.free{background:var(--warm)!important;color:#fff!important;border-color:var(--warm)!important}@media(max-width:520px){.filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.filters::-webkit-scrollbar{display:none}.filters button{flex:0 0 auto}}.corr{font:15px/1.5 var(--sans);background:var(--soft);border-left:4px solid var(--warm);padding:10px 14px;margin:18px 0}.story .body h2{font:800 20px var(--serif);margin:26px 0 6px}
 """
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
          '<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700;8..60,800&display=swap" rel="stylesheet">')
 
 
-SITE = "https://bayviewbulletin.com"
 
 
 def ext_links(html):
@@ -198,7 +285,7 @@ def shell(title, body, d, active="Home", og=None, path="/", head=""):
             f'<meta property="og:title" content="{e(ogt)}"><meta property="og:description" content="{e(ogd)}"><meta property="og:image" content="{e(ogi)}">'
             f'<meta property="og:url" content="{SITE}{e(path)}"><meta name="twitter:card" content="summary_large_image">'
             '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">'
-            '<meta name="theme-color" content="#1F4E79">' + head)
+            '<meta name="theme-color" content="#1F4E79"><link rel="alternate" type="application/rss+xml" title="The Bay View Bulletin" href="/feed.xml">' + head)
     nav = "".join(f'<li><a href="{h}"{" class=on" if n == active else ""}>{n}</a></li>' for n, h in NAV)
     nav += f'<li class="find"><a href="/search.html" aria-label="Search" title="Search"{" class=on" if active == "Search" else ""}>{SEARCH_ICON}</a></li>'
     return ext_links(f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -208,7 +295,7 @@ def shell(title, body, d, active="Home", og=None, path="/", head=""):
 <nav class="sections" aria-label="Sections"><ul>{nav}</ul></nav>
 {TICKER}<div class="wrap">{body}</div>
 <footer><div class="wrap">Covering Bay View from the harbor and Jones Island to Holt and Morgan avenues, I-43 to the lake.<br>
-Every item links to the original reporting. Photos belong to their credited owners. <a href="{TIPS}">Send a tip</a> · <a href="/about.html">About</a> · <a href="/schools.html">School days off</a> · <a href="/history.html">History</a> · <a href="/archive.html">Archive</a></div></footer>
+Every item links to the original reporting. Photos belong to their credited owners. <a href="{TIPS}">Send a tip</a> · <a href="/about.html">About</a> · <a href="/corrections.html">Corrections</a> · <a href="/schools.html">School days off</a> · <a href="/history.html">History</a> · <a href="/archive.html">Archive</a></div></footer>
 <script>(function(){{var n=document.querySelector('nav.sections ul');if(!n)return;function f(){{n.classList.toggle('end',n.scrollLeft+n.clientWidth>=n.scrollWidth-4)}}n.addEventListener('scroll',f,{{passive:true}});f();var o=n.querySelector('a.on');if(o&&o.offsetLeft+o.offsetWidth>n.clientWidth)n.scrollLeft=o.offsetLeft-20}})();</script><script>document.addEventListener('click',function(ev){{var a=ev.target.closest&&ev.target.closest('a[href]');if(a&&a.host&&a.host!==location.host){{a.target='_blank';a.rel='noopener'}}}},true);</script></body></html>""")
 
 
@@ -373,7 +460,7 @@ def history_page(d):
             f'<div class="body">{paras(h.get("body") or h.get("text"))}</div>{nowh}{gallery_html(h)}{links_html(dict(h, title=title))}{src}'
             f'<p class="pagedek" style="margin-top:22px"><a href="/history.html" style="color:var(--lake)">More Bay View history →</a></p></article>')
     (OUT / "history").mkdir(exist_ok=True)
-    (OUT / url.lstrip("/")).write_text(shell(title + " · Bay View history · The Bay View Bulletin", body, d, "", {"title": title, "desc": h.get("text", "")[:200], "image": img.get("src"), "type": "article"}, url))
+    (OUT / url.lstrip("/")).write_text(shell(title + " · Bay View history · The Bay View Bulletin", body, d, "", {"title": title, "desc": h.get("text", "")[:200], "image": abs_url(img.get("src")), "type": "article"}, url))
     ALL_HISTORY.append(dict(h, title=title, url=url, issue_date=d["date"], display_date=d["display_date"]))
     return url
 
@@ -405,8 +492,8 @@ def build_one(d, newest):
         img = (f'<figure><img src="{e(s["image"]["src"])}" alt="{e(s["image"]["alt"])}"><div class="cap">Photo: <a href="{e(s["image"]["credit_url"])}">{e(s["image"]["credit"])}</a></div></figure>') if s.get("image") else ""
         src = f'<a class="btn" href="{e(s["source_url"])}">Read the full story at {e(s["source_name"])} →</a>' if s.get("source_url") else ""
         body = (f'<article class="story"><span class="kicker">{e(s["section"])}{" · Citywide" if s.get("citywide") else ""} · {e(d["display_date"])}</span><h1>{e(s["title"])}</h1>{img}'
-                f'<div class="body">{paras(s.get("body"))}</div>{gallery_html(s)}{links_html(s)}{src}<section class="more side"><h2>More from Bay View today</h2>{others}</section></article>')
-        (OUT / s["url"].lstrip("/")).write_text(shell(s["title"] + " · The Bay View Bulletin", body, d, "", {"title": s["title"], "desc": dek(s), "image": (s.get("image") or {}).get("src"), "type": "article"}, s["url"]))
+                f'<div class="body">{paras(s.get("body"))}</div>' + (f'<p class="corr"><strong>{"Update" if s.get("correction_type") == "update" else "Correction"}:</strong> {e(s["correction"])}</p>' if s.get("correction") else "") + f'{gallery_html(s)}{links_html(s)}{src}<section class="more side"><h2>More from Bay View today</h2>{others}</section></article>')
+        (OUT / s["url"].lstrip("/")).write_text(shell(s["title"] + " · The Bay View Bulletin", body, d, "", {"title": s["title"], "desc": dek(s), "image": abs_url((s.get("image") or {}).get("src")), "type": "article"}, s["url"], story_ld(s, d)))
 
     # utilities
     rise, sset = sunrise_sunset(day)
@@ -470,21 +557,32 @@ def build_one(d, newest):
         if ev["day"] != cur:
             cur = ev["day"]
             cal.append(f'<div class="cal-day" data-day="{e(cur)}">{e(cur)}</div>')
-        cal.append(f'<div class="ev" data-day="{e(ev["day"])}" data-kind="{e(ev["kind"])}"><img src="{e(venue_img(ev))}" alt="" loading="lazy"><span class="t">{e(ev["when"])}</span><div><a href="{e(ev["link"])}" class="n">{e(ev["title"])}</a><div class="w">{e(ev["where"])}</div>{('<div class="d">' + e(ev["desc"]) + '</div>') if ev.get("desc") else ""}</div><span class="pill">{e(ev["kind"])}</span></div>')
+        _dd = ev_date(ev, day)
+        cal.append(f'<div class="ev" data-day="{e(ev["day"])}" data-kind="{e(ev["kind"])}" data-when="{ev_when_tags(_dd, day)}" data-free="{1 if ev_free(ev) else 0}"><img src="{e(venue_img(ev))}" alt="" loading="lazy"><span class="t">{e(ev["when"])}</span><div><a href="{e(ev["link"])}" class="n">{e(ev["title"])}</a><div class="w">{e(ev["where"])}</div>{('<div class="d">' + e(ev["desc"]) + '</div>') if ev.get("desc") else ""}</div><span class="pill">{e(ev["kind"])}</span></div>')
     kinds = sorted({ev["kind"] for ev in d["events"]})
-    filt = ('<div class="filters" role="group" aria-label="Filter events by type"><button type="button" class="on" data-k="" aria-pressed="true">All</button>'
+    whens = [("", "Any day"), ("today", "Today"), ("tomorrow", "Tomorrow"), ("weekend", "This weekend"), ("week", "Next 7 days")]
+    filt = ('<div class="filters when" role="group" aria-label="Filter events by date">'
+            + "".join(f'<button type="button" data-w="{w}"{" class=on" if not w else ""} aria-pressed="{"true" if not w else "false"}">{lab}</button>' for w, lab in whens)
+            + '<button type="button" class="free" data-free="1" aria-pressed="false">Free only</button></div>'
+            '<div class="filters kinds" role="group" aria-label="Filter events by type"><button type="button" class="on" data-k="" aria-pressed="true">All types</button>'
             + "".join(f'<button type="button" data-k="{e(k)}" aria-pressed="false">{e(k)}</button>' for k in kinds) + "</div>")
-    filt_js = """<p class="pagedek" id="evnone" hidden>No events of that type right now.</p><script>
-(function(){var bs=[].slice.call(document.querySelectorAll('.filters button')),evs=[].slice.call(document.querySelectorAll('.ev[data-kind]')),days=[].slice.call(document.querySelectorAll('.cal-day'));
-function show(k){bs.forEach(function(b){var on=b.dataset.k===k;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)});
-var n=0;evs.forEach(function(x){var v=!k||x.dataset.kind===k;x.hidden=!v;if(v)n++});
+    filt_js = """<p class="pagedek" id="evnone" hidden>No events match. Try another day or type.</p><script>
+(function(){var kb=[].slice.call(document.querySelectorAll('.filters.kinds button')),wb=[].slice.call(document.querySelectorAll('.filters.when button[data-w]')),fb=document.querySelector('.filters.when .free'),
+evs=[].slice.call(document.querySelectorAll('.ev[data-kind]')),days=[].slice.call(document.querySelectorAll('.cal-day')),S={k:'',w:'',f:false};
+function press(list,attr,val){list.forEach(function(b){var on=b.dataset[attr]===val;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)})}
+function apply(){press(kb,'k',S.k);press(wb,'w',S.w);fb.classList.toggle('on',S.f);fb.setAttribute('aria-pressed',S.f);
+var n=0;evs.forEach(function(x){var v=(!S.k||x.dataset.kind===S.k)&&(!S.w||(' '+x.dataset.when+' ').indexOf(' '+S.w+' ')>=0)&&(!S.f||x.dataset.free==='1');x.hidden=!v;if(v)n++});
 days.forEach(function(h){h.hidden=!evs.some(function(x){return !x.hidden&&x.dataset.day===h.dataset.day})});
 document.getElementById('evnone').hidden=n>0;
-try{history.replaceState(null,'',k?'#'+encodeURIComponent(k):location.pathname)}catch(e){}}
-bs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.k)})});
-function fromHash(){var h=decodeURIComponent(location.hash.slice(1));show(bs.some(function(b){return b.dataset.k===h})?h:'')}window.addEventListener('hashchange',fromHash);if(location.hash)fromHash();})();
+var parts=[];if(S.w)parts.push(S.w);if(S.k)parts.push(encodeURIComponent(S.k));if(S.f)parts.push('free');
+try{history.replaceState(null,'',parts.length?'#'+parts.join('/'):location.pathname)}catch(e){}}
+kb.forEach(function(b){b.addEventListener('click',function(){S.k=b.dataset.k;apply()})});
+wb.forEach(function(b){b.addEventListener('click',function(){S.w=b.dataset.w;apply()})});
+fb.addEventListener('click',function(){S.f=!S.f;apply()});
+function fromHash(){S={k:'',w:'',f:false};decodeURIComponent(location.hash.slice(1)).split('/').forEach(function(p){if(!p)return;if(p==='free')S.f=true;else if(wb.some(function(b){return b.dataset.w===p}))S.w=p;else if(kb.some(function(b){return b.dataset.k===p}))S.k=p});apply()}
+window.addEventListener('hashchange',fromHash);if(location.hash)fromHash();})();
 </script>"""
-    (OUT / "events.html").write_text(shell("Events · The Bay View Bulletin", f'<h1 class="pagehead">Events in Bay View</h1><p class="pagedek">Shows, family time, markets and meetings, today and ahead.</p>{filt}{"".join(cal)}{filt_js}', d, "Events"))
+    (OUT / "events.html").write_text(shell("Events · The Bay View Bulletin", f'<h1 class="pagehead">Events in Bay View</h1><p class="pagedek">Shows, family time, markets and meetings, today and ahead.</p>{filt}{"".join(cal)}{filt_js}', d, "Events", None, "/events.html", events_ld(d["events"], day)))
 
     # milwaukee
     # The Milwaukee section was retired Nov. 12, 2026 (citywide news that affects Bay View now runs in the topic blocks).
@@ -560,10 +658,23 @@ def build():
         return (' · ' + ' · '.join(links)) if links else ''
     rows = "".join(f'<div class="ev" style="grid-template-columns:minmax(0,1fr) auto"><div><span class="n">{e(b["name"])}</span><div class="w">{e(b["address"])}{" (verifying)" if b.get("verify") else ""}{socials(b)}</div></div><span class="pill">{e(b["type"])}</span></div>' for b in sorted(dirs, key=lambda b: b["name"].lower()))
     (OUT / "directory.html").write_text(shell("Directory · The Bay View Bulletin", f'<h1 class="pagehead">Bay View business directory</h1><p class="pagedek">The shops, venues and institutions we watch. Missing one? <a href="{TIPS}" style="color:var(--lake)">Tell us</a>.</p>{rows}', d, ""))
+    corr_items = [x for x in reversed(ALL_STORIES) if x.get("correction")]
+    corr_list = "".join(f'<a href="{x["url"]}"><span class="kicker">{e(x["display_date"])}</span><h3>{e(x["title"])}</h3><p>{e(x["correction"])}</p></a>' for x in corr_items)
+    (OUT / "corrections.html").write_text(shell("Corrections · The Bay View Bulletin",
+        f'<h1 class="pagehead">Corrections</h1><p class="pagedek">When we get something wrong, we fix it on the story and note what changed. Every correction is listed here, newest first. Spot a mistake? <a href="{TIPS}" style="color:var(--lake)">Tell us</a>.</p>'
+        + (f'<div class="list">{corr_list}</div>' if corr_list else '<p class="pagedek">No corrections so far.</p>'), d, "", None, "/corrections.html"))
     about = f"""<article class="story"><h1>Bay View's morning paper</h1><div class="body">
-<p>The Bay View Bulletin is a free daily guide to what's happening in Milwaukee's Bay View neighborhood, updated every morning. We gather it from local news outlets, the neighborhood's own businesses and organizations, public social media posts and city records, and every item links back to the people who did the reporting.</p>
-<p><strong>Where we cover:</strong> Bay View as neighbors know it, from the harbor and Jones Island south to Holt and Morgan avenues, and from I-43 east to Lake Michigan.</p>
-<p><strong>How we report:</strong> news from the last 24 hours plus what's coming up. Safety coverage sticks to notable incidents, and we never name private individuals. Protests and rallies are listed neutrally, for any cause. Photos come from the original source or free-licensed collections, always credited; if you own a photo and want it removed, tell us and it comes down.</p>
+<p>The Bay View Bulletin is a free daily guide to what's happening in Milwaukee's Bay View neighborhood, updated every morning by 6:30. It's a neighborhood project, not a company: no ads, no paywall and no paid placements.</p>
+<h2>Who's behind it</h2>
+<p>The Bulletin is run by Bay View resident Ben Wilson, who serves as its editor. He sets what we cover and how, decides anything sensitive, and answers for every mistake.</p>
+<h2>How it's made</h2>
+<p>We don't have reporters at meetings or crime scenes. Each morning's edition is put together with the help of AI tools, which follow the editor's written rules. They read local news outlets, city and school sources, elected officials' announcements, public records, and the public social media posts of Bay View businesses and neighbors. Then they summarize what's new in our own words, link every item to its original source and credit every photo. Anything sensitive, uncertain or that could hurt someone is held back for the editor to review before it runs. If something here matters to you, follow the link and read the original reporting, and please support the outlets that do that work.</p>
+<h2>Where we cover</h2>
+<p>Bay View as neighbors know it, from the harbor and Jones Island south to Holt and Morgan avenues, and from I-43 east to Lake Michigan. Citywide news runs only when it directly affects Bay View.</p>
+<h2>Our standards</h2>
+<p>We run news from the last 24 hours plus what's coming up, and we don't repeat stories. Safety coverage sticks to notable incidents, and we never name private individuals. Protests and rallies are listed neutrally, for any cause. Elected officials are covered for what they do for Bay View, never for campaigns. The daily business spotlight is never paid for and is limited to independent, locally owned businesses. The Bay View Buzz rounds up public posts and labels rumors as unconfirmed.</p>
+<h2>Corrections</h2>
+<p>If we get something wrong, we fix it on the story with a note saying what changed, and list it on our <a href="/corrections.html">corrections page</a>. Photos come from the original source or free-licensed collections, always credited. If you own a photo and want it removed, tell us and it comes down.</p>
 <p><a class="btn" href="{TIPS}">Send a tip or a correction</a></p></div></article>"""
     bz_html = "".join(f'<h2 class="bzday">{e(dd["display_date"])}</h2><div class="bzgrid">{"".join(buzz_card(b) for b in items)}</div>' for dd, items in reversed(ALL_BUZZ) if items)
     (OUT / "buzz.html").write_text(shell("The Bay View Buzz · The Bay View Bulletin",
@@ -613,6 +724,37 @@ q.addEventListener('input',go);const p=new URLSearchParams(location.search).get(
     (OUT / "search.html").write_text(shell("Search · The Bay View Bulletin", search, d, "Search", None, "/search.html"))
     # Ben, Nov. 12: the map is no longer a feature of the site; old links go to the front page.
     (OUT / "map.html").write_text('<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=/"><link rel="canonical" href="/"><title>The Bay View Bulletin</title><a href="/">The Bay View Bulletin</a>')
+    # site basics (Nov. 17): 404 page, RSS feed, sitemap, robots.txt
+    nf = (f'<h1 class="pagehead">Page not found</h1><p class="pagedek">That page isn&rsquo;t here. It may have moved, or the link may be mistyped.</p>'
+          '<form action="/search.html" style="margin:18px 0"><input name="q" type="search" placeholder="Search the Bulletin" style="width:100%;max-width:520px;font:400 18px var(--sans);padding:10px 12px;border:2px solid var(--ink);border-radius:4px;background:var(--paper);color:var(--ink)"></form>'
+          '<p><a class="btn" href="/">Today&rsquo;s front page</a></p><p class="pagedek" style="margin-top:14px"><a href="/events.html" style="color:var(--lake)">Events</a> · <a href="/buzz.html" style="color:var(--lake)">Buzz</a> · <a href="/spotlight.html" style="color:var(--lake)">Spotlight</a> · <a href="/archive.html" style="color:var(--lake)">Archive</a></p>')
+    (OUT / "404.html").write_text(shell("Page not found · The Bay View Bulletin", nf, d, ""))
+    from email.utils import format_datetime
+    def rfc(dstr):
+        return format_datetime(dt.datetime.fromisoformat(dstr + "T06:00:00" + ctoff(dstr)))
+    feed_items = sorted(ALL_STORIES, key=lambda x: x["issue_date"], reverse=True)[:60]
+    hist_feed = [dict(x, _hist=True) for x in ALL_HISTORY]
+    rows_xml = []
+    for x in feed_items:
+        img = (x.get("image") or {}).get("src")
+        rows_xml.append(f'<item><title>{e(x["title"])}</title><link>{SITE}{e(x["url"])}</link><guid isPermaLink="true">{SITE}{e(x["url"])}</guid>'
+                        f'<pubDate>{rfc(x["issue_date"])}</pubDate><category>{e(x["section"])}</category><description>{e(dek(x))}</description>'
+                        + (f'<enclosure url="{e(abs_url(img))}" type="image/jpeg" length="0"/>' if img else "") + '</item>')
+    for x in hist_feed[-14:]:
+        if x.get("url") and x.get("issue_date"):
+            rows_xml.append(f'<item><title>History: {e(x["title"])}</title><link>{SITE}{e(x["url"])}</link><guid isPermaLink="true">{SITE}{e(x["url"])}</guid><pubDate>{rfc(x["issue_date"])}</pubDate><category>History</category><description>{e(x.get("text", ""))}</description></item>')
+    feed = ('<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>The Bay View Bulletin</title>'
+            f'<link>{SITE}/</link><description>Bay View&apos;s morning paper: daily news for Milwaukee&apos;s Bay View neighborhood.</description><language>en-us</language>'
+            f'<atom:link href="{SITE}/feed.xml" rel="self" type="application/rss+xml"/><lastBuildDate>{rfc(d["date"])}</lastBuildDate>' + "".join(rows_xml) + '</channel></rss>')
+    (OUT / "feed.xml").write_text(feed)
+    urls = []
+    for f in sorted(OUT.rglob("*.html")):
+        rel = "/" + str(f.relative_to(OUT)).replace("index.html", "")
+        if rel in ("/404.html", "/map.html", "/milwaukee.html"):
+            continue
+        urls.append(f"<url><loc>{SITE}{e(rel)}</loc></url>")
+    (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(urls) + "</urlset>")
+    (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /map.html\nDisallow: /milwaukee.html\n\nSitemap: {SITE}/sitemap.xml\n")
     print("built", OUT, len(issues), "issue(s)")
 
 

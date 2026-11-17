@@ -8,7 +8,12 @@ Bay View's morning paper: bayviewbulletin.com
 - `build_v1.py`: retired single-column layout
 - `scripts/check_repeats.py`: flags stories, Buzz items and events that repeat earlier days (run before every publish)
 - `content/x_sources.json`: Ben's private X list and the daily X searches (Nov. 17)
+- `scripts/records.py`: public-records leads for Bay View (Legistar files, District 14 liquor licenses, property sales, building permits); run each morning, verify before publishing
 - `scripts/traffic.py`: yesterday's GoatCounter traffic (needs GOATCOUNTER_TOKEN; never commit the token)
 - `review/`: items held for editor review (never published)
 
 Run `python3 build.py` after adding an issue, then commit and push.
+
+Story fields (optional): `correction` (text shown as a Correction note on the story and listed on /corrections.html), `correction_type: "update"` to label it Update instead, `updated` (YYYY-MM-DD, used as dateModified).
+
+Site basics written by build.py (Nov. 17): 404.html, feed.xml (RSS), sitemap.xml, robots.txt, NewsArticle structured data on story pages, Event structured data on events.html.

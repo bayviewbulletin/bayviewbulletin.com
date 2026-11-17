@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /map.html
+Disallow: /milwaukee.html
+
+Sitemap: https://bayviewbulletin.com/sitemap.xml
