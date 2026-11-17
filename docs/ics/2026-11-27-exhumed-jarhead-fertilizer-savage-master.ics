@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Bay View Bulletin//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Exhumed, Jarhead Fertilizer, Savage Master + Molder
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:2026-11-27-exhumed-jarhead-fertilizer-savage-master@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261127T190000
+DTEND;TZID=America/Chicago:20261127T210000
+SUMMARY:Exhumed\, Jarhead Fertilizer\, Savage Master + Molder
+LOCATION:Club Garibaldi\, 2501 S. Superior St.\, Milwaukee\, WI
+DESCRIPTION:A metal bill billed as one of the final RK Metal Promotions shows. 21+\, $25 advance\, doors 7. https://www.instagram.com/p/Dfm-tzGBt3A/ (via The Bay View Bulletin)
+URL:https://www.instagram.com/p/Dfm-tzGBt3A/
+END:VEVENT
+END:VCALENDAR

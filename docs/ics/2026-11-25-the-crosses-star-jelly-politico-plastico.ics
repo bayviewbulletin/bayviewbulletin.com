@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Bay View Bulletin//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:The Crosses, Star Jelly, Politico Plastico + Adrenochrome
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:2026-11-25-the-crosses-star-jelly-politico-plastico@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261125T183000
+DTEND;TZID=America/Chicago:20261125T203000
+SUMMARY:The Crosses\, Star Jelly\, Politico Plastico + Adrenochrome
+LOCATION:Ortiz Bros Barbershop\, 2646 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:A four-band DIY show inside a KK barbershop the night before Thanksgiving\; doors 6 pm\, $10. All ages. https://mkeshows.com/event/the-crosses-star-jelly-politico-plastico-adrenochrome (via The Bay View Bulletin)
+URL:https://mkeshows.com/event/the-crosses-star-jelly-politico-plastico-adrenochrome
+END:VEVENT
+END:VCALENDAR

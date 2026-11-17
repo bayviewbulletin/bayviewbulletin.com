@@ -19,3 +19,5 @@ Story fields (optional): `correction` (text shown as a Correction note on the st
 Site basics written by build.py (Nov. 17): 404.html, feed.xml (RSS), sitemap.xml, robots.txt, NewsArticle structured data on story pages, Event structured data on events.html.
 
 Day fields (optional, Nov. 17): `briefing` = 3-5 items [{text, url}] for the homepage "Bay View in 60 seconds" box (if omitted, build.py writes one from the weather, lead story, tonight's event, top Buzz item and spotlight). The homepage also shows "This weekend" events automatically, "Earlier this week" stories on thin days (fewer than 6 news stories), and a smaller photo when the lead story is a Safety story.
+
+Events and Buzz (Nov. 17): build.py writes events.ics (a subscribable calendar of every listed event), one .ics file per event in /ics/ with Apple/Outlook and Google "Add to calendar" links, and dated tiles in the event type's color for events without a flyer (no more hotlinked stock venue photos). buzz.html shows the last 7 days; every day's Buzz also has its own page at /buzz/<date>.html, linked from "Earlier Buzz".

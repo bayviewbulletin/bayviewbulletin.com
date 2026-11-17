@@ -1,0 +1,745 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Bay View Bulletin//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:The Bay View Bulletin: Bay View events
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:2026-11-17-gentle-stretch-and-movement@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261117T140000
+DTEND;TZID=America/Chicago:20261117T160000
+SUMMARY:Gentle Stretch and Movement
+LOCATION:Bay View Library\, 2566 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:A guided\, gentle hour of stretching focused on range of motion\, balance and body awareness for stress relief. https://mpl.libnet.info/event/16955857 (via The Bay View Bulletin)
+URL:https://mpl.libnet.info/event/16955857
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-17-teen-makers-art-cafe@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261117T160000
+DTEND;TZID=America/Chicago:20261117T180000
+SUMMARY:Teen Makers Art Cafe
+LOCATION:Bay View Library\, 2566 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:A monthly art-making session for teens\, with a new craft project\, light refreshments and a chance to meet people. https://mpl.libnet.info/event/16615323 (via The Bay View Bulletin)
+URL:https://mpl.libnet.info/event/16615323
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-17-the-montvales-creekbed-carter-moldy-tate@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261117T190000
+DTEND;TZID=America/Chicago:20261117T210000
+SUMMARY:The Montvales\, Creekbed Carter + Moldy Tates
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:A three-act live music night on the Cactus Club stage. All ages\, $20 advance. https://www.cactusclubmilwaukee.com/events/the-montvales-creekbed-carter/ (via The Bay View Bulletin)
+URL:https://www.cactusclubmilwaukee.com/events/the-montvales-creekbed-carter/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-17-wmse-s-jing-jong-triple-play@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261117T190000
+DTEND;TZID=America/Chicago:20261117T210000
+SUMMARY:WMSE's Jing Jong Triple Play
+LOCATION:The Wiggle Room\, 2988 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:A WMSE-presented night of records at Bay View's vinyl listening bar. https://wiggleroommke.com/event/wmses-jing-jong-triple-play/ (via The Bay View Bulletin)
+URL:https://wiggleroommke.com/event/wmses-jing-jong-triple-play/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-18-tech-splanation@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261118T120000
+DTEND;TZID=America/Chicago:20261118T140000
+SUMMARY:Tech-splanation
+LOCATION:Bay View Library\, 2566 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:Drop-in help with questions about your phone\, tablet or other device\, or using the library’s online resources. https://mpl.libnet.info/event/16396372 (via The Bay View Bulletin)
+URL:https://mpl.libnet.info/event/16396372
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-18-tightknit-cactus-fibers-club@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261118T160000
+DTEND;TZID=America/Chicago:20261118T180000
+SUMMARY:tightknit: Cactus Fibers Club
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:A drop-in fiber-arts circle\, 4-7 pm\; bring your own project\, any medium and any skill level. Free. https://www.cactusclubmilwaukee.com/events/tightknit-cactus-fibers-club-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2/ (via The Bay View Bulletin)
+URL:https://www.cactusclubmilwaukee.com/events/tightknit-cactus-fibers-club-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-18-dj-tv-dinner-happy-hour-dj-set@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261118T170000
+DTEND;TZID=America/Chicago:20261118T190000
+SUMMARY:DJ TV Dinner: Happy Hour DJ Set
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:A happy-hour DJ set from 5 to 7 pm at Cactus Club. All ages. https://www.cactusclubmilwaukee.com/events/dj-tv-dinner-happy-hour-dj-set/ (via The Bay View Bulletin)
+URL:https://www.cactusclubmilwaukee.com/events/dj-tv-dinner-happy-hour-dj-set/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-18-wildcraft-witchery-spell-jars@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261118T173000
+DTEND;TZID=America/Chicago:20261118T193000
+SUMMARY:Wildcraft & Witchery Spell Jars
+LOCATION:Strange Scene\, 2681 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:A hands-on workshop with Wild Craft Ritual Co. on making a spell jar to take home\, 5:30-7 pm\; $40\, materials included. https://www.strangescenemke.com/store/p/wildcraftandwitcheryspelljars11-18 (via The Bay View Bulletin)
+URL:https://www.strangescenemke.com/store/p/wildcraftandwitcheryspelljars11-18
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-18-queer-karaoke@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261118T190000
+DTEND;TZID=America/Chicago:20261118T210000
+SUMMARY:Queer Karaoke
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:Free karaoke night at the Cactus Club bar\, part of the club's Cactus+ community programming. https://www.instagram.com/p/DfvDYoVBcEy/ (via The Bay View Bulletin)
+URL:https://www.instagram.com/p/DfvDYoVBcEy/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-18-latin-soul-with-dykstra-and-andy@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261118T190000
+DTEND;TZID=America/Chicago:20261118T210000
+SUMMARY:Latin Soul with Dykstra and Andy
+LOCATION:The Wiggle Room\, 2988 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:Two DJs spin Latin soul records at Bay View's vinyl listening bar. https://wiggleroommke.com/event/latin-soul-w-dykstra-and-andy/ (via The Bay View Bulletin)
+URL:https://wiggleroommke.com/event/latin-soul-w-dykstra-and-andy/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-18-milwaukee-record-hanksgiving-the-burbs@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261118T190000
+DTEND;TZID=America/Chicago:20261118T210000
+SUMMARY:Milwaukee Record Hanksgiving: The 'Burbs
+LOCATION:Avalon Atmospheric Theater\, 2473 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:Milwaukee Record's pre-Thanksgiving screening of the 1989 Tom Hanks comedy about suspicious new neighbors on a quiet cul-de-sac. https://milwaukeerecord.com/film/join-us-for-a-hanksgiving-screening-of-the-burbs-at-avalon-theater/ (via The Bay View Bulletin)
+URL:https://milwaukeerecord.com/film/join-us-for-a-hanksgiving-screening-of-the-burbs-at-avalon-theater/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-19-story-time-with-play-group@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261119T103000
+DTEND;TZID=America/Chicago:20261119T123000
+SUMMARY:Story Time with Play Group
+LOCATION:Bay View Library\, 2566 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:A 20-minute story time with songs and fingerplays for young children\, followed by open play time. https://mpl.libnet.info/event/16585062 (via The Bay View Bulletin)
+URL:https://mpl.libnet.info/event/16585062
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-19-yoga-for-knees-workshop@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261119T180000
+DTEND;TZID=America/Chicago:20261119T200000
+SUMMARY:Yoga for Knees workshop
+LOCATION:Healium Hot Yoga\, 2534 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:Evening workshop\, 6 to 9 p.m.\, with Sarah Filzen focused on knee health in yoga practice. https://www.instagram.com/healiumhotyoga/p/Dfj2y_MCBbT/ (via The Bay View Bulletin)
+URL:https://www.instagram.com/healiumhotyoga/p/Dfj2y_MCBbT/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-19-music-book-club-a-man-called-destruction@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261119T180000
+DTEND;TZID=America/Chicago:20261119T200000
+SUMMARY:Music Book Club: A Man Called Destruction
+LOCATION:Lion's Tooth\, 2421 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:Lion's Tooth and Milwaukee Record's monthly music book club discusses the Alex Chilton biography. Free and open to the public. https://www.lionstoothmke.com/events.html (via The Bay View Bulletin)
+URL:https://www.lionstoothmke.com/events.html
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-19-dogs-on-shady-lane-waterspouts-rightward@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261119T190000
+DTEND;TZID=America/Chicago:20261119T210000
+SUMMARY:Dogs on Shady Lane\, Waterspouts + Rightwards
+LOCATION:Sugar Maple\, 441 E. Lincoln Ave.\, Milwaukee\, WI
+DESCRIPTION:Touring indie rockers Dogs on Shady Lane headline\, with Milwaukee bands Waterspouts and Rightwards opening. All ages. https://mysugarmaple.com/event/dogs-shady-lane/ (via The Bay View Bulletin)
+URL:https://mysugarmaple.com/event/dogs-shady-lane/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-19-bay-view-table-tennis-club@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261119T190000
+DTEND;TZID=America/Chicago:20261119T210000
+SUMMARY:Bay View Table Tennis Club
+LOCATION:Puddler's Hall\, 2461 S. St. Clair St.\, Milwaukee\, WI
+DESCRIPTION:The weekly table tennis meetup in the historic tavern's back room. https://puddlershall.com/calendar/ (via The Bay View Bulletin)
+URL:https://puddlershall.com/calendar/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-19-the-nod-factor-rare-hip-hop-with-christr@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261119T190000
+DTEND;TZID=America/Chicago:20261119T210000
+SUMMARY:The Nod Factor: rare hip-hop with Christreater and DJ Feed Me
+LOCATION:The Wiggle Room\, 2988 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:Dope Folks Records presents a night of rare hip-hop records at the vinyl bar. https://wiggleroommke.com/event/dope-folks-records-presents-the-nod-factor-w-christreater-dj-feed-me-rare-hip-hop/ (via The Bay View Bulletin)
+URL:https://wiggleroommke.com/event/dope-folks-records-presents-the-nod-factor-w-christreater-dj-feed-me-rare-hip-hop/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-19-squirrel-flower-sour-widows@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261119T193000
+DTEND;TZID=America/Chicago:20261119T213000
+SUMMARY:Squirrel Flower + Sour Widows
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:Touring indie bill in the Cactus Club stage room\; $20 advance\, $25 at the door\, all ages. https://www.cactusclubmilwaukee.com/events/squirrel-flower-sour-widows/ (via The Bay View Bulletin)
+URL:https://www.cactusclubmilwaukee.com/events/squirrel-flower-sour-widows/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-19-trivia-rcade@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261119T193000
+DTEND;TZID=America/Chicago:20261119T213000
+SUMMARY:Trivia-rcade
+LOCATION:Happy Dough Lucky\, 2691 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:Thursday-night trivia at the KK donut\, pizza and arcade bar. https://www.facebook.com/100064532628869/posts/pfbid02y3c5Mz45E3wGinWesHaLAH5JPKi3UdywVbTbNUTFDoMyo1T5Uq192JkisMJrEagel/ (via The Bay View Bulletin)
+URL:https://www.facebook.com/100064532628869/posts/pfbid02y3c5Mz45E3wGinWesHaLAH5JPKi3UdywVbTbNUTFDoMyo1T5Uq192JkisMJrEagel/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-20-chai-nog-season-starts-at-twisted-path@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:Chai nog season starts at Twisted Path
+LOCATION:Twisted Path Distillery\, 2018 S. 1st St.\, Milwaukee\, WI
+DESCRIPTION:The Lincoln Warehouse distillery kicks off its seasonal chai nog\, by the glass in the tasting room or by the bottle. https://www.instagram.com/p/Dfqdm95tCUO/ (via The Bay View Bulletin)
+URL:https://www.instagram.com/p/Dfqdm95tCUO/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-20-baby-story-time@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261120T103000
+DTEND;TZID=America/Chicago:20261120T123000
+SUMMARY:Baby Story Time
+LOCATION:Bay View Library\, 2566 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:A lap-sit story time of simple stories\, songs and gentle movement for babies up to 18 months and their caregivers. https://mpl.libnet.info/event/16972687 (via The Bay View Bulletin)
+URL:https://mpl.libnet.info/event/16972687
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-20-meet-stitch-with-fiber-fever@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261120T170000
+DTEND;TZID=America/Chicago:20261120T190000
+SUMMARY:Meet + Stitch with Fiber Fever
+LOCATION:Vendetta Coffee Bar\, 2268 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:Bring a knitting or crochet project and stitch with neighbors over coffee\; hosted by Bay View's yarn shop. https://www.instagram.com/p/DfPLt14SNv-/ (via The Bay View Bulletin)
+URL:https://www.instagram.com/p/DfPLt14SNv-/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-20-candle-light-slow-flow@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261120T180000
+DTEND;TZID=America/Chicago:20261120T200000
+SUMMARY:Candle Light Slow Flow
+LOCATION:Healium Restore\, 435 E. Lincoln Ave.\, Milwaukee\, WI
+DESCRIPTION:A slow\, candlelit yoga flow with Kelsey for winding down\; all levels welcome. Single-class pricing available. https://www.healiumhotyoga.com/happenings/candleslowflownov26 (via The Bay View Bulletin)
+URL:https://www.healiumhotyoga.com/happenings/candleslowflownov26
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-20-packaging-discus-thyone@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261120T183000
+DTEND;TZID=America/Chicago:20261120T203000
+SUMMARY:Packaging\, Discus + Thyone
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:Three-band bill in the stage room\; $18 advance\, $23 at the door\, all ages. https://www.cactusclubmilwaukee.com/events/packaging/ (via The Bay View Bulletin)
+URL:https://www.cactusclubmilwaukee.com/events/packaging/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-20-lilliput-records-spin-miss-modular-tanne@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261120T200000
+DTEND;TZID=America/Chicago:20261120T220000
+SUMMARY:Lilliput Records spin: Miss Modular\, Tanner + Matthew
+LOCATION:The Wiggle Room\, 2988 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:Lilliput Records DJs spin vinyl at Bay View's listening bar. https://wiggleroommke.com/event/lilliput-records-spin-miss-modular-tanner-matthew/ (via The Bay View Bulletin)
+URL:https://wiggleroommke.com/event/lilliput-records-spin-miss-modular-tanner-matthew/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-21-the-frozen-chair-market@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261121T110000
+DTEND;TZID=America/Chicago:20261121T130000
+SUMMARY:The Frozen Chair Market
+LOCATION:3044 S. Delaware Ave.\, Milwaukee\, WI
+DESCRIPTION:A small-business block party and market\, 11 am to 6 pm\, presented by MKE Outdoor Indoor Exchange with Component Brewing. https://www.componentbrewing.com/event-details-registration/frozen-chair-market (via The Bay View Bulletin)
+URL:https://www.componentbrewing.com/event-details-registration/frozen-chair-market
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-21-death-caf@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261121T130000
+DTEND;TZID=America/Chicago:20261121T150000
+SUMMARY:Death Café
+LOCATION:Bay View Library\, 2566 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:A relaxed\, no-agenda conversation about death and dying\, life and living\, for people of all ages. Free. https://www.eventbrite.com/e/death-cafe-at-bay-view-branch-milwaukee-public-library-tickets-1994251798814 (via The Bay View Bulletin)
+URL:https://www.eventbrite.com/e/death-cafe-at-bay-view-branch-milwaukee-public-library-tickets-1994251798814
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-21-open-decks-vinyl-edition@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261121T130000
+DTEND;TZID=America/Chicago:20261121T150000
+SUMMARY:Open Decks: Vinyl Edition
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:Free open DJ session where anyone can bring records and take a turn on the decks\; all ages. https://www.cactusclubmilwaukee.com/events/ (via The Bay View Bulletin)
+URL:https://www.cactusclubmilwaukee.com/events/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-21-tarot-for-beginners@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261121T130000
+DTEND;TZID=America/Chicago:20261121T150000
+SUMMARY:Tarot for Beginners
+LOCATION:Strange Scene\, 2681 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:Madam Strange teaches a two-hour intro to reading tarot for yourself and others\; bring a journal and deck if you have one. $25. https://www.strangescenemke.com/store/p/pendulum-making-917-cld49-y8b75-n4hep (via The Bay View Bulletin)
+URL:https://www.strangescenemke.com/store/p/pendulum-making-917-cld49-y8b75-n4hep
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-21-humbird-bad-posture-club-chris-rosenau@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261121T183000
+DTEND;TZID=America/Chicago:20261121T203000
+SUMMARY:Humbird\, Bad Posture Club + Chris Rosenau
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:Three-act bill in the stage room\; $10 advance\, $15 at the door\, all ages. https://www.cactusclubmilwaukee.com/events/humbird/ (via The Bay View Bulletin)
+URL:https://www.cactusclubmilwaukee.com/events/humbird/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-21-black-market-godzilla-mantel-matthies-gr@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261121T190000
+DTEND;TZID=America/Chicago:20261121T210000
+SUMMARY:Black Market Godzilla\, Mantel-Matthies + Gray Barker
+LOCATION:Voyageur Book Shop\, 2212 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:A Voyages Series night of three experimental music sets played on instruments the performers built themselves\, inside the bookshop. https://mkeshows.com/event/voyages-series-black-market-godzilla-mantel-matthies-gray-barker (via The Bay View Bulletin)
+URL:https://mkeshows.com/event/voyages-series-black-market-godzilla-mantel-matthies-gray-barker
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-21-two-and-a-half-stars-m545-the-uncomforta@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261121T190000
+DTEND;TZID=America/Chicago:20261121T210000
+SUMMARY:Two and a Half Stars\, M545\, The Uncomfortable Moments + Thick Needles
+LOCATION:Puddler's Hall\, 2461 S. St. Clair St.\, Milwaukee\, WI
+DESCRIPTION:Four local bands share the bill for a Saturday night show at Puddler’s Hall\; doors at 6 pm. 21+. https://www.instagram.com/p/DfkTfMJhlTw/ (via The Bay View Bulletin)
+URL:https://www.instagram.com/p/DfkTfMJhlTw/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-21-large-print-record-release-with-eden-s-e@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261121T193000
+DTEND;TZID=America/Chicago:20261121T213000
+SUMMARY:Large Print record release\, with Eden’s Expressway + Brindled
+LOCATION:Sky High\, 2501 S. Howell Ave.\, Milwaukee\, WI
+DESCRIPTION:Large Print celebrates its album "Dreamt Lost Car" with a show at the skate shop\; doors 7 pm\, $10. All ages. https://mkeshows.com/event/large-print-edens-expressway-brindled (via The Bay View Bulletin)
+URL:https://mkeshows.com/event/large-print-edens-expressway-brindled
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-21-the-bayview-boom-bap-with-justin-carloni@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261121T200000
+DTEND;TZID=America/Chicago:20261121T220000
+SUMMARY:The Bayview Boom Bap with Justin Carloni
+LOCATION:The Wiggle Room\, 2988 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:A boom-bap hip-hop night with Justin Carloni at the Wiggle Room. https://wiggleroommke.com/event/the-bayview-boom-bap-w-justin-carloni/ (via The Bay View Bulletin)
+URL:https://wiggleroommke.com/event/the-bayview-boom-bap-w-justin-carloni/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-21-aeropax-ep-release-with-fya-shakira-chin@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261121T200000
+DTEND;TZID=America/Chicago:20261121T220000
+SUMMARY:Aeropax EP release\, with FYA\, Shakira Chinchilla + ourVanity
+LOCATION:Sugar Maple\, 441 E. Lincoln Ave.\, Milwaukee\, WI
+DESCRIPTION:Aeropax releases its "Spin Me Faster" EP with three more bands\; doors 7 pm\, $15. All ages. https://mkeshows.com/event/fya-aeropax-shakira-chinchilla-ourvanity (via The Bay View Bulletin)
+URL:https://mkeshows.com/event/fya-aeropax-shakira-chinchilla-ourvanity
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-21-ambulante-y-clandestino-late-night-spin@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261121T223000
+DTEND;TZID=America/Chicago:20261122T003000
+SUMMARY:Ambulante Y Clandestino: Late Night Spin
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:A late-night vinyl DJ set at Cactus Club running from 10:30 p.m. to 2 a.m. https://www.cactusclubmilwaukee.com/events/ambulante-y-clandestino-late-night-spin-2/ (via The Bay View Bulletin)
+URL:https://www.cactusclubmilwaukee.com/events/ambulante-y-clandestino-late-night-spin-2/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-22-diy-beaded-necklace-workshop@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261122T120000
+DTEND;TZID=America/Chicago:20261122T140000
+SUMMARY:DIY Beaded Necklace Workshop
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:A drop-in workshop\, noon to 2 pm\, making your own necklace from instructor Ellie Braun’s bead collection. All ages\, $15-25. https://www.instagram.com/p/DflDnXDEaf-/ (via The Bay View Bulletin)
+URL:https://www.instagram.com/p/DflDnXDEaf-/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-22-clementine-s-bowling-fundraiser-for-home@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261122T130000
+DTEND;TZID=America/Chicago:20261122T150000
+SUMMARY:Clementine’s bowling fundraiser for homeless vets
+LOCATION:Bay View Bowl\, 2416 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:First annual bowling event hosted by Clementine’s\; profits benefit the Milwaukee Homeless Veterans Initiative. A few lanes left\; raffle prizes welcome. https://www.facebook.com/groups/bayviewtownhall/posts/29109564702019702/ (via The Bay View Bulletin)
+URL:https://www.facebook.com/groups/bayviewtownhall/posts/29109564702019702/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-22-the-inner-hearth-shamanic-journey-sound-@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261122T140000
+DTEND;TZID=America/Chicago:20261122T160000
+SUMMARY:The Inner HEARTh: Shamanic Journey + Sound Bath
+LOCATION:Delaware House\, 2499 S. Delaware Ave.\, Milwaukee\, WI
+DESCRIPTION:High Vibes MKE’s guided meditation and sound bath\, 2-3 pm\; $10 of each ticket goes to breast cancer nonprofit Savage Support. https://www.eventbrite.com/e/the-inner-hearth-shamanic-journey-sound-bath-fundraiser-tickets-2004032355723 (via The Bay View Bulletin)
+URL:https://www.eventbrite.com/e/the-inner-hearth-shamanic-journey-sound-bath-fundraiser-tickets-2004032355723
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-22-yoga-together-kids-yoga-ages-2-6@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261122T153000
+DTEND;TZID=America/Chicago:20261122T173000
+SUMMARY:Yoga Together! Kids Yoga (ages 2-6)
+LOCATION:Healium Hot Yoga\, 2534 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:Poses\, games and mindfulness for kids 2 to 6 with a grown-up\, led by Cultivate Yoga MKE. $20 per pair\; sign up ahead. https://www.healiumhotyoga.com/happenings/yogatogetherfall26 (via The Bay View Bulletin)
+URL:https://www.healiumhotyoga.com/happenings/yogatogetherfall26
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-22-hornzz@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261122T160000
+DTEND;TZID=America/Chicago:20261122T180000
+SUMMARY:HORNZZ
+LOCATION:Sugar Maple\, 441 E. Lincoln Ave.\, Milwaukee\, WI
+DESCRIPTION:A Sunday-afternoon show at Sugar Maple\, 4 to 6 p.m. No cover. https://mysugarmaple.com/event/hornzz/ (via The Bay View Bulletin)
+URL:https://mysugarmaple.com/event/hornzz/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-22-jady-stephen-stanley-hot-mess@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261122T190000
+DTEND;TZID=America/Chicago:20261122T210000
+SUMMARY:JADY\, Stephen Stanley + Hot Mess
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:Three-act bill in the stage room\; $18 advance\, $20 at the door\, all ages. https://www.cactusclubmilwaukee.com/events/jady/ (via The Bay View Bulletin)
+URL:https://www.cactusclubmilwaukee.com/events/jady/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-23-print-guap-4won5ive-culexx-more@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261123T190000
+DTEND;TZID=America/Chicago:20261123T210000
+SUMMARY:Print Guap\, 4won5ive\, Culexx + more
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:A seven-act lineup of local artists including Print Guap\, 4won5ive\, Culexx\, Dayteen and Decree on the Cactus Club stage. Free\, all ages. https://www.cactusclubmilwaukee.com/events/print-guap-4won5ive-culexx-dayteen-decree-del-whyyanoda/ (via The Bay View Bulletin)
+URL:https://www.cactusclubmilwaukee.com/events/print-guap-4won5ive-culexx-dayteen-decree-del-whyyanoda/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-23-geeks-who-drink-pub-trivia@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261123T193000
+DTEND;TZID=America/Chicago:20261123T213000
+SUMMARY:Geeks Who Drink Pub Trivia
+LOCATION:Puddler's Hall\, 2461 S. St. Clair St.\, Milwaukee\, WI
+DESCRIPTION:Weekly Monday team pub trivia hosted by Geeks Who Drink in the historic St. Clair Street tavern. https://puddlershall.com/calendar/ (via The Bay View Bulletin)
+URL:https://puddlershall.com/calendar/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-24-gentle-stretch-and-movement@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261124T140000
+DTEND;TZID=America/Chicago:20261124T160000
+SUMMARY:Gentle Stretch and Movement
+LOCATION:Bay View Library\, 2566 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:A guided\, gentle hour of stretching focused on range of motion\, balance and body awareness for stress relief. https://mpl.libnet.info/event/16955858 (via The Bay View Bulletin)
+URL:https://mpl.libnet.info/event/16955858
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-24-sushi-cowboy-crook-company-the-precipita@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261124T190000
+DTEND;TZID=America/Chicago:20261124T210000
+SUMMARY:Sushi Cowboy\, Crook & Company + The Precipitators
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:Three-band bill in the stage room\; $10 advance\, $15 at the door\, all ages. https://www.cactusclubmilwaukee.com/events/sushi-cowboy-crook-company-the-precipitators/ (via The Bay View Bulletin)
+URL:https://www.cactusclubmilwaukee.com/events/sushi-cowboy-crook-company-the-precipitators/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-24-michael-seidel-brian-kirk-aaron-vold@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261124T190000
+DTEND;TZID=America/Chicago:20261124T210000
+SUMMARY:Michael Seidel\, Brian Kirk + Aaron Vold
+LOCATION:The Wiggle Room\, 2988 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:Michael Seidel\, Brian Kirk and Aaron Vold share an indie triple bill on a Tuesday night at the KK vinyl bar. https://wiggleroommke.com/event/michael-seidel-brian-kirk-aaron-vold-indie/ (via The Bay View Bulletin)
+URL:https://wiggleroommke.com/event/michael-seidel-brian-kirk-aaron-vold-indie/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-25-tech-splanation@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261125T120000
+DTEND;TZID=America/Chicago:20261125T140000
+SUMMARY:Tech-splanation
+LOCATION:Bay View Library\, 2566 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:Drop-in help with questions about your phone\, tablet or other device\, or using the library’s online resources. https://mpl.libnet.info/event/16396373 (via The Bay View Bulletin)
+URL:https://mpl.libnet.info/event/16396373
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-25-milwaukee-record-halftime-show-daydream-@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261125T183000
+DTEND;TZID=America/Chicago:20261125T203000
+SUMMARY:Milwaukee Record Halftime Show: Daydream Retrievers + Libra BOGO
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:Milwaukee Record’s free Halftime Show series brings Daydream Retrievers and Libra BOGO to the stage the night before Thanksgiving. All ages. https://www.cactusclubmilwaukee.com/events/milwaukee-record-halftime-show-lack-of-reason-2-2-2-2-2-2-2-2/ (via The Bay View Bulletin)
+URL:https://www.cactusclubmilwaukee.com/events/milwaukee-record-halftime-show-lack-of-reason-2-2-2-2-2-2-2-2/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-25-the-crosses-star-jelly-politico-plastico@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261125T183000
+DTEND;TZID=America/Chicago:20261125T203000
+SUMMARY:The Crosses\, Star Jelly\, Politico Plastico + Adrenochrome
+LOCATION:Ortiz Bros Barbershop\, 2646 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:A four-band DIY show inside a KK barbershop the night before Thanksgiving\; doors 6 pm\, $10. All ages. https://mkeshows.com/event/the-crosses-star-jelly-politico-plastico-adrenochrome (via The Bay View Bulletin)
+URL:https://mkeshows.com/event/the-crosses-star-jelly-politico-plastico-adrenochrome
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-25-milwaukee-guitar-club@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261125T190000
+DTEND;TZID=America/Chicago:20261125T210000
+SUMMARY:Milwaukee Guitar Club
+LOCATION:Puddler's Hall\, 2461 S. St. Clair St.\, Milwaukee\, WI
+DESCRIPTION:A guitar players' meetup at Puddler's Hall\, 7 to 8:30 p.m. https://puddlershall.com/calendar/ (via The Bay View Bulletin)
+URL:https://puddlershall.com/calendar/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-25-thanksgiving-eve-with-the-get-down@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261125T200000
+DTEND;TZID=America/Chicago:20261125T220000
+SUMMARY:Thanksgiving Eve with The Get Down
+LOCATION:The Wiggle Room\, 2988 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:The Wiggle Room's night-before-Thanksgiving party with The Get Down\; the bar is closed Thanksgiving Day. https://wiggleroommke.com/event/thanksgiving-eve-w-the-get-down/ (via The Bay View Bulletin)
+URL:https://wiggleroommke.com/event/thanksgiving-eve-w-the-get-down/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-26-hot-hot-trot-thanksgiving-5k@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261126T060000
+DTEND;TZID=America/Chicago:20261126T080000
+SUMMARY:HOT HOT TROT (Thanksgiving 5K)
+LOCATION:Healium HIIT\, 2865 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:A free\, non-competitive Thanksgiving-morning 5K through Bay View\; meet at 6\, run at 6:15. Runners and walkers welcome. https://www.healiumhotyoga.com/happenings/hothottrot26 (via The Bay View Bulletin)
+URL:https://www.healiumhotyoga.com/happenings/hothottrot26
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-26-bay-view-table-tennis-club@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261126T190000
+DTEND;TZID=America/Chicago:20261126T210000
+SUMMARY:Bay View Table Tennis Club
+LOCATION:Puddler's Hall\, 2461 S. St. Clair St.\, Milwaukee\, WI
+DESCRIPTION:The weekly table tennis meetup is on the tavern’s calendar for Thanksgiving night\, 7-9 pm. https://puddlershall.com/calendar/ (via The Bay View Bulletin)
+URL:https://puddlershall.com/calendar/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-27-elf-pop-up-returns-at-lost-whale@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:Elf pop-up returns at Lost Whale
+LOCATION:Lost Whale\, 2151 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:The bar’s holiday Elf-themed pop-up is back\, running Nov. 27 through Dec. 31. https://www.instagram.com/p/DfVkeiWsC6Q/ (via The Bay View Bulletin)
+URL:https://www.instagram.com/p/DfVkeiWsC6Q/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-27-black-friday-beer-releases-at-torzala@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261127T093000
+DTEND;TZID=America/Chicago:20261127T113000
+SUMMARY:Black Friday beer releases at Torzala
+LOCATION:Torzala Brewing\, Lincoln Warehouse\, 2018 S. 1st St.\, Milwaukee\, WI
+DESCRIPTION:Torzala releases special holiday brews on Black Friday\, while supplies last\, in its second-floor taproom open 9:30 a.m. to 10 p.m. https://www.instagram.com/p/DfpeUiMFNUz/ (via The Bay View Bulletin)
+URL:https://www.instagram.com/p/DfpeUiMFNUz/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-27-plume-vintage-black-friday-weekend-sale@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261127T100000
+DTEND;TZID=America/Chicago:20261127T120000
+SUMMARY:Plume Vintage Black Friday Weekend Sale
+LOCATION:Plume Vintage\, 3001 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:Three days of vintage markdowns\, with 50% off during the first and last hour on Black Friday and 20% off storewide otherwise. https://www.instagram.com/p/Dfr4SuURLz4/ (via The Bay View Bulletin)
+URL:https://www.instagram.com/p/Dfr4SuURLz4/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-27-bourbon-black-friday@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261127T150000
+DTEND;TZID=America/Chicago:20261127T170000
+SUMMARY:Bourbon Black Friday
+LOCATION:The Bridgewater Modern Grill\, 2011 S. 1st St.\, Milwaukee\, WI
+DESCRIPTION:The fourth annual afternoon of rare bourbon flights\, including Weller and Blanton’s\, with a special food menu\, 3-6 pm. https://bridgewatermke.com/news (via The Bay View Bulletin)
+URL:https://bridgewatermke.com/news
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-27-exhumed-jarhead-fertilizer-savage-master@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261127T190000
+DTEND;TZID=America/Chicago:20261127T210000
+SUMMARY:Exhumed\, Jarhead Fertilizer\, Savage Master + Molder
+LOCATION:Club Garibaldi\, 2501 S. Superior St.\, Milwaukee\, WI
+DESCRIPTION:A metal bill billed as one of the final RK Metal Promotions shows. 21+\, $25 advance\, doors 7. https://www.instagram.com/p/Dfm-tzGBt3A/ (via The Bay View Bulletin)
+URL:https://www.instagram.com/p/Dfm-tzGBt3A/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-27-black-friday-yacht-rock-with-reno-soul-g@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261127T200000
+DTEND;TZID=America/Chicago:20261127T220000
+SUMMARY:Black Friday Yacht Rock with Reno Soul + Golden Yacht Society
+LOCATION:The Wiggle Room\, 2988 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:Reno Soul and The Golden Yacht Society bring a yacht-rock night to the Wiggle Room on Black Friday\, 8 p.m. to midnight. https://wiggleroommke.com/event/black-friday-yacht-rock-with-reno-soul/ (via The Bay View Bulletin)
+URL:https://wiggleroommke.com/event/black-friday-yacht-rock-with-reno-soul/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-27-venus-two-year-anniversary-party@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261127T220000
+DTEND;TZID=America/Chicago:20261128T000000
+SUMMARY:Venus two-year anniversary party
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:Dance party with r3algrl\, mya and khali melon\; 18+\, $15 advance\, $20 at the door. https://www.cactusclubmilwaukee.com/events/venus-two-year-anniversary-party-r3algrl-mya-khali-melon/ (via The Bay View Bulletin)
+URL:https://www.cactusclubmilwaukee.com/events/venus-two-year-anniversary-party-r3algrl-mya-khali-melon/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-28-small-business-saturday-at-lion-s-tooth@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Small Business Saturday at Lion's Tooth
+LOCATION:Lion's Tooth\, 2421 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:The KK bookstore and art space marks Small Business Saturday\; open 10 a.m. to 6 p.m. https://www.lionstoothmke.com/events.html (via The Bay View Bulletin)
+URL:https://www.lionstoothmke.com/events.html
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-28-small-business-saturday-at-fiber-fever@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261128T100000
+DTEND;TZID=America/Chicago:20261128T120000
+SUMMARY:Small Business Saturday at Fiber Fever
+LOCATION:Fiber Fever\, 2224 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:Shop small at the KK yarn shop on the Saturday after Thanksgiving. https://www.instagram.com/p/DfPLt14SNv-/ (via The Bay View Bulletin)
+URL:https://www.instagram.com/p/DfPLt14SNv-/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-28-bc-modern-s-november-collection-sale@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261128T100000
+DTEND;TZID=America/Chicago:20261128T120000
+SUMMARY:BC Modern's November Collection sale
+LOCATION:BC Modern\, 3116 S. Chase Ave.\, Milwaukee\, WI
+DESCRIPTION:The mid-century furniture shop's two-day collection sale\, 10 a.m. to 4 p.m. Saturday and Sunday. https://www.instagram.com/bcmodernmke/reel/Dfs7ls6hufa/ (via The Bay View Bulletin)
+URL:https://www.instagram.com/bcmodernmke/reel/Dfs7ls6hufa/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-28-the-nutcracker-nightmare-at-omen@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261128T100000
+DTEND;TZID=America/Chicago:20261128T120000
+SUMMARY:The Nutcracker Nightmare at Omen
+LOCATION:Omen Alternative\, 2649 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:A costumed\, Nutcracker-themed Small Business Saturday shopping party with Goth Barge DJs\, vendors\, clearance deals and Black Friday record releases. https://www.instagram.com/p/Dfyge8_tUuZ/ (via The Bay View Bulletin)
+URL:https://www.instagram.com/p/Dfyge8_tUuZ/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-28-aj-ep-release-with-jaff-graffner-pspsps-@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261128T190000
+DTEND;TZID=America/Chicago:20261128T210000
+SUMMARY:AJ EP release\, with Jaff Graffner\, pspsps + DJ Rooney
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:EP release show in the stage room\; $15 advance\, $20 at the door\, all ages. https://www.cactusclubmilwaukee.com/events/aj-ep-release-jaff-graffner-pspsps-dj-rooney/ (via The Bay View Bulletin)
+URL:https://www.cactusclubmilwaukee.com/events/aj-ep-release-jaff-graffner-pspsps-dj-rooney/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-28-wire-nail-with-cory-waller-and-the-wicke@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261128T200000
+DTEND;TZID=America/Chicago:20261128T220000
+SUMMARY:Wire & Nail\, with Cory Waller and the Wicked Things
+LOCATION:Club Garibaldi\, 2501 S. Superior St.\, Milwaukee\, WI
+DESCRIPTION:A night of honky-tonk and rock ’n’ roll\; doors 7\, show 8. $15. https://www.instagram.com/p/Dfh6DauB1BG/ (via The Bay View Bulletin)
+URL:https://www.instagram.com/p/Dfh6DauB1BG/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-28-rollerskate-jams-with-killa-kutz-dj-alia@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261128T200000
+DTEND;TZID=America/Chicago:20261128T220000
+SUMMARY:Rollerskate Jams with Killa Kutz + DJ Alias
+LOCATION:The Wiggle Room\, 2988 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:A roller-skate jams DJ night with Killa Kutz and DJ Alias. https://wiggleroommke.com/event/rollerskate-jams-w-killa-kutz-dj-alias/ (via The Bay View Bulletin)
+URL:https://wiggleroommke.com/event/rollerskate-jams-w-killa-kutz-dj-alias/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-29-bc-modern-s-november-collection-sale-day@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261129T100000
+DTEND;TZID=America/Chicago:20261129T120000
+SUMMARY:BC Modern's November Collection sale\, day two
+LOCATION:BC Modern\, 3116 S. Chase Ave.\, Milwaukee\, WI
+DESCRIPTION:Second day of the mid-century furniture shop’s monthly collection sale. https://www.bcmodernmke.com/bc-modern-events (via The Bay View Bulletin)
+URL:https://www.bcmodernmke.com/bc-modern-events
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-29-3rd-annual-milk-waukee-film-festival@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261129T140000
+DTEND;TZID=America/Chicago:20261129T160000
+SUMMARY:3rd Annual Milk-Waukee Film Festival
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:A screening of local short films under 12 minutes\, each of which must feature milk somewhere\, 2-5 pm. All ages\, $10. https://www.cactusclubmilwaukee.com/events/3rd-annual-milk-waukee-film-festival/ (via The Bay View Bulletin)
+URL:https://www.cactusclubmilwaukee.com/events/3rd-annual-milk-waukee-film-festival/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-29-cathedral-brxyden-club-lowlife-vonn-more@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261129T183000
+DTEND;TZID=America/Chicago:20261129T203000
+SUMMARY:CATHEDRAL: Brxyden\, Club Lowlife\, Vonn + more
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:An all-local rage rap and hip-hop lineup of 15 acts\; 18+\, $10 advance\, $15 at the door. https://www.cactusclubmilwaukee.com/events/cathedral-brxyden-club-lowlife-vonn-won-rush-gang-potion-jex-r4mon-drayahh-lhateujay-popesunni/ (via The Bay View Bulletin)
+URL:https://www.cactusclubmilwaukee.com/events/cathedral-brxyden-club-lowlife-vonn-won-rush-gang-potion-jex-r4mon-drayahh-lhateujay-popesunni/
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-30-dj-tim-spankowski@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261130T180000
+DTEND;TZID=America/Chicago:20261130T200000
+SUMMARY:DJ Tim Spankowski
+LOCATION:The Wiggle Room\, 2988 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:DJ Tim Spankowski spins records at The Wiggle Room\, Bay View's vinyl listening bar. https://wiggleroommke.com/event/dj-tim-spankowski/ (via The Bay View Bulletin)
+URL:https://wiggleroommke.com/event/dj-tim-spankowski/
+END:VEVENT
+END:VCALENDAR

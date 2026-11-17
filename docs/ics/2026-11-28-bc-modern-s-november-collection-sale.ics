@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Bay View Bulletin//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:BC Modern's November Collection sale
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:2026-11-28-bc-modern-s-november-collection-sale@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261128T100000
+DTEND;TZID=America/Chicago:20261128T120000
+SUMMARY:BC Modern's November Collection sale
+LOCATION:BC Modern\, 3116 S. Chase Ave.\, Milwaukee\, WI
+DESCRIPTION:The mid-century furniture shop's two-day collection sale\, 10 a.m. to 4 p.m. Saturday and Sunday. https://www.instagram.com/bcmodernmke/reel/Dfs7ls6hufa/ (via The Bay View Bulletin)
+URL:https://www.instagram.com/bcmodernmke/reel/Dfs7ls6hufa/
+END:VEVENT
+END:VCALENDAR

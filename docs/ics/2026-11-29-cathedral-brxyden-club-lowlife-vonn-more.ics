@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Bay View Bulletin//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CATHEDRAL: Brxyden, Club Lowlife, Vonn + more
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:2026-11-29-cathedral-brxyden-club-lowlife-vonn-more@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261129T183000
+DTEND;TZID=America/Chicago:20261129T203000
+SUMMARY:CATHEDRAL: Brxyden\, Club Lowlife\, Vonn + more
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:An all-local rage rap and hip-hop lineup of 15 acts\; 18+\, $10 advance\, $15 at the door. https://www.cactusclubmilwaukee.com/events/cathedral-brxyden-club-lowlife-vonn-won-rush-gang-potion-jex-r4mon-drayahh-lhateujay-popesunni/ (via The Bay View Bulletin)
+URL:https://www.cactusclubmilwaukee.com/events/cathedral-brxyden-club-lowlife-vonn-won-rush-gang-potion-jex-r4mon-drayahh-lhateujay-popesunni/
+END:VEVENT
+END:VCALENDAR

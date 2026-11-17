@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Bay View Bulletin//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Thanksgiving Eve with The Get Down
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:2026-11-25-thanksgiving-eve-with-the-get-down@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261125T200000
+DTEND;TZID=America/Chicago:20261125T220000
+SUMMARY:Thanksgiving Eve with The Get Down
+LOCATION:The Wiggle Room\, 2988 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:The Wiggle Room's night-before-Thanksgiving party with The Get Down\; the bar is closed Thanksgiving Day. https://wiggleroommke.com/event/thanksgiving-eve-w-the-get-down/ (via The Bay View Bulletin)
+URL:https://wiggleroommke.com/event/thanksgiving-eve-w-the-get-down/
+END:VEVENT
+END:VCALENDAR

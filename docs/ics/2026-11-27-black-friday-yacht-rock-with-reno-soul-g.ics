@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Bay View Bulletin//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Black Friday Yacht Rock with Reno Soul + Golden Yacht Society
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:2026-11-27-black-friday-yacht-rock-with-reno-soul-g@bayviewbulletin.com
+DTSTAMP:20261117T172509Z
+DTSTART;TZID=America/Chicago:20261127T200000
+DTEND;TZID=America/Chicago:20261127T220000
+SUMMARY:Black Friday Yacht Rock with Reno Soul + Golden Yacht Society
+LOCATION:The Wiggle Room\, 2988 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:Reno Soul and The Golden Yacht Society bring a yacht-rock night to the Wiggle Room on Black Friday\, 8 p.m. to midnight. https://wiggleroommke.com/event/black-friday-yacht-rock-with-reno-soul/ (via The Bay View Bulletin)
+URL:https://wiggleroommke.com/event/black-friday-yacht-rock-with-reno-soul/
+END:VEVENT
+END:VCALENDAR

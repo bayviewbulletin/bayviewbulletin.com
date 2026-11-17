@@ -31,20 +31,24 @@ def dek(it):
     return (m.group(1) if m else b)[:200]
 
 
-CM = lambda f: "https://commons.wikimedia.org/wiki/Special:FilePath/" + f.replace(" ", "_") + "?width=500"
-VENUES = [("Cactus Club", CM("Milwaukee January 2025 04 (Cactus Club).jpg")), ("Puddler", CM("2024 08 07 Puddler's Hall 1.jpg")),
-          ("Library", CM("Bay View Branch.jpg")), ("Garibaldi", CM("Milwaukee January 2025 16 (S. Kinnickinnic Avenue).jpg")),
-          ("Kinnickinnic", CM("Milwaukee January 2025 16 (S. Kinnickinnic Avenue).jpg")), ("Methodist", CM("SouthShore Park 1.jpg")),
-          ("", CM("Milwaukee January 2025 16 (S. Kinnickinnic Avenue).jpg"))]
 WARM = {"Business spotlight", "Food & Drink", "Ways to help", "Parks", "Fish fry", "Pets"}
 
 
 def venue_img(ev):
-    if ev.get("image"):
-        return ev["image"]
-    for k, u in VENUES:
-        if k in ev["where"] or k in ev["title"]:
-            return u
+    """The event's own flyer/photo, or None (the page then shows a dated tile in the event type's color)."""
+    return ev.get("image") or None
+
+
+KIND_TONE = {"Music": "k1", "Social": "k2", "Food": "k3", "Shopping": "k3", "Family": "k4", "Community": "k5", "Give": "k4", "Civic": "k5"}
+
+
+def ev_thumb(ev, today, cls=""):
+    src = venue_img(ev)
+    if src:
+        return f'<img src="{e(src)}" alt="" loading="lazy"{(" class=" + chr(34) + cls + chr(34)) if cls else ""}>'
+    dd = ev_date(ev, today)
+    return (f'<span class="evtile {KIND_TONE.get(ev.get("kind"), "k5")}{(" " + cls) if cls else ""}" aria-hidden="true">'
+            f'<b>{dd.strftime("%a").upper()}</b><i>{dd.day}</i><small>{e(ev.get("kind", ""))}</small></span>')
 
 
 MONTHS = {m: i for i, m in enumerate(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], 1)}
@@ -132,6 +136,42 @@ def events_ld(events, today):
         if ev_free(ev): x["isAccessibleForFree"] = True
         out.append(x)
     return ld({"@context": "https://schema.org", "@graph": out})
+
+
+VTZ = ("BEGIN:VTIMEZONE\r\nTZID:America/Chicago\r\nBEGIN:DAYLIGHT\r\nTZOFFSETFROM:-0600\r\nTZOFFSETTO:-0500\r\nTZNAME:CDT\r\nDTSTART:19700308T020000\r\n"
+       "RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU\r\nEND:DAYLIGHT\r\nBEGIN:STANDARD\r\nTZOFFSETFROM:-0500\r\nTZOFFSETTO:-0600\r\nTZNAME:CST\r\n"
+       "DTSTART:19701101T020000\r\nRRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU\r\nEND:STANDARD\r\nEND:VTIMEZONE\r\n")
+
+
+def ics_text(t):
+    return str(t).replace("\\", "\\\\").replace(";", "\\;").replace(",", "\\,").replace("\n", "\\n")
+
+
+def ev_ics(ev, today, stamp):
+    """One VEVENT (and the Google Calendar link) for an event; 2 hours long when a start time is known, else all day."""
+    dd = ev_date(ev, today)
+    st = ev_start(ev, dd)
+    uid = f"{dd.isoformat()}-{slug(ev['title'])[:40]}@bayviewbulletin.com"
+    if "T" in st:
+        t0 = dt.datetime.fromisoformat(st[:19])
+        t1 = t0 + dt.timedelta(hours=2)
+        when = f"DTSTART;TZID=America/Chicago:{t0:%Y%m%dT%H%M%S}\r\nDTEND;TZID=America/Chicago:{t1:%Y%m%dT%H%M%S}\r\n"
+        gdates = f"{t0:%Y%m%dT%H%M%S}/{t1:%Y%m%dT%H%M%S}"
+    else:
+        when = f"DTSTART;VALUE=DATE:{dd:%Y%m%d}\r\nDTEND;VALUE=DATE:{dd + dt.timedelta(days=1):%Y%m%d}\r\n"
+        gdates = f"{dd:%Y%m%d}/{dd + dt.timedelta(days=1):%Y%m%d}"
+    where = ev["where"].split(" · ")[0] + ", Milwaukee, WI"
+    desc = (ev.get("desc", "") + " " + (ev.get("link") or "")).strip() + " (via The Bay View Bulletin)"
+    vevent = (f"BEGIN:VEVENT\r\nUID:{uid}\r\nDTSTAMP:{stamp}\r\n{when}SUMMARY:{ics_text(ev['title'])}\r\nLOCATION:{ics_text(where)}\r\n"
+              f"DESCRIPTION:{ics_text(desc)}\r\n" + (f"URL:{ev['link']}\r\n" if ev.get("link") else "") + "END:VEVENT\r\n")
+    import urllib.parse as _u
+    gurl = "https://calendar.google.com/calendar/render?" + _u.urlencode({"action": "TEMPLATE", "text": ev["title"], "dates": gdates, "ctz": "America/Chicago", "details": desc, "location": where})
+    return uid.split("@")[0], vevent, gurl
+
+
+def ics_wrap(body, name="The Bay View Bulletin: Bay View events"):
+    return ("BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//The Bay View Bulletin//Events//EN\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\n"
+            f"X-WR-CALNAME:{name}\r\nX-WR-TIMEZONE:America/Chicago\r\n" + VTZ + body + "END:VCALENDAR\r\n")
 
 
 def sunrise_sunset(day, lat=42.99, lon=-87.89, tz=-6):
@@ -238,7 +278,7 @@ footer a{color:var(--lake)}
 .pill{font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--rule);padding:3px 7px;border-radius:99px;color:var(--muted)}
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}.filters button{border:1px solid var(--ink);padding:6px 12px;border-radius:99px;font:600 14px var(--sans);background:var(--paper);color:var(--ink);cursor:pointer}.filters button:hover{background:var(--soft)}.filters button.on{background:var(--ink);color:var(--paper)}.filters button:focus-visible{outline:2px solid var(--lake);outline-offset:2px}[hidden]{display:none!important}
 .list a{display:block;padding:16px 0;border-bottom:1px solid var(--rule)}.list h3{font:700 21px/1.25 var(--serif);margin:2px 0 4px}.list p{margin:0;color:var(--muted)}
-.pagehead{font:800 34px var(--serif);margin:24px 0 2px}.topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 36px;padding-top:6px}@media(max-width:820px){.topics{grid-template-columns:1fr}}.topic{padding:18px 0 6px}.topic>h2{font:800 20px var(--serif);margin:0 0 4px;padding-top:10px;border-top:4px solid var(--lake);display:flex;justify-content:space-between;align-items:baseline}.topic.w>h2{border-top-color:var(--warm)}.topic>h2 a{font:600 14px var(--sans);color:var(--lake)}.topic.w>h2 a{color:var(--warm)}.topic .row{padding:12px 0;border-bottom:1px solid var(--rule)}.topic .row:last-child{border-bottom:0}.pagedek{color:var(--muted);margin:0 0 10px}@media(max-width:600px){.ev{grid-template-columns:64px minmax(0,1fr);gap:2px 12px;align-items:start}.ev img{grid-row:1/span 2;width:64px;height:48px}.ev .t{grid-column:2;font-size:14px}.ev>div{grid-column:2}.ev .pill{display:none}.ev[style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr) auto!important}.ev[style*="grid-template-columns"]>div{grid-column:1}.ev[style*="grid-template-columns"] .pill{display:inline-block}}.filters.when{margin-bottom:0}.filters.kinds{margin-top:8px}.filters .free{border-color:var(--warm)!important}.filters button.on.free{background:var(--warm)!important;color:var(--on-color)!important;border-color:var(--warm)!important}@media(max-width:520px){.filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.filters::-webkit-scrollbar{display:none}.filters button{flex:0 0 auto}}.corr{font:15px/1.5 var(--sans);background:var(--soft);border-left:4px solid var(--warm);padding:10px 14px;margin:18px 0}.story .body h2{font:800 20px var(--serif);margin:26px 0 6px}
+.pagehead{font:800 34px var(--serif);margin:24px 0 2px}.topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 36px;padding-top:6px}@media(max-width:820px){.topics{grid-template-columns:1fr}}.topic{padding:18px 0 6px}.topic>h2{font:800 20px var(--serif);margin:0 0 4px;padding-top:10px;border-top:4px solid var(--lake);display:flex;justify-content:space-between;align-items:baseline}.topic.w>h2{border-top-color:var(--warm)}.topic>h2 a{font:600 14px var(--sans);color:var(--lake)}.topic.w>h2 a{color:var(--warm)}.topic .row{padding:12px 0;border-bottom:1px solid var(--rule)}.topic .row:last-child{border-bottom:0}.pagedek{color:var(--muted);margin:0 0 10px}.bzarch{font:600 15px/1.6 var(--sans);margin:18px 0 0;color:var(--buzz-ink)}.bzarch h3{font:800 18px var(--sans);margin:0 0 4px}.bzarch a{color:var(--buzz-ink);text-decoration:underline}.evtile{display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--lake);color:var(--on-color);font-family:var(--sans);line-height:1;text-align:center}.evtile b{font:700 10px var(--sans);letter-spacing:.1em;opacity:.85}.evtile i{font:800 22px var(--serif);font-style:normal;margin:2px 0}.evtile small{display:none;font:600 10px var(--sans);letter-spacing:.06em;text-transform:uppercase;opacity:.85}.evtile.k2{background:var(--ink);color:var(--paper)}.evtile.k3{background:var(--warm)}.evtile.k4{background:var(--warm-soft);color:var(--warm)}.evtile.k5{background:var(--lake-soft);color:var(--lake)}.ev .evtile{width:72px;height:54px}.chip .evtile{width:100%;height:110px}.chip .evtile i{font-size:40px}.chip .evtile b{font-size:12px}.chip .evtile small{display:block;margin-top:4px}@media(max-width:600px){.ev .evtile{grid-row:1/span 2;width:64px;height:48px}}.evcal{font:600 13px var(--sans);color:var(--muted);margin-top:4px}.evcal a{color:var(--lake)}@media(max-width:600px){.ev{grid-template-columns:64px minmax(0,1fr);gap:2px 12px;align-items:start}.ev img{grid-row:1/span 2;width:64px;height:48px}.ev .t{grid-column:2;font-size:14px}.ev>div{grid-column:2}.ev .pill{display:none}.ev[style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr) auto!important}.ev[style*="grid-template-columns"]>div{grid-column:1}.ev[style*="grid-template-columns"] .pill{display:inline-block}}.filters.when{margin-bottom:0}.filters.kinds{margin-top:8px}.filters .free{border-color:var(--warm)!important}.filters button.on.free{background:var(--warm)!important;color:var(--on-color)!important;border-color:var(--warm)!important}@media(max-width:520px){.filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.filters::-webkit-scrollbar{display:none}.filters button{flex:0 0 auto}}.corr{font:15px/1.5 var(--sans);background:var(--soft);border-left:4px solid var(--warm);padding:10px 14px;margin:18px 0}.story .body h2{font:800 20px var(--serif);margin:26px 0 6px}
 .dateline .mk{width:26px;height:26px;display:block}.foot-brand{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 10px;margin-bottom:8px;font:700 15px var(--sans);color:var(--ink)}.foot-brand img{width:28px;height:28px}.foot-brand em{font:italic 400 15px var(--serif);color:var(--muted)}
 """
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
@@ -552,7 +592,7 @@ def build_one(d, newest):
         if ev not in pick: pick.append(ev)
     pick = sorted(pick[:6], key=lambda x: d["events"].index(x))
     wk_label = "This weekend in Bay View" if day.weekday() >= 4 else "Coming up this weekend"
-    wk_chips = "".join(f'<a class="chip" href="/events.html#weekend"><img src="{e(venue_img(ev))}" alt="" loading="lazy"><span class="in"><span class="d">{e(ev["day"].replace("Today, ", ""))}</span><span class="t">{e(ev["when"])}</span><span class="n">{e(ev["title"])}</span><span class="w">{e(ev["where"].split(",")[0].split(" · ")[0])}</span></span></a>' for ev in pick)
+    wk_chips = "".join(f'<a class="chip" href="/events.html#weekend">{ev_thumb(ev, day)}<span class="in"><span class="d">{e(ev["day"].replace("Today, ", ""))}</span><span class="t">{e(ev["when"])}</span><span class="n">{e(ev["title"])}</span><span class="w">{e(ev["where"].split(",")[0].split(" · ")[0])}</span></span></a>' for ev in pick)
     weekend_html = f'<section class="tonight weekend"><h2><span>{wk_label}</span><a href="/events.html#weekend">All weekend events →</a></h2><div class="chips">{wk_chips}</div></section>' if pick else ""
     # Earlier this week: on thin days (fewer than 6 news stories), recent stories from the previous 3 days.
     earlier_html = ""
@@ -561,7 +601,7 @@ def build_one(d, newest):
         if prev:
             earlier_html = ('<section class="topic"><h2>Earlier this week<a href="/archive.html">Archive →</a></h2>'
                             + "".join(f'<a class="row noimg" href="{x["url"]}"><div><span class="kicker">{e(x["section"])} · {e(x["display_date"].split(",")[0])}</span><h3>{e(x["title"])}</h3><p>{e(dek(x))}</p></div></a>' for x in prev[:4]) + "</section>")
-    chips = "".join(f'<a class="chip" href="/events.html"><img src="{e(venue_img(ev))}" alt="" loading="lazy"><span class="in"><span class="t">{e(ev["when"])}</span><span class="n">{e(ev["title"])}</span><span class="w">{e(ev["where"].split(",")[0].split(" · ")[0])}</span></span></a>' for ev in today_events)
+    chips = "".join(f'<a class="chip" href="/events.html#today">{ev_thumb(ev, day)}<span class="in"><span class="t">{e(ev["when"])}</span><span class="n">{e(ev["title"])}</span><span class="w">{e(ev["where"].split(",")[0].split(" · ")[0])}</span></span></a>' for ev in today_events)
 
     def row(s, kicker=True):
         img = f'<img src="{e(s["image"]["src"])}" alt="">' if s.get("image") else ""
@@ -596,12 +636,20 @@ def build_one(d, newest):
 
     # events
     cal, cur = [], None
+    (OUT / "ics").mkdir(exist_ok=True)
+    stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    all_vevents = []
     for ev in d["events"]:
+        _id, _vev, _g = ev_ics(ev, day, stamp)
+        all_vevents.append(_vev)
+        (OUT / "ics" / f"{_id}.ics").write_text(ics_wrap(_vev, ev["title"]))
+        ev = dict(ev, _ics=f"/ics/{_id}.ics", _g=_g)
         if ev["day"] != cur:
             cur = ev["day"]
             cal.append(f'<div class="cal-day" data-day="{e(cur)}">{e(cur)}</div>')
         _dd = ev_date(ev, day)
-        cal.append(f'<div class="ev" data-day="{e(ev["day"])}" data-kind="{e(ev["kind"])}" data-when="{ev_when_tags(_dd, day)}" data-free="{1 if ev_free(ev) else 0}"><img src="{e(venue_img(ev))}" alt="" loading="lazy"><span class="t">{e(ev["when"])}</span><div><a href="{e(ev["link"])}" class="n">{e(ev["title"])}</a><div class="w">{e(ev["where"])}</div>{('<div class="d">' + e(ev["desc"]) + '</div>') if ev.get("desc") else ""}</div><span class="pill">{e(ev["kind"])}</span></div>')
+        cal.append(f'<div class="ev" data-day="{e(ev["day"])}" data-kind="{e(ev["kind"])}" data-when="{ev_when_tags(_dd, day)}" data-free="{1 if ev_free(ev) else 0}">{ev_thumb(ev, day)}<span class="t">{e(ev["when"])}</span><div><a href="{e(ev["link"])}" class="n">{e(ev["title"])}</a><div class="w">{e(ev["where"])}</div>{('<div class="d">' + e(ev["desc"]) + '</div>') if ev.get("desc") else ""}<div class="evcal">Add to calendar: <a href="{ev["_ics"]}" download>Apple / Outlook</a> · <a href="{e(ev["_g"])}">Google</a></div></div><span class="pill">{e(ev["kind"])}</span></div>')
+    (OUT / "events.ics").write_text(ics_wrap("".join(all_vevents)))
     kinds = sorted({ev["kind"] for ev in d["events"]})
     whens = [("", "Any day"), ("today", "Today"), ("tomorrow", "Tomorrow"), ("weekend", "This weekend"), ("week", "Next 7 days")]
     filt = ('<div class="filters when" role="group" aria-label="Filter events by date">'
@@ -625,7 +673,7 @@ fb.addEventListener('click',function(){S.f=!S.f;apply()});
 function fromHash(){S={k:'',w:'',f:false};decodeURIComponent(location.hash.slice(1)).split('/').forEach(function(p){if(!p)return;if(p==='free')S.f=true;else if(wb.some(function(b){return b.dataset.w===p}))S.w=p;else if(kb.some(function(b){return b.dataset.k===p}))S.k=p});apply()}
 window.addEventListener('hashchange',fromHash);if(location.hash)fromHash();})();
 </script>"""
-    (OUT / "events.html").write_text(shell("Events · The Bay View Bulletin", f'<h1 class="pagehead">Events in Bay View</h1><p class="pagedek">Shows, family time, markets and meetings, today and ahead.</p>{filt}{"".join(cal)}{filt_js}', d, "Events", None, "/events.html", events_ld(d["events"], day)))
+    (OUT / "events.html").write_text(shell("Events · The Bay View Bulletin", f'<h1 class="pagehead">Events in Bay View</h1><p class="pagedek">Shows, family time, markets and meetings, today and ahead. <a href="webcal://bayviewbulletin.com/events.ics" style="color:var(--lake);font-weight:600">Subscribe to this calendar</a> (or add <a href="/events.ics" style="color:var(--lake)">bayviewbulletin.com/events.ics</a> to Google Calendar under "From URL").</p>{filt}{"".join(cal)}{filt_js}', d, "Events", None, "/events.html", events_ld(d["events"], day)))
 
     # milwaukee
     # The Milwaukee section was retired Nov. 12, 2026 (citywide news that affects Bay View now runs in the topic blocks).
@@ -719,10 +767,27 @@ def build():
 <h2>Corrections</h2>
 <p>If we get something wrong, we fix it on the story with a note saying what changed, and list it on our <a href="/corrections.html">corrections page</a>. Photos come from the original source or free-licensed collections, always credited. If you own a photo and want it removed, tell us and it comes down.</p>
 <p><a class="btn" href="{TIPS}">Send a tip or a correction</a></p></div></article>"""
-    bz_html = "".join(f'<h2 class="bzday">{e(dd["display_date"])}</h2><div class="bzgrid">{"".join(buzz_card(b) for b in items)}</div>' for dd, items in reversed(ALL_BUZZ) if items)
+    # Nov. 17: the Buzz page shows the last 7 days; every day also gets its own archive page at /buzz/<date>.html.
+    (OUT / "buzz").mkdir(exist_ok=True)
+    bz_days = [(dd, items) for dd, items in reversed(ALL_BUZZ) if items]
+    cutoff = (dt.date.fromisoformat(d["date"]) - dt.timedelta(days=6)).isoformat()
+    def bz_section(dd, items):
+        return f'<h2 class="bzday"><a href="/buzz/{dd["date"]}.html" style="color:inherit">{e(dd["display_date"])}</a></h2><div class="bzgrid">{"".join(buzz_card(b) for b in items)}</div>'
+    def bz_page(inner, extra=""):
+        return (f'<section class="buzz page"><header><h2>The Bay View <span>Buzz</span></h2><p>What the neighborhood is posting about</p></header>{inner}{extra}'
+                f'<p class="bznote">{BUZZ_NOTE.replace("{TIPS}", TIPS)}</p></section>')
+    older = [(dd, items) for dd, items in bz_days if dd["date"] < cutoff]
+    arch_links = ('<div class="bzarch"><h3>Earlier Buzz</h3><p>' + " · ".join(f'<a href="/buzz/{dd["date"]}.html">{e(dd["display_date"].split(",", 1)[1].strip() if "," in dd["display_date"] else dd["display_date"])}</a>' for dd, _ in older) + "</p></div>") if older else ""
+    bz_html = "".join(bz_section(dd, items) for dd, items in bz_days if dd["date"] >= cutoff)
+    for k, (dd, items) in enumerate(bz_days):
+        nav_ = []
+        if k + 1 < len(bz_days): nav_.append(f'<a href="/buzz/{bz_days[k + 1][0]["date"]}.html">← {e(bz_days[k + 1][0]["display_date"])}</a>')
+        nav_.append('<a href="/buzz.html">Latest Buzz</a>')
+        if k > 0: nav_.append(f'<a href="/buzz/{bz_days[k - 1][0]["date"]}.html">{e(bz_days[k - 1][0]["display_date"])} →</a>')
+        (OUT / "buzz" / f'{dd["date"]}.html').write_text(shell(f'The Bay View Buzz, {dd["display_date"]} · The Bay View Bulletin',
+            bz_page(bz_section(dd, items), '<p class="bzarch">' + " · ".join(nav_) + "</p>"), d, "Buzz", {"title": "The Bay View Buzz · " + dd["display_date"], "desc": items[0]["headline"]}))
     (OUT / "buzz.html").write_text(shell("The Bay View Buzz · The Bay View Bulletin",
-        f'<section class="buzz page"><header><h2>The Bay View <span>Buzz</span></h2><p>What the neighborhood is posting about</p></header>{bz_html or "<p>Quiet out there. Check back tomorrow.</p>"}'
-        f'<p class="bznote">{BUZZ_NOTE.replace("{TIPS}", TIPS)}</p></section>', d, "Buzz"))
+        bz_page(bz_html or "<p>Quiet out there. Check back tomorrow.</p>", arch_links), d, "Buzz"))
     spots = [x for x in reversed(ALL_STORIES) if x["key"] == "spotlight"]
     if spots:
         cur, past = spots[0], spots[1:]
@@ -784,8 +849,9 @@ q.addEventListener('input',go);const p=new URLSearchParams(location.search).get(
         else:
             h = re.sub(r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{SITE}{rel}">', h, count=1)
             h = re.sub(r'<meta property="og:url" content="[^"]*">', f'<meta property="og:url" content="{SITE}{rel}">', h, count=1)
-        if rel in og_for:
-            h = h.replace(f'<meta property="og:image" content="{SITE}/og-default.png">', f'<meta property="og:image" content="{SITE}/og/{og_for[rel]}.png">', 1)
+        ogk = og_for.get(rel) or ("buzz" if rel.startswith("/buzz/") else None)
+        if ogk:
+            h = h.replace(f'<meta property="og:image" content="{SITE}/og-default.png">', f'<meta property="og:image" content="{SITE}/og/{ogk}.png">', 1)
         f.write_text(h)
     (OUT / "site.webmanifest").write_text(json.dumps({"name": "The Bay View Bulletin", "short_name": "Bulletin", "description": "Bay View's morning paper",
         "start_url": "/", "display": "browser", "background_color": "#FFFFFF", "theme_color": "#1F4E79",
