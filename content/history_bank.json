@@ -1,0 +1,12 @@
+{
+ "_about": "History bank (Ben, Nov. 18, 2026). Filled once a week by the Sunday 'weekly history bank' session while Ben is signed in to the MPL Journal/Sentinel archive (NewsBank). The daily run never opens the archive: it takes today's item from here first, then falls back to free sources. Each item is a complete day-file 'history' object (same fields as content/issues/*.json history) plus bank fields. Use an item once, then move it to 'used' with the date it ran.",
+ "item_fields": {
+  "run_on": "YYYY-MM-DD the item is written for (its on-this-day / this-week date), or null for a spare",
+  "history": "the full history object: year, date, match, topic, title, text, body, now, source_name, source_url, links, image, gallery",
+  "notes": "anything the daily run should check before publishing (e.g. 'sources disagree on the year')",
+  "banked": "YYYY-MM-DD the session banked it"
+ },
+ "dated": [],
+ "spares": [],
+ "used": []
+}

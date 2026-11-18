@@ -49,3 +49,19 @@ This step is part of the daily task. It runs right after the push in BUILD & PUB
 7. **Report.**
    - **Finish message:** add a short "Post-publish check" section listing what was checked, what was fixed (e.g. "3 photos upgraded, 1 dead link removed") and what's left.
    - **Admin dashboard:** add these fields to today's runs.json row: `post_images_upgraded`, `post_links_fixed`, `post_rule_fixes`, `post_layout_issues`, `post_left` (the number of problems still open).
+
+## HISTORY BANK (Ben, Nov. 18, 2026; replaces the daily MPL archive step)
+The daily run NO LONGER opens the MPL Journal/Sentinel archive (the CountyCat sign-in never lasted until 4:30 a.m.). Instead:
+- **Weekly session (Sundays, about 10 a.m. Central, its own scheduled task "Bay View Bulletin: weekly history bank"):**
+  - It runs while Ben is awake. He signs in to CountyCat when the session pings him.
+  - It banks 10 complete history items in `content/history_bank.json`: 7 dated ones for the coming Monday through Sunday, matched "on this day" first, plus 3 undated spares.
+  - It crops archive page photos into static/photos/ (labeled "(public domain)" for pre-1931 pages).
+  - It fills `content/archive_research.json` with spotlight backstory, then-and-now pairs and an anniversaries calendar.
+- **Daily run, history item, in this order:**
+  1. The bank entry whose `run_on` is today.
+  2. A spare whose subject fits (e.g. the same week or month).
+  3. Free web sources: Bay View Compass back issues on Issuu (issuu.com/bayviewcompass), the Bay View Historical Society's Historian newsletter PDFs (bayviewhistoricalsociety.org/wp-content/uploads/...), Urban Milwaukee, OnMilwaukee and Milwaukee Record history pieces, Encyclopedia of Milwaukee (emke.uwm.edu), MPL's free digital photo collections (mpl.org/special_collections/images), the Wisconsin Historical Society property records, and Chronicling America.
+- **Before using a banked item:** re-check its subject against content/history.json (no repeats within 365 days) and read its notes. Then move it from `dated`/`spares` to `used` with the date it ran, and append it to content/history.json as usual.
+- **Spotlights:** check `archive_research.json` > `spotlight_backstory` for the day's business. For the history item's `now` line, check `then_and_now`.
+- **Finish message:** say whether the history item came from the bank, a spare or the free fallback, and how many banked items are left. If fewer than 2 dated items remain for the coming days, say so.
+- **Never:** type a library card number, barcode, PIN or password; use paid archives; use the library archive for current news.

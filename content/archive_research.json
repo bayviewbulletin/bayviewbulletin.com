@@ -1,0 +1,30 @@
+{
+ "_about": "Archive research notes (Ben, Nov. 18, 2026), collected by the weekly history bank session from the MPL Journal/Sentinel archive and kept for later use. Facts and short summaries in our own words only, never copied article text. Cite the paper and date; links to archive pages are labeled '(MPL library card required)'.",
+ "spotlight_backstory": [],
+ "spotlight_backstory_fields": {
+  "business": "directory name",
+  "facts": "short summary: when it opened, past owners, past locations, awards",
+  "source_name": "paper, date",
+  "source_url": "archive link",
+  "added": "YYYY-MM-DD"
+ },
+ "then_and_now": [],
+ "then_and_now_fields": {
+  "address": "as in content/directory.json",
+  "now": "current directory business",
+  "then": "what was there, with years",
+  "source_name": "",
+  "source_url": "",
+  "image": "optional /photos/ path of a cropped archive photo",
+  "added": ""
+ },
+ "anniversaries": [],
+ "anniversaries_fields": {
+  "date": "MM-DD",
+  "year": "YYYY",
+  "what": "one line",
+  "source_name": "",
+  "source_url": "",
+  "added": ""
+ }
+}
