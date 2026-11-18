@@ -53,7 +53,7 @@
   "development": [
    {
     "title": "City proposes zoning changes to allow more housing; comments are open through Dec. 11",
-    "dek": "Cottage courts, more townhouses and smaller lots are in the draft; there's a drop-in session Friday at the Zeidler building.",
+    "dek": "Cottage courts, more townhouses and smaller lots are in the draft; a drop-in session is Friday downtown.",
     "body": "Milwaukee's Department of City Development released a package of proposed zoning code changes Monday meant to carry out the city's Housing Element plan. In neighborhoods like Bay View, the drafts would allow smaller lots and homes, cottage courts of three to 12 small houses around a shared yard (with zoning board approval), more townhouses, and flag lots that could let a home be built behind an existing house on a deep lot, Urban Milwaukee reported.\n\nThe proposals would also drop the formula that caps how many apartments fit on a property, letting the building's allowed size set the limit, and add design and setback rules for larger buildings next to single-family homes. They would not change any property's zoning district, and they would not broadly allow duplexes or triplexes in single-family areas.\n\nNothing is final: the drafts still need review and Common Council approval. The city is taking comments online through Dec. 11, and holds a drop-in session with no presentation Friday, Nov. 20, from 1 to 5:30 p.m. at the Zeidler Municipal Building, 841 N. Broadway.",
     "tag": "City Hall",
     "source_name": "Urban Milwaukee",
@@ -175,10 +175,10 @@
    "where": "Bay View Town Hall (Facebook)",
    "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29202052759437562/",
    "image": {
-    "src": "/photos/bz-lime-scooter.jpg",
-    "alt": "A row of green-and-white Lime e-scooters parked on a sidewalk (stock photo)",
-    "credit": "Baldesteinemanuel326, CC BY-SA 4.0, via Wikimedia Commons",
-    "credit_url": "https://commons.wikimedia.org/wiki/File:Lime-S_Scooters.jpg"
+    "src": "/photos/bz-lime-scooter-pond.jpg",
+    "alt": "A Lime scooter lying underwater just off the dock in the Humboldt Park lagoon",
+    "credit": "Ashley M. via Bay View Town Hall (Facebook)",
+    "credit_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29202052759437562/"
    }
   },
   {
@@ -199,15 +199,15 @@
   {
    "kicker": "Good dog news",
    "headline": "The Pup Stand on Oklahoma is now open all winter",
-   "body": "Bay View dogs who tugged their humans to an empty spot last winter can relax: the neighbor behind a treat stand for pups on Oklahoma Avenue built a new, weatherproof version that will stay out all year. The post drew more than 100 reactions from grateful dog owners.",
+   "body": "Bay View dogs who tugged their humans to an empty spot last winter can relax: the neighbor behind a treat stand for pups on Oklahoma Avenue built a new, weatherproof version that goes out Thursday and will stay out all year. The post drew more than 100 reactions from grateful dog owners.",
    "who": "Lori T.",
    "where": "Bay View Town Hall (Facebook)",
    "source_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29201967839446054/",
    "image": {
-    "src": "/photos/bz-pup-stand-treats.jpg",
-    "alt": "Three bone-shaped dog biscuits on a white background (stock photo)",
-    "credit": "Megan Marrs, CC BY 2.0, via Wikimedia Commons",
-    "credit_url": "https://commons.wikimedia.org/wiki/File:Bone_Dog_Treats_(51049786016).jpg"
+    "src": "/photos/bz-pup-stand.jpg",
+    "alt": "The new Pup Stand, a little white house-shaped cabinet with paw prints and jars of dog treats",
+    "credit": "Lori T. via Bay View Town Hall (Facebook)",
+    "credit_url": "https://www.facebook.com/groups/bayviewtownhall/posts/29201967839446054/"
    }
   },
   {
@@ -261,10 +261,6 @@
    {
     "label": "CBS 58: If Walls Could Talk: hidden history inside Puddler's Hall",
     "url": "https://www.cbs58.com/news/if-walls-could-talk-hidden-history-inside-bay-views-puddlers-hall"
-   },
-   {
-    "label": "Wisconsin Historical Society: Bay View Rolling Mill",
-    "url": "https://www.wisconsinhistory.org/Records/Article/CS5252"
    }
   ],
   "image": {
@@ -376,7 +372,8 @@
    "where": "Avalon Atmospheric Theater, 2473 S. Kinnickinnic Ave.",
    "link": "https://milwaukeerecord.com/film/join-us-for-a-hanksgiving-screening-of-the-burbs-at-avalon-theater/",
    "kind": "Social",
-   "desc": "Milwaukee Record's pre-Thanksgiving screening of the 1989 Tom Hanks comedy about suspicious new neighbors on a quiet cul-de-sac."
+   "desc": "Milwaukee Record's pre-Thanksgiving screening of the 1989 Tom Hanks comedy about suspicious new neighbors on a quiet cul-de-sac.",
+   "image": "/photos/ev-mr-hanksgiving-burbs.jpg"
   },
   {
    "day": "Thu. Nov. 19",
@@ -861,7 +858,8 @@
    "where": "The Bridgewater Modern Grill, 2011 S. 1st St.",
    "link": "https://bridgewatermke.com/news",
    "kind": "Food",
-   "desc": "The fourth annual afternoon of rare bourbon flights, including Weller and Blanton’s, with a special food menu, 3-6 pm."
+   "desc": "The fourth annual afternoon of rare bourbon flights, including Weller and Blanton’s, with a special food menu, 3-6 pm.",
+   "image": "/photos/ev-bridgewater-og.jpg"
   },
   {
    "day": "Fri. Nov. 27",
@@ -1017,7 +1015,8 @@
    "where": "The Bridgewater Modern Grill, 2011 S. 1st St.",
    "link": "https://bridgewatermke.com/",
    "kind": "Food",
-   "desc": "A four-course dinner paired with wines from Stringer Cellars, a winery with Wisconsin roots; reservations through the restaurant."
+   "desc": "A four-course dinner paired with wines from Stringer Cellars, a winery with Wisconsin roots; reservations through the restaurant.",
+   "image": "/photos/ev-bridgewater-og.jpg"
   },
   {
    "day": "Tue. Dec. 1",

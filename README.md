@@ -6,6 +6,7 @@ Bay View's morning paper: bayviewbulletin.com
 - `content/directory.json`: Bay View business directory
 - `build.py`: builds the static site into `docs/` (front-page layout v2; `--preview` writes to preview_v2/)
 - `build_v1.py`: retired single-column layout
+- `scripts/post_check.py`: post-publish check of the live site (images that could be upgraded, dead links, rule slips, phone/desktop layout); run after every push, fix, re-push
 - `scripts/check_repeats.py`: flags stories, Buzz items and events that repeat earlier days (run before every publish)
 - `content/x_sources.json`: Ben's private X list and the daily X searches (Nov. 17)
 - `scripts/records.py`: public-records leads for Bay View (Legistar files, District 14 liquor licenses, property sales, building permits); run each morning, verify before publishing
