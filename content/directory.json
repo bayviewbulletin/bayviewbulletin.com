@@ -444,8 +444,7 @@
   "lon": -87.90935,
   "website": "https://breathemassagetherapyandwellness.amtamembers.com",
   "instagram": "breathe.bmtw",
-  "facebook": "breathemassagetherapyandwellness",
-  "verify": true
+  "facebook": "breathemassagetherapyandwellness"
  },
  {
   "name": "Brew-Jas Coffee House",
@@ -1326,12 +1325,12 @@
  {
   "name": "Immaculate Conception Church",
   "type": "Church",
-  "address": "2720 S. Kinnickinnic Ave.",
+  "address": "1023 E. Russell Ave.",
   "lat": 42.9958,
   "lon": -87.89595,
-  "verify": true,
   "links_checked": 1,
-  "social_note": "No website or social accounts found (checked Nov. 13)"
+  "social_note": "No website or social accounts found (checked Nov. 13)",
+  "note": "Address corrected Nov. 18 from the Archdiocese of Milwaukee listing (was 2720 S. KK)"
  },
  {
   "name": "The Inkspot Tattoo Studio",
@@ -1381,7 +1380,9 @@
   "lat": 42.99629,
   "lon": -87.89724,
   "instagram": "jashersorganicteahouse",
-  "note": "Shares the 2680 S. KK entrance with Verdant CBD (Ben, Nov. 16)"
+  "note": "Shares the 2680 S. KK entrance with Verdant CBD (Ben, Nov. 16)",
+  "website": "https://jashersorganic.com/",
+  "facebook": "people/Jashers-Organic-Tea-House/61577164247494/"
  },
  {
   "name": "JB Nails & Spa",
@@ -1437,9 +1438,9 @@
   "address": "2650 S. Chase Ave.",
   "lat": 42.99727,
   "lon": -87.91047,
-  "verify": true,
   "links_checked": 1,
-  "social_note": "No website or social accounts found (checked Nov. 13)"
+  "social_note": "No website or social accounts found (checked Nov. 13)",
+  "note": "Production plant; leased through 2036 per Urban Milwaukee (Sept. 2026)"
  },
  {
   "name": "Knepper Brothers",
@@ -2794,5 +2795,32 @@
   "verify": true,
   "links_checked": 1,
   "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Dale Z's",
+  "type": "Bar & restaurant",
+  "address": "3585 S. Howell Ave.",
+  "lat": 42.97938,
+  "lon": -87.90884,
+  "links_checked": 1,
+  "note": "Added Nov. 18 from a current city restaurant license; Milwaukee Record has covered its fish fry"
+ },
+ {
+  "name": "Backdraught",
+  "type": "Tavern & grill",
+  "address": "3631 S. Clement Ave.",
+  "lat": 42.97856,
+  "lon": -87.8948,
+  "links_checked": 1,
+  "note": "Added Nov. 18 from a current city restaurant and alcohol license"
+ },
+ {
+  "name": "Buddy's Meat Market",
+  "type": "Meat market",
+  "address": "3620 S. Clement Ave.",
+  "lat": 42.97878,
+  "lon": -87.89406,
+  "links_checked": 1,
+  "note": "Added Nov. 18 from a current city food license"
  }
 ]

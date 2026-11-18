@@ -3,7 +3,7 @@ VERSION:2.0
 PRODID:-//The Bay View Bulletin//Events//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:The Montvales, Creekbed Carter + Moldy Tates
+X-WR-CALNAME:Greyhound All Night Long
 X-WR-TIMEZONE:America/Chicago
 BEGIN:VTIMEZONE
 TZID:America/Chicago
@@ -23,13 +23,13 @@ RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:2026-11-17-the-montvales-creekbed-carter-moldy-tate@bayviewbulletin.com
-DTSTAMP:20261117T180446Z
-DTSTART;TZID=America/Chicago:20261117T190000
-DTEND;TZID=America/Chicago:20261117T210000
-SUMMARY:The Montvales\, Creekbed Carter + Moldy Tates
+UID:2026-11-28-greyhound-all-night-long@bayviewbulletin.com
+DTSTAMP:20261118T111034Z
+DTSTART;TZID=America/Chicago:20261128T223000
+DTEND;TZID=America/Chicago:20261129T003000
+SUMMARY:Greyhound All Night Long
 LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
-DESCRIPTION:A three-act live music night on the Cactus Club stage. All ages\, $20 advance. https://www.cactusclubmilwaukee.com/events/the-montvales-creekbed-carter/ (via The Bay View Bulletin)
-URL:https://www.cactusclubmilwaukee.com/events/the-montvales-creekbed-carter/
+DESCRIPTION:A late-night Saturday party at Cactus Club\, listed on the venue's Facebook events page. 21+. https://www.facebook.com/CactusClubmke/events (via The Bay View Bulletin)
+URL:https://www.facebook.com/CactusClubmke/events
 END:VEVENT
 END:VCALENDAR

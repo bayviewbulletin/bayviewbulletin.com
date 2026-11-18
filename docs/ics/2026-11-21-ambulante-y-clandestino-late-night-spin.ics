@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-11-21-ambulante-y-clandestino-late-night-spin@bayviewbulletin.com
-DTSTAMP:20261117T180446Z
+DTSTAMP:20261118T111034Z
 DTSTART;TZID=America/Chicago:20261121T223000
 DTEND;TZID=America/Chicago:20261122T003000
 SUMMARY:Ambulante Y Clandestino: Late Night Spin
