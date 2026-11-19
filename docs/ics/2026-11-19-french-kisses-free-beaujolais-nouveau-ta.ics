@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-11-19-french-kisses-free-beaujolais-nouveau-ta@bayviewbulletin.com
-DTSTAMP:20261119T112157Z
+DTSTAMP:20261119T112552Z
 DTSTART;TZID=America/Chicago:20261119T170000
 DTEND;TZID=America/Chicago:20261119T190000
 SUMMARY:French Kisses: free Beaujolais Nouveau tasting

@@ -209,9 +209,9 @@
    "source_url": "https://www.instagram.com/reel/Df44bBfBwvf/",
    "image": {
     "src": "/photos/buzz-lasalsa-debate.jpg",
-    "alt": "A sizzling platter of fajitas at La Salsa on Oklahoma Avenue",
-    "credit": "La Salsa (@lasalsamke) on Instagram",
-    "credit_url": "https://www.instagram.com/reel/Df44bBfBwvf/"
+    "alt": "A sizzling fajita platter from La Salsa's menu cover",
+    "credit": "La Salsa website",
+    "credit_url": "https://lasalsamenu.com/"
    },
    "tone": "hot"
   },
@@ -288,10 +288,6 @@
   "source_name": "Encyclopedia of Milwaukee, \"Beulah Brinton\" (William I. Tchakirides)",
   "source_url": "https://emke.uwm.edu/entry/beulah-brinton/",
   "links": [
-   {
-    "label": "Wisconsin Historical Society: Beulah Brinton biography",
-    "url": "https://www.wisconsinhistory.org/Records/Article/CS5751"
-   },
    {
     "label": "Wisconsin Historical Society: 2590 S. Superior St. property record",
     "url": "https://wisconsinhistory.org/Records/Property/HI27663"
