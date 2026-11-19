@@ -640,6 +640,15 @@
   "lon": -87.90207
  },
  {
+  "name": "Chiropractic Health & Wellness",
+  "type": "Chiropractic & acupuncture",
+  "address": "3101 S. Delaware Ave.",
+  "lat": 42.98808,
+  "lon": -87.87709,
+  "verify": true,
+  "note": "Dr. Julie Vance, DC; (414) 481-8683 per WebMD. Facebook bayviewhealthwellness and IG chirohealthwellness seen in search, not yet confirmed"
+ },
+ {
   "name": "Christ Church UCC",
   "type": "Church",
   "address": "915 E. Oklahoma Ave.",
@@ -822,8 +831,7 @@
   "lat": 42.98142,
   "lon": -87.87954,
   "website": "https://creamcityrealestate.com/",
-  "facebook": "creamcityre",
-  "verify": true
+  "facebook": "creamcityre"
  },
  {
   "name": "DC's Mad House",
@@ -1410,7 +1418,8 @@
   "address": "2434 S. Kinnickinnic Ave.",
   "lat": 43.00032,
   "lon": -87.90163,
-  "website": "https://karmacafemke.square.site/"
+  "website": "https://karmacafemke.square.site/",
+  "instagram": "karmacafemke"
  },
  {
   "name": "Kelly's Tap",
@@ -1420,6 +1429,16 @@
   "lon": -87.909,
   "links_checked": 1,
   "social_note": "No website or social accounts found (checked Nov. 13)"
+ },
+ {
+  "name": "Kief Co.",
+  "type": "Hemp & CBD dispensary",
+  "address": "2229 S. Kinnickinnic Ave.",
+  "lat": 43.0042,
+  "lon": -87.90536,
+  "website": "https://kief-co-kinnickinnic.cloveronline.com/",
+  "verify": true,
+  "note": "Milwaukee-based, two stores (other on W. Oklahoma). Clover ordering site live with pickup enabled (Nov. 19); no dated post/review found. IG kiefcomp seen in search, not confirmed"
  },
  {
   "name": "Kinn Guesthouse Bay View",
@@ -1461,6 +1480,16 @@
   "website": "https://lasalsamenu.com/",
   "instagram": "lasalsamke",
   "facebook": "lasalsamke"
+ },
+ {
+  "name": "Ladies of the Loon",
+  "type": "Vintage clothing",
+  "address": "2625 S. Greeley St.",
+  "lat": 42.99652,
+  "lon": -87.90935,
+  "instagram": "ladiesoftheloon",
+  "note": "Hide House showroom, by appointment (Shepherd Express, Mar. 2025)",
+  "verify": true
  },
  {
   "name": "Lake Express ferry terminal",
@@ -1795,9 +1824,10 @@
   "type": "Wine shop & bar",
   "address": "2563 S. Kinnickinnic Ave.",
   "website": "https://www.nonfictionwine.com/",
-  "social_note": "find IG",
   "lat": 42.99824,
-  "lon": -87.90042
+  "lon": -87.90042,
+  "instagram": "nonfictionwine",
+  "facebook": "nonfictionwine"
  },
  {
   "name": "Omen Alternative",
@@ -2235,7 +2265,8 @@
   "lon": -87.90112,
   "website": "https://www.sorellamke.com/",
   "instagram": "sorella_mke",
-  "note": "Restaurant inside Kinn Guesthouse"
+  "note": "Restaurant inside Kinn Guesthouse",
+  "facebook": "SorellaMKE"
  },
  {
   "name": "The Soup Market",
@@ -2441,8 +2472,7 @@
   "lon": -87.87744,
   "website": "https://www.tasharae.com",
   "instagram": "tasharaejewelry",
-  "facebook": "TashaRaeJewelry",
-  "verify": true
+  "facebook": "TashaRaeJewelry"
  },
  {
   "name": "Tease Salon",
@@ -2602,7 +2632,7 @@
   "address": "115 W. Oklahoma Ave.",
   "lat": 42.98751,
   "lon": -87.90987,
-  "verify": true
+  "website": "https://www.uwcu.org/branches-and-atms/bay-view"
  },
  {
   "name": "Vanguard",

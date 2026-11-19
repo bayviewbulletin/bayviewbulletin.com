@@ -3,7 +3,7 @@ VERSION:2.0
 PRODID:-//The Bay View Bulletin//Events//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Queer Karaoke
+X-WR-CALNAME:Bay View Table Tennis Club
 X-WR-TIMEZONE:America/Chicago
 BEGIN:VTIMEZONE
 TZID:America/Chicago
@@ -23,13 +23,13 @@ RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:2026-11-18-queer-karaoke@bayviewbulletin.com
-DTSTAMP:20261118T113514Z
-DTSTART;TZID=America/Chicago:20261118T190000
-DTEND;TZID=America/Chicago:20261118T210000
-SUMMARY:Queer Karaoke
-LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
-DESCRIPTION:Free karaoke night at the Cactus Club bar\, part of the club's Cactus+ community programming. https://www.instagram.com/p/DfvDYoVBcEy/ (via The Bay View Bulletin)
-URL:https://www.instagram.com/p/DfvDYoVBcEy/
+UID:2026-12-03-bay-view-table-tennis-club@bayviewbulletin.com
+DTSTAMP:20261119T112157Z
+DTSTART;TZID=America/Chicago:20261203T190000
+DTEND;TZID=America/Chicago:20261203T210000
+SUMMARY:Bay View Table Tennis Club
+LOCATION:Puddler's Hall\, 2461 S. St. Clair St.\, Milwaukee\, WI
+DESCRIPTION:The weekly table tennis meetup in the historic tavern's back room\, 7-9 pm. https://puddlershall.com/calendar/ (via The Bay View Bulletin)
+URL:https://puddlershall.com/calendar/
 END:VEVENT
 END:VCALENDAR

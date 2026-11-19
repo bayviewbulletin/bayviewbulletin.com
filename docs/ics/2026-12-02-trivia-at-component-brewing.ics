@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Bay View Bulletin//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Trivia at Component Brewing
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:2026-12-02-trivia-at-component-brewing@bayviewbulletin.com
+DTSTAMP:20261119T112157Z
+DTSTART;TZID=America/Chicago:20261202T180000
+DTEND;TZID=America/Chicago:20261202T200000
+SUMMARY:Trivia at Component Brewing
+LOCATION:Component Brewing\, Lincoln Warehouse\, 2018 S. 1st St.\, Milwaukee\, WI
+DESCRIPTION:Wednesday-night trivia in the Lincoln Warehouse taproom\, with themes that change each week. https://www.componentbrewing.com/event-details-registration/trivia-2026-12-02-18-00 (via The Bay View Bulletin)
+URL:https://www.componentbrewing.com/event-details-registration/trivia-2026-12-02-18-00
+END:VEVENT
+END:VCALENDAR

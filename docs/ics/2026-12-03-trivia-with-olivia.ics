@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Bay View Bulletin//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Trivia with Olivia
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:2026-12-03-trivia-with-olivia@bayviewbulletin.com
+DTSTAMP:20261119T112157Z
+DTSTART;TZID=America/Chicago:20261203T183000
+DTEND;TZID=America/Chicago:20261203T203000
+SUMMARY:Trivia with Olivia
+LOCATION:Torzala Brewing\, Lincoln Warehouse\, 2018 S. 1st St.\, Milwaukee\, WI
+DESCRIPTION:Pub trivia over local beer in Torzala's second-floor taproom\; $2 per person to play. https://torzalabrewing.com/event/trivia-with-olivia-2/ (via The Bay View Bulletin)
+URL:https://torzalabrewing.com/event/trivia-with-olivia-2/
+END:VEVENT
+END:VCALENDAR
