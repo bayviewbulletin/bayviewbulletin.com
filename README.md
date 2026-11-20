@@ -65,3 +65,10 @@ The daily run NO LONGER opens the MPL Journal/Sentinel archive (the CountyCat si
 - **Spotlights:** check `archive_research.json` > `spotlight_backstory` for the day's business. For the history item's `now` line, check `then_and_now`.
 - **Finish message:** say whether the history item came from the bank, a spare or the free fallback, and how many banked items are left. If fewer than 2 dated items remain for the coming days, say so.
 - **Never:** type a library card number, barcode, PIN or password; use paid archives; use the library archive for current news.
+
+## FACEBOOK PROFILE SWITCH (daily-run duty; Ben, Nov. 20, 2026)
+If Facebook in Ben's Chrome is acting as a different profile or Page (on Nov. 20 it was acting as the "Milwaukee Marquee" Page, so Feeds > Pages came back empty), the daily run has Ben's permission to switch Facebook back to **Ben's own personal profile** with the Claude in Chrome tools, then read the feed as usual.
+- How: open the profile menu (round profile picture, top right), choose "See all profiles", pick Ben's personal profile, then reload facebook.com/?filter=pages&sk=h_chr and check that page posts appear.
+- Only switch back to Ben's personal profile. Don't switch to any other profile or Page, change settings, or post, react, follow or message.
+- If the switch asks for a password, a code or any other sign-in step, stop, skip the feed and say so in the finish message. Never type credentials.
+- In the finish message, say that the profile was switched and which profile or Page Facebook had been on.
