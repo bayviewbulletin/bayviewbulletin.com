@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-11-25-the-crosses-star-jelly-politico-plastico@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261125T183000
 DTEND;TZID=America/Chicago:20261125T203000
 SUMMARY:The Crosses\, Star Jelly\, Politico Plastico + Adrenochrome

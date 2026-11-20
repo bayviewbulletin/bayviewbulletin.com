@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-11-20-chai-nog-season-starts-at-twisted-path@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261121
 SUMMARY:Chai nog season starts at Twisted Path
@@ -34,7 +34,7 @@ URL:https://www.instagram.com/p/Dfqdm95tCUO/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-20-baby-story-time@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261120T103000
 DTEND;TZID=America/Chicago:20261120T123000
 SUMMARY:Baby Story Time
@@ -44,7 +44,7 @@ URL:https://mpl.libnet.info/event/16972687
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-20-meet-stitch-with-fiber-fever@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261120T170000
 DTEND;TZID=America/Chicago:20261120T190000
 SUMMARY:Meet + Stitch with Fiber Fever
@@ -54,7 +54,7 @@ URL:https://www.instagram.com/p/DfPLt14SNv-/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-20-candle-light-slow-flow@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261120T180000
 DTEND;TZID=America/Chicago:20261120T200000
 SUMMARY:Candle Light Slow Flow
@@ -64,7 +64,7 @@ URL:https://www.healiumhotyoga.com/happenings/candleslowflownov26
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-20-packaging-discus-thyone@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261120T183000
 DTEND;TZID=America/Chicago:20261120T203000
 SUMMARY:Packaging\, Discus + Thyone
@@ -74,7 +74,7 @@ URL:https://www.cactusclubmilwaukee.com/events/packaging/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-20-live-violin-solo-with-mso-s-paul-hauer-a@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261120T190000
 DTEND;TZID=America/Chicago:20261120T210000
 SUMMARY:Live violin solo with MSO's Paul Hauer at Jasher's
@@ -84,7 +84,7 @@ URL:https://www.instagram.com/jashersorganicteahouse/reel/Df3RxCYvgS5/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-20-lilliput-records-spin-miss-modular-tanne@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261120T200000
 DTEND;TZID=America/Chicago:20261120T220000
 SUMMARY:Lilliput Records spin: Miss Modular\, Tanner + Matthew
@@ -94,7 +94,7 @@ URL:https://wiggleroommke.com/event/lilliput-records-spin-miss-modular-tanner-ma
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-20-yr-knives-book-of-johns-at-acme-records@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261120T203000
 DTEND;TZID=America/Chicago:20261120T223000
 SUMMARY:Yr Knives + Book of Johns at Acme Records
@@ -104,7 +104,7 @@ URL:https://www.instagram.com/p/Df8mv7PEQgF/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-21-the-frozen-chair-market@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261121T110000
 DTEND;TZID=America/Chicago:20261121T130000
 SUMMARY:The Frozen Chair Market
@@ -114,7 +114,7 @@ URL:https://www.componentbrewing.com/event-details-registration/frozen-chair-mar
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-21-death-caf@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261121T130000
 DTEND;TZID=America/Chicago:20261121T150000
 SUMMARY:Death Café
@@ -124,7 +124,7 @@ URL:https://www.eventbrite.com/e/death-cafe-at-bay-view-branch-milwaukee-public-
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-21-open-decks-vinyl-edition@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261121T130000
 DTEND;TZID=America/Chicago:20261121T150000
 SUMMARY:Open Decks: Vinyl Edition
@@ -134,7 +134,7 @@ URL:https://www.cactusclubmilwaukee.com/events/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-21-tarot-for-beginners@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261121T130000
 DTEND;TZID=America/Chicago:20261121T150000
 SUMMARY:Tarot for Beginners
@@ -144,7 +144,7 @@ URL:https://www.strangescenemke.com/store/p/pendulum-making-917-cld49-y8b75-n4he
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-21-humbird-bad-posture-club-chris-rosenau@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261121T183000
 DTEND;TZID=America/Chicago:20261121T203000
 SUMMARY:Humbird\, Bad Posture Club + Chris Rosenau
@@ -154,7 +154,7 @@ URL:https://www.cactusclubmilwaukee.com/events/humbird/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-21-black-market-godzilla-mantel-matthies-gr@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261121T190000
 DTEND;TZID=America/Chicago:20261121T210000
 SUMMARY:Black Market Godzilla\, Mantel-Matthies + Gray Barker
@@ -164,7 +164,7 @@ URL:https://mkeshows.com/event/voyages-series-black-market-godzilla-mantel-matth
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-21-two-and-a-half-stars-m545-the-uncomforta@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261121T190000
 DTEND;TZID=America/Chicago:20261121T210000
 SUMMARY:Two and a Half Stars\, M545\, The Uncomfortable Moments + Thick Needles
@@ -174,7 +174,7 @@ URL:https://www.instagram.com/p/DfkTfMJhlTw/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-21-wisconsin-blues-hall-of-fame-fall-induct@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261121T190000
 DTEND;TZID=America/Chicago:20261121T210000
 SUMMARY:Wisconsin Blues Hall of Fame fall induction + fundraiser
@@ -184,7 +184,7 @@ URL:https://www.instagram.com/p/Df2T9BWB1RO/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-21-large-print-record-release-with-eden-s-e@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261121T193000
 DTEND;TZID=America/Chicago:20261121T213000
 SUMMARY:Large Print record release\, with Eden’s Expressway + Brindled
@@ -194,7 +194,7 @@ URL:https://mkeshows.com/event/large-print-edens-expressway-brindled
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-21-the-bayview-boom-bap-with-justin-carloni@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261121T200000
 DTEND;TZID=America/Chicago:20261121T220000
 SUMMARY:The Bayview Boom Bap with Justin Carloni
@@ -204,7 +204,7 @@ URL:https://wiggleroommke.com/event/the-bayview-boom-bap-w-justin-carloni/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-21-aeropax-ep-release-with-fya-shakira-chin@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261121T200000
 DTEND;TZID=America/Chicago:20261121T220000
 SUMMARY:Aeropax EP release\, with FYA\, Shakira Chinchilla + ourVanity
@@ -214,7 +214,7 @@ URL:https://mkeshows.com/event/fya-aeropax-shakira-chinchilla-ourvanity
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-21-ambulante-y-clandestino-late-night-spin@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261121T223000
 DTEND;TZID=America/Chicago:20261122T003000
 SUMMARY:Ambulante Y Clandestino: Late Night Spin
@@ -224,7 +224,7 @@ URL:https://www.cactusclubmilwaukee.com/events/ambulante-y-clandestino-late-nigh
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-22-breathwork-then-self-defense-with-smit-c@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261122T100000
 DTEND;TZID=America/Chicago:20261122T120000
 SUMMARY:Breathwork\, then self-defense\, with Smit Chauhan
@@ -234,7 +234,7 @@ URL:https://www.instagram.com/p/DfrkyMkSt8x/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-22-diy-beaded-necklace-workshop@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261122T120000
 DTEND;TZID=America/Chicago:20261122T140000
 SUMMARY:DIY Beaded Necklace Workshop
@@ -244,7 +244,7 @@ URL:https://www.instagram.com/p/DflDnXDEaf-/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-22-clementine-s-bowling-fundraiser-for-home@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261122T130000
 DTEND;TZID=America/Chicago:20261122T150000
 SUMMARY:Clementine’s bowling fundraiser for homeless vets
@@ -254,7 +254,7 @@ URL:https://www.facebook.com/groups/bayviewtownhall/posts/29109564702019702/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-22-the-inner-hearth-shamanic-journey-sound-@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261122T140000
 DTEND;TZID=America/Chicago:20261122T160000
 SUMMARY:The Inner HEARTh: Shamanic Journey + Sound Bath
@@ -264,7 +264,7 @@ URL:https://www.eventbrite.com/e/the-inner-hearth-shamanic-journey-sound-bath-fu
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-22-yoga-together-kids-yoga-ages-2-6@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261122T153000
 DTEND;TZID=America/Chicago:20261122T173000
 SUMMARY:Yoga Together! Kids Yoga (ages 2-6)
@@ -274,7 +274,7 @@ URL:https://www.healiumhotyoga.com/happenings/yogatogetherfall26
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-22-hornzz@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261122T160000
 DTEND;TZID=America/Chicago:20261122T180000
 SUMMARY:HORNZZ
@@ -284,7 +284,7 @@ URL:https://mysugarmaple.com/event/hornzz/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-22-jady-stephen-stanley-hot-mess@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261122T190000
 DTEND;TZID=America/Chicago:20261122T210000
 SUMMARY:JADY\, Stephen Stanley + Hot Mess
@@ -294,7 +294,7 @@ URL:https://www.cactusclubmilwaukee.com/events/jady/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-23-cival-s-cyber-sale-20-off-designer-rings@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;VALUE=DATE:20261123
 DTEND;VALUE=DATE:20261124
 SUMMARY:Cival's Cyber Sale: 20% off designer rings
@@ -304,7 +304,7 @@ URL:https://www.instagram.com/p/Df8DKbVh8UH/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-23-print-guap-4won5ive-culexx-more@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261123T190000
 DTEND;TZID=America/Chicago:20261123T210000
 SUMMARY:Print Guap\, 4won5ive\, Culexx + more
@@ -314,7 +314,7 @@ URL:https://www.cactusclubmilwaukee.com/events/print-guap-4won5ive-culexx-daytee
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-23-geeks-who-drink-pub-trivia@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261123T193000
 DTEND;TZID=America/Chicago:20261123T213000
 SUMMARY:Geeks Who Drink Pub Trivia
@@ -324,7 +324,7 @@ URL:https://puddlershall.com/calendar/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-23-panadanza-cumbia-night-at-delaware-house@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261123T193000
 DTEND;TZID=America/Chicago:20261123T213000
 SUMMARY:Panadanza cumbia night at Delaware House
@@ -334,7 +334,7 @@ URL:https://www.instagram.com/panadanza/reel/Df2cB5xp_PA/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-24-gentle-stretch-and-movement@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261124T140000
 DTEND;TZID=America/Chicago:20261124T160000
 SUMMARY:Gentle Stretch and Movement
@@ -344,7 +344,7 @@ URL:https://mpl.libnet.info/event/16955858
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-24-sushi-cowboy-crook-company-the-precipita@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261124T190000
 DTEND;TZID=America/Chicago:20261124T210000
 SUMMARY:Sushi Cowboy\, Crook & Company + The Precipitators
@@ -354,7 +354,7 @@ URL:https://www.cactusclubmilwaukee.com/events/sushi-cowboy-crook-company-the-pr
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-24-michael-seidel-brian-kirk-aaron-vold@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261124T190000
 DTEND;TZID=America/Chicago:20261124T210000
 SUMMARY:Michael Seidel\, Brian Kirk + Aaron Vold
@@ -364,7 +364,7 @@ URL:https://wiggleroommke.com/event/michael-seidel-brian-kirk-aaron-vold-indie/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-25-tech-splanation@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261125T120000
 DTEND;TZID=America/Chicago:20261125T140000
 SUMMARY:Tech-splanation
@@ -374,7 +374,7 @@ URL:https://mpl.libnet.info/event/16396373
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-25-milwaukee-record-halftime-show-daydream-@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261125T183000
 DTEND;TZID=America/Chicago:20261125T203000
 SUMMARY:Milwaukee Record Halftime Show: Daydream Retrievers + Libra BOGO
@@ -384,7 +384,7 @@ URL:https://www.cactusclubmilwaukee.com/events/milwaukee-record-halftime-show-la
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-25-the-crosses-star-jelly-politico-plastico@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261125T183000
 DTEND;TZID=America/Chicago:20261125T203000
 SUMMARY:The Crosses\, Star Jelly\, Politico Plastico + Adrenochrome
@@ -394,7 +394,7 @@ URL:https://mkeshows.com/event/the-crosses-star-jelly-politico-plastico-adrenoch
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-25-milwaukee-guitar-club@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261125T190000
 DTEND;TZID=America/Chicago:20261125T210000
 SUMMARY:Milwaukee Guitar Club
@@ -404,7 +404,7 @@ URL:https://puddlershall.com/calendar/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-25-thanksgiving-eve-with-the-get-down@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261125T200000
 DTEND;TZID=America/Chicago:20261125T220000
 SUMMARY:Thanksgiving Eve with The Get Down
@@ -414,7 +414,7 @@ URL:https://wiggleroommke.com/event/thanksgiving-eve-w-the-get-down/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-26-hot-hot-trot-thanksgiving-5k@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261126T060000
 DTEND;TZID=America/Chicago:20261126T080000
 SUMMARY:HOT HOT TROT (Thanksgiving 5K)
@@ -424,7 +424,7 @@ URL:https://www.healiumhotyoga.com/happenings/hothottrot26
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-26-bay-view-table-tennis-club@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261126T190000
 DTEND;TZID=America/Chicago:20261126T210000
 SUMMARY:Bay View Table Tennis Club
@@ -434,7 +434,7 @@ URL:https://puddlershall.com/calendar/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-27-elf-pop-up-returns-at-lost-whale@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261128
 SUMMARY:Elf pop-up returns at Lost Whale
@@ -444,7 +444,7 @@ URL:https://www.instagram.com/p/DfVkeiWsC6Q/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-27-black-friday-beer-releases-at-torzala@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261127T093000
 DTEND;TZID=America/Chicago:20261127T113000
 SUMMARY:Black Friday beer releases at Torzala
@@ -454,7 +454,7 @@ URL:https://www.instagram.com/p/DfpeUiMFNUz/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-27-plume-vintage-black-friday-weekend-sale@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261127T100000
 DTEND;TZID=America/Chicago:20261127T120000
 SUMMARY:Plume Vintage Black Friday Weekend Sale
@@ -464,7 +464,7 @@ URL:https://www.instagram.com/p/Dfr4SuURLz4/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-27-free-barre-class-with-afterglow-s-new-in@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261127T120000
 DTEND;TZID=America/Chicago:20261127T140000
 SUMMARY:Free barre class with Afterglow's new instructors
@@ -474,7 +474,7 @@ URL:https://www.instagram.com/p/Dfr7HyCxiNo/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-27-bourbon-black-friday@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261127T150000
 DTEND;TZID=America/Chicago:20261127T170000
 SUMMARY:Bourbon Black Friday
@@ -484,7 +484,7 @@ URL:https://bridgewatermke.com/news
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-27-exhumed-jarhead-fertilizer-savage-master@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261127T190000
 DTEND;TZID=America/Chicago:20261127T210000
 SUMMARY:Exhumed\, Jarhead Fertilizer\, Savage Master + Molder
@@ -494,7 +494,7 @@ URL:https://www.instagram.com/p/Dfm-tzGBt3A/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-27-black-friday-yacht-rock-with-reno-soul-g@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261127T200000
 DTEND;TZID=America/Chicago:20261127T220000
 SUMMARY:Black Friday Yacht Rock with Reno Soul + Golden Yacht Society
@@ -504,7 +504,7 @@ URL:https://wiggleroommke.com/event/black-friday-yacht-rock-with-reno-soul/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-27-venus-two-year-anniversary-party@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261127T220000
 DTEND;TZID=America/Chicago:20261128T000000
 SUMMARY:Venus two-year anniversary party
@@ -514,7 +514,7 @@ URL:https://www.cactusclubmilwaukee.com/events/venus-two-year-anniversary-party-
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-28-small-business-saturday-at-lion-s-tooth@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
 SUMMARY:Small Business Saturday at Lion's Tooth
@@ -524,7 +524,7 @@ URL:https://www.lionstoothmke.com/events.html
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-28-small-business-saturday-at-fiber-fever@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261128T100000
 DTEND;TZID=America/Chicago:20261128T120000
 SUMMARY:Small Business Saturday at Fiber Fever
@@ -534,7 +534,7 @@ URL:https://www.instagram.com/p/DfPLt14SNv-/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-28-bc-modern-s-november-collection-sale@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261128T100000
 DTEND;TZID=America/Chicago:20261128T120000
 SUMMARY:BC Modern's November Collection sale
@@ -544,7 +544,7 @@ URL:https://www.instagram.com/bcmodernmke/reel/Dfs7ls6hufa/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-28-the-nutcracker-nightmare-at-omen@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261128T100000
 DTEND;TZID=America/Chicago:20261128T120000
 SUMMARY:The Nutcracker Nightmare at Omen
@@ -554,7 +554,7 @@ URL:https://www.instagram.com/p/Dfyge8_tUuZ/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-28-small-business-saturday-at-ursa@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261128T100000
 DTEND;TZID=America/Chicago:20261128T120000
 SUMMARY:Small Business Saturday at URSA
@@ -564,7 +564,7 @@ URL:https://www.instagram.com/p/Df5hj_OI6HN/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-28-aj-ep-release-with-jaff-graffner-pspsps-@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261128T190000
 DTEND;TZID=America/Chicago:20261128T210000
 SUMMARY:AJ EP release\, with Jaff Graffner\, pspsps + DJ Rooney
@@ -574,7 +574,7 @@ URL:https://www.cactusclubmilwaukee.com/events/aj-ep-release-jaff-graffner-pspsp
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-28-wire-nail-with-cory-waller-and-the-wicke@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261128T200000
 DTEND;TZID=America/Chicago:20261128T220000
 SUMMARY:Wire & Nail\, with Cory Waller and the Wicked Things
@@ -584,7 +584,7 @@ URL:https://www.instagram.com/p/Dfh6DauB1BG/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-28-rollerskate-jams-with-killa-kutz-dj-alia@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261128T200000
 DTEND;TZID=America/Chicago:20261128T220000
 SUMMARY:Rollerskate Jams with Killa Kutz + DJ Alias
@@ -594,7 +594,7 @@ URL:https://wiggleroommke.com/event/rollerskate-jams-w-killa-kutz-dj-alias/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-28-greyhound-all-night-long@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261128T223000
 DTEND;TZID=America/Chicago:20261129T003000
 SUMMARY:Greyhound All Night Long
@@ -604,7 +604,7 @@ URL:https://www.facebook.com/CactusClubmke/events
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-29-bc-modern-s-november-collection-sale-day@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261129T100000
 DTEND;TZID=America/Chicago:20261129T120000
 SUMMARY:BC Modern's November Collection sale\, day two
@@ -614,7 +614,7 @@ URL:https://www.bcmodernmke.com/bc-modern-events
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-29-3rd-annual-milk-waukee-film-festival@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261129T140000
 DTEND;TZID=America/Chicago:20261129T160000
 SUMMARY:3rd Annual Milk-Waukee Film Festival
@@ -624,7 +624,7 @@ URL:https://www.cactusclubmilwaukee.com/events/3rd-annual-milk-waukee-film-festi
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-29-cathedral-brxyden-club-lowlife-vonn-more@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261129T183000
 DTEND;TZID=America/Chicago:20261129T203000
 SUMMARY:CATHEDRAL: Brxyden\, Club Lowlife\, Vonn + more
@@ -634,7 +634,7 @@ URL:https://www.cactusclubmilwaukee.com/events/cathedral-brxyden-club-lowlife-vo
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-30-adult-movie-night@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261130T173000
 DTEND;TZID=America/Chicago:20261130T193000
 SUMMARY:Adult Movie Night
@@ -644,7 +644,7 @@ URL:https://mpl.libnet.info/event/17145548
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-30-dj-tim-spankowski@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261130T180000
 DTEND;TZID=America/Chicago:20261130T200000
 SUMMARY:DJ Tim Spankowski
@@ -654,7 +654,7 @@ URL:https://wiggleroommke.com/event/dj-tim-spankowski/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-30-geeks-who-drink-pub-trivia@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261130T193000
 DTEND;TZID=America/Chicago:20261130T213000
 SUMMARY:Geeks Who Drink Pub Trivia
@@ -664,7 +664,7 @@ URL:https://puddlershall.com/calendar/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-01-gentle-stretch-and-movement@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261201T140000
 DTEND;TZID=America/Chicago:20261201T160000
 SUMMARY:Gentle Stretch and Movement
@@ -674,7 +674,7 @@ URL:https://mpl.libnet.info/event/16955859
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-01-reimagine-milwaukee-s-future-public-foru@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261201T140000
 DTEND;TZID=America/Chicago:20261201T160000
 SUMMARY:Reimagine Milwaukee's Future: public forum on I-794 and Hwy. 175
@@ -684,7 +684,7 @@ URL:https://urbanmilwaukee.com/2026/11/18/rethink-794-unveils-new-boulevard-plan
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-01-stringer-cellars-wine-dinner@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261201T180000
 DTEND;TZID=America/Chicago:20261201T200000
 SUMMARY:Stringer Cellars wine dinner
@@ -694,7 +694,7 @@ URL:https://bridgewatermke.com/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-01-sky-high-night@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261201T180000
 DTEND;TZID=America/Chicago:20261201T200000
 SUMMARY:Sky High Night!
@@ -704,7 +704,7 @@ URL:https://www.cactusclubmilwaukee.com/events/sky-high-night-21-2-2-2-2-2-2-2-2
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-01-japanese-jazz@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261201T190000
 DTEND;TZID=America/Chicago:20261201T210000
 SUMMARY:Japanese Jazz
@@ -714,7 +714,7 @@ URL:https://wiggleroommke.com/event/japanese-jazz/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-01-day-with-out-art-seeds-in-a-dying-colony@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261201T190000
 DTEND;TZID=America/Chicago:20261201T210000
 SUMMARY:Day With(out) Art: seeds in a dying colony
@@ -724,7 +724,7 @@ URL:https://www.cactusclubmilwaukee.com/events/day-without-art-seeds-from-a-dyin
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-02-tech-splanation@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261202T120000
 DTEND;TZID=America/Chicago:20261202T140000
 SUMMARY:Tech-splanation
@@ -734,7 +734,7 @@ URL:https://mpl.libnet.info/event/16396374
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-02-cactus-book-club-the-deviant@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261202T173000
 DTEND;TZID=America/Chicago:20261202T193000
 SUMMARY:Cactus Book Club: The Deviant
@@ -744,7 +744,7 @@ URL:https://www.cactusclubmilwaukee.com/events/cbc-dec2-2026/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-02-milwaukee-record-spin@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261202T180000
 DTEND;TZID=America/Chicago:20261202T200000
 SUMMARY:Milwaukee Record Spin
@@ -754,7 +754,7 @@ URL:https://wiggleroommke.com/event/milwaukee-record-spin/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-02-trivia-at-component-brewing@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261202T180000
 DTEND;TZID=America/Chicago:20261202T200000
 SUMMARY:Trivia at Component Brewing
@@ -764,7 +764,7 @@ URL:https://www.componentbrewing.com/event-details-registration/trivia-2026-12-0
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-02-hablar-con-amigos@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261202T190000
 DTEND;TZID=America/Chicago:20261202T210000
 SUMMARY:Hablar Con Amigos
@@ -774,7 +774,7 @@ URL:https://mysugarmaple.com/event/hablar-con-amigos/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-03-story-time-with-play-group@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261203T103000
 DTEND;TZID=America/Chicago:20261203T123000
 SUMMARY:Story Time with Play Group
@@ -784,7 +784,7 @@ URL:https://mpl.libnet.info/event/16585063
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-03-read-play-create@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261203T153000
 DTEND;TZID=America/Chicago:20261203T173000
 SUMMARY:Read\, Play\, Create!
@@ -794,7 +794,7 @@ URL:https://mpl.libnet.info/event/16585175
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-03-dj-sal-gal-happy-hour-spin@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261203T160000
 DTEND;TZID=America/Chicago:20261203T180000
 SUMMARY:DJ Sal Gal: Happy Hour Spin
@@ -804,7 +804,7 @@ URL:https://www.cactusclubmilwaukee.com/events/dj-sal-gal-happy-hour-spin/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-03-yoga-nidra-conscious-rest@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261203T180000
 DTEND;TZID=America/Chicago:20261203T200000
 SUMMARY:Yoga Nidra & Conscious Rest
@@ -814,7 +814,7 @@ URL:https://healiumhotyoga.com/happenings/nidra300hourtraining26
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-03-trivia-with-olivia@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261203T183000
 DTEND;TZID=America/Chicago:20261203T203000
 SUMMARY:Trivia with Olivia
@@ -824,7 +824,7 @@ URL:https://torzalabrewing.com/event/trivia-with-olivia-2/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-03-arlen-abby-webster@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261203T190000
 DTEND;TZID=America/Chicago:20261203T210000
 SUMMARY:Arlen + Abby Webster
@@ -834,7 +834,7 @@ URL:https://www.cactusclubmilwaukee.com/events/arlen-abby-webster/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-03-bay-view-table-tennis-club@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261203T190000
 DTEND;TZID=America/Chicago:20261203T210000
 SUMMARY:Bay View Table Tennis Club
@@ -844,7 +844,7 @@ URL:https://puddlershall.com/calendar/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-03-play-mahjong@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261203T190000
 DTEND;TZID=America/Chicago:20261203T210000
 SUMMARY:Play Mahjong
@@ -854,7 +854,7 @@ URL:https://mysugarmaple.com/event/play-mahjong/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-03-haunted-like-human@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261203T193000
 DTEND;TZID=America/Chicago:20261203T213000
 SUMMARY:Haunted Like Human
@@ -864,7 +864,7 @@ URL:https://mysugarmaple.com/event/haunted-like-human/
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-03-trivia-rcade@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261203T193000
 DTEND;TZID=America/Chicago:20261203T213000
 SUMMARY:Trivia-rcade
@@ -874,7 +874,7 @@ URL:https://www.facebook.com/100064532628869/posts/pfbid02y3c5Mz45E3wGinWesHaLAH
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-07-bay-view-s-annual-tree-lighting-with-san@bayviewbulletin.com
-DTSTAMP:20261120T110453Z
+DTSTAMP:20261120T110917Z
 DTSTART;TZID=America/Chicago:20261207T180000
 DTEND;TZID=America/Chicago:20261207T200000
 SUMMARY:Bay View's Annual Tree Lighting with Santa
