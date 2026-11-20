@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Bay View Bulletin//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Bay View's Annual Tree Lighting with Santa
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:2026-12-07-bay-view-s-annual-tree-lighting-with-san@bayviewbulletin.com
+DTSTAMP:20261120T110453Z
+DTSTART;TZID=America/Chicago:20261207T180000
+DTEND;TZID=America/Chicago:20261207T200000
+SUMMARY:Bay View's Annual Tree Lighting with Santa
+LOCATION:Immaculate Conception Church\, 1023 E. Russell Ave. (west lot)\, Milwaukee\, WI
+DESCRIPTION:Carols and a sing-along\, then Santa arrives by fire engine at 6:30 to light the tree\; chili\, cocoa and cookie decorating follow indoors. https://www.facebook.com/groups/bayviewtownhall/posts/29224279530548218/ (via The Bay View Bulletin)
+URL:https://www.facebook.com/groups/bayviewtownhall/posts/29224279530548218/
+END:VEVENT
+END:VCALENDAR
