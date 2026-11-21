@@ -285,6 +285,16 @@
   },
   {
    "day": "Today, Sat. Nov. 21",
+   "when": "1-4 pm",
+   "title": "Christmas Craft Fair at Patti's Power Plant",
+   "where": "Patti's Power Plant, 2800 S. Kinnickinnic Ave.",
+   "link": "https://www.facebook.com/photo.php?fbid=1770451385084559",
+   "kind": "Shopping",
+   "desc": "Local vendors sell handmade gifts at the KK tavern's holiday craft fair, with raffles including a fully decorated Christmas tree.",
+   "image": "/photos/ev-pattis-craft-fair.jpg"
+  },
+  {
+   "day": "Today, Sat. Nov. 21",
    "when": "6:30 pm",
    "title": "Humbird, Bad Posture Club + Chris Rosenau",
    "where": "Cactus Club, 2496 S. Wentworth Ave.",
@@ -357,9 +367,10 @@
    "when": "9 pm",
    "title": "Greasy Gravy at Patti's Power Plant",
    "where": "Patti's Power Plant, 2800 S. Kinnickinnic Ave.",
-   "link": "https://www.facebook.com/frankspowerplant",
+   "link": "https://www.facebook.com/photo.php?fbid=1770451848417846",
    "kind": "Music",
-   "desc": "Greasy Gravy plays the KK corner tavern from 9 pm to midnight; no cover, tips for the band encouraged."
+   "desc": "Greasy Gravy plays the KK corner tavern from 9 pm to midnight; no cover, tips for the band encouraged.",
+   "image": "/photos/ev-pattis-greasy-gravy.jpg"
   },
   {
    "day": "Today, Sat. Nov. 21",

@@ -24,12 +24,12 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-11-21-greasy-gravy-at-patti-s-power-plant@bayviewbulletin.com
-DTSTAMP:20261121T111515Z
+DTSTAMP:20261121T140637Z
 DTSTART;TZID=America/Chicago:20261121T210000
 DTEND;TZID=America/Chicago:20261121T230000
 SUMMARY:Greasy Gravy at Patti's Power Plant
 LOCATION:Patti's Power Plant\, 2800 S. Kinnickinnic Ave.\, Milwaukee\, WI
-DESCRIPTION:Greasy Gravy plays the KK corner tavern from 9 pm to midnight\; no cover\, tips for the band encouraged. https://www.facebook.com/frankspowerplant (via The Bay View Bulletin)
-URL:https://www.facebook.com/frankspowerplant
+DESCRIPTION:Greasy Gravy plays the KK corner tavern from 9 pm to midnight\; no cover\, tips for the band encouraged. https://www.facebook.com/photo.php?fbid=1770451848417846 (via The Bay View Bulletin)
+URL:https://www.facebook.com/photo.php?fbid=1770451848417846
 END:VEVENT
 END:VCALENDAR

@@ -253,9 +253,9 @@
   "address": "2121 S. Kinnickinnic Ave.",
   "lat": 43.0055,
   "lon": -87.90641,
-  "instagram": "bay_view_fitness",
   "website": "http://www.bayviewfitness.com",
-  "facebook": "BayViewFitness"
+  "facebook": "BayViewFitness",
+  "social_note": "Instagram on file no longer exists (checked Nov. 21); look for a current account."
  },
  {
   "name": "Bay View High School",
@@ -1095,8 +1095,8 @@
   "website": "https://gingerzsportzpub.com",
   "lat": 42.97336,
   "lon": -87.90961,
-  "instagram": "gingerzmke",
-  "note": "Just south of Morgan Ave.; kept in by Ben (Nov. 13)"
+  "note": "Just south of Morgan Ave.; kept in by Ben (Nov. 13)",
+  "social_note": "Instagram on file no longer exists (checked Nov. 21); look for a current account."
  },
  {
   "name": "The Glam Room",
@@ -1134,7 +1134,7 @@
   "address": "2457 S. Wentworth Ave.",
   "lat": 42.9996,
   "lon": -87.89164,
-  "instagram": "goodkind_bayview",
+  "instagram": "goodkindbayview",
   "website": "https://goodkindbayview.com",
   "facebook": "goodkindbayview"
  },
@@ -1650,7 +1650,7 @@
   "lat": 43.00365,
   "lon": -87.90466,
   "website": "https://www.mhhats.com/",
-  "instagram": "mclaughlinandhayeshatco",
+  "instagram": "mhhatmilmke",
   "facebook": "brassroosterhatco"
  },
  {

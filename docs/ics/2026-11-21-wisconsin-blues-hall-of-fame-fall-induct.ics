@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-11-21-wisconsin-blues-hall-of-fame-fall-induct@bayviewbulletin.com
-DTSTAMP:20261121T111515Z
+DTSTAMP:20261121T140637Z
 DTSTART;TZID=America/Chicago:20261121T190000
 DTEND;TZID=America/Chicago:20261121T210000
 SUMMARY:Wisconsin Blues Hall of Fame fall induction + fundraiser

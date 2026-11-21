@@ -72,3 +72,6 @@ If Facebook in Ben's Chrome is acting as a different profile or Page (on Nov. 20
 - Only switch back to Ben's personal profile. Don't switch to any other profile or Page, change settings, or post, react, follow or message.
 - If the switch asks for a password, a code or any other sign-in step, stop, skip the feed and say so in the finish message. Never type credentials.
 - In the finish message, say that the profile was switched and which profile or Page Facebook had been on.
+
+## INSTAGRAM SWEEP NOTE (Nov. 21, 2026)
+A handle that no longer exists makes Instagram reload the page, which kills the pushState loop. Mark each handle "tried" before visiting it, and when restarting treat a handle left at "tried" as failed (or retry it once), so the sweep moves past it. Nov. 21 fixes: Goodkind is now @goodkindbayview, McLaughlin & Hayes is @mhhatmilmke (new phone 414-210-3715); the old @bay_view_fitness and @gingerzmke accounts are gone and were removed from the directory.
