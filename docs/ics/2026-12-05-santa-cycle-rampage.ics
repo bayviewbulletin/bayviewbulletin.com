@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Bay View Bulletin//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Santa Cycle Rampage
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:2026-12-05-santa-cycle-rampage@bayviewbulletin.com
+DTSTAMP:20261121T111150Z
+DTSTART;TZID=America/Chicago:20261205T093000
+DTEND;TZID=America/Chicago:20261205T113000
+SUMMARY:Santa Cycle Rampage
+LOCATION:Wisconsin Bike Fed\, 187 E. Becher St.\, Milwaukee\, WI
+DESCRIPTION:The Bike Fed's festive group ride\, with riders dressed as Santas\, elves and reindeer\; beginner-friendly\, registration required. https://wisconsinbikefed.org/events/santa-cycle-rampage-milwaukee/ (via The Bay View Bulletin)
+URL:https://wisconsinbikefed.org/events/santa-cycle-rampage-milwaukee/
+END:VEVENT
+END:VCALENDAR

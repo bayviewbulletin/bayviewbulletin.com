@@ -425,7 +425,8 @@
   "address": "2433 S. Kinnickinnic Ave.",
   "lat": 43.00053,
   "lon": -87.90233,
-  "website": "https://bonadrag.com/"
+  "website": "https://bonadrag.com/",
+  "social_note": "Two possible Instagram accounts (@bona_drag, @bonadrag); neither linked from bonadrag.com yet (Nov. 21)."
  },
  {
   "name": "Bravo Vape and Tobacco",
@@ -452,7 +453,8 @@
   "address": "2721 S. Howell Ave.",
   "lat": 42.99497,
   "lon": -87.90435,
-  "facebook": "brewjascoffeemke"
+  "facebook": "brewjascoffeemke",
+  "instagram": "brewjascoffeemke"
  },
  {
   "name": "Brickyard Gym",
@@ -558,9 +560,9 @@
   "address": "3040 S. Delaware Ave.",
   "lat": 42.9887,
   "lon": -87.87811,
-  "verify": true,
   "links_checked": 1,
-  "social_note": "No website or social accounts found (checked Nov. 13)"
+  "social_note": "No website or social accounts found (checked Nov. 13)",
+  "note": "City secondhand license (current) lists \"MKE Outdoor Indoor Exchange/The Canteen\" at 3040-3044 S. Delaware Ave. (checked Nov. 21)."
  },
  {
   "name": "Car-Ferz Auto Repair",
@@ -812,7 +814,8 @@
   "lon": -87.89764,
   "instagram": "craftycowwi",
   "website": "https://craftycowwi.com",
-  "events_page_hint": true
+  "events_page_hint": true,
+  "facebook": "CraftyCowMKE"
  },
  {
   "name": "Cream City CrossFit",
@@ -934,7 +937,7 @@
   "lat": 42.98833,
   "lon": -87.89422,
   "website": "http://www.embarkpetspa.com/",
-  "verify": true
+  "facebook": "profile.php?id=100063643927431"
  },
  {
   "name": "Erth Dispensary",
@@ -2855,5 +2858,32 @@
   "lon": -87.89406,
   "links_checked": 1,
   "note": "Added Nov. 18 from a current city food license"
+ },
+ {
+  "name": "Bert's Beer & Liquor",
+  "type": "Liquor store",
+  "address": "2523 E. Oklahoma Ave.",
+  "lat": 42.98784,
+  "lon": -87.87747,
+  "note": "Current city food license as Bert's Liquor in Bay View (Nov. 21).",
+  "links_checked": 1
+ },
+ {
+  "name": "Kinnick Quick Mart",
+  "type": "Convenience store",
+  "address": "3087 S. Kinnickinnic Ave.",
+  "lat": 42.98854,
+  "lon": -87.88406,
+  "note": "Current city food license (Nov. 21).",
+  "links_checked": 1
+ },
+ {
+  "name": "Mini Market",
+  "type": "Convenience store",
+  "address": "3600 S. Clement Ave.",
+  "lat": 42.97902,
+  "lon": -87.89405,
+  "note": "Current city food license (Nov. 21).",
+  "links_checked": 1
  }
 ]

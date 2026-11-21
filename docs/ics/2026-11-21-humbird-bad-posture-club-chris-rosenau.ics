@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-11-21-humbird-bad-posture-club-chris-rosenau@bayviewbulletin.com
-DTSTAMP:20261120T110917Z
+DTSTAMP:20261121T111150Z
 DTSTART;TZID=America/Chicago:20261121T183000
 DTEND;TZID=America/Chicago:20261121T203000
 SUMMARY:Humbird\, Bad Posture Club + Chris Rosenau
