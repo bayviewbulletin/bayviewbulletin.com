@@ -8,7 +8,25 @@
   "source_url": "archive link",
   "added": "YYYY-MM-DD"
  },
- "then_and_now": [],
+ "then_and_now": [
+  {
+   "address": "2457 S. Wentworth Ave.",
+   "now": "Goodkind",
+   "then": "Mama DeMarinis tavern (1949) and Italian restaurant (about 1951 to 2012)",
+   "source_name": "Milwaukee Record (2019)",
+   "source_url": "https://milwaukeerecord.com/food-drink/mandatory-milwaukee-original-recipe-pizza-lives-on-at-dom-phil-demarinis/",
+   "added": "2026-11-22"
+  },
+  {
+   "address": "2501 S. Superior St.",
+   "now": "Club Garibaldi",
+   "then": "Schlitz tied-house tavern (1907); clubhouse of the Italian American Mutual Aid Society's Garibaldi lodge from January 1943",
+   "source_name": "Milwaukee Sentinel, July 10, 1943 (MPL library card required); Urban Milwaukee (2015)",
+   "source_url": "https://www.mpl.org/databases/all/66",
+   "image": "/photos/hist-club-garibaldi-1943-ad.jpg",
+   "added": "2026-11-22"
+  }
+ ],
  "then_and_now_fields": {
   "address": "as in content/directory.json",
   "now": "current directory business",
@@ -18,7 +36,40 @@
   "image": "optional /photos/ path of a cropped archive photo",
   "added": ""
  },
- "anniversaries": [],
+ "anniversaries": [
+  {
+   "date": "11-17",
+   "year": "1918",
+   "what": "10,000 Bay View residents march to Humboldt Park to unveil the neighborhood's WWI service flag",
+   "source_name": "Milwaukee Sentinel, Nov. 18, 1918",
+   "source_url": "https://www.mpl.org/databases/all/66",
+   "added": "2026-11-22"
+  },
+  {
+   "date": "08-25",
+   "year": "1929",
+   "what": "Village of Bay View's 50th anniversary picnic in Humboldt Park",
+   "source_name": "Milwaukee Journal, Aug. 26, 1929",
+   "source_url": "https://www.mpl.org/databases/all/66",
+   "added": "2026-11-22"
+  },
+  {
+   "date": "02-28",
+   "year": "1919",
+   "what": "Bay View committee asks to rename Humboldt Park 'Pershing Park'",
+   "source_name": "Milwaukee Sentinel, Feb. 28, 1919",
+   "source_url": "https://www.mpl.org/databases/all/66",
+   "added": "2026-11-22"
+  },
+  {
+   "date": "11-09",
+   "year": "1967",
+   "what": "Bay View High grad Lance Sijan shot down over Laos (Medal of Honor, 1976)",
+   "source_name": "Milwaukee Record (2018)",
+   "source_url": "https://milwaukeerecord.com/city-life/honor-service-love-remembering-the-life-and-heroics-of-milwaukees-lance-sijan/",
+   "added": "2026-11-22"
+  }
+ ],
  "anniversaries_fields": {
   "date": "MM-DD",
   "year": "YYYY",

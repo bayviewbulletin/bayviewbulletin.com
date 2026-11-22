@@ -6,7 +6,300 @@
   "notes": "anything the daily run should check before publishing (e.g. 'sources disagree on the year')",
   "banked": "YYYY-MM-DD the session banked it"
  },
- "dated": [],
+ "dated": [
+  {
+   "run_on": "2026-11-23",
+   "banked": "2026-11-22",
+   "notes": "From the MPL archive (Milwaukee Sentinel, Nov. 18, 1918, p. 4). The archive link needs a library card. The service flag was to be raised later at Logan and Kinnickinnic avenues; we found no follow-up confirming it.",
+   "history": {
+    "year": 1918,
+    "date": "1918-11-17",
+    "match": "this month",
+    "topic": "event",
+    "title": "Armistice week, 1918: 10,000 Bay View marchers fill Humboldt Park",
+    "text": "In November 1918, days after the armistice, more than 10,000 Bay View residents marched down KK and Logan to Humboldt Park to honor the neighborhood's soldiers.",
+    "body": "World War I had been over for less than a week when Bay View put on what the Milwaukee Sentinel called the most elaborate of the city's observances. On Sunday, Nov. 17, 1918, after a week of noisy celebrating across Milwaukee, neighborhoods turned to a more serious ritual: unveiling service flags, the banners with a star for each local man in uniform, and dedicating honor rolls of names.\n\nBay View's turnout was the biggest. The Sentinel reported that more than 10,000 residents paraded along Kinnickinnic and Logan avenues to Humboldt Park, with Boy Scouts carrying Allied flags at the head of the line. A Scout drum corps, the band of the Solvay Coke company, about 250 members of the State Guard and Spanish-American War veterans with their own drum corps marched too, followed by more Scout troops and crowds of children.\n\nThe crowd was so large that organizers changed their plans. The neighborhood's service flag was unveiled temporarily in Humboldt Park, with a promise that it would later fly at the corner of Logan and Kinnickinnic avenues. Speakers struck one theme over and over, the paper said: the country could never do enough to honor the men who had served and those who had died.\n\nThe park would stay at the center of Bay View's memory of the war. A few months later, a neighborhood committee even asked the city to rename it after Gen. John J. Pershing (look for that story later this week). The name never changed, but more than a century later Humboldt Park is still where Bay View gathers, from Chill on the Hill concerts to holiday events.",
+    "source_name": "Milwaukee Sentinel, Nov. 18, 1918",
+    "source_url": "https://www.mpl.org/databases/all/66",
+    "links": [
+     {
+      "label": "Milwaukee Sentinel, Nov. 18, 1918, p. 4: \"Bay View Turns Out\" (MPL library card required)",
+      "url": "https://www.mpl.org/databases/all/66"
+     },
+     {
+      "label": "Milwaukee County Parks: Humboldt Park",
+      "url": "https://county.milwaukee.gov/EN/Parks/Explore/Parks/Humboldt"
+     }
+    ],
+    "image": {
+     "src": "/photos/hist-armistice-1918-humboldt.jpg",
+     "alt": "Newspaper headline from 1918: Bay View Turns Out; Exercises in Humboldt Park Are Most Elaborate of the Day",
+     "credit": "Milwaukee Sentinel, Nov. 18, 1918 (public domain), via Milwaukee Public Library",
+     "credit_url": "https://www.mpl.org/databases/all/66"
+    },
+    "gallery": [
+     {
+      "src": "/photos/hist-humboldt-park-now.jpg",
+      "alt": "A paved path curving past a grassy hill and shade trees in Humboldt Park (current photo)",
+      "credit": "Rorr404 / Wikimedia Commons (CC0)",
+      "credit_url": "https://commons.wikimedia.org/wiki/File:2024_08_07_Humboldt_Park_2.jpg"
+     }
+    ]
+   }
+  },
+  {
+   "run_on": "2026-11-24",
+   "banked": "2026-11-22",
+   "notes": "Built from free sources (Milwaukee Record 2019; Urban Milwaukee business page). The family split is described neutrally; keep it that way. The archive search for DeMarinis turned up only want ads.",
+   "history": {
+    "year": 1949,
+    "date": "1949",
+    "match": "past",
+    "topic": "business",
+    "title": "DeMarinis: Bay View's pizza family since 1949",
+    "text": "In 1949 Vincent and Lucille DeMarinis opened a tavern at Wentworth and Potter. Within two years it was an Italian kitchen, and the DeMarinis name still means pizza in Bay View.",
+    "body": "Long before Bay View had a dozen pizza choices, it had DeMarinis. According to Milwaukee Record's history of the restaurant, Vincent and Lucille DeMarinis opened a neighborhood tavern on the corner of Wentworth and Potter avenues in 1949. About two years later they turned it into an Italian eatery, and Mama DeMarinis became one of the city's early pizza destinations.\n\nThe restaurant stayed in the family for decades. Daughters Josephine and Rosemary eventually took over its operations, and in 1996 the founders' sons, Dominic and Phillip, opened their own restaurant less than two blocks away, Dom & Phil DeMarinis, promising the family's \"original recipes.\" For the next 16 years Bay View had two DeMarinis kitchens, unaffiliated and a short walk apart, and plenty of neighbors had an opinion about which one was the real thing.\n\nMama DeMarinis closed in 2012. A granddaughter of the founders kept that side of the family going with Little DeMarinis, which opened in 2013 in the basement of Bay View Post 180 and closed in early 2018. That left Dom & Phil's, at 1211 E. Conway St., as the last restaurant carrying the name in the neighborhood.\n\nThe original building at 2457 S. Wentworth Ave. found a second life too: since 2014 it has been Goodkind, the restaurant and bar. Dom & Phil's, meanwhile, keeps its menu short and old-school, with only a handful of pizza styles and a Friday fish fry.",
+    "now": {
+     "name": "Goodkind",
+     "url": "/directory.html"
+    },
+    "source_name": "Milwaukee Record (2019)",
+    "source_url": "https://milwaukeerecord.com/food-drink/mandatory-milwaukee-original-recipe-pizza-lives-on-at-dom-phil-demarinis/",
+    "links": [
+     {
+      "label": "Milwaukee Record: Original recipe pizza lives on at Dom & Phil DeMarinis (2019)",
+      "url": "https://milwaukeerecord.com/food-drink/mandatory-milwaukee-original-recipe-pizza-lives-on-at-dom-phil-demarinis/"
+     },
+     {
+      "label": "Urban Milwaukee: Mama DeMarinis",
+      "url": "https://urbanmilwaukee.com/business/mama-demarinis/"
+     },
+     {
+      "label": "BizTimes: Little DeMarinis pizza restaurant in Bay View closing",
+      "url": "https://biztimes.com/little-demarinis-pizza-restaurant-in-bay-view-closing/"
+     },
+     {
+      "label": "Milwaukee Record: First impression: Goodkind (2014)",
+      "url": "https://milwaukeerecord.com/food-drink/first-impression-goodkind/"
+     }
+    ],
+    "image": {
+     "src": "/photos/hist-demarinis-pizza.jpg",
+     "alt": "The white, low-slung Dom & Phil DeMarinis building on E. Conway Street with its green sign and a flagpole (current photo)",
+     "credit": "Milwaukee Record",
+     "credit_url": "https://milwaukeerecord.com/food-drink/mandatory-milwaukee-original-recipe-pizza-lives-on-at-dom-phil-demarinis/"
+    }
+   }
+  },
+  {
+   "run_on": "2026-11-25",
+   "banked": "2026-11-22",
+   "notes": "Hard history about a public figure; plain tone, no graphic detail. Built from free sources (Milwaukee Record 2018, FOX6); the archive OCR didn't find 1967 coverage. Photo is FOX6's image of Sijan; a public-domain USAF portrait exists on Wikimedia Commons (File:Lance_Sijan.jpg) if the run can download it.",
+   "history": {
+    "year": 1967,
+    "date": "1967-11-09",
+    "match": "this month",
+    "topic": "person",
+    "title": "Lance Sijan: the Bay View High standout who received the Medal of Honor",
+    "text": "In November 1967, Air Force Capt. Lance Sijan, a Bay View High graduate, was shot down over Laos. His courage as a prisoner earned him the Medal of Honor.",
+    "body": "Lance Peter Sijan grew up in Bay View and was a standout at Bay View High School: senior class president, an all-city end on the football team, and the lead in a school production of \"The King and I.\" He went on to the Air Force Academy, graduated in 1965, and by July 1967 was flying F-4 Phantom missions in the Vietnam War.\n\nOn Nov. 9, 1967, his jet went down over Laos. Rescue crews made voice contact with him and hovered overhead, but he was badly injured and warned them off because enemy troops were all around him. Back in Bay View, two Air Force officers came to his family's door with the news that he was missing.\n\nSijan evaded capture for 46 days, surviving on plants and insects despite a skull fracture, a mangled hand and a broken leg. He was captured on Christmas Day 1967 and taken to a prison camp in Hanoi, where he died on Jan. 22, 1968, at 25. His family didn't learn his fate until 1974, when his remains came home; he is buried in Arlington Park Cemetery in Greenfield.\n\nFellow prisoners later described his courage, and in 1976 President Gerald Ford posthumously awarded him the Medal of Honor. The Air Force Academy named a dormitory Sijan Hall, the Air Force named its top leadership award for him, and in Bay View, the football field where he practiced was renamed Sijan Park.",
+    "source_name": "Milwaukee Record (2018)",
+    "source_url": "https://milwaukeerecord.com/city-life/honor-service-love-remembering-the-life-and-heroics-of-milwaukees-lance-sijan/",
+    "links": [
+     {
+      "label": "Milwaukee Record: Remembering the life and heroics of Milwaukee's Lance Sijan (2018)",
+      "url": "https://milwaukeerecord.com/city-life/honor-service-love-remembering-the-life-and-heroics-of-milwaukees-lance-sijan/"
+     },
+     {
+      "label": "FOX6: Students learning from the life of Bay View Medal of Honor recipient Lance Sijan",
+      "url": "https://www.fox6now.com/news/he-was-a-hero-students-learning-from-the-life-of-bay-view-medal-of-honor-recipient-lance-sijan"
+     },
+     {
+      "label": "U.S. Air Force: Capt. Lance P. Sijan, Medal of Honor",
+      "url": "https://www.af.mil/MedalofHonor/Sijan.aspx"
+     },
+     {
+      "label": "Wikipedia: Lance Sijan",
+      "url": "https://en.wikipedia.org/wiki/Lance_Sijan"
+     }
+    ],
+    "image": {
+     "src": "/photos/hist-lance-sijan.jpg",
+     "alt": "Portrait of a young Lance Sijan in uniform",
+     "credit": "FOX6 News",
+     "credit_url": "https://www.fox6now.com/news/he-was-a-hero-students-learning-from-the-life-of-bay-view-medal-of-honor-recipient-lance-sijan"
+    }
+   }
+  },
+  {
+   "run_on": "2026-11-26",
+   "banked": "2026-11-22",
+   "notes": "Archive ad: Milwaukee Sentinel, July 10, 1943, p. 5 (MPL library card required; not public domain, credited). Building history from Urban Milwaukee (2015). Three Brothers (another Schlitz tied house) ran Nov. 20, so this item leans on the 1943 club, not Schlitz.",
+   "history": {
+    "year": 1943,
+    "date": "1943-07",
+    "match": "past",
+    "topic": "business",
+    "title": "Club Garibaldi opens: an Italian mutual aid society's corner club, 1943",
+    "text": "In 1943 Bay View's Garibaldi Lodge turned an old corner tavern at Russell and Superior into Club Garibaldi, with orchestra dancing every Friday and Saturday.",
+    "body": "The corner tavern at 2501 S. Superior St. started out in 1907 as a Schlitz-built saloon serving workers from the Bay View rolling mill a block away. It passed through several owners and operators over the next three decades. Then, in January 1943, it became something new: the clubhouse of the Italian American Mutual Aid Society, whose Milwaukee chapter is named for the Italian patriot Giuseppe Garibaldi.\n\nThe society had been founded in 1908 by about 40 Italian immigrants, many of whom settled in Bay View and worked in its factories. Like other ethnic mutual aid groups of the era, it offered members help in hard times and gave the community a place to gather.\n\nBy that summer the club was advertising itself to the whole city. A Milwaukee Sentinel ad on July 10, 1943, invited readers to \"come out tonite\" to the new Club Garibaldi, \"owned & operated by the Garibaldi Lodge,\" with orchestra dancing every Friday and Saturday on a \"beautiful dance floor.\" In April 1944 the club held a grand opening for a remodeled space.\n\nMore than 80 years later, the mutual aid society still owns the building. The front room is still a neighborhood corner bar, and the old dance hall in back hosts touring bands, benefits and the Wisconsin Blues Hall of Fame's events.",
+    "now": {
+     "name": "Club Garibaldi",
+     "url": "/directory.html"
+    },
+    "source_name": "Milwaukee Sentinel, July 10, 1943",
+    "source_url": "https://www.mpl.org/databases/all/66",
+    "links": [
+     {
+      "label": "Milwaukee Sentinel, July 10, 1943, p. 5: Club Garibaldi ad (MPL library card required)",
+      "url": "https://www.mpl.org/databases/all/66"
+     },
+     {
+      "label": "Urban Milwaukee: Bar Exam: Club Garibaldi's Very Italian Roots (2015)",
+      "url": "https://urbanmilwaukee.com/2015/03/25/bar-exam-club-garibaldis-very-italian-roots/"
+     },
+     {
+      "label": "Wisconsin Historical Society: 2501-2507 S. Superior St.",
+      "url": "https://wisconsinhistory.org/Records/Property/HI27661"
+     }
+    ],
+    "image": {
+     "src": "/photos/hist-club-garibaldi-1943-ad.jpg",
+     "alt": "1943 newspaper ad: Garibaldi, owned and operated by the Garibaldi Lodge at 2501 S. Superior St., orchestra dancing every Friday and Saturday",
+     "credit": "Milwaukee Sentinel, July 10, 1943, via Milwaukee Public Library",
+     "credit_url": "https://www.mpl.org/databases/all/66"
+    },
+    "gallery": [
+     {
+      "src": "/photos/hist-club-garibaldi-now.jpg",
+      "alt": "The lit back bar at Club Garibaldi, with the club's name in script above rows of bottles (current photo)",
+      "credit": "Urban Milwaukee",
+      "credit_url": "https://urbanmilwaukee.com/2015/03/25/bar-exam-club-garibaldis-very-italian-roots/"
+     }
+    ]
+   }
+  },
+  {
+   "run_on": "2026-11-27",
+   "banked": "2026-11-22",
+   "notes": "From the MPL archive (Milwaukee Sentinel, Feb. 28, 1919, p. 4). We did not find the park board's final vote; the item only says the name never changed (true today).",
+   "history": {
+    "year": 1919,
+    "date": "1919-02-28",
+    "match": "past",
+    "topic": "place",
+    "title": "The time Bay View asked to rename Humboldt Park for Gen. Pershing",
+    "text": "In 1919 a Bay View homecoming committee asked the city to rename Humboldt Park \"Pershing Park\" as a memorial to the neighborhood's World War I soldiers.",
+    "body": "As soldiers came home from World War I, Bay View wanted a lasting memorial, and one neighborhood committee had a bold idea: rename Humboldt Park after Gen. John J. Pershing, the commander of the American forces in Europe.\n\nOn Feb. 28, 1919, the Milwaukee Sentinel ran the story under the headline \"Would Name Park for Gen. Pershing.\" E. C. Bayerlein, chairman of Bay View's homecoming and reconstruction commission, had presented resolutions to the park board asking for the change. He explained that the group's first draft hadn't said which south side park should get the new name; it could have been South Shore. But sentiment favored Humboldt, he said, mainly because the new Bay View High School sat nearby, and the land between the park and the school had been recommended for purchase by the city, which made Humboldt the logical place for a memorial park.\n\nThe form of the memorial, the paper added, would depend on how much money could be raised.\n\nThe rename never happened. The park, named for the German naturalist Alexander von Humboldt, kept its name, and Bay View High School still sits on its edge. The episode is a snapshot of a neighborhood that had just sent its sons to war and wanted its biggest green space to say so. Three months earlier, more than 10,000 residents had marched to that same park to unveil a service flag in their honor.",
+    "source_name": "Milwaukee Sentinel, Feb. 28, 1919",
+    "source_url": "https://www.mpl.org/databases/all/66",
+    "links": [
+     {
+      "label": "Milwaukee Sentinel, Feb. 28, 1919, p. 4: \"Would Name Park for Gen. Pershing\" (MPL library card required)",
+      "url": "https://www.mpl.org/databases/all/66"
+     },
+     {
+      "label": "Milwaukee County Parks: Humboldt Park",
+      "url": "https://county.milwaukee.gov/EN/Parks/Explore/Parks/Humboldt"
+     }
+    ],
+    "image": {
+     "src": "/photos/hist-pershing-park-1919.jpg",
+     "alt": "1919 newspaper headline: Would Name Park for Gen. Pershing; Bay View Organization Favors Giving Humboldt the New Title",
+     "credit": "Milwaukee Sentinel, Feb. 28, 1919 (public domain), via Milwaukee Public Library",
+     "credit_url": "https://www.mpl.org/databases/all/66"
+    },
+    "gallery": [
+     {
+      "src": "/photos/hist-humboldt-park-now-2.jpg",
+      "alt": "Humboldt Park's open lawn, ball diamond and shade trees on a sunny day (current photo)",
+      "credit": "Rorr404 / Wikimedia Commons (CC0)",
+      "credit_url": "https://commons.wikimedia.org/wiki/File:2024_08_07_Humboldt_Park_4.jpg"
+     }
+    ]
+   }
+  },
+  {
+   "run_on": "2026-11-28",
+   "banked": "2026-11-22",
+   "notes": "Built from free sources (Urban Milwaukee 2017, FOX6 2015). Sources differ slightly on the year: the permit was taken out in October 1924 and the owners date the building to 1925; the text says so.",
+   "history": {
+    "year": 1925,
+    "date": "1924-10",
+    "match": "past",
+    "topic": "business",
+    "title": "Bay View Bowl: one of Milwaukee's 200 bowling alleys, still rolling",
+    "text": "A building permit from October 1924 started the bowling alley on KK. A century later, Bay View Bowl is one of the few of Milwaukee's old neighborhood lanes still open.",
+    "body": "Bay View Bowl almost started life as a movie theater. In 1915 a developer took out a permit to build an 800-seat \"moving picture\" house on Kinnickinnic Avenue, but it was never built, according to Urban Milwaukee's history of the building.\n\nIn October 1924, Badger Building Services took out a permit for three stores, two flats and bowling alleys on the lot, and the alleys went up first since they needed no basement. The current owners date the building to 1925, which is why they threw a 90th birthday party in 2015 with 90-cent games and shoes.\n\nBowling was big business then: Milwaukee once had some 200 alleys, most of them busy with leagues. Through the decades the KK building held a barbershop, an ice cream parlor during Prohibition, a tavern and dance hall afterward, a beauty shop and a diner, while the bowling carried on in back. It ran as Bay View Recreation Parlor and later Roghan Recreation, and around 1970 an operator named Martin Alivo gave it the name Bay View Bowl and the Lannon stone front it still wears.\n\nToday fewer than 20 of the city's old alleys remain. Bay View Bowl still has wooden lanes, and in recent years it has added glow bowling and local art on the walls, and it's one of the neighborhood's most familiar signs at 2416 S. Kinnickinnic Ave.",
+    "now": {
+     "name": "Bay View Bowl",
+     "url": "/directory.html"
+    },
+    "source_name": "Urban Milwaukee (2017)",
+    "source_url": "https://urbanmilwaukee.com/2017/04/14/bar-exam-bay-view-bowl-will-charm-you/",
+    "links": [
+     {
+      "label": "Urban Milwaukee: Bar Exam: Bay View Bowl Will Charm You (2017)",
+      "url": "https://urbanmilwaukee.com/2017/04/14/bar-exam-bay-view-bowl-will-charm-you/"
+     },
+     {
+      "label": "FOX6: Owners of Bay View Bowl realize it's 90 years old (2015)",
+      "url": "https://www.fox6now.com/news/its-come-so-far-owners-of-bay-view-bowl-make-startling-discovery-realize-its-90-years-old"
+     },
+     {
+      "label": "Wisconsin Historical Society property record",
+      "url": "https://wisconsinhistory.org/Records/Property/HI107371"
+     }
+    ],
+    "image": {
+     "src": "/photos/hist-bay-view-bowl.jpg",
+     "alt": "Bay View Bowl's Lannon stone front and vertical red neon sign on S. Kinnickinnic Avenue (current photo)",
+     "credit": "Michael Horne / Urban Milwaukee",
+     "credit_url": "https://urbanmilwaukee.com/2017/04/14/bar-exam-bay-view-bowl-will-charm-you/"
+    },
+    "gallery": [
+     {
+      "src": "/photos/hist-bay-view-bowl-2.jpg",
+      "alt": "The Bay View Bowl parking sign, with a bowling ball for the O (current photo)",
+      "credit": "FOX6 News",
+      "credit_url": "https://www.fox6now.com/news/its-come-so-far-owners-of-bay-view-bowl-make-startling-discovery-realize-its-90-years-old"
+     }
+    ]
+   }
+  },
+  {
+   "run_on": "2026-11-29",
+   "banked": "2026-11-22",
+   "notes": "From the MPL archive (Milwaukee Journal, Aug. 26, 1929, p. 3). Names only the committee chair and association president (public roles); the private settlers in the photo caption are not named. Related to the Nov. 13 item on the village joining Milwaukee, but a different subject (the 1929 anniversary).",
+   "history": {
+    "year": 1929,
+    "date": "1929-08-25",
+    "match": "past",
+    "topic": "event",
+    "title": "Bay View throws itself a 50th birthday party, 1929",
+    "text": "In 1929, 42 years after Bay View joined Milwaukee, several thousand residents packed Humboldt Park to celebrate the 50th anniversary of the old village.",
+    "body": "Bay View had been part of Milwaukee for 42 years by 1929, but it hadn't stopped thinking of itself as a village. On Sunday, Aug. 25, 1929, several thousand residents gathered in Humboldt Park for a picnic marking the 50th anniversary of the village's founding in 1879, the Milwaukee Journal reported the next day under the headline \"Settlers Frolic at Bay View.\"\n\nThe Bay View Advancement Association sponsored the day. Early in the afternoon George S. Meredith, the picnic committee's chairman, and Henry H. Otjen, the association's president, gathered the old-timers in the park pavilion to register their names and the year each had arrived in Bay View. Those records were to be filed at the public library, and the Journal noted they included people who had come as far back as the years just after the Civil War, one of them over 90.\n\nThe rest of the day was a reunion. Picnickers brought their lunches, sang the old songs and caught up with friends, and the paper ran a photo of four of the oldest settlers seated in the park, including two of the three surviving trustees of the 1879 village board. A native son who had become a Standard Oil vice president in Chicago came home to speak.\n\nThat same community pride is why Bay View still has a historical society, a Beulah Brinton house museum and, every September, a street festival on KK.",
+    "source_name": "Milwaukee Journal, Aug. 26, 1929",
+    "source_url": "https://www.mpl.org/databases/all/66",
+    "links": [
+     {
+      "label": "Milwaukee Journal, Aug. 26, 1929, p. 3: \"Settlers Frolic at Bay View\" (MPL library card required)",
+      "url": "https://www.mpl.org/databases/all/66"
+     },
+     {
+      "label": "Bay View Historical Society",
+      "url": "https://bayviewhistoricalsociety.org/"
+     }
+    ],
+    "image": {
+     "src": "/photos/hist-settlers-picnic-1929.jpg",
+     "alt": "1929 Milwaukee Journal page showing a portrait of picnic chairman George Meredith beside a photo of elderly early settlers seated together in Humboldt Park",
+     "credit": "Milwaukee Journal, Aug. 26, 1929 (public domain), via Milwaukee Public Library",
+     "credit_url": "https://www.mpl.org/databases/all/66"
+    }
+   }
+  }
+ ],
  "spares": [],
  "used": []
 }
