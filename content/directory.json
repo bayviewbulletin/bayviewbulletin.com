@@ -352,15 +352,6 @@
   "lon": -87.90934
  },
  {
-  "name": "Bert's Beer & Liquor",
-  "type": "Liquor store",
-  "address": "2523 E. Oklahoma Ave.",
-  "lat": 42.98785,
-  "lon": -87.87747,
-  "links_checked": 1,
-  "social_note": "No website or social accounts found (checked Nov. 13)"
- },
- {
   "name": "Beulah Brinton Community Center",
   "type": "Community center",
   "address": "2555 S. Bay St.",
@@ -743,8 +734,8 @@
   "address": "2330 S. Kinnickinnic Ave.",
   "lat": 43.00237,
   "lon": -87.90361,
-  "links_checked": 1,
-  "social_note": "No website or social accounts found (checked Nov. 13)",
+  "links_checked": 2,
+  "social_note": "Website collectorsedgecomics.com fails (TLS hostname mismatch); Facebook p/Collectors-Edge-Comics-100057381081141 seen in search, address not confirmed (checked Nov. 22)",
   "website": "https://collectorsedgecomics.com/"
  },
  {
@@ -1247,7 +1238,9 @@
   "address": "2322 S. Kinnickinnic Ave.",
   "lat": 43.00254,
   "lon": -87.90378,
-  "website": "https://thehighbury.com"
+  "website": "https://thehighbury.com",
+  "links_checked": 1,
+  "social_note": "Website thehighbury.com now redirects to a parked /lander page; Facebook highbury.milwaukee seen in search, address not confirmed (checked Nov. 22)"
  },
  {
   "name": "Higher Appeal Counseling & Coaching",
@@ -1461,9 +1454,11 @@
   "address": "2650 S. Chase Ave.",
   "lat": 42.99727,
   "lon": -87.91047,
-  "links_checked": 1,
-  "social_note": "No website or social accounts found (checked Nov. 13)",
-  "note": "Production plant; leased through 2036 per Urban Milwaukee (Sept. 2026)"
+  "note": "Production plant; leased through 2036 per Urban Milwaukee (Sept. 2026)",
+  "website": "https://www.klements.com/",
+  "instagram": "klementsausage",
+  "facebook": "KlementSausage",
+  "x": "KlementSausage"
  },
  {
   "name": "Knepper Brothers",
@@ -1928,8 +1923,9 @@
   "address": "2242 S. Kinnickinnic Ave.",
   "lat": 43.00379,
   "lon": -87.90467,
-  "links_checked": 1,
-  "social_note": "No website or social accounts found (checked Nov. 13)"
+  "website": "https://www.pinkagavemke.com/",
+  "instagram": "pinkagavemke",
+  "facebook": "214865658358245"
  },
  {
   "name": "Pipe Dreams",
@@ -2072,7 +2068,9 @@
   "lat": 43.00742,
   "lon": -87.90371,
   "website": "https://www.rishi-tea.com/",
-  "note": "Tea company headquarters"
+  "note": "Tea company headquarters",
+  "instagram": "rishitea",
+  "facebook": "rishitea"
  },
  {
   "name": "Rollup MKE",
@@ -2139,16 +2137,6 @@
   "lon": -87.90113,
   "website": "https://saintlucasbayview.org/",
   "facebook": "SaintLucasLutheranSchool"
- },
- {
-  "name": "Salon Thor",
-  "type": "Hair salon",
-  "address": "3128 S. Kinnickinnic Ave.",
-  "lat": 42.98755,
-  "lon": -87.88292,
-  "verify": true,
-  "links_checked": 1,
-  "social_note": "No website or social accounts found (checked Nov. 13)"
  },
  {
   "name": "Santino's Little Italy",
@@ -2280,8 +2268,8 @@
   "address": "2211 S. Kinnickinnic Ave.",
   "lat": 43.00419,
   "lon": -87.90564,
-  "links_checked": 1,
-  "social_note": "No website or social accounts found (checked Nov. 13)"
+  "links_checked": 2,
+  "social_note": "Facebook people/The-Soup-Market/100076312717999 seen in search, not confirmed as the Bay View location (checked Nov. 22)"
  },
  {
   "name": "South Shore Farmers Market",
@@ -2290,7 +2278,9 @@
   "lat": 42.99381,
   "lon": -87.88121,
   "website": "https://southshorefarmersmarket.com/",
-  "note": "Saturdays in summer at South Shore Park"
+  "note": "Saturdays in summer at South Shore Park",
+  "instagram": "southshorefarmersmarket",
+  "facebook": "southshorefarmersmarket"
  },
  {
   "name": "South Shore Gallery & Framing",
@@ -2524,8 +2514,8 @@
   "address": "2343 S. Kinnickinnic Ave.",
   "lat": 43.00201,
   "lon": -87.90357,
-  "social_note": "Old website now belongs to someone else; find current site/accounts",
-  "links_checked": 1
+  "social_note": "Facebook p/Tip-Top-Atomic-Shop-100057323873465 linked from Visit Milwaukee's Bay View vintage guide; no website of its own to confirm (checked Nov. 22)",
+  "links_checked": 2
  },
  {
   "name": "Tippecanoe Herbs",
@@ -2753,7 +2743,10 @@
   "address": "432 E. Bay St.",
   "lat": 43.00611,
   "lon": -87.90307,
-  "website": "https://www.whileyouwereoutpets.com/"
+  "website": "https://www.whileyouwereoutpets.com/",
+  "instagram": "wywopets",
+  "facebook": "wywopets",
+  "x": "wywopets"
  },
  {
   "name": "The White House Bay View",
@@ -2886,5 +2879,38 @@
   "lon": -87.89405,
   "note": "Current city food license (Nov. 21).",
   "links_checked": 1
+ },
+ {
+  "name": "Astraea Salon",
+  "type": "Hair salon",
+  "address": "3128 S. Kinnickinnic Ave.",
+  "lat": 42.98738,
+  "lon": -87.88296,
+  "instagram": "astraeasalon",
+  "website": "https://astraeasalon.com/",
+  "verify": true,
+  "note": "Collective of independent stylists in the former Salon Thor space; website live, no dated post found (Nov. 22)"
+ },
+ {
+  "name": "Luna Verde Beauty & Wellness",
+  "type": "Beauty & wellness salon",
+  "address": "2658 S. Kinnickinnic Ave.",
+  "lat": 42.99663,
+  "lon": -87.89784,
+  "instagram": "luna.verde.mke",
+  "website": "https://www.lunaverdebeautywellness.com/",
+  "verify": true,
+  "note": "Website lists 2658 S. Kinnickinnic Ave.; listed as operational, no dated activity found (Nov. 22)"
+ },
+ {
+  "name": "La Carcacha Auto Repair",
+  "type": "Auto repair",
+  "address": "2484 S. Howell Ave.",
+  "lat": 42.99922,
+  "lon": -87.90474,
+  "verify": true,
+  "links_checked": 1,
+  "social_note": "Facebook p/La-Carcacha-Auto-Repair-100063774364468 seen in search, address not confirmed (checked Nov. 22)",
+  "note": "(414) 483-6060 per listings; listed as open, no dated activity found (Nov. 22)"
  }
 ]

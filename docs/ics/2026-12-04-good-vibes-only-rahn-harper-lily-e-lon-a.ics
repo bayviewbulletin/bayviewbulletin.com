@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Bay View Bulletin//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Good Vibes Only: Rahn Harper, Lily E'lon, Alydia Jean + more
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:2026-12-04-good-vibes-only-rahn-harper-lily-e-lon-a@bayviewbulletin.com
+DTSTAMP:20261122T112127Z
+DTSTART;TZID=America/Chicago:20261204T223000
+DTEND;TZID=America/Chicago:20261205T003000
+SUMMARY:Good Vibes Only: Rahn Harper\, Lily E'lon\, Alydia Jean + more
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:A late-night showcase of local performers with DJ Space Crime. 18+\; $15 cover. https://www.cactusclubmilwaukee.com/events/good-vibes-only-rahn-harper-lily-elon-alydia-jean-riley-jaymes-prophet-diamond-banks-sgod-king-marty-smilez/ (via The Bay View Bulletin)
+URL:https://www.cactusclubmilwaukee.com/events/good-vibes-only-rahn-harper-lily-elon-alydia-jean-riley-jaymes-prophet-diamond-banks-sgod-king-marty-smilez/
+END:VEVENT
+END:VCALENDAR

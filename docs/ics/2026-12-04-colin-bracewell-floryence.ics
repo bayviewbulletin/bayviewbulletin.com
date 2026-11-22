@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Bay View Bulletin//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Colin Bracewell + Floryence
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:2026-12-04-colin-bracewell-floryence@bayviewbulletin.com
+DTSTAMP:20261122T112127Z
+DTSTART;TZID=America/Chicago:20261204T183000
+DTEND;TZID=America/Chicago:20261204T203000
+SUMMARY:Colin Bracewell + Floryence
+LOCATION:Cactus Club\, 2496 S. Wentworth Ave.\, Milwaukee\, WI
+DESCRIPTION:A night with Colin Bracewell\, with Floryence opening. All ages\; $10 in advance\, $15 at the door. https://www.cactusclubmilwaukee.com/events/colin-bracewell-floryence/ (via The Bay View Bulletin)
+URL:https://www.cactusclubmilwaukee.com/events/colin-bracewell-floryence/
+END:VEVENT
+END:VCALENDAR
