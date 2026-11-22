@@ -426,7 +426,7 @@
   "lat": 43.00053,
   "lon": -87.90233,
   "website": "https://bonadrag.com/",
-  "social_note": "Two possible Instagram accounts (@bona_drag, @bonadrag); neither linked from bonadrag.com yet (Nov. 21)."
+  "instagram": "bona_drag"
  },
  {
   "name": "Bravo Vape and Tobacco",
@@ -2659,7 +2659,8 @@
   "instagram": "vendettacoffeebar",
   "website": "https://www.vendettacoffeebar.com",
   "facebook": "vendettacoffeebar",
-  "events_page_hint": true
+  "events_page_hint": true,
+  "note": "Ben confirmed 2268 S. KK (Nov. 21); the chain's website wrongly lists 2491 S. KK."
  },
  {
   "name": "Ventura's Taco",
