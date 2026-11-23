@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Bay View Bulletin//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:HOT Yoga-lattes pop-up
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:2026-12-04-hot-yoga-lattes-pop-up@bayviewbulletin.com
+DTSTAMP:20261123T105503Z
+DTSTART;TZID=America/Chicago:20261204T120000
+DTEND;TZID=America/Chicago:20261204T140000
+SUMMARY:HOT Yoga-lattes pop-up
+LOCATION:Healium Hot Yoga\, 2534 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:An hour of heated yoga blended with Pilates\; included in Healium packages and memberships. https://www.healiumhotyoga.com/happenings (via The Bay View Bulletin)
+URL:https://www.healiumhotyoga.com/happenings
+END:VEVENT
+END:VCALENDAR

@@ -83,6 +83,34 @@
   "events_page_hint": true
  },
  {
+  "name": "Botanas II",
+  "type": "Mexican restaurant",
+  "address": "1421 E. Howard Ave.",
+  "instagram": "botanas2mexican",
+  "website": "https://botanas2mexican.com",
+  "lat": 42.97343,
+  "lon": -87.89121,
+  "note": "Open since 2015 per its website; current city food and liquor licenses (Nov. 23)."
+ },
+ {
+  "name": "Copper Kitchen",
+  "type": "Breakfast & lunch diner",
+  "address": "3935 S. Howell Ave.",
+  "lat": 42.97283,
+  "lon": -87.90997,
+  "note": "On the Howell stretch just south of Morgan that the directory keeps; current city license and recent Facebook posts (Nov. 23). Facebook page path not yet confirmed.",
+  "social_note": "Facebook page 'Copper Kitchen - Milwaukee, WI' exists; path not confirmed"
+ },
+ {
+  "name": "Kainth Beer & Liquor",
+  "type": "Liquor store",
+  "address": "1141 E. Howard Ave.",
+  "lat": 42.97342,
+  "lon": -87.89456,
+  "note": "Current city alcohol license (Nov. 23).",
+  "links_checked": 1
+ },
+ {
   "name": "The Art School",
   "type": "Art school",
   "address": "2654 S. Kinnickinnic Ave.",
@@ -165,18 +193,9 @@
   "address": "1130 E. Oklahoma Ave.",
   "lat": 42.98864,
   "lon": -87.89476,
-  "verify": true,
   "links_checked": 1,
-  "social_note": "No website or social accounts found (checked Nov. 13)"
- },
- {
-  "name": "The Barker Shop",
-  "type": "Pet grooming",
-  "address": "3157 S. Howell Ave.",
-  "lat": 42.9873,
-  "lon": -87.90477,
-  "website": "https://barkershop.weebly.com/",
-  "verify": true
+  "social_note": "No website or social accounts found (checked Nov. 13)",
+  "website": "https://badgerautorepair.com"
  },
  {
   "name": "Barnacle Bud's",
@@ -956,7 +975,8 @@
   "address": "206 E. Smith St.",
   "lat": 43.00113,
   "lon": -87.90792,
-  "website": "https://www.exfabula.org"
+  "website": "https://www.exfabula.org",
+  "facebook": "ExFabula"
  },
  {
   "name": "Eyes on the Lake",
@@ -1348,14 +1368,13 @@
   "social_note": "No website or social accounts found (checked Nov. 13)"
  },
  {
-  "name": "Integrative Wellness Yoga & Thai Bodywork",
-  "type": "Yoga & Thai bodywork",
+  "name": "Integrative Wellness Center for Holistic Health",
+  "type": "Holistic health & yoga",
   "address": "3201 S. Howell Ave.",
   "lat": 42.98642,
   "lon": -87.9052,
-  "verify": true,
-  "links_checked": 1,
-  "social_note": "No website or social accounts found (checked Nov. 13)"
+  "website": "https://iwbayview.app",
+  "instagram": "iwbayview"
  },
  {
   "name": "Iron Fist Tattoo",

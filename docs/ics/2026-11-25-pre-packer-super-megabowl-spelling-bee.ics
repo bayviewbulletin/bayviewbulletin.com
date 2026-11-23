@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Bay View Bulletin//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Pre-Packer Super Megabowl Spelling Bee
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:2026-11-25-pre-packer-super-megabowl-spelling-bee@bayviewbulletin.com
+DTSTAMP:20261123T105503Z
+DTSTART;TZID=America/Chicago:20261125T171500
+DTEND;TZID=America/Chicago:20261125T191500
+SUMMARY:Pre-Packer Super Megabowl Spelling Bee
+LOCATION:Puddler's Hall\, 2461 S. St. Clair St.\, Milwaukee\, WI
+DESCRIPTION:A Thanksgiving Eve spelling bee on Brewers\, Packers and planes\, trains and automobiles\, in a take-a-shot-and-spell format\, with prizes. https://www.instagram.com/p/DgDbSWGP6Kc/ (via The Bay View Bulletin)
+URL:https://www.instagram.com/p/DgDbSWGP6Kc/
+END:VEVENT
+END:VCALENDAR
