@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-11-29-bc-modern-s-november-collection-sale-day@bayviewbulletin.com
-DTSTAMP:20261123T105503Z
+DTSTAMP:20261124T105454Z
 DTSTART;TZID=America/Chicago:20261129T100000
 DTEND;TZID=America/Chicago:20261129T120000
 SUMMARY:BC Modern's November Collection sale\, day two

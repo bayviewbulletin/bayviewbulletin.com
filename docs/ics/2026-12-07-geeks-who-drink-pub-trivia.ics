@@ -23,10 +23,10 @@ RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:2026-11-23-geeks-who-drink-pub-trivia@bayviewbulletin.com
-DTSTAMP:20261123T105503Z
-DTSTART;TZID=America/Chicago:20261123T193000
-DTEND;TZID=America/Chicago:20261123T213000
+UID:2026-12-07-geeks-who-drink-pub-trivia@bayviewbulletin.com
+DTSTAMP:20261124T105454Z
+DTSTART;TZID=America/Chicago:20261207T193000
+DTEND;TZID=America/Chicago:20261207T213000
 SUMMARY:Geeks Who Drink Pub Trivia
 LOCATION:Puddler's Hall\, 2461 S. St. Clair St.\, Milwaukee\, WI
 DESCRIPTION:Weekly Monday team pub trivia hosted by Geeks Who Drink in the historic St. Clair Street tavern. https://puddlershall.com/calendar/ (via The Bay View Bulletin)

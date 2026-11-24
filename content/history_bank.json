@@ -8,50 +8,6 @@
  },
  "dated": [
   {
-   "run_on": "2026-11-24",
-   "banked": "2026-11-22",
-   "notes": "Built from free sources (Milwaukee Record 2019; Urban Milwaukee business page). The family split is described neutrally; keep it that way. The archive search for DeMarinis turned up only want ads.",
-   "history": {
-    "year": 1949,
-    "date": "1949",
-    "match": "past",
-    "topic": "business",
-    "title": "DeMarinis: Bay View's pizza family since 1949",
-    "text": "In 1949 Vincent and Lucille DeMarinis opened a tavern at Wentworth and Potter. Within two years it was an Italian kitchen, and the DeMarinis name still means pizza in Bay View.",
-    "body": "Long before Bay View had a dozen pizza choices, it had DeMarinis. According to Milwaukee Record's history of the restaurant, Vincent and Lucille DeMarinis opened a neighborhood tavern on the corner of Wentworth and Potter avenues in 1949. About two years later they turned it into an Italian eatery, and Mama DeMarinis became one of the city's early pizza destinations.\n\nThe restaurant stayed in the family for decades. Daughters Josephine and Rosemary eventually took over its operations, and in 1996 the founders' sons, Dominic and Phillip, opened their own restaurant less than two blocks away, Dom & Phil DeMarinis, promising the family's \"original recipes.\" For the next 16 years Bay View had two DeMarinis kitchens, unaffiliated and a short walk apart, and plenty of neighbors had an opinion about which one was the real thing.\n\nMama DeMarinis closed in 2012. A granddaughter of the founders kept that side of the family going with Little DeMarinis, which opened in 2013 in the basement of Bay View Post 180 and closed in early 2018. That left Dom & Phil's, at 1211 E. Conway St., as the last restaurant carrying the name in the neighborhood.\n\nThe original building at 2457 S. Wentworth Ave. found a second life too: since 2014 it has been Goodkind, the restaurant and bar. Dom & Phil's, meanwhile, keeps its menu short and old-school, with only a handful of pizza styles and a Friday fish fry.",
-    "now": {
-     "name": "Goodkind",
-     "url": "/directory.html"
-    },
-    "source_name": "Milwaukee Record (2019)",
-    "source_url": "https://milwaukeerecord.com/food-drink/mandatory-milwaukee-original-recipe-pizza-lives-on-at-dom-phil-demarinis/",
-    "links": [
-     {
-      "label": "Milwaukee Record: Original recipe pizza lives on at Dom & Phil DeMarinis (2019)",
-      "url": "https://milwaukeerecord.com/food-drink/mandatory-milwaukee-original-recipe-pizza-lives-on-at-dom-phil-demarinis/"
-     },
-     {
-      "label": "Urban Milwaukee: Mama DeMarinis",
-      "url": "https://urbanmilwaukee.com/business/mama-demarinis/"
-     },
-     {
-      "label": "BizTimes: Little DeMarinis pizza restaurant in Bay View closing",
-      "url": "https://biztimes.com/little-demarinis-pizza-restaurant-in-bay-view-closing/"
-     },
-     {
-      "label": "Milwaukee Record: First impression: Goodkind (2014)",
-      "url": "https://milwaukeerecord.com/food-drink/first-impression-goodkind/"
-     }
-    ],
-    "image": {
-     "src": "/photos/hist-demarinis-pizza.jpg",
-     "alt": "The white, low-slung Dom & Phil DeMarinis building on E. Conway Street with its green sign and a flagpole (current photo)",
-     "credit": "Milwaukee Record",
-     "credit_url": "https://milwaukeerecord.com/food-drink/mandatory-milwaukee-original-recipe-pizza-lives-on-at-dom-phil-demarinis/"
-    }
-   }
-  },
-  {
    "run_on": "2026-11-25",
    "banked": "2026-11-22",
    "notes": "Hard history about a public figure; plain tone, no graphic detail. Built from free sources (Milwaukee Record 2018, FOX6); the archive OCR didn't find 1967 coverage. Photo is FOX6's image of Sijan; a public-domain USAF portrait exists on Wikimedia Commons (File:Lance_Sijan.jpg) if the run can download it.",
@@ -302,6 +258,50 @@
     ]
    },
    "used": "2026-11-23"
+  },
+  {
+   "run_on": "2026-11-24",
+   "banked": "2026-11-22",
+   "notes": "Built from free sources (Milwaukee Record 2019; Urban Milwaukee business page). The family split is described neutrally; keep it that way. The archive search for DeMarinis turned up only want ads.",
+   "history": {
+    "year": 1949,
+    "date": "1949",
+    "match": "past",
+    "topic": "business",
+    "title": "DeMarinis: Bay View's pizza family since 1949",
+    "text": "In 1949 Vincent and Lucille DeMarinis opened a tavern at Wentworth and Potter. Within two years it was an Italian kitchen, and the DeMarinis name still means pizza in Bay View.",
+    "body": "Long before Bay View had a dozen pizza choices, it had DeMarinis. According to Milwaukee Record's history of the restaurant, Vincent and Lucille DeMarinis opened a neighborhood tavern on the corner of Wentworth and Potter avenues in 1949. About two years later they turned it into an Italian eatery, and Mama DeMarinis became one of the city's early pizza destinations.\n\nThe restaurant stayed in the family for decades. Daughters Josephine and Rosemary eventually took over its operations, and in 1996 the founders' sons, Dominic and Phillip, opened their own restaurant less than two blocks away, Dom & Phil DeMarinis, promising the family's \"original recipes.\" For the next 16 years Bay View had two DeMarinis kitchens, unaffiliated and a short walk apart, and plenty of neighbors had an opinion about which one was the real thing.\n\nMama DeMarinis closed in 2012. A granddaughter of the founders kept that side of the family going with Little DeMarinis, which opened in 2013 in the basement of Bay View Post 180 and closed in early 2018. That left Dom & Phil's, at 1211 E. Conway St., as the last restaurant carrying the name in the neighborhood.\n\nThe original building at 2457 S. Wentworth Ave. found a second life too: since 2014 it has been Goodkind, the restaurant and bar. Dom & Phil's, meanwhile, keeps its menu short and old-school, with only a handful of pizza styles and a Friday fish fry.",
+    "now": {
+     "name": "Goodkind",
+     "url": "/directory.html"
+    },
+    "source_name": "Milwaukee Record (2019)",
+    "source_url": "https://milwaukeerecord.com/food-drink/mandatory-milwaukee-original-recipe-pizza-lives-on-at-dom-phil-demarinis/",
+    "links": [
+     {
+      "label": "Milwaukee Record: Original recipe pizza lives on at Dom & Phil DeMarinis (2019)",
+      "url": "https://milwaukeerecord.com/food-drink/mandatory-milwaukee-original-recipe-pizza-lives-on-at-dom-phil-demarinis/"
+     },
+     {
+      "label": "Urban Milwaukee: Mama DeMarinis",
+      "url": "https://urbanmilwaukee.com/business/mama-demarinis/"
+     },
+     {
+      "label": "BizTimes: Little DeMarinis pizza restaurant in Bay View closing",
+      "url": "https://biztimes.com/little-demarinis-pizza-restaurant-in-bay-view-closing/"
+     },
+     {
+      "label": "Milwaukee Record: First impression: Goodkind (2014)",
+      "url": "https://milwaukeerecord.com/food-drink/first-impression-goodkind/"
+     }
+    ],
+    "image": {
+     "src": "/photos/hist-demarinis-pizza.jpg",
+     "alt": "The white, low-slung Dom & Phil DeMarinis building on E. Conway Street with its green sign and a flagpole (current photo)",
+     "credit": "Milwaukee Record",
+     "credit_url": "https://milwaukeerecord.com/food-drink/mandatory-milwaukee-original-recipe-pizza-lives-on-at-dom-phil-demarinis/"
+    }
+   }
   }
  ]
 }

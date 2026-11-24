@@ -1506,8 +1506,7 @@
   "lat": 42.99652,
   "lon": -87.90935,
   "instagram": "ladiesoftheloon",
-  "note": "Hide House showroom, by appointment (Shepherd Express, Mar. 2025)",
-  "verify": true
+  "note": "Hide House showroom, by appointment (Shepherd Express, Mar. 2025)"
  },
  {
   "name": "Lake Express ferry terminal",
@@ -2907,7 +2906,6 @@
   "lon": -87.88296,
   "instagram": "astraeasalon",
   "website": "https://astraeasalon.com/",
-  "verify": true,
   "note": "Collective of independent stylists in the former Salon Thor space; website live, no dated post found (Nov. 22)"
  },
  {
@@ -2918,7 +2916,6 @@
   "lon": -87.89784,
   "instagram": "luna.verde.mke",
   "website": "https://www.lunaverdebeautywellness.com/",
-  "verify": true,
   "note": "Website lists 2658 S. Kinnickinnic Ave.; listed as operational, no dated activity found (Nov. 22)"
  },
  {
@@ -2931,5 +2928,15 @@
   "links_checked": 1,
   "social_note": "Facebook p/La-Carcacha-Auto-Repair-100063774364468 seen in search, address not confirmed (checked Nov. 22)",
   "note": "(414) 483-6060 per listings; listed as open, no dated activity found (Nov. 22)"
+ },
+ {
+  "name": "Milwaukee Makers Marketplace",
+  "type": "Local makers shop & gallery",
+  "address": "2625 S. Greeley St.",
+  "lat": 42.99652,
+  "lon": -87.90935,
+  "instagram": "milwaukeemakersmarket",
+  "website": "https://www.milwaukeemakersmarket.com",
+  "note": "Hide House, Suite 135. Opened Sept. 2024 (Radio Milwaukee). Thu 11-6, Fri-Sat 11-7, Sun 11-4"
  }
 ]
