@@ -22,6 +22,8 @@ import datetime as dt
 import json
 import re
 import sys
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -56,6 +58,42 @@ def get_json(url, tries=2):
 
 def sql(q):
     return get_json(CKAN + "datastore_search_sql?sql=" + urllib.parse.quote(q))["result"]["records"]
+
+
+class Reloading(Exception):
+    """The city portal re-uploads these tables nightly (about 3:50 a.m. Central) and the
+    searchable copy is empty, or answers HTTP 409, until its reload finishes."""
+
+
+def table_ready(resource_id):
+    """True when the city's datastore table has rows. Raises Reloading otherwise."""
+    try:
+        r = get_json(CKAN + f"datastore_search?resource_id={resource_id}&limit=0")["result"]
+    except urllib.error.HTTPError as ex:
+        if ex.code == 409:
+            raise Reloading("city data portal is reloading this table (HTTP 409)") from ex
+        raise
+    if not r.get("total") or len(r.get("fields", [])) <= 1:
+        raise Reloading("city data portal table is empty while its nightly reload runs")
+    return True
+
+
+def wait_for_tables(ids, tries, pause):
+    """Wait (up to tries x pause seconds) for the nightly reload to finish. Returns {id: error or None}."""
+    status = {}
+    for attempt in range(tries):
+        status = {}
+        for rid in ids:
+            try:
+                table_ready(rid)
+                status[rid] = None
+            except Exception as ex:  # noqa: BLE001
+                status[rid] = str(ex)
+        if not any(status.values()) or attempt == tries - 1:
+            break
+        sys.stderr.write(f"City tables still reloading; retrying in {pause} s ({attempt + 1}/{tries})\n")
+        time.sleep(pause)
+    return status
 
 
 def legistar(since):
@@ -160,6 +198,8 @@ def main():
     ap.add_argument("--days", type=int, default=14)
     ap.add_argument("--out")
     ap.add_argument("--json")
+    ap.add_argument("--tries", type=int, default=4, help="checks of the city tables before giving up")
+    ap.add_argument("--pause", type=int, default=120, help="seconds between checks")
     a = ap.parse_args()
     today = dt.date.today()
     since = today - dt.timedelta(days=a.days)
@@ -174,14 +214,26 @@ def main():
             errors.append(f"{key}: {ex}")
 
     section("legistar", legistar, since)
-    section("liquor", liquor, today - dt.timedelta(days=max(a.days, 30)), names)
-    section("sales", sales, today - dt.timedelta(days=max(a.days, 60)))
-    try:
-        addrs = d14_addresses()
-        section("permits", permits, today - dt.timedelta(days=max(a.days, 60)), addrs)
-    except Exception as ex:  # noqa: BLE001
-        data["permits"] = []
-        errors.append(f"permits: {ex}")
+    ready = wait_for_tables([LIQUOR, MPROP, PERMITS], a.tries, a.pause)
+    reloading = "city data portal still reloading after its nightly refresh; rerun scripts/records.py later in the run"
+
+    if ready[LIQUOR]:
+        data["liquor"] = []; errors.append(f"liquor: {reloading} ({ready[LIQUOR]})")
+    else:
+        section("liquor", liquor, today - dt.timedelta(days=max(a.days, 30)), names)
+    if ready[MPROP]:
+        data["sales"] = []; errors.append(f"sales: {reloading} ({ready[MPROP]})")
+    else:
+        section("sales", sales, today - dt.timedelta(days=max(a.days, 60)))
+    if ready[MPROP] or ready[PERMITS]:
+        data["permits"] = []; errors.append(f"permits: {reloading} ({ready[PERMITS] or ready[MPROP]})")
+    else:
+        try:
+            addrs = d14_addresses()
+            section("permits", permits, today - dt.timedelta(days=max(a.days, 60)), addrs)
+        except Exception as ex:  # noqa: BLE001
+            data["permits"] = []
+            errors.append(f"permits: {ex}")
 
     report.append(f"# Bay View public-records leads ({today.isoformat()})\n")
     report.append("Leads only: verify before running. Don't publish private homeowners' names.\n")
