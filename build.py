@@ -34,9 +34,27 @@ def dek(it):
 
 
 WARM = {"Business spotlight", "Food & Drink", "Ways to help", "Parks", "Fish fry", "Pets"}
+# Nov. 25: topic labels that have a combined menu page link there, and every label page underlines the right menu item.
+LABEL_PAGE = {"Food & Drink": "/section/food.html", "City Hall": "/section/city.html", "Safety": "/section/safety.html", "Business spotlight": "/spotlight.html"}
+LABEL_ACTIVE = {"Food & Drink": "Food & Drink", "Fish fry": "Food & Drink", "City Hall": "City Hall", "Streets": "City Hall", "Safety": "Safety", "Protests": "Safety", "Business spotlight": "Spotlight"}
+GUIDES = []  # seasonal guides from content/guides.json (Nov. 25)
+OPENINGS = []  # opened / closed / coming soon tracker from content/openings.json (Nov. 25)
 
 
-CM = lambda f: "https://commons.wikimedia.org/wiki/Special:FilePath/" + f.replace(" ", "_") + "?width=500"
+def redirect_page(to):
+    return f'<!DOCTYPE html><meta charset="utf-8"><title>The Bay View Bulletin</title><link rel="canonical" href="{to}"><meta http-equiv="refresh" content="0; url={to}"><a href="{to}">The Bay View Bulletin</a>'
+
+
+def cap_label(img):
+    """Caption prefix: stock photos say so (Nov. 25)."""
+    return "Stock photo: " if "stock photo" in ((img or {}).get("alt", "") + (img or {}).get("credit", "")).lower() else "Photo: "
+
+
+def is_weather(s):
+    return bool(s.get("weather")) or bool(re.search(r"\b(forecast|weather)\b", s.get("title", ""), re.I))
+
+
+CM = lambda f: "/photos/venues/" + re.sub(r"[^a-z0-9]+", "-", f.lower().rsplit(".", 1)[0]).strip("-") + ".jpg"  # local copies of Wikimedia Commons photos (Nov. 25)
 VENUES = [("Cactus Club", CM("Milwaukee January 2025 04 (Cactus Club).jpg")), ("Puddler", CM("2024 08 07 Puddler's Hall 1.jpg")),
           ("Library", CM("Bay View Branch.jpg")), ("Garibaldi", CM("Milwaukee January 2025 16 (S. Kinnickinnic Avenue).jpg")),
           ("Kinnickinnic", CM("Milwaukee January 2025 16 (S. Kinnickinnic Avenue).jpg")), ("Methodist", CM("SouthShore Park 1.jpg")),
@@ -53,7 +71,8 @@ def venue_img(ev):
 
 
 def ev_thumb(ev, today, cls=""):
-    return f'<img src="{e(venue_img(ev))}" alt="" loading="lazy"{(" class=" + chr(34) + cls + chr(34)) if cls else ""}>'
+    alt = ("Flyer: " + ev["title"]) if ev.get("image") else ""
+    return f'<img src="{e(venue_img(ev))}" alt="{e(alt)}" loading="lazy"{(" class=" + chr(34) + cls + chr(34)) if cls else ""}>'
 
 
 
@@ -285,6 +304,8 @@ footer a{color:var(--lake)}
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}.filters button{border:1px solid var(--ink);padding:6px 12px;border-radius:99px;font:600 14px var(--sans);background:var(--paper);color:var(--ink);cursor:pointer}.filters button:hover{background:var(--soft)}.filters button.on{background:var(--ink);color:var(--paper)}.filters button:focus-visible{outline:2px solid var(--lake);outline-offset:2px}[hidden]{display:none!important}
 .list a{display:block;padding:16px 0;border-bottom:1px solid var(--rule)}.list h3{font:700 21px/1.25 var(--serif);margin:2px 0 4px}.list p{margin:0;color:var(--muted)}
 .pagehead{font:800 34px var(--serif);margin:24px 0 2px}.topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 36px;padding-top:6px}@media(max-width:820px){.topics{grid-template-columns:1fr}}.topic{padding:18px 0 6px}.topic>h2{font:800 20px var(--serif);margin:0 0 4px;padding-top:10px;border-top:4px solid var(--lake);display:flex;justify-content:space-between;align-items:baseline}.topic.w>h2{border-top-color:var(--warm)}.topic>h2 a{font:600 14px var(--sans);color:var(--lake)}.topic.w>h2 a{color:var(--warm)}.topic .row{padding:12px 0;border-bottom:1px solid var(--rule)}.topic .row:last-child{border-bottom:0}.pagedek{color:var(--muted);margin:0 0 10px}.xbox{display:block;margin:18px 0;padding:12px 16px;border:1px solid var(--rule);border-left:4px solid var(--lake);background:var(--lake-soft);color:var(--ink);text-decoration:none}.xbox b{display:block;font:700 18px/1.3 var(--serif);margin-top:2px}.picks{display:grid;gap:12px;margin:14px 0 6px}.pick{display:grid;grid-template-columns:120px minmax(0,1fr);gap:14px;padding:12px;border:1px solid var(--rule);border-top:4px solid var(--warm);background:var(--paper);color:var(--ink);text-decoration:none}.pick img,.pick .evtile{width:120px;height:90px;object-fit:cover}.pick .evtile i{font-size:30px}.pick h3{font:700 19px/1.25 var(--serif);margin:2px 0 4px}.pick p{margin:0;font:15px/1.45 var(--serif)}.pick .t{font:700 13px var(--sans);color:var(--warm)}@media(max-width:520px){.pick{grid-template-columns:84px minmax(0,1fr)}.pick img,.pick .evtile{width:84px;height:66px}}.askbox{padding:16px 18px;background:var(--warm-soft);border-top:4px solid var(--warm);margin:14px 0 22px}.askbox p{margin:0 0 10px}.bzarch{font:600 15px/1.6 var(--sans);margin:18px 0 0;color:var(--buzz-ink)}.bzarch h3{font:800 18px var(--sans);margin:0 0 4px}.bzarch a{color:var(--buzz-ink);text-decoration:underline}.evtile{display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--lake);color:var(--on-color);font-family:var(--sans);line-height:1;text-align:center}.evtile b{font:700 10px var(--sans);letter-spacing:.1em;opacity:.85}.evtile i{font:800 22px var(--serif);font-style:normal;margin:2px 0}.evtile small{display:none;font:600 10px var(--sans);letter-spacing:.06em;text-transform:uppercase;opacity:.85}.evtile.k2{background:var(--ink);color:var(--paper)}.evtile.k3{background:var(--warm)}.evtile.k4{background:var(--warm-soft);color:var(--warm)}.evtile.k5{background:var(--lake-soft);color:var(--lake)}.ev .evtile{width:72px;height:54px}.chip .evtile{width:100%;height:110px}.chip .evtile i{font-size:40px}.chip .evtile b{font-size:12px}.chip .evtile small{display:block;margin-top:4px}@media(max-width:600px){.ev .evtile{grid-row:1/span 2;width:64px;height:48px}}.evcal{font:600 13px var(--sans);color:var(--muted);margin-top:4px}.evcal a{color:var(--lake)}@media(max-width:600px){.ev{grid-template-columns:64px minmax(0,1fr);gap:2px 12px;align-items:start}.ev img{grid-row:1/span 2;width:64px;height:48px}.ev .t{grid-column:2;font-size:14px}.ev>div{grid-column:2}.ev .pill{display:none}.ev[style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr) auto!important}.ev[style*="grid-template-columns"]>div{grid-column:1}.ev[style*="grid-template-columns"] .pill{display:inline-block}}.filters.when{margin-bottom:0}.filters.kinds{margin-top:8px}.filters .free{border-color:var(--warm)!important}.filters button.on.free{background:var(--warm)!important;color:var(--on-color)!important;border-color:var(--warm)!important}@media(max-width:520px){.filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.filters::-webkit-scrollbar{display:none}.filters button{flex:0 0 auto}}.corr{font:15px/1.5 var(--sans);background:var(--soft);border-left:4px solid var(--warm);padding:10px 14px;margin:18px 0}.story .body h2{font:800 20px var(--serif);margin:26px 0 6px}
+/* Nov. 25: guides, openings tracker, City Hall this week */
+.guidetease{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;margin:14px 0 4px;padding:12px 16px;border:1px solid var(--rule);border-left:4px solid var(--warm);background:var(--warm-soft);color:var(--ink);text-decoration:none}.guidetease .k{font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--on-color);background:var(--warm);padding:3px 7px;border-radius:2px}.guidetease b{font:700 19px/1.3 var(--serif)}.guidetease .go{font:600 14px var(--sans);color:var(--warm);margin-left:auto}.ocstrip{margin:18px 0 0;padding:14px 16px;border:1px solid var(--rule);border-top:4px solid var(--lake)}.ocstrip h2{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 6px;font:800 18px var(--serif)}.ocstrip h2 a{font:600 14px var(--sans);color:var(--lake)}.ocstrip ul{list-style:none;margin:0;padding:0}.ocstrip li{padding:5px 0;font:16px/1.4 var(--serif)}.ocstrip li span{color:var(--muted);font-size:15px}.ocstrip b,.ocrow b{display:inline-block;font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:2px;margin-right:6px;color:var(--on-color);background:var(--lake)}.ocstrip b.closed,.ocrow b.closed,.ocstrip b.seasonal,.ocrow b.seasonal{background:var(--muted)}.ocstrip b.coming,.ocrow b.coming,.ocstrip b.closing,.ocrow b.closing{background:var(--warm)}.ocrow{display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid var(--rule)}.ocrow b{justify-self:start;height:fit-content}.ocrow h3{font:700 19px/1.3 var(--serif);margin:0}.ocrow h3 a{color:inherit}.ocrow .w{font:600 13px var(--sans);color:var(--muted);margin:2px 0}.ocrow p{margin:2px 0 0}.ocrow .src{color:var(--muted);font-size:14px}@media(max-width:520px){.ocrow{grid-template-columns:1fr;gap:4px}}.chw{display:block;margin:14px 0 20px;padding:14px 16px;border:1px solid var(--rule);border-left:4px solid var(--lake);background:var(--lake-soft);color:var(--ink);text-decoration:none}.chw h3{font:700 21px/1.25 var(--serif);margin:2px 0 4px}.chw p{margin:0;color:var(--muted)}.story .body ul{margin:0 0 14px;padding-left:22px}.story .body li{margin:0 0 6px}.gsec{margin:26px 0 0}.gsec>h2{font:800 22px var(--serif);margin:0 0 6px;padding-top:10px;border-top:4px solid var(--warm)}.gitem{padding:12px 0;border-bottom:1px solid var(--rule)}.gitem h3{font:700 19px/1.3 var(--serif);margin:0}.gitem h3 a{color:inherit}.gitem .gwhen{font:700 13px var(--sans);color:var(--warm);margin:3px 0}.gitem p{margin:2px 0 0}.gitem .meta{font:13px var(--sans);color:var(--muted);margin-top:4px}.gitem .meta a{color:var(--lake)}
 .dateline .mk{width:26px;height:26px;display:block}.foot-brand{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 10px;margin-bottom:8px;font:700 15px var(--sans);color:var(--ink)}.foot-brand img{width:28px;height:28px}.foot-brand em{font:italic 400 15px var(--serif);color:var(--muted)}
 """
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
@@ -317,8 +338,9 @@ def make_ticker(d):
             if it.get("hold") or it.get("tag") == "Listings":
                 continue
             items.append((it["title"], f"/story/{d['date']}-{slug(it['title'])}.html"))
-    items = items[:8]
-    if not items:
+    seen = set()
+    items = [x for x in items if not (x[0] in seen or seen.add(x[0]))][:8]
+    if len(items) < 3:  # Nov. 25 (Ben): hide the ticker on thin days instead of scrolling one headline
         return ""
     _set = "".join(f'<a href="{u}">{e(t)}</a>' for t, u in items)
     _dur = max(30, sum(len(t) for t, _ in items) // 5)
@@ -345,7 +367,7 @@ def shell(title, body, d, active="Home", og=None, path="/", head=""):
 <nav class="sections" aria-label="Sections"><ul>{nav}</ul></nav>
 {TICKER}<div class="wrap">{body}</div>
 <footer><div class="wrap"><div class="foot-brand"><img src="/mark.svg" alt="" width="28" height="28"><span>The Bay View Bulletin</span><em>Bay View's morning paper</em></div>News, events and neighborhood talk, every morning by 6:30. No ads, no paywall.<br>Covering Bay View from the harbor and Jones Island to Holt and Morgan avenues, I-43 to the lake.<br>
-Every item links to the original reporting. Photos belong to their credited owners. <a href="{TIPS}">Send a tip</a> · <a href="/ask.html">Ask the Bulletin</a> · <a href="/explainers.html">Explainers</a> · <a href="/about.html">About</a> · <a href="/corrections.html">Corrections</a> · <a href="/schools.html">School days off</a> · <a href="/history.html">History</a> · <a href="/archive.html">Archive</a></div></footer>
+Every item links to the original reporting. Photos belong to their credited owners. <a href="{TIPS}">Send a tip</a> · <a href="/ask.html">Ask the Bulletin</a> · <a href="/explainers.html">Explainers</a> · <a href="/guides.html">Guides</a> · <a href="/openings.html">Opened &amp; closed</a> · <a href="/about.html">About</a> · <a href="/corrections.html">Corrections</a> · <a href="/schools.html">School days off</a> · <a href="/history.html">History</a> · <a href="/archive.html">Archive</a></div></footer>
 <script>(function(){{var n=document.querySelector('nav.sections ul');if(!n)return;function f(){{n.classList.toggle('end',n.scrollLeft+n.clientWidth>=n.scrollWidth-4)}}n.addEventListener('scroll',f,{{passive:true}});f();var o=n.querySelector('a.on');if(o&&o.offsetLeft+o.offsetWidth>n.clientWidth)n.scrollLeft=o.offsetLeft-20}})();</script><script>document.addEventListener('click',function(ev){{var a=ev.target.closest&&ev.target.closest('a[href]');if(a&&a.host&&a.host!==location.host){{a.target='_blank';a.rel='noopener'}}}},true);</script></body></html>""")
 
 
@@ -440,10 +462,10 @@ def schools_page(d):
 
 def buzz_card(b, big=False):
     stamp = '<span class="stamp">Unconfirmed</span>' if b.get("unconfirmed") else ""
-    who = f'{e(b.get("who") or "A neighbor")} in {e(b.get("where") or "the group")}'
+    who = e(b.get("who") or "A neighbor") + ("" if (b.get("who") or "") == (b.get("where") or "") else f' in {e(b.get("where") or "the group")}')
     im = b.get("image")
     pic = (f'<figure class="bzimg"><img src="{e(im["src"])}" alt="{e(im.get("alt", ""))}" loading="lazy">'
-           f'<figcaption>Photo: <a href="{e(im.get("credit_url") or "#")}" rel="noopener">{e(im.get("credit", ""))}</a></figcaption></figure>') if im else ""
+           f'<figcaption>{cap_label(im)}<a href="{e(im.get("credit_url") or "#")}" rel="noopener">{e(im.get("credit", ""))}</a></figcaption></figure>') if im else ""
     return (f'<article class="bz{" hot" if b.get("tone") == "hot" else ""}">{stamp}{pic}<span class="bk">{e(b["kicker"])}</span>'
             f'<h3>{e(b["headline"])}</h3><p>{e(b["body"])}</p>'
             f'<a class="via" href="{e(b["source_url"])}" rel="noopener">— {who} · see the post →</a></article>')
@@ -464,7 +486,17 @@ def feature_html(url, img, kicker, title, dk, meta, internal=True):
 
 
 def paras(text):
-    return "".join(f"<p>{e(p.strip())}</p>" for p in (text or "").split("\n\n") if p.strip())
+    out = []
+    for p in (text or "").split("\n\n"):
+        p = p.strip()
+        if not p:
+            continue
+        lines = [l.strip() for l in p.split("\n") if l.strip()]
+        if lines and all(l.startswith("- ") for l in lines):
+            out.append("<ul>" + "".join(f"<li>{e(l[2:])}</li>" for l in lines) + "</ul>")
+        else:
+            out.append(f"<p>{e(p)}</p>")
+    return "".join(out)
 
 
 def gallery_html(s):
@@ -533,13 +565,48 @@ def build_one(d, newest):
             BRIEFS.append(dict(c, label=SECTION_OF.get(c["section"], "Bay View")))
     # The daily business spotlight always gets its own block and is never the lead or a side headline.
     news = [s for s in stories if s["key"] != "spotlight"] or stories
-    lead = next((s for s in news if s.get("image")), news[0])
+    # Lead (Nov. 25, Ben): weather leads only when people must act (the day file marks that story "urgent": true, e.g. a
+    # snow emergency or storm warning). On thin days with no Bay View news story to lead with, lead with the best Bay View
+    # item of any kind: the day file's "lead" pick ({"kind": "buzz" | "spotlight" | "event" | "story", "title": ...}),
+    # else the first photo Buzz item that is confirmed and not a stock photo, else the spotlight, else today's event with a flyer.
+    def _story_ok(x):
+        return x["key"] != "spotlight" and not (is_weather(x) and not x.get("urgent")) and not x.get("citywide")
+    pick = d.get("lead") or {}
+    lead = None
+    if pick.get("kind") in ("story", "spotlight"):
+        lead = next((x for x in stories if x["title"] == pick.get("title") or (pick["kind"] == "spotlight" and x["key"] == "spotlight")), None)
+    if lead is None and not pick:
+        cands = [x for x in stories if _story_ok(x)]
+        lead = next((x for x in cands if x.get("image")), cands[0] if cands else None)
+    lead_buzz = None
+    if lead is None:
+        _bz = [b for b in buzz if b.get("image") and not b.get("unconfirmed") and "stock photo" not in b["image"].get("alt", "").lower()]
+        _ev = [ev for ev in d["events"] if ev["day"].startswith("Today") and ev.get("image")]
+        _sp = next((x for x in stories if x["key"] == "spotlight"), None)
+        if pick.get("kind") == "buzz":
+            lead_buzz = next((b for b in buzz if b["headline"] == pick.get("title")), None)
+        elif pick.get("kind") == "event":
+            _ev = [ev for ev in d["events"] if ev["title"] == pick.get("title")] or _ev
+        if lead_buzz is None and pick.get("kind") in (None, "buzz") and _bz:
+            lead_buzz = _bz[0]
+        if lead_buzz:
+            _first = dek({"body": lead_buzz["body"].strip()})
+            lead = {"key": "alt", "url": "/buzz.html", "section": "The Bay View Buzz · " + lead_buzz["kicker"], "title": lead_buzz["headline"],
+                    "dek": _first, "image": lead_buzz["image"], "meta": (lead_buzz.get("who") or "A neighbor") + ("" if (lead_buzz.get("who") or "") == (lead_buzz.get("where") or "") else " in " + (lead_buzz.get("where") or "the group"))}
+        elif _sp and pick.get("kind") in (None, "spotlight"):
+            lead = _sp
+        elif _ev:
+            ev0 = _ev[0]
+            lead = {"key": "alt", "url": ev0["link"], "section": "Today in Bay View · " + ev0["when"], "title": ev0["title"], "dek": ev0.get("desc", ""),
+                    "image": {"src": venue_img(ev0), "alt": "Flyer: " + ev0["title"], "credit": ev0["where"].split(",")[0]}, "meta": ev0["where"]}
+        else:
+            lead = next((x for x in news if x.get("image")), news[0])
     rest = [s for s in stories if s is not lead]
 
     # story pages
     for s in stories:
         others = "".join(f'<a href="{o["url"]}"><span class="kicker">{e(o["section"])}</span><h3>{e(o["title"])}</h3><p>{e(dek(o))}</p></a>' for o in stories if o is not s)[:6000]
-        img = (f'<figure><img src="{e(s["image"]["src"])}" alt="{e(s["image"]["alt"])}"><div class="cap">Photo: <a href="{e(s["image"]["credit_url"])}">{e(s["image"]["credit"])}</a></div></figure>') if s.get("image") else ""
+        img = (f'<figure><img src="{e(s["image"]["src"])}" alt="{e(s["image"]["alt"])}"><div class="cap">{cap_label(s["image"])}<a href="{e(s["image"]["credit_url"])}">{e(s["image"]["credit"])}</a></div></figure>') if s.get("image") else ""
         src = f'<a class="btn" href="{e(s["source_url"])}">Read the full story at {e(s["source_name"])} →</a>' if s.get("source_url") else ""
         _x = next((x for x in EXPLAINERS if x["slug"] == s.get("explainer")), None)
         _xbox = f'<a class="xbox" href="/explainer/{_x["slug"]}.html"><span class="kicker">Background · Explainer</span><b>{e(_x["title"])} →</b></a>' if _x else ""
@@ -564,13 +631,30 @@ def build_one(d, newest):
         ut("schools", "Schools", *schools_tile(day), "/schools.html"),
         ("Sun over the lake", f"↑ {rise} · ↓ {sset}", "Bay View shoreline", "", ""),
     ]
+    _w = list(utils[0])
+    if re.match(r"^-?\d+°", str(_w[1])):
+        _w[1] = "Now " + _w[1]
+        if _w[2] and not str(_w[2]).lower().startswith(("today", "tonight")):
+            _w[2] = "Today: " + _w[2][0].lower() + _w[2][1:]
+    utils[0] = tuple(_w)
     util_html = "".join((f'<a class="util {c}" href="{e(h)}">' if h else f'<div class="util {c}">') + f'<span class="k">{k}</span><span class="v">{e(v)}</span><span class="s">{e(s_)}</span>' + ("</a>" if h else "</div>") for k, v, s_, c, h in utils)
     tick = [s for s in stories if s["key"] == "openings"] or []
     # Headline ticker: the day's most important news, in story order (top section first), each linking to its story.
 
     tops = [s for s in rest if s["key"] == "top"]; side_items = (tops + [s for s in rest if s["key"] not in ("top", "spotlight")])[:max(3, len(tops))]
     side = "".join(f'<a href="{s["url"]}"><span class="kicker">{e(s["section"])}</span><h3>{e(s["title"])}</h3><p>{e(dek(s))}</p></a>' for s in side_items)
-    lead_img = f'<figure><img src="{e(lead["image"]["src"])}" alt="{e(lead["image"]["alt"])}"><div class="cap">Photo: {e(lead["image"]["credit"])}</div></figure>' if lead.get("image") else ""
+    # Nov. 25 (Ben): on thin days the right column fills with a Buzz item and today's events instead of sitting empty.
+    tease_buzz = next((b for b in buzz if b is not lead_buzz), None)
+    _fill = 3 - len(side_items)
+    if _fill > 0:
+        for b in [b for b in buzz if b is not lead_buzz and b is not tease_buzz][:1]:
+            side += f'<a href="/buzz.html"><span class="kicker">The Buzz · {e(b["kicker"])}</span><h3>{e(b["headline"])}</h3><p>{e(dek({"body": b["body"].strip()}))}</p></a>'
+            _fill -= 1
+        _eve = sorted([ev for ev in today_events if not (lead.get("key") == "alt" and ev["title"] == lead["title"])],
+                      key=lambda ev: not re.search(r"\b([5-9]|1[01])(:\d\d)?(-\d+)?\s*(pm|p\.m\.)", ev["when"], re.I))
+        for ev in _eve[:max(0, _fill)]:
+            side += f'<a href="/events.html#today"><span class="kicker">Today · {e(ev["when"])}</span><h3>{e(ev["title"])}</h3><p>{e(ev["where"].split(",")[0])}' + (f' · {e(ev["desc"])}' if ev.get("desc") else "") + '</p></a>'
+    lead_img = f'<figure><img src="{e(lead["image"]["src"])}" alt="{e(lead["image"]["alt"])}"><div class="cap">{cap_label(lead["image"])}{e(lead["image"]["credit"])}</div></figure>' if lead.get("image") else ""
     # Nov. 17: a crime or safety lead gets a smaller photo, so the front page doesn't open on a grim full-width image.
     lead_cls = "lead textlead" if (lead["key"] == "safety" or "safety" in (lead.get("also") or []) or lead.get("tag") == "Safety") else "lead"
     # "Bay View in 60 seconds": the day's "briefing" bullets, or an automatic version.
@@ -624,7 +708,15 @@ def build_one(d, newest):
         groups.setdefault(s_["section"], []).append(s_)
     if "Business spotlight" in groups:  # spotlight block comes first among the topic blocks
         groups = {"Business spotlight": groups.pop("Business spotlight"), **groups}
-    topics = "".join(f'<section class="topic{" w" if sec in WARM else ""}"><h2>{e(sec)}<a href="{"/spotlight.html" if sec == "Business spotlight" else "/section/" + slug(sec) + ".html"}">{"Read the spotlight →" if sec == "Business spotlight" else "More →"}</a></h2>{"".join(row(x, False) for x in xs[:3])}</section>' for sec, xs in groups.items())
+    topics = "".join(f'<section class="topic{" w" if sec in WARM else ""}"><h2>{e(sec)}<a href="{LABEL_PAGE.get(sec, "/section/" + slug(sec) + ".html")}">{"Read the spotlight →" if sec == "Business spotlight" else "More →"}</a></h2>{"".join(row(x, False) for x in xs[:3])}</section>' for sec, xs in groups.items())
+    # Nov. 25: in-season guides get a tease under the lead; the openings tracker gets a strip of its latest entries.
+    _in = [g for g in GUIDES if g.get("status") != "planned" and g.get("season") and g["season"]["start"] <= d["date"] <= g["season"]["end"]]
+    guide_html = "".join(f'<a class="guidetease" href="/guide/{g["slug"]}.html"><span class="k">Guide</span><b>{e(g["title"])}</b><span class="go">{e(g.get("tease") or "Open the guide")} →</span></a>' for g in _in[:2])
+    _oc = [o for o in sorted(OPENINGS, key=lambda o: o["date"], reverse=True) if o["date"] <= d["date"]][:3]
+    _ocl = {"opened": "Opened", "closed": "Closed", "coming": "Coming", "seasonal": "Season over", "moved": "Moved", "renamed": "Renamed", "closing": "Closing"}
+    oc_html = ('<section class="ocstrip"><h2><span>Opened &amp; closed</span><a href="/openings.html">The tracker →</a></h2><ul>'
+               + "".join(f'<li><b class="{e(o["status"])}">{_ocl.get(o["status"], o["status"].title())}</b> {e(o["name"])}<span> · {e(o.get("note", ""))}</span></li>' for o in _oc)
+               + '</ul></section>') if _oc else ""
     mke = d.get("milwaukee", [])
     h = d.get("history")
     hurl = history_page(d) if h else ""
@@ -632,12 +724,13 @@ def build_one(d, newest):
             f'<div><div class="yr">{e(h["year"])}</div>' + (f'<h3 style="font:700 21px/1.25 var(--serif);margin:2px 0 6px"><a href="{hurl}" style="color:inherit">{e(h["title"])}</a></h3>' if h.get("title") else "")
             + f'<p>{e(h["text"])}</p><a class="kicker" href="{hurl}">Read the story →</a></div></div></section>') if h else ""
     home = (f'<div class="utils">{util_html}</div>{brief_html}'
-            f'<section class="front"><a class="{lead_cls}" href="{lead["url"]}">{lead_img}<span class="kicker">{e(lead["section"])}</span><h2>{e(lead["title"])}</h2><p>{e(dek(lead))}</p><div class="meta">{e(srcmeta(lead))}</div></a>'
+            f'<section class="front"><a class="{lead_cls}" href="{lead["url"]}">{lead_img}<span class="kicker">{e(lead["section"])}</span><h2>{e(lead["title"])}</h2><p>{e(dek(lead))}</p><div class="meta">{e(lead.get("meta") or srcmeta(lead))}</div></a>'
             f'<div class="side">{side}</div></section>'
+            f'{guide_html}'
             f'<section class="tonight"><h2><span>Today in Bay View</span><a href="/events.html">All events →</a></h2><div class="chips">{chips}</div></section>'
             + (f'<a class="bztease" href="/buzz.html"><span class="bzlogo">The Bay View <span>Buzz</span></span>'
-               f'<span class="bzk">{e(buzz[0]["kicker"])}</span><span class="bzh">{e(buzz[0]["headline"])}</span><span class="bzgo">Read the Buzz →</span></a>' if buzz else "") +
-            f'{weekend_html}<div class="topics">{topics}{earlier_html}</div>'
+               f'<span class="bzk">{e(tease_buzz["kicker"])}</span><span class="bzh">{e(tease_buzz["headline"])}</span><span class="bzgo">Read the Buzz →</span></a>' if tease_buzz else "") +
+            f'{weekend_html}{oc_html}<div class="topics">{topics}{earlier_html}</div>'
             f'{hist}')
     (OUT / "issues").mkdir(exist_ok=True)
     (OUT / "issues" / f'{d["date"]}.html').write_text(shell("The Bay View Bulletin · " + d["display_date"], home, d))
@@ -708,6 +801,9 @@ def build():
         (shutil.copytree if f.is_dir() else shutil.copy)(f, OUT / f.name)
     xf = ROOT / "content/explainers.json"
     EXPLAINERS[:] = json.loads(xf.read_text()) if xf.exists() else []
+    gf, of = ROOT / "content/guides.json", ROOT / "content/openings.json"
+    GUIDES[:] = json.loads(gf.read_text()) if gf.exists() else []
+    OPENINGS[:] = json.loads(of.read_text()) if of.exists() else []
     files = sorted((ROOT / "content/issues").glob("*.json"))
     issues = [json.loads(f.read_text()) for f in files]
     global TICKER
@@ -722,7 +818,13 @@ def build():
     labels = sorted({s["section"] for s in recent})
     for lab in labels:
         items = [s for s in recent if s["section"] == lab]
-        (OUT / "section" / f"{slug(lab)}.html").write_text(shell(lab + " · The Bay View Bulletin", f'<h1 class="pagehead">{e(lab)}</h1><p class="pagedek">Recent {e(lab.lower())} news from Bay View.</p>' + (listing(items) or "<p>Nothing yet.</p>"), d))
+        if lab in LABEL_PAGE and LABEL_PAGE[lab] != f"/section/{slug(lab)}.html":
+            (OUT / "section" / f"{slug(lab)}.html").write_text(redirect_page(LABEL_PAGE[lab]))  # Nov. 25: one page per menu section
+            continue
+        (OUT / "section" / f"{slug(lab)}.html").write_text(shell(lab + " · The Bay View Bulletin", f'<h1 class="pagehead">{e(lab)}</h1><p class="pagedek">Recent {e(lab.lower())} news from Bay View.</p>' + (listing(items) or "<p>Nothing yet.</p>"), d, LABEL_ACTIVE.get(lab, "More"), None, f"/section/{slug(lab)}.html"))
+    # Nov. 25: "City Hall this week" (Mondays) is pinned at the top of the City Hall page until the next one.
+    _chw = next((x for x in reversed(ALL_STORIES) if x.get("weekly") == "cityhall"), None)
+    chw_box = (f'<a class="chw" href="{_chw["url"]}"><span class="kicker">City Hall this week · {e(_chw["display_date"])}</span><h3>{e(_chw["title"])}</h3><p>{e(dek(_chw))}</p></a>') if _chw else ""
     for key, (title, labs) in SECTION_PAGES.items():
         onpage = lambda s: labs is None or s["section"] in labs or key in (s.get("also") or [])
         items = [s for s in recent if onpage(s)]
@@ -743,7 +845,7 @@ def build():
             feat = next((b for b in briefs if b.get("image")), briefs[0])
             briefs = [b for b in briefs if b is not feat]
             body_feat = feature_html(feat["source_url"], feat.get("image"), f'{feat["label"]} · {feat["date"]}', feat["title"], "", feat["source_name"], internal=False)
-        body = f'<h1 class="pagehead">{e(title)}</h1>' + ('<p class="pagedek"><a href="/history.html" style="color:var(--lake);font-weight:600">Bay View history →</a> · <a href="/schools.html" style="color:var(--lake);font-weight:600">School days off →</a> · <a href="/directory.html" style="color:var(--lake);font-weight:600">Business directory →</a> · <a href="/explainers.html" style="color:var(--lake);font-weight:600">Explainers →</a> · <a href="/ask.html" style="color:var(--lake);font-weight:600">Ask the Bulletin →</a> · <a href="/weekend.html" style="color:var(--lake);font-weight:600">This weekend →</a></p>' if key == "more" else "") + ('<p class="pagedek"><a href="/explainers.html" style="color:var(--lake);font-weight:600">How City Hall works: explainers →</a></p>' if key == "city" else "") + (body_feat if feat else "") + (listing(items) if items else ("" if feat else empty))
+        body = f'<h1 class="pagehead">{e(title)}</h1>' + ('<p class="pagedek"><a href="/history.html" style="color:var(--lake);font-weight:600">Bay View history →</a> · <a href="/schools.html" style="color:var(--lake);font-weight:600">School days off →</a> · <a href="/directory.html" style="color:var(--lake);font-weight:600">Business directory →</a> · <a href="/explainers.html" style="color:var(--lake);font-weight:600">Explainers →</a> · <a href="/ask.html" style="color:var(--lake);font-weight:600">Ask the Bulletin →</a> · <a href="/weekend.html" style="color:var(--lake);font-weight:600">This weekend →</a> · <a href="/openings.html" style="color:var(--lake);font-weight:600">Opened &amp; closed →</a> · <a href="/guides.html" style="color:var(--lake);font-weight:600">Seasonal guides →</a></p>' if key == "more" else "") + ('<p class="pagedek"><a href="/explainers.html" style="color:var(--lake);font-weight:600">How City Hall works: explainers →</a> · <a href="/openings.html" style="color:var(--lake);font-weight:600">Opened &amp; closed →</a></p>' + chw_box if key == "city" else "") + (body_feat if feat else "") + (listing(items) if items else ("" if feat else empty))
         if feat and not [s for s in recent if onpage(s)]:
             body = body.replace(body_feat, f'<p class="pagedek">No new {e(title.lower())} news in the last day. Here&rsquo;s the latest:</p>' + body_feat)
         if briefs:
@@ -827,6 +929,7 @@ def build():
     idx = [{"t": s["title"], "d": dek(s), "u": s["url"], "k": s["section"], "dt": s["display_date"]} for s in recent]
     idx += [{"t": x["title"], "d": x.get("text", ""), "u": x["url"], "k": "History", "dt": str(x.get("year", ""))} for x in reversed(ALL_HISTORY)]
     idx += [{"t": x["title"], "d": x.get("dek", ""), "u": f'/explainer/{x["slug"]}.html', "k": "Explainer", "dt": x["updated"]} for x in EXPLAINERS]
+    idx += [{"t": g["title"], "d": g.get("dek", ""), "u": f'/guide/{g["slug"]}.html', "k": "Guide", "dt": g["updated"]} for g in GUIDES if g.get("status") != "planned"]
     idx += [{"t": b["name"], "d": b["type"] + " · " + b["address"], "u": "/directory.html", "k": "Directory", "dt": ""} for b in dirs]
     idx += [{"t": ev["title"], "d": ev["when"] + " · " + ev["where"], "u": "/events.html", "k": "Event", "dt": ev["day"]} for ev in d["events"]]
     (OUT / "search.json").write_text(json.dumps(idx, ensure_ascii=False))
@@ -846,6 +949,39 @@ q.addEventListener('input',go);const p=new URLSearchParams(location.search).get(
     (OUT / "search.html").write_text(shell("Search · The Bay View Bulletin", search, d, "Search", None, "/search.html"))
     # Ben, Nov. 12: the map is no longer a feature of the site; old links go to the front page.
     (OUT / "map.html").write_text('<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=/"><link rel="canonical" href="/"><title>The Bay View Bulletin</title><a href="/">The Bay View Bulletin</a>')
+    # Nov. 25: seasonal guides (content/guides.json) and the openings-and-closings tracker (content/openings.json).
+    (OUT / "guide").mkdir(exist_ok=True)
+    live_guides = [g for g in GUIDES if g.get("status") != "planned"]
+    for g in live_guides:
+        secs = ""
+        for sec in g.get("sections", []):
+            its = "".join(f'<div class="gitem"><h3>' + (f'<a href="{e(it["url"])}">{e(it["name"])}</a>' if it.get("url") else e(it["name"])) + '</h3>'
+                          + (f'<div class="gwhen">{e(it["when"])}' + (f' · {e(it["where"])}' if it.get("where") else "") + '</div>' if it.get("when") or it.get("where") else "")
+                          + f'<p>{e(it.get("text", ""))}</p>' + (f'<div class="meta">Source: <a href="{e(it["url"])}">{e(it["source"])}</a></div>' if it.get("source") and it.get("url") else "") + '</div>'
+                          for it in sec.get("items", []))
+            secs += f'<section class="gsec"><h2>{e(sec["heading"])}</h2>{("<p class=" + chr(34) + "pagedek" + chr(34) + ">" + e(sec["intro"]) + "</p>") if sec.get("intro") else ""}{its}</section>'
+        img = g.get("image")
+        pic = f'<figure><img src="{e(img["src"])}" alt="{e(img["alt"])}"><div class="cap">{cap_label(img)}<a href="{e(img.get("credit_url", "#"))}">{e(img["credit"])}</a></div></figure>' if img else ""
+        gbody = (f'<article class="story guide"><span class="kicker">Guide · Updated {e(dt.date.fromisoformat(g["updated"]).strftime("%b. %-d, %Y"))}</span><h1>{e(g["title"])}</h1>{pic}'
+                 f'<div class="body">{paras(g.get("intro"))}</div>{secs}<div class="body">{paras(g.get("outro"))}</div>'
+                 f'<p class="pagedek" style="margin-top:22px">We update this guide as plans are announced. Know something we missed? <a href="{TIPS}" style="color:var(--lake)">Tell us</a>. <a href="/guides.html" style="color:var(--lake)">All guides →</a> · <a href="/events.html" style="color:var(--lake)">All events →</a></p></article>')
+        (OUT / "guide" / f'{g["slug"]}.html').write_text(shell(g["title"] + " · The Bay View Bulletin", gbody, d, "", {"title": g["title"], "desc": g.get("dek", ""), "image": abs_url((img or {}).get("src"))}, f'/guide/{g["slug"]}.html'))
+    gl = "".join(f'<a href="/guide/{g["slug"]}.html"><span class="kicker">{"In season · " if g.get("season") and g["season"]["start"] <= d["date"] <= g["season"]["end"] else ""}Updated {e(dt.date.fromisoformat(g["updated"]).strftime("%b. %-d, %Y"))}</span><h3>{e(g["title"])}</h3><p>{e(g.get("dek", ""))}</p></a>' for g in sorted(live_guides, key=lambda g: g["updated"], reverse=True))
+    coming_g = [g for g in GUIDES if g.get("status") == "planned"]
+    (OUT / "guides.html").write_text(shell("Seasonal guides · The Bay View Bulletin",
+        '<h1 class="pagehead">Seasonal guides</h1><p class="pagedek">Where to go in Bay View this season, updated as plans are announced.</p>' + (f'<div class="list">{gl}</div>' if gl else "")
+        + ('<p class="pagedek" style="margin-top:18px">Coming later: ' + " · ".join(f'{e(g["title"])} (by {e(dt.date.fromisoformat(g["publish_by"]).strftime("%B %-d"))})' for g in coming_g) + '</p>' if coming_g else ""), d, "", None, "/guides.html"))
+    _ocl = {"opened": "Opened", "closed": "Closed", "coming": "Coming soon", "seasonal": "Closed for the season", "moved": "Moved", "renamed": "Renamed", "closing": "Closing soon"}
+    def _ocrow(o):
+        return (f'<div class="ocrow"><b class="{e(o["status"])}">{_ocl.get(o["status"], o["status"].title())}</b><div><h3>' + (f'<a href="{e(o["url"])}">{e(o["name"])}</a>' if o.get("url") else e(o["name"]))
+                + f'</h3><div class="w">{e(o.get("address", ""))}' + (" · " if o.get("address") else "") + f'{e(dt.date.fromisoformat(o["date"]).strftime("%b. %-d, %Y"))}</div><p>{e(o.get("note", ""))}' + (f' <span class="src">({e(o["source"])})</span>' if o.get("source") else "") + '</p></div></div>')
+    oc_sorted = sorted(OPENINGS, key=lambda o: o["date"], reverse=True)
+    oc_groups = [("Coming soon", [o for o in oc_sorted if o["status"] in ("coming", "closing")]), ("Recently opened", [o for o in oc_sorted if o["status"] in ("opened", "moved", "renamed")]),
+                 ("Recently closed", [o for o in oc_sorted if o["status"] in ("closed", "seasonal")])]
+    ocbody = ('<h1 class="pagehead">Opened &amp; closed</h1><p class="pagedek">Bay View businesses that just opened, are on the way, or have closed, newest first. Every entry links to its source. '
+              f'Spotted a new sign or an empty storefront? <a href="{TIPS}" style="color:var(--lake);font-weight:600">Send a tip</a>.</p>'
+              + "".join(f'<h2 class="kicker" style="margin:26px 0 4px">{h}</h2>' + "".join(_ocrow(o) for o in xs) for h, xs in oc_groups if xs))
+    (OUT / "openings.html").write_text(shell("Opened & closed · The Bay View Bulletin", ocbody, d, "", {"title": "Opened & closed in Bay View", "desc": "New Bay View businesses, what's coming soon, and what has closed."}, "/openings.html"))
     # Nov. 17: evergreen explainers, the weekend guide and Ask the Bulletin.
     (OUT / "explainer").mkdir(exist_ok=True)
     for x in EXPLAINERS:
@@ -894,7 +1030,7 @@ q.addEventListener('input',go);const p=new URLSearchParams(location.search).get(
     og_for = {"/events.html": "events", "/weekend.html": "events", "/explainers.html": "city", "/buzz.html": "buzz", "/spotlight.html": "spotlight", "/history.html": "history", "/section/food.html": "food",
               "/section/food-drink.html": "food", "/section/fish-fry.html": "food", "/section/city.html": "city", "/section/city-hall.html": "city",
               "/section/streets.html": "city", "/section/safety.html": "safety", "/schools.html": "schools", "/section/schools.html": "schools",
-              "/directory.html": "directory", "/section/business-spotlight.html": "spotlight"}
+              "/directory.html": "directory", "/section/business-spotlight.html": "spotlight", "/openings.html": "food", "/guides.html": "events"}
     for f in OUT.rglob("*.html"):
         rel = "/" + str(f.relative_to(OUT))
         if rel.endswith("/index.html"):
@@ -966,7 +1102,7 @@ q.addEventListener('input',go);const p=new URLSearchParams(location.search).get(
     urls = []
     for f in sorted(OUT.rglob("*.html")):
         rel = "/" + str(f.relative_to(OUT)).replace("index.html", "")
-        if rel in ("/404.html", "/map.html", "/milwaukee.html"):
+        if rel in ("/404.html", "/map.html", "/milwaukee.html") or "http-equiv=\"refresh\"" in f.read_text()[:600]:
             continue
         urls.append(f"<url><loc>{SITE}{e(rel)}</loc></url>")
     (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(urls) + "</urlset>")

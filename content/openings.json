@@ -1,0 +1,74 @@
+[
+  {
+    "date": "2026-11-25",
+    "status": "coming",
+    "name": "Radish",
+    "address": "2591 S. Delaware Ave.",
+    "note": "Chef Micaela Erickson's restaurant and small market opens Tuesday, Dec. 15, with a holiday menu.",
+    "url": "https://www.instagram.com/p/DgF0vITlNKG/",
+    "source": "Radish on Instagram"
+  },
+  {
+    "date": "2026-11-22",
+    "status": "seasonal",
+    "name": "Babe's Ice Cream",
+    "address": "2264 S. Kinnickinnic Ave.",
+    "note": "The seasonal scoop shop wrapped up its year with buy-one-get-one specials; no reopening date posted yet.",
+    "url": "https://www.instagram.com/p/DgBK9qlO7Be/",
+    "source": "Babe's Ice Cream on Instagram"
+  },
+  {
+    "date": "2026-11-21",
+    "status": "coming",
+    "name": "Buttah and Biscuit",
+    "address": "",
+    "note": "The biscuit bakery, now baking in the Bay View Community Center kitchen, showed off the empty room it is turning into its first storefront. Location and opening date not announced yet.",
+    "url": "https://www.instagram.com/reel/DgAxxQ1jV4c/",
+    "source": "Buttah and Biscuit on Instagram"
+  },
+  {
+    "date": "2026-10-02",
+    "status": "closed",
+    "name": "Café Corazón Bay View",
+    "address": "2394 S. Kinnickinnic Ave.",
+    "note": "Last day after 10 years on KK; the Riverwest and Brown Deer locations stay open.",
+    "url": "https://www.milwaukeemag.com/cafe-corazon-in-bay-view-has-announced-its-closing-date/",
+    "source": "Milwaukee Magazine"
+  },
+  {
+    "date": "2026-09-02",
+    "status": "closed",
+    "name": "Ni Burmese",
+    "address": "S. Kinnickinnic Ave. (KinetiK building)",
+    "note": "The mother-daughter Burmese restaurant announced it had closed after about a year and a half.",
+    "url": "https://www.milwaukeemag.com/ni-burmese-is-the-citys-latest-restaurant-casualty/",
+    "source": "Milwaukee Magazine"
+  },
+  {
+    "date": "2026-08-17",
+    "status": "closed",
+    "name": "Supermoon Beer Co. taproom",
+    "address": "3145 S. Howell Ave.",
+    "note": "The taproom closed; the brewery says it will keep making beer for bars, restaurants and stores.",
+    "url": "https://urbanmilwaukee.com/2026/08/17/bay-view-brewery-closes-taproom/",
+    "source": "Urban Milwaukee"
+  },
+  {
+    "date": "2025-10-24",
+    "status": "coming",
+    "name": "Solemn Oath Brewery taproom",
+    "address": "342 E. Ward St.",
+    "note": "The Illinois brewery is taking over the former 1840 Brewing space for a taproom and production brewery; it had targeted mid-2026.",
+    "url": "https://urbanmilwaukee.com/2025/10/24/new-brewery-will-replace-1840/",
+    "source": "Urban Milwaukee"
+  },
+  {
+    "date": "2025-04-17",
+    "status": "coming",
+    "name": "Cedar Teeth",
+    "address": "2375 S. Howell Ave.",
+    "note": "The sourdough pizza maker plans a counter-service restaurant, plus its production kitchen, a few doors from its current space.",
+    "url": "https://urbanmilwaukee.com/2025/04/17/pizza-purveyor-cedar-teeth-plans-bay-view-restaurant/",
+    "source": "Urban Milwaukee"
+  }
+]

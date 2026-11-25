@@ -1,0 +1,75 @@
+[
+  {
+    "slug": "holiday-markets-and-lights",
+    "title": "Bay View holiday guide: markets, lights and Santa",
+    "dek": "Christmas on KK, the tree lighting, pop-up markets, heated cocktail huts and where to give, from Black Friday to New Year's Eve.",
+    "tease": "Markets, lights and Santa, Nov. 27 to Dec. 31",
+    "updated": "2026-11-25",
+    "season": {"start": "2026-11-24", "end": "2026-12-31"},
+    "image": {"src": "/photos/n-christmas-on-kk-2026.jpg", "alt": "Christmas on KK 2026 flyer: Friday, Dec. 11, 5-9 p.m., with a list of participating businesses", "credit": "Bay View Community Center (@bayviewcentermke) on Instagram", "credit_url": "https://www.instagram.com/p/DgDQZR3wUqr/"},
+    "intro": "Bay View does the holidays its own way: a stroll down KK instead of a big-box mall, Santa arriving by fire engine, and cocktails in heated huts on a patio. Here's what's on the neighborhood calendar between Black Friday and New Year's Eve, with a few worth-the-drive picks nearby.\n\nDates and times come from each organizer's own post or listing, linked below. Plans change, so check the link before you head out. New events land on our Events page every morning.",
+    "sections": [
+      {
+        "heading": "The big nights",
+        "items": [
+          {"name": "Christmas on KK", "when": "Fri. Dec. 11, 5-9 pm", "where": "Shops and restaurants along Kinnickinnic Ave.", "text": "The neighborhood holiday stroll is back, benefiting the Bay View Community Center. Fourteen businesses had signed on as of Nov. 23, with crafts at Chippy's for a canned-food donation, a cocoa bar at Ela Mari, kids' crafts at Strange Scene and Santa at Tippecanoe Herbs.", "url": "https://www.facebook.com/events/2640285073137277/", "source": "Bay View Community Center on Facebook"},
+          {"name": "Bay View's annual tree lighting with Santa", "when": "Mon. Dec. 7, 6 pm", "where": "Immaculate Conception Church, 1023 E. Russell Ave. (west lot)", "text": "Carols and a sing-along, then Santa pulls up on a fire engine at 6:30 to light the tree. Chili, cocoa and cookie decorating follow indoors.", "url": "https://www.facebook.com/groups/bayviewtownhall/posts/29224279530548218/", "source": "Bay View Town Hall (Facebook)"},
+          {"name": "Santa Cycle Rampage", "when": "Sat. Dec. 5, 9:30 am", "where": "Starts at the Wisconsin Bike Fed, 187 E. Becher St.", "text": "Riders dressed as Santas, elves and reindeer take a festive group ride. It's beginner-friendly, but registration is required.", "url": "https://wisconsinbikefed.org/events/santa-cycle-rampage-milwaukee/", "source": "Wisconsin Bike Fed"}
+        ]
+      },
+      {
+        "heading": "Markets and shopping",
+        "intro": "Gift shopping without leaving the neighborhood.",
+        "items": [
+          {"name": "Plume Vintage Black Friday weekend sale", "when": "Fri. Nov. 27 to Sun. Nov. 29, from 10 am Friday", "where": "Plume Vintage, 3001 S. Kinnickinnic Ave.", "text": "Three days of vintage markdowns, with the deepest cuts in the first and last hour on Black Friday.", "url": "https://www.instagram.com/p/Dfr4SuURLz4/", "source": "Plume Vintage on Instagram"},
+          {"name": "Small Misery Business Saturday", "when": "Sat. Nov. 28, 12-5 pm", "where": "Sugar Maple, 441 E. Lincoln Ave.", "text": "An emo-themed pop-up market of local makers and artists for Small Business Saturday, from Graveyard Gallery and Superb Market.", "url": "https://www.facebook.com/events/2961847610866575/", "source": "Sugar Maple event on Facebook"},
+          {"name": "Pop-up maker market and movie night", "when": "Fri. Dec. 4", "where": "Avalon Atmospheric Theater, 2473 S. Kinnickinnic Ave.", "text": "Good Shit Video, Chippy's, Lion's Tooth and 4 of 4 Creative set up tables in the theater around a movie night. Times and tickets are on the Avalon's site.", "url": "https://www.instagram.com/p/Df7kAdSGmBV/", "source": "Avalon Atmospheric Theater on Instagram"},
+          {"name": "Milwaukee Makers Marketplace", "when": "Year-round shop", "where": "Hide House, 2625 S. Greeley St., Suite 135", "text": "Everything on the shelves is made by Milwaukee artists and makers: ceramics, candles, prints, jewelry and apparel. Read our spotlight for the backstory.", "url": "/story/2026-11-24-spotlight-milwaukee-makers-marketplace.html", "source": "The Bay View Bulletin"}
+        ]
+      },
+      {
+        "heading": "Holiday drinks and hangouts",
+        "items": [
+          {"name": "At Random's Magic Forest", "when": "Reservations opened Nov. 25", "where": "At Random, 2501 S. Delaware Ave.", "text": "The cocktail lounge turns its patio into a winter hideaway of heated huts and holiday lights. Book ahead; hut charges go on your tab. Kids are welcome until 8 pm, and it's 21+ after that.", "url": "https://www.instagram.com/atrandommke/p/DfpPDpnIat5/", "source": "At Random on Instagram"},
+          {"name": "The Elf pop-up at Lost Whale", "when": "Nov. 27 to Dec. 31", "where": "Lost Whale, 2151 S. Kinnickinnic Ave.", "text": "The bar's Elf-themed holiday pop-up returns for its run through New Year's Eve.", "url": "https://www.instagram.com/p/DfVkeiWsC6Q/", "source": "Lost Whale on Instagram"},
+          {"name": "Black Friday beer releases", "when": "Fri. Nov. 27, from 9:30 am", "where": "Torzala Brewing, Lincoln Warehouse, 2018 S. 1st St.", "text": "Torzala opens early for its Black Friday bottle and can releases.", "url": "https://www.instagram.com/p/DfpeUiMFNUz/", "source": "Torzala Brewing on Instagram"}
+        ]
+      },
+      {
+        "heading": "Ways to give",
+        "items": [
+          {"name": "Rescue-dog giving tree at Mac's PetDepot", "when": "Through the holidays", "where": "Mac's PetDepot Barkery, Kinnickinnic Ave.", "text": "Take a paper ornament, buy the supply listed on the back and leave it at checkout for JRs Pups-n-stuff.", "url": "/story/2026-11-23-a-dog-rescue-s-giving-tree-is-up-at-mac-s-petdepot-on-kk.html", "source": "The Bay View Bulletin"},
+          {"name": "Food drives at Christmas on KK", "when": "Fri. Dec. 11, 5-9 pm", "where": "Along Kinnickinnic Ave.", "text": "Several Christmas on KK stops are collecting canned food and raising money for the Bay View Community Center.", "url": "https://www.facebook.com/events/2640285073137277/", "source": "Bay View Community Center on Facebook"},
+          {"name": "City and county Holiday Drive", "when": "Through Dec. 14", "where": "City Hall and other drop-off sites listed by the city", "text": "Non-perishable food, winter coats for kids, toys and toiletries for the Metcalfe Park People's Pantry.", "url": "https://city.milwaukee.gov/holidays", "source": "City of Milwaukee"}
+        ]
+      },
+      {
+        "heading": "Worth the drive",
+        "intro": "Not in Bay View, but close.",
+        "items": [
+          {"name": "Milwaukee Holiday Lights Festival", "when": "Through Jan. 1, 2027", "where": "Downtown Milwaukee", "text": "Six weeks of light displays around downtown, just across the Hoan.", "url": "https://city.milwaukee.gov/holidays", "source": "City of Milwaukee"},
+          {"name": "Milwaukee Makers Market holiday market", "when": "Sun. Dec. 20, 10 am-4 pm", "where": "Discovery World Pavilion, 500 N. Harbor Dr.", "text": "The big pop-up version of the Hide House shop, with free admission. The organizer says dates can change.", "url": "https://www.milwaukeemakersmarket.com/2026-season", "source": "Milwaukee Makers Market"}
+        ]
+      }
+    ],
+    "outro": "Hosting something in Bay View this season? Send it through our tip form and we'll add it."
+  },
+  {
+    "slug": "fish-fry",
+    "title": "Bay View fish fry guide",
+    "status": "planned",
+    "publish_by": "2027-02-10",
+    "updated": "2026-11-25",
+    "season": {"start": "2027-02-01", "end": "2027-03-27"},
+    "dek": "Every Friday fish fry in Bay View, from church halls to taverns, with days, prices and specialties."
+  },
+  {
+    "slug": "patios-and-beer-gardens",
+    "title": "Bay View patios and beer gardens",
+    "status": "planned",
+    "publish_by": "2027-05-01",
+    "updated": "2026-11-25",
+    "season": {"start": "2027-05-01", "end": "2027-09-30"},
+    "dek": "Where to sit outside in Bay View: patios, rooftops, beer gardens and lakefront spots, with hours and what to order."
+  }
+]

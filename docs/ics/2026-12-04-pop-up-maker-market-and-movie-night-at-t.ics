@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-12-04-pop-up-maker-market-and-movie-night-at-t@bayviewbulletin.com
-DTSTAMP:20261125T111702Z
+DTSTAMP:20261125T144208Z
 DTSTART;VALUE=DATE:20261204
 DTEND;VALUE=DATE:20261205
 SUMMARY:Pop-up maker market and movie night at the Avalon
