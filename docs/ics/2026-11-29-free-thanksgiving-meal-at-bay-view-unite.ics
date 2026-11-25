@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Bay View Bulletin//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Free Thanksgiving meal at Bay View United Methodist
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:2026-11-29-free-thanksgiving-meal-at-bay-view-unite@bayviewbulletin.com
+DTSTAMP:20261125T111304Z
+DTSTART;TZID=America/Chicago:20261129T143000
+DTEND;TZID=America/Chicago:20261129T163000
+SUMMARY:Free Thanksgiving meal at Bay View United Methodist
+LOCATION:Bay View United Methodist Church\, 2772 S. Kinnickinnic Ave.\, Milwaukee\, WI
+DESCRIPTION:A free\, traditional Thanksgiving dinner for anyone who wants one. Free. https://milwaukeenns.org/2026/11/24/updated-here-are-6-places-you-can-find-a-free-hot-thanksgiving-meal-in-milwaukee/ (via The Bay View Bulletin)
+URL:https://milwaukeenns.org/2026/11/24/updated-here-are-6-places-you-can-find-a-free-hot-thanksgiving-meal-in-milwaukee/
+END:VEVENT
+END:VCALENDAR

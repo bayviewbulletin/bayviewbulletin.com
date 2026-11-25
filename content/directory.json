@@ -99,7 +99,8 @@
   "lat": 42.97283,
   "lon": -87.90997,
   "note": "On the Howell stretch just south of Morgan that the directory keeps; current city license and recent Facebook posts (Nov. 23). Facebook page path not yet confirmed.",
-  "social_note": "Facebook page 'Copper Kitchen - Milwaukee, WI' exists; path not confirmed"
+  "social_note": "Facebook page 'Copper Kitchen - Milwaukee, WI' exists; path not confirmed",
+  "links_checked": 1
  },
  {
   "name": "Kainth Beer & Liquor",
@@ -396,7 +397,8 @@
   "lat": 43.00132,
   "lon": -87.90299,
   "verify": true,
-  "note": "From the sources doc candidate list; booking listing found, storefront not yet confirmed (Nov. 15)"
+  "note": "From the sources doc candidate list; booking listing found, storefront not yet confirmed (Nov. 15)",
+  "links_checked": 1
  },
  {
   "name": "Bike & Body",
@@ -658,7 +660,8 @@
   "lat": 42.98808,
   "lon": -87.87709,
   "verify": true,
-  "note": "Dr. Julie Vance, DC; (414) 481-8683 per WebMD. Facebook bayviewhealthwellness and IG chirohealthwellness seen in search, not yet confirmed"
+  "note": "Dr. Julie Vance, DC; (414) 481-8683 per WebMD. Facebook bayviewhealthwellness and IG chirohealthwellness seen in search, not yet confirmed",
+  "links_checked": 1
  },
  {
   "name": "Christ Church UCC",
@@ -745,7 +748,8 @@
   "lat": 42.9967,
   "lon": -87.89796,
   "verify": true,
-  "note": "Listings show it at 2654 S. KK (shared with a salon per Milwaukee Magazine 2018); MapQuest shows Closed; needs confirmation (Nov. 15)"
+  "note": "Listings show it at 2654 S. KK (shared with a salon per Milwaukee Magazine 2018); MapQuest shows Closed; needs confirmation (Nov. 15)",
+  "links_checked": 1
  },
  {
   "name": "Collector's Edge Comics",
@@ -764,7 +768,8 @@
   "lat": 42.98833,
   "lon": -87.8774,
   "verify": true,
-  "note": "Website now points to an unrelated spam site (Nov. 15); shares 3074 S. Delaware with Tasha Rae Jewelry."
+  "note": "Website now points to an unrelated spam site (Nov. 15); shares 3074 S. Delaware with Tasha Rae Jewelry.",
+  "links_checked": 1
  },
  {
   "name": "Community Bark Bay View",
@@ -1250,7 +1255,8 @@
   "lat": 42.99699,
   "lon": -87.89844,
   "instagram": "hificafemke",
-  "facebook": "hificafe"
+  "facebook": "hificafe",
+  "website": "https://5ea646d4d1216.site123.me/"
  },
  {
   "name": "The Highbury Pub",
@@ -1453,7 +1459,6 @@
   "lat": 43.0042,
   "lon": -87.90536,
   "website": "https://kief-co-kinnickinnic.cloveronline.com/",
-  "verify": true,
   "note": "Milwaukee-based, two stores (other on W. Oklahoma). Clover ordering site live with pickup enabled (Nov. 19); no dated post/review found. IG kiefcomp seen in search, not confirmed"
  },
  {
@@ -2027,11 +2032,12 @@
  {
   "name": "Radish",
   "type": "Restaurant & shop",
-  "address": "2986 S. Kinnickinnic Ave.",
-  "lat": 42.99063,
-  "lon": -87.88511,
+  "address": "2591 S. Delaware Ave.",
+  "lat": 42.9966,
+  "lon": -87.88975,
   "instagram": "radish_mke",
-  "website": "https://www.radishmke.com"
+  "website": "https://www.radishmke.com",
+  "note": "Opening Dec. 15, 2026 (Instagram); moved from the planned 2986 S. KK site"
  },
  {
   "name": "reThought Real Estate",
@@ -2938,5 +2944,15 @@
   "instagram": "milwaukeemakersmarket",
   "website": "https://www.milwaukeemakersmarket.com",
   "note": "Hide House, Suite 135. Opened Sept. 2024 (Radio Milwaukee). Thu 11-6, Fri-Sat 11-7, Sun 11-4"
+ },
+ {
+  "name": "Mother Lion",
+  "type": "Retreat & wellness venue",
+  "address": "2623 S. Logan Ave.",
+  "lat": 42.99685,
+  "lon": -87.8969,
+  "instagram": "motherlion_bayview",
+  "note": "Art cottage with sauna and hot tub for retreats and events (Instagram bio, Nov. 25, 2026)",
+  "website": "https://www.motherlionrest.com"
  }
 ]

@@ -8,46 +8,6 @@
  },
  "dated": [
   {
-   "run_on": "2026-11-25",
-   "banked": "2026-11-22",
-   "notes": "Hard history about a public figure; plain tone, no graphic detail. Built from free sources (Milwaukee Record 2018, FOX6); the archive OCR didn't find 1967 coverage. Photo is FOX6's image of Sijan; a public-domain USAF portrait exists on Wikimedia Commons (File:Lance_Sijan.jpg) if the run can download it.",
-   "history": {
-    "year": 1967,
-    "date": "1967-11-09",
-    "match": "this month",
-    "topic": "person",
-    "title": "Lance Sijan: the Bay View High standout who received the Medal of Honor",
-    "text": "In November 1967, Air Force Capt. Lance Sijan, a Bay View High graduate, was shot down over Laos. His courage as a prisoner earned him the Medal of Honor.",
-    "body": "Lance Peter Sijan grew up in Bay View and was a standout at Bay View High School: senior class president, an all-city end on the football team, and the lead in a school production of \"The King and I.\" He went on to the Air Force Academy, graduated in 1965, and by July 1967 was flying F-4 Phantom missions in the Vietnam War.\n\nOn Nov. 9, 1967, his jet went down over Laos. Rescue crews made voice contact with him and hovered overhead, but he was badly injured and warned them off because enemy troops were all around him. Back in Bay View, two Air Force officers came to his family's door with the news that he was missing.\n\nSijan evaded capture for 46 days, surviving on plants and insects despite a skull fracture, a mangled hand and a broken leg. He was captured on Christmas Day 1967 and taken to a prison camp in Hanoi, where he died on Jan. 22, 1968, at 25. His family didn't learn his fate until 1974, when his remains came home; he is buried in Arlington Park Cemetery in Greenfield.\n\nFellow prisoners later described his courage, and in 1976 President Gerald Ford posthumously awarded him the Medal of Honor. The Air Force Academy named a dormitory Sijan Hall, the Air Force named its top leadership award for him, and in Bay View, the football field where he practiced was renamed Sijan Park.",
-    "source_name": "Milwaukee Record (2018)",
-    "source_url": "https://milwaukeerecord.com/city-life/honor-service-love-remembering-the-life-and-heroics-of-milwaukees-lance-sijan/",
-    "links": [
-     {
-      "label": "Milwaukee Record: Remembering the life and heroics of Milwaukee's Lance Sijan (2018)",
-      "url": "https://milwaukeerecord.com/city-life/honor-service-love-remembering-the-life-and-heroics-of-milwaukees-lance-sijan/"
-     },
-     {
-      "label": "FOX6: Students learning from the life of Bay View Medal of Honor recipient Lance Sijan",
-      "url": "https://www.fox6now.com/news/he-was-a-hero-students-learning-from-the-life-of-bay-view-medal-of-honor-recipient-lance-sijan"
-     },
-     {
-      "label": "U.S. Air Force: Capt. Lance P. Sijan, Medal of Honor",
-      "url": "https://www.af.mil/MedalofHonor/Sijan.aspx"
-     },
-     {
-      "label": "Wikipedia: Lance Sijan",
-      "url": "https://en.wikipedia.org/wiki/Lance_Sijan"
-     }
-    ],
-    "image": {
-     "src": "/photos/hist-lance-sijan.jpg",
-     "alt": "Portrait of a young Lance Sijan in uniform",
-     "credit": "FOX6 News",
-     "credit_url": "https://www.fox6now.com/news/he-was-a-hero-students-learning-from-the-life-of-bay-view-medal-of-honor-recipient-lance-sijan"
-    }
-   }
-  },
-  {
    "run_on": "2026-11-26",
    "banked": "2026-11-22",
    "notes": "Archive ad: Milwaukee Sentinel, July 10, 1943, p. 5 (MPL library card required; not public domain, credited). Building history from Urban Milwaukee (2015). Three Brothers (another Schlitz tied house) ran Nov. 20, so this item leans on the 1943 club, not Schlitz.",
@@ -302,6 +262,47 @@
      "credit_url": "https://milwaukeerecord.com/food-drink/mandatory-milwaukee-original-recipe-pizza-lives-on-at-dom-phil-demarinis/"
     }
    }
+  },
+  {
+   "run_on": "2026-11-25",
+   "banked": "2026-11-22",
+   "notes": "Hard history about a public figure; plain tone, no graphic detail. Built from free sources (Milwaukee Record 2018, FOX6); the archive OCR didn't find 1967 coverage. Photo is FOX6's image of Sijan; a public-domain USAF portrait exists on Wikimedia Commons (File:Lance_Sijan.jpg) if the run can download it.",
+   "history": {
+    "year": 1967,
+    "date": "1967-11-09",
+    "match": "this month",
+    "topic": "person",
+    "title": "Lance Sijan: the Bay View High standout who received the Medal of Honor",
+    "text": "In November 1967, Air Force Capt. Lance Sijan, a Bay View High graduate, was shot down over Laos. His courage as a prisoner earned him the Medal of Honor.",
+    "body": "Lance Peter Sijan grew up in Bay View and was a standout at Bay View High School: senior class president, an all-city end on the football team, and the lead in a school production of \"The King and I.\" He went on to the Air Force Academy, graduated in 1965, and by July 1967 was flying F-4 Phantom missions in the Vietnam War.\n\nOn Nov. 9, 1967, his jet went down over Laos. Rescue crews made voice contact with him and hovered overhead, but he was badly injured and warned them off because enemy troops were all around him. Back in Bay View, two Air Force officers came to his family's door with the news that he was missing.\n\nSijan evaded capture for 46 days, surviving on plants and insects despite a skull fracture, a mangled hand and a broken leg. He was captured on Christmas Day 1967 and taken to a prison camp in Hanoi, where he died on Jan. 22, 1968, at 25. His family didn't learn his fate until 1974, when his remains came home; he is buried in Arlington Park Cemetery in Greenfield.\n\nFellow prisoners later described his courage, and in 1976 President Gerald Ford posthumously awarded him the Medal of Honor. The Air Force Academy named a dormitory Sijan Hall, the Air Force named its top leadership award for him, and in Bay View, the football field where he practiced was renamed Sijan Park.",
+    "source_name": "Milwaukee Record (2018)",
+    "source_url": "https://milwaukeerecord.com/city-life/honor-service-love-remembering-the-life-and-heroics-of-milwaukees-lance-sijan/",
+    "links": [
+     {
+      "label": "Milwaukee Record: Remembering the life and heroics of Milwaukee's Lance Sijan (2018)",
+      "url": "https://milwaukeerecord.com/city-life/honor-service-love-remembering-the-life-and-heroics-of-milwaukees-lance-sijan/"
+     },
+     {
+      "label": "FOX6: Students learning from the life of Bay View Medal of Honor recipient Lance Sijan",
+      "url": "https://www.fox6now.com/news/he-was-a-hero-students-learning-from-the-life-of-bay-view-medal-of-honor-recipient-lance-sijan"
+     },
+     {
+      "label": "U.S. Air Force: Capt. Lance P. Sijan, Medal of Honor",
+      "url": "https://www.af.mil/MedalofHonor/Sijan.aspx"
+     },
+     {
+      "label": "Wikipedia: Lance Sijan",
+      "url": "https://en.wikipedia.org/wiki/Lance_Sijan"
+     }
+    ],
+    "image": {
+     "src": "/photos/hist-lance-sijan.jpg",
+     "alt": "Portrait of a young Lance Sijan in uniform",
+     "credit": "FOX6 News",
+     "credit_url": "https://www.fox6now.com/news/he-was-a-hero-students-learning-from-the-life-of-bay-view-medal-of-honor-recipient-lance-sijan"
+    }
+   },
+   "used_on": "2026-11-25"
   }
  ]
 }

@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Bay View Bulletin//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Small Business Saturday dance class at Delaware House
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:2026-11-28-small-business-saturday-dance-class-at-d@bayviewbulletin.com
+DTSTAMP:20261125T111304Z
+DTSTART;TZID=America/Chicago:20261128T090000
+DTEND;TZID=America/Chicago:20261128T110000
+SUMMARY:Small Business Saturday dance class at Delaware House
+LOCATION:Delaware House\, 2499 S. Delaware Ave.\, Milwaukee\, WI
+DESCRIPTION:A Small Business Saturday party-cardio dance class with deals\, donations and coffee\, plus a two-for-$20 special. https://www.instagram.com/reel/DgIZK44NeMG/ (via The Bay View Bulletin)
+URL:https://www.instagram.com/reel/DgIZK44NeMG/
+END:VEVENT
+END:VCALENDAR
