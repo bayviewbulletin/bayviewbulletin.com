@@ -80,6 +80,7 @@ def card(title_kicker, date_line, items, out):
         body = font("serif_b", size)
         lines = []
         for it in items:
+            it = re.sub(r"\b([A-Z][a-z]{2,4}\.) (\d)", "\\1\u00a0\\2", it)  # keep "Dec. 15" together
             wrapped = textwrap.wrap(it, width=int(1560 / size))
             lines.append(wrapped)
         need = sum(len(w) * int(size * 1.32) + int(size * 0.7) for w in lines)
