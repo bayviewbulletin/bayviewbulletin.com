@@ -1,22 +1,126 @@
 {
-  "_about": "Where the daily run finds Bay View listings (Ben, Nov. 25, 2026: agents' and brokers' own public posts and listing pages only). Zillow, Redfin, Realtor.com and Homes.com don't allow automated collection, so they are not sources; never read them. Coverage: inside the Bulletin's boundary (harbor/Jones Island south to Holt and Morgan, I-43 east to the lake), ZIP 53207 and the Bay View part of 53204.",
-  "residential_broker_pages": [
-    {"name": "Century 21: Bay View neighborhood search", "url": "https://www.century21.com/real-estate/bay-view-wi/LCWIBAYVIEW", "note": "Brokerage IDX page; shows price, beds, baths, sq ft and 'Listed by' office for every active Bay View listing. Check daily."},
-    {"name": "Better Homes and Gardens Real Estate: Bay View", "url": "https://www.bhgre.com/home/list/neighborhood/wi/milwaukee/bay-view", "note": "Brokerage IDX page with status (Active/Pending) and listing office."},
-    {"name": "Coldwell Banker: Milwaukee 53207", "url": "https://www.coldwellbanker.com/city/wi/milwaukee/zip/53207", "note": "Brokerage listing pages; each listing page names the listing office."},
-    {"name": "Baird & Warner: 53207", "url": "https://www.bairdwarner.com/", "note": "Listing pages show 'Listing Courtesy Of' and the listing office."}
-  ],
-  "residential_agents_social": {
-    "note": "Instagram and Facebook posts by agents who list in Bay View announce new listings, open houses and price changes. Add handles here as you confirm them (the profile names the agent and brokerage). Search Instagram/Facebook for #bayviewmke #bayviewmilwaukee #bayviewhomes #justlisted plus 'Bay View', and Google in Chrome: site:instagram.com \"just listed\" \"Bay View\" Milwaukee.",
-    "agents_to_find_accounts_for": ["Tom Wolf, Bay View Homes", "Aaron Kohlmeier, Welcome Home Real Estate Group (2316 E. Malvern Pl.)", "Joan Sliker, Cream City Real Estate Co.", "Danielle Ransom, Prime Real Estate", "Jessica Dunn, Shorewest", "Houseworks Collective Team, Keller Williams North Shore", "Level Up Team, Keller Williams Southwest", "Mind Right Realty Group, Keller Williams Southwest", "Sarah Seifert, Keller Williams"],
-    "accounts": []
+ "_about": "Where the daily run finds Bay View listings (Ben, Nov. 25, 2026: agents' and brokers' own public posts and listing pages only). Zillow, Redfin, Realtor.com and Homes.com don't allow automated collection, so they are not sources; never read them. Coverage: inside the Bulletin's boundary (harbor/Jones Island south to Holt and Morgan, I-43 east to the lake), ZIP 53207 and the Bay View part of 53204.",
+ "residential_broker_pages": [
+  {
+   "name": "M3 Realty: Bay View Homes for Sale report",
+   "url": "https://www.m3realty.com/listing-report/Bay-View-Homes-for-Sale/308055",
+   "note": "Best daily source found Nov. 25: brokerage listing report fed by Metro MLS, refreshed nightly (page shows its update time), each listing names the listing office. Also: condos /308060, single-family /308058, multi-family /792262."
   },
-  "commercial": [
-    {"name": "CBRE Milwaukee retail listings", "url": "https://www.cbre.com/properties/properties-for-lease/retail", "note": "Bay View listings by Ben Weiland and Samuel Gleischman (e.g. 2863 S. KK, the former Café Corazón at 2392-2398 S. KK)."},
-    {"name": "Colliers Wisconsin", "url": "https://www.colliers.com/en/united-states/cities/milwaukee", "note": "Cory Sovine lists KK retail (e.g. 2211 S. KK)."},
-    {"name": "KW Commercial", "url": "https://www.kwcommercial.com/", "note": "Ryan Dworak (e.g. 2900 S. KK)."},
-    {"name": "CommercialSearch: Bay View", "url": "https://www.commercialsearch.com/commercial-real-estate/us/wi/milwaukee-county/milwaukee/bay-view/", "note": "Brokers' commercial listings for Bay View, with the listing broker named. Use to find listings, then link the broker's own page when one exists."},
-    {"name": "Century 21 Commercial", "url": "https://commercial.century21.com/", "note": "e.g. 2472-2476 S. KK."}
+  {
+   "name": "M3 Realty: Bay View Condos",
+   "url": "https://www.m3realty.com/listing-report/Bay-View-Condos-For-Sale/308060",
+   "note": "Condo report (2525 S. Shore Dr., 2121 S. KK and others)."
+  },
+  {
+   "name": "M3 Realty: Bay View Multi-Family",
+   "url": "https://www.m3realty.com/listing-report/Bay-View-Multi-Family-Homes-For-Sale/792262/",
+   "note": "Duplexes and small apartment buildings; good for notable listings."
+  },
+  {
+   "name": "Century 21: Bay View neighborhood search",
+   "url": "https://www.century21.com/real-estate/bay-view-wi/LCWIBAYVIEW",
+   "note": "Brokerage IDX page; shows price, beds, baths, sq ft and 'Listed by' office for every active Bay View listing. Check daily."
+  },
+  {
+   "name": "Better Homes and Gardens Real Estate: Bay View",
+   "url": "https://www.bhgre.com/home/list/neighborhood/wi/milwaukee/bay-view",
+   "note": "Brokerage IDX page with status (Active/Pending) and listing office."
+  },
+  {
+   "name": "Coldwell Banker: Milwaukee 53207",
+   "url": "https://www.coldwellbanker.com/city/wi/milwaukee/zip/53207",
+   "note": "Brokerage listing pages; each listing page names the listing office."
+  },
+  {
+   "name": "Baird & Warner: 53207",
+   "url": "https://www.bairdwarner.com/",
+   "note": "Listing pages show 'Listing Courtesy Of' and the listing office."
+  }
+ ],
+ "residential_agents_social": {
+  "note": "Instagram and Facebook posts by agents who list in Bay View announce new listings, open houses and price changes. Add handles here as you confirm them (the profile names the agent and brokerage). Search Instagram/Facebook for #bayviewmke #bayviewmilwaukee #bayviewhomes #justlisted plus 'Bay View', and Google in Chrome: site:instagram.com \"just listed\" \"Bay View\" Milwaukee.",
+  "agents_to_find_accounts_for": [
+   "Joan Sliker / Shelly Budde, Cream City Real Estate Co. (lists in Bay View; find its website and accounts)",
+   "Jessica Dunn and Stacey Pintar, Shorewest",
+   "Houseworks Collective (Keller Williams; Walker's Point office, 161 S. 1st St.)",
+   "Christopher Poniewaz, Homestead Realty (2121 S. KK condo)",
+   "Steven Salfer, The Two For You (Bay View resident since 1978)",
+   "Kyle Clements Realty (has a Bay View area page; site didn't load from the workspace)",
+   "Sarah Seifert, Keller Williams"
   ],
-  "public_records": "scripts/records.py: MPROP commercial and 4+ unit sales in District 14 (lags a few weeks), large building permits. Never name private homeowners or individual buyers/sellers; business entities only when news coverage names them."
+  "accounts": [
+   {
+    "name": "Ricky Anderson, Powers Realty Group",
+    "lives_in_bay_view": true,
+    "instagram": "rickyanderson_mke",
+    "facebook": "https://www.facebook.com/ricky.anderson.568632",
+    "website": "https://www.powersrealty.com/about-us/our-team/ricky-anderson",
+    "confirmed_from": "links on his Powers Realty profile page, which says he lives in Bay View (Nov. 25)"
+   },
+   {
+    "name": "Emily Walczak, Emily Paige & Co. (Keller Williams)",
+    "lives_in_bay_view": true,
+    "instagram": "emilywalczak.realtor",
+    "tiktok": "emilywalczak.realtor",
+    "website": "https://emilypaigeandco.com/",
+    "confirmed_from": "links on her own website, which says she lives in Bay View (Nov. 25)"
+   },
+   {
+    "name": "Powers Realty Group (brokerage)",
+    "instagram": "powersrealtygroup",
+    "facebook": "https://www.facebook.com/Powersrealtygroup",
+    "website": "https://www.powersrealty.com/properties/bay-view-homes-for-sale",
+    "confirmed_from": "links on its Bay View page (Nov. 25)"
+   },
+   {
+    "name": "M3 Realty (brokerage)",
+    "instagram": "m3.realty",
+    "facebook": "https://www.facebook.com/M3RealtyWI",
+    "website": "https://www.m3realty.com/",
+    "confirmed_from": "links on its Bay View listing reports (Nov. 25); listed a 2525 S. Shore Dr. condo"
+   },
+   {
+    "name": "Root River Realty (Holly Speranza, Keller Williams)",
+    "instagram": "rootriverrealty",
+    "facebook": "https://www.facebook.com/RootRiverRealty",
+    "website": "https://rootriverrealty.com/locations/bay-view-wi/",
+    "confirmed_from": "links on its Bay View page (Nov. 25); Holly Speranza lists Bay View homes (e.g. 3026 S. Hanson)"
+   },
+   {
+    "name": "Bay View Homes (Tom Wolf), 2216 S. Kinnickinnic Ave.",
+    "facebook": "https://www.facebook.com/profile.php?id=100069103071700",
+    "website": "https://viewbayview.com",
+    "confirmed_from": "Facebook page shows the KK office address and links viewbayview.com (Nov. 25). Website not yet opened; check it for Instagram."
+   }
+  ],
+  "dropped": "Nov. 25: Level Up Team and Mind Right Realty (both Keller Williams Southwest, New Berlin) and Aaron Kohlmeier (Welcome Home, Kenosha) list across the region rather than focusing on Bay View; watch their Bay View listings through the brokerage reports instead of their social accounts."
+ },
+ "commercial": [
+  {
+   "name": "CBRE Milwaukee retail listings",
+   "url": "https://www.cbre.com/properties/properties-for-lease/retail",
+   "note": "Bay View listings by Ben Weiland and Samuel Gleischman (e.g. 2863 S. KK, the former Café Corazón at 2392-2398 S. KK)."
+  },
+  {
+   "name": "Colliers Wisconsin",
+   "url": "https://www.colliers.com/en/united-states/cities/milwaukee",
+   "note": "Cory Sovine lists KK retail (e.g. 2211 S. KK)."
+  },
+  {
+   "name": "KW Commercial",
+   "url": "https://www.kwcommercial.com/",
+   "note": "Ryan Dworak (e.g. 2900 S. KK)."
+  },
+  {
+   "name": "CommercialSearch: Bay View",
+   "url": "https://www.commercialsearch.com/commercial-real-estate/us/wi/milwaukee-county/milwaukee/bay-view/",
+   "note": "Brokers' commercial listings for Bay View, with the listing broker named. Use to find listings, then link the broker's own page when one exists."
+  },
+  {
+   "name": "Century 21 Commercial",
+   "url": "https://commercial.century21.com/",
+   "note": "e.g. 2472-2476 S. KK."
+  }
+ ],
+ "public_records": "scripts/records.py: MPROP commercial and 4+ unit sales in District 14 (lags a few weeks), large building permits. Never name private homeowners or individual buyers/sellers; business entities only when news coverage names them."
 }
