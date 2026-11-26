@@ -153,10 +153,34 @@ VENUES = [("Cactus Club", CM("Milwaukee January 2025 04 (Cactus Club).jpg")), ("
           ("", CM("Milwaukee January 2025 16 (S. Kinnickinnic Avenue).jpg"))]
 
 
+_DIR_PHOTOS = None
+
+
+def dir_photo(ev):
+    """The venue's own photo from content/directory.json ("photo": {src, credit, credit_url}), matched by
+    street address or business name (Ben, Nov. 26: events without a flyer show the business, inside or out)."""
+    global _DIR_PHOTOS
+    if _DIR_PHOTOS is None:
+        _DIR_PHOTOS = []
+        for b in json.loads((ROOT / "content/directory.json").read_text()):
+            if b.get("photo", {}).get("src"):
+                _DIR_PHOTOS.append((re.sub(r"\W", "", b.get("address", "").lower()), b["name"].lower(), b["photo"]))
+    where = ev.get("where", "")
+    w_addr = re.sub(r"\W", "", where.lower())
+    venue = where.split(",")[0].strip().lower()
+    for addr, name, ph in _DIR_PHOTOS:
+        if (addr and addr in w_addr) or (venue and (venue == name or (len(name) > 5 and (venue in name or name in venue)))):
+            return ph
+    return None
+
+
 def venue_img(ev):
     """The event's own flyer/photo, else a photo of its venue (Ben, Nov. 17: always show a photo, never a text tile)."""
     if ev.get("image"):
         return ev["image"]
+    ph = dir_photo(ev)
+    if ph:
+        return ph["src"]
     for k, u in VENUES:
         if k in ev["where"] or k in ev["title"]:
             return u

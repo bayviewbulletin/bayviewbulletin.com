@@ -157,7 +157,13 @@
   "lon": -87.90212,
   "instagram": "avalontheater",
   "website": "https://www.ntg-wi.com/avalon",
-  "facebook": "AvalonMKE"
+  "facebook": "AvalonMKE",
+  "photo": {
+   "src": "/photos/vn-avalon.jpg",
+   "alt": "The Avalon's lit marquee and sign on KK at night",
+   "credit": "Avalon Atmospheric Theater (@avalontheater) on Instagram",
+   "credit_url": "https://www.instagram.com/p/Ddb4DvWFl84/"
+  }
  },
  {
   "name": "Axolotl Cafe",
@@ -236,7 +242,13 @@
   "lon": -87.90245,
   "instagram": "bayviewbowl",
   "website": "https://bayviewbowl.com",
-  "facebook": "1560244900907769"
+  "facebook": "1560244900907769",
+  "photo": {
+   "src": "/photos/vn-bay-view-bowl.jpg",
+   "alt": "Bay View Bowl's lanes and pins under colored lights",
+   "credit": "Bay View Bowl (@bayviewbowl) on Instagram",
+   "credit_url": "https://www.instagram.com/p/Cw_dhvAOZPZ/"
+  }
  },
  {
   "name": "Bay View Chiropractic",
@@ -369,7 +381,13 @@
   "facebook": "bcmodernmke",
   "website": "https://www.bcmodernmke.com/",
   "lat": 42.98781,
-  "lon": -87.90934
+  "lon": -87.90934,
+  "photo": {
+   "src": "/photos/sp-bc-modern-showroom.jpg",
+   "alt": "Mid-century furniture and lamps in BC Modern's showroom",
+   "credit": "BC Modern website",
+   "credit_url": "https://www.bcmodernmke.com/"
+  }
  },
  {
   "name": "Beulah Brinton Community Center",
@@ -503,7 +521,13 @@
   "lon": -87.89703,
   "instagram": "burnhearts",
   "website": "https://burnheartsbar.com",
-  "facebook": "burnheartsbar"
+  "facebook": "burnheartsbar",
+  "photo": {
+   "src": "/photos/spot-burnhearts-1.jpg",
+   "alt": "Burnhearts' corner building on S. Logan Avenue",
+   "credit": "Urban Milwaukee",
+   "credit_url": "https://urbanmilwaukee.com/2013/06/09/taverns-burnhearts-bay-view-brothel/"
+  }
  },
  {
   "name": "Busby's",
@@ -545,7 +569,13 @@
   "instagram": "cactusclubmke",
   "website": "https://www.cactusclubmilwaukee.com",
   "facebook": "CactusClubmke",
-  "events_page_hint": true
+  "events_page_hint": true,
+  "photo": {
+   "src": "/photos/sp-cactus-night.jpg",
+   "alt": "Cactus Club at night, its neon cactus sign glowing above the corner entrance",
+   "credit": "Milwaukee Magazine",
+   "credit_url": "https://www.milwaukeemag.com/venue-spotlight-cactus-club-bay-view-alt-rock-hub/"
+  }
  },
  {
   "name": "Cafe India Bar & Grill",
@@ -719,7 +749,13 @@
   "lon": -87.88974,
   "instagram": "clubgaribaldi",
   "website": "https://www.clubgaribaldi.com",
-  "facebook": "Club-Garibaldis-344845918293"
+  "facebook": "Club-Garibaldis-344845918293",
+  "photo": {
+   "src": "/photos/hist-club-garibaldi-now.jpg",
+   "alt": "The lit back bar at Club Garibaldi, with the club's name in script above rows of bottles",
+   "credit": "Urban Milwaukee",
+   "credit_url": "https://urbanmilwaukee.com/2015/03/25/bar-exam-club-garibaldis-very-italian-roots/"
+  }
  },
  {
   "name": "Coin Laundry",
@@ -1246,7 +1282,13 @@
   "lon": -87.904694,
   "instagram": "heirloom.mke",
   "facebook": "heirloommke",
-  "website": "https://www.heirloommke.com"
+  "website": "https://www.heirloommke.com",
+  "photo": {
+   "src": "/photos/spot-heirloom-um.jpg",
+   "alt": "The entrance of Heirloom MKE on S. Howell Avenue",
+   "credit": "Sophie Bolich / Urban Milwaukee",
+   "credit_url": "https://urbanmilwaukee.com/2023/08/30/from-flames-to-fortune-heirloom-mke-opens-in-bay-view/"
+  }
  },
  {
   "name": "Hi-Fi Cafe",
@@ -1256,7 +1298,13 @@
   "lon": -87.89844,
   "instagram": "hificafemke",
   "facebook": "hificafe",
-  "website": "https://5ea646d4d1216.site123.me/"
+  "website": "https://5ea646d4d1216.site123.me/",
+  "photo": {
+   "src": "/photos/spotlight-hifi-1.jpg",
+   "alt": "Hi-Fi Cafe's corner storefront at Kinnickinnic and Potter",
+   "credit": "Cari Taylor-Carlson / Urban Milwaukee",
+   "credit_url": "https://urbanmilwaukee.com/2020/02/04/dining-bay-views-hi-fi-cafe-a-time-warp/"
+  }
  },
  {
   "name": "The Highbury Pub",
@@ -1412,7 +1460,13 @@
   "instagram": "jashersorganicteahouse",
   "note": "Shares the 2680 S. KK entrance with Verdant CBD (Ben, Nov. 16)",
   "website": "https://jashersorganic.com/",
-  "facebook": "people/Jashers-Organic-Tea-House/61577164247494/"
+  "facebook": "people/Jashers-Organic-Tea-House/61577164247494/",
+  "photo": {
+   "src": "/photos/jashers-ddb4amefk90.jpg",
+   "alt": "A table at Jasher's set with hot teas in glass mugs",
+   "credit": "Jasher's Organic Tea House (@jashersorganicteahouse) on Instagram",
+   "credit_url": "https://www.instagram.com/p/Ddb4AMeFK90/"
+  }
  },
  {
   "name": "JB Nails & Spa",
@@ -1591,7 +1645,13 @@
   "instagram": "lostwhalemke",
   "website": "https://www.lostwhalemke.com",
   "events_page_hint": true,
-  "facebook": "lostwhalemke"
+  "facebook": "lostwhalemke",
+  "photo": {
+   "src": "/photos/vn-lost-whale.jpg",
+   "alt": "Lost Whale's long wooden bar, lit warm, with a plush toy perched on it",
+   "credit": "Lost Whale (@lostwhalemke) on Instagram",
+   "credit_url": "https://www.instagram.com/p/DfxbSx9srxu/"
+  }
  },
  {
   "name": "LuLu Cafe & Bar",
@@ -1669,7 +1729,13 @@
   "lon": -87.90466,
   "website": "https://www.mhhats.com/",
   "instagram": "mhhatmilmke",
-  "facebook": "brassroosterhatco"
+  "facebook": "brassroosterhatco",
+  "photo": {
+   "src": "/photos/spot-mhhats-shop.jpg",
+   "alt": "Shelves of hats inside McLaughlin & Hayes",
+   "credit": "TMJ4",
+   "credit_url": "https://www.tmj4.com/news/milwaukee-tonight/mclaughlin-hays-is-one-of-the-very-few-traditional-hat-making-companies-left-in-the-u-s"
+  }
  },
  {
   "name": "Melt Chocolates",
@@ -1902,7 +1968,13 @@
   "website": "https://palomatacoandtequila.com",
   "note": "KinetiK building",
   "lat": 43.00587,
-  "lon": -87.90653
+  "lon": -87.90653,
+  "photo": {
+   "src": "/photos/sp-paloma-storefront.jpg",
+   "alt": "Paloma Taco and Tequila's storefront windows",
+   "credit": "Sophie Bolich / Urban Milwaukee",
+   "credit_url": "https://urbanmilwaukee.com/2024/04/18/paloma-opens-bay-view-restaurant/"
+  }
  },
  {
   "name": "Palomino",
@@ -2001,7 +2073,13 @@
   "instagram": "puddlershall",
   "website": "https://puddlershall.com",
   "events_page_hint": true,
-  "facebook": "puddlershall"
+  "facebook": "puddlershall",
+  "photo": {
+   "src": "/photos/vn-puddlers-bar.jpg",
+   "alt": "A chalkboard sandwich menu on the bar at Puddler's Hall",
+   "credit": "Puddler's Hall (@puddlershall) on Instagram",
+   "credit_url": "https://www.instagram.com/p/DfVdVrmhjbb/"
+  }
  },
  {
   "name": "Quick Pick Food Mart",
@@ -2151,7 +2229,13 @@
   "lon": -87.898671,
   "instagram": "rushmorrecords",
   "website": "https://www.rushmor.com/",
-  "facebook": "profile.php?id=100057190731121"
+  "facebook": "profile.php?id=100057190731121",
+  "photo": {
+   "src": "/photos/sp-rush-mor-records-3.jpg",
+   "alt": "Rows of record bins inside Rush-Mor Records",
+   "credit": "Radio Milwaukee",
+   "credit_url": "https://radiomilwaukee.org/stories/arts-culture/2023-04-20/record-store-day-rush-mor-records"
+  }
  },
  {
   "name": "Saint Lucas Lutheran School",
@@ -2530,7 +2614,13 @@
   "lon": -87.89336,
   "instagram": "threebrothersmke",
   "website": "https://www.threebrothersmke.com",
-  "facebook": "Three-Brothers-Restaurant-166217240087484"
+  "facebook": "Three-Brothers-Restaurant-166217240087484",
+  "photo": {
+   "src": "/photos/sp-three-brothers-1.jpg",
+   "alt": "Three Brothers' cream city brick building at dusk",
+   "credit": "Three Brothers Restaurant website",
+   "credit_url": "https://www.threebrothersmke.com/our-history"
+  }
  },
  {
   "name": "Tip Top Atomic Shop",
@@ -2626,7 +2716,13 @@
   "lon": -87.91114,
   "instagram": "twistedpathdistillery",
   "website": "https://www.twistedpathdistillery.com",
-  "facebook": "twistedpathmke"
+  "facebook": "twistedpathmke",
+  "photo": {
+   "src": "/photos/vn-twisted-path.jpg",
+   "alt": "Twisted Path Distillery's storefront and sign in the Lincoln Warehouse",
+   "credit": "Twisted Path Distillery website",
+   "credit_url": "https://www.twistedpathdistillery.com"
+  }
  },
  {
   "name": "Unity Lutheran Church & Food Pantry",
@@ -2646,7 +2742,13 @@
   "lat": 42.99898,
   "lon": -87.90086,
   "website": "https://shopursa.com",
-  "facebook": "shopursa"
+  "facebook": "shopursa",
+  "photo": {
+   "src": "/photos/ursa-shop-refresh.jpg",
+   "alt": "Inside URSA: shelves of home goods, pillows, bags and plants",
+   "credit": "URSA (@shopursa) on Instagram",
+   "credit_url": "https://www.instagram.com/shopursa/p/De23S04KpH6/"
+  }
  },
  {
   "name": "UW Credit Union",

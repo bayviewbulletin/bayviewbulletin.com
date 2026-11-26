@@ -345,6 +345,26 @@ def daily(d):
     return slides[:7], [x for x in inside if x]
 
 
+def venue_photo(e):
+    """The venue's own photo from content/directory.json ("photo"), matched by address or name (Nov. 26)."""
+    import re as _re
+    where = e.get("where", "")
+    w_addr = _re.sub(r"\W", "", where.lower())
+    venue = where.split(",")[0].strip().lower()
+    for b in json.loads((ROOT / "content/directory.json").read_text()):
+        ph = b.get("photo") or {}
+        if not ph.get("src"):
+            continue
+        cr = ph.get("credit", "").lower()
+        if not any(k in cr for k in ("on instagram", "website", "wikimedia", "public domain", "bulletin")):
+            continue  # news outlets' photos stay off social (Nov. 25 rule)
+        addr = _re.sub(r"\W", "", b.get("address", "").lower())
+        name = b["name"].lower()
+        if (addr and addr in w_addr) or (venue and (venue == name or (len(name) > 5 and (venue in name or name in venue)))):
+            return ph
+    return None
+
+
 def weekend(d):
     w = d.get("weekend") or {}
     evs = {e["title"].lower(): e for e in d.get("events", [])}
@@ -354,21 +374,24 @@ def weekend(d):
         sys.exit("No weekend picks in the day file; write the 'weekend' field first.")
 
     def img(e):
-        # Only organizer flyers/promos go on social (Nov. 26): event images saved as ev-*/event-* by convention.
-        # News photos (news-*, n-*) and anything flagged "social_image": false (e.g. a movie still of an actor) get a typographic panel.
+        # Social photos (Ben, Nov. 26): the organizer's own flyer or promo (saved as ev-*/event-*; a venue's own promo that
+        # uses a still from the movie its event is themed on is fine), else the venue's own photo from the directory.
+        # News photos (news-*, n-*) and events flagged "social_image": false get a typographic panel.
         src = e.get("image") or ""
         base = src.rsplit("/", 1)[-1]
-        if not src or e.get("social_image") is False or not base.startswith(("ev-", "event-")):
-            return None
-        return {"src": src, "credit": e["where"].split(",")[0] + " (organizer's flyer)"}
+        if src and e.get("social_image") is not False and base.startswith(("ev-", "event-")):
+            return {"src": src, "credit": e["where"].split(",")[0] + " (organizer's flyer) on Instagram"}
+        if not src or base.startswith(("news-", "n-")):
+            ph = venue_photo(e)
+            if ph:
+                return {"src": ph["src"], "credit": ph.get("credit", e["where"].split(",")[0])}
+        return None
     cov_e = next((e for _, e in picks if img(e)), None)
     cov = {"title": f"{len(picks)} picks for the weekend in Bay View",
-           "image": {**img(cov_e), "credit": img(cov_e)["credit"] + " on Instagram"} if cov_e else None, "contain": True}
+           "image": img(cov_e) if cov_e else None, "contain": True}
     slides = [("cover", cov, "WEEKEND PICKS")]
     for pk, e in picks:
         im = img(e)
-        if im:
-            im["credit"] += " on Instagram"
         slides.append(("story", {"title": e["title"], "dek": f'{e["day"].replace("Today, ", "")} · {e["when"]} · {e["where"].split(",")[0]}. {pk.get("why", "")}'.strip(),
                                  "image": im, "contain": True, "kicker": e.get("kind", "Event").upper(), "label_big": e.get("kind", "Event"),
                                  "color": WARM, "tint": WARM_SOFT, "more": f"{SITE}/weekend"}))
