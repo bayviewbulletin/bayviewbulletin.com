@@ -95,7 +95,8 @@
    {
     "name": "Andrew Reid, Andrew's Realty, Inc.",
     "website": "https://www.andrewsmke.com/",
-    "confirmed_from": "Ben gave the website (Nov. 25). Homepage names the brokerage only; no social links or listings shown there. Had a Bay View listing at 3156 S. California St. ($355,000, under contract, per a RateMyAgent profile). Check the site weekly for listings and look for his Instagram/Facebook."
+    "confirmed_from": "Ben gave the website and Facebook page (Nov. 25). The Page (535 followers) links andrewsmke.com and posts 'New Listing!' announcements; check it weekly. Had a Bay View listing at 3156 S. California St. ($355,000, under contract).",
+    "facebook": "https://www.facebook.com/andrewsrealtymke"
    }
   ],
   "dropped": "Nov. 25: Level Up Team and Mind Right Realty (both Keller Williams Southwest, New Berlin) and Aaron Kohlmeier (Welcome Home, Kenosha) list across the region rather than focusing on Bay View; watch their Bay View listings through the brokerage reports instead of their social accounts."
@@ -127,5 +128,41 @@
    "note": "e.g. 2472-2476 S. KK."
   }
  ],
- "public_records": "scripts/records.py: MPROP commercial and 4+ unit sales in District 14 (lags a few weeks), large building permits. Never name private homeowners or individual buyers/sellers; business entities only when news coverage names them."
+ "public_records": "scripts/records.py: MPROP commercial and 4+ unit sales in District 14 (lags a few weeks), large building permits. Never name private homeowners or individual buyers/sellers; business entities only when news coverage names them.",
+ "photo_permission": {
+  "_about": "Ben, Nov. 25: listing photos only with the listing agent's OK. Add an agent here only after Ben says they agreed (he asks them; the daily run never contacts agents). Until then listing cards use the price tile.",
+  "agents": []
+ },
+ "sales_and_market": [
+  {
+   "name": "Wisconsin DOR property sales search (RETR)",
+   "url": "https://propertyinfo.revenue.wi.gov",
+   "cadence": "weekly (Mondays)",
+   "note": "Every recorded sale in the state from the transfer return, searchable by date range, price and location; 2026 data is in the public search in My Tax Account (revenue.wi.gov/retr > Search Wisconsin property data). Use in Ben's Chrome. Not every transfer is an arm's-length sale. Never publish grantor/grantee names of private people."
+  },
+  {
+   "name": "City of Milwaukee MPROP and Property Sales Data",
+   "url": "https://data.milwaukee.gov/group/housing-and-property-information",
+   "cadence": "daily via scripts/records.py (MPROP); Property Sales Data is yearly",
+   "note": "MPROP lags a few weeks; use it for commercial and 4+ unit sales."
+  },
+  {
+   "name": "BizTimes real estate sales tracker",
+   "url": "https://biztimes.com/real-estate",
+   "cadence": "weekly",
+   "note": "Commercial, industrial and multi-family sales of $1 million+ in the last 30 days."
+  },
+  {
+   "name": "Urban Milwaukee: Plats and Parcels",
+   "url": "https://urbanmilwaukee.com/category/series/plats-and-parcels",
+   "cadence": "weekly (Sunday column)",
+   "note": "Weekly recap of Milwaukee real estate news; Bay View items become stories (credit and link)."
+  },
+  {
+   "name": "GMAR monthly housing report",
+   "url": "https://gmar.com/",
+   "cadence": "monthly (mid-month)",
+   "note": "Metro MLS sales, listings and prices by county; use for the Milwaukee County context line in the Sunday roundup."
+  }
+ ]
 }

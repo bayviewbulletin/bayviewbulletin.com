@@ -88,10 +88,17 @@ A handle that no longer exists makes Instagram reload the page, which kills the 
 
 ## REAL ESTATE (Nov. 25, 2026)
 
-Ben's decisions: track new Bay View listings and feature them; residential and commercial; sources are agents' and brokers' own public posts and listing pages (never Zillow, Redfin, Realtor.com or Homes.com); photos only when the listing agent posted them publicly, with credit.
+Ben's decisions: track new Bay View listings and feature them; residential and commercial; sources are agents' and brokers' own public posts and listing pages (never Zillow, Redfin, Realtor.com or Homes.com); photos only with the listing agent's OK (agents in realestate_sources.json photo_permission).
 
 - `content/listings.json`: one entry per property. Fields: id, kind (home|condo|multi|land|commercial), deal (sale|lease|sale or lease), status (active|price_cut|pending|sold|off_market), address, price, price_num, beds, baths, sqft, note (our own words, 1-2 sentences), url (agent/broker post or listing page), listed_by (brokerage or agent), source, first_seen, last_checked, optional open_house [{date, time}], sold {date, price}, image {src, alt, credit} (credit like "Jane Doe, Shorewest, on Instagram"). Optional top-level "market": {median_list, homes_for_sale, median_days, as_of, source, url}. Update entries instead of duplicating; mark pending/sold when a listing changes; drop off_market items after 30 days.
 - `content/realestate_sources.json`: where to look (brokerage pages, agents' social accounts to add as found, commercial brokers, public records).
 - Site: `/real-estate.html` (menu item "Real Estate"), homepage "On the market" block (open houses this week, listings first seen in the last 7 days, price cuts; hidden when empty), search index. Notable sales: commercial and 4+ unit sales from scripts/records.py go in as status "sold"; never name private homeowners or buyers.
 - Daily stories about real estate still go in sections.realestate (tag "Listings" keeps them off the ticker).
+### Real estate tracking routine (Ben, Nov. 25: best practices)
+- Daily: diff the M3 Realty Bay View listing reports (Metro MLS, refreshed nightly; homes, condos, single-family, multi-family) against content/listings.json to catch new listings, price changes, pending and back-on-market; confirm each on the listing agent's own page or post before publishing; then agents' and brokerages' Facebook/Instagram posts for open houses and "just listed" announcements.
+- Weekly (Mondays): commercial brokers' pages; Wisconsin DOR property sales search (recorded sales in 53207, last 7 days); BizTimes real estate sales tracker; Urban Milwaukee's Plats and Parcels (Sundays); agent pages that post rarely (e.g. Andrew's Realty).
+- Monthly: GMAR's housing report for the Milwaukee County context line.
+- Dedupe by address + unit (use the MLS number as id when known). "Sold" only when the sale is recorded or the agent posts it.
+- Fair housing: describe the property, never who should live there ("perfect for families", "ideal for singles", "walk to church" and similar are out).
+- Photos: only from agents listed in realestate_sources.json "photo_permission" (Ben asks them); otherwise the price tile.
 - Social: Saturdays, `python3 scripts/social_post.py <date> --realestate` builds the "on the market" carousel (review/social/<date>-realestate/). Post it as a second post after the daily one, not before 9 a.m. If it exits with "No new listings…", skip it.
