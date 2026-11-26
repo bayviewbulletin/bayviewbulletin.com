@@ -371,7 +371,13 @@
   "lat": 42.99484,
   "lon": -87.89392,
   "website": "https://bayviewumc.org",
-  "facebook": "BVUMC"
+  "facebook": "BVUMC",
+  "photo": {
+   "src": "/photos/vn-bvumc.jpg",
+   "alt": "The sanctuary at Bay View United Methodist, with wooden pews, stained-glass windows and a cross behind the altar",
+   "credit": "Bay View United Methodist Church website",
+   "credit_url": "https://bayviewumc.org/about"
+  }
  },
  {
   "name": "BC Modern",
