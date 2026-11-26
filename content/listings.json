@@ -18,7 +18,9 @@
    "listed_by": "Keller Williams Realty-Milwaukee Southwest",
    "source": "Century 21 Bay View listings page (MLS 1952664)",
    "first_seen": "2026-11-25",
-   "last_checked": "2026-11-25"
+   "last_checked": "2026-11-25",
+   "lat": 43.005497,
+   "lon": -87.906412
   },
   {
    "id": "mls-1950399",
@@ -36,7 +38,9 @@
    "listed_by": "Shorewest Realtors",
    "source": "Century 21 Bay View listings page (MLS 1950399)",
    "first_seen": "2026-11-25",
-   "last_checked": "2026-11-25"
+   "last_checked": "2026-11-25",
+   "lat": 43.005497,
+   "lon": -87.906412
   },
   {
    "id": "mls-1951993",
@@ -54,7 +58,9 @@
    "listed_by": "M3 Realty",
    "source": "Century 21 Bay View listings page (MLS 1951993)",
    "first_seen": "2026-11-25",
-   "last_checked": "2026-11-25"
+   "last_checked": "2026-11-25",
+   "lat": 42.999396,
+   "lon": -87.888089
   },
   {
    "id": "mls-1946671",
@@ -72,7 +78,9 @@
    "listed_by": "Coldwell Banker Realty",
    "source": "Century 21 Bay View listings page (MLS 1946671)",
    "first_seen": "2026-11-25",
-   "last_checked": "2026-11-25"
+   "last_checked": "2026-11-25",
+   "lat": 42.999396,
+   "lon": -87.888089
   },
   {
    "id": "mls-1949447",
@@ -90,7 +98,9 @@
    "listed_by": "Ogden & Company",
    "source": "Century 21 Bay View listings page (MLS 1949447)",
    "first_seen": "2026-11-25",
-   "last_checked": "2026-11-25"
+   "last_checked": "2026-11-25",
+   "lat": 42.999396,
+   "lon": -87.888089
   },
   {
    "id": "mls-1949061",
@@ -108,7 +118,9 @@
    "listed_by": "@properties",
    "source": "Century 21 Bay View listings page (MLS 1949061)",
    "first_seen": "2026-11-25",
-   "last_checked": "2026-11-25"
+   "last_checked": "2026-11-25",
+   "lat": 42.999396,
+   "lon": -87.888089
   },
   {
    "id": "2392-s-kk",
@@ -123,7 +135,9 @@
    "listed_by": "CBRE",
    "source": "CBRE listing",
    "first_seen": "2026-11-25",
-   "last_checked": "2026-11-25"
+   "last_checked": "2026-11-25",
+   "lat": 43.001299,
+   "lon": -87.902791
   },
   {
    "id": "2863-s-kk",
@@ -138,7 +152,9 @@
    "listed_by": "CBRE",
    "source": "CBRE listing",
    "first_seen": "2026-11-25",
-   "last_checked": "2026-11-25"
+   "last_checked": "2026-11-25",
+   "lat": 42.992439,
+   "lon": -87.889479
   },
   {
    "id": "2900-s-kk",
@@ -154,7 +170,9 @@
    "listed_by": "KW Commercial",
    "source": "CommercialSearch listing",
    "first_seen": "2026-11-25",
-   "last_checked": "2026-11-25"
+   "last_checked": "2026-11-25",
+   "lat": 42.992111,
+   "lon": -87.88703
   },
   {
    "id": "2160-s-kk",
@@ -169,7 +187,9 @@
    "listed_by": "Broker named on the listing",
    "source": "CommercialSearch listing",
    "first_seen": "2026-11-25",
-   "last_checked": "2026-11-25"
+   "last_checked": "2026-11-25",
+   "lat": 43.0058,
+   "lon": -87.906474
   }
  ]
 }

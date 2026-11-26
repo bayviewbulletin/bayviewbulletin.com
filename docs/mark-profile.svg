@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+<!-- Profile-picture version of the mark (Nov. 25): the same bridge, sun and waves, scaled to fill the circle crop,
+     with heavier strokes so it reads at small avatar sizes. Art units match mark.svg (64-unit box), scaled 17.6x around (32,34). -->
+<rect width="1080" height="1080" fill="#1F4E79"/>
+<g transform="translate(540 540) scale(17.6) translate(-32 -34)">
+<circle cx="32" cy="41" r="13" fill="#C9541F"/>
+<rect x="-20" y="41" width="104" height="40" fill="#1F4E79"/>
+<g fill="none" stroke="#FFFFFF" stroke-linecap="round">
+<path d="M9 36 Q32 12 55 36" stroke-width="3.6"/>
+<path d="M6 36 H58" stroke-width="3.4"/>
+<path d="M17 36 V29.6 M24.5 36 V25.8 M32 36 V24.5 M39.5 36 V25.8 M47 36 V29.6" stroke-width="2"/>
+<path d="M14 36 V41 M50 36 V41" stroke-width="2.8"/>
+<path d="M8 47 q4 -2.4 8 0 t8 0 t8 0 t8 0 t8 0 t8 0" stroke-width="2.6" opacity=".85"/>
+<path d="M12 54 q4 -2.4 8 0 t8 0 t8 0 t8 0 t8 0" stroke-width="2.2" opacity=".55"/>
+</g></g></svg>

@@ -10,6 +10,7 @@ OUT = ROOT / ("preview_v2" if "--preview" in sys.argv else "docs")
 SITE = "https://bayviewbulletin.com"
 TIPS = "https://docs.google.com/forms/d/e/1FAIpQLSfXNc2RsIhvMPCfcZ9CYb6QIx78RZSr2Ar3YzT5ik9xyPhi7Q/viewform"
 ASK = TIPS + "?usp=pp_url&entry.1019545553=Ask%20the%20Bulletin%3A%20"  # tip form prefilled for reader questions
+LISTING = TIPS + "?usp=pp_url&entry.1019545553=Listing%20submission%3A%20"  # Nov. 25: agents submit Bay View listings
 EXPLAINERS = []  # evergreen explainers from content/explainers.json
 e = lambda s: html.escape(str(s or ""), quote=True)
 NAV = [("Home", "/"), ("Events", "/events.html"), ("Buzz", "/buzz.html"), ("Spotlight", "/spotlight.html"), ("Food & Drink", "/section/food.html"), ("Real Estate", "/real-estate.html"), ("City Hall", "/section/city.html"),
@@ -72,9 +73,33 @@ def re_badge(it, today):
     return f'<b class="rb {e(st)}">{e(lab)}</b>'
 
 
+RE_MAPS = True  # Ben, Nov. 25: small locator map on listing cards without a photo (set False to turn off)
+
+
+def re_map(lat, lon, label):
+    """Locator thumbnail: 2x2 OpenStreetMap tiles at zoom 16 in an SVG, window clamped around the pin. Credited per OSM's tile policy."""
+    import math
+    z = 16
+    n = 2 ** z
+    fx = (lon + 180) / 360 * n
+    fy = (1 - math.log(math.tan(math.radians(lat)) + 1 / math.cos(math.radians(lat))) / math.pi) / 2 * n
+    tx, ty = int(fx), int(fy)
+    ox = tx - (1 if fx - tx < .5 else 0)
+    oy = ty - (1 if fy - ty < .5 else 0)
+    px, py = (fx - ox) * 256, (fy - oy) * 256
+    W, H = 400, 300
+    vx, vy = min(max(px - W / 2, 0), 512 - W), min(max(py - H / 2, 0), 512 - H)
+    tiles = "".join(f'<image href="https://tile.openstreetmap.org/{z}/{ox + i}/{oy + j}.png" x="{i * 256}" y="{j * 256}" width="256" height="256"/>' for i in (0, 1) for j in (0, 1))
+    pin = (f'<g transform="translate({px:.1f} {py:.1f})"><path d="M0 0 C-14 -18 -14 -34 0 -34 C14 -34 14 -18 0 0Z" fill="#C9541F" stroke="#fff" stroke-width="3"/>'
+           f'<circle cx="0" cy="-23" r="5" fill="#fff"/></g>')
+    return (f'<div class="rpic map"><svg viewBox="{vx:.0f} {vy:.0f} {W} {H}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Map: {e(label)}">{tiles}{pin}</svg>'
+            f'<span class="rosm">© OpenStreetMap</span></div>')
+
+
 def re_card(it, today, small=False):
     img = it.get("image")
     pic = (f'<div class="rpic"><img src="{e(img["src"])}" alt="{e(img.get("alt") or it["address"])}" loading="lazy"><span class="rcred">{cap_label(img)}{e(img.get("credit", ""))}</span></div>' if img
+           else re_map(it["lat"], it["lon"], it["address"]) if RE_MAPS and it.get("lat")
            else f'<div class="rpic none"><span>{e(RE_KIND.get(it.get("kind"), "Property"))}</span><b>{e(money(it))}</b></div>')
     oh = ""
     for o in it.get("open_house") or []:
@@ -356,6 +381,7 @@ footer a{color:var(--lake)}
 .rgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.rgrid.big{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:8px 0 6px}@media(max-width:900px){.rgrid,.rgrid.big{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:520px){.rgrid,.rgrid.big{grid-template-columns:1fr}}
 .rcard{display:flex;flex-direction:column;color:var(--ink);text-decoration:none;border:1px solid var(--rule);background:var(--paper)}.rcard:hover h3{color:var(--lake)}
 .rpic{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--soft)}.rpic img{width:100%;height:100%;object-fit:cover;display:block}.rcred{position:absolute;right:6px;bottom:4px;font:11px var(--sans);color:#fff;text-shadow:0 1px 2px #000}
+.rpic.map svg{width:100%;height:100%;display:block}.rosm{position:absolute;right:4px;bottom:2px;font:10px var(--sans);background:rgba(255,255,255,.8);padding:0 3px;color:#333}.rosm a{color:#333}
 .rpic.none{display:flex;flex-direction:column;justify-content:flex-end;padding:12px 14px;background:var(--lake-soft)}.rpic.none span{font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--lake)}.rpic.none b{font:900 26px/1.1 var(--plate);color:var(--lake)}
 .rtxt{padding:10px 12px 12px}.rtxt h3{font:700 18px/1.25 var(--serif);margin:4px 0 2px}.rcard.small .rtxt h3{font-size:16px}.rf{font:600 14px var(--sans);color:var(--ink)}.rtxt p{margin:6px 0 0;font-size:15px;line-height:1.45;color:var(--muted)}
 .rk{font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-left:6px}.rsrc{font:12px var(--sans);color:var(--muted);margin-top:6px}.roh{font:700 13px var(--sans);color:var(--warm);margin-top:4px}
@@ -788,7 +814,7 @@ def build_one(d, newest):
     _n_comm = sum(1 for it in _items if it.get("status") in ("active", "new", "price_cut") and it.get("kind") == "commercial")
     re_html = (f'<section class="onmkt"><h2><span>On the market</span><a href="/real-estate.html">All Bay View listings →</a></h2>'
                f'<div class="rgrid">{"".join(re_card(it, d["date"], True) for it in _show)}</div>'
-               f'<p class="rsum">{_n_active} home{"s" if _n_active != 1 else ""} for sale and {_n_comm} commercial space{"s" if _n_comm != 1 else ""} on our list. Listings link to the listing agent or broker.</p></section>') if _show else ""
+               f'<p class="rsum">{_n_active} home{"s" if _n_active != 1 else ""} for sale and {_n_comm} commercial space{"s" if _n_comm != 1 else ""} on our list. Listings link to the listing agent or broker. <a href="/submit-listing.html">Agents: submit a listing</a>.</p></section>') if _show else ""
     mke = d.get("milwaukee", [])
     h = d.get("history")
     hurl = history_page(d) if h else ""
@@ -1076,7 +1102,7 @@ q.addEventListener('input',go);const p=new URLSearchParams(location.search).get(
         return f'<div class="rgrid big">{"".join(re_card(it, today) for it in xs)}</div>'
     rebody = ('<h1 class="pagehead">Real estate</h1><p class="pagedek">Bay View homes and commercial spaces for sale and lease, open houses and notable sales. '
               'Each listing is in our own words and links to the listing agent or broker, who has the photos and details. '
-              f'Agents: send us your Bay View listings and open houses through the <a href="{TIPS}" style="color:var(--lake);font-weight:600">tip form</a>.</p>'
+              f'Agents and sellers: <a href="/submit-listing.html" style="color:var(--lake);font-weight:600">submit your Bay View listing</a>. Maps &copy; <a href="https://www.openstreetmap.org/copyright" style="color:var(--lake)">OpenStreetMap contributors</a>.</p>'
               + mk_html
               + (f'<h2 class="rsec">Open houses this week</h2>{grid(ohs)}' if ohs else "")
               + (f'<h2 class="rsec">Homes for sale <span>{len(homes)}</span></h2>{grid(homes)}' if homes else '<h2 class="rsec">Homes for sale</h2><p class="pagedek">New listings show up here as we confirm them.</p>')
@@ -1085,6 +1111,15 @@ q.addEventListener('input',go);const p=new URLSearchParams(location.search).get(
               + (f'<h2 class="rsec">Real estate news</h2>{listing(re_stories)}' if re_stories else ""))
     (OUT / "real-estate.html").write_text(shell("Real estate · The Bay View Bulletin", rebody, d, "Real Estate",
         {"title": "Bay View real estate", "desc": "Homes and commercial spaces for sale and lease in Bay View, open houses and notable sales."}, "/real-estate.html"))
+    # Nov. 25: agents and sellers submit listings (photo rights granted on the form)
+    sbody = ('<h1 class="pagehead">Submit your Bay View listing</h1><div class="askbox">'
+             '<p>Listing a home, condo, duplex or commercial space in Bay View? Send it to us and we&rsquo;ll feature it on our <a href="/real-estate.html">Real Estate page</a>, on the homepage and in our Saturday &ldquo;On the market&rdquo; post on Facebook and Instagram. It&rsquo;s free.</p>'
+             '<p><b>Include:</b> the address, price, beds and baths, square footage, open house dates and times, and a link to the listing. '
+             'To include photos, attach them and choose the &ldquo;Yes&rdquo; photo option on the form: that confirms you own the photos or have the photographer&rsquo;s permission, and lets us use them with credit to you and your brokerage.</p>'
+             '<p>We describe each listing in our own words, link to your listing page, and credit your brokerage. We check every submission against the listing before it runs, and we don&rsquo;t run listings outside Bay View (the harbor south to Holt and Morgan, I-43 east to the lake).</p>'
+             f'<a class="btn" href="{LISTING}">Submit a listing</a></div>')
+    (OUT / "submit-listing.html").write_text(shell("Submit your listing · The Bay View Bulletin", sbody, d, "Real Estate",
+        {"title": "Submit your Bay View listing", "desc": "Agents and sellers: send The Bay View Bulletin your Bay View listing to be featured free."}, "/submit-listing.html"))
     # Nov. 17: evergreen explainers, the weekend guide and Ask the Bulletin.
     (OUT / "explainer").mkdir(exist_ok=True)
     for x in EXPLAINERS:
