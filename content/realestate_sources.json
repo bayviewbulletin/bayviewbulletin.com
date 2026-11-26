@@ -1,0 +1,22 @@
+{
+  "_about": "Where the daily run finds Bay View listings (Ben, Nov. 25, 2026: agents' and brokers' own public posts and listing pages only). Zillow, Redfin, Realtor.com and Homes.com don't allow automated collection, so they are not sources; never read them. Coverage: inside the Bulletin's boundary (harbor/Jones Island south to Holt and Morgan, I-43 east to the lake), ZIP 53207 and the Bay View part of 53204.",
+  "residential_broker_pages": [
+    {"name": "Century 21: Bay View neighborhood search", "url": "https://www.century21.com/real-estate/bay-view-wi/LCWIBAYVIEW", "note": "Brokerage IDX page; shows price, beds, baths, sq ft and 'Listed by' office for every active Bay View listing. Check daily."},
+    {"name": "Better Homes and Gardens Real Estate: Bay View", "url": "https://www.bhgre.com/home/list/neighborhood/wi/milwaukee/bay-view", "note": "Brokerage IDX page with status (Active/Pending) and listing office."},
+    {"name": "Coldwell Banker: Milwaukee 53207", "url": "https://www.coldwellbanker.com/city/wi/milwaukee/zip/53207", "note": "Brokerage listing pages; each listing page names the listing office."},
+    {"name": "Baird & Warner: 53207", "url": "https://www.bairdwarner.com/", "note": "Listing pages show 'Listing Courtesy Of' and the listing office."}
+  ],
+  "residential_agents_social": {
+    "note": "Instagram and Facebook posts by agents who list in Bay View announce new listings, open houses and price changes. Add handles here as you confirm them (the profile names the agent and brokerage). Search Instagram/Facebook for #bayviewmke #bayviewmilwaukee #bayviewhomes #justlisted plus 'Bay View', and Google in Chrome: site:instagram.com \"just listed\" \"Bay View\" Milwaukee.",
+    "agents_to_find_accounts_for": ["Tom Wolf, Bay View Homes", "Aaron Kohlmeier, Welcome Home Real Estate Group (2316 E. Malvern Pl.)", "Joan Sliker, Cream City Real Estate Co.", "Danielle Ransom, Prime Real Estate", "Jessica Dunn, Shorewest", "Houseworks Collective Team, Keller Williams North Shore", "Level Up Team, Keller Williams Southwest", "Mind Right Realty Group, Keller Williams Southwest", "Sarah Seifert, Keller Williams"],
+    "accounts": []
+  },
+  "commercial": [
+    {"name": "CBRE Milwaukee retail listings", "url": "https://www.cbre.com/properties/properties-for-lease/retail", "note": "Bay View listings by Ben Weiland and Samuel Gleischman (e.g. 2863 S. KK, the former Café Corazón at 2392-2398 S. KK)."},
+    {"name": "Colliers Wisconsin", "url": "https://www.colliers.com/en/united-states/cities/milwaukee", "note": "Cory Sovine lists KK retail (e.g. 2211 S. KK)."},
+    {"name": "KW Commercial", "url": "https://www.kwcommercial.com/", "note": "Ryan Dworak (e.g. 2900 S. KK)."},
+    {"name": "CommercialSearch: Bay View", "url": "https://www.commercialsearch.com/commercial-real-estate/us/wi/milwaukee-county/milwaukee/bay-view/", "note": "Brokers' commercial listings for Bay View, with the listing broker named. Use to find listings, then link the broker's own page when one exists."},
+    {"name": "Century 21 Commercial", "url": "https://commercial.century21.com/", "note": "e.g. 2472-2476 S. KK."}
+  ],
+  "public_records": "scripts/records.py: MPROP commercial and 4+ unit sales in District 14 (lags a few weeks), large building permits. Never name private homeowners or individual buyers/sellers; business entities only when news coverage names them."
+}

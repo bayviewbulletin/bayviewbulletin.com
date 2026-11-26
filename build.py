@@ -12,7 +12,7 @@ TIPS = "https://docs.google.com/forms/d/e/1FAIpQLSfXNc2RsIhvMPCfcZ9CYb6QIx78RZSr
 ASK = TIPS + "?usp=pp_url&entry.1019545553=Ask%20the%20Bulletin%3A%20"  # tip form prefilled for reader questions
 EXPLAINERS = []  # evergreen explainers from content/explainers.json
 e = lambda s: html.escape(str(s or ""), quote=True)
-NAV = [("Home", "/"), ("Events", "/events.html"), ("Buzz", "/buzz.html"), ("Spotlight", "/spotlight.html"), ("Food & Drink", "/section/food.html"), ("City Hall", "/section/city.html"),
+NAV = [("Home", "/"), ("Events", "/events.html"), ("Buzz", "/buzz.html"), ("Spotlight", "/spotlight.html"), ("Food & Drink", "/section/food.html"), ("Real Estate", "/real-estate.html"), ("City Hall", "/section/city.html"),
        ("Safety", "/section/safety.html"), ("History", "/history.html"), ("More", "/section/more.html")]
 SEARCH_ICON = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>'
 SECTION_OF = {"top": "Bay View", "openings": "Food & Drink", "development": "City Hall", "streets": "Streets", "schools": "Schools",
@@ -35,10 +35,57 @@ def dek(it):
 
 WARM = {"Business spotlight", "Food & Drink", "Ways to help", "Parks", "Fish fry", "Pets"}
 # Nov. 25: topic labels that have a combined menu page link there, and every label page underlines the right menu item.
-LABEL_PAGE = {"Food & Drink": "/section/food.html", "City Hall": "/section/city.html", "Safety": "/section/safety.html", "Business spotlight": "/spotlight.html"}
-LABEL_ACTIVE = {"Food & Drink": "Food & Drink", "Fish fry": "Food & Drink", "City Hall": "City Hall", "Streets": "City Hall", "Safety": "Safety", "Protests": "Safety", "Business spotlight": "Spotlight"}
+LABEL_PAGE = {"Real estate": "/real-estate.html", "Food & Drink": "/section/food.html", "City Hall": "/section/city.html", "Safety": "/section/safety.html", "Business spotlight": "/spotlight.html"}
+LABEL_ACTIVE = {"Real estate": "Real Estate", "Food & Drink": "Food & Drink", "Fish fry": "Food & Drink", "City Hall": "City Hall", "Streets": "City Hall", "Safety": "Safety", "Protests": "Safety", "Business spotlight": "Spotlight"}
 GUIDES = []  # seasonal guides from content/guides.json (Nov. 25)
 OPENINGS = []  # opened / closed / coming soon tracker from content/openings.json (Nov. 25)
+LISTINGS = {}  # Bay View real estate from content/listings.json (Nov. 25)
+
+
+def money(it):
+    return it.get("price") or ("$" + format(it["price_num"], ",") if it.get("price_num") else "Price on request")
+
+
+def listing_facts(it):
+    bits = [money(it) + (" / mo" if it.get("deal") == "lease" and it.get("price_num") and it["price_num"] < 20000 else "")]
+    if it.get("beds"):
+        bits.append(f'{it["beds"]} bd')
+    if it.get("baths"):
+        bits.append(f'{it["baths"]} ba')
+    if it.get("sqft"):
+        bits.append(str(it["sqft"]) if not str(it["sqft"]).isdigit() else f'{int(it["sqft"]):,} sq. ft.')
+    return " · ".join(bits)
+
+
+RE_STATUS = {"new": "New", "active": "For sale", "price_cut": "Price cut", "pending": "Pending", "sold": "Sold", "off_market": "Off market", "open_house": "Open house"}
+RE_KIND = {"home": "Home", "condo": "Condo", "multi": "Multi-family", "land": "Land", "commercial": "Commercial"}
+
+
+def re_badge(it, today):
+    st = it.get("status", "active")
+    if it.get("deal") in ("lease", "sale or lease") and st == "active":
+        lab = "For lease" if it["deal"] == "lease" else "Sale / lease"
+    elif st == "active" and it.get("first_seen") and (dt.date.fromisoformat(today) - dt.date.fromisoformat(it["first_seen"])).days <= 7 and it.get("kind") != "commercial":
+        lab = "New"
+    else:
+        lab = RE_STATUS.get(st, st.title())
+    return f'<b class="rb {e(st)}">{e(lab)}</b>'
+
+
+def re_card(it, today, small=False):
+    img = it.get("image")
+    pic = (f'<div class="rpic"><img src="{e(img["src"])}" alt="{e(img.get("alt") or it["address"])}" loading="lazy"><span class="rcred">{cap_label(img)}{e(img.get("credit", ""))}</span></div>' if img
+           else f'<div class="rpic none"><span>{e(RE_KIND.get(it.get("kind"), "Property"))}</span><b>{e(money(it))}</b></div>')
+    oh = ""
+    for o in it.get("open_house") or []:
+        if o.get("date", "") >= today:
+            oh = f'<div class="roh">Open house {e(dt.date.fromisoformat(o["date"]).strftime("%a. %b. %-d"))}{(", " + e(o["time"])) if o.get("time") else ""}</div>'
+            break
+    sold = f' · Sold {e(it["sold"]["date"])}' if it.get("sold") else ""
+    return (f'<a class="rcard{" small" if small else ""}" href="{e(it["url"])}">{pic}<div class="rtxt">{re_badge(it, today)}<span class="rk">{e(RE_KIND.get(it.get("kind"), ""))}</span>'
+            f'<h3>{e(it["address"])}</h3><div class="rf">{e(listing_facts(it))}{sold}</div>{oh}'
+            + ("" if small else f'<p>{e(it.get("note", ""))}</p>')
+            + f'<div class="rsrc">Listing: {e(it.get("listed_by") or it.get("source", ""))}</div></div></a>')
 
 
 def redirect_page(to):
@@ -304,6 +351,17 @@ footer a{color:var(--lake)}
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}.filters button{border:1px solid var(--ink);padding:6px 12px;border-radius:99px;font:600 14px var(--sans);background:var(--paper);color:var(--ink);cursor:pointer}.filters button:hover{background:var(--soft)}.filters button.on{background:var(--ink);color:var(--paper)}.filters button:focus-visible{outline:2px solid var(--lake);outline-offset:2px}[hidden]{display:none!important}
 .list a{display:block;padding:16px 0;border-bottom:1px solid var(--rule)}.list h3{font:700 21px/1.25 var(--serif);margin:2px 0 4px}.list p{margin:0;color:var(--muted)}
 .pagehead{font:800 34px var(--serif);margin:24px 0 2px}.topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 36px;padding-top:6px}@media(max-width:820px){.topics{grid-template-columns:1fr}}.topic{padding:18px 0 6px}.topic>h2{font:800 20px var(--serif);margin:0 0 4px;padding-top:10px;border-top:4px solid var(--lake);display:flex;justify-content:space-between;align-items:baseline}.topic.w>h2{border-top-color:var(--warm)}.topic>h2 a{font:600 14px var(--sans);color:var(--lake)}.topic.w>h2 a{color:var(--warm)}.topic .row{padding:12px 0;border-bottom:1px solid var(--rule)}.topic .row:last-child{border-bottom:0}.pagedek{color:var(--muted);margin:0 0 10px}.xbox{display:block;margin:18px 0;padding:12px 16px;border:1px solid var(--rule);border-left:4px solid var(--lake);background:var(--lake-soft);color:var(--ink);text-decoration:none}.xbox b{display:block;font:700 18px/1.3 var(--serif);margin-top:2px}.picks{display:grid;gap:12px;margin:14px 0 6px}.pick{display:grid;grid-template-columns:120px minmax(0,1fr);gap:14px;padding:12px;border:1px solid var(--rule);border-top:4px solid var(--warm);background:var(--paper);color:var(--ink);text-decoration:none}.pick img,.pick .evtile{width:120px;height:90px;object-fit:cover}.pick .evtile i{font-size:30px}.pick h3{font:700 19px/1.25 var(--serif);margin:2px 0 4px}.pick p{margin:0;font:15px/1.45 var(--serif)}.pick .t{font:700 13px var(--sans);color:var(--warm)}@media(max-width:520px){.pick{grid-template-columns:84px minmax(0,1fr)}.pick img,.pick .evtile{width:84px;height:66px}}.askbox{padding:16px 18px;background:var(--warm-soft);border-top:4px solid var(--warm);margin:14px 0 22px}.askbox p{margin:0 0 10px}.bzarch{font:600 15px/1.6 var(--sans);margin:18px 0 0;color:var(--buzz-ink)}.bzarch h3{font:800 18px var(--sans);margin:0 0 4px}.bzarch a{color:var(--buzz-ink);text-decoration:underline}.evtile{display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--lake);color:var(--on-color);font-family:var(--sans);line-height:1;text-align:center}.evtile b{font:700 10px var(--sans);letter-spacing:.1em;opacity:.85}.evtile i{font:800 22px var(--serif);font-style:normal;margin:2px 0}.evtile small{display:none;font:600 10px var(--sans);letter-spacing:.06em;text-transform:uppercase;opacity:.85}.evtile.k2{background:var(--ink);color:var(--paper)}.evtile.k3{background:var(--warm)}.evtile.k4{background:var(--warm-soft);color:var(--warm)}.evtile.k5{background:var(--lake-soft);color:var(--lake)}.ev .evtile{width:72px;height:54px}.chip .evtile{width:100%;height:110px}.chip .evtile i{font-size:40px}.chip .evtile b{font-size:12px}.chip .evtile small{display:block;margin-top:4px}@media(max-width:600px){.ev .evtile{grid-row:1/span 2;width:64px;height:48px}}.evcal{font:600 13px var(--sans);color:var(--muted);margin-top:4px}.evcal a{color:var(--lake)}@media(max-width:600px){.ev{grid-template-columns:64px minmax(0,1fr);gap:2px 12px;align-items:start}.ev img{grid-row:1/span 2;width:64px;height:48px}.ev .t{grid-column:2;font-size:14px}.ev>div{grid-column:2}.ev .pill{display:none}.ev[style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr) auto!important}.ev[style*="grid-template-columns"]>div{grid-column:1}.ev[style*="grid-template-columns"] .pill{display:inline-block}}.filters.when{margin-bottom:0}.filters.kinds{margin-top:8px}.filters .free{border-color:var(--warm)!important}.filters button.on.free{background:var(--warm)!important;color:var(--on-color)!important;border-color:var(--warm)!important}@media(max-width:520px){.filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.filters::-webkit-scrollbar{display:none}.filters button{flex:0 0 auto}}.corr{font:15px/1.5 var(--sans);background:var(--soft);border-left:4px solid var(--warm);padding:10px 14px;margin:18px 0}.story .body h2{font:800 20px var(--serif);margin:26px 0 6px}
+/* Nov. 25: real estate */
+.onmkt{margin:18px 0 0;padding:14px 16px;border:1px solid var(--rule);border-top:4px solid var(--lake)}.onmkt h2{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 10px;font:800 18px var(--serif)}.onmkt h2 a{font:600 14px var(--sans);color:var(--lake)}
+.rgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.rgrid.big{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:8px 0 6px}@media(max-width:900px){.rgrid,.rgrid.big{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:520px){.rgrid,.rgrid.big{grid-template-columns:1fr}}
+.rcard{display:flex;flex-direction:column;color:var(--ink);text-decoration:none;border:1px solid var(--rule);background:var(--paper)}.rcard:hover h3{color:var(--lake)}
+.rpic{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--soft)}.rpic img{width:100%;height:100%;object-fit:cover;display:block}.rcred{position:absolute;right:6px;bottom:4px;font:11px var(--sans);color:#fff;text-shadow:0 1px 2px #000}
+.rpic.none{display:flex;flex-direction:column;justify-content:flex-end;padding:12px 14px;background:var(--lake-soft)}.rpic.none span{font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--lake)}.rpic.none b{font:900 26px/1.1 var(--plate);color:var(--lake)}
+.rtxt{padding:10px 12px 12px}.rtxt h3{font:700 18px/1.25 var(--serif);margin:4px 0 2px}.rcard.small .rtxt h3{font-size:16px}.rf{font:600 14px var(--sans);color:var(--ink)}.rtxt p{margin:6px 0 0;font-size:15px;line-height:1.45;color:var(--muted)}
+.rk{font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-left:6px}.rsrc{font:12px var(--sans);color:var(--muted);margin-top:6px}.roh{font:700 13px var(--sans);color:var(--warm);margin-top:4px}
+.rb{display:inline-block;font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:2px;color:var(--on-color);background:var(--lake)}.rb.new,.rb.price_cut{background:var(--warm)}.rb.pending,.rb.sold,.rb.off_market{background:var(--muted)}
+.rsum{margin:10px 0 0;font:14px var(--sans);color:var(--muted)}.rsec{font:800 22px var(--serif);margin:28px 0 8px;padding-top:10px;border-top:4px solid var(--lake)}.rsec span{font:700 14px var(--sans);color:var(--muted);margin-left:6px}
+.rmkt{display:flex;flex-wrap:wrap;gap:12px 28px;padding:14px 16px;margin:10px 0;background:var(--lake-soft);border-left:4px solid var(--lake)}.rmkt div{display:flex;flex-direction:column}.rmkt b{font:900 26px var(--plate);color:var(--lake)}.rmkt span{font:600 13px var(--sans);color:var(--muted)}.rmkt p{flex-basis:100%;margin:0;font:13px var(--sans);color:var(--muted)}
 /* Nov. 25: guides, openings tracker, City Hall this week */
 .guidetease{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;margin:14px 0 4px;padding:12px 16px;border:1px solid var(--rule);border-left:4px solid var(--warm);background:var(--warm-soft);color:var(--ink);text-decoration:none}.guidetease .k{font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--on-color);background:var(--warm);padding:3px 7px;border-radius:2px}.guidetease b{font:700 19px/1.3 var(--serif)}.guidetease .go{font:600 14px var(--sans);color:var(--warm);margin-left:auto}.ocstrip{margin:18px 0 0;padding:14px 16px;border:1px solid var(--rule);border-top:4px solid var(--lake)}.ocstrip h2{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 6px;font:800 18px var(--serif)}.ocstrip h2 a{font:600 14px var(--sans);color:var(--lake)}.ocstrip ul{list-style:none;margin:0;padding:0}.ocstrip li{padding:5px 0;font:16px/1.4 var(--serif)}.ocstrip li span{color:var(--muted);font-size:15px}.ocstrip b,.ocrow b{display:inline-block;font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:2px;margin-right:6px;color:var(--on-color);background:var(--lake)}.ocstrip b.closed,.ocrow b.closed,.ocstrip b.seasonal,.ocrow b.seasonal{background:var(--muted)}.ocstrip b.coming,.ocrow b.coming,.ocstrip b.closing,.ocrow b.closing{background:var(--warm)}.ocrow{display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid var(--rule)}.ocrow b{justify-self:start;height:fit-content}.ocrow h3{font:700 19px/1.3 var(--serif);margin:0}.ocrow h3 a{color:inherit}.ocrow .w{font:600 13px var(--sans);color:var(--muted);margin:2px 0}.ocrow p{margin:2px 0 0}.ocrow .src{color:var(--muted);font-size:14px}@media(max-width:520px){.ocrow{grid-template-columns:1fr;gap:4px}}.chw{display:block;margin:14px 0 20px;padding:14px 16px;border:1px solid var(--rule);border-left:4px solid var(--lake);background:var(--lake-soft);color:var(--ink);text-decoration:none}.chw h3{font:700 21px/1.25 var(--serif);margin:2px 0 4px}.chw p{margin:0;color:var(--muted)}.story .body ul{margin:0 0 14px;padding-left:22px}.story .body li{margin:0 0 6px}.gsec{margin:26px 0 0}.gsec>h2{font:800 22px var(--serif);margin:0 0 6px;padding-top:10px;border-top:4px solid var(--warm)}.gitem{padding:12px 0;border-bottom:1px solid var(--rule)}.gitem h3{font:700 19px/1.3 var(--serif);margin:0}.gitem h3 a{color:inherit}.gitem .gwhen{font:700 13px var(--sans);color:var(--warm);margin:3px 0}.gitem p{margin:2px 0 0}.gitem .meta{font:13px var(--sans);color:var(--muted);margin-top:4px}.gitem .meta a{color:var(--lake)}
 .dateline .mk{width:26px;height:26px;display:block}.foot-brand{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 10px;margin-bottom:8px;font:700 15px var(--sans);color:var(--ink)}.foot-brand img{width:28px;height:28px}.foot-brand em{font:italic 400 15px var(--serif);color:var(--muted)}
@@ -367,7 +425,7 @@ def shell(title, body, d, active="Home", og=None, path="/", head=""):
 <nav class="sections" aria-label="Sections"><ul>{nav}</ul></nav>
 {TICKER}<div class="wrap">{body}</div>
 <footer><div class="wrap"><div class="foot-brand"><img src="/mark.svg" alt="" width="28" height="28"><span>The Bay View Bulletin</span><em>Bay View's morning paper</em></div>News, events and neighborhood talk, every morning by 6:30. No ads, no paywall.<br>Covering Bay View from the harbor and Jones Island to Holt and Morgan avenues, I-43 to the lake.<br>
-Every item links to the original reporting. Photos belong to their credited owners. <a href="{TIPS}">Send a tip</a> · <a href="/ask.html">Ask the Bulletin</a> · <a href="/explainers.html">Explainers</a> · <a href="/guides.html">Guides</a> · <a href="/openings.html">Opened &amp; closed</a> · <a href="/about.html">About</a> · <a href="/corrections.html">Corrections</a> · <a href="/schools.html">School days off</a> · <a href="/history.html">History</a> · <a href="/archive.html">Archive</a></div></footer>
+Every item links to the original reporting. Photos belong to their credited owners. <a href="{TIPS}">Send a tip</a> · <a href="/ask.html">Ask the Bulletin</a> · <a href="/explainers.html">Explainers</a> · <a href="/guides.html">Guides</a> · <a href="/real-estate.html">Real estate</a> · <a href="/openings.html">Opened &amp; closed</a> · <a href="/about.html">About</a> · <a href="/corrections.html">Corrections</a> · <a href="/schools.html">School days off</a> · <a href="/history.html">History</a> · <a href="/archive.html">Archive</a></div></footer>
 <script>(function(){{var n=document.querySelector('nav.sections ul');if(!n)return;function f(){{n.classList.toggle('end',n.scrollLeft+n.clientWidth>=n.scrollWidth-4)}}n.addEventListener('scroll',f,{{passive:true}});f();var o=n.querySelector('a.on');if(o&&o.offsetLeft+o.offsetWidth>n.clientWidth)n.scrollLeft=o.offsetLeft-20}})();</script><script>document.addEventListener('click',function(ev){{var a=ev.target.closest&&ev.target.closest('a[href]');if(a&&a.host&&a.host!==location.host){{a.target='_blank';a.rel='noopener'}}}},true);</script></body></html>""")
 
 
@@ -717,6 +775,20 @@ def build_one(d, newest):
     oc_html = ('<section class="ocstrip"><h2><span>Opened &amp; closed</span><a href="/openings.html">The tracker →</a></h2><ul>'
                + "".join(f'<li><b class="{e(o["status"])}">{_ocl.get(o["status"], o["status"].title())}</b> {e(o["name"])}<span> · {e(o.get("note", ""))}</span></li>' for o in _oc)
                + '</ul></section>') if _oc else ""
+    # Nov. 25: "On the market" homepage block: new listings (last 7 days), this week's open houses, then price cuts
+    _items = LISTINGS.get("items", [])
+    def _age(it):
+        return (dt.date.fromisoformat(d["date"]) - dt.date.fromisoformat(it.get("first_seen", d["date"]))).days
+    _wk = (dt.date.fromisoformat(d["date"]) + dt.timedelta(days=7)).isoformat()
+    _oh = [it for it in _items if it.get("status") not in ("sold", "off_market") and any(d["date"] <= o.get("date", "") <= _wk for o in it.get("open_house") or [])]
+    _new = [it for it in _items if it.get("status") in ("active", "new", "price_cut") and 0 <= _age(it) <= 7 and it not in _oh]
+    _cut = [it for it in _items if it.get("status") == "price_cut" and it not in _oh + _new]
+    _show = (sorted(_oh, key=lambda it: min(o["date"] for o in it["open_house"])) + sorted(_new, key=_age) + _cut)[:4]
+    _n_active = sum(1 for it in _items if it.get("status") in ("active", "new", "price_cut") and it.get("kind") != "commercial")
+    _n_comm = sum(1 for it in _items if it.get("status") in ("active", "new", "price_cut") and it.get("kind") == "commercial")
+    re_html = (f'<section class="onmkt"><h2><span>On the market</span><a href="/real-estate.html">All Bay View listings →</a></h2>'
+               f'<div class="rgrid">{"".join(re_card(it, d["date"], True) for it in _show)}</div>'
+               f'<p class="rsum">{_n_active} home{"s" if _n_active != 1 else ""} for sale and {_n_comm} commercial space{"s" if _n_comm != 1 else ""} on our list. Listings link to the listing agent or broker.</p></section>') if _show else ""
     mke = d.get("milwaukee", [])
     h = d.get("history")
     hurl = history_page(d) if h else ""
@@ -730,7 +802,7 @@ def build_one(d, newest):
             f'<section class="tonight"><h2><span>Today in Bay View</span><a href="/events.html">All events →</a></h2><div class="chips">{chips}</div></section>'
             + (f'<a class="bztease" href="/buzz.html"><span class="bzlogo">The Bay View <span>Buzz</span></span>'
                f'<span class="bzk">{e(tease_buzz["kicker"])}</span><span class="bzh">{e(tease_buzz["headline"])}</span><span class="bzgo">Read the Buzz →</span></a>' if tease_buzz else "") +
-            f'{weekend_html}{oc_html}<div class="topics">{topics}{earlier_html}</div>'
+            f'{weekend_html}{re_html}{oc_html}<div class="topics">{topics}{earlier_html}</div>'
             f'{hist}')
     (OUT / "issues").mkdir(exist_ok=True)
     (OUT / "issues" / f'{d["date"]}.html').write_text(shell("The Bay View Bulletin · " + d["display_date"], home, d))
@@ -804,6 +876,9 @@ def build():
     gf, of = ROOT / "content/guides.json", ROOT / "content/openings.json"
     GUIDES[:] = json.loads(gf.read_text()) if gf.exists() else []
     OPENINGS[:] = json.loads(of.read_text()) if of.exists() else []
+    lf = ROOT / "content/listings.json"
+    LISTINGS.clear()
+    LISTINGS.update(json.loads(lf.read_text()) if lf.exists() else {})
     files = sorted((ROOT / "content/issues").glob("*.json"))
     issues = [json.loads(f.read_text()) for f in files]
     global TICKER
@@ -930,6 +1005,7 @@ def build():
     idx += [{"t": x["title"], "d": x.get("text", ""), "u": x["url"], "k": "History", "dt": str(x.get("year", ""))} for x in reversed(ALL_HISTORY)]
     idx += [{"t": x["title"], "d": x.get("dek", ""), "u": f'/explainer/{x["slug"]}.html', "k": "Explainer", "dt": x["updated"]} for x in EXPLAINERS]
     idx += [{"t": g["title"], "d": g.get("dek", ""), "u": f'/guide/{g["slug"]}.html', "k": "Guide", "dt": g["updated"]} for g in GUIDES if g.get("status") != "planned"]
+    idx += [{"t": it["address"], "d": f'{listing_facts(it)}. {it.get("note", "")}', "u": "/real-estate.html", "k": "Real estate", "dt": it.get("first_seen", "")} for it in LISTINGS.get("items", []) if it.get("status") not in ("off_market",)]
     idx += [{"t": b["name"], "d": b["type"] + " · " + b["address"], "u": "/directory.html", "k": "Directory", "dt": ""} for b in dirs]
     idx += [{"t": ev["title"], "d": ev["when"] + " · " + ev["where"], "u": "/events.html", "k": "Event", "dt": ev["day"]} for ev in d["events"]]
     (OUT / "search.json").write_text(json.dumps(idx, ensure_ascii=False))
@@ -982,6 +1058,33 @@ q.addEventListener('input',go);const p=new URLSearchParams(location.search).get(
               f'Spotted a new sign or an empty storefront? <a href="{TIPS}" style="color:var(--lake);font-weight:600">Send a tip</a>.</p>'
               + "".join(f'<h2 class="kicker" style="margin:26px 0 4px">{h}</h2>' + "".join(_ocrow(o) for o in xs) for h, xs in oc_groups if xs))
     (OUT / "openings.html").write_text(shell("Opened & closed · The Bay View Bulletin", ocbody, d, "", {"title": "Opened & closed in Bay View", "desc": "New Bay View businesses, what's coming soon, and what has closed."}, "/openings.html"))
+    # Nov. 25: Real Estate page (menu item) from content/listings.json plus the "realestate" stories
+    items = LISTINGS.get("items", [])
+    live = [it for it in items if it.get("status") not in ("sold", "off_market")]
+    today = d["date"]
+    wk = (dt.date.fromisoformat(today) + dt.timedelta(days=7)).isoformat()
+    ohs = sorted([it for it in live if any(today <= o.get("date", "") <= wk for o in it.get("open_house") or [])], key=lambda it: min(o["date"] for o in it["open_house"] if o.get("date", "") >= today))
+    homes = sorted([it for it in live if it.get("kind") != "commercial"], key=lambda it: it.get("first_seen", ""), reverse=True)
+    comm = sorted([it for it in live if it.get("kind") == "commercial"], key=lambda it: it.get("first_seen", ""), reverse=True)
+    sold = sorted([it for it in items if it.get("status") == "sold"], key=lambda it: (it.get("sold") or {}).get("date", it.get("last_checked", "")), reverse=True)[:12]
+    mk = LISTINGS.get("market")
+    mk_html = (f'<div class="rmkt"><div><b>{e(mk["median_list"])}</b><span>median list price</span></div><div><b>{e(str(mk["homes_for_sale"]))}</b><span>homes for sale</span></div>'
+               + (f'<div><b>{e(str(mk["median_days"]))}</b><span>median days on market</span></div>' if mk.get("median_days") else "")
+               + f'<p>As of {e(mk["as_of"])}. Source: <a href="{e(mk["url"])}">{e(mk["source"])}</a></p></div>') if mk else ""
+    re_stories = [x for x in reversed(ALL_STORIES) if x.get("section") == "Real estate"][:6]
+    def grid(xs):
+        return f'<div class="rgrid big">{"".join(re_card(it, today) for it in xs)}</div>'
+    rebody = ('<h1 class="pagehead">Real estate</h1><p class="pagedek">Bay View homes and commercial spaces for sale and lease, open houses and notable sales. '
+              'Each listing is in our own words and links to the listing agent or broker, who has the photos and details. '
+              f'Agents: send us your Bay View listings and open houses through the <a href="{TIPS}" style="color:var(--lake);font-weight:600">tip form</a>.</p>'
+              + mk_html
+              + (f'<h2 class="rsec">Open houses this week</h2>{grid(ohs)}' if ohs else "")
+              + (f'<h2 class="rsec">Homes for sale <span>{len(homes)}</span></h2>{grid(homes)}' if homes else '<h2 class="rsec">Homes for sale</h2><p class="pagedek">New listings show up here as we confirm them.</p>')
+              + (f'<h2 class="rsec">Commercial for sale and lease <span>{len(comm)}</span></h2>{grid(comm)}' if comm else "")
+              + (f'<h2 class="rsec">Recently sold</h2><p class="pagedek">Notable sales from city property records: commercial buildings and properties with four or more units. Prices from records are estimates.</p>{grid(sold)}' if sold else "")
+              + (f'<h2 class="rsec">Real estate news</h2>{listing(re_stories)}' if re_stories else ""))
+    (OUT / "real-estate.html").write_text(shell("Real estate · The Bay View Bulletin", rebody, d, "Real Estate",
+        {"title": "Bay View real estate", "desc": "Homes and commercial spaces for sale and lease in Bay View, open houses and notable sales."}, "/real-estate.html"))
     # Nov. 17: evergreen explainers, the weekend guide and Ask the Bulletin.
     (OUT / "explainer").mkdir(exist_ok=True)
     for x in EXPLAINERS:
@@ -1030,7 +1133,7 @@ q.addEventListener('input',go);const p=new URLSearchParams(location.search).get(
     og_for = {"/events.html": "events", "/weekend.html": "events", "/explainers.html": "city", "/buzz.html": "buzz", "/spotlight.html": "spotlight", "/history.html": "history", "/section/food.html": "food",
               "/section/food-drink.html": "food", "/section/fish-fry.html": "food", "/section/city.html": "city", "/section/city-hall.html": "city",
               "/section/streets.html": "city", "/section/safety.html": "safety", "/schools.html": "schools", "/section/schools.html": "schools",
-              "/directory.html": "directory", "/section/business-spotlight.html": "spotlight", "/openings.html": "food", "/guides.html": "events"}
+              "/directory.html": "directory", "/section/business-spotlight.html": "spotlight", "/openings.html": "food", "/guides.html": "events", "/real-estate.html": "city"}
     for f in OUT.rglob("*.html"):
         rel = "/" + str(f.relative_to(OUT))
         if rel.endswith("/index.html"):

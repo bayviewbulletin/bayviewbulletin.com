@@ -2,6 +2,7 @@
 
     python3 scripts/social_post.py 2026-11-25            # morning post (every day)
     python3 scripts/social_post.py 2026-11-26 --weekend  # Thursday weekend-guide post
+    python3 scripts/social_post.py 2026-11-28 --realestate  # Saturday "On the market in Bay View" post
 
 Writes review/social/<stem>/01.jpg, 02.jpg, ... (upload them in order as one post) and review/social/<stem>/caption.txt
 (FACEBOOK caption with the link; INSTAGRAM caption pointing to the link in bio). <stem> is the date, plus "-weekend".
@@ -189,7 +190,7 @@ def cover(item, date_label, kick):
     else:  # typographic cover
         dr.rectangle(box, fill=LAKE)
         dr.text((M, 430), "Bay View", font=font("plate", 104), fill="#FFFFFF", anchor="ls")
-        dr.text((M, 540), "in 60 seconds", font=font("serif_i", 78), fill="#DCE7F2", anchor="ls")
+        dr.text((M, 540), item.get("sub", "in 60 seconds"), font=font("serif_i", 78), fill="#DCE7F2", anchor="ls")
         tracked(dr, (M, 640), date_label.upper(), font("sans_b", 30), BUZZ, 3)
     y = bottom + 64
     kicker(dr, (M, y), kick, WARM)
@@ -368,7 +369,53 @@ def weekend(d):
     return slides[:7], ["Every event this weekend", f"{SITE}/weekend"]
 
 
-def captions(d, weekend_mode):
+def re_items(date):
+    """Saturday real estate carousel: open houses in the next 8 days, then listings first seen in the last 7 days, then price cuts."""
+    L = json.loads((ROOT / "content/listings.json").read_text())
+    day = dt.date.fromisoformat(date)
+    end = (day + dt.timedelta(days=8)).isoformat()
+    live = [it for it in L.get("items", []) if it.get("status") not in ("sold", "off_market")]
+    oh = [it for it in live if any(date <= o.get("date", "") <= end for o in it.get("open_house") or [])]
+    new = [it for it in live if it not in oh and 0 <= (day - dt.date.fromisoformat(it.get("first_seen", date))).days <= 7]
+    cut = [it for it in live if it not in oh + new and it.get("status") == "price_cut"]
+    homes = [it for it in oh + new + cut if it.get("kind") != "commercial"]
+    comm = [it for it in oh + new + cut if it.get("kind") == "commercial"]
+    return (homes[:4] + comm[:2])[:6], L.get("market")
+
+
+def re_facts(it):
+    bits = [it.get("price") or "Price on request"]
+    bits += [f'{it["beds"]} bd'] if it.get("beds") else []
+    bits += [f'{it["baths"]} ba'] if it.get("baths") else []
+    if it.get("sqft"):
+        bits.append(f'{int(it["sqft"]):,} sq. ft.' if str(it["sqft"]).isdigit() else str(it["sqft"]))
+    return " · ".join(bits)
+
+
+def realestate(d):
+    items, mk = re_items(d["date"])
+    if not items:
+        sys.exit("No new listings, open houses or price cuts this week; skip the real estate post.")
+    first_img = next((it["image"] for it in items if photo_ok(it.get("image"))), None)
+    slides = [("cover", {"title": f"{len(items)} Bay View listings to see this week", "image": first_img, "sub": "on the market"}, "REAL ESTATE")]
+    for it in items:
+        oh = next((o for o in it.get("open_house") or [] if o.get("date", "") >= d["date"]), None)
+        kick = ("OPEN HOUSE " + dt.date.fromisoformat(oh["date"]).strftime("%a. %b. %-d").upper()) if oh else \
+               ("FOR LEASE" if it.get("deal") == "lease" else "PRICE CUT" if it.get("status") == "price_cut" else "COMMERCIAL" if it.get("kind") == "commercial" else "NEW LISTING")
+        slides.append(("story", {"title": it["address"], "dek": f'{re_facts(it).rstrip(".")}. {it.get("note", "")} Listing: {it.get("listed_by", "").rstrip(".")}.',
+                                 "image": it.get("image") if photo_ok(it.get("image")) else None, "kicker": kick, "label_big": "Real estate",
+                                 "color": LAKE, "tint": LAKE_SOFT, "more": f"{SITE}/real-estate"}))
+    inside = ["Every Bay View listing we track", f"{SITE}/real-estate"]
+    return slides[:7], inside
+
+
+def captions(d, weekend_mode, re_mode=False):
+    if re_mode:
+        items, _ = re_items(d["date"])
+        lines = [f'{it["address"]}: {re_facts(it)} (listing: {it.get("listed_by", "")})' for it in items]
+        body = "On the market in Bay View this week:\n\n" + "\n".join(f"{i}. {x}" for i, x in enumerate(lines, 1))
+        return (body + f"\n\nDetails and links to each listing agent: https://{SITE}/real-estate.html\nAgents: send us your Bay View listings and open houses.",
+                body + "\n\nDetails and links to each listing agent are at the link in our bio.\n\n#BayView #BayViewMKE #MilwaukeeRealEstate #MKE")
     if weekend_mode:
         w = d.get("weekend") or {}
         evs = {e["title"].lower(): e for e in d.get("events", [])}
@@ -390,6 +437,7 @@ def captions(d, weekend_mode):
 def main():
     date = sys.argv[1]
     weekend_mode = "--weekend" in sys.argv
+    re_mode = "--realestate" in sys.argv
     # One-off overrides (content/social_schedule.json): skip days and swapped posts
     sched_f = ROOT / "content/social_schedule.json"
     sched = json.loads(sched_f.read_text()) if sched_f.exists() else {}
@@ -398,20 +446,20 @@ def main():
         return
     ov = sched.get("override", {}).get(date)
     d = json.loads((ROOT / f"content/issues/{date}.json").read_text())
-    if ov:
+    if ov and not re_mode:
         if weekend_mode:
             print(f"DO NOT POST a second weekend carousel today ({date}): {ov.get('note', '')}")
             return
         if ov.get("mode") == "weekend" and (d.get("weekend") or {}).get("picks"):
             weekend_mode = True
         print(f"SCHEDULE NOTE for {date}: post no earlier than {ov.get('not_before', 'the usual time')} Central. {ov.get('note', '')}")
-    out = ROOT / "review/social" / (date + ("-weekend" if "--weekend" in sys.argv else ""))  # an override still writes to the day's usual folder
+    out = ROOT / "review/social" / (date + ("-weekend" if "--weekend" in sys.argv else "-realestate" if re_mode else ""))  # an override still writes to the day's usual folder
     out.mkdir(parents=True, exist_ok=True)
     for old in list(out.glob("*.png")) + list(out.glob("*.jpg")):
         old.unlink()
     day = dt.date.fromisoformat(date)
     date_label = day.strftime("%a., %b. ") + str(day.day)
-    slides, inside = weekend(d) if weekend_mode else daily(d)
+    slides, inside = realestate(d) if re_mode else weekend(d) if weekend_mode else daily(d)
     total = len(slides) + 1
     paths = []
     for i, sl in enumerate(slides, 1):
@@ -420,7 +468,7 @@ def main():
         im.convert("RGB").save(paths[-1], quality=92, subsampling=0, optimize=True)
     paths.append(out / f"{total:02d}.jpg")
     cta(inside, total).convert("RGB").save(paths[-1], quality=92, subsampling=0, optimize=True)
-    fb, ig = captions(d, weekend_mode)
+    fb, ig = captions(d, weekend_mode, re_mode)
     (out / "caption.txt").write_text("=== FACEBOOK ===\n" + fb + "\n\n=== INSTAGRAM ===\n" + ig + "\n")
     print("\n".join(str(p) for p in paths + [out / "caption.txt"]))
 
