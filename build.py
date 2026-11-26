@@ -96,6 +96,26 @@ def re_map(lat, lon, label):
             f'<span class="rosm">© OpenStreetMap</span></div>')
 
 
+def re_bigmap(items):
+    """Ben, Nov. 26: interactive map of every live listing on the Real Estate page (Leaflet + OpenStreetMap tiles, loaded only on this page)."""
+    pts = [{"a": it["address"], "f": listing_facts(it), "k": "c" if it.get("kind") == "commercial" else "r", "u": it["url"],
+            "b": it.get("listed_by", ""), "lat": it["lat"], "lon": it["lon"]} for it in items if it.get("lat")]
+    if not pts:
+        return ""
+    data = json.dumps(pts).replace("</", "<\\/")
+    return ('<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">'
+            '<div class="remap-wrap"><div id="remap" role="region" aria-label="Map of Bay View listings"></div>'
+            '<div class="remap-key"><span><i class="dot r"></i>Homes and condos</span><span><i class="dot c"></i>Commercial</span><span>Tap a pin for details</span></div></div>'
+            '<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>'
+            f'<script>(function(){{var P={data};if(!window.L)return;var m=L.map("remap",{{scrollWheelZoom:false}});'
+            'L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"&copy; <a href=\\"https://www.openstreetmap.org/copyright\\">OpenStreetMap</a> contributors"}).addTo(m);'
+            'var g={},b=[];P.forEach(function(p){var k=p.lat.toFixed(5)+","+p.lon.toFixed(5);(g[k]=g[k]||[]).push(p);});'
+            'Object.keys(g).forEach(function(k){var ps=g[k],p=ps[0];var c=ps.some(function(x){return x.k=="r"})?"#1F4E79":"#C9541F";'
+            'var h="<b>"+p.a.replace(/\\s*\\(.*\\)/,"")+"</b>"+(ps.length>1?"<br>"+ps.length+" listings":"")+ps.map(function(x){return "<div style=\\"margin-top:6px\\">"+x.f+"<br><a href=\\""+x.u+"\\" target=\\"_blank\\" rel=\\"noopener\\">Listing: "+x.b+"</a></div>"}).join("");'
+            'L.circleMarker([p.lat,p.lon],{radius:ps.length>1?10:8,color:"#fff",weight:2,fillColor:c,fillOpacity:.95}).addTo(m).bindPopup(h);b.push([p.lat,p.lon]);});'
+            'm.fitBounds(b,{padding:[30,30],maxZoom:15});})();</script>')
+
+
 def re_card(it, today, small=False):
     img = it.get("image")
     pic = (f'<div class="rpic"><img src="{e(img["src"])}" alt="{e(img.get("alt") or it["address"])}" loading="lazy"><span class="rcred">{cap_label(img)}{e(img.get("credit", ""))}</span></div>' if img
@@ -388,6 +408,7 @@ footer a{color:var(--lake)}
 .rb{display:inline-block;font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:2px;color:var(--on-color);background:var(--lake)}.rb.new,.rb.price_cut{background:var(--warm)}.rb.pending,.rb.sold,.rb.off_market{background:var(--muted)}
 .rsum{margin:10px 0 0;font:14px var(--sans);color:var(--muted)}.rsec{font:800 22px var(--serif);margin:28px 0 8px;padding-top:10px;border-top:4px solid var(--lake)}.rsec span{font:700 14px var(--sans);color:var(--muted);margin-left:6px}
 .rmkt{display:flex;flex-wrap:wrap;gap:12px 28px;padding:14px 16px;margin:10px 0;background:var(--lake-soft);border-left:4px solid var(--lake)}.rmkt div{display:flex;flex-direction:column}.rmkt b{font:900 26px var(--plate);color:var(--lake)}.rmkt span{font:600 13px var(--sans);color:var(--muted)}.rmkt p{flex-basis:100%;margin:0;font:13px var(--sans);color:var(--muted)}
+.remap-wrap{margin:14px 0 4px}#remap{height:380px;border:1px solid var(--rule);z-index:0}@media(max-width:600px){#remap{height:300px}}.remap-key{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:6px;font:13px var(--sans);color:var(--muted)}.remap-key .dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px;vertical-align:-1px;border:2px solid #fff;box-shadow:0 0 0 1px var(--rule)}.dot.r{background:#1F4E79}.dot.c{background:#C9541F}.leaflet-popup-content{font:14px/1.4 var(--sans)}
 /* Nov. 25: guides, openings tracker, City Hall this week */
 .guidetease{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;margin:14px 0 4px;padding:12px 16px;border:1px solid var(--rule);border-left:4px solid var(--warm);background:var(--warm-soft);color:var(--ink);text-decoration:none}.guidetease .k{font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--on-color);background:var(--warm);padding:3px 7px;border-radius:2px}.guidetease b{font:700 19px/1.3 var(--serif)}.guidetease .go{font:600 14px var(--sans);color:var(--warm);margin-left:auto}.ocstrip{margin:18px 0 0;padding:14px 16px;border:1px solid var(--rule);border-top:4px solid var(--lake)}.ocstrip h2{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 6px;font:800 18px var(--serif)}.ocstrip h2 a{font:600 14px var(--sans);color:var(--lake)}.ocstrip ul{list-style:none;margin:0;padding:0}.ocstrip li{padding:5px 0;font:16px/1.4 var(--serif)}.ocstrip li span{color:var(--muted);font-size:15px}.ocstrip b,.ocrow b{display:inline-block;font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:2px;margin-right:6px;color:var(--on-color);background:var(--lake)}.ocstrip b.closed,.ocrow b.closed,.ocstrip b.seasonal,.ocrow b.seasonal{background:var(--muted)}.ocstrip b.coming,.ocrow b.coming,.ocstrip b.closing,.ocrow b.closing{background:var(--warm)}.ocrow{display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid var(--rule)}.ocrow b{justify-self:start;height:fit-content}.ocrow h3{font:700 19px/1.3 var(--serif);margin:0}.ocrow h3 a{color:inherit}.ocrow .w{font:600 13px var(--sans);color:var(--muted);margin:2px 0}.ocrow p{margin:2px 0 0}.ocrow .src{color:var(--muted);font-size:14px}@media(max-width:520px){.ocrow{grid-template-columns:1fr;gap:4px}}.chw{display:block;margin:14px 0 20px;padding:14px 16px;border:1px solid var(--rule);border-left:4px solid var(--lake);background:var(--lake-soft);color:var(--ink);text-decoration:none}.chw h3{font:700 21px/1.25 var(--serif);margin:2px 0 4px}.chw p{margin:0;color:var(--muted)}.story .body ul{margin:0 0 14px;padding-left:22px}.story .body li{margin:0 0 6px}.gsec{margin:26px 0 0}.gsec>h2{font:800 22px var(--serif);margin:0 0 6px;padding-top:10px;border-top:4px solid var(--warm)}.gitem{padding:12px 0;border-bottom:1px solid var(--rule)}.gitem h3{font:700 19px/1.3 var(--serif);margin:0}.gitem h3 a{color:inherit}.gitem .gwhen{font:700 13px var(--sans);color:var(--warm);margin:3px 0}.gitem p{margin:2px 0 0}.gitem .meta{font:13px var(--sans);color:var(--muted);margin-top:4px}.gitem .meta a{color:var(--lake)}
 .dateline .mk{width:26px;height:26px;display:block}.foot-brand{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 10px;margin-bottom:8px;font:700 15px var(--sans);color:var(--ink)}.foot-brand img{width:28px;height:28px}.foot-brand em{font:italic 400 15px var(--serif);color:var(--muted)}
@@ -1103,7 +1124,7 @@ q.addEventListener('input',go);const p=new URLSearchParams(location.search).get(
     rebody = ('<h1 class="pagehead">Real estate</h1><p class="pagedek">Bay View homes and commercial spaces for sale and lease, open houses and notable sales. '
               'Each listing is in our own words and links to the listing agent or broker, who has the photos and details. '
               f'Agents and sellers: <a href="/submit-listing.html" style="color:var(--lake);font-weight:600">submit your Bay View listing</a>. Maps &copy; <a href="https://www.openstreetmap.org/copyright" style="color:var(--lake)">OpenStreetMap contributors</a>.</p>'
-              + mk_html
+              + mk_html + re_bigmap(live)
               + (f'<h2 class="rsec">Open houses this week</h2>{grid(ohs)}' if ohs else "")
               + (f'<h2 class="rsec">Homes for sale <span>{len(homes)}</span></h2>{grid(homes)}' if homes else '<h2 class="rsec">Homes for sale</h2><p class="pagedek">New listings show up here as we confirm them.</p>')
               + (f'<h2 class="rsec">Commercial for sale and lease <span>{len(comm)}</span></h2>{grid(comm)}' if comm else "")
