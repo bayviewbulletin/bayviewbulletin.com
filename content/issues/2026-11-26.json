@@ -115,7 +115,7 @@
    },
    {
     "title": "No garbage or recycling pickup today or Friday; parking meters are off for Thanksgiving",
-    "dek": "Collection days shift later after the holiday, city drop-off centers reopen Saturday, and most city offices are closed through Friday.",
+    "dek": "Pickup days shift later after the holiday; drop-off centers reopen Saturday.",
     "tag": "Holiday",
     "citywide": true,
     "source_name": "Milwaukee DPW on X",
@@ -403,7 +403,8 @@
    "where": "Brew-Jas Coffee House, 2721 S. Howell Ave.",
    "link": "https://www.instagram.com/reel/DgI-q00Btra/",
    "kind": "Shopping",
-   "desc": "The Howell Avenue coffeehouse hosts local vendors alongside its themed holiday drinks for Small Business Saturday."
+   "desc": "The Howell Avenue coffeehouse hosts local vendors alongside its themed holiday drinks for Small Business Saturday.",
+   "image": "/photos/ev-brewjas-sbs.jpg"
   },
   {
    "day": "Sat. Nov. 28",
