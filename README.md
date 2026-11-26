@@ -1,3 +1,5 @@
+> **Social posts, Nov. 26-27, 2026 (Ben, Nov. 25):** the Bulletin's first social post is an introduction carousel, already scheduled in Meta Business Suite for **Fri. Nov. 27 at 7:00 a.m.** on Facebook and Instagram (don't touch it). **Thu. Nov. 26 (Thanksgiving): no social posts**; the website publishes as usual. **Fri. Nov. 27:** post one carousel, the weekend picks (scripts/social_post.py picks it automatically), **no earlier than 7:10 a.m.**, after checking the intro is live. These come from `content/social_schedule.json`; social_post.py prints "DO NOT POST TODAY" or a "SCHEDULE NOTE" when one applies. Follow it.
+
 # The Bay View Bulletin
 
 Bay View's morning paper: bayviewbulletin.com
