@@ -37,7 +37,7 @@ W, H, M = 1080, 1350, 72
 PAPER, INK, MUTED, RULE, SOFT = "#FFFFFF", "#121212", "#5C6066", "#E3E1DC", "#F6F4EF"
 LAKE, WARM, LAKE_SOFT, WARM_SOFT, BUZZ, HOT = "#1F4E79", "#C9541F", "#E8EFF6", "#FBEDE3", "#FFE14D", "#D7261E"
 SITE = "bayviewbulletin.com"
-OK_PHOTO = re.compile(r"instagram|website|wikimedia|commons|cc by|cc0|public domain|bay view bulletin", re.I)
+OK_PHOTO = re.compile(r"instagram|website|wikimedia|commons|cc by|cc0|public domain|bay view bulletin|department of transportation|city of milwaukee|milwaukee county", re.I)
 
 
 # ---------- helpers ----------
@@ -286,23 +286,34 @@ def events_slide(evs, date_label, n, total):
 
 
 def cta(inside, total):
+    """Closing card (Ben, Nov. 26: less empty space, bigger logo)."""
     im, dr = new()
     dr.rectangle((0, 0, W, H), fill=LAKE)
     dr.rectangle([0, 0, W // 2, 12], fill="#8DBDE3")
     dr.rectangle([W // 2, 0, W, 12], fill=WARM)
-    im.alpha_composite(mark(150), ((W - 150) // 2, 170))
-    dr.text((W / 2, 440), "Read the full Bulletin", font=font("plate", 70), fill="#FFFFFF", anchor="ms")
-    dr.text((W / 2, 520), SITE, font=font("serif_b", 50), fill=BUZZ, anchor="ms")
-    dr.text((W / 2, 578), "Link in our bio", font=font("sans_sb", 30), fill="#DCE7F2", anchor="ms")
-    dr.line([(M + 140, 648), (W - M - 140, 648)], fill="#5F86AC", width=2)
+    im.alpha_composite(mark(280), ((W - 280) // 2, 96))
+    dr.text((W / 2, 492), "Read the full Bulletin", font=font("plate", 76), fill="#FFFFFF", anchor="ms")
+    dr.text((W / 2, 572), SITE, font=font("serif_b", 54), fill=BUZZ, anchor="ms")
+    dr.text((W / 2, 628), "Link in our bio", font=font("sans_sb", 30), fill="#DCE7F2", anchor="ms")
+    # "Inside today" panel
+    px0, py0, px1 = M, 684, W - M
+    rows = inside[:4]
+    py1 = py0 + 92 + 66 * len(rows)
+    dr.rounded_rectangle((px0, py0, px1, py1), radius=18, fill="#2B5C8C")
     lab, f = "INSIDE TODAY", font("sans_b", 24)
-    tracked(dr, (W / 2 - (sum(dr.textlength(c, font=f) + 3 for c in lab) - 3) / 2, 712), lab, f, "#DCE7F2", 3)
-    y = 760
-    for line in inside[:5]:
-        dr.text((W / 2, y + 34), line, font=font("serif_r", 34), fill="#FFFFFF", anchor="ms")
-        y += 58
-    dr.text((W / 2, H - 120), "Free every morning by 6:30. No ads, no paywall.", font=font("sans_sb", 26), fill="#DCE7F2", anchor="ms")
-    dr.text((W / 2, H - 70), f"{total} / {total}", font=font("sans_sb", 22), fill="#8DBDE3", anchor="ms")
+    tracked(dr, (px0 + 44, py0 + 58), lab, f, "#DCE7F2", 3)
+    y = py0 + 92
+    for line in rows:
+        dr.ellipse((px0 + 46, y + 22, px0 + 60, y + 36), fill=BUZZ)
+        f2, s2, l2 = fit_block(dr, line, "serif_r", [36, 34, 32, 30], px1 - px0 - 130, 1)
+        dr.text((px0 + 82, y + 42), l2[0], font=f2, fill="#FFFFFF", anchor="ls")
+        y += 66
+    # follow + tips line
+    yb = py1 + max(92, (H - 150 - py1) // 2)
+    dr.text((W / 2, yb), "Follow @bayviewbulletin for Bay View news every morning", font=font("sans_sb", 30), fill="#FFFFFF", anchor="ms")
+    dr.text((W / 2, yb + 48), "Got a tip? Use the link in our bio.", font=font("sans_r", 28), fill="#DCE7F2", anchor="ms")
+    dr.text((W / 2, H - 96), "Free every morning by 6:30. No ads, no paywall.", font=font("sans_sb", 26), fill="#8DBDE3", anchor="ms")
+    dr.text((W / 2, H - 52), f"{total} / {total}", font=font("sans_sb", 22), fill="#8DBDE3", anchor="ms")
     return im
 
 
@@ -328,6 +339,12 @@ def ev_hour(e):
     return int(m.group(1)) % 12 + (12 if m.group(3).lower() == "pm" else 0) + int(m.group(2) or 0) / 60
 
 
+def si(x):
+    """Slide photo (Ben, Nov. 26: always source photos): an item's "social_image" override (the business's own,
+    Wikimedia or the Bulletin's photo, for items whose site photo is a news outlet's), else its site image."""
+    return x.get("social_image") or x.get("image")
+
+
 def daily(d):
     st = stories(d)
     news = [(k, s) for k, s in st if k != "spotlight"]
@@ -336,10 +353,10 @@ def daily(d):
     slides = []
     if lead:
         kick = "TODAY'S TOP STORY" if lead[0] == "top" else SEC_LABEL.get(lead[0], SEC_LABEL["top"])[0]
-        slides.append(("cover", {"title": lead[1]["title"], "image": lead[1].get("image")}, kick))
+        slides.append(("cover", {"title": lead[1]["title"], "image": si(lead[1])}, kick))
     for k, s in [x for x in news if not lead or x[1] is not lead[1]][:2]:
         kk, big, col, tint = SEC_LABEL.get(k, SEC_LABEL["top"])
-        slides.append(("story", {"title": s["title"], "dek": s.get("dek"), "image": s.get("image"),
+        slides.append(("story", {"title": s["title"], "dek": s.get("dek"), "image": si(s),
                                  "kicker": ("CITYWIDE · " if s.get("citywide") else "") + kk, "label_big": big, "color": col, "tint": tint}))
     if spot:
         img = next((g for g in [spot.get("image")] + spot.get("gallery", []) if photo_ok(g)), spot.get("image"))
@@ -351,18 +368,18 @@ def daily(d):
         slides.append(("events", {"rows": (timed or today)[:5], "all": today}))
     bz = next((b for b in d.get("buzz", []) if not b.get("unconfirmed") and not b.get("hold")), None)
     if bz:
-        slides.append(("story", {"title": bz["headline"], "dek": None, "image": bz.get("image"), "kicker": "THE BAY VIEW BUZZ",
+        slides.append(("story", {"title": bz["headline"], "dek": None, "image": si(bz), "kicker": "THE BAY VIEW BUZZ",
                                  "label_big": "The Buzz", "color": HOT, "chip": BUZZ, "tint": "#FFF6C2", "more": f"{SITE}/buzz"}))
     h = d.get("history")
     if h and len(slides) < 7:
         slides.append(("story", {"title": h["title"], "dek": h.get("text") or f'From {h.get("year", "the archives")}.',
-                                 "image": h.get("image"), "kicker": "BAY VIEW HISTORY", "label_big": "History", "color": LAKE,
+                                 "image": si(h), "kicker": "BAY VIEW HISTORY", "label_big": "History", "color": LAKE,
                                  "tint": LAKE_SOFT, "more": f"{SITE}/history"}))
     n = len(news)
     inside = [f"{n} news stor{'y' if n == 1 else 'ies'}" + (f" · {len(today)} things to do today" if today else ""),
               f"Spotlight: {spot['title'].replace('Spotlight: ', '')}" if spot else "",
               "The Bay View Buzz · Bay View history"]
-    return slides[:7], [x for x in inside if x]
+    return slides[:7], inside_extra(d, [x for x in inside if x])
 
 
 def venue_photo(e):
@@ -385,6 +402,30 @@ def venue_photo(e):
     return None
 
 
+def weekend_count(d):
+    """Events on the coming (or current) Friday-Sunday only."""
+    day = dt.date.fromisoformat(d["date"])
+    fri = day + dt.timedelta(days=(4 - day.weekday()) % 7) if day.weekday() < 4 else day - dt.timedelta(days=day.weekday() - 4)
+    labels = {(fri + dt.timedelta(days=i)).strftime("%a. %b. ") + str((fri + dt.timedelta(days=i)).day) for i in range(3)}
+    return sum(1 for e in d.get("events", []) if e.get("day", "").replace("Today, ", "") in labels)
+
+
+def inside_extra(d, lines):
+    """Closing-card list (Nov. 26): what's on the site today, plus the in-season guide."""
+    gf = ROOT / "content/guides.json"
+    if gf.exists():
+        gs = json.loads(gf.read_text())
+        gs = gs.get("guides", gs) if isinstance(gs, dict) else gs
+        for g in gs:
+            se = g.get("season") or {}
+            if g.get("status") != "planned" and se.get("start", "9") <= d["date"] <= se.get("end", "0"):
+                lines.append(g.get("short") or g["title"].replace("Bay View holiday guide", "Holiday guide"))
+                break
+    if not any("Buzz" in x for x in lines):
+        lines.append("The Bay View Buzz · Bay View history")
+    return lines[:4]
+
+
 def weekend(d):
     w = d.get("weekend") or {}
     evs = {e["title"].lower(): e for e in d.get("events", [])}
@@ -397,6 +438,8 @@ def weekend(d):
         # Social photos (Ben, Nov. 26): the organizer's own flyer or promo (saved as ev-*/event-*; a venue's own promo that
         # uses a still from the movie its event is themed on is fine), else the venue's own photo from the directory.
         # News photos (news-*, n-*) and events flagged "social_image": false get a typographic panel.
+        if isinstance(e.get("social_image"), dict):
+            return e["social_image"]
         src = e.get("image") or ""
         base = src.rsplit("/", 1)[-1]
         if src and e.get("social_image") is not False and base.startswith(("ev-", "event-")):
@@ -417,7 +460,7 @@ def weekend(d):
         slides.append(("story", {"title": e["title"], "dek": f'{e["day"].replace("Today, ", "")} · {e["when"]} · {e["where"].split(",")[0]}. {pk.get("why", "")}'.strip(),
                                  "image": im, "contain": True, "kicker": e.get("kind", "Event").upper(), "label_big": e.get("kind", "Event"),
                                  "color": WARM, "tint": WARM_SOFT, "more": f"{SITE}/weekend"}))
-    return slides[:7], ["Every event this weekend", f"{SITE}/weekend"]
+    return slides[:7], inside_extra(d, [f"Every event this weekend ({weekend_count(d)})" if weekend_count(d) else "Every event this weekend"])
 
 
 def re_items(date):
@@ -519,6 +562,11 @@ def main():
         im.convert("RGB").save(paths[-1], quality=92, subsampling=0, optimize=True)
     paths.append(out / f"{total:02d}.jpg")
     cta(inside, total).convert("RGB").save(paths[-1], quality=92, subsampling=0, optimize=True)
+    missing = [sl[1].get("title") for sl in slides if sl[0] in ("cover", "story") and not sl[1].get("collage")
+               and not photo_ok(sl[1].get("image"))]
+    if missing and not re_mode:
+        print("NEEDS PHOTO (Ben, Nov. 26: always source photos; add a \"social_image\" {src, credit, credit_url} from the business's own"
+              " Instagram/website, its directory photo or Wikimedia, then rerun):\n  - " + "\n  - ".join(missing))
     fb, ig = captions(d, weekend_mode, re_mode)
     (out / "caption.txt").write_text("=== FACEBOOK ===\n" + fb + "\n\n=== INSTAGRAM ===\n" + ig + "\n")
     print("\n".join(str(p) for p in paths + [out / "caption.txt"]))
