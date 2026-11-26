@@ -46,13 +46,13 @@
    {
     "title": "Former Llewellyn Library on Russell Avenue could become 25 apartments",
     "dek": "A developer's plan would convert the long-vacant 1914 branch library into housing.",
-    "body": "The Milwaukee Business Journal reported Nov. 20 that a developer wants to convert the former Llewellyn Library, 907 E. Russell Ave., into 25 apartments. The city picked the project for the building in October, according to The Daily Reporter.\n\nThe library opened in 1914 and closed in 1993, when the current Bay View branch opened on KK.",
+    "body": "A proposal to convert the former Llewellyn Library, 907 E. Russell Ave., into apartments is moving through City Hall. Concept plans in the city's zoning file show 25 apartments across the building's floors, plus 15 off-street parking spaces.\n\nThe building would need a zoning change from two-family residential (RT4) to multi-family residential (RM6), introduced in October as file 260881, and the city would have to declare the city-owned property surplus and approve its sale (file 260972).\n\nThe library opened in 1914 and closed in 1993, when the current Bay View branch opened on KK.",
     "tag": "Development",
     "also": [
      "city"
     ],
-    "source_name": "Milwaukee Business Journal",
-    "source_url": "https://x.com/MKEBizJournal/status/2123901765938565353",
+    "source_name": "Milwaukee Common Council, file 260881 (Legistar)",
+    "source_url": "https://milwaukee.legistar.com/LegislationDetail.aspx?ID=75054&GUID=FCC91748-6F4A-4722-BC07-AE6B89AB4E16",
     "date": "2026-11-20",
     "image": {
      "src": "/photos/hist-llewellyn-2023.jpg",
@@ -61,7 +61,10 @@
      "credit_url": "https://urbanmilwaukee.com/2023/12/10/plats-and-parcels-city-will-sell-former-bay-view-library/"
     },
     "hold": true,
-    "hold_reason": "Fresh detail (25 apartments) comes only from the paywalled Milwaukee Business Journal (Nov. 20, more than 24 hours old) and its X post; no free article found. Run it if you're OK citing the MBJ post, or skip until a free source (Urban Milwaukee, Legistar filing) appears. Today's history item covers the building's past."
+    "hold_reason": "Fresh detail (25 apartments) comes only from the paywalled Milwaukee Business Journal (Nov. 20, more than 24 hours old) and its X post; no free article found. Run it if you're OK citing the MBJ post, or skip until a free source (Urban Milwaukee, Legistar filing) appears. Today's history item covers the building's past.",
+    "correction_type": "update",
+    "correction": "Updated Nov. 26 to cite the city's public zoning file and concept plans instead of a paywalled news report. The facts are unchanged.",
+    "updated": "2026-11-26"
    }
   ],
   "streets": [],

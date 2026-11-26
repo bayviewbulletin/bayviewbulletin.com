@@ -2547,8 +2547,10 @@
   "address": "2235 S. Kinnickinnic Ave.",
   "lat": 43.00372,
   "lon": -87.90526,
-  "links_checked": 1,
-  "social_note": "No website or social accounts found (checked Nov. 13)"
+  "website": "https://tippecanoeherbs.com/",
+  "note": "Still on KK in Bay View, confirmed by the editor (Nov. 26)",
+  "instagram": "tippecanoe_herbs",
+  "facebook": "tippecanoeherbs"
  },
  {
   "name": "Todd I Believe I Can Fry",
@@ -2682,7 +2684,7 @@
   "address": "2899 S. Kinnickinnic Ave.",
   "lat": 42.99191,
   "lon": -87.8875,
-  "facebook": "p/Venturas-taco-100057871530939",
+  "facebook": "venturastacos",
   "website": "https://www.venturastacomke.com"
  },
  {
@@ -2911,8 +2913,8 @@
   "lat": 42.98738,
   "lon": -87.88296,
   "instagram": "astraeasalon",
-  "website": "https://astraeasalon.com/",
-  "note": "Collective of independent stylists in the former Salon Thor space; website live, no dated post found (Nov. 22)"
+  "website": "https://www.astraeasalon.com/",
+  "note": "Collective of independent stylists in the former Salon Thor space; confirmed open by the editor (Nov. 26)"
  },
  {
   "name": "Luna Verde Beauty & Wellness",
@@ -2922,7 +2924,7 @@
   "lon": -87.89784,
   "instagram": "luna.verde.mke",
   "website": "https://www.lunaverdebeautywellness.com/",
-  "note": "Website lists 2658 S. Kinnickinnic Ave.; listed as operational, no dated activity found (Nov. 22)"
+  "note": "Confirmed open by the editor (Nov. 26)"
  },
  {
   "name": "La Carcacha Auto Repair",
@@ -2930,10 +2932,8 @@
   "address": "2484 S. Howell Ave.",
   "lat": 42.99922,
   "lon": -87.90474,
-  "verify": true,
-  "links_checked": 1,
-  "social_note": "Facebook p/La-Carcacha-Auto-Repair-100063774364468 seen in search, address not confirmed (checked Nov. 22)",
-  "note": "(414) 483-6060 per listings; listed as open, no dated activity found (Nov. 22)"
+  "note": "(414) 483-6060; confirmed open by the editor (Nov. 26)",
+  "facebook": "p/La-Carcacha-Auto-Repair-100063774364468"
  },
  {
   "name": "Milwaukee Makers Marketplace",
