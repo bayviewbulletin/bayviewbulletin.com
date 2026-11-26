@@ -101,6 +101,23 @@ def load_photo(src):
     return None
 
 
+def place_collage(im, srcs, box, gap=8):
+    """Weekend cover (Ben, Nov. 26): a collage of the picks' photos. 2-5 images: a top row of 2 and a bottom row of the rest."""
+    phs = [p for p in (load_photo(s) for s in srcs) if p is not None][:5]
+    if len(phs) < 2:
+        return False
+    x0, y0, x1, y1 = box
+    rows = [phs[:2], phs[2:]] if len(phs) > 2 else [phs]
+    rh = ((y1 - y0) - gap * (len(rows) - 1)) // len(rows)
+    im.paste(Image.new("RGB", (x1 - x0, y1 - y0), "#FFFFFF"), (x0, y0))
+    for r, row in enumerate(rows):
+        cw = ((x1 - x0) - gap * (len(row) - 1)) // len(row)
+        for c, ph in enumerate(row):
+            cell = ImageOps.fit(ph, (cw, rh), centering=(0.5, 0.35))
+            im.paste(cell, (x0 + c * (cw + gap), y0 + r * (rh + gap)))
+    return True
+
+
 def place_photo(im, src, box, contain=False):
     x0, y0, x1, y1 = box
     ph = load_photo(src)
@@ -118,10 +135,10 @@ def place_photo(im, src, box, contain=False):
     return True
 
 
-def credit_on_photo(im, draw, box, text):
+def credit_on_photo(im, draw, box, text, prefix="Photo: "):
     x0, y0, x1, y1 = box
     f = font("sans_r", 20)
-    t = "Photo: " + text
+    t = prefix + text
     while draw.textlength(t, font=f) > (x1 - x0) - 2 * M and len(t) > 20:
         t = t[:-2].rstrip() + "…"
     grad = Image.linear_gradient("L").resize((x1 - x0, 90)).point(lambda v: int(v * 0.6))
@@ -185,7 +202,10 @@ def cover(item, date_label, kick):
     th = text_height(dr, item, "serif_b", [62, 58, 54, 50, 46], 4, 0)
     bottom = max(700, min(940, H - 92 - 56 - th - 66))
     box = (0, 146, W, bottom)
-    if photo_ok(item.get("image")) and place_photo(im, item["image"]["src"], box, item.get("contain")):
+    if item.get("collage") and place_collage(im, [c["src"] for c in item["collage"]], box):
+        names = list(dict.fromkeys(re.sub(r" (website|on Instagram)$", "", c["credit"].split(" (")[0]) for c in item["collage"]))
+        credit_on_photo(im, dr, box, ", ".join(names), "Photos: ")
+    elif photo_ok(item.get("image")) and place_photo(im, item["image"]["src"], box, item.get("contain")):
         credit_on_photo(im, dr, box, item["image"]["credit"])
     else:  # typographic cover
         dr.rectangle(box, fill=LAKE)
@@ -387,8 +407,10 @@ def weekend(d):
                 return {"src": ph["src"], "credit": ph.get("credit", e["where"].split(",")[0])}
         return None
     cov_e = next((e for _, e in picks if img(e)), None)
+    imgs = [img(e) for _, e in picks if img(e)]
     cov = {"title": f"{len(picks)} picks for the weekend in Bay View",
-           "image": img(cov_e) if cov_e else None, "contain": True}
+           "image": img(cov_e) if cov_e else None, "contain": True,
+           "collage": imgs if len(imgs) >= 3 else None}
     slides = [("cover", cov, "WEEKEND PICKS")]
     for pk, e in picks:
         im = img(e)
