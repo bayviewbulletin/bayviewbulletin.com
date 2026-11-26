@@ -11,10 +11,11 @@ from PIL import Image, ImageDraw
 out = ROOT / "static/social"
 out.mkdir(parents=True, exist_ok=True)
 
-# Profile: the logo mark large and centered on lake blue, inside the circle crop
-p = Image.new("RGBA", (1080, 1080), LAKE)
-m = mark(760)
-p.alpha_composite(m, ((1080 - 760) // 2, (1080 - 760) // 2 - 90))  # the mark sits low in its own box
+# Profile (Ben, Nov. 25: less blue, art fills the circle): static/mark-profile.svg is the same bridge, sun and waves
+# scaled to the circle crop with heavier strokes for small avatars. Edit that SVG, not this script, to change it.
+import subprocess, io
+p = Image.open(io.BytesIO(subprocess.run(["rsvg-convert", "-w", "1080", "-h", "1080", str(ROOT / "static/mark-profile.svg")],
+                                         capture_output=True, check=True).stdout)).convert("RGBA")
 p.convert("RGB").save(out / "profile.png")
 
 # Facebook cover: white paper, nameplate, double rule, tagline, promise, URL.
