@@ -390,7 +390,21 @@ def captions(d, weekend_mode):
 def main():
     date = sys.argv[1]
     weekend_mode = "--weekend" in sys.argv
+    # One-off overrides (content/social_schedule.json): skip days and swapped posts
+    sched_f = ROOT / "content/social_schedule.json"
+    sched = json.loads(sched_f.read_text()) if sched_f.exists() else {}
+    if date in sched.get("skip", {}):
+        print(f"DO NOT POST TODAY ({date}). {sched['skip'][date]}")
+        return
+    ov = sched.get("override", {}).get(date)
     d = json.loads((ROOT / f"content/issues/{date}.json").read_text())
+    if ov:
+        if weekend_mode:
+            print(f"DO NOT POST a second weekend carousel today ({date}): {ov.get('note', '')}")
+            return
+        if ov.get("mode") == "weekend" and (d.get("weekend") or {}).get("picks"):
+            weekend_mode = True
+        print(f"SCHEDULE NOTE for {date}: post no earlier than {ov.get('not_before', 'the usual time')} Central. {ov.get('note', '')}")
     out = ROOT / "review/social" / (date + ("-weekend" if weekend_mode else ""))
     out.mkdir(parents=True, exist_ok=True)
     for old in list(out.glob("*.png")) + list(out.glob("*.jpg")):

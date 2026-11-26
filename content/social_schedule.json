@@ -1,0 +1,9 @@
+{
+  "_about": "One-off overrides for the daily social post, read by scripts/social_post.py (Ben, Nov. 25, 2026). 'skip': no social post that day. 'override': what to post instead and the earliest time to post it.",
+  "skip": {
+    "2026-11-26": "Thanksgiving: no social posts today. The Bulletin's introduction carousel is scheduled in Meta Business Suite for Fri. Nov. 27 at 7:00 a.m. so it is the account's first post. The website still publishes as usual."
+  },
+  "override": {
+    "2026-11-27": {"mode": "weekend", "not_before": "07:10", "note": "Post this AFTER the introduction carousel goes live at 7:00 a.m. (check instagram.com/bayviewbulletin shows it first). Today's one post is the weekend-picks carousel (it replaces both Thursday's skipped posts and today's daily carousel). If the day file has no 'weekend' field, the script falls back to the daily carousel."}
+  }
+}
