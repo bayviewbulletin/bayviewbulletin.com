@@ -8,54 +8,6 @@
  },
  "dated": [
   {
-   "run_on": "2026-11-26",
-   "banked": "2026-11-22",
-   "notes": "Archive ad: Milwaukee Sentinel, July 10, 1943, p. 5 (MPL library card required; not public domain, credited). Building history from Urban Milwaukee (2015). Three Brothers (another Schlitz tied house) ran Nov. 20, so this item leans on the 1943 club, not Schlitz.",
-   "history": {
-    "year": 1943,
-    "date": "1943-07",
-    "match": "past",
-    "topic": "business",
-    "title": "Club Garibaldi opens: an Italian mutual aid society's corner club, 1943",
-    "text": "In 1943 Bay View's Garibaldi Lodge turned an old corner tavern at Russell and Superior into Club Garibaldi, with orchestra dancing every Friday and Saturday.",
-    "body": "The corner tavern at 2501 S. Superior St. started out in 1907 as a Schlitz-built saloon serving workers from the Bay View rolling mill a block away. It passed through several owners and operators over the next three decades. Then, in January 1943, it became something new: the clubhouse of the Italian American Mutual Aid Society, whose Milwaukee chapter is named for the Italian patriot Giuseppe Garibaldi.\n\nThe society had been founded in 1908 by about 40 Italian immigrants, many of whom settled in Bay View and worked in its factories. Like other ethnic mutual aid groups of the era, it offered members help in hard times and gave the community a place to gather.\n\nBy that summer the club was advertising itself to the whole city. A Milwaukee Sentinel ad on July 10, 1943, invited readers to \"come out tonite\" to the new Club Garibaldi, \"owned & operated by the Garibaldi Lodge,\" with orchestra dancing every Friday and Saturday on a \"beautiful dance floor.\" In April 1944 the club held a grand opening for a remodeled space.\n\nMore than 80 years later, the mutual aid society still owns the building. The front room is still a neighborhood corner bar, and the old dance hall in back hosts touring bands, benefits and the Wisconsin Blues Hall of Fame's events.",
-    "now": {
-     "name": "Club Garibaldi",
-     "url": "/directory.html"
-    },
-    "source_name": "Milwaukee Sentinel, July 10, 1943",
-    "source_url": "https://www.mpl.org/databases/all/66",
-    "links": [
-     {
-      "label": "Milwaukee Sentinel, July 10, 1943, p. 5: Club Garibaldi ad (MPL library card required)",
-      "url": "https://www.mpl.org/databases/all/66"
-     },
-     {
-      "label": "Urban Milwaukee: Bar Exam: Club Garibaldi's Very Italian Roots (2015)",
-      "url": "https://urbanmilwaukee.com/2015/03/25/bar-exam-club-garibaldis-very-italian-roots/"
-     },
-     {
-      "label": "Wisconsin Historical Society: 2501-2507 S. Superior St.",
-      "url": "https://wisconsinhistory.org/Records/Property/HI27661"
-     }
-    ],
-    "image": {
-     "src": "/photos/hist-club-garibaldi-1943-ad.jpg",
-     "alt": "1943 newspaper ad: Garibaldi, owned and operated by the Garibaldi Lodge at 2501 S. Superior St., orchestra dancing every Friday and Saturday",
-     "credit": "Milwaukee Sentinel, July 10, 1943, via Milwaukee Public Library",
-     "credit_url": "https://www.mpl.org/databases/all/66"
-    },
-    "gallery": [
-     {
-      "src": "/photos/hist-club-garibaldi-now.jpg",
-      "alt": "The lit back bar at Club Garibaldi, with the club's name in script above rows of bottles (current photo)",
-      "credit": "Urban Milwaukee",
-      "credit_url": "https://urbanmilwaukee.com/2015/03/25/bar-exam-club-garibaldis-very-italian-roots/"
-     }
-    ]
-   }
-  },
-  {
    "run_on": "2026-11-27",
    "banked": "2026-11-22",
    "notes": "From the MPL archive (Milwaukee Sentinel, Feb. 28, 1919, p. 4). We did not find the park board's final vote; the item only says the name never changed (true today).",
@@ -303,6 +255,55 @@
     }
    },
    "used_on": "2026-11-25"
+  },
+  {
+   "run_on": "2026-11-26",
+   "banked": "2026-11-22",
+   "notes": "Archive ad: Milwaukee Sentinel, July 10, 1943, p. 5 (MPL library card required; not public domain, credited). Building history from Urban Milwaukee (2015). Three Brothers (another Schlitz tied house) ran Nov. 20, so this item leans on the 1943 club, not Schlitz.",
+   "history": {
+    "year": 1943,
+    "date": "1943-07",
+    "match": "past",
+    "topic": "business",
+    "title": "Club Garibaldi opens: an Italian mutual aid society's corner club, 1943",
+    "text": "In 1943 Bay View's Garibaldi Lodge turned an old corner tavern at Russell and Superior into Club Garibaldi, with orchestra dancing every Friday and Saturday.",
+    "body": "The corner tavern at 2501 S. Superior St. started out in 1907 as a Schlitz-built saloon serving workers from the Bay View rolling mill a block away. It passed through several owners and operators over the next three decades. Then, in January 1943, it became something new: the clubhouse of the Italian American Mutual Aid Society, whose Milwaukee chapter is named for the Italian patriot Giuseppe Garibaldi.\n\nThe society had been founded in 1908 by about 40 Italian immigrants, many of whom settled in Bay View and worked in its factories. Like other ethnic mutual aid groups of the era, it offered members help in hard times and gave the community a place to gather.\n\nBy that summer the club was advertising itself to the whole city. A Milwaukee Sentinel ad on July 10, 1943, invited readers to \"come out tonite\" to the new Club Garibaldi, \"owned & operated by the Garibaldi Lodge,\" with orchestra dancing every Friday and Saturday on a \"beautiful dance floor.\" In April 1944 the club held a grand opening for a remodeled space.\n\nMore than 80 years later, the mutual aid society still owns the building. The front room is still a neighborhood corner bar, and the old dance hall in back hosts touring bands, benefits and the Wisconsin Blues Hall of Fame's events.",
+    "now": {
+     "name": "Club Garibaldi",
+     "url": "/directory.html"
+    },
+    "source_name": "Milwaukee Sentinel, July 10, 1943",
+    "source_url": "https://www.mpl.org/databases/all/66",
+    "links": [
+     {
+      "label": "Milwaukee Sentinel, July 10, 1943, p. 5: Club Garibaldi ad (MPL library card required)",
+      "url": "https://www.mpl.org/databases/all/66"
+     },
+     {
+      "label": "Urban Milwaukee: Bar Exam: Club Garibaldi's Very Italian Roots (2015)",
+      "url": "https://urbanmilwaukee.com/2015/03/25/bar-exam-club-garibaldis-very-italian-roots/"
+     },
+     {
+      "label": "Wisconsin Historical Society: 2501-2507 S. Superior St.",
+      "url": "https://wisconsinhistory.org/Records/Property/HI27661"
+     }
+    ],
+    "image": {
+     "src": "/photos/hist-club-garibaldi-1943-ad.jpg",
+     "alt": "1943 newspaper ad: Garibaldi, owned and operated by the Garibaldi Lodge at 2501 S. Superior St., orchestra dancing every Friday and Saturday",
+     "credit": "Milwaukee Sentinel, July 10, 1943, via Milwaukee Public Library",
+     "credit_url": "https://www.mpl.org/databases/all/66"
+    },
+    "gallery": [
+     {
+      "src": "/photos/hist-club-garibaldi-now.jpg",
+      "alt": "The lit back bar at Club Garibaldi, with the club's name in script above rows of bottles (current photo)",
+      "credit": "Urban Milwaukee",
+      "credit_url": "https://urbanmilwaukee.com/2015/03/25/bar-exam-club-garibaldis-very-italian-roots/"
+     }
+    ]
+   },
+   "used_on": "2026-11-26"
   }
  ]
 }
