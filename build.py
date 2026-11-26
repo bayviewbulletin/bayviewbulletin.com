@@ -187,9 +187,19 @@ def venue_img(ev):
             return u
 
 
-def ev_thumb(ev, today, cls=""):
+ALT_FALLBACKS = ["/photos/venues/milwaukee-january-2025-16-s-kinnickinnic-avenue.jpg", "/photos/venues/southshore-park-1.jpg",
+                 "/photos/venues/bay-view-branch.jpg"]  # Bay View scenes used when a venue has no photo of its own
+
+
+def ev_thumb(ev, today, cls="", used=None):
+    """used: a set of photos already shown in the same row (Nov. 26: two cards side by side never share a stand-in photo)."""
     alt = ("Flyer: " + ev["title"]) if ev.get("image") else ""
-    return f'<img src="{e(venue_img(ev))}" alt="{e(alt)}" loading="lazy"{(" class=" + chr(34) + cls + chr(34)) if cls else ""}>'
+    src = venue_img(ev)
+    if used is not None:
+        if src in used and not ev.get("image"):
+            src = next((u for u in ALT_FALLBACKS if u not in used), src)
+        used.add(src)
+    return f'<img src="{e(src)}" alt="{e(alt)}" loading="lazy"{(" class=" + chr(34) + cls + chr(34)) if cls else ""}>'
 
 
 
@@ -388,7 +398,7 @@ nav.sections ul.end{-webkit-mask-image:none;mask-image:none}}
 .meta{font-size:13px;color:var(--muted);margin-top:6px}
 .side{display:grid;align-content:start}.side a{padding:12px 0;border-bottom:1px solid var(--rule);display:block}.side a:first-child{padding-top:0}
 .side h3{font:700 19px/1.25 var(--serif);margin:2px 0 4px;text-wrap:balance}.side p{margin:0;font-size:15px;color:var(--muted)}
-.brief{margin:0 0 22px;padding:12px 16px 10px;border-left:4px solid var(--lake);background:var(--lake-soft)}.brief h2{font:700 13px var(--sans);letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px;color:var(--lake)}.brief ul{margin:0;padding-left:18px}.brief li{font:16px/1.45 var(--serif);margin:3px 0}.brief li a{color:inherit;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:2px}.brief li a:hover{text-decoration-color:var(--lake)}
+.brief.b-low{display:none}@media(max-width:700px){.brief.b-top{display:none}.brief.b-low{display:block;margin-top:18px}}.chipwrap{position:relative}.chips{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 56px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 56px),transparent)}.chips.end,.chips.fits{-webkit-mask-image:none;mask-image:none}.chipnext{position:absolute;right:4px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:1px solid var(--rule);background:var(--paper);color:var(--ink);font:700 18px var(--sans);cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.15)}.chips.end+.chipnext,.chips.fits+.chipnext{display:none}.ticker .track{animation-delay:2.5s}.brief{margin:0 0 22px;padding:12px 16px 10px;border-left:4px solid var(--lake);background:var(--lake-soft)}.brief h2{font:700 13px var(--sans);letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px;color:var(--lake)}.brief ul{margin:0;padding-left:18px}.brief li{font:16px/1.45 var(--serif);margin:3px 0}.brief li a{color:inherit;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:2px}.brief li a:hover{text-decoration-color:var(--lake)}
 .lead.textlead figure{float:right;width:40%;margin:6px 0 10px 18px}.lead.textlead img{aspect-ratio:4/3}.lead.textlead::after{content:"";display:block;clear:both}@media(max-width:520px){.lead.textlead figure{width:42%;margin-left:12px}.lead.textlead h2{font-size:26px}}
 .tonight.weekend{border-top-color:var(--lake);background:var(--lake-soft)}.tonight.weekend h2 a{color:var(--lake)}.chip .d{display:block;font:700 12px var(--sans);color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
 .tonight{margin:22px 0;padding:14px 16px;background:var(--warm-soft);border-top:4px solid var(--warm);border-radius:0 0 4px 4px}
@@ -501,7 +511,7 @@ def shell(title, body, d, active="Home", og=None, path="/", head=""):
 {TICKER}<div class="wrap">{body}</div>
 <footer><div class="wrap"><div class="foot-brand"><img src="/mark.svg" alt="" width="28" height="28"><span>The Bay View Bulletin</span><em>Bay View's morning paper</em></div>News, events and neighborhood talk, every morning by 6:30. No ads, no paywall.<br>Follow us: <a href="{IG_URL}">Instagram @bayviewbulletin</a> · <a href="{FB_URL}">Facebook</a><br>Covering Bay View from the harbor and Jones Island to Holt and Morgan avenues, I-43 to the lake.<br>
 Every item links to the original reporting. Photos belong to their credited owners. <a href="{TIPS}">Send a tip</a> · <a href="/ask.html">Ask the Bulletin</a> · <a href="/explainers.html">Explainers</a> · <a href="/guides.html">Guides</a> · <a href="/real-estate.html">Real estate</a> · <a href="/openings.html">Opened &amp; closed</a> · <a href="/about.html">About</a> · <a href="/corrections.html">Corrections</a> · <a href="/schools.html">School days off</a> · <a href="/history.html">History</a> · <a href="/archive.html">Archive</a></div></footer>
-<script>(function(){{var n=document.querySelector('nav.sections ul');if(!n)return;function f(){{n.classList.toggle('end',n.scrollLeft+n.clientWidth>=n.scrollWidth-4)}}n.addEventListener('scroll',f,{{passive:true}});f();var o=n.querySelector('a.on');if(o&&o.offsetLeft+o.offsetWidth>n.clientWidth)n.scrollLeft=o.offsetLeft-20}})();</script><script>document.addEventListener('click',function(ev){{var a=ev.target.closest&&ev.target.closest('a[href]');if(a&&a.host&&a.host!==location.host){{a.target='_blank';a.rel='noopener'}}}},true);</script></body></html>""")
+<script>(function(){{var n=document.querySelector('nav.sections ul');if(!n)return;function f(){{n.classList.toggle('end',n.scrollLeft+n.clientWidth>=n.scrollWidth-4)}}n.addEventListener('scroll',f,{{passive:true}});f();var o=n.querySelector('a.on');if(o&&o.offsetLeft+o.offsetWidth>n.clientWidth)n.scrollLeft=o.offsetLeft-20}})();</script><script>document.querySelectorAll('.chipwrap').forEach(function(w){{var c=w.querySelector('.chips'),b=w.querySelector('.chipnext');function f(){{c.classList.toggle('fits',c.scrollWidth<=c.clientWidth+4);c.classList.toggle('end',c.scrollLeft+c.clientWidth>=c.scrollWidth-4)}}c.addEventListener('scroll',f,{{passive:true}});window.addEventListener('resize',f);f();if(b)b.addEventListener('click',function(){{c.scrollBy({{left:c.clientWidth*0.8,behavior:'smooth'}})}})}});</script><script>document.addEventListener('click',function(ev){{var a=ev.target.closest&&ev.target.closest('a[href]');if(a&&a.host&&a.host!==location.host){{a.target='_blank';a.rel='noopener'}}}},true);</script></body></html>""")
 
 
 ALL_STORIES = []
@@ -780,7 +790,8 @@ def build_one(d, newest):
     tease_buzz = next((b for b in buzz if b is not lead_buzz), None)
     _fill = 3 - len(side_items)
     if _fill > 0:
-        for b in [b for b in buzz if b is not lead_buzz and b is not tease_buzz][:1]:
+        _evlinks = {ev.get("link") for ev in d["events"]}  # Nov. 26: no Buzz item that's also an event card below
+        for b in [b for b in buzz if b is not lead_buzz and b is not tease_buzz and b.get("source_url") not in _evlinks][:1]:
             side += f'<a href="/buzz.html"><span class="kicker">The Buzz · {e(b["kicker"])}</span><h3>{e(b["headline"])}</h3><p>{e(dek({"body": b["body"].strip()}))}</p></a>'
             _fill -= 1
         _eve = sorted([ev for ev in today_events if not (lead.get("key") == "alt" and ev["title"] == lead["title"])],
@@ -820,16 +831,19 @@ def build_one(d, newest):
         if ev not in pick: pick.append(ev)
     pick = sorted(pick[:6], key=lambda x: d["events"].index(x))
     wk_label = "This weekend in Bay View" if day.weekday() >= 4 else "Coming up this weekend"
-    wk_chips = "".join(f'<a class="chip" href="/events.html#weekend">{ev_thumb(ev, day)}<span class="in"><span class="d">{e(ev["day"].replace("Today, ", ""))}</span><span class="t">{e(ev["when"])}</span><span class="n">{e(ev["title"])}</span><span class="w">{e(ev["where"].split(",")[0].split(" · ")[0])}</span></span></a>' for ev in pick)
-    weekend_html = f'<section class="tonight weekend"><h2><span>{wk_label}</span><a href="/weekend.html">The weekend guide →</a></h2><div class="chips">{wk_chips}</div></section>' if pick else ""
+    _used2 = set()
+    wk_chips = "".join(f'<a class="chip" href="/events.html#weekend">{ev_thumb(ev, day, "", _used2)}<span class="in"><span class="d">{e(ev["day"].replace("Today, ", ""))}</span><span class="t">{e(ev["when"])}</span><span class="n">{e(ev["title"])}</span><span class="w">{e(ev["where"].split(",")[0].split(" · ")[0])}</span></span></a>' for ev in pick)
+    weekend_html = f'<section class="tonight weekend"><h2><span>{wk_label}</span><a href="/weekend.html">The weekend guide →</a></h2><div class="chipwrap"><div class="chips">{wk_chips}</div><button class="chipnext" type="button" aria-label="More">→</button></div></section>' if pick else ""
     # Earlier this week: on thin days (fewer than 6 news stories), recent stories from the previous 3 days.
     earlier_html = ""
     if len(news) < 6:
         prev = [x for x in reversed(ALL_STORIES) if x["issue_date"] < d["date"] and x["issue_date"] >= (day - dt.timedelta(days=3)).isoformat() and x["key"] != "spotlight"]
+        prev = sorted(prev, key=lambda x: (bool(x.get("citywide")), x["key"] != "top"))  # Nov. 26: local first (stable: newest first within each group)
         if prev:
             earlier_html = ('<section class="topic"><h2>Earlier this week<a href="/archive.html">Archive →</a></h2>'
                             + "".join(f'<a class="row noimg" href="{x["url"]}"><div><span class="kicker">{e(x["section"])} · {e(x["display_date"].split(",")[0])}</span><h3>{e(x["title"])}</h3><p>{e(dek(x))}</p></div></a>' for x in prev[:4]) + "</section>")
-    chips = "".join(f'<a class="chip" href="/events.html#today">{ev_thumb(ev, day)}<span class="in"><span class="t">{e(ev["when"])}</span><span class="n">{e(ev["title"])}</span><span class="w">{e(ev["where"].split(",")[0].split(" · ")[0])}</span></span></a>' for ev in today_events)
+    _used = set()
+    chips = "".join(f'<a class="chip" href="/events.html#today">{ev_thumb(ev, day, "", _used)}<span class="in"><span class="t">{e(ev["when"])}</span><span class="n">{e(ev["title"])}</span><span class="w">{e(ev["where"].split(",")[0].split(" · ")[0])}</span></span></a>' for ev in today_events)
 
     def row(s, kicker=True):
         img = f'<img src="{e(s["image"]["src"])}" alt="">' if s.get("image") else ""
@@ -881,11 +895,12 @@ def build_one(d, newest):
     hist = (f'<section class="block"><h2>Bay View history<a href="/history.html" style="float:right;font:600 14px var(--sans);color:var(--lake)">All history →</a></h2><div class="hist"><div><a href="{hurl}"><img src="{e(h["image"]["src"])}" alt="{e(h["image"]["alt"])}"></a><div class="cap">{e(h["image"]["credit"])}</div></div>'
             f'<div><div class="yr">{e(h["year"])}</div>' + (f'<h3 style="font:700 21px/1.25 var(--serif);margin:2px 0 6px"><a href="{hurl}" style="color:inherit">{e(h["title"])}</a></h3>' if h.get("title") else "")
             + f'<p>{e(h["text"])}</p><a class="kicker" href="{hurl}">Read the story →</a></div></div></section>') if h else ""
-    home = (f'<div class="utils">{util_html}</div>{brief_html}'
+    home = (f'<div class="utils">{util_html}</div>{brief_html.replace(chr(60) + "section class=" + chr(34) + "brief" + chr(34), chr(60) + "section class=" + chr(34) + "brief b-top" + chr(34), 1)}'
             f'<section class="front"><a class="{lead_cls}" href="{lead["url"]}">{lead_img}<span class="kicker">{e(lead["section"])}</span><h2>{e(lead["title"])}</h2><p>{e(dek(lead))}</p><div class="meta">{e(lead.get("meta") or srcmeta(lead))}</div></a>'
             f'<div class="side">{side}</div></section>'
+            f'{brief_html.replace(chr(60) + "section class=" + chr(34) + "brief" + chr(34), chr(60) + "section class=" + chr(34) + "brief b-low" + chr(34), 1)}'
             f'{guide_html}'
-            f'<section class="tonight"><h2><span>Today in Bay View</span><a href="/events.html">All events →</a></h2><div class="chips">{chips}</div></section>'
+            f'<section class="tonight"><h2><span>Today in Bay View</span><a href="/events.html">All events →</a></h2><div class="chipwrap"><div class="chips">{chips}</div><button class="chipnext" type="button" aria-label="More">→</button></div></section>'
             + (f'<a class="bztease" href="/buzz.html"><span class="bzlogo">The Bay View <span>Buzz</span></span>'
                f'<span class="bzk">{e(tease_buzz["kicker"])}</span><span class="bzh">{e(tease_buzz["headline"])}</span><span class="bzgo">Read the Buzz →</span></a>' if tease_buzz else "") +
             f'{weekend_html}{re_html}{oc_html}<div class="topics">{topics}{earlier_html}</div>'
