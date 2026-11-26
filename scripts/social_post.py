@@ -405,7 +405,7 @@ def main():
         if ov.get("mode") == "weekend" and (d.get("weekend") or {}).get("picks"):
             weekend_mode = True
         print(f"SCHEDULE NOTE for {date}: post no earlier than {ov.get('not_before', 'the usual time')} Central. {ov.get('note', '')}")
-    out = ROOT / "review/social" / (date + ("-weekend" if weekend_mode else ""))
+    out = ROOT / "review/social" / (date + ("-weekend" if "--weekend" in sys.argv else ""))  # an override still writes to the day's usual folder
     out.mkdir(parents=True, exist_ok=True)
     for old in list(out.glob("*.png")) + list(out.glob("*.jpg")):
         old.unlink()
