@@ -155,6 +155,7 @@ VENUES = [("Cactus Club", CM("Milwaukee January 2025 04 (Cactus Club).jpg")), ("
 
 
 _DIR_PHOTOS = None
+OWN_PHOTO = re.compile(r"instagram|website|wikimedia|commons|public domain|bay view bulletin", re.I)  # business's own, Wikimedia or ours
 
 
 def dir_photo(ev):
@@ -164,7 +165,7 @@ def dir_photo(ev):
     if _DIR_PHOTOS is None:
         _DIR_PHOTOS = []
         for b in json.loads((ROOT / "content/directory.json").read_text()):
-            if b.get("photo", {}).get("src"):
+            if b.get("photo", {}).get("src") and OWN_PHOTO.search(b["photo"].get("credit", "")):  # Nov. 26: same rule as social
                 _DIR_PHOTOS.append((re.sub(r"\W", "", b.get("address", "").lower()), b["name"].lower(), b["photo"]))
     where = ev.get("where", "")
     w_addr = re.sub(r"\W", "", where.lower())
@@ -398,7 +399,7 @@ nav.sections ul.end{-webkit-mask-image:none;mask-image:none}}
 .meta{font-size:13px;color:var(--muted);margin-top:6px}
 .side{display:grid;align-content:start}.side a{padding:12px 0;border-bottom:1px solid var(--rule);display:block}.side a:first-child{padding-top:0}
 .side h3{font:700 19px/1.25 var(--serif);margin:2px 0 4px;text-wrap:balance}.side p{margin:0;font-size:15px;color:var(--muted)}
-.brief.b-low{display:none}@media(max-width:700px){.brief.b-top{display:none}.brief.b-low{display:block;margin-top:18px}}.chipwrap{position:relative}.chips{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 56px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 56px),transparent)}.chips.end,.chips.fits{-webkit-mask-image:none;mask-image:none}.chipnext{position:absolute;right:4px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:1px solid var(--rule);background:var(--paper);color:var(--ink);font:700 18px var(--sans);cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.15)}.chips.end+.chipnext,.chips.fits+.chipnext{display:none}.ticker .track{animation-delay:2.5s}.brief{margin:0 0 22px;padding:12px 16px 10px;border-left:4px solid var(--lake);background:var(--lake-soft)}.brief h2{font:700 13px var(--sans);letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px;color:var(--lake)}.brief ul{margin:0;padding-left:18px}.brief li{font:16px/1.45 var(--serif);margin:3px 0}.brief li a{color:inherit;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:2px}.brief li a:hover{text-decoration-color:var(--lake)}
+.spotband{margin:26px 0;padding-top:10px;border-top:4px solid var(--warm)}.spotband>h2{font:800 20px var(--serif);margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}.spotband>h2 a{font:600 14px var(--sans);color:var(--warm)}@media(min-width:821px){.spotband .spotc{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;align-items:start}.spotband .spotc h3{margin-top:0}}.followbox{margin:-8px 0 22px;padding:10px 14px;border:1px solid var(--rule);font:600 15px var(--sans);display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}.followbox span{color:var(--muted);font-weight:500}.followbox a{color:var(--lake)}.tipstrip{display:block;margin:22px 0 0;padding:12px 16px;background:var(--warm-soft);border-left:4px solid var(--warm);color:var(--ink);text-decoration:none;font:16px/1.45 var(--serif)}.tipstrip b{font-family:var(--sans)}.tipstrip span{color:var(--warm);font:700 15px var(--sans)}.homesearch{margin:26px 0 6px;padding-top:14px;border-top:1px solid var(--rule)}.homesearch label{display:block;font:700 13px var(--sans);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}.homesearch div{display:flex;gap:8px;max-width:560px}.homesearch input{flex:1;min-width:0;font:400 17px var(--sans);padding:10px 12px;border:2px solid var(--ink);border-radius:4px;background:var(--paper);color:var(--ink)}.homesearch button{font:700 15px var(--sans);padding:0 16px;border:0;border-radius:4px;background:var(--ink);color:var(--paper);cursor:pointer}@media(min-width:821px){.topics>.topic:only-child{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;column-gap:36px}.topics>.topic:only-child>h2{grid-column:1/-1}.topics>.topic:only-child .row:nth-last-child(2){border-bottom:0}}.brief.b-low{display:none}@media(max-width:700px){.brief.b-top{display:none}.brief.b-low{display:block;margin-top:18px}}.chipwrap{position:relative}.chips{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 56px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 56px),transparent)}.chips.end,.chips.fits{-webkit-mask-image:none;mask-image:none}.chipnext{position:absolute;right:4px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:1px solid var(--rule);background:var(--paper);color:var(--ink);font:700 18px var(--sans);cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.15)}.chips.end+.chipnext,.chips.fits+.chipnext{display:none}.ticker .track{animation-delay:2.5s}.brief{margin:0 0 22px;padding:12px 16px 10px;border-left:4px solid var(--lake);background:var(--lake-soft)}.brief h2{font:700 13px var(--sans);letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px;color:var(--lake)}.brief ul{margin:0;padding-left:18px}.brief li{font:16px/1.45 var(--serif);margin:3px 0}.brief li a{color:inherit;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:2px}.brief li a:hover{text-decoration-color:var(--lake)}
 .lead.textlead figure{float:right;width:40%;margin:6px 0 10px 18px}.lead.textlead img{aspect-ratio:4/3}.lead.textlead::after{content:"";display:block;clear:both}@media(max-width:520px){.lead.textlead figure{width:42%;margin-left:12px}.lead.textlead h2{font-size:26px}}
 .tonight.weekend{border-top-color:var(--lake);background:var(--lake-soft)}.tonight.weekend h2 a{color:var(--lake)}.chip .d{display:block;font:700 12px var(--sans);color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
 .tonight{margin:22px 0;padding:14px 16px;background:var(--warm-soft);border-top:4px solid var(--warm);border-radius:0 0 4px 4px}
@@ -863,10 +864,13 @@ def build_one(d, newest):
         ex = " ".join(words[:60]) + ("…" if len(words) > 60 else "")
         gal = (s.get("gallery") or [])[:3]
         return (f'<a class="spotc" href="{s["url"]}">' + (f'<img class="hero" src="{e(img["src"])}" alt="{e(img.get("alt", ""))}">' if img.get("src") else "")
-                + f'<h3>{e(s["title"])}</h3><p class="dk">{e(dek(s))}</p>' + (f'<p class="ex">{e(ex)}</p>' if ex else "")
+                + f'<div class="tx"><h3>{e(s["title"])}</h3><p class="dk">{e(dek(s))}</p>' + (f'<p class="ex">{e(ex)}</p>' if ex else "")
                 + (f'<div class="gal">{"".join(chr(60) + "img src=" + chr(34) + e(g["src"]) + chr(34) + " alt=" + chr(34) + e(g.get("alt", "")) + chr(34) + ">" for g in gal)}</div>' if gal else "")
-                + f'<span class="go">Read the full spotlight →</span><div class="meta">{e(srcmeta(s))}</div></a>')
-    topics = "".join(f'<section class="topic{" w" if sec in WARM else ""}"><h2>{e(sec)}<a href="{LABEL_PAGE.get(sec, "/section/" + slug(sec) + ".html")}">{"Read the spotlight →" if sec == "Business spotlight" else "More →"}</a></h2>{spot_card(xs[0]) if sec == "Business spotlight" else "".join(row(x, False) for x in xs[:3])}</section>' for sec, xs in groups.items())
+                + f'<span class="go">Read the full spotlight →</span><div class="meta">{e(srcmeta(s))}</div></div></a>')
+    _spot = groups.pop("Business spotlight", None)
+    # Ben, Nov. 26: the spotlight is its own full-width band mid-page; the news blocks follow the lead.
+    spot_html = (f'<section class="spotband"><h2><span>Business spotlight</span><a href="/spotlight.html">Read the spotlight →</a></h2>{spot_card(_spot[0])}</section>') if _spot else ""
+    topics = "".join(f'<section class="topic{" w" if sec in WARM else ""}"><h2>{e(sec)}<a href="{LABEL_PAGE.get(sec, "/section/" + slug(sec) + ".html")}">More →</a></h2>{"".join(row(x, False) for x in xs[:3])}</section>' for sec, xs in groups.items())
     # Nov. 25: in-season guides get a tease under the lead; the openings tracker gets a strip of its latest entries.
     _in = [g for g in GUIDES if g.get("status") != "planned" and g.get("season") and g["season"]["start"] <= d["date"] <= g["season"]["end"]]
     guide_html = "".join(f'<a class="guidetease" href="/guide/{g["slug"]}.html"><span class="k">Guide</span><b>{e(g["title"])}</b><span class="go">{e(g.get("tease") or "Open the guide")} →</span></a>' for g in _in[:2])
@@ -895,16 +899,24 @@ def build_one(d, newest):
     hist = (f'<section class="block"><h2>Bay View history<a href="/history.html" style="float:right;font:600 14px var(--sans);color:var(--lake)">All history →</a></h2><div class="hist"><div><a href="{hurl}"><img src="{e(h["image"]["src"])}" alt="{e(h["image"]["alt"])}"></a><div class="cap">{e(h["image"]["credit"])}</div></div>'
             f'<div><div class="yr">{e(h["year"])}</div>' + (f'<h3 style="font:700 21px/1.25 var(--serif);margin:2px 0 6px"><a href="{hurl}" style="color:inherit">{e(h["title"])}</a></h3>' if h.get("title") else "")
             + f'<p>{e(h["text"])}</p><a class="kicker" href="{hurl}">Read the story →</a></div></div></section>') if h else ""
+    # Ben, Nov. 26: follow box near the Buzz, a tip prompt above Opened & closed, and a search box at the end of the page.
+    follow_html = (f'<div class="followbox"><span>Get the day&rsquo;s top stories in your feed:</span> <a href="{IG_URL}">Instagram @bayviewbulletin</a>'
+                   f' <a href="{FB_URL}">Facebook</a></div>')
+    tip_html = (f'<a class="tipstrip" href="{TIPS}"><b>Seen something new in Bay View?</b> A new sign on KK, an empty storefront, a road closure: '
+                f'<span>send us a tip →</span></a>')
+    search_html = ('<form class="homesearch" action="/search.html" role="search"><label for="hs">Search the Bulletin</label>'
+                   '<div><input id="hs" name="q" type="search" placeholder="Try: pizza, Cactus Club, parking, MPS"><button type="submit">Search</button></div></form>')
     home = (f'<div class="utils">{util_html}</div>{brief_html.replace(chr(60) + "section class=" + chr(34) + "brief" + chr(34), chr(60) + "section class=" + chr(34) + "brief b-top" + chr(34), 1)}'
             f'<section class="front"><a class="{lead_cls}" href="{lead["url"]}">{lead_img}<span class="kicker">{e(lead["section"])}</span><h2>{e(lead["title"])}</h2><p>{e(dek(lead))}</p><div class="meta">{e(lead.get("meta") or srcmeta(lead))}</div></a>'
             f'<div class="side">{side}</div></section>'
             f'{brief_html.replace(chr(60) + "section class=" + chr(34) + "brief" + chr(34), chr(60) + "section class=" + chr(34) + "brief b-low" + chr(34), 1)}'
             f'{guide_html}'
+            + (f'<div class="topics">{topics}{earlier_html}</div>' if (topics or earlier_html) else "") +
             f'<section class="tonight"><h2><span>Today in Bay View</span><a href="/events.html">All events →</a></h2><div class="chipwrap"><div class="chips">{chips}</div><button class="chipnext" type="button" aria-label="More">→</button></div></section>'
             + (f'<a class="bztease" href="/buzz.html"><span class="bzlogo">The Bay View <span>Buzz</span></span>'
                f'<span class="bzk">{e(tease_buzz["kicker"])}</span><span class="bzh">{e(tease_buzz["headline"])}</span><span class="bzgo">Read the Buzz →</span></a>' if tease_buzz else "") +
-            f'{weekend_html}{re_html}{oc_html}<div class="topics">{topics}{earlier_html}</div>'
-            f'{hist}')
+            f'{follow_html}{weekend_html}{spot_html}{re_html}{tip_html}{oc_html}'
+            f'{hist}{search_html}')
     (OUT / "issues").mkdir(exist_ok=True)
     (OUT / "issues" / f'{d["date"]}.html').write_text(shell("The Bay View Bulletin · " + d["display_date"], home, d))
     if not newest:
