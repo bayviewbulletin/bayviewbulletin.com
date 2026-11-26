@@ -6,6 +6,7 @@ Needs the logo at static/mark.svg (rendered with rsvg-convert) and downloads the
 """
 import io
 import subprocess
+import sys
 import urllib.request
 from pathlib import Path
 
@@ -40,6 +41,10 @@ def font(key, size):
     if not ttf.exists():
         url = f"https://cdn.jsdelivr.net/npm/@fontsource/{FONTS[key].split('/')[0]}@5.1.0/{FONTS[key].split('/', 1)[1]}.woff2"
         data = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=30).read()
+        try:
+            import brotli  # noqa: F401  (fontTools needs it to read .woff2)
+        except ImportError:  # fresh containers lack it (Nov. 26, 2026)
+            subprocess.run([sys.executable, "-m", "pip", "install", "-q", "brotli", "--break-system-packages"], check=True)
         t = TTFont(io.BytesIO(data))
         t.flavor = None
         t.save(ttf)

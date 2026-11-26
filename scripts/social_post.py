@@ -354,10 +354,16 @@ def weekend(d):
         sys.exit("No weekend picks in the day file; write the 'weekend' field first.")
 
     def img(e):
-        return {"src": e["image"], "credit": e["where"].split(",")[0] + " (organizer's flyer)"} if e.get("image") else None
-    first = picks[0][1]
+        # Only organizer flyers/promos go on social (Nov. 26): event images saved as ev-*/event-* by convention.
+        # News photos (news-*, n-*) and anything flagged "social_image": false (e.g. a movie still of an actor) get a typographic panel.
+        src = e.get("image") or ""
+        base = src.rsplit("/", 1)[-1]
+        if not src or e.get("social_image") is False or not base.startswith(("ev-", "event-")):
+            return None
+        return {"src": src, "credit": e["where"].split(",")[0] + " (organizer's flyer)"}
+    cov_e = next((e for _, e in picks if img(e)), None)
     cov = {"title": f"{len(picks)} picks for the weekend in Bay View",
-           "image": {**img(first), "credit": img(first)["credit"] + " on Instagram"} if first.get("image") else None, "contain": True}
+           "image": {**img(cov_e), "credit": img(cov_e)["credit"] + " on Instagram"} if cov_e else None, "contain": True}
     slides = [("cover", cov, "WEEKEND PICKS")]
     for pk, e in picks:
         im = img(e)

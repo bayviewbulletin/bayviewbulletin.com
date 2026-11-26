@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-12-04-good-vibes-only-rahn-harper-lily-e-lon-a@bayviewbulletin.com
-DTSTAMP:20261126T194741Z
+DTSTAMP:20261126T195716Z
 DTSTART;TZID=America/Chicago:20261204T223000
 DTEND;TZID=America/Chicago:20261205T003000
 SUMMARY:Good Vibes Only: Rahn Harper\, Lily E'lon\, Alydia Jean + more

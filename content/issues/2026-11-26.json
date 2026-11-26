@@ -284,7 +284,8 @@
    "link": "https://www.instagram.com/p/DfVkeiWsC6Q/",
    "kind": "Social",
    "desc": "The bar’s holiday Elf-themed pop-up is back, running Nov. 27 through Dec. 31.",
-   "image": "/photos/ev-lostwhale-elf.jpg"
+   "image": "/photos/ev-lostwhale-elf.jpg",
+   "social_image": false
   },
   {
    "day": "Fri. Nov. 27",
