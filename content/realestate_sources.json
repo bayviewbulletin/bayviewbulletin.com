@@ -1,40 +1,47 @@
 {
- "_about": "Where the daily run finds Bay View listings (Ben, Nov. 25, 2026: agents' and brokers' own public posts and listing pages only). Zillow, Redfin, Realtor.com and Homes.com don't allow automated collection, so they are not sources; never read them. Coverage: inside the Bulletin's boundary (harbor/Jones Island south to Holt and Morgan, I-43 east to the lake), ZIP 53207 and the Bay View part of 53204.",
+ "_about": "Where the daily run finds Bay View listings (Ben, Nov. 25, 2026: agents' and brokers' own public posts and listing pages only). Zillow, Redfin, Realtor.com and Homes.com don't allow automated collection, so they are not sources; never read them. Coverage: inside the Bulletin's boundary (harbor/Jones Island south to Holt and Morgan, I-43 east to the lake), ZIP 53207 and the Bay View part of 53204. Nov. 26, 2026 (Ben): IDX listing reports (M3, Century 21, BHGRE, Coldwell Banker, etc.) are lead lists only; see each entry's 'use'.",
  "residential_broker_pages": [
   {
    "name": "M3 Realty: Bay View Homes for Sale report",
    "url": "https://www.m3realty.com/listing-report/Bay-View-Homes-for-Sale/308055",
-   "note": "Best daily source found Nov. 25: brokerage listing report fed by Metro MLS, refreshed nightly (page shows its update time), each listing names the listing office. Also: condos /308060, single-family /308058, multi-family /792262."
+   "note": "Best daily source found Nov. 25: brokerage listing report fed by Metro MLS, refreshed nightly (page shows its update time), each listing names the listing office. Also: condos /308060, single-family /308058, multi-family /792262.",
+   "use": "LEAD LIST ONLY (Ben, Nov. 26, 2026): IDX pages say the data is for consumers' personal, non-commercial use. Use them privately to spot new listings and changes; publish a listing only after the listing agent or brokerage shows it on its own page or social post, or it arrives through Submit your listing. Never copy IDX data straight to the site."
   },
   {
    "name": "M3 Realty: Bay View Condos",
    "url": "https://www.m3realty.com/listing-report/Bay-View-Condos-For-Sale/308060",
-   "note": "Condo report (2525 S. Shore Dr., 2121 S. KK and others)."
+   "note": "Condo report (2525 S. Shore Dr., 2121 S. KK and others).",
+   "use": "LEAD LIST ONLY (Ben, Nov. 26, 2026): IDX pages say the data is for consumers' personal, non-commercial use. Use them privately to spot new listings and changes; publish a listing only after the listing agent or brokerage shows it on its own page or social post, or it arrives through Submit your listing. Never copy IDX data straight to the site."
   },
   {
    "name": "M3 Realty: Bay View Multi-Family",
    "url": "https://www.m3realty.com/listing-report/Bay-View-Multi-Family-Homes-For-Sale/792262/",
-   "note": "Duplexes and small apartment buildings; good for notable listings."
+   "note": "Duplexes and small apartment buildings; good for notable listings.",
+   "use": "LEAD LIST ONLY (Ben, Nov. 26, 2026): IDX pages say the data is for consumers' personal, non-commercial use. Use them privately to spot new listings and changes; publish a listing only after the listing agent or brokerage shows it on its own page or social post, or it arrives through Submit your listing. Never copy IDX data straight to the site."
   },
   {
    "name": "Century 21: Bay View neighborhood search",
    "url": "https://www.century21.com/real-estate/bay-view-wi/LCWIBAYVIEW",
-   "note": "Brokerage IDX page; shows price, beds, baths, sq ft and 'Listed by' office for every active Bay View listing. Check daily."
+   "note": "Brokerage IDX page; shows price, beds, baths, sq ft and 'Listed by' office for every active Bay View listing. Check daily.",
+   "use": "LEAD LIST ONLY (Ben, Nov. 26, 2026): IDX pages say the data is for consumers' personal, non-commercial use. Use them privately to spot new listings and changes; publish a listing only after the listing agent or brokerage shows it on its own page or social post, or it arrives through Submit your listing. Never copy IDX data straight to the site."
   },
   {
    "name": "Better Homes and Gardens Real Estate: Bay View",
    "url": "https://www.bhgre.com/home/list/neighborhood/wi/milwaukee/bay-view",
-   "note": "Brokerage IDX page with status (Active/Pending) and listing office."
+   "note": "Brokerage IDX page with status (Active/Pending) and listing office.",
+   "use": "LEAD LIST ONLY (Ben, Nov. 26, 2026): IDX pages say the data is for consumers' personal, non-commercial use. Use them privately to spot new listings and changes; publish a listing only after the listing agent or brokerage shows it on its own page or social post, or it arrives through Submit your listing. Never copy IDX data straight to the site."
   },
   {
    "name": "Coldwell Banker: Milwaukee 53207",
    "url": "https://www.coldwellbanker.com/city/wi/milwaukee/zip/53207",
-   "note": "Brokerage listing pages; each listing page names the listing office."
+   "note": "Brokerage listing pages; each listing page names the listing office.",
+   "use": "LEAD LIST ONLY (Ben, Nov. 26, 2026): IDX pages say the data is for consumers' personal, non-commercial use. Use them privately to spot new listings and changes; publish a listing only after the listing agent or brokerage shows it on its own page or social post, or it arrives through Submit your listing. Never copy IDX data straight to the site."
   },
   {
    "name": "Baird & Warner: 53207",
    "url": "https://www.bairdwarner.com/",
-   "note": "Listing pages show 'Listing Courtesy Of' and the listing office."
+   "note": "Listing pages show 'Listing Courtesy Of' and the listing office.",
+   "use": "LEAD LIST ONLY (Ben, Nov. 26, 2026): IDX pages say the data is for consumers' personal, non-commercial use. Use them privately to spot new listings and changes; publish a listing only after the listing agent or brokerage shows it on its own page or social post, or it arrives through Submit your listing. Never copy IDX data straight to the site."
   }
  ],
  "residential_agents_social": {

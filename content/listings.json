@@ -6,7 +6,7 @@
    "id": "mls-1952664",
    "kind": "condo",
    "deal": "sale",
-   "status": "active",
+   "status": "off_market",
    "address": "2121 S. Kinnickinnic Ave. (condo)",
    "price": "$299,900",
    "price_num": 299900,
@@ -18,15 +18,16 @@
    "listed_by": "Keller Williams Realty-Milwaukee Southwest",
    "source": "Century 21 Bay View listings page (MLS 1952664)",
    "first_seen": "2026-11-25",
-   "last_checked": "2026-11-25",
+   "last_checked": "2026-11-26",
    "lat": 43.005497,
-   "lon": -87.906412
+   "lon": -87.906412,
+   "status_note": "Removed Nov. 26: not in the current Metro MLS report and not confirmed on the listing agent's own page."
   },
   {
    "id": "mls-1950399",
    "kind": "condo",
    "deal": "sale",
-   "status": "active",
+   "status": "off_market",
    "address": "2121 S. Kinnickinnic Ave. (condo)",
    "price": "$320,000",
    "price_num": 320000,
@@ -38,15 +39,16 @@
    "listed_by": "Shorewest Realtors",
    "source": "Century 21 Bay View listings page (MLS 1950399)",
    "first_seen": "2026-11-25",
-   "last_checked": "2026-11-25",
+   "last_checked": "2026-11-26",
    "lat": 43.005497,
-   "lon": -87.906412
+   "lon": -87.906412,
+   "status_note": "Removed Nov. 26: not in the current Metro MLS report and not confirmed on the listing agent's own page."
   },
   {
    "id": "mls-1951993",
    "kind": "condo",
    "deal": "sale",
-   "status": "active",
+   "status": "off_market",
    "address": "2525 S. Shore Dr. (condo)",
    "price": "$279,900",
    "price_num": 279900,
@@ -58,15 +60,16 @@
    "listed_by": "M3 Realty",
    "source": "Century 21 Bay View listings page (MLS 1951993)",
    "first_seen": "2026-11-25",
-   "last_checked": "2026-11-25",
+   "last_checked": "2026-11-26",
    "lat": 42.999396,
-   "lon": -87.888089
+   "lon": -87.888089,
+   "status_note": "Removed Nov. 26: not in the current Metro MLS report and not confirmed on the listing agent's own page."
   },
   {
    "id": "mls-1946671",
    "kind": "condo",
    "deal": "sale",
-   "status": "active",
+   "status": "off_market",
    "address": "2525 S. Shore Dr. (condo)",
    "price": "$324,900",
    "price_num": 324900,
@@ -78,15 +81,16 @@
    "listed_by": "Coldwell Banker Realty",
    "source": "Century 21 Bay View listings page (MLS 1946671)",
    "first_seen": "2026-11-25",
-   "last_checked": "2026-11-25",
+   "last_checked": "2026-11-26",
    "lat": 42.999396,
-   "lon": -87.888089
+   "lon": -87.888089,
+   "status_note": "Removed Nov. 26: not in the current Metro MLS report and not confirmed on the listing agent's own page."
   },
   {
    "id": "mls-1949447",
    "kind": "condo",
    "deal": "sale",
-   "status": "active",
+   "status": "off_market",
    "address": "2525 S. Shore Dr. (condo)",
    "price": "$350,000",
    "price_num": 350000,
@@ -98,15 +102,16 @@
    "listed_by": "Ogden & Company",
    "source": "Century 21 Bay View listings page (MLS 1949447)",
    "first_seen": "2026-11-25",
-   "last_checked": "2026-11-25",
+   "last_checked": "2026-11-26",
    "lat": 42.999396,
-   "lon": -87.888089
+   "lon": -87.888089,
+   "status_note": "Removed Nov. 26: not in the current Metro MLS report and not confirmed on the listing agent's own page."
   },
   {
    "id": "mls-1949061",
    "kind": "condo",
    "deal": "sale",
-   "status": "active",
+   "status": "off_market",
    "address": "2525 S. Shore Dr. (condo)",
    "price": "$395,000",
    "price_num": 395000,
@@ -118,9 +123,10 @@
    "listed_by": "@properties",
    "source": "Century 21 Bay View listings page (MLS 1949061)",
    "first_seen": "2026-11-25",
-   "last_checked": "2026-11-25",
+   "last_checked": "2026-11-26",
    "lat": 42.999396,
-   "lon": -87.888089
+   "lon": -87.888089,
+   "status_note": "Removed Nov. 26: not in the current Metro MLS report and not confirmed on the listing agent's own page."
   },
   {
    "id": "2392-s-kk",
