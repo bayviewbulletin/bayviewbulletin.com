@@ -398,7 +398,7 @@ nav.sections ul.end{-webkit-mask-image:none;mask-image:none}}
 .block{padding:22px 0;border-top:1px solid var(--ink)}.block>h2{font:800 22px var(--serif);margin:0 0 14px;display:flex;justify-content:space-between;align-items:baseline}
 .block>h2 a{font:600 14px var(--sans);color:var(--lake)}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 28px}@media(max-width:820px){.grid{grid-template-columns:1fr}}
-.row{display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;align-items:start}.row.noimg{grid-template-columns:1fr}
+.spotc{display:block;color:var(--ink);text-decoration:none;padding:12px 0}.spotc .hero{width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--soft);display:block}.spotc h3{font:700 24px/1.2 var(--serif);margin:12px 0 4px}.spotc .dk{margin:0 0 8px;font-size:16px;color:var(--muted)}.spotc .ex{margin:0 0 10px;font:16px/1.55 var(--serif)}.spotc .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:4px 0 10px}.spotc .gal img{width:100%;aspect-ratio:1;object-fit:cover;background:var(--soft)}.spotc .go{font:700 14px var(--sans);color:var(--warm)}.spotc .meta{margin-top:4px}.row{display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;align-items:start}.row.noimg{grid-template-columns:1fr}
 .row img{width:96px;height:96px;object-fit:cover;background:var(--soft)}.row h3{font:700 18px/1.25 var(--serif);margin:2px 0 4px;text-wrap:balance}.row p{margin:0;font-size:15px;color:var(--muted)}
 .mke{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px;border:1px solid var(--ink);border-left:6px solid var(--lake);margin:22px 0}
 .mke .k{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.mke .hl{font:700 20px var(--serif)}
@@ -839,7 +839,18 @@ def build_one(d, newest):
         groups.setdefault(s_["section"], []).append(s_)
     if "Business spotlight" in groups:  # spotlight block comes first among the topic blocks
         groups = {"Business spotlight": groups.pop("Business spotlight"), **groups}
-    topics = "".join(f'<section class="topic{" w" if sec in WARM else ""}"><h2>{e(sec)}<a href="{LABEL_PAGE.get(sec, "/section/" + slug(sec) + ".html")}">{"Read the spotlight →" if sec == "Business spotlight" else "More →"}</a></h2>{"".join(row(x, False) for x in xs[:3])}</section>' for sec, xs in groups.items())
+    def spot_card(s):
+        """Homepage spotlight (Ben, Nov. 26: no empty space under it): big photo, dek, the opening paragraph, gallery strip."""
+        img = s.get("image") or {}
+        paras = [p_.strip() for p_ in (s.get("body") or "").split("\n\n") if p_.strip()]
+        words = paras[0].split() if paras else []
+        ex = " ".join(words[:60]) + ("…" if len(words) > 60 else "")
+        gal = (s.get("gallery") or [])[:3]
+        return (f'<a class="spotc" href="{s["url"]}">' + (f'<img class="hero" src="{e(img["src"])}" alt="{e(img.get("alt", ""))}">' if img.get("src") else "")
+                + f'<h3>{e(s["title"])}</h3><p class="dk">{e(dek(s))}</p>' + (f'<p class="ex">{e(ex)}</p>' if ex else "")
+                + (f'<div class="gal">{"".join(chr(60) + "img src=" + chr(34) + e(g["src"]) + chr(34) + " alt=" + chr(34) + e(g.get("alt", "")) + chr(34) + ">" for g in gal)}</div>' if gal else "")
+                + f'<span class="go">Read the full spotlight →</span><div class="meta">{e(srcmeta(s))}</div></a>')
+    topics = "".join(f'<section class="topic{" w" if sec in WARM else ""}"><h2>{e(sec)}<a href="{LABEL_PAGE.get(sec, "/section/" + slug(sec) + ".html")}">{"Read the spotlight →" if sec == "Business spotlight" else "More →"}</a></h2>{spot_card(xs[0]) if sec == "Business spotlight" else "".join(row(x, False) for x in xs[:3])}</section>' for sec, xs in groups.items())
     # Nov. 25: in-season guides get a tease under the lead; the openings tracker gets a strip of its latest entries.
     _in = [g for g in GUIDES if g.get("status") != "planned" and g.get("season") and g["season"]["start"] <= d["date"] <= g["season"]["end"]]
     guide_html = "".join(f'<a class="guidetease" href="/guide/{g["slug"]}.html"><span class="k">Guide</span><b>{e(g["title"])}</b><span class="go">{e(g.get("tease") or "Open the guide")} →</span></a>' for g in _in[:2])
@@ -861,7 +872,7 @@ def build_one(d, newest):
     _n_comm = sum(1 for it in _items if it.get("status") in ("active", "new", "price_cut") and it.get("kind") == "commercial")
     re_html = (f'<section class="onmkt"><h2><span>On the market</span><a href="/real-estate.html">All Bay View listings →</a></h2>'
                f'<div class="rgrid">{"".join(re_card(it, d["date"], True) for it in _show)}</div>'
-               f'<p class="rsum">{_n_active} home{"s" if _n_active != 1 else ""} for sale and {_n_comm} commercial space{"s" if _n_comm != 1 else ""} on our list. Listings link to the listing agent or broker. <a href="/submit-listing.html">Agents: submit a listing</a>.</p></section>') if _show else ""
+               f'<p class="rsum">{_n_active} home{"s" if _n_active != 1 else ""} for sale and {_n_comm} commercial space{"s" if _n_comm != 1 else ""} on our list. Listings link to the listing agent or broker. <a href="/submit-listing.html">Agents: submit a listing</a>.</p></section>') if (_show and _n_active > 0) else ""  # Ben, Nov. 26: hidden until there's at least one home for sale
     mke = d.get("milwaukee", [])
     h = d.get("history")
     hurl = history_page(d) if h else ""
