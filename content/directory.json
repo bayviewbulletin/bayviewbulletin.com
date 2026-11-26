@@ -2894,7 +2894,13 @@
   "website": "https://wiggleroommke.com",
   "note": "Former Lee's Luxury Lounge; Vanguard owners",
   "lat": 42.99051,
-  "lon": -87.88517
+  "lon": -87.88517,
+  "photo": {
+   "src": "/photos/vn-wiggle-room.jpg",
+   "alt": "The Wiggle Room's curved bar under blue neon, with record shelves behind it",
+   "credit": "The Wiggle Room website",
+   "credit_url": "https://wiggleroommke.com"
+  }
  },
  {
   "name": "Wild Workouts and Wellness",
