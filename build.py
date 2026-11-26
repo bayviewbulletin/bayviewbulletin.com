@@ -238,7 +238,9 @@ def abs_url(u):
     return u if not u or u.startswith("http") else SITE + u
 
 
-PUBLISHER = {"@type": "NewsMediaOrganization", "name": "The Bay View Bulletin", "url": SITE + "/", "logo": {"@type": "ImageObject", "url": SITE + "/apple-touch-icon.png"}}
+FB_URL = "https://www.facebook.com/profile.php?id=61596882362012"  # the Bulletin's own Page and Instagram (Nov. 26)
+IG_URL = "https://www.instagram.com/bayviewbulletin/"
+PUBLISHER = {"@type": "NewsMediaOrganization", "name": "The Bay View Bulletin", "url": SITE + "/", "logo": {"@type": "ImageObject", "url": SITE + "/apple-touch-icon.png"}, "sameAs": [FB_URL, IG_URL]}
 
 
 def story_ld(s, d):
@@ -495,7 +497,7 @@ def shell(title, body, d, active="Home", og=None, path="/", head=""):
 <div class="rule"></div><h1><a href="/">The Bay View Bulletin</a></h1><p class="tag">Bay View's morning paper</p></header>
 <nav class="sections" aria-label="Sections"><ul>{nav}</ul></nav>
 {TICKER}<div class="wrap">{body}</div>
-<footer><div class="wrap"><div class="foot-brand"><img src="/mark.svg" alt="" width="28" height="28"><span>The Bay View Bulletin</span><em>Bay View's morning paper</em></div>News, events and neighborhood talk, every morning by 6:30. No ads, no paywall.<br>Covering Bay View from the harbor and Jones Island to Holt and Morgan avenues, I-43 to the lake.<br>
+<footer><div class="wrap"><div class="foot-brand"><img src="/mark.svg" alt="" width="28" height="28"><span>The Bay View Bulletin</span><em>Bay View's morning paper</em></div>News, events and neighborhood talk, every morning by 6:30. No ads, no paywall.<br>Follow us: <a href="{IG_URL}">Instagram @bayviewbulletin</a> · <a href="{FB_URL}">Facebook</a><br>Covering Bay View from the harbor and Jones Island to Holt and Morgan avenues, I-43 to the lake.<br>
 Every item links to the original reporting. Photos belong to their credited owners. <a href="{TIPS}">Send a tip</a> · <a href="/ask.html">Ask the Bulletin</a> · <a href="/explainers.html">Explainers</a> · <a href="/guides.html">Guides</a> · <a href="/real-estate.html">Real estate</a> · <a href="/openings.html">Opened &amp; closed</a> · <a href="/about.html">About</a> · <a href="/corrections.html">Corrections</a> · <a href="/schools.html">School days off</a> · <a href="/history.html">History</a> · <a href="/archive.html">Archive</a></div></footer>
 <script>(function(){{var n=document.querySelector('nav.sections ul');if(!n)return;function f(){{n.classList.toggle('end',n.scrollLeft+n.clientWidth>=n.scrollWidth-4)}}n.addEventListener('scroll',f,{{passive:true}});f();var o=n.querySelector('a.on');if(o&&o.offsetLeft+o.offsetWidth>n.clientWidth)n.scrollLeft=o.offsetLeft-20}})();</script><script>document.addEventListener('click',function(ev){{var a=ev.target.closest&&ev.target.closest('a[href]');if(a&&a.host&&a.host!==location.host){{a.target='_blank';a.rel='noopener'}}}},true);</script></body></html>""")
 
@@ -1027,6 +1029,7 @@ def build():
 <p>We run news from the last 24 hours plus what's coming up, and we don't repeat stories. Safety coverage sticks to notable incidents, and we never name private individuals. Protests and rallies are listed neutrally, for any cause. Elected officials are covered for what they do for Bay View, never for campaigns. The daily business spotlight is never paid for and is limited to independent, locally owned businesses. The Bay View Buzz rounds up public posts and labels rumors as unconfirmed.</p>
 <h2>Corrections</h2>
 <p>If we get something wrong, we fix it on the story with a note saying what changed, and list it on our <a href="/corrections.html">corrections page</a>. Photos come from the original source or free-licensed collections, always credited. If you own a photo and want it removed, tell us and it comes down.</p>
+<p>Follow the Bulletin on <a href="{IG_URL}">Instagram (@bayviewbulletin)</a> and <a href="{FB_URL}">Facebook</a> for the day's top stories every morning.</p>
 <p><a class="btn" href="{TIPS}">Send a tip or a correction</a></p></div></article>"""
     # Nov. 17: the Buzz page shows the last 7 days; every day also gets its own archive page at /buzz/<date>.html.
     (OUT / "buzz").mkdir(exist_ok=True)
