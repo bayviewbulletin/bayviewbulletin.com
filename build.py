@@ -41,6 +41,7 @@ LABEL_ACTIVE = {"Real estate": "Real Estate", "Food & Drink": "Food & Drink", "F
 GUIDES = []  # seasonal guides from content/guides.json (Nov. 25)
 OPENINGS = []  # opened / closed / coming soon tracker from content/openings.json (Nov. 25)
 LISTINGS = {}  # Bay View real estate from content/listings.json (Nov. 25)
+HOMES_LISTED = False  # set in main(): any live non-commercial listing (Nov. 26: gates the Real Estate menu item)
 
 
 def money(it):
@@ -489,7 +490,8 @@ def shell(title, body, d, active="Home", og=None, path="/", head=""):
             f'<meta property="og:url" content="{SITE}{e(path)}"><meta name="twitter:card" content="summary_large_image">'
             '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">'
             '<meta name="theme-color" content="#1F4E79"><link rel="alternate" type="application/rss+xml" title="The Bay View Bulletin" href="/feed.xml">' + head)
-    nav = "".join(f'<li><a href="{h}"{" class=on" if n == active else ""}>{n}</a></li>' for n, h in NAV)
+    nav = "".join(f'<li><a href="{h}"{" class=on" if n == active else ""}>{n}</a></li>' for n, h in NAV
+                  if not (n == "Real Estate" and not HOMES_LISTED))  # Ben, Nov. 26: menu item hidden until a home is for sale
     nav += f'<li class="find"><a href="/search.html" aria-label="Search" title="Search"{" class=on" if active == "Search" else ""}>{SEARCH_ICON}</a></li>'
     return ext_links(f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)}</title>{meta}{FONTS}<link rel="stylesheet" href="/assets/v2.css"><script data-goatcounter="https://bayviewbulletin.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></head><body>
@@ -963,6 +965,9 @@ def build():
     lf = ROOT / "content/listings.json"
     LISTINGS.clear()
     LISTINGS.update(json.loads(lf.read_text()) if lf.exists() else {})
+    global HOMES_LISTED
+    HOMES_LISTED = any(it.get("kind") != "commercial" and it.get("status") in ("active", "new", "price_cut", "pending")
+                       for it in LISTINGS.get("items", []))
     files = sorted((ROOT / "content/issues").glob("*.json"))
     issues = [json.loads(f.read_text()) for f in files]
     global TICKER
