@@ -209,19 +209,22 @@ def story(item, date_label, n, total):
     if has:
         credit_on_photo(im, dr, box, item["image"]["credit"])
         y = bottom + 64
-    else:  # no usable photo: the same space as a tinted panel with the section name set large and the logo mark
-        dr.rectangle(box, fill=item.get("tint", LAKE_SOFT))
+    else:  # no usable photo: a tinted panel with the section name set large, and bigger type below it
+        bottom = 560
+        dr.rectangle((0, 146, W, bottom), fill=item.get("tint", LAKE_SOFT))
         col = item.get("color", LAKE)
-        dr.text((M, bottom - 56), item["label_big"], font=font("plate", 110), fill=col, anchor="ls")
-        dr.line([(M, bottom - 26), (M + 120, bottom - 26)], fill=col, width=6)
+        f0, s0, l0 = fit_block(dr, item["label_big"], "plate", [110, 96, 84], W - 2 * M, 1)
+        dr.text((M, bottom - 64), l0[0], font=f0, fill=col, anchor="ls")
+        dr.line([(M, bottom - 34), (M + 120, bottom - 34)], fill=col, width=6)
         im.alpha_composite(mark(96), (W - M - 96, 146 + 48))
-        y = bottom + 64
+        y = bottom + 70
     kicker(dr, (M, y), item["kicker"], item.get("color", LAKE), item.get("chip"))
-    f, s, ls = fit_block(dr, item["title"], "serif_b", [56, 52, 48, 44], W - 2 * M, 3 if has else 4)
+    hs, ds = ([56, 52, 48, 44], [34, 32, 30]) if has else ([68, 62, 56, 50], [40, 38, 36, 34])
+    f, s, ls = fit_block(dr, item["title"], "serif_b", hs, W - 2 * M, 3 if has else 4)
     y = text_lines(dr, (M, y + 22), ls, f, s, INK, 1.16)
     if item.get("dek"):
-        f2, s2, l2 = fit_block(dr, item["dek"], "serif_r", [34, 32, 30], W - 2 * M, 3 if has else 5)
-        text_lines(dr, (M, y + 6), l2, f2, s2, MUTED, 1.3)
+        f2, s2, l2 = fit_block(dr, item["dek"], "serif_r", ds, W - 2 * M, 3 if has else 6)
+        text_lines(dr, (M, y + 10), l2, f2, s2, MUTED, 1.32)
     footer(dr, f"{n} / {total}", item.get("more", SITE))
     return im
 
