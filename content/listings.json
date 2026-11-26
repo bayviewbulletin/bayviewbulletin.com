@@ -190,6 +190,27 @@
    "last_checked": "2026-11-25",
    "lat": 43.0058,
    "lon": -87.906474
+  },
+  {
+   "id": "sold-2232-s-allis",
+   "kind": "multi",
+   "deal": "sale",
+   "status": "sold",
+   "address": "2232 S. Allis St.",
+   "price": "about $300,000 (est.)",
+   "price_num": 300000,
+   "note": "A four-unit residential building in north Bay View, assessed at $453,000; the price is estimated from the state transfer fee.",
+   "url": "https://data.milwaukee.gov/dataset/mprop",
+   "listed_by": "Public record (City of Milwaukee MPROP)",
+   "source": "City of Milwaukee property records (MPROP), warranty deed recorded Oct. 8, 2026",
+   "first_seen": "2026-11-26",
+   "last_checked": "2026-11-26",
+   "sold": {
+    "date": "2026-10-08",
+    "price": "about $300,000 (est.)"
+   },
+   "lat": 43.00333,
+   "lon": -87.904036
   }
  ]
 }
