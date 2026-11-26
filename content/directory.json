@@ -315,7 +315,13 @@
   "lon": -87.89985,
   "website": "https://www.mpl.org/hours_locations/bay_view.php",
   "facebook": "MPL.BayView",
-  "instagram": "milwaukeepubliclibrary"
+  "instagram": "milwaukeepubliclibrary",
+  "photo": {
+   "src": "/photos/venues/bay-view-branch.jpg",
+   "alt": "The entrance of the Bay View branch of the Milwaukee Public Library on KK",
+   "credit": "Awkwafaba, CC BY-SA 3.0, via Wikimedia Commons",
+   "credit_url": "https://commons.wikimedia.org/wiki/File:Bay_View_Branch.jpg"
+  }
  },
  {
   "name": "Bay View Montessori School",
@@ -412,7 +418,13 @@
   "lon": -87.88773,
   "website": "https://bayviewhistoricalsociety.org/",
   "instagram": "bayviewhistoricalsociety",
-  "facebook": "BayViewHistoricalSociety"
+  "facebook": "BayViewHistoricalSociety",
+  "photo": {
+   "src": "/photos/vn-beulah-brinton.jpg",
+   "alt": "The white Beulah Brinton House, home of the Bay View Historical Society, on a sunny winter day",
+   "credit": "Michael Barera, CC BY-SA 4.0, via Wikimedia Commons",
+   "credit_url": "https://commons.wikimedia.org/wiki/File:Milwaukee_January_2025_07_(Beulah_Brinton_House--Bay_View_Historical_Society).jpg"
+  }
  },
  {
   "name": "Beyond Beauty Head Spa & Salon",
