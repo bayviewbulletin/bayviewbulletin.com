@@ -2,7 +2,13 @@
 
     python3 scripts/social_post.py 2026-11-25            # morning post (every day)
     python3 scripts/social_post.py 2026-11-26 --weekend  # Thursday weekend-guide post
-    python3 scripts/social_post.py 2026-11-28 --realestate  # Saturday "On the market in Bay View" post
+    python3 scripts/social_post.py 2026-11-28 --realestate  # Friday "On the market in Bay View" post (only with a home listed)
+    python3 scripts/social_post.py 2026-12-01 --history     # Tuesday "Bay View then" post
+    python3 scripts/social_post.py 2026-12-02 --spotlight   # Wednesday business spotlight post
+Every run also writes story-01.jpg (cover) and story-02.jpg (today's events) as 1080x1920 Instagram/Facebook Stories.
+Weekly Reel (Sundays): scripts/social_reel.py.
+Weekly plan (Ben, Nov. 27, 2026): daily carousel 7:00-7:15 a.m. (8 a.m. Sat/Sun) + Stories; Tue history; Wed spotlight;
+Thu weekend (about 11 a.m.); Fri real estate (about noon, only while a home or condo is live on the site); Sun Reel (6 p.m.).
 
 Writes review/social/<stem>/01.jpg, 02.jpg, ... (upload them in order as one post) and review/social/<stem>/caption.txt
 (FACEBOOK caption with the link; INSTAGRAM caption pointing to the link in bio). <stem> is the date, plus "-weekend".
@@ -216,7 +222,7 @@ def cover(item, date_label, kick):
     kicker(dr, (M, y), kick, WARM)
     f, s, ls = fit_block(dr, item["title"], "serif_b", [62, 58, 54, 50, 46], W - 2 * M, 4)
     text_lines(dr, (M, y + 22), ls, f, s, INK, 1.16)
-    footer(dr, "Bay View's morning paper", "Swipe for more", arrow=True)
+    footer(dr, "Bay View's morning paper", item.get("footer", "Swipe for more"), arrow=item.get("footer") is None)
     return im
 
 
@@ -349,6 +355,8 @@ def daily(d):
     st = stories(d)
     news = [(k, s) for k, s in st if k != "spotlight"]
     spot = next((s for k, s in st if k == "spotlight"), None)
+    wd = dt.date.fromisoformat(d["date"]).weekday()  # Nov. 27: Tue history and Wed spotlight get their own posts
+    spot_slide = spot if wd != 2 else None
     lead = next(((k, s) for k, s in news if photo_ok(s.get("image")) and not s.get("citywide")), news[0] if news else None)
     slides = []
     if lead:
@@ -358,7 +366,7 @@ def daily(d):
         kk, big, col, tint = SEC_LABEL.get(k, SEC_LABEL["top"])
         slides.append(("story", {"title": s["title"], "dek": s.get("dek"), "image": si(s),
                                  "kicker": ("CITYWIDE · " if s.get("citywide") else "") + kk, "label_big": big, "color": col, "tint": tint}))
-    if spot:
+    if spot_slide:
         img = next((g for g in [spot.get("image")] + spot.get("gallery", []) if photo_ok(g)), spot.get("image"))
         slides.append(("story", {"title": spot["title"].replace("Spotlight: ", ""), "dek": spot.get("dek"), "image": img,
                                  "kicker": "BUSINESS SPOTLIGHT", "label_big": "Spotlight", "color": WARM, "tint": WARM_SOFT, "more": f"{SITE}/spotlight"}))
@@ -370,7 +378,7 @@ def daily(d):
     if bz:
         slides.append(("story", {"title": bz["headline"], "dek": None, "image": si(bz), "kicker": "THE BAY VIEW BUZZ",
                                  "label_big": "The Buzz", "color": HOT, "chip": BUZZ, "tint": "#FFF6C2", "more": f"{SITE}/buzz"}))
-    h = d.get("history")
+    h = d.get("history") if wd != 1 else None
     if h and len(slides) < 7:
         slides.append(("story", {"title": h["title"], "dek": h.get("text") or f'From {h.get("year", "the archives")}.',
                                  "image": si(h), "kicker": "BAY VIEW HISTORY", "label_big": "History", "color": LAKE,
@@ -463,6 +471,77 @@ def weekend(d):
     return slides[:7], inside_extra(d, [f"Every event this weekend ({weekend_count(d)})" if weekend_count(d) else "Every event this weekend"])
 
 
+def first_sentence(text, limit=125):
+    t = re.sub(r"\s+", " ", text or "").strip()
+    m = re.match(r"(.+?[.!?])(\s|$)", t)
+    t = m.group(1) if m else t
+    return t if len(t) <= limit else t[:limit].rsplit(" ", 1)[0].rstrip(",;:") + "…"
+
+
+def paras(body):
+    return [p.strip() for p in re.split(r"\n\s*\n", body or "") if p.strip()]
+
+
+def dir_entry(name):
+    name = (name or "").lower().replace("spotlight: ", "").strip()
+    for b in json.loads((ROOT / "content/directory.json").read_text()):
+        if b["name"].lower() == name:
+            return b
+    return None
+
+
+def history_post(d):
+    """Tuesday "Bay View then" carousel (Ben, Nov. 27): cover with the history photo, a slide per extra photo with a
+    line from the story, and a "Now" slide with the directory business's own photo when the address is a business."""
+    h = d.get("history")
+    if not h:
+        sys.exit("No history item in the day file; skip the history post.")
+    pics = [g for g in [si(h)] + h.get("gallery", []) if photo_ok(g)]
+    slides = [("cover", {"title": h["title"], "image": pics[0] if pics else si(h), "sub": "then"}, f'BAY VIEW HISTORY · {h.get("year", "")}'.strip(" ·"))]
+    ps = paras(h.get("body"))
+    for i, g in enumerate(pics[1:3]):
+        slides.append(("story", {"title": first_sentence(ps[i + 1] if i + 1 < len(ps) else h.get("text", "")), "dek": None, "image": g,
+                                 "kicker": f'THEN · {h.get("year", "")}'.strip(" ·"), "label_big": "History", "color": LAKE, "tint": LAKE_SOFT, "more": f"{SITE}/history"}))
+    now = h.get("now") or {}
+    b = dir_entry(now.get("name")) if now.get("name") else None
+    ph = (b or {}).get("photo")
+    if ph and OK_PHOTO.search(ph.get("credit", "")):
+        slides.append(("story", {"title": f'Now: {b["name"]}', "dek": b.get("address"), "image": ph, "kicker": "NOW",
+                                 "label_big": "Now", "color": WARM, "tint": WARM_SOFT, "more": f"{SITE}/directory"}))
+    return slides[:6], ["The whole story on our History page", f"{SITE}/history"]
+
+
+def spotlight_post(d):
+    """Wednesday business spotlight carousel (Ben, Nov. 27): the spotlight's own photos, one line each, business tagged in the caption."""
+    spot = next((s for k, s in stories(d) if k == "spotlight"), None)
+    if not spot:
+        sys.exit("No spotlight in the day file; skip the spotlight post.")
+    pics = [g for g in [spot.get("image")] + spot.get("gallery", []) if photo_ok(g)]
+    name = spot["title"].replace("Spotlight: ", "")
+    slides = [("cover", {"title": name, "image": pics[0] if pics else spot.get("image"), "sub": "spotlight"}, "BUSINESS SPOTLIGHT")]
+    ps = paras(spot.get("body"))
+    for i, g in enumerate(pics[1:5]):
+        slides.append(("story", {"title": first_sentence(ps[i + 1] if i + 1 < len(ps) else spot.get("dek", "")), "dek": None, "image": g,
+                                 "kicker": "BUSINESS SPOTLIGHT", "label_big": "Spotlight", "color": WARM, "tint": WARM_SOFT, "more": f"{SITE}/spotlight"}))
+    return slides[:6], [f"The full spotlight on {name}", f"{SITE}/spotlight"]
+
+
+def homes_live():
+    """Mirror of the site rule (Ben, Nov. 26-27): real estate shows (and gets a social post) only while a home or condo is live."""
+    L = json.loads((ROOT / "content/listings.json").read_text())
+    return any(it.get("kind") != "commercial" and it.get("status") not in ("sold", "off_market") for it in L.get("items", []))
+
+
+def story_frame(slide, top_line, bottom_line):
+    """9:16 Story (1080x1920): the 4:5 slide on a lake-blue frame, with room at the bottom for a link sticker."""
+    fr = Image.new("RGB", (W, 1920), LAKE)
+    dr = ImageDraw.Draw(fr)
+    dr.text((W // 2, 120), top_line, font=font("sans_b", 40), fill="#FFFFFF", anchor="ms")
+    fr.paste(slide.convert("RGB"), (0, 170))
+    dr.text((W // 2, 1600), bottom_line, font=font("serif_b", 44), fill=BUZZ, anchor="ms")
+    return fr
+
+
 def re_items(date):
     """Saturday real estate carousel: open houses in the next 8 days, then listings first seen in the last 7 days, then price cuts."""
     L = json.loads((ROOT / "content/listings.json").read_text())
@@ -487,6 +566,8 @@ def re_facts(it):
 
 
 def realestate(d):
+    if not homes_live():
+        sys.exit("No home or condo is live on the site yet (the Real Estate menu item and homepage block are hidden); skip the real estate post.")
     items, mk = re_items(d["date"])
     if not items:
         sys.exit("No new listings, open houses or price cuts this week; skip the real estate post.")
@@ -503,12 +584,36 @@ def realestate(d):
     return slides[:7], inside
 
 
-def captions(d, weekend_mode, re_mode=False):
+def fb_link_line(lead_in="The full Bulletin is free every morning."):
+    """Facebook links (Ben, Nov. 27): Meta limits many Pages to 2 link posts a month. content/social_schedule.json
+    "facebook_links": "exempt" puts the link in the first comment (written to first_comment.txt); otherwise no link at all,
+    and readers use the website link in the Page's intro (and the URL on the closing slide)."""
+    sf = ROOT / "content/social_schedule.json"
+    mode = (json.loads(sf.read_text()).get("facebook_links") if sf.exists() else None) or "unknown"
+    return (f"{lead_in} Link in the first comment." if mode == "exempt" else f"{lead_in} The link is in our Page's intro."), mode
+
+
+def captions(d, weekend_mode, re_mode=False, mode=None):
+    fbl, _ = fb_link_line()
+    if mode == "history":
+        h = d["history"]
+        body = f'Bay View then: {h["title"]}\n\n{h.get("text", "").strip()}'
+        return (body + "\n\n" + fb_link_line("The whole story is on our History page.")[0],
+                body + "\n\nThe whole story is on our History page, at the link in our bio.\n\n#BayView #BayViewMKE #MilwaukeeHistory #MKE")
+    if mode == "spotlight":
+        spot = next(s for k, s in stories(d) if k == "spotlight")
+        name = spot["title"].replace("Spotlight: ", "")
+        b = dir_entry(name) or {}
+        handle = (b.get("instagram") or "").strip().strip("/").split("/")[-1].lstrip("@")
+        tag = f" @{handle}" if handle else ""
+        body = f'Business spotlight: {name}{tag}, {b.get("address", "Bay View").rstrip(".")}.\n\n{(spot.get("dek") or "").strip()}'
+        return (body + "\n\n" + fb_link_line("The full spotlight is on our site.")[0],
+                body + "\n\nThe full spotlight is at the link in our bio.\n\n#BayView #BayViewMKE #ShopLocalMKE #MKE")
     if re_mode:
         items, _ = re_items(d["date"])
         lines = [f'{it["address"]}: {re_facts(it)} (listing: {it.get("listed_by", "")})' for it in items]
         body = "On the market in Bay View this week:\n\n" + "\n".join(f"{i}. {x}" for i, x in enumerate(lines, 1))
-        return (body + f"\n\nDetails and links to each listing agent: https://{SITE}/real-estate.html\nAgents: send us your Bay View listings and open houses.",
+        return (body + "\n\n" + fb_link_line("Details and links to each listing agent are on our Real Estate page.")[0] + "\nAgents: send us your Bay View listings and open houses.",
                 body + "\n\nDetails and links to each listing agent are at the link in our bio.\n\n#BayView #BayViewMKE #MilwaukeeRealEstate #MKE")
     if weekend_mode:
         w = d.get("weekend") or {}
@@ -516,15 +621,15 @@ def captions(d, weekend_mode, re_mode=False):
         lines = [f'{e["day"].replace("Today, ", "")}, {e["when"]}: {e["title"]} ({e["where"].split(",")[0]})'
                  for pk in w.get("picks", [])[:5] if (e := evs.get(pk["title"].lower()))]
         body = (w.get("intro") or "Our picks for the weekend in Bay View.").strip() + "\n\n" + "\n".join(f"{i}. {x}" for i, x in enumerate(lines, 1))
-        return (body + f"\n\nEvery event this weekend: https://{SITE}/weekend.html",
+        return (body + "\n\n" + fb_link_line("Every event this weekend is on our site.")[0],
                 body + "\n\nEvery event this weekend is at the link in our bio.\n\n#BayView #BayViewMKE #MilwaukeeEvents #MKE")
     held = {s["title"] for sec in d["sections"].values() for s in sec if s.get("hold")}
     safety = {s["title"] for k, sec in d["sections"].items() for s in sec if k == "safety" or s.get("tag") == "Safety"}
     unconf = {b["headline"] for b in d.get("buzz", []) if b.get("unconfirmed") or b.get("hold")}
     items = [b["text"] for b in d.get("briefing") or [] if not any(x and x.lower()[:40] in b["text"].lower() for x in held | safety | unconf)]
     lead = next((s["title"] for k, s in stories(d) if k != "spotlight"), None)
-    body = ((lead + "\n\n") if lead else "") + f"Bay View in 60 seconds, {d['display_date'].split(',')[0]}:\n" + "\n".join(f"→ {x}" for x in items[:5])
-    return (body + f"\n\nThe full Bulletin, free every morning: https://{SITE}/",
+    body = ((lead + "\n\n") if lead else "") + f"Bay View in 60 seconds, {d['display_date'].split(',')[0]} (news for Milwaukee's Bay View neighborhood):\n" + "\n".join(f"→ {x}" for x in items[:5])
+    return (body + "\n\n" + fbl,
             body + "\n\nSwipe for the details. The full Bulletin is free every morning at the link in our bio.\n\n#BayView #BayViewMKE #Milwaukee #MKE")
 
 
@@ -532,6 +637,7 @@ def main():
     date = sys.argv[1]
     weekend_mode = "--weekend" in sys.argv
     re_mode = "--realestate" in sys.argv
+    mode = "history" if "--history" in sys.argv else "spotlight" if "--spotlight" in sys.argv else None
     # One-off overrides (content/social_schedule.json): skip days and swapped posts
     sched_f = ROOT / "content/social_schedule.json"
     sched = json.loads(sched_f.read_text()) if sched_f.exists() else {}
@@ -540,35 +646,48 @@ def main():
         return
     ov = sched.get("override", {}).get(date)
     d = json.loads((ROOT / f"content/issues/{date}.json").read_text())
-    if ov and not re_mode:
+    if ov and not re_mode and not mode:
         if weekend_mode:
             print(f"DO NOT POST a second weekend carousel today ({date}): {ov.get('note', '')}")
             return
         if ov.get("mode") == "weekend" and (d.get("weekend") or {}).get("picks"):
             weekend_mode = True
         print(f"SCHEDULE NOTE for {date}: post no earlier than {ov.get('not_before', 'the usual time')} Central. {ov.get('note', '')}")
-    out = ROOT / "review/social" / (date + ("-weekend" if "--weekend" in sys.argv else "-realestate" if re_mode else ""))  # an override still writes to the day's usual folder
+    out = ROOT / "review/social" / (date + ("-weekend" if "--weekend" in sys.argv else "-realestate" if re_mode else f"-{mode}" if mode else ""))  # an override still writes to the day's usual folder
     out.mkdir(parents=True, exist_ok=True)
     for old in list(out.glob("*.png")) + list(out.glob("*.jpg")):
         old.unlink()
     day = dt.date.fromisoformat(date)
     date_label = day.strftime("%a., %b. ") + str(day.day)
-    slides, inside = realestate(d) if re_mode else weekend(d) if weekend_mode else daily(d)
+    slides, inside = (history_post(d) if mode == "history" else spotlight_post(d) if mode == "spotlight" else
+                      realestate(d) if re_mode else weekend(d) if weekend_mode else daily(d))
     total = len(slides) + 1
-    paths = []
+    paths, rendered = [], {}
     for i, sl in enumerate(slides, 1):
         im = cover(sl[1], date_label, sl[2]) if sl[0] == "cover" else events_slide(sl[1], date_label, i, total) if sl[0] == "events" else story(sl[1], date_label, i, total)
+        rendered.setdefault(sl[0], im)
         paths.append(out / f"{i:02d}.jpg")
         im.convert("RGB").save(paths[-1], quality=92, subsampling=0, optimize=True)
     paths.append(out / f"{total:02d}.jpg")
     cta(inside, total).convert("RGB").save(paths[-1], quality=92, subsampling=0, optimize=True)
+    # Stories (Ben, Nov. 27): the cover, plus today's events on the daily post; post them to both Stories with a link sticker
+    if "cover" in rendered:
+        top = "TODAY IN BAY VIEW" if not (mode or re_mode or weekend_mode) else "NEW ON THE BULLETIN"
+        story_frame(rendered["cover"], top, "Tap the link for the full story").save(out / "story-01.jpg", quality=90)
+        paths.append(out / "story-01.jpg")
+    if "events" in rendered and not (mode or re_mode or weekend_mode):
+        story_frame(rendered["events"], "THINGS TO DO TODAY", "Tap the link for every event").save(out / "story-02.jpg", quality=90)
+        paths.append(out / "story-02.jpg")
     missing = [sl[1].get("title") for sl in slides if sl[0] in ("cover", "story") and not sl[1].get("collage")
                and not photo_ok(sl[1].get("image"))]
-    if missing and not re_mode:
+    if missing and not re_mode:  # (history and spotlight slides use the same rule)
         print("NEEDS PHOTO (Ben, Nov. 26: always source photos; add a \"social_image\" {src, credit, credit_url} from the business's own"
               " Instagram/website, its directory photo or Wikimedia, then rerun):\n  - " + "\n  - ".join(missing))
-    fb, ig = captions(d, weekend_mode, re_mode)
+    fb, ig = captions(d, weekend_mode, re_mode, mode)
     (out / "caption.txt").write_text("=== FACEBOOK ===\n" + fb + "\n\n=== INSTAGRAM ===\n" + ig + "\n")
+    if fb_link_line()[1] == "exempt":
+        page = {"history": "history.html", "spotlight": "spotlight.html"}.get(mode) or ("real-estate.html" if re_mode else "weekend.html" if weekend_mode else "")
+        (out / "first_comment.txt").write_text(f"https://{SITE}/{page}\n")
     print("\n".join(str(p) for p in paths + [out / "caption.txt"]))
 
 

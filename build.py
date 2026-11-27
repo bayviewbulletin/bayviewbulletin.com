@@ -795,7 +795,12 @@ def build_one(d, newest):
         for b in [b for b in buzz if b is not lead_buzz and b is not tease_buzz and b.get("source_url") not in _evlinks][:1]:
             side += f'<a href="/buzz.html"><span class="kicker">The Buzz · {e(b["kicker"])}</span><h3>{e(b["headline"])}</h3><p>{e(dek({"body": b["body"].strip()}))}</p></a>'
             _fill -= 1
-        _eve = sorted([ev for ev in today_events if not (lead.get("key") == "alt" and ev["title"] == lead["title"])],
+        # Nov. 27 (Ben): never repeat the lead as a "Today" card (Acme's Black Friday post led as Buzz and also showed as
+        # an event): skip events with the lead's title, the lead Buzz item's link, or the lead's venue in the lead headline.
+        _lead_links = {x for x in ((lead_buzz or {}).get("source_url"), lead.get("source_url"), lead.get("link")) if x}
+        _lead_t = (lead.get("title") or "").lower()
+        _eve = sorted([ev for ev in today_events if not (ev["title"] == lead.get("title") or ev.get("link") in _lead_links
+                       or (len(ev["where"].split(",")[0]) > 4 and ev["where"].split(",")[0].lower() in _lead_t))],
                       key=lambda ev: not re.search(r"\b([5-9]|1[01])(:\d\d)?(-\d+)?\s*(pm|p\.m\.)", ev["when"], re.I))
         for ev in _eve[:max(0, _fill)]:
             side += f'<a href="/events.html#today"><span class="kicker">Today · {e(ev["when"])}</span><h3>{e(ev["title"])}</h3><p>{e(ev["where"].split(",")[0])}' + (f' · {e(ev["desc"])}' if ev.get("desc") else "") + '</p></a>'
