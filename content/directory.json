@@ -1146,7 +1146,8 @@
   "address": "1106 E. Oklahoma Ave.",
   "lat": 42.98834,
   "lon": -87.89545,
-  "website": "https://www.gasparriandjoycesc.com"
+  "website": "https://www.gasparriandjoycesc.com",
+  "links_checked": 1
  },
  {
   "name": "Get Dolled Up Bay View",
@@ -1341,7 +1342,8 @@
   "lat": 42.99652,
   "lon": -87.90935,
   "website": "https://www.higherappeal.com/",
-  "verify": true
+  "verify": true,
+  "links_checked": 1
  },
  {
   "name": "Himalayan Yak",
@@ -1349,7 +1351,8 @@
   "address": "2321 S. Kinnickinnic Ave.",
   "lat": 43.00245,
   "lon": -87.90402,
-  "website": "https://ourhimalayanyak.com"
+  "website": "https://ourhimalayanyak.com",
+  "links_checked": 1
  },
  {
   "name": "Honeypie",
@@ -1531,7 +1534,8 @@
   "lat": 43.0042,
   "lon": -87.90536,
   "website": "https://kief-co-kinnickinnic.cloveronline.com/",
-  "note": "Milwaukee-based, two stores (other on W. Oklahoma). Clover ordering site live with pickup enabled (Nov. 19); no dated post/review found. IG kiefcomp seen in search, not confirmed"
+  "note": "Milwaukee-based, two stores (other on W. Oklahoma). Clover ordering site live with pickup enabled (Nov. 19); no dated post/review found. IG kiefcomp seen in search, not confirmed",
+  "links_checked": 1
  },
  {
   "name": "Kinn Guesthouse Bay View",
@@ -1802,7 +1806,8 @@
   "address": "2555 S. Lenox St.",
   "lat": 42.998,
   "lon": -87.89847,
-  "website": "https://milwaukeemakerspace.org/"
+  "website": "https://milwaukeemakerspace.org/",
+  "facebook": "profile.php?id=100064867022933"
  },
  {
   "name": "Milwaukee Parkside School for the Arts",

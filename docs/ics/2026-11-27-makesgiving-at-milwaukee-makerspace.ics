@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Bay View Bulletin//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Makesgiving at Milwaukee Makerspace
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:2026-11-27-makesgiving-at-milwaukee-makerspace@bayviewbulletin.com
+DTSTAMP:20261127T110454Z
+DTSTART;TZID=America/Chicago:20261127T130000
+DTEND;TZID=America/Chicago:20261127T150000
+SUMMARY:Makesgiving at Milwaukee Makerspace
+LOCATION:Milwaukee Makerspace\, 2555 S. Lenox St.\, Milwaukee\, WI
+DESCRIPTION:The makerspace opens its doors for a craft-your-own-gifts afternoon: ornament decorating\, candle making\, mini circuits and Nerdy Derby cart races. Free\, all ages. https://www.facebook.com/100064867022933/posts/pfbid0cyTp8QZo1Q8FHef78bsHkP6tMwfHUYWva3bW6jEK2GmCytcyv3mGqDnptcoAQYpDl/ (via The Bay View Bulletin)
+URL:https://www.facebook.com/100064867022933/posts/pfbid0cyTp8QZo1Q8FHef78bsHkP6tMwfHUYWva3bW6jEK2GmCytcyv3mGqDnptcoAQYpDl/
+END:VEVENT
+END:VCALENDAR

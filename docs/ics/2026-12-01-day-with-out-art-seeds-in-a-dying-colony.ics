@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-12-01-day-with-out-art-seeds-in-a-dying-colony@bayviewbulletin.com
-DTSTAMP:20261126T214553Z
+DTSTAMP:20261127T110454Z
 DTSTART;TZID=America/Chicago:20261201T190000
 DTEND;TZID=America/Chicago:20261201T210000
 SUMMARY:Day With(out) Art: seeds in a dying colony

@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-12-06-milwaukee-record-halftime-show-spacecrim@bayviewbulletin.com
-DTSTAMP:20261126T214553Z
+DTSTAMP:20261127T110454Z
 DTSTART;TZID=America/Chicago:20261206T113000
 DTEND;TZID=America/Chicago:20261206T133000
 SUMMARY:Milwaukee Record Halftime Show: Spacecrime + DJ Boogie Cookie

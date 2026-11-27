@@ -23,13 +23,13 @@ RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:2026-11-26-bay-view-table-tennis-club@bayviewbulletin.com
-DTSTAMP:20261126T214553Z
-DTSTART;TZID=America/Chicago:20261126T190000
-DTEND;TZID=America/Chicago:20261126T210000
+UID:2026-12-10-bay-view-table-tennis-club@bayviewbulletin.com
+DTSTAMP:20261127T110454Z
+DTSTART;TZID=America/Chicago:20261210T190000
+DTEND;TZID=America/Chicago:20261210T210000
 SUMMARY:Bay View Table Tennis Club
 LOCATION:Puddler's Hall\, 2461 S. St. Clair St.\, Milwaukee\, WI
-DESCRIPTION:The weekly table tennis meetup is on the tavern’s calendar for Thanksgiving night\, 7-9 pm. https://puddlershall.com/calendar/ (via The Bay View Bulletin)
+DESCRIPTION:The weekly table tennis meetup in the historic tavern's back room\, 7-9 pm. https://puddlershall.com/calendar/ (via The Bay View Bulletin)
 URL:https://puddlershall.com/calendar/
 END:VEVENT
 END:VCALENDAR

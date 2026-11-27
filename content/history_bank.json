@@ -8,46 +8,6 @@
  },
  "dated": [
   {
-   "run_on": "2026-11-27",
-   "banked": "2026-11-22",
-   "notes": "From the MPL archive (Milwaukee Sentinel, Feb. 28, 1919, p. 4). We did not find the park board's final vote; the item only says the name never changed (true today).",
-   "history": {
-    "year": 1919,
-    "date": "1919-02-28",
-    "match": "past",
-    "topic": "place",
-    "title": "The time Bay View asked to rename Humboldt Park for Gen. Pershing",
-    "text": "In 1919 a Bay View homecoming committee asked the city to rename Humboldt Park \"Pershing Park\" as a memorial to the neighborhood's World War I soldiers.",
-    "body": "As soldiers came home from World War I, Bay View wanted a lasting memorial, and one neighborhood committee had a bold idea: rename Humboldt Park after Gen. John J. Pershing, the commander of the American forces in Europe.\n\nOn Feb. 28, 1919, the Milwaukee Sentinel ran the story under the headline \"Would Name Park for Gen. Pershing.\" E. C. Bayerlein, chairman of Bay View's homecoming and reconstruction commission, had presented resolutions to the park board asking for the change. He explained that the group's first draft hadn't said which south side park should get the new name; it could have been South Shore. But sentiment favored Humboldt, he said, mainly because the new Bay View High School sat nearby, and the land between the park and the school had been recommended for purchase by the city, which made Humboldt the logical place for a memorial park.\n\nThe form of the memorial, the paper added, would depend on how much money could be raised.\n\nThe rename never happened. The park, named for the German naturalist Alexander von Humboldt, kept its name, and Bay View High School still sits on its edge. The episode is a snapshot of a neighborhood that had just sent its sons to war and wanted its biggest green space to say so. Three months earlier, more than 10,000 residents had marched to that same park to unveil a service flag in their honor.",
-    "source_name": "Milwaukee Sentinel, Feb. 28, 1919",
-    "source_url": "https://www.mpl.org/databases/all/66",
-    "links": [
-     {
-      "label": "Milwaukee Sentinel, Feb. 28, 1919, p. 4: \"Would Name Park for Gen. Pershing\" (MPL library card required)",
-      "url": "https://www.mpl.org/databases/all/66"
-     },
-     {
-      "label": "Milwaukee County Parks: Humboldt Park",
-      "url": "https://county.milwaukee.gov/EN/Parks/Explore/Parks/Humboldt"
-     }
-    ],
-    "image": {
-     "src": "/photos/hist-pershing-park-1919.jpg",
-     "alt": "1919 newspaper headline: Would Name Park for Gen. Pershing; Bay View Organization Favors Giving Humboldt the New Title",
-     "credit": "Milwaukee Sentinel, Feb. 28, 1919 (public domain), via Milwaukee Public Library",
-     "credit_url": "https://www.mpl.org/databases/all/66"
-    },
-    "gallery": [
-     {
-      "src": "/photos/hist-humboldt-park-now-2.jpg",
-      "alt": "Humboldt Park's open lawn, ball diamond and shade trees on a sunny day (current photo)",
-      "credit": "Rorr404 / Wikimedia Commons (CC0)",
-      "credit_url": "https://commons.wikimedia.org/wiki/File:2024_08_07_Humboldt_Park_4.jpg"
-     }
-    ]
-   }
-  },
-  {
    "run_on": "2026-11-28",
    "banked": "2026-11-22",
    "notes": "Built from free sources (Urban Milwaukee 2017, FOX6 2015). Sources differ slightly on the year: the permit was taken out in October 1924 and the owners date the building to 1925; the text says so.",
@@ -304,6 +264,47 @@
     ]
    },
    "used_on": "2026-11-26"
+  },
+  {
+   "run_on": "2026-11-27",
+   "banked": "2026-11-22",
+   "notes": "From the MPL archive (Milwaukee Sentinel, Feb. 28, 1919, p. 4). We did not find the park board's final vote; the item only says the name never changed (true today).",
+   "history": {
+    "year": 1919,
+    "date": "1919-02-28",
+    "match": "past",
+    "topic": "place",
+    "title": "The time Bay View asked to rename Humboldt Park for Gen. Pershing",
+    "text": "In 1919 a Bay View homecoming committee asked the city to rename Humboldt Park \"Pershing Park\" as a memorial to the neighborhood's World War I soldiers.",
+    "body": "As soldiers came home from World War I, Bay View wanted a lasting memorial, and one neighborhood committee had a bold idea: rename Humboldt Park after Gen. John J. Pershing, the commander of the American forces in Europe.\n\nOn Feb. 28, 1919, the Milwaukee Sentinel ran the story under the headline \"Would Name Park for Gen. Pershing.\" E. C. Bayerlein, chairman of Bay View's homecoming and reconstruction commission, had presented resolutions to the park board asking for the change. He explained that the group's first draft hadn't said which south side park should get the new name; it could have been South Shore. But sentiment favored Humboldt, he said, mainly because the new Bay View High School sat nearby, and the land between the park and the school had been recommended for purchase by the city, which made Humboldt the logical place for a memorial park.\n\nThe form of the memorial, the paper added, would depend on how much money could be raised.\n\nThe rename never happened. The park, named for the German naturalist Alexander von Humboldt, kept its name, and Bay View High School still sits on its edge. The episode is a snapshot of a neighborhood that had just sent its sons to war and wanted its biggest green space to say so. Three months earlier, more than 10,000 residents had marched to that same park to unveil a service flag in their honor.",
+    "source_name": "Milwaukee Sentinel, Feb. 28, 1919",
+    "source_url": "https://www.mpl.org/databases/all/66",
+    "links": [
+     {
+      "label": "Milwaukee Sentinel, Feb. 28, 1919, p. 4: \"Would Name Park for Gen. Pershing\" (MPL library card required)",
+      "url": "https://www.mpl.org/databases/all/66"
+     },
+     {
+      "label": "Milwaukee County Parks: Humboldt Park",
+      "url": "https://county.milwaukee.gov/EN/Parks/Explore/Parks/Humboldt"
+     }
+    ],
+    "image": {
+     "src": "/photos/hist-pershing-park-1919.jpg",
+     "alt": "1919 newspaper headline: Would Name Park for Gen. Pershing; Bay View Organization Favors Giving Humboldt the New Title",
+     "credit": "Milwaukee Sentinel, Feb. 28, 1919 (public domain), via Milwaukee Public Library",
+     "credit_url": "https://www.mpl.org/databases/all/66"
+    },
+    "gallery": [
+     {
+      "src": "/photos/hist-humboldt-park-now-2.jpg",
+      "alt": "Humboldt Park's open lawn, ball diamond and shade trees on a sunny day (current photo)",
+      "credit": "Rorr404 / Wikimedia Commons (CC0)",
+      "credit_url": "https://commons.wikimedia.org/wiki/File:2024_08_07_Humboldt_Park_4.jpg"
+     }
+    ]
+   },
+   "used_on": "2026-11-27"
   }
  ]
 }
