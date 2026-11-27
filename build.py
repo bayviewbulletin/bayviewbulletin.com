@@ -250,7 +250,7 @@ def abs_url(u):
     return u if not u or u.startswith("http") else SITE + u
 
 
-FB_URL = "https://www.facebook.com/profile.php?id=61596882362012"  # the Bulletin's own Page and Instagram (Nov. 26)
+FB_URL = "https://www.facebook.com/thebayviewbulletin"  # the Bulletin's own Page (username set Nov. 27; was profile.php?id=61596882362012)
 IG_URL = "https://www.instagram.com/bayviewbulletin/"
 PUBLISHER = {"@type": "NewsMediaOrganization", "name": "The Bay View Bulletin", "url": SITE + "/", "logo": {"@type": "ImageObject", "url": SITE + "/apple-touch-icon.png"}, "sameAs": [FB_URL, IG_URL]}
 
