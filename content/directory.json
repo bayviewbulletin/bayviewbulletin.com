@@ -1791,14 +1791,14 @@
   "facebook": "milwaukeecommunityacupuncture"
  },
  {
-  "name": "Milwaukee Forge",
+  "name": "Milwaukee ForgeTech",
   "type": "Forge",
   "address": "1532 E. Oklahoma Ave.",
   "lat": 42.98884,
   "lon": -87.88962,
-  "verify": true,
   "links_checked": 1,
-  "social_note": "No website or social accounts found (checked Nov. 13)"
+  "social_note": "No website or social accounts found (checked Nov. 13)",
+  "note": "Formerly Milwaukee Forge; sold out of receivership in Nov. 2025 and relaunched by new owners as Milwaukee ForgeTech (BizTimes, Dec. 5, 2025). Confirmed Nov. 27, 2026."
  },
  {
   "name": "Milwaukee Makerspace",

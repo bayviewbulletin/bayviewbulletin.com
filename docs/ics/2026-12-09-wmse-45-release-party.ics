@@ -24,11 +24,11 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-12-09-wmse-45-release-party@bayviewbulletin.com
-DTSTAMP:20261127T110454Z
+DTSTAMP:20261127T111006Z
 DTSTART;TZID=America/Chicago:20261209T170000
 DTEND;TZID=America/Chicago:20261209T190000
 SUMMARY:WMSE 45 release party
-LOCATION:Wiggle Room\, 2988 S. Kinnickinnic Ave.\, Milwaukee\, WI
+LOCATION:The Wiggle Room\, 2988 S. Kinnickinnic Ave.\, Milwaukee\, WI
 DESCRIPTION:An early-evening release party for a WMSE 45\, listed on the bar's calendar. https://wiggleroommke.com/event/wmse-45-release/ (via The Bay View Bulletin)
 URL:https://wiggleroommke.com/event/wmse-45-release/
 END:VEVENT

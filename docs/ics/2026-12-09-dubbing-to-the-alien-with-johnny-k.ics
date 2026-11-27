@@ -24,11 +24,11 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-12-09-dubbing-to-the-alien-with-johnny-k@bayviewbulletin.com
-DTSTAMP:20261127T110454Z
+DTSTAMP:20261127T111006Z
 DTSTART;TZID=America/Chicago:20261209T190000
 DTEND;TZID=America/Chicago:20261209T210000
 SUMMARY:Dubbing to the Alien with Johnny K
-LOCATION:Wiggle Room\, 2988 S. Kinnickinnic Ave.\, Milwaukee\, WI
+LOCATION:The Wiggle Room\, 2988 S. Kinnickinnic Ave.\, Milwaukee\, WI
 DESCRIPTION:Johnny K plays a heavy dub DJ set at the KK lounge. https://wiggleroommke.com/event/dubbing-to-the-alien-w-johnny-k-heavy-dub-set/ (via The Bay View Bulletin)
 URL:https://wiggleroommke.com/event/dubbing-to-the-alien-w-johnny-k-heavy-dub-set/
 END:VEVENT
