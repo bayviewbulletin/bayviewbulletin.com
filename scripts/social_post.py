@@ -1,23 +1,23 @@
-"""Make the day's Facebook + Instagram post: a branded 4:5 carousel (1080x1350 slides) and two captions.
+"""Make the day's Facebook post (Facebook only since Nov. 27, 2026): a branded 4:5 carousel (1080x1350 slides) and two captions.
 
     python3 scripts/social_post.py 2026-11-25            # morning post (every day)
     python3 scripts/social_post.py 2026-11-26 --weekend  # Thursday weekend-guide post
     python3 scripts/social_post.py 2026-11-28 --realestate  # Friday "On the market in Bay View" post (only with a home listed)
     python3 scripts/social_post.py 2026-12-01 --history     # Tuesday "Bay View then" post
     python3 scripts/social_post.py 2026-12-02 --spotlight   # Wednesday business spotlight post
-Every run also writes story-01.jpg (cover) and story-02.jpg (today's events) as 1080x1920 Instagram/Facebook Stories.
+Every run also writes story-01.jpg (cover) and story-02.jpg (today's events) as 1080x1920 Facebook Stories.
 Weekly Reel (Sundays): scripts/social_reel.py.
 Weekly plan (Ben, Nov. 27, 2026): daily carousel 7:00-7:15 a.m. (8 a.m. Sat/Sun) + Stories; Tue history; Wed spotlight;
 Thu weekend (about 11 a.m.); Fri real estate (about noon, only while a home or condo is live on the site); Sun Reel (6 p.m.).
 
 Writes review/social/<stem>/01.jpg, 02.jpg, ... (upload them in order as one post) and review/social/<stem>/caption.txt
-(FACEBOOK caption with the link; INSTAGRAM caption pointing to the link in bio). <stem> is the date, plus "-weekend".
+(the FACEBOOK caption). <stem> is the date, plus "-weekend".
 review/ is git-ignored.
 
 Design (Ben, Nov. 25 v2; see claude/bay-view-bulletin-brand.md):
 - Slide 1 (cover): the lead story's photo full-bleed with the headline; it's what stops the scroll and is the grid thumbnail.
 - Story slides: photo on top, section label, headline, one-line dek, credit. Events slide: a time/title/venue table.
-- Last slide: where to read the rest (bayviewbulletin.com; "link in bio" on Instagram).
+- Last slide: where to read the rest (bayviewbulletin.com).
 - 4:5 portrait; text stays 72 px in from the edges, inside Instagram's 3:4 grid crop.
 Content rules (Ben, Nov. 25): post only what's on the site. Never held items, Safety stories, unconfirmed Buzz or private
 people's names. Photos are used on social only when they come from the business/organizer itself (its Instagram or
@@ -300,7 +300,7 @@ def cta(inside, total):
     im.alpha_composite(mark(280), ((W - 280) // 2, 96))
     dr.text((W / 2, 492), "Read the full Bulletin", font=font("plate", 76), fill="#FFFFFF", anchor="ms")
     dr.text((W / 2, 572), SITE, font=font("serif_b", 54), fill=BUZZ, anchor="ms")
-    dr.text((W / 2, 628), "Link in our bio", font=font("sans_sb", 30), fill="#DCE7F2", anchor="ms")
+    dr.text((W / 2, 628), "Link on our Facebook Page", font=font("sans_sb", 30), fill="#DCE7F2", anchor="ms")
     # "Inside today" panel
     px0, py0, px1 = M, 684, W - M
     rows = inside[:4]
@@ -316,8 +316,8 @@ def cta(inside, total):
         y += 66
     # follow + tips line
     yb = py1 + max(92, (H - 150 - py1) // 2)
-    dr.text((W / 2, yb), "Follow @bayviewbulletin for Bay View news every morning", font=font("sans_sb", 30), fill="#FFFFFF", anchor="ms")
-    dr.text((W / 2, yb + 48), "Got a tip? Use the link in our bio.", font=font("sans_r", 28), fill="#DCE7F2", anchor="ms")
+    dr.text((W / 2, yb), "Follow The Bay View Bulletin on Facebook", font=font("sans_sb", 30), fill="#FFFFFF", anchor="ms")
+    dr.text((W / 2, yb + 48), "Got a tip? Send it at bayviewbulletin.com", font=font("sans_r", 28), fill="#DCE7F2", anchor="ms")
     dr.text((W / 2, H - 96), "Free every morning by 6:30. No ads, no paywall.", font=font("sans_sb", 26), fill="#8DBDE3", anchor="ms")
     dr.text((W / 2, H - 52), f"{total} / {total}", font=font("sans_sb", 22), fill="#8DBDE3", anchor="ms")
     return im
@@ -599,22 +599,21 @@ def captions(d, weekend_mode, re_mode=False, mode=None):
         h = d["history"]
         body = f'Bay View then: {h["title"]}\n\n{h.get("text", "").strip()}'
         return (body + "\n\n" + fb_link_line("The whole story is on our History page.")[0],
-                body + "\n\nThe whole story is on our History page, at the link in our bio.\n\n#BayView #BayViewMKE #MilwaukeeHistory #MKE")
+                body + "\n\nThe whole story is on our History page at bayviewbulletin.com.\n\n#BayView #BayViewMKE #MilwaukeeHistory #MKE")
     if mode == "spotlight":
         spot = next(s for k, s in stories(d) if k == "spotlight")
         name = spot["title"].replace("Spotlight: ", "")
         b = dir_entry(name) or {}
-        handle = (b.get("instagram") or "").strip().strip("/").split("/")[-1].lstrip("@")
-        tag = f" @{handle}" if handle else ""
+        tag = ""  # Ben, Nov. 27: no Bulletin Instagram, so the business is named in plain text
         body = f'Business spotlight: {name}{tag}, {b.get("address", "Bay View").rstrip(".")}.\n\n{(spot.get("dek") or "").strip()}'
         return (body + "\n\n" + fb_link_line("The full spotlight is on our site.")[0],
-                body + "\n\nThe full spotlight is at the link in our bio.\n\n#BayView #BayViewMKE #ShopLocalMKE #MKE")
+                body + "\n\nThe full spotlight is at bayviewbulletin.com.\n\n#BayView #BayViewMKE #ShopLocalMKE #MKE")
     if re_mode:
         items, _ = re_items(d["date"])
         lines = [f'{it["address"]}: {re_facts(it)} (listing: {it.get("listed_by", "")})' for it in items]
         body = "On the market in Bay View this week:\n\n" + "\n".join(f"{i}. {x}" for i, x in enumerate(lines, 1))
         return (body + "\n\n" + fb_link_line("Details and links to each listing agent are on our Real Estate page.")[0] + "\nAgents: send us your Bay View listings and open houses.",
-                body + "\n\nDetails and links to each listing agent are at the link in our bio.\n\n#BayView #BayViewMKE #MilwaukeeRealEstate #MKE")
+                body + "\n\nDetails and links to each listing agent are at bayviewbulletin.com.\n\n#BayView #BayViewMKE #MilwaukeeRealEstate #MKE")
     if weekend_mode:
         w = d.get("weekend") or {}
         evs = {e["title"].lower(): e for e in d.get("events", [])}
@@ -622,7 +621,7 @@ def captions(d, weekend_mode, re_mode=False, mode=None):
                  for pk in w.get("picks", [])[:5] if (e := evs.get(pk["title"].lower()))]
         body = (w.get("intro") or "Our picks for the weekend in Bay View.").strip() + "\n\n" + "\n".join(f"{i}. {x}" for i, x in enumerate(lines, 1))
         return (body + "\n\n" + fb_link_line("Every event this weekend is on our site.")[0],
-                body + "\n\nEvery event this weekend is at the link in our bio.\n\n#BayView #BayViewMKE #MilwaukeeEvents #MKE")
+                body + "\n\nEvery event this weekend is at bayviewbulletin.com.\n\n#BayView #BayViewMKE #MilwaukeeEvents #MKE")
     held = {s["title"] for sec in d["sections"].values() for s in sec if s.get("hold")}
     safety = {s["title"] for k, sec in d["sections"].items() for s in sec if k == "safety" or s.get("tag") == "Safety"}
     unconf = {b["headline"] for b in d.get("buzz", []) if b.get("unconfirmed") or b.get("hold")}
@@ -630,7 +629,7 @@ def captions(d, weekend_mode, re_mode=False, mode=None):
     lead = next((s["title"] for k, s in stories(d) if k != "spotlight"), None)
     body = ((lead + "\n\n") if lead else "") + f"Bay View in 60 seconds, {d['display_date'].split(',')[0]} (news for Milwaukee's Bay View neighborhood):\n" + "\n".join(f"→ {x}" for x in items[:5])
     return (body + "\n\n" + fbl,
-            body + "\n\nSwipe for the details. The full Bulletin is free every morning at the link in our bio.\n\n#BayView #BayViewMKE #Milwaukee #MKE")
+            body + "\n\nSwipe for the details. The full Bulletin is free every morning at bayviewbulletin.com.\n\n#BayView #BayViewMKE #Milwaukee #MKE")
 
 
 def main():
@@ -684,7 +683,7 @@ def main():
         print("NEEDS PHOTO (Ben, Nov. 26: always source photos; add a \"social_image\" {src, credit, credit_url} from the business's own"
               " Instagram/website, its directory photo or Wikimedia, then rerun):\n  - " + "\n  - ".join(missing))
     fb, ig = captions(d, weekend_mode, re_mode, mode)
-    (out / "caption.txt").write_text("=== FACEBOOK ===\n" + fb + "\n\n=== INSTAGRAM ===\n" + ig + "\n")
+    (out / "caption.txt").write_text("=== FACEBOOK ===\n" + fb + "\n")  # Facebook only since Nov. 27, 2026
     if fb_link_line()[1] == "exempt":
         page = {"history": "history.html", "spotlight": "spotlight.html"}.get(mode) or ("real-estate.html" if re_mode else "weekend.html" if weekend_mode else "")
         (out / "first_comment.txt").write_text(f"https://{SITE}/{page}\n")

@@ -1,0 +1,35 @@
+name: Facebook posts (Pages API)
+# Ben, Nov. 27, 2026: posts the daily run queues in content/social_queue.json through Meta's official Pages API.
+# Inactive until the FB_PAGE_ID and FB_PAGE_TOKEN repository secrets exist (the script exits quietly without them).
+on:
+  push:
+    branches: [main]
+    paths: [content/social_queue.json]
+  schedule:
+    - cron: "*/15 11-19 * * *"   # every 15 min, about 5 a.m.-2 p.m. Central, for Stories (Meta can't schedule them)
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: facebook-posts
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait for GitHub Pages to deploy the slides
+        if: github.event_name == 'push'
+        run: sleep 90
+      - name: Publish or schedule queued posts
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+        run: python3 scripts/fb_publish.py
+      - name: Save the queue status
+        if: always()
+        run: |
+          git config user.name "Bay View Bulletin"
+          git config user.email "bayviewbulletin@users.noreply.github.com"
+          git add content/social_queue.json 2>/dev/null || true
+          git diff --cached --quiet || { git commit -m "Facebook queue: update status [skip ci]" && git pull --rebase -q && git push; }

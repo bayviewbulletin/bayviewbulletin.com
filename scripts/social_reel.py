@@ -6,7 +6,7 @@ Reads the last 7 day files (Mon-Sun ending on <date>) and takes each day's lead 
 weekend picks' photos, using only photos allowed on social (social_post.photo_ok: the business's own, Wikimedia/public
 domain, agencies or the Bulletin). Never held items, Safety stories or unconfirmed Buzz. Writes review/social/<date>-reel/
 reel.mp4 (1080x1920, 30 fps, 15-30 s, silent audio track, kept under 3.7 MB for the upload), cover.jpg (the Reel cover) and caption.txt.
-Post it as a Reel to Facebook and Instagram at about 6 p.m. Sunday (schedule it in Business Suite's Create reel composer).
+Post it as a Reel to Facebook at about 6 p.m. Sunday (schedule it in Business Suite's Create reel composer).
 The video carries a silent track; music is added in the composer's Edit > Audio step from Meta's licensed library
 (Ben, Nov. 27: an upbeat instrumental, no vocals). Instagram can't add music to a Reel after it's posted.
 """
@@ -105,8 +105,7 @@ def main():
     lines = "\n".join(f"→ {'Spotlight: ' if lb == 'SPOTLIGHT' else ''}{t}" for lb, t, _ in items)
     body = f"This week in Bay View, Milwaukee:\n{lines}"
     fb = body + "\n\n" + fb_link_line("The Bulletin is free every morning.")[0]
-    ig = body + "\n\nThe Bulletin is free every morning at the link in our bio.\n\n#BayView #BayViewMKE #Milwaukee #MKE"
-    (out / "caption.txt").write_text("=== FACEBOOK ===\n" + fb + "\n\n=== INSTAGRAM ===\n" + ig + "\n")
+    (out / "caption.txt").write_text("=== FACEBOOK ===\n" + fb + "\n")  # Facebook only since Nov. 27
     print("\n".join(str(p) for p in [out / "reel.mp4", out / "cover.jpg", out / "caption.txt"]))
 
 

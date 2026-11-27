@@ -3,7 +3,7 @@
   "weekly": {
     "_about": "Ben approved Nov. 27, 2026 after a best-practices review. Times are Central. 'publish' = post right away; 'schedule' = schedule it in Business Suite's composer for that time.",
     "daily": {
-      "what": "Bay View in 60 seconds carousel (social_post.py <date>) plus Stories story-01.jpg and story-02.jpg, each with a link (Facebook: Add link; Instagram: Link sticker)",
+      "what": "Bay View in 60 seconds carousel (social_post.py <date>) plus Stories story-01.jpg and story-02.jpg, each with a link (Facebook: Add link)",
       "time_weekday": "07:00-07:15",
       "time_weekend": "08:00",
       "how": "publish at the time (schedule it if the run finishes earlier)"
@@ -43,7 +43,9 @@
     "2026-11-27": {
       "mode": "weekend",
       "not_before": "07:10",
-      "note": "Post this AFTER the introduction carousel goes live at 7:00 a.m. (check instagram.com/bayviewbulletin shows it first). Today's one post is the weekend-picks carousel (it replaces both Thursday's skipped posts and today's daily carousel). If the day file has no 'weekend' field, the script falls back to the daily carousel."
+      "note": "Post this AFTER the introduction carousel goes live at 7:00 a.m.. Today's one post is the weekend-picks carousel (it replaces both Thursday's skipped posts and today's daily carousel). If the day file has no 'weekend' field, the script falls back to the daily carousel."
     }
-  }
+  },
+  "publisher": "business_suite",
+  "_publisher_about": "Nov. 27, 2026: 'business_suite' = the daily run posts through Business Suite in Ben's Chrome (old way). 'api' = the run only queues posts with scripts/social_queue.py and GitHub Actions publishes them through the Pages API (set once the FB_PAGE_ID / FB_PAGE_TOKEN secrets work). Reels stay in Business Suite either way for now."
 }

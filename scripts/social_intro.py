@@ -57,7 +57,7 @@ def cta(total):
         dr.text((W / 2 + 24, y), b, font=font("serif_r", 34), fill="#FFFFFF", anchor="ls")
         y += 64
     dr.text((W / 2, 880), sp.SITE, font=font("serif_b", 54), fill=BUZZ, anchor="ms")
-    dr.text((W / 2, 940), "Link in our bio", font=font("sans_sb", 30), fill="#DCE7F2", anchor="ms")
+    dr.text((W / 2, 940), "Link on our Facebook Page", font=font("sans_sb", 30), fill="#DCE7F2", anchor="ms")
     dr.text((W / 2, 1060), "Got a tip or a question? Tell us on the site.", font=font("serif_r", 32), fill="#FFFFFF", anchor="ms")
     dr.text((W / 2, H - 120), "Free every morning by 6:30. No ads, no paywall.", font=font("sans_sb", 26), fill="#DCE7F2", anchor="ms")
     dr.text((W / 2, H - 70), f"{total} / {total}", font=font("sans_sb", 22), fill="#8DBDE3", anchor="ms")
@@ -109,7 +109,7 @@ def main():
             "Our holiday guide is up now: Christmas on KK, the tree lighting with Santa, pop-up markets and ways to give.\n\n"
             "Follow along for a quick Bay View rundown each morning and our weekend picks on Thursdays. Free, with no ads and no paywall.")
     fb = body + f"\n\nRead today's Bulletin: https://{sp.SITE}/\nGot a tip or a question? https://{sp.SITE}/ask.html"
-    ig = body + "\n\nRead today's Bulletin at the link in our bio. Got a tip? Send it through the site.\n\n#BayView #BayViewMKE #Milwaukee #MKE"
+    ig = body + "\n\nRead today's Bulletin at bayviewbulletin.com. Got a tip? Send it through the site.\n\n#BayView #BayViewMKE #Milwaukee #MKE"
     (out / "caption.txt").write_text("=== FACEBOOK ===\n" + fb + "\n\n=== INSTAGRAM ===\n" + ig + "\n")
     print("\n".join(str(p) for p in sorted(out.glob("*"))))
 
