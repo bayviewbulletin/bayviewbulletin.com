@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-11-29-free-thanksgiving-meal-at-bay-view-unite@bayviewbulletin.com
-DTSTAMP:20261128T104353Z
+DTSTAMP:20261128T104800Z
 DTSTART;TZID=America/Chicago:20261129T143000
 DTEND;TZID=America/Chicago:20261129T163000
 SUMMARY:Free Thanksgiving meal at Bay View United Methodist
