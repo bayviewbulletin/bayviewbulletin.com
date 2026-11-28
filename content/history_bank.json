@@ -8,54 +8,6 @@
  },
  "dated": [
   {
-   "run_on": "2026-11-28",
-   "banked": "2026-11-22",
-   "notes": "Built from free sources (Urban Milwaukee 2017, FOX6 2015). Sources differ slightly on the year: the permit was taken out in October 1924 and the owners date the building to 1925; the text says so.",
-   "history": {
-    "year": 1925,
-    "date": "1924-10",
-    "match": "past",
-    "topic": "business",
-    "title": "Bay View Bowl: one of Milwaukee's 200 bowling alleys, still rolling",
-    "text": "A building permit from October 1924 started the bowling alley on KK. A century later, Bay View Bowl is one of the few of Milwaukee's old neighborhood lanes still open.",
-    "body": "Bay View Bowl almost started life as a movie theater. In 1915 a developer took out a permit to build an 800-seat \"moving picture\" house on Kinnickinnic Avenue, but it was never built, according to Urban Milwaukee's history of the building.\n\nIn October 1924, Badger Building Services took out a permit for three stores, two flats and bowling alleys on the lot, and the alleys went up first since they needed no basement. The current owners date the building to 1925, which is why they threw a 90th birthday party in 2015 with 90-cent games and shoes.\n\nBowling was big business then: Milwaukee once had some 200 alleys, most of them busy with leagues. Through the decades the KK building held a barbershop, an ice cream parlor during Prohibition, a tavern and dance hall afterward, a beauty shop and a diner, while the bowling carried on in back. It ran as Bay View Recreation Parlor and later Roghan Recreation, and around 1970 an operator named Martin Alivo gave it the name Bay View Bowl and the Lannon stone front it still wears.\n\nToday fewer than 20 of the city's old alleys remain. Bay View Bowl still has wooden lanes, and in recent years it has added glow bowling and local art on the walls, and it's one of the neighborhood's most familiar signs at 2416 S. Kinnickinnic Ave.",
-    "now": {
-     "name": "Bay View Bowl",
-     "url": "/directory.html"
-    },
-    "source_name": "Urban Milwaukee (2017)",
-    "source_url": "https://urbanmilwaukee.com/2017/04/14/bar-exam-bay-view-bowl-will-charm-you/",
-    "links": [
-     {
-      "label": "Urban Milwaukee: Bar Exam: Bay View Bowl Will Charm You (2017)",
-      "url": "https://urbanmilwaukee.com/2017/04/14/bar-exam-bay-view-bowl-will-charm-you/"
-     },
-     {
-      "label": "FOX6: Owners of Bay View Bowl realize it's 90 years old (2015)",
-      "url": "https://www.fox6now.com/news/its-come-so-far-owners-of-bay-view-bowl-make-startling-discovery-realize-its-90-years-old"
-     },
-     {
-      "label": "Wisconsin Historical Society property record",
-      "url": "https://wisconsinhistory.org/Records/Property/HI107371"
-     }
-    ],
-    "image": {
-     "src": "/photos/hist-bay-view-bowl.jpg",
-     "alt": "Bay View Bowl's Lannon stone front and vertical red neon sign on S. Kinnickinnic Avenue (current photo)",
-     "credit": "Michael Horne / Urban Milwaukee",
-     "credit_url": "https://urbanmilwaukee.com/2017/04/14/bar-exam-bay-view-bowl-will-charm-you/"
-    },
-    "gallery": [
-     {
-      "src": "/photos/hist-bay-view-bowl-2.jpg",
-      "alt": "The Bay View Bowl parking sign, with a bowling ball for the O (current photo)",
-      "credit": "FOX6 News",
-      "credit_url": "https://www.fox6now.com/news/its-come-so-far-owners-of-bay-view-bowl-make-startling-discovery-realize-its-90-years-old"
-     }
-    ]
-   }
-  },
-  {
    "run_on": "2026-11-29",
    "banked": "2026-11-22",
    "notes": "From the MPL archive (Milwaukee Journal, Aug. 26, 1929, p. 3). Names only the committee chair and association president (public roles); the private settlers in the photo caption are not named. Related to the Nov. 13 item on the village joining Milwaukee, but a different subject (the 1929 anniversary).",
@@ -305,6 +257,55 @@
     ]
    },
    "used_on": "2026-11-27"
+  },
+  {
+   "run_on": "2026-11-28",
+   "banked": "2026-11-22",
+   "notes": "Built from free sources (Urban Milwaukee 2017, FOX6 2015). Sources differ slightly on the year: the permit was taken out in October 1924 and the owners date the building to 1925; the text says so.",
+   "history": {
+    "year": 1925,
+    "date": "1924-10",
+    "match": "past",
+    "topic": "business",
+    "title": "Bay View Bowl: one of Milwaukee's 200 bowling alleys, still rolling",
+    "text": "A building permit from October 1924 started the bowling alley on KK. A century later, Bay View Bowl is one of the few of Milwaukee's old neighborhood lanes still open.",
+    "body": "Bay View Bowl almost started life as a movie theater. In 1915 a developer took out a permit to build an 800-seat \"moving picture\" house on Kinnickinnic Avenue, but it was never built, according to Urban Milwaukee's history of the building.\n\nIn October 1924, Badger Building Services took out a permit for three stores, two flats and bowling alleys on the lot, and the alleys went up first since they needed no basement. The current owners date the building to 1925, which is why they threw a 90th birthday party in 2015 with 90-cent games and shoes.\n\nBowling was big business then: Milwaukee once had some 200 alleys, most of them busy with leagues. Through the decades the KK building held a barbershop, an ice cream parlor during Prohibition, a tavern and dance hall afterward, a beauty shop and a diner, while the bowling carried on in back. It ran as Bay View Recreation Parlor and later Roghan Recreation, and around 1970 an operator named Martin Alivo gave it the name Bay View Bowl and the Lannon stone front it still wears.\n\nToday fewer than 20 of the city's old alleys remain. Bay View Bowl still has wooden lanes, and in recent years it has added glow bowling and local art on the walls, and it's one of the neighborhood's most familiar signs at 2416 S. Kinnickinnic Ave.",
+    "now": {
+     "name": "Bay View Bowl",
+     "url": "/directory.html"
+    },
+    "source_name": "Urban Milwaukee (2017)",
+    "source_url": "https://urbanmilwaukee.com/2017/04/14/bar-exam-bay-view-bowl-will-charm-you/",
+    "links": [
+     {
+      "label": "Urban Milwaukee: Bar Exam: Bay View Bowl Will Charm You (2017)",
+      "url": "https://urbanmilwaukee.com/2017/04/14/bar-exam-bay-view-bowl-will-charm-you/"
+     },
+     {
+      "label": "FOX6: Owners of Bay View Bowl realize it's 90 years old (2015)",
+      "url": "https://www.fox6now.com/news/its-come-so-far-owners-of-bay-view-bowl-make-startling-discovery-realize-its-90-years-old"
+     },
+     {
+      "label": "Wisconsin Historical Society property record",
+      "url": "https://wisconsinhistory.org/Records/Property/HI107371"
+     }
+    ],
+    "image": {
+     "src": "/photos/hist-bay-view-bowl.jpg",
+     "alt": "Bay View Bowl's Lannon stone front and vertical red neon sign on S. Kinnickinnic Avenue (current photo)",
+     "credit": "Michael Horne / Urban Milwaukee",
+     "credit_url": "https://urbanmilwaukee.com/2017/04/14/bar-exam-bay-view-bowl-will-charm-you/"
+    },
+    "gallery": [
+     {
+      "src": "/photos/hist-bay-view-bowl-2.jpg",
+      "alt": "The Bay View Bowl parking sign, with a bowling ball for the O (current photo)",
+      "credit": "FOX6 News",
+      "credit_url": "https://www.fox6now.com/news/its-come-so-far-owners-of-bay-view-bowl-make-startling-discovery-realize-its-90-years-old"
+     }
+    ]
+   },
+   "used_on": "2026-11-28"
   }
  ]
 }
