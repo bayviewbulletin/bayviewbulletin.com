@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-11-29-immaculate-conception-christmas-tree-lot@bayviewbulletin.com
-DTSTAMP:20261128T104800Z
+DTSTAMP:20261128T105612Z
 DTSTART;TZID=America/Chicago:20261129T100000
 DTEND;TZID=America/Chicago:20261129T120000
 SUMMARY:Immaculate Conception Christmas tree lot

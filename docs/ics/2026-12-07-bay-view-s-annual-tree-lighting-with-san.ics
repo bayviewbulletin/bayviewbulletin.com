@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-12-07-bay-view-s-annual-tree-lighting-with-san@bayviewbulletin.com
-DTSTAMP:20261128T104800Z
+DTSTAMP:20261128T105612Z
 DTSTART;TZID=America/Chicago:20261207T180000
 DTEND;TZID=America/Chicago:20261207T200000
 SUMMARY:Bay View's Annual Tree Lighting with Santa

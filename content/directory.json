@@ -48,7 +48,9 @@
   "lat": 42.99652,
   "lon": -87.909347,
   "instagram": "aerialhippiemke",
-  "website": "https://www.aerialhippiemke.com/"
+  "website": "https://www.aerialhippiemke.com/",
+  "links_checked": 1,
+  "social_note": "No Facebook page confirmed from its website or a facebook.com search (checked Nov. 28)"
  },
  {
   "name": "Afterglow MKE",
@@ -90,7 +92,8 @@
   "website": "https://botanas2mexican.com",
   "lat": 42.97343,
   "lon": -87.89121,
-  "note": "Open since 2015 per its website; current city food and liquor licenses (Nov. 23)."
+  "note": "Open since 2015 per its website; current city food and liquor licenses (Nov. 23).",
+  "facebook": "1614531625435267"
  },
  {
   "name": "Copper Kitchen",
@@ -474,7 +477,8 @@
   "lat": 43.00053,
   "lon": -87.90233,
   "website": "https://bonadrag.com/",
-  "instagram": "bona_drag"
+  "instagram": "bona_drag",
+  "facebook": "bonadragcom"
  },
  {
   "name": "Bravo Vape and Tobacco",
@@ -699,7 +703,9 @@
   "website": "https://www.shopchippys.com/",
   "note": "Opened fall 2026, next to the Avalon",
   "lat": 43.00022,
-  "lon": -87.90207
+  "lon": -87.90207,
+  "links_checked": 1,
+  "social_note": "No Facebook page confirmed from its website or a facebook.com search (checked Nov. 28)"
  },
  {
   "name": "Chiropractic Health & Wellness",
